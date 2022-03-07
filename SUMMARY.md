@@ -5,9 +5,12 @@
 
 ## Sismo Protocol
 
-* [Protocol Overview](sismo-protocol/protocol-overview.md)
-* [ZK Badges](sismo-protocol/zk-badges.md)
-* [Sismo Vault](sismo-protocol/sismo-vault.md)
+* [Sismo Protocol 101](sismo-protocol/sismo-protocol-101.md)
+* [Main Concepts](sismo-protocol/main-concepts/README.md)
+  * [ZK Badges](sismo-protocol/main-concepts/zk-badges.md)
+  * [Sources](sismo-protocol/main-concepts/sources.md)
+  * [Destinations](sismo-protocol/main-concepts/destinations.md)
+  * [Shielded Vault](sismo-protocol/main-concepts/shielded-vault.md)
 * [Glossary](sismo-protocol/glossary.md)
 * [Guides](sismo-protocol/guides/README.md)
   * [Mint a ZK Badge](sismo-protocol/guides/mint-a-zk-badge.md)

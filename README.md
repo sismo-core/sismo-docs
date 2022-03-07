@@ -18,7 +18,7 @@ Sismo allows you to:
 * Control what your reveal about yourself.
 {% endhint %}
 
-////////////////// ILLUSTRATION PLACEHOLDER //////////////////
+////////////////// ILLUSTRATION PLACEHOLDER (ZIKI ART)  //////////////////
 
 ## What is Sismo Protocol?
 
