@@ -8,9 +8,9 @@ description: Understanding Sismo Protocol
 
 Sismo enables anyone to:
 
-1. Manage source accounts (Web3 accounts) where their reputation history is stored
-2. Save those source account privately in a shielded vault
-3. Mint privacy-preserving ZK badges (attesting any fact imported from their sources) on any destination account they own
+1. Manage [source accounts](https://sismo.gitbook.io/sismo/sismo-protocol/main-concepts/sources) (Web3 accounts) where their reputation history is stored
+2. Save those source accounts privately in a [shielded vault](https://sismo.gitbook.io/sismo/sismo-protocol/main-concepts/shielded-vault)
+3. Mint privacy-preserving [ZK badges](https://sismo.gitbook.io/sismo/sismo-protocol/main-concepts/zk-badges) (attesting any fact imported from their sources) on any [destination account](https://sismo.gitbook.io/sismo/sismo-protocol/main-concepts/destinations) they own
 4. Profit! (= flex them or use them to access fated services, exclusive airdrops, additional governance rights, etc..)
 
 ## Why Sismo?
