@@ -11,7 +11,7 @@
   * [Source](sismo-protocol/main-concepts/source.md)
   * [Destination](sismo-protocol/main-concepts/destination.md)
   * [Shielded Vault](sismo-protocol/main-concepts/shielded-vault.md)
-* [Glossary](sismo-protocol/glossary.md)
+* [User Glossary](sismo-protocol/user-glossary.md)
 * [Guides](sismo-protocol/guides/README.md)
   * [Mint a ZK Badge](sismo-protocol/guides/mint-a-zk-badge.md)
   * [Manage Sources](sismo-protocol/guides/manage-sources.md)
