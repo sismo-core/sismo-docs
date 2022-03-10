@@ -1,16 +1,17 @@
 # Table of contents
 
 * [What is Sismo?](README.md)
+* [Why Sismo?](why-sismo.md)
 * [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
 
 ## Sismo Protocol
 
 * [Sismo Protocol 101](sismo-protocol/sismo-protocol-101.md)
 * [Main Concepts](sismo-protocol/main-concepts/README.md)
-  * [ZK Badge](sismo-protocol/main-concepts/zk-badge.md)
-  * [Source](sismo-protocol/main-concepts/source.md)
-  * [Destination](sismo-protocol/main-concepts/destination.md)
-  * [Shielded Vault](sismo-protocol/main-concepts/shielded-vault.md)
+  * [ZK badge](sismo-protocol/main-concepts/zk-badge.md)
+  * [Source account](sismo-protocol/main-concepts/source-account.md)
+  * [Destination account](sismo-protocol/main-concepts/destination-account.md)
+  * [Vault](sismo-protocol/main-concepts/vault.md)
 * [User Glossary](sismo-protocol/user-glossary.md)
 * [Guides](sismo-protocol/guides/README.md)
   * [Mint a ZK Badge](sismo-protocol/guides/mint-a-zk-badge.md)
