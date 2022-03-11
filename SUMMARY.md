@@ -40,3 +40,7 @@
 * [Blog](https://blog.sismo.io)
 * [Discord](https://discord.com/channels/882644611959513148/908250352657240074/945621794205863956)
 * [Twitter](https://twitter.com/sismo\_eth)
+
+## Hiring
+
+* [Sismo Introduction](hiring/sismo-introduction.md)
