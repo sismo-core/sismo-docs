@@ -1,5 +1,5 @@
 ---
-description: What is Sismo useful for.
+description: What is Sismo bringing to the table?
 ---
 
 # Why Sismo?
@@ -20,7 +20,7 @@ New users typically start off with one or two Ethereum addresses that they use f
 
 Over time, users develop a need for multiple disconnected accounts. This has been accelerated by the rise of NFTs (including ENS domains) as users want publicly identifiable accounts (e.g. [vitalik.eth](https://etherscan.io/address/0xd8da6bf26964af9d7eed9e03e53415d37aa96045)) while still preserving the privacy of some of their on-chain activity. The tradeoff is that this user can no longer leverage the reputation of their other accounts.
 
-### Zero Knowledge attestations to the rescue
+### Private attestations and badges to the rescue
 
 Sismo protocol provides a partial solution to these issues by enabling **** anyone to issue ZK badges for reputation aggregation and privacy preserving access control.
 

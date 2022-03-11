@@ -43,5 +43,5 @@
 
 ## Hiring
 
-* [Sismo Presentation](hiring/sismo-presentation.md)
+* [Sismo Presentation](hiring/sismo-introduction.md)
 * [Sismo Team Intro](hiring/sismo-team-intro.md)
