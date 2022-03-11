@@ -55,6 +55,6 @@ Sismo Genesis Team is **the core team developing and holding the reins of Sismo 
 
 It is made up of experienced cryptonatives who have been working on Ethereum since 2015 on projects like Aave, Sandbox, Kleros, and ConsenSys. Sismo Genesis Team also helps to organize [EthCC](https://ethcc.io), one of the largest crypto conferences in the world. The team is passionate about privacy-preserving technologies and is eager to bring them to mainstream usage.
 
-Sismo raised funds in 2021 from top crypto teams, members, and investors including AAVE, Axie Infinity, Product Hunt, Snapshot, ENS, Naval Ravikant, Paradigm, Nansen, Starkware, Delphi Digital, Ideo, Framework, Fabric Ventures, and many more.
+Sismo raised funds in 2021 from top crypto teams, members, and investors including AAVE, Axie Infinity, Product Hunt, Snapshot, ENS, Naval Ravikant, Nansen, Starkware, Delphi Digital, Ideo, Framework, Fabric Ventures, and many more.
 
 [Join Sismo Genesis Team](https://sismo.notion.site/Sismo-Is-Hiring-95d5ac373b5d4a6682cf9b9ff91fe526)
