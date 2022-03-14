@@ -1,6 +1,10 @@
 # Table of contents
 
-* [What is Sismo?](README.md)
+* [Sismo Introduction](README.md)
+  * [Sismo Attestations and SMAD](sismo-introduction/sismo-attestations-and-smad.md)
+  * [Sismo Badges and packages](sismo-introduction/sismo-badges-and-packages.md)
+  * [Zikitor and import sources](sismo-introduction/zikitor-and-import-sources.md)
+  * [ZK-SAP and Attestation Protocols](sismo-introduction/zk-sap-and-attestation-protocols.md)
 * [\[Archive\] What is Sismo?](archive-what-is-sismo.md)
 * [Why Sismo?](why-sismo.md)
 * [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
