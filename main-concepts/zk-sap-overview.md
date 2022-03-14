@@ -1,8 +1,21 @@
 ---
-description: Understanding Sismo Protocol
+description: >-
+  ZK-SAP stands for Zero-Knowledge Single Source Attestation Protocol. It is the
+  first attestation protocol released by Sismo.
 ---
 
-# Sismo Protocol 101
+# ZK-SAP Overview
+
+Sismo is an attestation system. Several attestation protocols can co-live.
+
+ZK-SAP is the first attestation protocol.&#x20;
+
+\
+Proving Scheme: ZK-SAP proving scheme is the Zero-Knowldege  a ZK-SNARK scheme that enables users to prove they are owners of facts.
+
+
+
+
 
 ![////////////////// ILLUSTRATION PLACEHOLDER (PROTOCOL OVERVIEW) /////////////////////////](<../.gitbook/assets/Screenshot 2022-03-07 at 16.21.38.png>)
 

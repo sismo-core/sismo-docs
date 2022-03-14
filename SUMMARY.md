@@ -1,22 +1,23 @@
 # Table of contents
 
 * [What is Sismo?](README.md)
+* [\[Archive\] What is Sismo?](archive-what-is-sismo.md)
 * [Why Sismo?](why-sismo.md)
 * [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
 
-## Sismo Protocol
+## Main Concepts
 
-* [Sismo Protocol 101](sismo-protocol/sismo-protocol-101.md)
-* [Main Concepts](sismo-protocol/main-concepts/README.md)
-  * [Attestation](sismo-protocol/main-concepts/attestation.md)
-  * [ZK badge](sismo-protocol/main-concepts/zk-badge.md)
-  * [Source account](sismo-protocol/main-concepts/source-account.md)
-  * [Destination account](sismo-protocol/main-concepts/destination-account.md)
-  * [Vault](sismo-protocol/main-concepts/vault.md)
-* [User Glossary](sismo-protocol/user-glossary.md)
-* [Guides](sismo-protocol/guides/README.md)
-  * [Mint a ZK Badge](sismo-protocol/guides/mint-a-zk-badge.md)
-  * [Manage Sources](sismo-protocol/guides/manage-sources.md)
+* [ZK-SAP Overview](main-concepts/zk-sap-overview.md)
+* [Main Concepts](main-concepts/main-concepts/README.md)
+  * [Attestation](main-concepts/main-concepts/attestation.md)
+  * [ZK badge](main-concepts/main-concepts/zk-badge.md)
+  * [Source account](main-concepts/main-concepts/source-account.md)
+  * [Destination account](main-concepts/main-concepts/destination-account.md)
+  * [Vault](main-concepts/main-concepts/vault.md)
+* [User Glossary](main-concepts/user-glossary.md)
+* [Guides](main-concepts/guides/README.md)
+  * [Mint a ZK Badge](main-concepts/guides/mint-a-zk-badge.md)
+  * [Manage Sources](main-concepts/guides/manage-sources.md)
 
 ## Governance
 
