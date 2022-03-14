@@ -8,6 +8,7 @@
 
 * [Sismo Protocol 101](sismo-protocol/sismo-protocol-101.md)
 * [Main Concepts](sismo-protocol/main-concepts/README.md)
+  * [Attestation](sismo-protocol/main-concepts/attestation.md)
   * [ZK badge](sismo-protocol/main-concepts/zk-badge.md)
   * [Source account](sismo-protocol/main-concepts/source-account.md)
   * [Destination account](sismo-protocol/main-concepts/destination-account.md)
@@ -43,5 +44,5 @@
 
 ## Hiring
 
-* [Sismo Presentation](hiring/sismo-presentation.md)
+* [Sismo Presentation](hiring/sismo-introduction.md)
 * [What they are looking for](hiring/what-they-are-looking-for.md)
