@@ -1,3 +1,0 @@
-# Sismo Team Intro
-
-The Sismo team is made up of experienced cryptonatives who have been working on Ethereum since 2015 on projects like Aave, Sandbox, Kleros, and ConsenSys. Sismo also helps to organize \[ethcc]\([https://ethcc.io/](https://ethcc.io)), one of the largest crypto conferences in the world. The team is passionate about privacy-preserving technologies and is eager to bring them to mainstream usage. Sismo raised funds in 2021 from founders and investors of top crypto teams: AAVE, Axie Infinity, Product Hunt, Snapshot, ENS, Naval Ravikant, Nansen, Starkware, Delphi Digital, Ideo, Framework, Fabric Ventures, and many more.
