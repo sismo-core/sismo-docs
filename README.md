@@ -33,7 +33,15 @@ SISMO PROTOCOL SCHEME
 
 ### Sismo Genesis Team
 
+Sismo Genesis Team is an engineering team developing software to support Sismo Mission. It has three main roles:
 
+* Develop Sismo Protocol core software
+* Develop Zikitor Frontend to access Sismo Protocol
+* Propose new ZK Attestation Protocols to Sismo Protocol
+
+The development and governance of the protocol will be progressively handed to the Sismo DAO.
+
+The end goal of the Genesis Team is that the protocol is governed autonomously and new frontend competing with Zikitor will emerge.
 
 ### Sismo DAO
 
