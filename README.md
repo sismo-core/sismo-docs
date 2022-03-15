@@ -43,6 +43,8 @@ The development and governance of the protocol will be progressively handed to t
 
 The end goal of the Genesis Team is that the protocol is governed autonomously and new frontend competing with Zikitor will emerge.
 
+Sismo Genesis Team will also propose new attestation protocols focused on decentralized and trustless privacy while other external teams can propose attestations  protocols with different tradeoffs on privacy, centralisation and transparency.
+
 ### Sismo DAO
 
 ###
