@@ -37,22 +37,19 @@ From Zikitor, one can generate different kinds of attestations. Multiple attesta
 Attestation protocols all share the same components:
 
 * A proving scheme
-  * A Prover: Used in Zikitor, allows user to generate attestation proofs that will be verified in order to receive an attestation
-  * A Verifier: Onchain contract that verifies the attestations proofs
+  * A Prover: Used in Zikitor, it allows user to generate attestation proofs that will be verified when claiming an attestation
+  * A Verifier: Code that is able to verifies the attestations proofs
 * Several attesters
-  * Authorized code that can write attestations.
+  * Authorized code, validating attestation request using the verifier, that can write attestations.
   * For one attestation protocol, you can have several attesters
     * One on each EVM chain
     * One offchain
 
-Sismo DAO is in charge of authorizing new Attestation Protocols and configuring them.
+Sismo DAO will be in charge of authorizing new Attestation Protocols and configuring them. As of today, Sismo DAO is only consulted by Sismo Genesis Team.
 
-Sismo DAO maintains Sismo DAO Attestations, the multichain database of all attestations create through Sismo DAO approved Attestation Protocols
+Sismo DAO maintains Sismo Multichain Attestations (SMA), the aggregated database of all attestations created through Sismo DAO approved Attestation Protocols
 
 
-
-Sismo DAO owns and maintains SMA (Sismo Maintained Attestations), the database of all attestations issued by authorized attestation protocols.\
-Sismo DAO is in charge of&#x20;
 
 ### Sismo First Release
 

@@ -1,4 +1,4 @@
-# Sismo Badges and packages
+# Attestation packages (+ Badges)
 
 \
 Sismo will offer several attestation packages (VCs, Non Transferable NFT, Oauth system) so Sismo attestations are easy to integrate with a wide range of apps. Packaged attestations should be thought as reputation and access control tools.\`
