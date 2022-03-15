@@ -5,7 +5,7 @@ Sismo protocol should allow anyone to generate privacy preserving attestations, 
 We can divide this mission statement into three sub goals:
 
 1. Allow anyone to generate attestations
-2. Feature privacy preserving attestation protocols
+2. Feature privacy preserving attestation
 3. Package Sismo attestations so that it is easily usable by web2 or web3 applications
 
 For these three goals, we developed three different software:
