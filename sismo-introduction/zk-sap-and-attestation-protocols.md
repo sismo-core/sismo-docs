@@ -1,4 +1,4 @@
-# Attestation Protocols (+ZK-SAP)
+# ZK-SAP and Attestation Protocols
 
 ZK-SAP
 

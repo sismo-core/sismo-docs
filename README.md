@@ -30,9 +30,13 @@ Sismo develops Zikitor, a secure Decentralized Identity Management Front-end, th
 * Users can privately import, aggregate their source accounts and save them in an encrypted vault from Zikitor.&#x20;
 * Users can generate from their source accounts the cryptographic proofs needed to receive attestations
 
-#### Authorized Attestation Protocols
+#### Attestation Protocols
 
 From Zikitor, one can generate different kinds of attestations. Multiple attestation protocols can be supported by Sismo.&#x20;
+
+Sismo Genesis Team is focused on building ZK Attestations protocols, Attestation protocols that guarantee that no information is leaked from the attestation source accounts.&#x20;
+
+It will be possible for external teams to propose new kinds of attestation protocols, with different tradeoffs on privacy, decentralization and usability.
 
 Attestation protocols all share the same components:
 
@@ -47,7 +51,30 @@ Attestation protocols all share the same components:
 
 Sismo DAO will be in charge of authorizing new Attestation Protocols and configuring them. As of today, Sismo DAO is only consulted by Sismo Genesis Team.
 
-Sismo DAO maintains Sismo Multichain Attestations (SMA), the aggregated database of all attestations created through Sismo DAO approved Attestation Protocols
+Sismo DAO effectively maintains Sismo Maintained Attestations (SMA), the aggregated database of all attestations created through Sismo DAO authorized Attestation Protocols. \
+SMA is thought to become the place to go for any project that wants to generate usable and trusted attestations.
+
+External teams can propose to Sismo DAO to accept a new attestation protocol that when accepted will be able to write in SMA.
+
+#### Attestations, Badges and Packages
+
+Sismo Attestations are standardised. The format is very simple, each attestation has
+
+* attestationId
+* timestamp&#x20;
+* value&#x20;
+* owner
+
+This allows multiple attestation protocols to co-live and write in the same Sismo Maintained Attestations database.
+
+On top of Attestations, Sismo offers packages, a layer on top of attestation aimed at integrators.\
+Our first package is an onchain package on top of Sismo Attestation: Sismo Badges.
+
+It is an NFT interface on top of attestations,&#x20;
+
+* badgeId
+* validityPeriod
+* balanceOf(user,) = value of attestation number 3, if&#x20;
 
 
 
@@ -56,7 +83,6 @@ Sismo DAO maintains Sismo Multichain Attestations (SMA), the aggregated database
 Sismo first release includes:&#x20;
 
 * Zikitor: Decentralized Identity Management Frontend
-  *
 * ZK-SAP: The first Attestation Protocol released by Sismo
   * Allows anyone to generate ZK attestations which do not reveal anything about source accounts.
   * Zikitor enables users to generate ZK Proofs from their source accounts via ZK-SAP prover.
