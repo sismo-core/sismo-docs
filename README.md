@@ -6,20 +6,25 @@ coverY: 0
 
 # Sismo Introduction
 
-### Sismo Mission
+### Sismo Core Mission
 
-Sismo's mission is to provide a web3 attestation system focused on privacy, usability and decentralisation. Sismo should allow anyone to generate privacy preserving attestations, usable in their web2 and web3 applications.\
-Sismo helps to build a decentralised alternative of SSO systems, based on web3 accounts and attestations.
+Sismo's main mission is to develop an attestation protocol focused on privacy, usability and decentralisation. The protocol should allow anyone to generate privacy preserving attestations, easily integrable in their web2 and web3 applications.\
+\
+Sismo aims to participate in building the better alternative of current centralised SSO systems.  The decentralized version, based on web3 accounts and attestations, should let user reveal what they want or need when connecting to applications.
 
 Using Sismo and its frontend Zikitor, one can generate, from their web3 source accounts, a wide range of attestations such as "Owner of BAYC NFT", "Voted 2 times in ENS DAO" or "Paid > 1 eth of fees on Ethereum".
 
-When receiving a Sismo Attestation, users also receive the corresponding Sismo Badge. It is a NFT (ERC1155) package on top Sismo Attestations. \
+Sismo Attestations are by default packaged as Badges. It is a NFT (ERC1155) package on top Sismo Attestations. \
 \
-The NFT standard being the current leading standard for access control in web3, this makes Sismo Attestations natively usable in all applications such as snapshot or guild that use the ERC1155 to gate their services.
+The NFT standard being the current leading standard for access control in web3, this makes Sismo Attestations natively usable in all applications that use the ERC1155 to gate their services.
 
-MAIN SCHEME: \[Sources in Zikitor => Attestations => NFT Gated- services]
+MAIN SCHEME Sismo Protocol: \[Sources in Zikitor => Attestations => NFT Gated- services]
 
+### Sismo Protocol and the Sismo Attestation State
 
+Sismo protocol is the set of rules linked to the creation, update and deletion of attestations in the Sismo Attestation State. The Sismo Attestations State (SAS) is the cross-chain database of all attestations created through Sismo Protocol.
+
+Sismo DAO will govern the Sismo protocol. It will especially authorize/revoke authorized attestation protocols. Authorized attestations protocol are allowed to write in the Sismo Attestation State, each one gets allocated a slot in Sismo Attestation State.
 
 ### Sismo Architecture
 
