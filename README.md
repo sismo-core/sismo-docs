@@ -68,15 +68,13 @@ Sismo Attestations are standardised. The format is very simple, each attestation
 This allows multiple attestation protocols to co-live and write in the same Sismo Maintained Attestations database.
 
 On top of Attestations, Sismo offers packages, a layer on top of attestation aimed at integrators.\
-Our first package is an onchain package on top of Sismo Attestation: Sismo Badges.
+With every Sismo Attestation comes a default onchain package: Sismo Badges.
 
-It is an NFT interface on top of attestations,&#x20;
+It is an NFT interface on top of attestations where the validity of the attestation is encoded in the balance of the Badge.
 
-* badgeId
-* validityPeriod
-* balanceOf(user,) = value of attestation number 3, if&#x20;
+For instance if balanceOf(Badge #3) = 0 means you do not have the attestation #3.
 
-
+For more => go to right place
 
 ### Sismo First Release
 
