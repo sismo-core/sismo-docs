@@ -11,7 +11,7 @@ coverY: 0
 Sismo's mission is to provide a web3 attestation system focused on privacy, usability and decentralisation. Sismo should allow anyone to generate privacy preserving attestations, usable in their web2 and web3 applications.\
 Sismo helps to build a decentralised alternative of SSO systems, based on web3 accounts and attestations.
 
-Using Sismo, one can generate, from their web3 source accounts, a wide range of attestations such as "Owner of BAYC NFT", "Voted 2 times in ENS DAO" or "Paid > 1 eth of fees on Ethereum".
+Using Sismo and its frontend Zikitor, one can generate, from their web3 source accounts, a wide range of attestations such as "Owner of BAYC NFT", "Voted 2 times in ENS DAO" or "Paid > 1 eth of fees on Ethereum".
 
 When receiving a Sismo Attestation, users also receive the corresponding Sismo Badge. It is a NFT (ERC1155) package on top Sismo Attestations. \
 \
@@ -68,13 +68,13 @@ Sismo Attestations are standardised. The format is very simple, each attestation
 This allows multiple attestation protocols to co-live and write in the same Sismo Maintained Attestations database.
 
 On top of Attestations, Sismo offers packages, a layer on top of attestation aimed at integrators.\
-With every Sismo Attestation comes a default onchain package: Sismo Badges.
+With every Sismo Attestation comes a default Sismo Badge.
 
 It is an NFT interface on top of attestations where the validity of the attestation is encoded in the balance of the Badge.
 
 For instance if balanceOf(Badge #3) = 0 means you do not have the attestation #3.
 
-For more => go to right place
+\[need to tell more in section more precisely]
 
 ### Sismo First Release
 
