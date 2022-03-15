@@ -26,6 +26,18 @@ Sismo protocol is the set of rules linked to the creation, update and deletion o
 
 Sismo DAO will govern the Sismo protocol. It will especially authorize/revoke authorized attestation protocols. Authorized attestations protocol are allowed to write in the Sismo Attestation State, each one gets allocated a slot in Sismo Attestation State.
 
+### Sismo Genesis Team
+
+
+
+### Sismo DAO
+
+###
+
+###
+
+###
+
 ### Sismo Architecture
 
 #### Zikitor: Decentralized Identity Management Front-end for Attestations
