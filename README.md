@@ -14,9 +14,7 @@ Sismo aims to participate in building the better alternative of current centrali
 
 Using Sismo and its frontend Zikitor, one can generate, from their web3 source accounts, a wide range of attestations such as "Owner of BAYC NFT", "Voted 2 times in ENS DAO" or "Paid > 1 eth of fees on Ethereum".
 
-Sismo Attestations are by default packaged as Badges. It is a NFT (ERC1155) package on top Sismo Attestations. \
-\
-The NFT standard being the current leading standard for access control in web3, this makes Sismo Attestations natively usable in all applications that use the ERC1155 to gate their services.
+Sismo Attestations are by default packaged as Badges. It is a NFT (ERC1155) package on top Sismo Attestations. This makes Sismo Attestations natively usable in all applications that use NFTs to gate their services.
 
 MAIN SCHEME Sismo Protocol: \[Sources in Zikitor => Attestations => NFT Gated- services]
 
