@@ -1,9 +1,10 @@
-# Sismo Attestations (+ SMOD)
+# Sismo Attestations and SMAD
+
+What is sismo attestations?
+
+How it links to potentil DAO?
 
 
-
-1. Sismo attestations
-2.
 
 
 
