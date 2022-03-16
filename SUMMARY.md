@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Sismo 101](README.md)
+* [Attestation Protocols and the SAS](attestation-protocols-and-the-sas.md)
 * [Sismo Attestations](sismo-attestations.md)
 * [Sismo Badges](sismo-badges.md)
 * [Attestation Protocols](attestation-protocols.md)

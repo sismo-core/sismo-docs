@@ -7,7 +7,9 @@ coverY: 0
 
 Sismo protocol should allow anyone to generate attestations, easily integrable in their web2 and web3 applications.
 
-Sismo is the host of several attestation protocols, each authorized by Sismo DAO, each with an allocated slot in Sismo Attestations State, and each with a new set of properties regarding decentralization, privacy and correctness.
+Sismo is the host of several attestation protocols, authorized by Sismo DAO to write in the Sismo Attestations State (SAS).&#x20;
+
+Each authorized attestation protocol gets a slot in the SAS.
 
 While Sismo Attestations can originate from different attestation protocols they all share the following:
 
@@ -46,7 +48,7 @@ The destination can be for instance the Sismo Attestations Smart Contract on mai
     attester:  ZKSAPAttesterAddress (ZKSAP is the attestation protocol)
     timeStamp: 1647420085 
     value:     1 ( 1 means yes, owns more than 10 ETH)
-    extraAttestationData: "Attested by ZK-SAP Attestation Protocol: has more than 10 ETH"
+    extraAttestationData: EncodedsourcesNullifiers // Extra data attested by ZK-SAP attestation protocol
     attestationProof: null // not needed as anyone can verify ZKSAPAttester smart contract works as intended
 
 }
@@ -62,7 +64,7 @@ Sismo will allow attestations to also be stored in other offchain databases.
     attester:  api.sismo.io/attest/zk-sap (ZKSAP is the attestation protocol)
     timeStamp: 1647420085 
     value:     1 ( 1 means yes, owns more than 10 ETH)
-    extraAttestationData: "Attested by ZK-SAP Attestation Protocol: has more than 10 ETH"
+    extraAttestationData: EncodedsourcesNullifiers // Extra data attested by ZK-SAP attestation protocol)
     attestationProof: signature of hosted zk-sap attestation api.
 
 }
@@ -72,33 +74,14 @@ As of today, destinations are only EVM chains and attestations are written in Si
 
 #### Attestations for web2 apps
 
-In the future, Sismo will to make it easy for apps to use the attestation protocols themselves, in their own backend. \
-\
-Their frontend would redirect to Zikitor, Sismo frontend, where user will generate the attestation proofs from their source accounts. \
-Zikitor redirects back to the app with the attestationProof that the app can verify and attest in its own server.
+In the future, Sismo will to make it easy for apps to use the attestation protocols themselves, verifying attestation proofs themselves and storing the attestation in their own database.
 
-The destination could also well be a web2 application itself, or an OAuth system for web2 applications.
+For a group chat app, the flow will be the following:
 
-```
-{
-    attestationId: 5 (5 <> Owns more than 10 Eth)
-    destination: api.externalApp.com/verifier
-    owner: 0xc13..4b2
-    attester:  externalApp
-    timeStamp: 1647420085 
-    value:     1 ( 1 means yes, owns more than 10 ETH)
-    extraAttestationData: ""
-    attestationProof: 
-
-}
-```
-
-#### Sismo Attestion State
-
-\[Scheme du SAS carré]
-
-It is the global state of all attestations generated through Sismo protocol.
-
-It is effectively a crosschain aggregated database, maintained by the Sismo protocol. \
-It is the union of all SismoAttestations smart contracts deployed on different EVM chains and other offchain databases maintained by Sismo.
+* To allow a user into a specific group chat, the chat app requires its users to meet a requirement (e.g own a BAYC NFT)
+* The app redirect the Zikitor, Sismo's frontend
+* In Zikitor, the user generates the attestation proofs needed
+* The user is redirected to the chat app with its attestation proof
+* The chat app checks the validity of the proof in its own backend (via an offchain attestor)
+* Then if valid, the chat app car give access writes to the user.
 
