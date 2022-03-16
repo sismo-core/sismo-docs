@@ -6,9 +6,9 @@ coverY: 0
 
 # Sismo 101
 
-### Sismo Core Mission
+## Sismo's Core Mission
 
-Sismo's main mission is to develop an attestation protocol focused on privacy, usability and decentralisation. The protocol should allow anyone to generate attestations easily integrable in their web2 and web3 applications.
+Sismo's core mission is to develop **a protocol overseeing an attestation management system focused on privacy, usability and decentralisation**. The protocol should allow anyone to generate attestations easily integrable in any web2 and web3 application.
 
 Using Sismo and its frontend Zikitor, one can generate, from their web3 source accounts, a wide range of attestations (= certificates proving any state of facts) such as "Owner of BAYC NFT", "Voted 2 times in ENS DAO" or "Paid > 1 ETH of fees on Ethereum".
 
@@ -21,35 +21,36 @@ MAIN SCHEME
 
 \[Centré autour des Sismo attestations. Centré autour du user qu utilise zikitor pour créer son attestation. Il peut ensuite utiliser cette attestation pour SIWE/ faire qqchose onchain]
 
-### Sismo protocol and Sismo Attestations State
+## Sismo Protocol and Sismo Attestations State
 
-Sismo protocol is the set of rules linked to the creation, update and deletion of attestations in  Sismo Attestations State. Sismo Attestations State (SAS) is the cross-chain database of all attestations created through Sismo Protocol.
+Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in  Sismo Attestations State. Sismo Attestations State (SAS) is the cross-chain database of all attestations created through Sismo Protocol.
 
-Sismo protocol will be governed by Sismo DAO whose responsibility will be, among other things, to authorize new attestation protocols or revoke others. Authorized attestation protocol are allowed to write in Sismo Attestations State and are allocated a dedicated slot (a range of attestation IDs).
+Sismo Protocol will be governed by Sismo DAO whose responsibility will be, among other things, to authorize new Attestation Protocols or revoke others. Authorized Attestation Protocol are allowed to write in Sismo Attestations State and are allocated a dedicated slot (a range of attestation IDs).
 
 ![](.gitbook/assets/SAS.jpeg)
 
-### Sismo Genesis Team
+## Sismo Genesis Team
 
-Sismo Genesis Team is an engineering team developing software to support Sismo Mission. It has three main roles:
+Sismo Genesis Team is **an engineering team developing software to support Sismo's mission**.&#x20;
 
-* Develop Sismo Protocol core software
-* Develop Zikitor Frontend to access Sismo Protocol
-* Propose new ZK Attestation Protocols to Sismo Protocol
+It has 3 main roles:
+
+* Develop Sismo Protocol core software,
+* Build and maintain Zikitor Frontend to access Sismo Protocol,
+* Create new ZK Attestation Protocols to be authorized by Sismo DAO.
 
 The development and governance of the protocol will be progressively handed to the Sismo DAO.
 
-The end goal of the Genesis Team is that the protocol is governed autonomously and new frontend competing with Zikitor will emerge.
+The end goal of the Genesis Team is for the protocol to be governed autonomously and to foster the emergence of new frontends competing with Zikitor.
 
-Sismo Genesis Team will also propose new attestation protocols focused on decentralized and trustless privacy while other external teams can propose attestations  protocols with different tradeoffs on privacy, centralisation and transparency.
+While Sismo Genesis Team will be mainly focused on proposing new Attestation Protocols focused on decentralized and trustless privacy, external teams will be able to create and add Attestations Protocols with different tradeoffs related to privacy, centralisation and transparency.
 
-### Sismo DAO
+## Sismo DAO
 
-###
+Sismo DAO is a **protocol DAO** launched in October 2021 to progressively oversee and manage the development and maintenance of Sismo Protocol. It started as a social DAO, gathering curated generations of members sharing similar interests about privacy, reputation, identity and zero-knowledge technologies.&#x20;
 
-###
+Through progressive decentralization, it is now in charge of the allocation of a DAO treasury and will move step by step towards an administrative role over Sismo Protocol.
 
-###
-
-
-
+{% content-ref url="governance/sismo-dao.md" %}
+[sismo-dao.md](governance/sismo-dao.md)
+{% endcontent-ref %}
