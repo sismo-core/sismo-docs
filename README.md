@@ -8,7 +8,7 @@ coverY: 0
 
 ## Sismo's Core Mission
 
-Sismo's core mission is to develop **an attestation management system focused on privacy, usability and decentralisation**. The Sismo Protocol allows anyone to generate attestations from their personal data.&#x20;
+Sismo's core mission is to develop **an attestation system focused on privacy, usability and decentralisation**. The Sismo Protocol allows anyone to generate attestations from their personal data.&#x20;
 
 Sismo attestations are built so they can be easily used by web2 and web3 applications as a reputation and authentication tool. Sismo aims with its attestations to contribute to building a decentralised version of SSOs, based on web3 login.
 
