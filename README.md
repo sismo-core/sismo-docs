@@ -12,8 +12,8 @@ Sismo's core mission is to develop **a protocol overseeing an attestation manage
 
 Using Sismo and its frontend Zikitor, one can generate, from their web3 source accounts, a wide range of attestations (= certificates proving any state of facts) such as "Owner of BAYC NFT", "Voted 2 times in ENS DAO" or "Paid > 1 ETH of fees on Ethereum".
 
-Sismo's goal is to enable the generation of attestations that can be used as a web3 alternative of centralised Single Sign-On systems (SSO), based on Decentralized Identifiers (DID).\
-"Sign-In With Ethereum" accounts associated with a set of Sismo attestations are a minimum viable implementation of such a sovereign SSO.
+Sismo's goal is to enable the generation of attestations that can be used, in associating with web3 login systems, as an alternative of centralised Single Sign-On systems (SSO).\
+"Sign-In With Ethereum" login associated with Sismo attestations are a minimum viable implementation of such a sovereign SSO.
 
 Sismo Attestations are to be packaged as badges by default. Sismo badges are NFTs (ERC-1155, non-transferrable by default) wrapping the data of Sismo Attestations. This enables Sismo Attestations to be natively integrated in any application already using NFTs as a reputation system component, to control access to their services or to curate an identity.
 
@@ -22,6 +22,8 @@ MAIN SCHEME
 \[Centré autour des Sismo attestations. Centré autour du user qu utilise zikitor pour créer son attestation. Il peut ensuite utiliser cette attestation pour SIWE/ faire qqchose onchain]
 
 ## Sismo Protocol
+
+
 
 Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in  Sismo Attestations State. Sismo Attestations State (SAS) is the cross-chain database of all attestations created through Sismo Protocol.
 

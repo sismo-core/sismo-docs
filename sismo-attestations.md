@@ -21,9 +21,19 @@ While Sismo Attestations can originate from different attestation protocols they
 ```
 // 
 {
-    attestationId // The identifier of the attestation
-    destination:          // where the attestation will be written in the SAS
-    attester:  // the origin of the attestation
+    attestationOrigin: {
+        attester: ZK-SEP attester
+        claimId: 5 
+    }
+    attestationDestination: {
+        databaseType: onchain
+        chainId: 1
+    }
+    attestationData: {
+        timeStamp
+        value
+        
+    }
     owner:   // the owner of the attestation
     timeStamp: // the date when the attestation has been verified
     value:     // the main value of the attestation (balance, score)

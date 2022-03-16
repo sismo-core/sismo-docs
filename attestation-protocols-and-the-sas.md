@@ -5,7 +5,7 @@ coverY: 0
 
 # Sismo Attestations State
 
-Sismo is the host of several attestation protocols, authorized by Sismo DAO to write in the Sismo Attestations State (SAS).
+Sismo protocol will be the the host of several attestation protocols, authorized by Sismo DAO to write in the Sismo Attestations State (SAS).
 
 The SAS is the cross-chain aggregated databases of all attestations issued by the Sismo protocol. Only the attesters of authorized attestation protocols are allowed to mutate the SAS.
 
