@@ -21,7 +21,7 @@ MAIN SCHEME
 
 \[Centré autour des Sismo attestations. Centré autour du user qu utilise zikitor pour créer son attestation. Il peut ensuite utiliser cette attestation pour SIWE/ faire qqchose onchain]
 
-## Sismo Protocol and Sismo Attestations State
+## Sismo Protocol
 
 Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in  Sismo Attestations State. Sismo Attestations State (SAS) is the cross-chain database of all attestations created through Sismo Protocol.
 
