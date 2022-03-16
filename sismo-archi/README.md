@@ -1,18 +1,8 @@
-# Sismo Overview
+# Sismo archi
 
-Sismo protocol should allow anyone to generate privacy preserving attestations, easily integrable in their web2 and web3 applications.
 
-We can divide this mission statement into three sub goals:
 
-1. Allow anyone to generate attestations
-2. Feature privacy preserving attestation
-3. Package Sismo attestations so that it is easily usable by web2 or web3 applications
 
-For these three goals, we developed three different software:
-
-1. Zikitor, Sismo secure frontend giving access to Sismo Attestations
-2. ZK-SAP, our first ZK Attestation Protocol which allows users to generate themselves attestations, in Zikitor
-3. Badges, our first application layer on top of Sismo Attestations
 
 ### Sismo Architecture
 

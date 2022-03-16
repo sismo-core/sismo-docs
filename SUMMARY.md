@@ -1,11 +1,12 @@
 # Table of contents
 
 * [Sismo 101](README.md)
-* [Sismo Overview](sismo-overview/README.md)
-  * [Attestation packages (+ Badges)](sismo-introduction/sismo-badges-and-packages.md)
-  * [Zikitor](sismo-introduction/zikitor-and-import-sources.md)
-  * [Attestation Protocols (+ZK-SAP)](sismo-introduction/zk-sap-and-attestation-protocols.md)
-  * [Sismo Attestations (+ SMOD)](sismo-introduction/sismo-attestations-and-smad.md)
+* [Sismo Attestations](sismo-attestations.md)
+* [Sismo archi](sismo-archi/README.md)
+  * [Attestation packages (+ Badges)](sismo-archi/attestation-packages-+-badges.md)
+  * [Zikitor](sismo-archi/zikitor.md)
+  * [Attestation Protocols (+ZK-SAP)](sismo-archi/attestation-protocols-+zk-sap.md)
+  * [Sismo Attestations (+ SMOD)](sismo-archi/sismo-attestations-+-smod.md)
 * [\[Archive\] What is Sismo?](archive-what-is-sismo.md)
 * [Why Sismo?](why-sismo.md)
 * [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
