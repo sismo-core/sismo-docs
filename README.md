@@ -22,9 +22,11 @@ MAIN SCHEME
 
 ## Sismo Protocol
 
-### Sismo protocol
+Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations stored in the Sismo Attestations State (SAS).
 
-Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in the Sismo Attestations State (SAS). The Sismo Attestations State is the database of all attestation collections created through Sismo Protocol. Sismo Protocol maintains a set of authorised attestation protocols that are allowed to write attestations in the SAS.&#x20;
+### Sismo Attestations State (SAS)
+
+The Sismo Attestations State (SAS) is the database of all attestation collections created through Sismo Protocol. Sismo Protocol maintains a set of authorised attestation protocols that are allowed to write attestations in the collections of the SAS.&#x20;
 
 The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
 
@@ -32,7 +34,7 @@ Authorised attestation protocols get each a dedicated shard in SAS and receive w
 
 \[SCHEME 1: SAS, collection slots, shards, attestations collections]
 
-### Attestation Protocol
+### Attestation Protocols
 
 An attestation protocol enables users to attest to a defined number of claims. \
 Every claim supported by an authorised attestation protocol gets attributed its own attestation collection in the SAS. A collection regroups all user attestations to the same claim from the same attestation protocol.
@@ -63,21 +65,23 @@ Sismo Genesis Team is **an engineering team developing software to support Sismo
 
 It has 3 main roles:
 
-* Develop Sismo Protocol core software,
-* Build and maintain Zikitor Frontend to access Sismo Protocol,
-* Create new ZK Attestation Protocols to be authorized by Sismo DAO.
+* Initiate the Sismo Protocol
+* Develop and maintain new attestation protocols
+* Develop tools around the Sismo Protocol
 
-The development and governance of the protocol will be progressively handed to the Sismo DAO.
+We are the core maintainers of Sismo Protocol. Its development and governance will be progressively handed to the Sismo DAO.
 
-The end goal of the Genesis Team is for the protocol to be governed autonomously and to foster the emergence of new frontends competing with Zikitor.
+We will maintain and propose new ZK Attestation Protocols to Sismo. ZK Attestation protocols mainly focus on decentralisation and privacy.
 
-While Sismo Genesis Team will be mainly focused on proposing new Attestation Protocols focused on decentralized and trustless privacy, external teams will be able to create and add Attestations Protocols with different tradeoffs related to privacy, centralisation and transparency.
+We will develop and improve Zikitor, our frontend, as well as libraries so Sismo attestations become easy to generate and use within apps.
+
+
 
 ## Sismo DAO
 
 Sismo DAO is a **protocol DAO** launched in October 2021 to progressively oversee and manage the development and maintenance of Sismo Protocol. It started as a social DAO, gathering curated generations of members sharing similar interests about privacy, reputation, identity and zero-knowledge technologies.&#x20;
 
-Through progressive decentralization, it is now in charge of the allocation of a DAO treasury and will move step by step towards an administrative role over Sismo Protocol.
+It is currently in charge of the allocation of Sismo DAO treasury and will move step by step towards an administrative role over Sismo Protocol.
 
 {% content-ref url="governance/sismo-dao.md" %}
 [sismo-dao.md](governance/sismo-dao.md)
