@@ -24,7 +24,7 @@ MAIN SCHEME
 
 ### Sismo protocol
 
-Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in the Sismo Attestations State (SAS). The Sismo Attestations State is the database of all attestations collections created through Sismo Protocol. Sismo Protocol maintains a set of authorised attestation protocols that are allowed to write on the SAS.&#x20;
+Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in the Sismo Attestations State (SAS). The Sismo Attestations State is the database of all attestation collections created through Sismo Protocol. Sismo Protocol maintains a set of authorised attestation protocols that are allowed to write attestations in the SAS.&#x20;
 
 The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
 
@@ -32,12 +32,10 @@ Authorised attestation protocols get each a dedicated shard in SAS and receive w
 
 \[SCHEME 1: SAS, collection slots, shards, attestations collections]
 
-### Attestation Protocols
+### Attestation Protocol
 
 An attestation protocol enables users to attest to a defined number of claims. \
-Every claim supported by an authorised attestation protocol gets attributed an attestation collection in the SAS from its dedicated shard.\
-\
-All attestations to the same claim, collected by different users through the same attestation protocol get stored in the same collection of the SAS.
+Every claim supported by an authorised attestation protocol gets attributed its own attestation collection in the SAS. A collection regroups all user attestations to the same claim from the same attestation protocol.
 
 \[SCHEME 2: Attestation protocol: series of supported claims, a prover to generate attestation proof => create attestation through attester]
 
@@ -45,15 +43,15 @@ All attestations to the same claim, collected by different users through the sam
 
 Short example: ZK-SAP is a Zero Knowledge Attestation Protocol.
 
-* Allows anyone to prove that they own an address that is part of a list of addresses without revealing which address they own.
+* Allows anyone to prove that they own an address that is part of a list of addresses, without revealing which address.
 * Several claims can be attested using ZK-SAP
   * Claim #133: Proof that you own an address that owns a BAYC
   * Claim #22: Proof that you own an address that made a transaction before 2020
 
-As ZK-SAP is the first authorized attestation protocol in Sismo, it will get attributed the shard #1
+As ZK-SAP is the first authorized attestation protocol in Sismo, it controls the shard #1 of the Sismo Attestations State (SAS)
 
-* BAYC Owners will be able within ZK-SAP, to prove the Claim #133
-* The corresponding attestations get stored in the attestation collection slot #133, shard 1# of the SAS. Inside this collection lies all attestations created from the claim #133 of the ZK-SAP attestation protocol.
+* BAYC Owners will be able using ZK-SAP, to receive an attestation for the Claim #133
+* The corresponding user attestations are stored in the attestation collection slot #133, shard 1# of the SAS. Inside this collection lies all attestations created from the claim #133 of the ZK-SAP attestation protocol.
 
 
 
