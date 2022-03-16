@@ -29,7 +29,7 @@ The Sismo Attestations State (SAS) is the cross-chain database of all attestatio
 
 Authorised attestation protocols get each a dedicated shard in SAS and receive write access on the underlying attestation collections.
 
-\[SCHEME 1: SAS, collection slots, attestations collections)
+\[SCHEME 1: SAS, collection slots, shards, attestations collections]
 
 One attestation protocol enable users to attest to a defined number of claims. \
 Every claim supported by an authorised attestation protocol gets attributed an attestation collection slot from its dedicated shard.\
