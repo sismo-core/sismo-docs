@@ -2,6 +2,8 @@
 
 * [Sismo 101](README.md)
 * [Sismo Attestations](sismo-attestations.md)
+* [Sismo Badges](sismo-badges.md)
+* [Attestation Protocols](attestation-protocols.md)
 * [Sismo archi](sismo-archi/README.md)
   * [Attestation packages (+ Badges)](sismo-archi/attestation-packages-+-badges.md)
   * [Zikitor](sismo-archi/zikitor.md)
