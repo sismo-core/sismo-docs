@@ -23,19 +23,25 @@ MAIN SCHEME
 
 ## Sismo Protocol
 
+### Sismo protocol
+
 Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in the Sismo Attestations State (SAS). Sismo Protocol maintains a set of authorized attestation protocols that are allowed to write on the SAS.&#x20;
 
-The Sismo Attestations State (SAS) is the cross-chain database of all attestations collections created through Sismo Protocol. The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
+The Sismo Attestations State (SAS) is the database of all attestations collections created through Sismo Protocol. The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
 
 Authorised attestation protocols get each a dedicated shard in SAS and receive write access on the underlying attestation collections.
 
 \[SCHEME 1: SAS, collection slots, shards, attestations collections]
 
-One attestation protocol enable users to attest to a defined number of claims. \
-Every claim supported by an authorised attestation protocol gets attributed an attestation collection slot from its dedicated shard.\
-All attestations to the same claim, received by different users get stored in the same collection of the SAS.
+### Attestation Protocols
+
+An attestation protocol enables users to attest to a defined number of claims. \
+Every claim supported by an authorised attestation protocol gets attributed an attestation collection in the SAS from its dedicated shard.\
+All attestations to the same claim, collected by different users get stored in the same collection of the SAS.
 
 \[SCHEME 2: Attestation protocol: series of supported claims, a prover to generate attestation proof => create attestation through attester]
+
+### Attestation creation: Example
 
 Short example: ZK-SAP is a Zero Knowledge Attestation Protocol
 
