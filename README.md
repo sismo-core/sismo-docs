@@ -10,7 +10,7 @@ coverY: 0
 
 Sismo's core mission is to develop **an attestation management system focused on privacy, usability and decentralisation**. The Sismo Protocol allows anyone to generate attestations from their personal data.&#x20;
 
-Sismo attestations are built so they can be easily used by web2 and web3 applications as a reputation and authentication tool. Sismo aims, through its usable attestation, to contribute to building a decentralised version of SSOs, based on web3 login.
+Sismo attestations are built so they can be easily used by web2 and web3 applications as a reputation and authentication tool. Sismo aims with its attestations to contribute to building a decentralised version of SSOs, based on web3 login.
 
 On Zikitor, Sismo Frontend, one can generate, from their web3 source accounts, a wide range of attestations such as "Owns of BAYC NFT", "Voted 2 times in ENS DAO" or "Sent more than 100 transactions on Ethereum".
 
@@ -43,15 +43,14 @@ All attestations to the same claim, collected by different users through the sam
 
 ### Attestation creation: Example
 
-Short example: ZK-SAP is a Zero Knowledge Attestation Protocol
+Short example: ZK-SAP is a Zero Knowledge Attestation Protocol.
 
-* It allows anyone to prove that they own an address that is part of a list of addresses without revealing which address they own.
-* ZK-SAP maintains the lists of addresses from which one can claim and generate its underlying attestation.
+* Allows anyone to prove that they own an address that is part of a list of addresses without revealing which address they own.
 * Several claims can be attested using ZK-SAP
   * Claim #133: Proof that you own an address that owns a BAYC
   * Claim #22: Proof that you own an address that made a transaction before 2020
 
-If ZK-SAP becomes the first authorized attestation protocol in Sismo, it will get attributed the shard #1
+As ZK-SAP is the first authorized attestation protocol in Sismo, it will get attributed the shard #1
 
 * BAYC Owners will be able within ZK-SAP, to prove the Claim #133
 * The corresponding attestations get stored in the attestation collection slot #133, shard 1# of the SAS. Inside this collection lies all attestations created from the claim #133 of the ZK-SAP attestation protocol.
