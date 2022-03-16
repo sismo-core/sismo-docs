@@ -8,14 +8,13 @@ coverY: 0
 
 ## Sismo's Core Mission
 
-Sismo's core mission is to develop **a protocol overseeing an attestation management system focused on privacy, usability and decentralisation**. The protocol should allow anyone to generate attestations easily integrable in any web2 and web3 application.
+Sismo's core mission is to develop **an attestation management system focused on privacy, usability and decentralisation**. The Sismo Protocol will allow anyone to generate attestations from their personal data.&#x20;
 
-Using Sismo and its frontend Zikitor, one can generate, from their web3 source accounts, a wide range of attestations (= certificates proving any state of facts) such as "Owner of BAYC NFT", "Voted 2 times in ENS DAO" or "Paid > 1 ETH of fees on Ethereum".
+Sismo attestations are built so they can be easily used by web2 and web3 applications as a reputation and authentication tool. Sismo aims, through its usable attestation, to contribute to building a decentralised version of SSOs, based on web3 login.
 
-Sismo's goal is to enable the generation of attestations that can be used, in associating with web3 login systems, as an alternative of centralised Single Sign-On systems (SSO).\
-"Sign-In With Ethereum" login associated with Sismo attestations are a minimum viable implementation of such a sovereign SSO.
+On Zikitor, Sismo Frontend, one can generate, from their web3 source accounts, a wide range of attestations such as "Owns of BAYC NFT", "Voted 2 times in ENS DAO" or "Sent more than 100 transactions on Ethereum".
 
-Sismo Attestations are to be packaged as badges by default. Sismo badges are NFTs (ERC-1155, non-transferrable by default) wrapping the data of Sismo Attestations. This enables Sismo Attestations to be natively integrated in any application already using NFTs as a reputation system component, to control access to their services or to curate an identity.
+Sismo Attestations are to be packaged as badges by default. Sismo badges are NFTs (ERC-1155, non-transferrable by default) wrapping the data of Sismo Attestations. This enables Sismo Attestations to be natively integrated in applications already using NFTs as a reputation system component, to control access to their services or to curate an identity.
 
 MAIN SCHEME
 
@@ -25,9 +24,9 @@ MAIN SCHEME
 
 ### Sismo protocol
 
-Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in the Sismo Attestations State (SAS). Sismo Protocol maintains a set of authorized attestation protocols that are allowed to write on the SAS.&#x20;
+Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in the Sismo Attestations State (SAS). The Sismo Attestations State is the database of all attestations collections created through Sismo Protocol. Sismo Protocol maintains a set of authorised attestation protocols that are allowed to write on the SAS.&#x20;
 
-The Sismo Attestations State (SAS) is the database of all attestations collections created through Sismo Protocol. The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
+The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
 
 Authorised attestation protocols get each a dedicated shard in SAS and receive write access on the underlying attestation collections.
 
@@ -37,7 +36,8 @@ Authorised attestation protocols get each a dedicated shard in SAS and receive w
 
 An attestation protocol enables users to attest to a defined number of claims. \
 Every claim supported by an authorised attestation protocol gets attributed an attestation collection in the SAS from its dedicated shard.\
-All attestations to the same claim, collected by different users get stored in the same collection of the SAS.
+\
+All attestations to the same claim, collected by different users through the same attestation protocol get stored in the same collection of the SAS.
 
 \[SCHEME 2: Attestation protocol: series of supported claims, a prover to generate attestation proof => create attestation through attester]
 
