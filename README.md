@@ -23,13 +23,32 @@ MAIN SCHEME
 
 ## Sismo Protocol
 
+Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in the Sismo Attestations State (SAS). Sismo Protocol maintains a set of authorized attestation protocols that are allowed to write on the SAS.&#x20;
+
+The Sismo Attestations State (SAS) is the cross-chain database of all attestations collections created through Sismo Protocol. The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
+
+Authorised attestation protocols get each a dedicated shard in SAS and receive write access on the underlying attestation collections.
+
+One attestation protocol enable users to attest to a defined number of claims. \
+Every claim supported by the attestation protocol gets attributed an attestation collection slot from its dedicated shard.\
+All attestations to the same claim, received by different users get stored in the same collection of the SAS.
+
+Short example: ZK-SAP is a Zero Knowledge Attestation Protocol
+
+* It allows anyone to prove that they own an address that is part of a list of addresses without revealing which address they own.
+* ZK-SAP maintains the lists of addresses from which one can claim and generate its underlying attestation.
+* Several claims can be attested using ZK-SAP
+  * Claim #133: Proof that you own an address that owns a BAYC
+  * Claim #22: Proof that you own an address that made a transaction before 2020
+
+If ZK-SAP becomes the first authorized attestation protocol in Sismo, it will get attributed the shard #1
+
+* BAYC Owners will be able within ZK-SAP, to prove the Claim #133
+* The corresponding attestations get stored in the attestation collection slot #133, shard 1# of the SAS. Inside this collection lies all attestations created from the claim #133 of the ZK-SAP attestation protocol.
 
 
-Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations in  Sismo Attestations State. Sismo Attestations State (SAS) is the cross-chain database of all attestations created through Sismo Protocol.
 
-Sismo Protocol will be governed by Sismo DAO whose responsibility will be, among other things, to authorize new Attestation Protocols or revoke others. Authorized Attestation Protocol are allowed to write in Sismo Attestations State and are allocated a dedicated slot (a range of attestation IDs).
-
-![](.gitbook/assets/SAS.jpeg)
+![Sismo Protocol](.gitbook/assets/SAS.jpeg)
 
 ## Sismo Genesis Team
 
