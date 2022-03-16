@@ -3,13 +3,13 @@ cover: .gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
 coverY: 0
 ---
 
-# Attestation Protocols and the SAS
+# Sismo Attestations State
 
-Sismo protocol should allow anyone to generate attestations, easily integrable in their web2 and web3 applications.
+Sismo is the host of several attestation protocols, authorized by Sismo DAO to write in the Sismo Attestations State (SAS).
 
-Sismo is the host of several attestation protocols, authorized by Sismo DAO to write in the Sismo Attestations State (SAS).&#x20;
+The SAS is the cross-chain aggregated databases of all attestations issued by the Sismo protocol. Only the attesters of authorized attestation protocols are allowed to mutate the SAS.
 
-Each authorized attestation protocol gets a slot in the SAS.
+Each authorized attestation protocol gets a (multi-chain) slot in the SAS.
 
 \[Scheme attestations protocol <> SAS]
 

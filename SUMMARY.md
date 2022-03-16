@@ -1,10 +1,11 @@
 # Table of contents
 
 * [Sismo 101](README.md)
-* [Attestation Protocols and the SAS](attestation-protocols-and-the-sas.md)
+* [Sismo Attestations State](sismo-attestations-state.md)
+* [Attestation Protocols](attestation-protocols.md)
 * [Sismo Attestations](sismo-attestations.md)
 * [Sismo Badges](sismo-badges.md)
-* [Attestation Protocols](attestation-protocols.md)
+* [Attestation Protocols](attestation-protocols-1.md)
 * [Sismo archi](sismo-archi/README.md)
   * [Attestation packages (+ Badges)](sismo-archi/attestation-packages-+-badges.md)
   * [Zikitor](sismo-archi/zikitor.md)
