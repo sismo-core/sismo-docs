@@ -30,7 +30,7 @@ The Sismo Attestations State (SAS) is the cross-chain database of all attestatio
 Authorised attestation protocols get each a dedicated shard in SAS and receive write access on the underlying attestation collections.
 
 One attestation protocol enable users to attest to a defined number of claims. \
-Every claim supported by the attestation protocol gets attributed an attestation collection slot from its dedicated shard.\
+Every claim supported by an authorised attestation protocol gets attributed an attestation collection slot from its dedicated shard.\
 All attestations to the same claim, received by different users get stored in the same collection of the SAS.
 
 Short example: ZK-SAP is a Zero Knowledge Attestation Protocol
