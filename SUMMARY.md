@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Sismo 101](README.md)
+* [What is Sismo?](README.md)
 * [Sismo Attestations State](attestation-protocols-and-the-sas.md)
 * [Attestation Protocols](attestation-protocols.md)
 * [Sismo Attestations](sismo-attestations.md)
@@ -28,6 +28,10 @@
 * [Guides](main-concepts/guides/README.md)
   * [Mint a ZK Badge](main-concepts/guides/mint-a-zk-badge.md)
   * [Manage Sources](main-concepts/guides/manage-sources.md)
+
+***
+
+* [Archive](archive.md)
 
 ## Governance
 

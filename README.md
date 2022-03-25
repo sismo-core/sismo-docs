@@ -1,63 +1,78 @@
 ---
-description: TL;DR of everything you need to know about Sismo
 cover: .gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
 coverY: 0
 ---
 
-# Sismo 101
+# What is Sismo?
 
 ## Sismo's Core Mission
 
-Sismo's core mission is to develop **an attestation system focused on privacy, usability and decentralisation**. The Sismo Protocol allows anyone to generate attestations from their personal data.&#x20;
+Sismo's core mission is to develop **an attestation protocol focused on decentralization, usability and privacy**. The Sismo Attestation Protocol allows anyone to generate attestations from their personal data. Sismo attestations are easy to integrate in web2 and web3 apps as a reputation and access control tool.
 
-Sismo attestations are built so they can be easily used by web2 and web3 applications as a reputation and authentication tool. Sismo aims with its attestations to contribute to building a decentralised version of SSOs, based on web3 login.
+Sismo aims to contribute to the emergence of a decentralised version of a Single Sign On (SSO) systems, based on web3 login and user-generated attestations.
 
-On Zikitor, Sismo Frontend, one can generate, from their web3 source accounts, a wide range of attestations such as "Owns of BAYC NFT", "Voted 2 times in ENS DAO" or "Sent more than 100 transactions on Ethereum".
+Using Sismo Wallet, one can generate, from their imported web3 source accounts, a wide range of attestations such as "Owns of BAYC NFT", "Voted 2 times in ENS DAO" or "Sent more than 100 transactions on Ethereum".
 
-Sismo Attestations are to be initially written on EVM chains, packaged as badges by default. Sismo badges are NFTs (ERC-1155, non-transferrable by default) wrapping the data of Sismo Attestations. This enables Sismo Attestations to be natively integrated in applications already using NFTs as a reputation system component, to control access to their services or to curate an identity.
+Sismo Attestations are to be initially recorded on EVM chains, packaged as badges by default. Sismo badges are NFTs (ERC-1155, non-transferrable by default) wrapping the data of Sismo Attestations. This enables Sismo Attestations to be natively integrated in applications already using NFTs as a reputation system component, to control access to their services or to curate an identity.
+
+Sismo especially features ZK Attestations: they are attestions, powered by Zero Knowledge technology, that do not reveal the source of the attested data.
 
 MAIN SCHEME
 
-\[Centré autour des Sismo attestations. Centré autour du user qu utilise zikitor pour créer son attestation. Il peut ensuite utiliser cette attestation pour SIWE/ faire qqchose onchain]
+Wallet => Attestations <= packages]
 
-## Sismo Protocol
+## Sismo Attestation Protocol
 
-Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations stored in the Sismo Attestations State (SAS).
+Sismo Attestation Protocol (SAP) is the set of rules linked to the creation, update and deletion of attestations stored in the Sismo Attestations State (SAS).
 
 ### Sismo Attestations State (SAS)
 
-The Sismo Attestations State (SAS) is the database of all attestation collections created through Sismo Protocol. Sismo Protocol maintains a set of authorised attestation protocols that are allowed to write attestations in the collections of the SAS.&#x20;
+The Sismo Attestations State (SAS) is the multi-chain database of all attestation collections created through Sismo Attestation Protocol (SAP).\
+The protocol maintains a set of authorised attesters which are smart contracts allowed to write attestations in the SAS.&#x20;
 
 The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
 
-Authorised attestation protocols get each a dedicated shard in SAS and receive write access on the underlying attestation collections.
+Authorised attesters get each a dedicated shard in the SAS and receive write access on the underlying attestation collections.&#x20;
 
-\[SCHEME 1: SAS, collection slots, shards, attestations collections]
+\=> Link to SAS
 
-### Attestation Protocols
+### Claiming Protocols
 
-An attestation protocol enables users to attest to a defined number of claims. \
-Every claim supported by an authorised attestation protocol gets attributed its own attestation collection in the SAS. A collection regroups all user attestations to the same claim from the same attestation protocol.
+A claiming protocol enables users to generate proofs for a defined number of claims such as "Owner of Cryptopunk".&#x20;
 
-\[SCHEME 2: Attestation protocol: series of supported claims, a prover to generate attestation proof => create attestation through attester]
+Each claiming protocol has&#x20;
 
-### Attestation creation: Example
+* The database which contains supported claims data, e.g a merkle tree of cryptopunk owners.
+* A proving scheme:
+  * A prover: code that lets users generate proofs from the database, e.g I own an address from the list of cryptopunk owners.
+  * A verifier: code that enables anyone to check proofs and validate claims
 
-Short example: ZK-SAP is a Zero Knowledge Attestation Protocol.
+There are currently two Claiming Protocol maintained by Sismo Genesis Team: SMCP and ZK-SMCP for (Zero Knowledge) Simple Merkle Claiming Protocol.
 
-* Allows anyone to prove that they own an address that is part of a list of addresses, without revealing which address.
-* Several claims can be attested using ZK-SAP
-  * Claim #133: Proof that you own an address that owns a BAYC
-  * Claim #22: Proof that you own an address that made a transaction before 2020
+Both consume the same public and auditable database of claims, stored as account merkle trees (link) and maintained by Sismo Genesis Team.
 
-As ZK-SAP is the first authorized attestation protocol in Sismo, it controls the shard #1 of the Sismo Attestations State (SAS)
+SMCP is based on public merkle proofs while ZK-SMCP generate and verify merkle proofs in SNARKs, guaranteeing privacy for the user making the claim.
 
-* BAYC Owners will be able using ZK-SAP, to receive an attestation for the Claim #133
-* The corresponding user attestations are stored in the attestation collection slot #133, shard 1# of the SAS. Inside this collection lies all attestations created from the claim #133 of the ZK-SAP attestation protocol.
+\=> Link to Claiming Protocols
 
+### Attesters
 
+An Attester is a smart contract using the verifier of a claiming protocol to attest claims made by users, backed by the proofs they generated with the prover.&#x20;
 
-![Sismo Protocol](.gitbook/assets/SAS.jpeg)
+Once the claim is verified, the attester creates or renews an attestation for the user in the attestation collection associated with the claim.\
+Each claim supported by an authorised attester gets attributed an attestation collection in the attester's reserved shard of the Sismo Attestation State (SAS).
+
+A collection regroups all user attestations to the same claim.
+
+For each of the claiming protocols maintained by Sismo (SMCP and ZK-SMCP), two attesters were deployed and authorized on our supported chains (mainnet and polygon).
+
+### Sismo Badges
+
+Sismo Badges are Non Transferable NFT (ERC1155) which are wrappers of attestations. They bring usability to attestations. The score of an attestation is encoded in the balance&#x20;
+
+Each attestation created is natively packaged as a badge. Any application can create its own custom badge.
+
+\=> Link to Badges and packages
 
 ## Sismo Genesis Team
 
@@ -71,11 +86,9 @@ It has 3 main roles:
 
 We are the core maintainers of Sismo Protocol. Its development and governance will be progressively handed to the Sismo DAO.
 
-We will maintain and propose new ZK Attestation Protocols to Sismo. ZK Attestation protocols mainly focus on decentralisation and privacy.
+We will maintain and propose new Attestation Protocols to Sismo.
 
-We will develop and improve Zikitor, our frontend, as well as libraries so Sismo attestations become easy to generate and use within apps.
-
-
+We will develop and improve Zikitor, our frontend, as well as libraries so Sismo attestations become easy to generate and use natively within apps.
 
 ## Sismo DAO
 
