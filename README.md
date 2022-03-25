@@ -81,14 +81,14 @@ Sismo Genesis Team is **an engineering team developing software to support Sismo
 It has 3 main roles:
 
 * Initiate the Sismo Protocol
-* Develop and maintain new attestation protocols
+* Develop and maintain new claiming protocols
 * Develop tools around the Sismo Protocol
 
 We are the core maintainers of Sismo Protocol. Its development and governance will be progressively handed to the Sismo DAO.
 
-We will maintain and propose new Attestation Protocols to Sismo.
+We will maintain and propose new Claiming Protocols to Sismo.
 
-We will develop and improve Zikitor, our frontend, as well as libraries so Sismo attestations become easy to generate and use natively within apps.
+We will develop and improve the Sismo Wallet as well as libraries so Sismo attestations become easy to generate and use natively within apps.
 
 ## Sismo DAO
 
