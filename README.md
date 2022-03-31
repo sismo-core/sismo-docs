@@ -9,7 +9,7 @@ coverY: 0
 
 Sismo's core mission is to develop **an attestation protocol focused on decentralization, usability and privacy**. The Sismo Attestation Protocol allows anyone to generate attestations from their personal data. Sismo attestations are easy to integrate in web2 and web3 apps as a reputation and access control tool.
 
-Sismo aims to contribute to the emergence of a decentralised version of a Single Sign On (SSO) systems, based on web3 login and user-generated attestations.
+Sismo aims to contribute to the emergence of a decentralised version of a Single sign on (SSO) system, based on web3 login and user-generated attestations.
 
 Using Sismo Wallet, one can generate, from their imported web3 source accounts, a wide range of attestations such as "Owns of BAYC NFT", "Voted 2 times in ENS DAO" or "Sent more than 100 transactions on Ethereum".
 
@@ -57,7 +57,7 @@ SMCP is based on public merkle proofs while ZK-SMCP generate and verify merkle p
 
 ### Attesters
 
-An Attester is a smart contract using the verifier of a claiming protocol to attest claims made by users, backed by the proofs they generated with the prover.&#x20;
+An Attester is a smart contract implementing the verifier of a claiming protocol to record attestations based on verified claims made by users, backed by the proofs they generated with the prover.&#x20;
 
 Once the claim is verified, the attester creates or renews an attestation for the user in the attestation collection associated with the claim.\
 Each claim supported by an authorised attester gets attributed an attestation collection in the attester's reserved shard of the Sismo Attestation State (SAS).
