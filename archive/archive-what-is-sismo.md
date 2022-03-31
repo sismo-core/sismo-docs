@@ -1,6 +1,6 @@
 ---
 description: TL;DR of everything you need to know about Sismo
-cover: .gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
+cover: ../.gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
 coverY: 0
 ---
 
@@ -45,8 +45,8 @@ Sismo DAO is a **protocol DAO** launched in October 2021 to progressively overse
 
 Through progressive decentralization, it is now in charge of the allocation of a DAO treasury and will move step by step towards an administrative role over Sismo protocol along with the product release.
 
-{% content-ref url="governance/sismo-dao.md" %}
-[sismo-dao.md](governance/sismo-dao.md)
+{% content-ref url="../governance/sismo-dao.md" %}
+[sismo-dao.md](../governance/sismo-dao.md)
 {% endcontent-ref %}
 
 ## What is Sismo Genesis Team?

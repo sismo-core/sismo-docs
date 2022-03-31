@@ -1,19 +1,21 @@
 ---
-cover: .gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
+cover: ../.gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
 coverY: 0
 ---
 
-# Sismo Attestations State
+# Attestation Protocols
 
-Sismo protocol will be the the host of several attestation protocols, authorized by Sismo DAO to write in the Sismo Attestations State (SAS).
+Sismo protocol should allow anyone to generate attestations, easily integrable in their web2 and web3 applications.
 
-The SAS is the cross-chain aggregated databases of all attestations issued by the Sismo protocol. Only the attesters of authorized attestation protocols are allowed to mutate the SAS.
+Sismo is the host of several attestation protocols, authorized by Sismo DAO to write in the Sismo Attestations State (SAS).&#x20;
 
-Each authorized attestation protocol gets a (multi-chain) slot in the SAS.
+Each authorized attestation protocol gets a slot in the SAS.
 
 \[Scheme attestations protocol <> SAS]
 
+\[SCHEME 2: Attestation protocol: series of supported claims, a prover to generate attestation proof => create attestation through attester]
 
+###
 
 ## Attestation Protocols
 
@@ -41,6 +43,22 @@ For instance in ZK-SAP a ZK attestation protocol
 In a more simple
 
 * prover:&#x20;
+
+
+
+
+
+Like all attestation protocols,&#x20;
+
+* Allows anyone to prove that they own an address that is part of a list of addresses, without revealing which address.
+* Several claims can be attested using ZK-SAP
+  * Claim #133: Proof that you own an address that owns a BAYC
+  * Claim #22: Proof that you own an address that made a transaction before 2020
+
+As ZK-SAP is the first authorized attestation protocol in Sismo, it controls the shard #1 of the Sismo Attestations State (SAS)
+
+* BAYC Owners will be able using ZK-SAP, to receive an attestation for the Claim #133
+* The corresponding user attestations are stored in the attestation collection slot #133, shard 1# of the SAS. Inside this collection lies all attestations created from the claim #133 of the ZK-SAP attestation protocol.
 
 
 

@@ -1,37 +1,28 @@
 # Table of contents
 
 * [What is Sismo?](README.md)
-* [Sismo Attestations State](attestation-protocols-and-the-sas.md)
-* [Attestation Protocols](attestation-protocols.md)
-* [Sismo Attestations](sismo-attestations.md)
-* [Sismo Badges](sismo-badges.md)
-* [Attestation Protocols](<attestation-protocols (1).md>)
-* [Sismo archi](sismo-archi/README.md)
-  * [Attestation packages (+ Badges)](sismo-archi/attestation-packages-+-badges.md)
-  * [Zikitor](sismo-archi/zikitor.md)
-  * [Attestation Protocols (+ZK-SAP)](sismo-archi/attestation-protocols-+zk-sap.md)
-  * [Sismo Attestations (+ SMOD)](sismo-archi/sismo-attestations-+-smod.md)
-* [\[Archive\] What is Sismo?](archive-what-is-sismo.md)
-* [Why Sismo?](why-sismo.md)
+
+## Overview
+
+* [Main Sismo Concepts](overview/main-sismo-concepts/README.md)
+  * [Attestation](overview/main-sismo-concepts/attestation.md)
+  * [Badge](overview/main-sismo-concepts/badge.md)
+  * [Sismo account](overview/main-sismo-concepts/sismo-account.md)
+  * [Source](overview/main-sismo-concepts/source.md)
+  * [Destination](overview/main-sismo-concepts/destination.md)
+* [Glossary](overview/glossary.md)
+* [Guides](overview/guides.md)
 * [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
 
-## Main Concepts
+## Protocol
 
-* [ZK-SAP Overview](main-concepts/zk-sap-overview.md)
-* [Main Concepts](main-concepts/main-concepts/README.md)
-  * [Attestation](main-concepts/main-concepts/attestation.md)
-  * [ZK badge](main-concepts/main-concepts/zk-badge.md)
-  * [Source account](main-concepts/main-concepts/source-account.md)
-  * [Destination account](main-concepts/main-concepts/destination-account.md)
-  * [Vault](main-concepts/main-concepts/vault.md)
-* [User Glossary](main-concepts/user-glossary.md)
-* [Guides](main-concepts/guides/README.md)
-  * [Mint a ZK Badge](main-concepts/guides/mint-a-zk-badge.md)
-  * [Manage Sources](main-concepts/guides/manage-sources.md)
-
-***
-
-* [Archive](archive.md)
+* [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
+* [Sismo Attestations State](protocol/sismo-attestations-state.md)
+* [Claiming Protocols](protocol/claiming-protocols/README.md)
+  * [ZK-SMCP](protocol/claiming-protocols/zk-smcp.md)
+  * [SMCP](protocol/claiming-protocols/smcp.md)
+* [Attesters](protocol/attesters.md)
+* [Badge Contract](protocol/badge-contract.md)
 
 ## Governance
 
@@ -44,7 +35,7 @@
 
 ## Developers
 
-* [Architecture overview](developers/architecture-overview.md)
+* [Architecture](developers/architecture.md)
 * [Deployed Contracts](developers/deployed-contracts/README.md)
   * [ZK Badge Minter](developers/deployed-contracts/zk-badge-minter.md)
   * [Sismo Controller](developers/deployed-contracts/sismo-controller.md)
@@ -57,7 +48,21 @@
 * [Discord](https://discord.com/channels/882644611959513148/908250352657240074/945621794205863956)
 * [Twitter](https://twitter.com/sismo\_eth)
 
-## Hiring
+## ARCHIVE
 
-* [Sismo Presentation](hiring/sismo-introduction.md)
-* [What they are looking for](hiring/what-they-are-looking-for.md)
+* [Attestation Protocols](archive/attestation-protocols.md)
+* [Copy of What is Sismo?](archive/copy-of-what-is-sismo.md)
+* [Sismo Attestations State](archive/sismo-attestations-state.md)
+* [Sismo Attestations](archive/sismo-attestations.md)
+* [ZK-SAP Overview](archive/zk-sap-overview.md)
+* [SMPS and ZK-SMPS](archive/smps-and-zk-smps.md)
+* [Attestation Protocols](archive/attestation-protocols-1.md)
+* [Sismo archi](archive/sismo-archi/README.md)
+  * [Attestation packages (+ Badges)](archive/sismo-archi/attestation-packages-+-badges.md)
+  * [Zikitor](archive/sismo-archi/zikitor.md)
+  * [Attestation Protocols (+ZK-SAP)](archive/sismo-archi/attestation-protocols-+zk-sap.md)
+  * [Sismo Attestations (+ SMOD)](archive/sismo-archi/sismo-attestations-+-smod.md)
+* [Sismo Hiring Presentation](archive/sismo-hiring-presentation.md)
+* [Why Sismo?](archive/why-sismo.md)
+* [\[Archive\] What is Sismo?](archive/archive-what-is-sismo.md)
+* [What they are looking for](archive/what-they-are-looking-for.md)
