@@ -20,8 +20,8 @@
 * [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
 * [Sismo Attestations State](protocol/sismo-attestations-state.md)
 * [Claiming Protocols](protocol/claiming-protocols/README.md)
-  * [ZK-SMCP](protocol/claiming-protocols/zk-smcp.md)
   * [SMCP](protocol/claiming-protocols/smcp.md)
+  * [ZK-SMCP](protocol/claiming-protocols/zk-smcp.md)
 * [Attesters](protocol/attesters.md)
 * [Badge Contract](protocol/badge-contract.md)
 
