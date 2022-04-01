@@ -17,13 +17,13 @@
 ## ARCHITECTURE
 
 * [Sismo Architecture](architecture/sismo-architecture.md)
-* [Sismo Attestation Protocol](architecture/sismo-attestation-protocol.md)
-* [Sismo Attestations State](architecture/sismo-attestations-state.md)
-* [Claiming Protocols](architecture/claiming-protocols/README.md)
-  * [ZK-SMCP](architecture/claiming-protocols/zk-smcp.md)
-  * [SMCP](architecture/claiming-protocols/smcp.md)
-* [Attesters](architecture/attesters.md)
-* [Badge Contract](architecture/badge-contract.md)
+* [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
+* [Sismo Attestations State](protocol/sismo-attestations-state.md)
+* [Claiming Protocols](protocol/claiming-protocols/README.md)
+  * [ZK-SMCP](protocol/claiming-protocols/zk-smcp.md)
+  * [SMCP](protocol/claiming-protocols/smcp.md)
+* [Attesters](protocol/attesters.md)
+* [Badge Contract](protocol/badge-contract.md)
 
 ## Governance
 
