@@ -9,7 +9,7 @@ A Claiming Protocol enables users to generate proofs for a defined set of claims
 Each claiming protocol is constituted of:&#x20;
 
 * A database which contains supported claims data, e.g a merkle tree of cryptopunk owners.
-* A proving scheme:
+* A proving scheme comprised of:
   * A prover: code that lets users generate proofs from the database, e.g I own an address from the list of cryptopunk owners.
   * A verifier: code that enables anyone to check proofs and validate claims
 
