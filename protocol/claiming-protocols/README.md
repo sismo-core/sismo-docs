@@ -1,5 +1,5 @@
 ---
-description: Where the proofs
+description: Where claims are proven and verified
 ---
 
 # Claiming Protocols

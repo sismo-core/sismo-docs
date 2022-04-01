@@ -17,11 +17,13 @@
 ## ARCHITECTURE
 
 * [Sismo Architecture](architecture/sismo-architecture.md)
+* [Sismo Account](architecture/sismo-account.md)
 * [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
 * [Sismo Attestations State](protocol/sismo-attestations-state.md)
 * [Claiming Protocols](protocol/claiming-protocols/README.md)
   * [SMCP](protocol/claiming-protocols/smcp.md)
   * [ZK-SMCP](protocol/claiming-protocols/zk-smcp.md)
+* [Claims Data](architecture/claims-data.md)
 * [Attesters](protocol/attesters.md)
 * [Badge Contract](protocol/badge-contract.md)
 
@@ -57,13 +59,11 @@
 * [Sismo Attestations](archive/sismo-attestations.md)
 * [ZK-SAP Overview](archive/zk-sap-overview.md)
 * [SMPS and ZK-SMPS](archive/smps-and-zk-smps.md)
-* [Attestation Protocols](archive/attestation-protocols-1.md)
 * [Sismo archi](archive/sismo-archi/README.md)
   * [Attestation packages (+ Badges)](archive/sismo-archi/attestation-packages-+-badges.md)
   * [Zikitor](archive/sismo-archi/zikitor.md)
   * [Attestation Protocols (+ZK-SAP)](archive/sismo-archi/attestation-protocols-+zk-sap.md)
   * [Sismo Attestations (+ SMOD)](archive/sismo-archi/sismo-attestations-+-smod.md)
-* [Sismo Hiring Presentation](archive/sismo-hiring-presentation.md)
 * [Why Sismo?](archive/why-sismo.md)
 * [\[Archive\] What is Sismo?](archive/archive-what-is-sismo.md)
 * [What they are looking for](archive/what-they-are-looking-for.md)
