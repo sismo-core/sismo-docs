@@ -1,5 +1,5 @@
 ---
-description: test
+description: Global record of all Sismo attestations
 ---
 
 # Sismo Attestations State
