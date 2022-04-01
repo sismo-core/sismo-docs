@@ -4,7 +4,7 @@ description: Where the proofs
 
 # Claiming Protocols
 
-A Claiming Protocol enables users to generate proofs for a defined set of claims such as "Owner of Cryptopunk".&#x20;
+A **Claiming Protocol** enables users to generate proofs for a defined set of claims such as "Owner of Cryptopunk".&#x20;
 
 Each claiming protocol is constituted of:&#x20;
 
