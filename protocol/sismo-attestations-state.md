@@ -1,2 +1,0 @@
-# Sismo Attestations State
-

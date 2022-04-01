@@ -14,15 +14,16 @@
 * [Guides](overview/guides.md)
 * [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
 
-## Protocol
+## ARCHITECTURE
 
-* [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
-* [Sismo Attestations State](protocol/sismo-attestations-state.md)
-* [Claiming Protocols](protocol/claiming-protocols/README.md)
-  * [ZK-SMCP](protocol/claiming-protocols/zk-smcp.md)
-  * [SMCP](protocol/claiming-protocols/smcp.md)
-* [Attesters](protocol/attesters.md)
-* [Badge Contract](protocol/badge-contract.md)
+* [Sismo Architecture](architecture/sismo-architecture.md)
+* [Sismo Attestation Protocol](architecture/sismo-attestation-protocol.md)
+* [Sismo Attestations State](architecture/sismo-attestations-state.md)
+* [Claiming Protocols](architecture/claiming-protocols/README.md)
+  * [ZK-SMCP](architecture/claiming-protocols/zk-smcp.md)
+  * [SMCP](architecture/claiming-protocols/smcp.md)
+* [Attesters](architecture/attesters.md)
+* [Badge Contract](architecture/badge-contract.md)
 
 ## Governance
 

@@ -26,8 +26,8 @@ These attestations of claims can be read "as-is" or be packaged as Sismo badges 
 
 One of Sismo's main feature is the ability to generate ZK attestations (powered by Zero Knowledge technology) to enable anyone to prove something without revealing the source of the claim.
 
-{% content-ref url="protocol/sismo-attestation-protocol.md" %}
-[sismo-attestation-protocol.md](protocol/sismo-attestation-protocol.md)
+{% content-ref url="architecture/sismo-attestation-protocol.md" %}
+[sismo-attestation-protocol.md](architecture/sismo-attestation-protocol.md)
 {% endcontent-ref %}
 
 ## Sismo Genesis Team
