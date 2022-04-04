@@ -12,7 +12,11 @@ coverY: 0
 
 Sismo is an **attestation protocol focused on decentralization, sovereignty and privacy**.&#x20;
 
-Sismo's mission is to build a user-friendly and trust-minimized product for everyone to aggregate their reputation, curate their identities by controlling what they reveal about themselves and access web2/web3 gated services in a privacy preserving manner.
+Sismo's mission is to build a user-friendly and trust-minimized product for everyone to:
+
+* aggregate their reputation,
+* curate their identities by controlling what they reveal about themselves,
+* access web2/web3 gated services in a privacy preserving manner.
 
 It allows anyone to generate attestations of claims issued from their personal accounts.
 

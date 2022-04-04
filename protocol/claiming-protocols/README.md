@@ -23,8 +23,8 @@ There are currently two Claiming Protocol maintained by Sismo Genesis Team:&#x20
 
 * Zero Knowledge Simple Merkle Claiming Protocol (ZK-SMCP)
 
-{% content-ref url="zk-smcp.md" %}
-[zk-smcp.md](zk-smcp.md)
+{% content-ref url="../../architecture/claiming-protocols/zk-smcp-zero-knowledge-simple-merkle-claiming-protocol.md" %}
+[zk-smcp-zero-knowledge-simple-merkle-claiming-protocol.md](../../architecture/claiming-protocols/zk-smcp-zero-knowledge-simple-merkle-claiming-protocol.md)
 {% endcontent-ref %}
 
 Both consume the same public and auditable database of claims, stored as account merkle trees and maintained by Sismo Genesis Team.
