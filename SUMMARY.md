@@ -17,7 +17,6 @@
 ## Architecture
 
 * [Architecture overview](architecture/architecture-overview.md)
-* [Sismo Architecture](architecture/sismo-architecture.md)
 * [Sismo Account Module](architecture/sismo-account-module.md)
 * [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
 * [Claiming Protocols](protocol/claiming-protocols/README.md)
@@ -39,7 +38,6 @@
 
 ## Developers
 
-* [Architecture](developers/architecture.md)
 * [Deployed Contracts](developers/deployed-contracts/README.md)
   * [ZK Badge Minter](developers/deployed-contracts/zk-badge-minter.md)
   * [Sismo Controller](developers/deployed-contracts/sismo-controller.md)

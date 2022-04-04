@@ -1,2 +1,0 @@
-# Sismo Architecture
-
