@@ -42,7 +42,9 @@ It has 3 main roles:
 
 They are the initial core maintainers of Sismo Attestation Protocol, while the development and governance is to be progressively handed to Sismo DAO. They will propose new Claiming Protocols  and improve Sismo products and libraries so that Sismo attestations get widely adopted.
 
-{% embed url="https://sismo-1.welcomekit.co" %}
+{% embed url="https://apply.workable.com/sismo-1" %}
+Join Sismo Genesis Team
+{% endembed %}
 
 ## Sismo DAO
 

@@ -4,12 +4,12 @@
 
 ## Overview
 
-* [Main Sismo Concepts](overview/main-sismo-concepts/README.md)
-  * [Attestation](overview/main-sismo-concepts/attestation.md)
-  * [Badge](overview/main-sismo-concepts/badge.md)
-  * [Sismo Account](overview/main-sismo-concepts/sismo-account.md)
-  * [Source](overview/main-sismo-concepts/source.md)
-  * [Destination](overview/main-sismo-concepts/destination.md)
+* [Sismo 101](overview/sismo-101/README.md)
+  * [Attestation](overview/sismo-101/attestation.md)
+  * [Badge](overview/sismo-101/badge.md)
+  * [Sismo Account](overview/sismo-101/sismo-account.md)
+  * [Source](overview/sismo-101/source.md)
+  * [Destination](overview/sismo-101/destination.md)
 * [Glossary](overview/glossary.md)
 * [Guides](overview/guides.md)
 * [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
