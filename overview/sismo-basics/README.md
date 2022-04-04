@@ -6,11 +6,11 @@ description: Sismo For Dummies
 
 ## Sismo Overview
 
-Sismo enables anyone to **generate attestations of on-chain claims**. These attestations allow any user to prove a fact or statement originating from one or several of their web3 accounts and to use those claims to build up their reputation or access gated services.\
+Sismo enables anyone to **generate attestations of on-chain claims**. These [attestations](attestation.md) allow any user to prove a fact or statement originating from one or several of their web3 accounts and to use those claims to build up their reputation or access gated services.\
 \
-To generate those attestations, Sismo requires users to create a secure and shielded [Sismo account](sismo-account.md), and to import several Ethereum/EVM accounts to encrypt and save them. To generate attestations, the user will add some of these imported accounts as source accounts. Depending on the historical and current data linked to the source accounts added, they will then be bale to select a subset of attestations to be generated and to specify a destination account these attestations should be linked to.
+To generate those attestations, Sismo requires users to create a secure and shielded [Sismo account](sismo-account.md), and to import several Ethereum/EVM accounts to encrypt and save them. To generate attestations, the user will add some of these imported accounts as [source accounts](source.md). Depending on the historical and current data linked to the source accounts added, they will then be able to select a subset of attestations to be generated and to specify a [destination account](destination.md) these attestations should be linked to.
 
-The initial release of Sismo will package those attestations in Sismo badges (non-transferrable NFTs) that prove that a user owns accounts fulfilling a specific set of requirements. Endless possibilities in terms of badges can be explored to aggregate one's on-chain history and attest any type of on-chain activity.
+The initial release of Sismo will package those attestations in [Sismo badges](badge.md) (non-transferrable NFTs) that prove that a user owns accounts fulfilling a specific set of requirements. Endless possibilities in terms of badges can be explored to aggregate one's on-chain history and attest any type of on-chain activity.
 
 ## How can Sismo preserve my privacy?
 
