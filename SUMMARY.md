@@ -35,13 +35,13 @@
 
 ## Integrations
 
-* [Building with Sismo](integrations/building-with-sismo.md)
+* [Types of Integrations](integrations/types-of-integrations.md)
 
 ## Developers
 
 * [Deployed Contracts](developers/deployed-contracts/README.md)
-  * [Contract #1](developers/deployed-contracts/contract-1.md)
-  * [Contract #2](developers/deployed-contracts/contract-2.md)
+  * [Contract #1](developers/deployed-contracts/zk-badge-minter.md)
+  * [Contract #2](developers/deployed-contracts/sismo-controller.md)
 
 ## Links
 

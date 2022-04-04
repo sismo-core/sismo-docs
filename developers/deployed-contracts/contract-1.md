@@ -1,2 +1,0 @@
-# ZK Badge Minter
-
