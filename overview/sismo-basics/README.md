@@ -30,7 +30,7 @@ However, if Sismo is used without protecting oneself upstream and downstream, th
 * **Distribute your attestations and badges on multiple destination accounts**\
   ****If you claim too many specific facts on a single destination account, it could be easy for anyone to identify you with a simple cross-checking of the claims.
 
-{% hint style="info" %}
+{% hint style="warning" %}
 **Example**\
 "I own a CryptoPunk, I own more than 200 ETH and I submitted 3 proposals to Aave DAO."&#x20;
 
