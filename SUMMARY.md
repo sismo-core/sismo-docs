@@ -7,24 +7,26 @@
 * [Main Sismo Concepts](overview/main-sismo-concepts/README.md)
   * [Attestation](overview/main-sismo-concepts/attestation.md)
   * [Badge](overview/main-sismo-concepts/badge.md)
-  * [Sismo account](overview/main-sismo-concepts/sismo-account.md)
+  * [Sismo Account](overview/main-sismo-concepts/sismo-account.md)
   * [Source](overview/main-sismo-concepts/source.md)
   * [Destination](overview/main-sismo-concepts/destination.md)
 * [Glossary](overview/glossary.md)
 * [Guides](overview/guides.md)
 * [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
 
-## ARCHITECTURE
+## Architecture
 
+* [Architecture overview](architecture/architecture-overview.md)
 * [Sismo Architecture](architecture/sismo-architecture.md)
 * [Sismo Account](architecture/sismo-account.md)
+* [Sismo Account](architecture/sismo-account-1.md)
 * [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
-* [Sismo Attestations State](protocol/sismo-attestations-state.md)
 * [Claiming Protocols](protocol/claiming-protocols/README.md)
   * [SMCP](protocol/claiming-protocols/smcp.md)
   * [ZK-SMCP](protocol/claiming-protocols/zk-smcp.md)
 * [Claims Data](architecture/claims-data.md)
 * [Attesters](protocol/attesters.md)
+* [Sismo Attestations State](protocol/sismo-attestations-state.md)
 * [Badge Contract](protocol/badge-contract.md)
 
 ## Governance
