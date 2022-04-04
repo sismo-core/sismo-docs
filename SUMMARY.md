@@ -40,8 +40,8 @@
 ## Developers
 
 * [Deployed Contracts](developers/deployed-contracts/README.md)
-  * [ZK Badge Minter](developers/deployed-contracts/zk-badge-minter.md)
-  * [Sismo Controller](developers/deployed-contracts/sismo-controller.md)
+  * [Contract #1](developers/deployed-contracts/contract-1.md)
+  * [Contract #2](developers/deployed-contracts/contract-2.md)
 
 ## Links
 
