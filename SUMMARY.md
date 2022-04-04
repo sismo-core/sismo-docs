@@ -24,7 +24,8 @@
   * [ZK-SMCP (Zero Knowledge Simple Merkle Claiming Protocol)](architecture/claiming-protocols/zk-smcp-zero-knowledge-simple-merkle-claiming-protocol.md)
 * [Claims Data](architecture/claims-data.md)
 * [Attesters](protocol/attesters.md)
-* [Sismo Attestations State](protocol/sismo-attestations-state.md)
+* [Sismo Attestations State](architecture/sismo-attestations-state/README.md)
+  * [Attestation Standard Format](architecture/sismo-attestations-state/attestation-standard-format.md)
 * [Badge Contract](protocol/badge-contract.md)
 
 ## Governance
