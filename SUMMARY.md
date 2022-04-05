@@ -2,46 +2,18 @@
 
 * [What is Sismo?](README.md)
 
-## Overview
-
-* [Sismo Basics](overview/sismo-basics/README.md)
-  * [Attestation](overview/sismo-basics/attestation.md)
-  * [Badge](overview/sismo-basics/badge.md)
-  * [Sismo Account](overview/sismo-basics/sismo-account.md)
-  * [Source](overview/sismo-basics/source.md)
-  * [Destination](overview/sismo-basics/destination.md)
-* [Glossary](overview/glossary.md)
-* [Guides](overview/guides.md)
-* [FAQ](https://sismo.notion.site/Sismo-FAQ-61f77eb4f23648adb06bb54f1eceb777)
-
 ## Architecture
 
-* [Architecture overview](architecture/architecture-overview.md)
-* [Sismo Account Module](architecture/sismo-account-module.md)
 * [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
+* [Sismo Attestations State](architecture/sismo-attestations-state/README.md)
+  * [Attestation Standard Format](architecture/sismo-attestations-state/attestation-standard-format.md)
+* [Attesters](protocol/attesters.md)
 * [Claiming Protocols](protocol/claiming-protocols/README.md)
   * [SMCP](protocol/claiming-protocols/smcp.md)
   * [ZK-SMCP (Zero Knowledge Simple Merkle Claiming Protocol)](architecture/claiming-protocols/zk-smcp-zero-knowledge-simple-merkle-claiming-protocol.md)
 * [Claims Data](architecture/claims-data.md)
-* [Attesters](protocol/attesters.md)
-* [Sismo Attestations State](architecture/sismo-attestations-state/README.md)
-  * [Attestation Standard Format](architecture/sismo-attestations-state/attestation-standard-format.md)
 * [Badge Contract](protocol/badge-contract.md)
-
-## Governance
-
-* [Sismo DAO](governance/sismo-dao.md)
-* [Governance Process](governance/governance-process.md)
-
-## Integrations
-
-* [Types of Integrations](integrations/types-of-integrations.md)
-
-## Developers
-
-* [Deployed Contracts](developers/deployed-contracts/README.md)
-  * [Contract #1](developers/deployed-contracts/zk-badge-minter.md)
-  * [Contract #2](developers/deployed-contracts/sismo-controller.md)
+* [📖 Glossary](architecture/glossary.md)
 
 ## Links
 

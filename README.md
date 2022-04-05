@@ -56,6 +56,6 @@ Sismo DAO is a **protocol DAO** launched in October 2021 to progressively overse
 
 It is currently in charge of the allocation of Sismo DAO treasury and will move step by step towards an administrative role over Sismo Attestation Protocol.
 
-{% content-ref url="governance/sismo-dao.md" %}
-[sismo-dao.md](governance/sismo-dao.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
