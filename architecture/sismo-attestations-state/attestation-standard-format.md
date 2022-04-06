@@ -1,2 +1,0 @@
-# Attestation Standard Format
-

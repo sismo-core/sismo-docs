@@ -6,7 +6,7 @@
 
 * [Sismo Attestation Protocol](protocol/sismo-attestation-protocol.md)
 * [Sismo Attestations State](architecture/sismo-attestations-state/README.md)
-  * [Attestation Standard Format](architecture/sismo-attestations-state/attestation-standard-format.md)
+  * [Standard Attestation Format](architecture/sismo-attestations-state/standard-attestation-format.md)
 * [Attesters](protocol/attesters.md)
 * [Claiming Protocols](protocol/claiming-protocols/README.md)
   * [SMCP](protocol/claiming-protocols/smcp.md)
