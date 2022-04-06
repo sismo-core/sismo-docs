@@ -6,7 +6,7 @@ description: Where claims are proven and verified
 
 A **Claiming Scheme** enables users to generate proofs for a defined set of claims (such as "I claim that I own an account that holds a Cryptopunk").
 
-//DIAGRAM//
+![](<../../.gitbook/assets/Sismo Claiming Scheme (1).png>)
 
 Each claiming scheme is constituted of:&#x20;
 
@@ -16,15 +16,11 @@ Each claiming scheme is constituted of:&#x20;
   * A prover: code that enables users generate proofs from the claiming data, _(e.g I own an address from the list of cryptopunk owners)_
   * A verifier: code that enables anyone to check proofs and validate claims
 
-There are currently two Claiming Schemes maintained by Sismo Genesis Team:&#x20;
-
-* Simple Merkle Claiming Scheme (SMCS)
+There are currently 2 Claiming Schemes maintained by Sismo Genesis Team:
 
 {% content-ref url="smcs-simple-merkle-claiming-scheme.md" %}
 [smcs-simple-merkle-claiming-scheme.md](smcs-simple-merkle-claiming-scheme.md)
 {% endcontent-ref %}
-
-* Zero Knowledge Simple Merkle Claiming Scheme (ZK-SMCS)
 
 {% content-ref url="zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md" %}
 [zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md](zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md)
