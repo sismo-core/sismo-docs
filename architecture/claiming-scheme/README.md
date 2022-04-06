@@ -1,0 +1,35 @@
+---
+description: Where claims are proven and verified
+---
+
+# Claiming Scheme
+
+A **Claiming Scheme** enables users to generate proofs for a defined set of claims (such as "I claim that I own an account that holds a Cryptopunk").
+
+//DIAGRAM//
+
+Each claiming scheme is constituted of:&#x20;
+
+* **Claiming Data**
+  * A database which contains supported claims data _(e.g a merkle tree of cryptopunk owners)_
+* **Proving Scheme** comprised of:
+  * A prover: code that enables users generate proofs from the claiming data, _(e.g I own an address from the list of cryptopunk owners)_
+  * A verifier: code that enables anyone to check proofs and validate claims
+
+There are currently two Claiming Schemes maintained by Sismo Genesis Team:&#x20;
+
+* Simple Merkle Claiming Scheme (SMCS)
+
+{% content-ref url="smcs-simple-merkle-claiming-scheme.md" %}
+[smcs-simple-merkle-claiming-scheme.md](smcs-simple-merkle-claiming-scheme.md)
+{% endcontent-ref %}
+
+* Zero Knowledge Simple Merkle Claiming Scheme (ZK-SMCS)
+
+{% content-ref url="zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md" %}
+[zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md](zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md)
+{% endcontent-ref %}
+
+Both consume the same public and auditable claiming data, stored as account merkle trees and maintained by Sismo Genesis Team.
+
+SMCS is based on public merkle proofs while ZK-SMCS generate and verify merkle proofs in the form of SNARKs, guaranteeing privacy for the user making the claim.
