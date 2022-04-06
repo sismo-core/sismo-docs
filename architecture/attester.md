@@ -1,6 +1,8 @@
-# Attesters
+# Attester
 
-An **Attester** is a smart contract implementing the verifier of a claiming protocol. It generates attestations after verifying the claims and their proofs provided by the user.
+An **Attester** is a smart contract implementing the verifier of a [Claiming Scheme](claiming-protocol/). It generates attestations after verifying the claims and their proofs provided by the user.
+
+// DIAGRAM //
 
 Once a claim is verified, the attester records a corresponding attestation by writing in the correct attestation collection associated with the claim.
 
@@ -10,4 +12,4 @@ Specific rules can be set up in the attester such as allowing for the renewal of
 
 Each claiming protocol will require at least one attester per registry per host (where the attestation is recorded : blockchain or database).
 
-For example, the first two claiming protocols maintained by Sismo (SMCP and ZK-SMCP) are deployed with two authorized attesters each (one for Ethereum and one for Polygon).
+For example, the first two claiming protocols maintained by Sismo (SMCP and ZK-SMCP) will be first deployed with one authorized attester per blockchain supported.

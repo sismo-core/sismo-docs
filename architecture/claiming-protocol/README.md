@@ -2,13 +2,13 @@
 description: Where claims are proven and verified
 ---
 
-# Claiming Scheme
+# Claiming Protocol
 
-A **Claiming Scheme** enables users to generate proofs for a defined set of claims (such as "I claim that I own an account that holds a Cryptopunk").
+A **Claiming Protocol** enables users to generate proofs for a defined set of claims (such as "I claim that I own an account that holds a Cryptopunk").
 
-![](<../../.gitbook/assets/Sismo Claiming Scheme (1).png>)
+![](<../../.gitbook/assets/Sismo Claiming Scheme (3).png>)
 
-Each claiming scheme is constituted of:&#x20;
+Each claiming protocol is constituted of:&#x20;
 
 * **Claiming Data**
   * A database which contains supported claims data _(e.g a merkle tree of cryptopunk owners)_
@@ -16,14 +16,14 @@ Each claiming scheme is constituted of:&#x20;
   * A prover: code that enables users generate proofs from the claiming data, _(e.g I own an address from the list of cryptopunk owners)_
   * A verifier: code that enables anyone to check proofs and validate claims
 
-There are currently 2 Claiming Schemes maintained by Sismo Genesis Team:
+There are currently 2 Claiming protocols maintained by Sismo Genesis Team:
 
-{% content-ref url="smcs-simple-merkle-claiming-scheme.md" %}
-[smcs-simple-merkle-claiming-scheme.md](smcs-simple-merkle-claiming-scheme.md)
+{% content-ref url="smcp-simple-merkle-claiming-protocol.md" %}
+[smcp-simple-merkle-claiming-protocol.md](smcp-simple-merkle-claiming-protocol.md)
 {% endcontent-ref %}
 
-{% content-ref url="zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md" %}
-[zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md](zk-smcs-zero-knowledge-simple-merkle-claiming-scheme.md)
+{% content-ref url="zk-smcp-zero-knowledge-simple-merkle-claiming-protocol.md" %}
+[zk-smcp-zero-knowledge-simple-merkle-claiming-protocol.md](zk-smcp-zero-knowledge-simple-merkle-claiming-protocol.md)
 {% endcontent-ref %}
 
 Both consume the same public and auditable claiming data, stored as account merkle trees and maintained by Sismo Genesis Team.
