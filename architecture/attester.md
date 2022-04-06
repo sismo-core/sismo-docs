@@ -8,7 +8,7 @@ It triggers the creation or update of an attestation after verifying that a clai
 
 Once a claim is verified, the Attester records the attestation it generates in the correct attestation collection associated with the claim.
 
-Each claim supported by an authorized Attester gets attributed an attestation collection slot in the attester's reserved shard of the SAS.
+Each type of claim supported by an authorized Attester is associated to an attestation collection slot in the attester's reserved shard of the SAS.
 
 An Attester can be configured with rules such as preventing a source to be used multiple times per attestation (by maintaining a Nullifier merkle tree), enabling revokation of attestations (by maintaining a Revoke merkle tree), or any other rule that can be coded into its logic.
 
