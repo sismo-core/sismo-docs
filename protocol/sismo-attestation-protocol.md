@@ -6,7 +6,7 @@ description: Managing the global record of Sismo attestations
 
 **Sismo Attestation Protocol (SAP)** is the overarching protocol defining the set of rules linked to the creation, update and deletion of attestations stored in the [Sismo Attestations State ](../architecture/sismo-attestations-state/)(SAS).
 
-![](<../.gitbook/assets/Sismo Attestation Protocol (1).png>)
+![](<../.gitbook/assets/Sismo Attestation Protocol (2).png>)
 
 [Attestations](../architecture/sismo-attestations-state/standard-attestation-format.md) are user claims (assertions of a statement or fact having occurred on a web3 account) that have been attested and recorded by authorized [Attesters](../architecture/attester.md) in the [Sismo Attestations State ](../architecture/sismo-attestations-state/)(SAS). Only authorized [Attesters](../architecture/attester.md) have writing rights on the SAS.
 
