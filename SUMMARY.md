@@ -27,7 +27,7 @@
 
 * [Attestation Protocols](archive/attestation-protocols.md)
 * [Copy of What is Sismo?](archive/copy-of-what-is-sismo.md)
-* [Sismo Attestations State](archive/sismo-attestations-state.md)
+* [Sismo Attestations State Archive](archive/sismo-attestations-state-archive.md)
 * [Sismo Attestations](archive/sismo-attestations.md)
 * [ZK-SAP Overview](archive/zk-sap-overview.md)
 * [SMPS and ZK-SMPS](archive/smps-and-zk-smps.md)
