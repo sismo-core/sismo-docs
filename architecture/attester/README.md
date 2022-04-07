@@ -44,5 +44,11 @@ A **Claims Datastore** is the source of truth of an Attester. It stores data abo
 
 There are currently 2 instances of Claims Datastore maintained by Sismo Genesis Team:
 
+{% content-ref url="claims-datastore-for-smps.md" %}
+[claims-datastore-for-smps.md](claims-datastore-for-smps.md)
+{% endcontent-ref %}
 
+{% content-ref url="claims-datastore-for-zk-smps.md" %}
+[claims-datastore-for-zk-smps.md](claims-datastore-for-zk-smps.md)
+{% endcontent-ref %}
 
