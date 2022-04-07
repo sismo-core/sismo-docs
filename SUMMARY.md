@@ -8,11 +8,12 @@
 * [Sismo Attestations State](architecture/sismo-attestations-state/README.md)
   * [Standard Attestation Format](architecture/sismo-attestations-state/standard-attestation-format.md)
 * [Attester](architecture/attester/README.md)
-  * [SMPS (Simple Merkle Proving Schemes)](architecture/attester/smps-simple-merkle-proving-schemes.md)
+  * [SMPS (Simple Merkle Proving Scheme)](architecture/attester/smps-simple-merkle-proving-scheme.md)
   * [ZK-SMPS (Zero Knowledge Simple Merkle Proving Scheme)](architecture/attester/zk-smps-zero-knowledge-simple-merkle-proving-scheme.md)
-* [Claiming Protocol](architecture/claiming-protocol/README.md)
-  * [Claiming Data](architecture/claiming-protocol/claiming-data.md)
-* [Badge Contract](protocol/badge-contract.md)
+  * [// Claims Datastore for ZK-SMPS //](architecture/attester/claims-datastore-for-zk-smps.md)
+  * [// Claims Datastore for SMPS //](architecture/attester/claims-datastore-for-smps.md)
+* [Attestation Packager](architecture/attestation-packager/README.md)
+  * [Sismo Badge](architecture/attestation-packager/sismo-badge.md)
 * [📖 Glossary](architecture/glossary.md)
 
 ## Links
@@ -26,6 +27,8 @@
 ## ARCHIVE
 
 * [Attestation Protocols](archive/attestation-protocols.md)
+* [Claiming Protocol](archive/claiming-protocol/README.md)
+  * [Claiming Data](archive/claiming-protocol/claiming-data.md)
 * [Copy of What is Sismo?](archive/copy-of-what-is-sismo.md)
 * [Sismo Attestations State Archive](archive/sismo-attestations-state-archive.md)
 * [Sismo Attestations](archive/sismo-attestations.md)

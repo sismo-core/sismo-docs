@@ -28,8 +28,8 @@ A **Proving Scheme** enables users to generate proofs for a defined set of claim
 
 There are currently 2 types of Proving Schemes maintained by Sismo Genesis Team:
 
-{% content-ref url="smps-simple-merkle-proving-schemes.md" %}
-[smps-simple-merkle-proving-schemes.md](smps-simple-merkle-proving-schemes.md)
+{% content-ref url="smps-simple-merkle-proving-scheme.md" %}
+[smps-simple-merkle-proving-scheme.md](smps-simple-merkle-proving-scheme.md)
 {% endcontent-ref %}
 
 {% content-ref url="zk-smps-zero-knowledge-simple-merkle-proving-scheme.md" %}
@@ -40,7 +40,9 @@ SMPS is based on public merkle proofs while ZK-SMPS generate and verify merkle p
 
 ## Claims Datastore
 
-A **Claims Datastore** is&#x20;
+A **Claims Datastore** is the source of truth of an Attester. It stores data about potential claims (linked to web3 accounts) to be validated in a format adapted to different proving schemes.
+
+There are currently 2 instances of Claims Datastore maintained by Sismo Genesis Team:
 
 
 
