@@ -6,7 +6,7 @@ description: Storing the global record of all Sismo attestations
 
 **Sismo Attestations State** (SAS) is the multi-chain data repository of all attestation collections and individual attestations created through [Sismo Attestation Protocol](../../protocol/sismo-attestation-protocol.md) (SAP).&#x20;
 
-It constitutes the overall set of all attestations registries hosted on different blockchains and databases. One attestation registry will be deployed per blockchain (or offchain database) progressively supported by the SAP.
+It constitutes the overall set of all attestations registries deployed on supported networks . One attestation registry will be deployed per blockchain (or offchain database) progressively supported by the SAP.
 
 ![](<../../.gitbook/assets/Sismo Attestation State.png>)
 

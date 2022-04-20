@@ -43,12 +43,12 @@ An Attester configuration is a setup of an attester with its associated proving 
 
 There are currently 2 Attester configurations maintained by Sismo Genesis Team:
 
-{% content-ref url="zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester-config.md" %}
-[zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester-config.md](zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester-config.md)
+{% content-ref url="zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md" %}
+[zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md](zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md)
 {% endcontent-ref %}
 
-{% content-ref url="smps-simple-merkle-proving-scheme-attester-config.md" %}
-[smps-simple-merkle-proving-scheme-attester-config.md](smps-simple-merkle-proving-scheme-attester-config.md)
+{% content-ref url="smps-simple-merkle-proving-scheme-attester.md" %}
+[smps-simple-merkle-proving-scheme-attester.md](smps-simple-merkle-proving-scheme-attester.md)
 {% endcontent-ref %}
 
 SMPS Attester Config is based on public merkle proofs while ZK-SMPS Attester Config generates and verifies merkle proofs in the form of SNARKs, guaranteeing privacy for the user making the claim.
