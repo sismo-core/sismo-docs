@@ -9,16 +9,8 @@
     owner: 0x123,  // the owner of the attestation
     value: 2,  // the main value of the attestation (balance, score)
     timestamp: 1650320924,  // the date when the attestation has been generated
-    attestationDestination: {  // where the attestation is stored 
-        databaseType: onchain,
-        chainId: 1
-    },
-    attestationOrigin: {  // the initiator of the attestation
-        attester: ZK-SMPS attester,
-        claimId: 5 
-    },
-    extraAttestationData: [], // arbitrary data that has been attested by the attester
-    attestationProof: [] // proof neeeded by external parties to verify validity
+    attester: // origin attester address
+    extraAttestationData: [], // arbitrary data that has been attested by the atteste
 }
 ```
 
