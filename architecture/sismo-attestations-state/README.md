@@ -1,5 +1,5 @@
 ---
-description: Global record of all Sismo attestations
+description: Storing the global record of all Sismo attestations
 ---
 
 # Sismo Attestations State

@@ -1,3 +1,7 @@
+---
+description: Writing in the global record of all Sismo attestations
+---
+
 # Attester
 
 An **Attester** is a smart contract generating and recording attestations in the Sismo Attestations State.&#x20;
@@ -12,43 +16,38 @@ Each type of claim supported by an authorized Attester is associated to an attes
 
 An Attester can be configured with rules such as preventing a source to be used multiple times per attestation (by maintaining a Nullifier merkle tree), enabling revokation of attestations (by maintaining a Revoke merkle tree), or any other rule that can be coded into its logic.
 
-One instance of attester needs to be deployed per Attestations Registry host (blockchain or hosted database.
+One instance of attester needs to be deployed per Attestations Registry host (blockchain or hosted database).
 
-Each Attester is linked to one:&#x20;
+Each Attester is configured to implement the verification part of a specific Proving Scheme and to read data from a Claims Datastore
 
-* **Claims Datastore**
-  * A database which contains supported claims data _(e.g. a merkle tree containing a sub-tree of accounts holding CryptoPunks)_
-* **Proving Scheme** comprised of:
-  * A prover: code that enables users generate proofs from the claims data and source accounts signets, _(e.g I own an address from the list of cryptopunk owners)_
-  * A verifier: code that enables anyone to check this proof and validate the claim.
-
-## Proving Schemes
+### Proving Schemes
 
 A **Proving Scheme** enables users to generate proofs for a defined set of claims (such as "I claim that I own an account that holds a Cryptopunk") and for anyone to verify those proofs.
 
-There are currently 2 types of Proving Schemes maintained by Sismo Genesis Team:
+It is comprised of:
 
-{% content-ref url="smps-simple-merkle-proving-scheme.md" %}
-[smps-simple-merkle-proving-scheme.md](smps-simple-merkle-proving-scheme.md)
+* **A prover**
+  * Code that enables users generate proofs from the claims data and source accounts signets _(e.g I own an address from the list of cryptopunk owners)._
+* **A verifier**
+  * Code that enables anyone to check this proof and validate the claim.
+
+### Claims Datastore
+
+A **Claims Datastore** is the source of truth of an Attester. It stores data about potential claims (linked to web3 accounts) to be validated in a format adapted to different proving schemes _(e.g. a merkle tree containing a sub-tree of accounts holding CryptoPunks)._
+
+## Current Attester Configurations
+
+An Attester configuration is a setup of an attester with its associated proving scheme and claims datastore.
+
+There are currently 2 Attester configurations maintained by Sismo Genesis Team:
+
+{% content-ref url="zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester-config.md" %}
+[zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester-config.md](zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester-config.md)
 {% endcontent-ref %}
 
-{% content-ref url="zk-smps-zero-knowledge-simple-merkle-proving-scheme.md" %}
-[zk-smps-zero-knowledge-simple-merkle-proving-scheme.md](zk-smps-zero-knowledge-simple-merkle-proving-scheme.md)
+{% content-ref url="smps-simple-merkle-proving-scheme-attester-config.md" %}
+[smps-simple-merkle-proving-scheme-attester-config.md](smps-simple-merkle-proving-scheme-attester-config.md)
 {% endcontent-ref %}
 
-SMPS is based on public merkle proofs while ZK-SMPS generate and verify merkle proofs in the form of SNARKs, guaranteeing privacy for the user making the claim.
-
-## Claims Datastore
-
-A **Claims Datastore** is the source of truth of an Attester. It stores data about potential claims (linked to web3 accounts) to be validated in a format adapted to different proving schemes.
-
-There are currently 2 instances of Claims Datastore maintained by Sismo Genesis Team:
-
-{% content-ref url="claims-datastore-for-smps.md" %}
-[claims-datastore-for-smps.md](claims-datastore-for-smps.md)
-{% endcontent-ref %}
-
-{% content-ref url="claims-datastore-for-zk-smps.md" %}
-[claims-datastore-for-zk-smps.md](claims-datastore-for-zk-smps.md)
-{% endcontent-ref %}
+SMPS Attester Config is based on public merkle proofs while ZK-SMPS Attester Config generates and verifies merkle proofs in the form of SNARKs, guaranteeing privacy for the user making the claim.
 
