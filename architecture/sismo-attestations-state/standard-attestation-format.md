@@ -7,10 +7,11 @@
 ```
 {
     owner: 0x123,  // the owner of the attestation
-    value: 2,  // the main value of the attestation (balance, score)
+    collectionId: 3, // ex: punk owner
+    value: 2,  // the value of the attestation (balance, score)
     timestamp: 1650320924,  // the date when the attestation has been generated
     attester: // origin attester address
-    extraAttestationData: [], // arbitrary data that has been attested by the atteste
+    extraAttestationData: [], // arbitrary data added by the attester
 }
 ```
 
