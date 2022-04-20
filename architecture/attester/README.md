@@ -14,11 +14,13 @@ Once a claim is verified, the Attester records the attestation it generates in t
 
 Each type of claim supported by an authorized Attester is associated to an attestation collection slot in the attester's reserved shard of the SAS.
 
-An Attester can be configured with rules such as preventing a source to be used multiple times per attestation (by maintaining a Nullifier merkle tree), enabling revokation of attestations (by maintaining a Revoke merkle tree), or any other rule that can be coded into its logic.
+An Attester can be configured with attestation rules such as preventing a source to be used multiple times per attestation (by maintaining a Nullifier merkle tree), enabling revokation of attestations (by maintaining a Revoke merkle tree), or any other rule that can be coded into its logic.
 
 One instance of attester needs to be deployed per Attestations Registry host (blockchain or hosted database).
 
-Each Attester is configured to implement the verification part of a specific Proving Scheme and to read data from a Claims Datastore
+Each Attester is configured to implement the verification part of a specific Proving Scheme and to read data from a Claims Datastore.
+
+Anyone can implement and configure its own Attester and get it authorized by Sismo Attestation Protocol.
 
 ### Proving Schemes
 
@@ -35,7 +37,7 @@ It is comprised of:
 
 A **Claims Datastore** is the source of truth of an Attester. It stores data about potential claims (linked to web3 accounts) to be validated in a format adapted to different proving schemes _(e.g. a merkle tree containing a sub-tree of accounts holding CryptoPunks)._
 
-## Current Attester Configurations
+## Current "Attester Configurations" (placeholder)
 
 An Attester configuration is a setup of an attester with its associated proving scheme and claims datastore.
 
@@ -51,3 +53,4 @@ There are currently 2 Attester configurations maintained by Sismo Genesis Team:
 
 SMPS Attester Config is based on public merkle proofs while ZK-SMPS Attester Config generates and verifies merkle proofs in the form of SNARKs, guaranteeing privacy for the user making the claim.
 
+An Attester Configuration can set up a new set of attestation rules, a new proving scheme or a proprietary claims datastore or simply be a fork of an existing Attester Configuration changing one of these.
