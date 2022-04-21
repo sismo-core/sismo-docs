@@ -35,6 +35,8 @@ With current technological limitations, verifying ECDSA signatures of Ethereum a
 
 A module called the Commitment Mapper acts a a trusted third party to map a user's source Ethereum account to an EdDSA public key, allowing for faster verification in the zk-SNARK circuit.
 
-In practice, a user would first prove ownership of an Ethereum account to the Commitment mapper, generate a secret, hash it and share it with the Commitment Mapper. The Commitment Mapper would store that proof of ownerhip^sxcwcwds\
+In practice, a user will first prove ownership of an Ethereum account to the Commitment mapper, generate a secret, hash it and share it with the Commitment Mapper. The Commitment Mapper will store that proof of ownership and secret hash before sending back to the user a mapping receipt and an EdDSA private key. The user can then use his secret and the EdDSA private key in the zk-SNARK circuit directly allowing for faster verification while still being mapped to an Ethereum account.
+
+This has the advantage of being an alternative to a "Semaphore-like" commitment step, thus  maximizing the anonymity set and allowing for updatable claims data set at the expense of the addition a trusted mapper.\
 
 
