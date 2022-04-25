@@ -21,7 +21,7 @@ It checks claims coming from a single source account (no aggregation of source a
 * **Duplicate attestation prevention**
   * The attester stores external nullifiers in an invalidation merkle tree to prevent users from generating the same attestation more than once from the same source accounts.&#x20;
 * **Revocation feature**
-  * The attester stores attestation revocation in a revocation merkle tree to allow users to revoke an attestation and bypass the "duplicate attestation prevention" mechanism and to enable them to generate a new attestation if required.
+  * The attester stores attestation revocations in a revocation merkle tree to allow users to revoke an attestation and bypass the "duplicate attestation prevention" mechanism and to enable them to generate a new attestation if required.
 
 ## Proving Scheme
 
