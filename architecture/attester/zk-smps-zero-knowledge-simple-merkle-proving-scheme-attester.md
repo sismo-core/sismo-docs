@@ -29,11 +29,13 @@ It checks claims coming from a single source account (no aggregation of source a
 
 ## Claims Datastore
 
-The ZK-SMPS claims data store is a merkle tree, called the World Merkle Tree, comprised of multiple sub-trees each associated with a specific type of claim.&#x20;
+The ZK-SMPS claims data store is a merkle tree, called the World Merkle Tree, comprised of multiple sub-trees each associated with a specific type of claim.
 
-// IMPROVED WORLD TREE DIAGRAM //
+![](<../../.gitbook/assets/World Merkle Tree.png>)
 
 These sub-trees are called Account Merkle Trees and contain a list of all accounts able to make a specific type of claim associated to a value. Each Account Merkle Tree is located inside the WorldMerkleTree using the position of its root called the Sub Tree Position.&#x20;
+
+![](<../../.gitbook/assets/Account Merkle Tree.png>)
 
 Account Merkle Trees can be updated periodically according to each type of claims data they are recording. Their veracity can be verified independently by generating them locally.
 
