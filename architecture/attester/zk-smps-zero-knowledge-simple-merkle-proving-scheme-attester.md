@@ -39,12 +39,14 @@ Account Merkle Trees can be updated periodically according to each type of claim
 
 ## Commitment Mapper
 
-With current technological limitations, verifying ECDSA signatures of Ethereum addresses inside a zk-SNARK circuit takes a significant time ([circom-ecdsa](https://github.com/0xPARC/circom-ecdsa/blob/master/README.md) 1.5M constraint and 1Go proving key). To solve this issue, Sismo uses the EdDSA digital signature scheme verification instead, which reduces considerably the verification time (5k constraint) to a value more compatible with standard user experience accessibility levels.\
-\
-// COMMITMENT MAPPER DIAGRAM //
+With current technological limitations, verifying ECDSA signatures of Ethereum addresses inside a zk-SNARK circuit takes a significant time ([circom-ecdsa](https://github.com/0xPARC/circom-ecdsa/blob/master/README.md) 1.5M constraint and 1Go proving key). To solve this issue, Sismo uses the EdDSA digital signature scheme verification instead, which reduces considerably the verification time (5k constraint) to a value more compatible with standard user experience accessibility levels.
 
-A module called the Commitment Mapper acts a a trusted third party to map a user's source Ethereum account to an EdDSA public key, allowing for faster verification in the zk-SNARK circuit.
+To tackle this issue in the ZK-SMPS Attester, a module called the Commitment Mapper acts a a trusted third party to map a user's source ECDSA Ethereum account to a secret hash using its own EdDSA public key, allowing for faster verification in the zk-SNARK circuit.
 
-In practice, a user will first prove ownership of an Ethereum account to the Commitment mapper, generate a secret, hash it and share it with the Commitment Mapper. The Commitment Mapper will store that proof of ownership and secret hash before sending back to the user a mapping receipt and an EdDSA private key. The user can then use his secret and the EdDSA private key in the zk-SNARK circuit directly allowing for faster verification while still being mapped to an Ethereum account.
+![](<../../.gitbook/assets/Commitment Mapper (4).png>)
+
+In practice, a user will first prove ownership of an Ethereum account to the Commitment mapper, generate a secret, hash it and share it with the Commitment Mapper. The Commitment Mapper will verify the ownership of the source account, map and store that proof of ownership and secret hash before sending back to the user a commitment receipt of the mapping encrypted with its EdDSA private key.&#x20;
+
+The user can then use this commitment receipt in the zk-SNARK circuit directly allowing for faster verification.
 
 This has the advantage of being an alternative to a "Semaphore-like" commitment step, thus  maximizing the anonymity set and allowing for updatable claims data set at the expense of the addition a trusted mapper.
