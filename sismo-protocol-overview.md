@@ -118,7 +118,39 @@ contract Attester {
 
 #### Proving Scheme
 
+Let's take the ZKSMPS Attester as an example. This specific attester user ZK Proofs (generated via circom).
 
+```solidity
+constract ZKSMPSAttester is Attester {
+    function _verifyClaim(
+        Claim memory claim,
+        address destination,
+        bytes calldata proofData
+    ) internal view virtual override {
+        ZKSMPSProofData memory snarkProofData = abi.decode(proofData, (ZKSMPSProofData));
+
+        // validates that snark input corresponds to the claim
+        snarkProofData.input._validateInput(claim);
+        snarkProofData._verifyCircomGroth16Proof(_verifier);
+    }
+}
+```
+
+#### Badges
+
+Badges are the NFT representation of an attestation. The value of an attestation is encoded as the balance of the Badge.
+
+```solidity
+contract DefaultBadges is ERC1155 {
+    IAttestationsRegistry immutable ATTESTATIONS_REGISTRY;
+
+    function balanceOf(address account, uint256 id) public view virtual override returns (uint256) {
+        return ATTESTATIONS_REGISTRY.getAttestation(id, account).claim.value;
+    }
+    // Badges.balanceOf(0x2, BAYCOwnershipCollectionId) = 5
+    // Equivalent to 0x2 has the BAYCOwnership Attestation, with value 5
+}so
+```
 
 {% content-ref url="broken-reference" %}
 [Broken link](broken-reference)
