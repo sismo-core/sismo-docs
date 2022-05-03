@@ -14,20 +14,24 @@ Attestation registries feature **attestation collections.** A collection regroup
 Sismo Governance is in charge of curating attesters that are allowed to record attestations in Sismo Attestations Registries.
 
 {% hint style="info" %}
-We will illustrate the following overview section with the example of a user who owns 5 BAYC NFTs on `0x1`.&#x20;
+Let's illustrate the following section with the example of a user who owns 5 BAYC NFTs on `0x1`.&#x20;
 
 This user wants to generate an attestation of BAYC ownership, through our first authorized attester (It is called ZK-SMPS Attester, it is an attester that verifies user claims using ZK Proofs. It does not leak the source of data `0x1`).&#x20;
 
-They want to receive the attestation on `0x2`, on Ethereum mainnet's Sismo Attestation Registry (SAR).
+The attestation should be sent on Ethereum mainnet, to one of their other account, `0x2.`
 
 For this, the user will&#x20;
 
 * Make a claim (claim of BAYNC NFT Ownership)
-* Generate a proof from `0x1`(via the offchain ZK Snark prover of the ZK-SMPS Proving Scheme)
-* Send this claim, along its proof to the attester (smart contract which verifies the claim against the ZK Proof and record the attestation in the SAR)
-* Receive a new attestation (and its corresponding NFT Badge) on `0x2, mainnet.`
+* Generate a proof to back its claim, from its source account `0x1`(via the offchain ZK Snark prover of the ZK-SMPS Proving Scheme)
+* Send the proof to the attester (smart contract which verifies the claim against the proof and records the attestation in the registry)
+* Receive a new attestation on mainnet (and its corresponding NFT Badge) on `0x2,` its chosen destination account.
 
 They can now use `0x2`to attest they have BAYC NFTs without leaking `0x1!`
+
+Combined with Sign-In-With-Ethereum, they can effectively just reveal that they own BAYC and nothing more when joining discords, telegram groups or snapshot votes.
+
+``
 {% endhint %}
 
 #### Attestations
