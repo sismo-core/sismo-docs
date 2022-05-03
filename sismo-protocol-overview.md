@@ -25,7 +25,7 @@ It means the user will&#x20;
 * Make a claim (claim of BAYNC NFT Ownership)
 * Generate a proof using `0x1`(via the offchain ZK Snark prover of the ZK-SMPS Proving Scheme)
 * Send this claim, along its proof to the attester (smart contract which verify the claim against the ZK Proof and write the attestation in the SAR)
-* Receive a new Attestation and its corresponding Badge on `0x2, mainnet.`
+* Receive a new Attestation and its corresponding NFT Badge on `0x2, mainnet.`
 
 It means they can now use `0x2`to attest they have BAYC NFTs without leaking `0x1`
 {% endhint %}
