@@ -5,13 +5,13 @@ coverY: 0
 
 # Sismo Protocol Overview
 
-The Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations stored in Sismo Attestations Registries (SARs).
+The Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations recorded in Sismo Attestations Registries (SARs).
 
 An **attestation** is a user **claim**, issued and verified by an **attester** (smart contract).
 
 Attestation Registries feature **attestation collections.** A collection regroups owners of the same type of attestation, similarly to tokens in the ERC1155 NFT standard.
 
-Sismo Governance is in charge of curating attesters that are allowed to write attestations in Sismo Attestations Registries.
+Sismo Governance is in charge of curating attesters that are allowed to record attestations in Sismo Attestations Registries.
 
 {% hint style="info" %}
 We will illustrate the following overview section with the example of a user who owns 5 BAYC NFTs on `0x1`.&#x20;
@@ -24,7 +24,7 @@ For this, the user will&#x20;
 
 * Make a claim (claim of BAYNC NFT Ownership)
 * Generate a proof from `0x1`(via the offchain ZK Snark prover of the ZK-SMPS Proving Scheme)
-* Send this claim, along its proof to the attester (smart contract which verify the claim against the ZK Proof and write the attestation in the SAR)
+* Send this claim, along its proof to the attester (smart contract which verify the claim against the ZK Proof and record the attestation in the SAR)
 * Receive a new attestation (and its corresponding NFT Badge) on `0x2, mainnet.`
 
 They can now use `0x2`to attest they have BAYC NFTs without leaking `0x1!`
@@ -33,12 +33,13 @@ They can now use `0x2`to attest they have BAYC NFTs without leaking `0x1!`
 #### Attestations
 
 ```solidity
-// Attestation format, context is the global attestation registry
+// Attestation format, context is the global attestation registry deployed on an EVM
 struct Attestation
 {
     address owner;          // The receiver of the attestation (0x2)
-    uint256 chainid;        // The chainId of the network (1 for mainnet)
-    address attester;       // address of the attester (ZK-SMPS Attester)
+    (uint256 chainid;)      // Implicit: the chainId of the network (1 for mainnet)
+    address attester;       // address of the attester which verified the claim
+                            // and recorded the attestation (ZK-SMPS Attester)
     uint256 collectionId;   // Id of the attestation collection 
                             //(BAYC Owners Attestations by ZK-SMPS Attester)
     Claim claim;            // underlying claim (owns BAYC NFT)
@@ -71,15 +72,15 @@ Sismo Attestation Registries (SARs) are smart contracts deployed on EVM chains (
 
 Attestations are regrouped under attestation collections.&#x20;
 
-The protocol maintains a set of authorised attesters which are smart contracts allowed to write attestations Sismo Attestation Registries. Each attester are given a range of collection Ids they can write into.
+The protocol maintains a set of authorised attesters which are smart contracts allowed to record attestations Sismo Attestation Registries. Each attester are given a range of collection Ids they can write into.
 
 ```solidity
 interface IAttestationsRegistry {
-    // only authorized Attester can write attestations
-    function writeAttestation(Attestation memory attestation) external;
+    // only authorized Attester can record attestations in the registry
+    function recordAttestation(Attestation memory attestation) external;
     
-    // function to authorize a new attester to write attestations in a specific range
-    // of collections
+    // function to authorize a new attester to record attestations 
+    // in a specific set of collections (range of collectionIds)
     function authorizeRange(
         address attester,
         uint256 firstCollectionId,
@@ -95,7 +96,7 @@ interface IAttestationsRegistry {
 
 #### Attesters
 
-Attesters are smart contracts with write access to Sismo Attestation Registries. They verify user claims that are backed by proofs. They generate attestations from user claims.
+Attesters are smart contracts with write access to Sismo Attestation Registries. They verify user claims that are backed by proofs. They generate attestations from user claims and record them in attestations collections.
 
 ```solidity
 contract Attester {
