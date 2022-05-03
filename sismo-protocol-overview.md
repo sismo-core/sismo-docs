@@ -7,7 +7,7 @@ coverY: 0
 
 The Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations recorded in Sismo Attestations Registries (SARs).
 
-An **attestation** is a user **claim**, issued and verified by an **attester** smart contract.
+An **attestation** is a user **claim** that was verified by an **attester** and recorded into an **attestation registry**.
 
 Attestation Registries feature **attestation collections.** A collection regroups owners of the same type of attestation, similarly to tokens in the ERC1155 NFT standard.
 
