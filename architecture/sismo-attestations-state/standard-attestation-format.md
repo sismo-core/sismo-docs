@@ -6,7 +6,8 @@
 
 ```
 {
-    owner: 0x123,  // the owner of the attestation
+    // Recipient of the attestation
+    owner: 0xB0ee4D74dE9f4831e87D0E11D6f572cb755A3cbA,
     collectionId: 3, // ex: punk owner
     value: 2,  // the value of the attestation (balance, score)
     timestamp: 1650320924,  // the date when the attestation has been generated

@@ -1,6 +1,7 @@
 # Table of contents
 
 * [What is Sismo?](README.md)
+* [Sismo Protocol Overview](sismo-protocol-overview.md)
 
 ## Architecture
 
@@ -27,7 +28,6 @@
 * [Attestation Protocols](archive/attestation-protocols.md)
 * [Claiming Protocol](archive/claiming-protocol/README.md)
   * [Claiming Data](archive/claiming-protocol/claiming-data.md)
-* [Copy of What is Sismo?](archive/copy-of-what-is-sismo.md)
 * [Sismo Attestations State Archive](archive/sismo-attestations-state-archive.md)
 * [Sismo Attestations](archive/sismo-attestations.md)
 * [ZK-SAP Overview](archive/zk-sap-overview.md)
@@ -38,5 +38,5 @@
   * [Attestation Protocols (+ZK-SAP)](archive/sismo-archi/attestation-protocols-+zk-sap.md)
   * [Sismo Attestations (+ SMOD)](archive/sismo-archi/sismo-attestations-+-smod.md)
 * [Why Sismo?](archive/why-sismo.md)
-* [\[Archive\] What is Sismo?](archive/archive-what-is-sismo.md)
 * [What they are looking for](archive/what-they-are-looking-for.md)
+* [archive hadrien may 2022](archive/archive-hadrien-may-2022.md)

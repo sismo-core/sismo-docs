@@ -1,42 +1,6 @@
----
-cover: ../.gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
-coverY: 0
----
+# archive hadrien may 2022
 
-# Copy of What is Sismo?
-
-## Sismo's Core Mission
-
-Sismo's core mission is to develop **an attestation protocol focused on decentralization, usability and privacy**. The Sismo Attestation Protocol allows anyone to generate attestations from their personal data. Sismo attestations are easy to integrate in web2 and web3 apps as a reputation and access control tool.
-
-Sismo aims to contribute to the emergence of a decentralised version of a Single sign on (SSO) system, based on web3 login and user-generated attestations.
-
-Using Sismo Wallet, one can generate, from their imported web3 source accounts, a wide range of attestations such as "Owns of BAYC NFT", "Voted 2 times in ENS DAO" or "Sent more than 100 transactions on Ethereum".
-
-Sismo Attestations are to be initially recorded on EVM chains, packaged as badges by default. Sismo badges are NFTs (ERC-1155, non-transferrable by default) wrapping the data of Sismo Attestations. This enables Sismo Attestations to be natively integrated in applications already using NFTs as a reputation system component, to control access to their services or to curate an identity.
-
-Sismo especially features ZK Attestations: they are attestions, powered by Zero Knowledge technology, that do not reveal the source of the attested data.
-
-MAIN SCHEME
-
-Wallet => Attestations <= packages]
-
-## Sismo Attestation Protocol
-
-Sismo Attestation Protocol (SAP) is the set of rules linked to the creation, update and deletion of attestations stored in the Sismo Attestations State (SAS).
-
-### Sismo Attestations State (SAS)
-
-The Sismo Attestations State (SAS) is the multi-chain database of all attestation collections created through Sismo Attestation Protocol (SAP).\
-The protocol maintains a set of authorised attesters which are smart contracts allowed to write attestations in the SAS.&#x20;
-
-The SAS has 2^256 attestation collections slots, divided in shards.&#x20;
-
-Authorised attesters get each a dedicated shard in the SAS and receive write access on the underlying attestation collections.&#x20;
-
-\=> Link to SAS
-
-### Claiming Protocols
+#### Proving Scheme
 
 A claiming protocol enables users to generate proofs for a defined number of claims such as "Owner of Cryptopunk".&#x20;
 
@@ -95,7 +59,3 @@ We will develop and improve the Sismo Wallet as well as libraries so Sismo attes
 Sismo DAO is a **protocol DAO** launched in October 2021 to progressively oversee and manage the development and maintenance of Sismo Protocol. It started as a social DAO, gathering curated generations of members sharing similar interests about privacy, reputation, identity and zero-knowledge technologies.&#x20;
 
 It is currently in charge of the allocation of Sismo DAO treasury and will move step by step towards an administrative role over Sismo Protocol.
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
