@@ -108,8 +108,8 @@ contract Attester {
         // generate the attestation from the claim
         Attestation memory attestation = 
             _constructAttestation(claim, destination, proofData);
-        // writing in the attestation registry
-        ATTESTATIONS_REGISTRY.writeAttestation(attestation);
+        // recording the attestation, writing in the attestation registry
+        ATTESTATIONS_REGISTRY.recordAttestation(attestation);
         // optional (e.g register nullifier)
         _afterAttest(claim, destination, proofData);
     }
