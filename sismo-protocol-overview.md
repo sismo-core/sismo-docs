@@ -11,7 +11,7 @@ An **attestation** is a user **claim**, issued and verified by an **attester** (
 
 Similarly to the NFT standard ERC1155 and its NFT collections, Attestation Registries feature **attestation collections.** A collection regroups owners of the same type of attestation.
 
-Sismo Governance can authorize/unauthorize new attesters to insert/update attestations in specific attestation collections of Sismo Attestations Registries.
+Sismo Governance is in charge of curating attesters that are allowed to write attestations in Sismo Attestations Registries.
 
 {% hint style="info" %}
 We will illustrate this overview section with the example of a user who owns 5 BAYC NFTs on `0x1`.&#x20;
