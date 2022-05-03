@@ -7,7 +7,7 @@ coverY: 0
 
 The Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations recorded in Sismo Attestations Registries (SARs).
 
-An **attestation** is a user **claim**, issued and verified by an **attester** (smart contract).
+An **attestation** is a user **claim**, issued and verified by an **attester** smart contract.
 
 Attestation Registries feature **attestation collections.** A collection regroups owners of the same type of attestation, similarly to tokens in the ERC1155 NFT standard.
 
@@ -24,7 +24,7 @@ For this, the user will&#x20;
 
 * Make a claim (claim of BAYNC NFT Ownership)
 * Generate a proof from `0x1`(via the offchain ZK Snark prover of the ZK-SMPS Proving Scheme)
-* Send this claim, along its proof to the attester (smart contract which verify the claim against the ZK Proof and record the attestation in the SAR)
+* Send this claim, along its proof to the attester (smart contract which verifies the claim against the ZK Proof and record the attestation in the SAR)
 * Receive a new attestation (and its corresponding NFT Badge) on `0x2, mainnet.`
 
 They can now use `0x2`to attest they have BAYC NFTs without leaking `0x1!`
