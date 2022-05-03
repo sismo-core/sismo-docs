@@ -9,7 +9,7 @@ The Sismo Protocol is the set of rules linked to the creation, update and deleti
 
 An **attestation** is a user **claim**, issued and verified by an **attester** (smart contract).
 
-Attestation Registries feature **attestation collections.** A collection regroups owners of the same type of attestation, similarly to tokens in the ERC1155 NFT standard. Some attestations are fungible, some others are not.
+Attestation Registries feature **attestation collections.** A collection regroups owners of the same type of attestation, similarly to tokens in the ERC1155 NFT standard.
 
 Sismo Governance is in charge of curating attesters that are allowed to write attestations in Sismo Attestations Registries.
 
