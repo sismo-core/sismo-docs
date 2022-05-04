@@ -5,20 +5,22 @@ coverY: 0
 
 # Sismo Protocol Overview
 
-The Sismo Protocol is the set of rules linked to the creation, update and deletion of attestations recorded in Sismo Attestations Registries (SARs).
+The Sismo Protocol maintains Sismo Attestations Registries (one SAR per supported chain). It oversees the creation, update and deletion of attestations recorded in SARs.&#x20;
 
-An **attestation** is a user **claim** that was verified by an **attester** and recorded into an **attestation registry**.
+An **attestation** is a user **claim** that was verified by an **attester** and recorded on an **attestation registry**.
 
 Attestation registries feature **attestation collections.** A collection regroups owners of the same type of attestation, similarly to tokens in the ERC1155 NFT standard.
 
-Sismo Governance is in charge of curating attesters that are allowed to record attestations in Sismo Attestations Registries.
+Sismo Governance is in charge of curating attesters, the smart contracts allowed to record attestations in Sismo Attestations Registries. When authorized, a new attester effectively gets attributed a set of attestation collections on which they get control.
+
+Sismo is **modular** and **agnostic**: anyone can propose a new attester, with its own tradeoff on decentralization, privacy and scalability when verifying user claims and generating all sorts of attestations!
 
 {% hint style="info" %}
 Let's illustrate the following section with the example of a user who owns 5 BAYC NFTs on `0x1`.&#x20;
 
-This user wants to generate an attestation of BAYC ownership, through our first authorized attester (It is called ZK-SMPS Attester, it is an attester that verifies user claims using ZK Proofs. It does not leak the source of data `0x1`).&#x20;
+This user wants to generate an attestation of BAYC ownership, through our first authorized attester (ZK-SMPS Attester, an attester that verifies user claims using ZK Proofs. It does not leak the source of data `0x1`).&#x20;
 
-The attestation should be sent on Ethereum mainnet, to one of their other account, `0x2.`
+The user wants the attestation sent on Ethereum mainnet, to one of their other account, `0x2.`
 
 For this, the user will&#x20;
 
