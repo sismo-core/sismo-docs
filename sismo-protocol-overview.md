@@ -46,7 +46,8 @@ struct Attestation
     (uint256 chainid;)      // Implicit: the chainId of the network (1 for mainnet)
     address attester;       // address of the attester which verified the claim
                             // and recorded the attestation (ZK-SMPS Attester)
-    uint256 collectionId;   // Id of the attestation collection 
+    uint256 collectionId;   // Id of the attestation collection.
+                            // Similar to tokenid in ERC1155
                             //(BAYC Owners Attestations by ZK-SMPS Attester)
     Claim claim;            // underlying claim (owns BAYC NFT)
     bytes extraData;        // (optional) arbitrary data added by attester
