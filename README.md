@@ -1,14 +1,11 @@
 ---
-description: >-
-  Sismo is a modular Attestation Protocol focused on decentralization, privacy
-  and usability.
 cover: .gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
 coverY: 0
 ---
 
 # What is Sismo?
 
-![](<.gitbook/assets/1. MAIN LOGO+SISMO\_400x850.png>)
+![](.gitbook/assets/ohoh.png)
 
 Sismo is a modular **Attestation Protocol focused on decentralization, privacy and usability**.&#x20;
 
@@ -28,7 +25,7 @@ ZK Attestations (e.g attestations that do not reveal the data origin) are at the
 
 Generally, Sismo aims to offer a wide range of attestations, each with their own tradeoffs on privacy - decentralization - scalability.&#x20;
 
-Sismo aims to contribute to the emergence of a decentralised version of a Single Sign-On (SSO) system, based on web3 login and user-generated attestations.
+Sismo Product decentralised version of a Single Sign-On (SSO) system, based on web3 login and user-generated attestations.
 
 {% content-ref url="archive/sismo-attestation-protocol.md" %}
 [sismo-attestation-protocol.md](archive/sismo-attestation-protocol.md)
