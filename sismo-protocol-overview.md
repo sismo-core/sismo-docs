@@ -5,9 +5,9 @@ coverY: 0
 
 # Sismo Protocol Overview
 
-The Sismo Protocol oversees the creation, update and deletion of **Attestations**.
+The Sismo Protocol oversees the creation, update and deletion of attestations.
 
-Before diving into the precise anatomy of an attestation and its creation process, we need to first introduce **Attesters** the **Attestations Registry**. They are the core smart contracts of the Sismo Protocol, respectively in charge of **issuing** and **recording** attestations.
+Before diving into the precise anatomy of an attestation and its creation process, we need to first introduce **Attesters** and **the** **Attestations Registry**. They are the core smart contracts of the Sismo Protocol, respectively in charge of **issuing** and **recording** attestations.
 
 You can also look into the full picture of the protocol\[LINK TO MAIN SCHEME].
 
@@ -25,7 +25,7 @@ For instance, the ZK-SMPS Attester requires users to provide a ZK-SNARK proof to
 
 #### Authorized Attesters and Governance
 
-Only **Authorized Attesters** can write in the Attestation Registry. They are attesters that were given write access on a specific range of attestations collections.&#x20;
+Only Authorized Attesters can write in the Attestation Registry. They are attesters that were given write access on a specific range of attestations collections.&#x20;
 
 The Sismo Governance is in charge of curating attesters so that the registry is filled with valuable attestations.&#x20;
 
