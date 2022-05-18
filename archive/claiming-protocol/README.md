@@ -18,12 +18,12 @@ Each claiming protocol is constituted of:&#x20;
 
 There are currently 2 Claiming protocols maintained by Sismo Genesis Team:
 
-{% content-ref url="../../architecture/attester/smps-simple-merkle-proving-scheme-attester.md" %}
-[smps-simple-merkle-proving-scheme-attester.md](../../architecture/attester/smps-simple-merkle-proving-scheme-attester.md)
+{% content-ref url="../attester/smps-simple-merkle-proving-scheme-attester.md" %}
+[smps-simple-merkle-proving-scheme-attester.md](../attester/smps-simple-merkle-proving-scheme-attester.md)
 {% endcontent-ref %}
 
-{% content-ref url="../../architecture/attester/zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md" %}
-[zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md](../../architecture/attester/zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md)
+{% content-ref url="../attester/zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md" %}
+[zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md](../attester/zk-smps-zero-knowledge-simple-merkle-proving-scheme-attester.md)
 {% endcontent-ref %}
 
 Both consume the same public and auditable claiming data, stored as account merkle trees and maintained by Sismo Genesis Team.
