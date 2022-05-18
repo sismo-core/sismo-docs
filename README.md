@@ -22,9 +22,9 @@ Sismo Attestations are especially useful for
 * Reputations systems
 * Decentralized Identities Curation
 
-When a user claims an attestation, it is recorded on-chain and they also receive the associated **Badge** (NFT representation of the underlying attestation).
+When a user claims an attestation, it is recorded on-chain and they also receive the associated Badge (NFT representation of the underlying attestation).
 
-**ZK Attestations** (e.g attestations that do not reveal the data origin) are at the main focus of Sismo but the protocol also features Public Attestations (e.g attestations linked to the actual source of information). These "doxing" attestation can also be useful, especially in combinaison with ZK Attestations.&#x20;
+ZK Attestations (e.g attestations that do not reveal the data origin) are at the main focus of Sismo but the protocol also features Public Attestations (e.g attestations linked to the actual source of information). These "doxing" attestation can also be useful, especially in combinaison with ZK Attestations.&#x20;
 
 Generally, Sismo aims to offer a wide range of attestations, each with their own tradeoffs on privacy - decentralization - scalability.&#x20;
 
