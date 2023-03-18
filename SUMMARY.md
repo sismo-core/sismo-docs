@@ -1,0 +1,91 @@
+# Table of contents
+
+* [What is Sismo?](README.md)
+  * [Data Vault](what-is-sismo/data-vault.md)
+  * [Sismo Badges](what-is-sismo/sismo-badges.md)
+  * [zkConnect](what-is-sismo/zkconnect.md)
+
+## Tutorials
+
+* [Start Building with Sismo](tutorials/start-building-with-sismo.md)
+* [Sismo Factory](tutorials/sismo-factory/README.md)
+  * [Create your Group](tutorials/sismo-factory/create-your-group.md)
+  * [Create your ZK Badge](tutorials/sismo-factory/create-your-zk-badge.md)
+* [Sismo Hub](tutorials/sismo-hub/README.md)
+  * [Create your Group](tutorials/sismo-hub/create-your-group.md)
+  * [Create your Data Provider](tutorials/sismo-hub/create-your-data-provider.md)
+* [zkConnect](tutorials/zkconnect/README.md)
+  * [Authenticate your users with zkConnect](tutorials/zkconnect/authenticate-your-users-with-zkconnect.md)
+  * [Request data privately with zkConnect](tutorials/zkconnect/zk-connect-guide.md)
+
+## Technical Documentation
+
+* [zkConnect](technical-documentation/zkconnect/README.md)
+  * [zkConnect Client: Request](technical-documentation/zkconnect/zkconnect-client-request.md)
+  * [zkConnect React: Request](technical-documentation/zkconnect/zkconnect-react-request.md)
+  * [zkConnect Server: Verify Off-chain](technical-documentation/zkconnect/zkconnect-server-verify-off-chain.md)
+  * [zkConnect Solidity Library: Verify On-chain (soon)](technical-documentation/zkconnect/zkconnect-solidity-library-verify-on-chain-soon.md)
+* [ZK Badges Protocol](technical-documentation/zk-badges-protocol/README.md)
+  * [Groups](technical-documentation/zk-badges-protocol/groups.md)
+  * [Attesters](technical-documentation/zk-badges-protocol/attesters.md)
+  * [Attestations Registry](technical-documentation/zk-badges-protocol/attestations-registry.md)
+  * [Badges](technical-documentation/zk-badges-protocol/badges.md)
+  * [Technical Glossary](technical-documentation/zk-badges-protocol/technical-glossary.md)
+  * [Attesters Examples](technical-documentation/zk-badges-protocol/attesters-examples/README.md)
+    * [ERC20 Holder Public Attester](technical-documentation/zk-badges-protocol/attesters-examples/erc20-holder-public-attester.md)
+    * [ENS Holder Public Attester](technical-documentation/zk-badges-protocol/attesters-examples/ens-holder-public-attester.md)
+    * [Public Merkle Attester](technical-documentation/zk-badges-protocol/attesters-examples/public-merkle-attester.md)
+    * [Hydra-S1: ZK Merkle Attester](technical-documentation/zk-badges-protocol/attesters-examples/hydra-s1-zk-merkle-attester.md)
+* [Sismo API](technical-documentation/sismo-api/README.md)
+  * [API Links](technical-documentation/sismo-api/api-links.md)
+  * [Query from a client](technical-documentation/sismo-api/query-from-a-client.md)
+  * [Group](technical-documentation/sismo-api/group/README.md)
+    * [Get groups](technical-documentation/sismo-api/group/get-groups.md)
+    * [Get group snapshots](technical-documentation/sismo-api/group/get-group-snapshots.md)
+  * [Badge](technical-documentation/sismo-api/badge/README.md)
+    * [Get badges](technical-documentation/sismo-api/badge/get-badges.md)
+    * [Get Badge stats](technical-documentation/sismo-api/badge/get-badge-stats.md)
+  * [Minted Badge](technical-documentation/sismo-api/minted-badge/README.md)
+    * [Get minted badges](technical-documentation/sismo-api/minted-badge/get-minted-badges.md)
+    * [Get attestations](technical-documentation/sismo-api/minted-badge/get-attestations.md)
+  * [Common parameters](technical-documentation/sismo-api/common-parameters.md)
+  * [Advanced filtering](technical-documentation/sismo-api/advanced-filtering.md)
+  * [Other models](technical-documentation/sismo-api/other-models/README.md)
+    * [Transaction](technical-documentation/sismo-api/other-models/transaction.md)
+* [Sismo Hub](technical-documentation/sismo-hub/README.md)
+  * [Group Generators](technical-documentation/sismo-hub/group-generators.md)
+  * [Data Providers](technical-documentation/sismo-hub/data-providers.md)
+  * [Data Operators](technical-documentation/sismo-hub/data-operators.md)
+  * [Badge Metadata](technical-documentation/sismo-hub/badge-metadata.md)
+  * [Command Line Interface](technical-documentation/sismo-hub/command-line-interface.md)
+* [Deployed Contract Addresses](technical-documentation/deployed-contract-addresses.md)
+* [Data Vault App](technical-documentation/data-vault-app.md)
+
+## Technical Concepts
+
+* [Commitment Mapper](technical-concepts/commitment-mapper.md)
+* [Accounts Registry Tree](technical-concepts/accounts-registry-tree.md)
+* [Vault & Proof Identifiers](technical-concepts/vault-and-proof-identifiers.md)
+* [Hydra ZK Proving Schemes](technical-concepts/hydra-zk-proving-schemes/README.md)
+  * [Hydra-S1](technical-concepts/hydra-zk-proving-schemes/hydra-s1.md)
+  * [Hydra M1](technical-concepts/hydra-zk-proving-schemes/hydra-m1.md)
+* [Pythia ZK Proving Scheme](technical-concepts/pythia-zk-proving-scheme.md)
+
+## FAQ
+
+* [General FAQ](faq/general-faq.md)
+* [Privacy & Security FAQ](faq/privacy-and-security-faq.md)
+
+## Links
+
+* [Data Vault](https://vault-beta.sismo.io/)
+* [Badge Minting App](https://app.sismo.io/)
+* [Sismo Factory](https://factory.sismo.io/)
+* [Sismo Governance](https://sismo.notion.site/Sismo-Governance-Documentation-8d9f6ac5d2f049dfb15de35664602acb)
+* [Build with Sismo](https://build.sismo.io)
+* [GitHub](https://github.com/sismo-core)
+* [Discord](https://discord.gg/xKTMeRUX6u)
+* [Twitter](https://twitter.com/sismo\_eth)
+* [Blog](https://blog.sismo.io/)
+* [Snapshot](https://snapshot.org/#/sismo.eth)
+* [Dune Dashboard](https://dune.com/martingbz/sismo-zk-badges)
