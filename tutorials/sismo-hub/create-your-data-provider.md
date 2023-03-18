@@ -276,6 +276,30 @@ export class TutorialLensProvider extends GraphQLProvider {
 }
 ```
 
+{% hint style="warning" %}
+It is very important to pass an object that contains all your argument as argument of the function that the Factory will use.
+
+Indeed, when the Factory create the group using your data provider, it will use take all the arguments gave by the user as input and create an object from it. Then it will call your function with this object, like this:
+
+```typescript
+const lensProviderData0 = await lensProvider.getWhoCollectedPublication({
+    publicationId: "0x26e5-0x09"
+});
+// for this case there is only 1 argument
+```
+
+That is why the argument of the function used by the Factory must be an object that contains all the possible arguments of your function.
+
+For example in our case we needed to define this type:
+
+```typescript
+export type PublicationId = {
+  publicationId: string;
+  // you can add other arguments here
+};
+```
+{% endhint %}
+
 It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../../technical-documentation/sismo-hub/group-generators.md).
 
 Indeed, a Group Generator returns a group that is composed of metadata:
