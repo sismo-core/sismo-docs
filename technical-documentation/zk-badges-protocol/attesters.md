@@ -2,7 +2,7 @@
 
 **Attesters** are core smart contracts of the Sismo protocol. They are in charge of **verifying** user requests and **issuing** attestations. Example implementations can be found in the [Attesters Examples section](attesters-examples/).
 
-![Attesters](../../.gitbook/assets/3\_Attesters.png)
+![Attesters](<../../.gitbook/assets/3\_Attesters (1).png>)
 
 #### Available Groups
 

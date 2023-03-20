@@ -25,7 +25,7 @@
   * [zkConnect React: Request](technical-documentation/zkconnect/zkconnect-react-request.md)
   * [zkConnect Server: Verify Off-chain](technical-documentation/zkconnect/zkconnect-server-verify-off-chain.md)
   * [zkConnect Solidity Library: Verify On-chain (soon)](technical-documentation/zkconnect/zkconnect-solidity-library-verify-on-chain-soon.md)
-* [ZK Badges Protocol](technical-documentation/zk-badges-protocol/README.md)
+* [ZK Badges Protocol](sismo-protocol-overview.md)
   * [Groups](technical-documentation/zk-badges-protocol/groups.md)
   * [Attesters](technical-documentation/zk-badges-protocol/attesters.md)
   * [Attestations Registry](technical-documentation/zk-badges-protocol/attestations-registry.md)
@@ -53,12 +53,12 @@
   * [Other models](technical-documentation/sismo-api/other-models/README.md)
     * [Transaction](technical-documentation/sismo-api/other-models/transaction.md)
 * [Sismo Hub](technical-documentation/sismo-hub/README.md)
-  * [Group Generators](technical-documentation/sismo-hub/group-generators.md)
+  * [Group Generators](build-on-sismo/sismo-protocol-overview.md)
   * [Data Providers](technical-documentation/sismo-hub/data-providers.md)
   * [Data Operators](technical-documentation/sismo-hub/data-operators.md)
   * [Badge Metadata](technical-documentation/sismo-hub/badge-metadata.md)
   * [Command Line Interface](technical-documentation/sismo-hub/command-line-interface.md)
-* [Deployed Contract Addresses](technical-documentation/deployed-contract-addresses.md)
+* [Deployed Contract Addresses](sismo-101.md)
 * [Data Vault App](technical-documentation/data-vault-app.md)
 
 ## Technical Concepts

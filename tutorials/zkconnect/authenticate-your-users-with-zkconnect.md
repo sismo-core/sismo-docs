@@ -28,7 +28,7 @@ You can learn more about this notion in the [Vault & Proof Identifiers article](
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1).png" alt=""><figcaption><p>Register your zkConnect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52.png" alt=""><figcaption><p>Register your zkConnect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
 
 You can register a zkConnect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
@@ -52,8 +52,8 @@ Now that you have an appId registered for your application, you need to redirect
 
 To do that you will need to use one of our packages:
 
+* Javascript / Typescript: [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)
 * React: [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)``
-* Vanilla js/ts: [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)
 
 {% tabs %}
 {% tab title="React" %}
@@ -92,7 +92,7 @@ By clicking on this button your user will be redirected to the [Data Vault App](
 The `onResponse` props will allow you to get the response containing the proof that certifies the user has a Sismo Data Vault.
 {% endtab %}
 
-{% tab title="Vanilla js/ts" %}
+{% tab title="Javascript / Typescript" %}
 First, you will need to import the following:
 
 ```bash

@@ -6,7 +6,7 @@ description: Developer Tutorial
 
 ## What's inside?
 
-This tutorial will explain how to create a [Data Provider](../../technical-documentation/sismo-hub/data-providers.md) in the [Sismo Hub](https://github.com/sismo-core/sismo-hub). Users (through the [Factory](https://factory.sismo.io)) and developers (through the [Sismo Hub](../../technical-documentation/sismo-hub/)) will be able to use your Data Provider in order to create [Group Generators](../../technical-documentation/sismo-hub/group-generators.md).
+This tutorial will explain how to create a [Data Provider](../../technical-documentation/sismo-hub/data-providers.md) in the [Sismo Hub](https://github.com/sismo-core/sismo-hub). Users (through the [Factory](https://factory.sismo.io)) and developers (through the [Sismo Hub](../../technical-documentation/sismo-hub/)) will be able to use your Data Provider in order to create [Group Generators](../../build-on-sismo/sismo-protocol-overview.md).
 
 Group Generators are functions that enable the creation of groups at the center of the Sismo protocol. As groups need to contain data, we need Data Providers to fetch data from external APIs (e.g, Lens, GitHub, Snapshot).&#x20;
 
@@ -31,16 +31,16 @@ Data Providers enable other group creators to reuse specific data fetching logic
 * Web2 accounts: Twitter, GitHub
 * Web3 accounts: Ethereum addresses, ENS, Lens handle
 
-When creating a group, you need to create a [Group Generator](../../technical-documentation/sismo-hub/group-generators.md). There are 3 different ways to do so:
+When creating a group, you need to create a [Group Generator](../../build-on-sismo/sismo-protocol-overview.md). There are 3 different ways to do so:
 
 * Enter a hardcoded list of accounts
-* Use an already existing [Group Generator](../../technical-documentation/sismo-hub/group-generators.md)
+* Use an already existing [Group Generator](../../build-on-sismo/sismo-protocol-overview.md)
 * Use a [Data Provider](../../technical-documentation/sismo-hub/data-providers.md) to fetch accounts
 
 Moreover, Data Providers are useful because they enable automatic and frequent group updates, whereas if the group was made of a hardcoded list of accounts it wouldn't be automatic.
 
 {% hint style="success" %}
-If you want to create a [group](../../technical-documentation/zk-badges-protocol/groups.md) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../../technical-documentation/sismo-hub/group-generators.md) by giving the Proposal Identifier as an argument.
+If you want to create a [group](../../technical-documentation/zk-badges-protocol/groups.md) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../../build-on-sismo/sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
 
 For example:
 
@@ -63,7 +63,7 @@ We will take the example of a **Lens Data Provider** on top of the Lens API and 
 
 At the end of this tutorial, it will be up to you to do a pull request on the [Sismo Hub](https://github.com/sismo-core/sismo-hub) to see your Data Provider integrated and be usable in the [Factory](https://factory.sismo.io/) (<mark style="color:green;">green box</mark>) and in the Sismo Hub (<mark style="color:red;">red box</mark>) 🙌
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-03 à 13.45.55 2.png" alt=""><figcaption><p>Use of the data provider </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-03 à 13.45.55 2 (1).png" alt=""><figcaption><p>Use of the data provider </p></figcaption></figure>
 
 ## Tutorial
 
@@ -300,7 +300,7 @@ export type PublicationId = {
 ```
 {% endhint %}
 
-It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../../technical-documentation/sismo-hub/group-generators.md).
+It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../../build-on-sismo/sismo-protocol-overview.md).
 
 Indeed, a Group Generator returns a group that is composed of metadata:
 
@@ -517,7 +517,7 @@ By adding this interface file and the count function, you just allowed the facto
 * Fetch information about your newly created Data Provider. It can be now displayed (<mark style="color:red;">red box</mark>) and used for Factory users when adding eligible accounts.
 * Call the right count function (regarding the user selection).
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-02 à 11.14.44.png" alt=""><figcaption><p>Data Provider selection</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-02 à 11.14.44 (1).png" alt=""><figcaption><p>Data Provider selection</p></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-02 à 11.26.10.png" alt=""><figcaption><p>Run the count function</p></figcaption></figure>
 

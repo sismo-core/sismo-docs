@@ -6,7 +6,7 @@ description: Developer Tutorial
 
 ## What’s inside?
 
-This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../../technical-documentation/sismo-hub/group-generators.md).
+This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../../build-on-sismo/sismo-protocol-overview.md).
 
 Group Generators are functions that enable the creation of [Groups](../../technical-documentation/zk-badges-protocol/groups.md) at the center of the Sismo protocol. Groups are the foundation of all what you can create with Sismo such as [zkConnect Apps](../../what-is-sismo/zkconnect.md) and [ZK Badges](../../technical-documentation/zk-badges-protocol/badges.md).
 
@@ -23,7 +23,7 @@ You can find the pull request associated with this tutorial [**here**](https://g
 * Web2 accounts: Twitter, Github
 * Web3 accounts: Ethereum addresses, ENS, Lens handles
 
-In order to create a Group, we need to build a [Group Generator](../../technical-documentation/sismo-hub/group-generators.md). This tutorial will guide you through the process of creating one.
+In order to create a Group, we need to build a [Group Generator](../../build-on-sismo/sismo-protocol-overview.md). This tutorial will guide you through the process of creating one.
 
 There are 3 different ways to define the data of a Group generator, you can use:
 

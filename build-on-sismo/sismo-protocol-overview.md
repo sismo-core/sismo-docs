@@ -1,5 +1,5 @@
 ---
-cover: ../../.gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
+cover: ../.gitbook/assets/TWITTER BANNERvert_1500x500px.jpeg
 coverY: 0
 ---
 
@@ -9,8 +9,8 @@ Groups are a reusable tool used by Sismo to generate available groups for attest
 
 You will find more information on what are groups in this section:
 
-{% content-ref url="../zk-badges-protocol/groups.md" %}
-[groups.md](../zk-badges-protocol/groups.md)
+{% content-ref url="../technical-documentation/zk-badges-protocol/groups.md" %}
+[groups.md](../technical-documentation/zk-badges-protocol/groups.md)
 {% endcontent-ref %}
 
 Generating groups and making them available for an attester require some infrastructures. We have developed a repository, the [sismo-hub](https://github.com/sismo-core/sismo-hub), to let anyone propose new groups, and make them available for the HydraS1Attester, with a simple PR.
@@ -93,14 +93,14 @@ This group, `my-simple-group`, contains 7 accounts, four Ethereum addresses (two
 
 Learn how to query data easily:
 
-{% content-ref url="data-providers.md" %}
-[data-providers.md](data-providers.md)
+{% content-ref url="../technical-documentation/sismo-hub/data-providers.md" %}
+[data-providers.md](../technical-documentation/sismo-hub/data-providers.md)
 {% endcontent-ref %}
 
 Learn how to combine groups easily:
 
-{% content-ref url="data-operators.md" %}
-[data-operators.md](data-operators.md)
+{% content-ref url="../technical-documentation/sismo-hub/data-operators.md" %}
+[data-operators.md](../technical-documentation/sismo-hub/data-operators.md)
 {% endcontent-ref %}
 
 ### Generate your group

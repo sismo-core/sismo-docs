@@ -81,7 +81,7 @@ Next, we add credit to our Badge by clicking ‘**Add Credit**.’ Sismo uses a 
 
 Clicking '**Add Credit**' opens a smaller window where we must select our desired chains and the number of Badges we want to add credit for. By selecting ‘**100k**’ on the slider, we determine that eligible users will only be able to mint a total of 100,000 Sismo Frens ZK Badges. After this number of Badges has been minted, more credit can be added. As our Badge only has fewer than 100,000 eligible users, 100,000 is more than enough for every user to mint a Badge, even after weekly group updates.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>On this window, users choose their desired chains and how many mintable Badges to fund.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>On this window, users choose their desired chains and how many mintable Badges to fund.</p></figcaption></figure>
 
 Finally, we have to deposit enough ETH to cover our Badge’s relayer fees. These fees are calculated using the mean gas price on our selected chain, converted to ETH. As we have selected to deploy on Polygon and Gnosis Chain, our relayer fees are calculated using the mean gas price on those chains over the last month.&#x20;
 

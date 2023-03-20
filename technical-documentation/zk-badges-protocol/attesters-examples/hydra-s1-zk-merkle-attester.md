@@ -8,7 +8,7 @@ In their frontend, users download the groups and generate a ZK Proof from it usi
 
 Users prove, in a zk-SNARK, that they own an account that's part of a group stored in an accounts merkle tree (registered in a Registry tree) and a destination account that will receive the attestation (so they prove consent to the attestation).
 
-![Hydra-S1: ZK Merkle Attester](<../../../.gitbook/assets/4 (3).png>)
+![Hydra-S1: ZK Merkle Attester](<../../../.gitbook/assets/4 (4).png>)
 
 The attester verifies from users' ZK Proofs: &#x20;
 

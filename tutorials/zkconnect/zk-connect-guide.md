@@ -7,7 +7,7 @@ This tutorial will walk you through how we built zkSub, an application enabling 
 To get a feel of what you will build in this tutorial, you can try out a demo [**here**](https://demo.zksub.io/).
 
 {% hint style="info" %}
-You can access the open-source repository of the demo [**here**](https://github.com/sismo-core/zksub).
+This demo is built in React, you can access the open-source repository [here](https://github.com/sismo-core/zksub). On the main branch, you can see a full example using our[`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request) `package and on a second branch`[`here`](https://github.com/sismo-core/zksub/tree/zk-connect-client-package)`you can see an example using our` [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)`package.`
 {% endhint %}
 
 ### Tutorial use case
@@ -38,7 +38,7 @@ You can learn more about this notion in the [Vault & Proof identifiers article](
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52.png" alt=""><figcaption><p>Register your zkConnect app in the Factory</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1).png" alt=""><figcaption><p>Register your zkConnect app in the Factory</p></figcaption></figure>
 
 You can register a zkConnect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
@@ -76,7 +76,7 @@ Now that you have an app and the group that users should prove membership in, yo
 
 To do that you will need to use one of our packages:
 
-* Vanilla js/ts: [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)
+* Javascript / Typescript: [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)
 * React: [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)``
 
 {% tabs %}
@@ -181,10 +181,10 @@ The `onResponse` props will allow you to get the response containing the proof.
 
 
 
-You can find the full frontend code snippet used for zkSub [here](https://github.com/sismo-core/zksub/blob/react-package/front/src/App.tsx).
+You can find the full frontend code snippet used for zkSub [here](https://github.com/sismo-core/zksub/blob/main/front/src/App.tsx).
 {% endtab %}
 
-{% tab title="Vanilla js/ts" %}
+{% tab title="Javascript / Typescript" %}
 First, you will need to import the following:First, you will need to import the following:
 
 ```bash
@@ -272,7 +272,7 @@ const zkConnectResponse = zkConnect.getResponse();
 This will return you a `ZkConnectResponse` which contains the user proof which certifies the user is a member of the requested group.\
 
 
-You can find the full frontend code snippet used for zkSub [here](https://github.com/sismo-core/zksub/blob/main/front/src/App.tsx).
+You can find the full frontend code snippet used for zkSub [here](https://github.com/sismo-core/zksub/blob/zk-connect-client-package/front/src/App.tsx).
 {% endtab %}
 {% endtabs %}
 

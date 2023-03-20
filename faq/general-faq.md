@@ -164,13 +164,13 @@ Now you are able to see the **precise eligibility criteria** of the ZK Badge in 
 
 First, go to: [https://opensea.io/account](https://opensea.io/account) and connect your wallet.
 
-<figure><img src="../.gitbook/assets/3 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/3.png" alt=""><figcaption></figcaption></figure>
 
 Select the **More** section and click on **Hidden**. Your ZK Badges will appear.
 
 Now, if you want to make them visible to everyone:
 
-<figure><img src="../.gitbook/assets/4 (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/4 (3).png" alt=""><figcaption></figcaption></figure>
 
 Go to one of your badges and click on **Unhide**, then sign the message with your wallet.
 

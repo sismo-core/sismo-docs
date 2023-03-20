@@ -27,7 +27,7 @@ Anyone can propose a new group. Learn how to make your own with our tutorials:
 
 Attesters issue attestations from **claims about** **group membership** that are made by users. Groups must be available to the attester.
 
-![Group membership claims](../../.gitbook/assets/2\_Groups.png)
+![Group membership claims](<../../.gitbook/assets/2\_Groups (4).png>)
 
 Technically, a user claim consist of:
 
@@ -47,7 +47,7 @@ The off-chain group of ENS DAO Voters can be made available to several on-chain 
 
 Every off-chain group has a name and a generation timestamp.
 
-Groups can be combined by creating unions, intersections, and more complex operations. [More on groups](../sismo-hub/group-generators.md). Groups can also be hybrid and constituted of Ethereum accounts and GitHub accounts in the same group.
+Groups can be combined by creating unions, intersections, and more complex operations. [More on groups](../../build-on-sismo/sismo-protocol-overview.md). Groups can also be hybrid and constituted of Ethereum accounts and GitHub accounts in the same group.
 
 {% hint style="success" %}
 Find the list of all group generators in the [Sismo Hub Repository](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators).

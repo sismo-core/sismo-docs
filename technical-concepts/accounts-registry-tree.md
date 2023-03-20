@@ -14,7 +14,7 @@ This makes it easy and cheap for a verifier with access to the root of the tree 
 
 This prover just has to send the merkle proof to the verifier
 
-![Accounts tree structure](<../.gitbook/assets/Merkle Tree1 (1).png>)
+![Accounts tree structure](<../.gitbook/assets/Merkle Tree1 (3).png>)
 
 {% hint style="info" %}
 An Accounts Tree can store a group of accounts.
@@ -44,7 +44,7 @@ The attester will then just need to:
 
 The registry tree is another KV merkle tree where the key is an accounts tree root, and the value a specific value linked to the accounts tree (e.g for Hydra-S1 we chose the groupIndex as the accounts tree value)
 
-![Registry tree structure](<../.gitbook/assets/Merkle Tree2 (1).png>)
+![Registry tree structure](<../.gitbook/assets/Merkle Tree2.png>)
 
 {% hint style="info" %}
 Taking the previous example.&#x20;
@@ -61,7 +61,7 @@ Users will then be able to prove to a verifier (that only has access to the regi
 \=> They will have effectively proved they are part of the group 3!
 {% endhint %}
 
-![Registry tree structure](<../.gitbook/assets/Merkle Tree3 (1).png>)
+![Registry tree structure](<../.gitbook/assets/Merkle Tree3.png>)
 
 ### Hydra-S1 Attesters
 
