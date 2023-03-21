@@ -23,6 +23,10 @@ Vault and Proof Identifiers are two tools with different purposes. A Vault ident
 
 The Hydra Proof Of Ownership also changes in Hydra-S2 as far as we now use a new commitment mapper and a new variable when creating commitments. The secret used to generate the commitment to the trusted [Commitment Mapper](../commitment-mapper.md) is now the hash of the vault secret and the user secret instead of the user secret only.
 
+$$
+Commitment = PoseidonHash(VaultSecret, AccountSecret);
+$$
+
 To allow this, we created a new commitment mapper and we ensure that an account can only be added to one vault since the commitment is now based on the vault secret.&#x20;
 
 ### Optional verifications
