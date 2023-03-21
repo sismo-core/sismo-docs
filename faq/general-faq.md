@@ -4,7 +4,7 @@ description: Frequently asked questions
 
 # General FAQ
 
-### What is a Badge?
+### What is a Badge ?
 
 A Badge is a non-transferable token (ERC1155) that represents an attestation. Badges prove facts about a user's identity and can be used to access gated applications and services.
 
