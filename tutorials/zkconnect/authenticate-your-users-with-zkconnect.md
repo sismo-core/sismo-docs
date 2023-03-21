@@ -8,6 +8,31 @@ description: A simple privacy-preserving authentication system
 
 This tutorial will walk you through a simple integration of [**zkConnect**](../../what-is-sismo/zkconnect.md) as a way of privately authenticating users in your application. This tutorial does not need any group to work, just an application Id (appId) created in the [**Sismo Factory**](https://factory.sismo.io/apps-explorer). You will only ask your users to prove ownership of a [Data Vault](../../what-is-sismo/data-vault.md).
 
+{% hint style="info" %}
+You can access an open-source repository implementing zkConnect:
+
+* In React [here](https://github.com/sismo-core/zksub)
+* In Next.js [here](https://github.com/sismo-core/zksub-next)
+
+These 2 repositories use the [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)`package to request the proof, to see a full example of the` [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)`package, you can see` [`this branch`](https://github.com/sismo-core/zksub/tree/zk-connect-client-package) `of the React repository.`
+{% endhint %}
+
+### Choose your stack (Next.js recommended)
+
+To implement zkConnect, you'll need both a frontend and a backend. The frontend will request the proof, and the backend will verify it.
+
+For this tutorial, we recommend using the Next.js stack, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.&#x20;
+
+To create a new Next.js project, run the following command:
+
+```
+yarn create next-app --typescript
+```
+
+That's it! Your frontend will be located in `src/pages/index.tsx`, and your backend will be located in `src/pages/api`.
+
+You can find the complete example of a Next.js repository setup with zkConnect [here](https://github.com/sismo-core/zksub-next).
+
 ### Register your zkConnect App in the Factory
 
 Before you begin integrating [**zkConnect**](../../what-is-sismo/zkconnect.md), you must register first a zkConnect app in the [**Sismo Factory**](https://factory.sismo.io/apps-explorer). This step is mandatory to obtain an application Id (`appId`), which is required during the zkConnect development process.
@@ -56,7 +81,7 @@ To do that you will need to use one of our packages:
 * React: [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)``
 
 {% tabs %}
-{% tab title="React" %}
+{% tab title="React / Next.js" %}
 First, you will need to import the following:
 
 <pre class="language-bash"><code class="lang-bash"><strong>yarn add @sismo-core/zk-connect-react
@@ -172,6 +197,23 @@ If the proof is valid, a vaultId is returned. If not, an error is received.
 The `vaultId` corresponds to a unique identifier for the user Data Vault, the best part of it is that this `vaultId` is derived from the `appId` so it is impossible to compare two vault ids from two different apps implementing zkConnect. **The vaultId can be used in your application as a user identifier**.
 
 A user has now the ability to privately authenticate himself in any application integrating zkConnect by proving that he owns a Data Vault. 🤘
+
+### Deploy your app (optional)
+
+If you chose to use Next.js, we recommended using the Vercel service for deployment. With Vercel you will deploy your frontend and your backend in two clicks.&#x20;
+
+Here's how to get started:
+
+1. Create an account on [Vercel](https://vercel.com/) with your Github account
+2. Create a new project and import your zksub repository in Vercel
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.00.30.png" alt=""><figcaption><p>Import a Git repository</p></figcaption></figure>
+
+3. When your repository is linked to Vercel, you should see this page appear:
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.38.32.png" alt=""><figcaption><p>Configure your project</p></figcaption></figure>
+
+Click on "Deploy", and congratulations! Your app is now deployed at https://\[Name of your app].vercel.app. 💪
 
 ### **Next steps**
 

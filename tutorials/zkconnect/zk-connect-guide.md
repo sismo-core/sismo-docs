@@ -7,7 +7,12 @@ This tutorial will walk you through how we built zkSub, an application enabling 
 To get a feel of what you will build in this tutorial, you can try out a demo [**here**](https://demo.zksub.io/).
 
 {% hint style="info" %}
-This demo is built in React, you can access the open-source repository [here](https://github.com/sismo-core/zksub). On the main branch, you can see a full example using our[`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request) `package and on a second branch`[`here`](https://github.com/sismo-core/zksub/tree/zk-connect-client-package)`you can see an example using our` [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)`package.`
+You can access the open-source repository of the demo:
+
+* In React [here](https://github.com/sismo-core/zksub)
+* In Next.js [here](https://github.com/sismo-core/zksub-next)
+
+These 2 repositories use the [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)`package to request the proof, to see a full example of the` [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)`package, you can see` [`this branch`](https://github.com/sismo-core/zksub/tree/zk-connect-client-package) `of the React repository.`
 {% endhint %}
 
 ### Tutorial use case
@@ -17,6 +22,22 @@ We will use [**The Ethereum Community Conference**](https://www.ethcc.io/) (EthC
 Indeed, EthCC wants to grant premium access to contributors to [**The Merge**](https://ethereum.org/en/upgrades/merge/). As a number of Ethereum contributors are anonymous, they may want to avoid revealing their personal information to EthCC organizers while still proving that they contributed to The Merge and deserve a premium access.
 
 For anonymous contributors to The Merge to attend EthCC, we will build zkSub that enables them to register an email address and subsequently prove they are contributors to The Merge in a privacy-preserving manner. These anonymous contributors will then receive premium access to EthCC via email.
+
+### Choose your stack (Next.js recommended)
+
+To implement zkConnect, you'll need both a frontend and a backend. The frontend will request the proof, and the backend will verify it.
+
+For this tutorial, we recommend using the Next.js stack, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.&#x20;
+
+To create a new Next.js project, run the following command:
+
+```
+yarn create next-app --typescript
+```
+
+That's it! Your frontend will be located in `src/pages/index.tsx`, and your backend will be located in `src/pages/api`.
+
+You can find the complete example of a Next.js repository setup with zkConnect [here](https://github.com/sismo-core/zksub-next).
 
 ### Register your zkConnect App in the Factory
 
@@ -80,7 +101,7 @@ To do that you will need to use one of our packages:
 * React: [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)``
 
 {% tabs %}
-{% tab title="React" %}
+{% tab title="React / Next.js" %}
 First, you will need to import the following:
 
 ```bash
@@ -181,7 +202,10 @@ The `onResponse` props will allow you to get the response containing the proof.
 
 
 
-You can find the full frontend code snippet used for zkSub [here](https://github.com/sismo-core/zksub/blob/main/front/src/App.tsx).
+You can find the full frontend code snippet used for zkSub:
+
+* In React [here](https://github.com/sismo-core/zksub/blob/main/front/src/App.tsx)
+* In Next.js [here](https://github.com/sismo-core/zksub-next/blob/main/src/pages/index.tsx)
 {% endtab %}
 
 {% tab title="Javascript / Typescript" %}
@@ -280,6 +304,8 @@ Well done! You’re halfway there! 💪
 
 Now that you have the proof, you need to verify the proof in your backend to be sure that the proof is valid with respect to `the-merge-contributor` group. If yes, you will allow your user to register his email.
 
+
+
 ### Verify the Data Proof in your backend (or soon in your smart contract)
 
 A general rule in web development is that frontend input cannot be trusted.
@@ -376,7 +402,22 @@ And that’s it! 💜
 
 You are now able to obtain the email addresses of all contributors to The Merge and invite them to EthCC without breaching their privacy, thanks to zero-knowledge proofs.
 
-### ****
+### Deploy your app (optional)
+
+If you chose to use Next.js, we recommended using the Vercel service for deployment. With Vercel you will deploy your frontend and your backend in two clicks.&#x20;
+
+Here's how to get started:
+
+1. Create an account on [Vercel](https://vercel.com/) with your Github account
+2. Create a new project and import your zksub repository in Vercel
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.00.30.png" alt=""><figcaption><p>Import a Git repository</p></figcaption></figure>
+
+3. When your repository is linked to Vercel, you should see this page appear:
+
+<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.38.32.png" alt=""><figcaption><p>Configure your project</p></figcaption></figure>
+
+Click on "Deploy", and congratulations! Your app is now deployed at https://\[Name of your app].vercel.app. 💪
 
 ### **Next steps**
 
