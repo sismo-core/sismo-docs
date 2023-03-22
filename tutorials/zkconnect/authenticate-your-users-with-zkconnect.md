@@ -1,5 +1,5 @@
 ---
-description: A simple privacy-preserving authentication system
+description: A simple privacy-preserving authentication system.
 ---
 
 # Authenticate your users with zkConnect

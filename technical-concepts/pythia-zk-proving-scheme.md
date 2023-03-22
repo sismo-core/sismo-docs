@@ -22,7 +22,7 @@ The user frontend (**prover**) can then **create a ZK Proof.**
 
 The **verifier** is an on-chain smart contract, called a **Pythia-1 Verifier**. The Pythia-1 Verifier is a smart contract that will verify the ZK proof and return its validity in the form of a True or False statement.
 
-For example, in the implementation of the Pythia-1 attester in the Sismo Protocol, if the proof is correct, the user will mint a [ZK Badge](../technical-documentation/zk-badges-protocol/badges.md).
+For example, in the implementation of the Pythia-1 attester in the Sismo Protocol, if the proof is correct, the user will mint a [ZK Badge](../technical-documentation/zk-badge-protocol/badges.md).
 
 You can see the Pythia-1 Proving Scheme in the following schema that will be explained in the next section.
 

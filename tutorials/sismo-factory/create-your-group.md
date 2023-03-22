@@ -1,16 +1,16 @@
 ---
-description: Non-developer Tutorial
+description: Non developer tutorial.
 ---
 
 # Create your Group
 
-This tutorial will show you how to create a [Group](../../technical-documentation/zk-badges-protocol/groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
+This tutorial will show you how to create a [Group](../../technical-documentation/zk-badge-protocol/groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a [Group](../../technical-documentation/zk-badges-protocol/groups.md) of Twitter, GitHub, and Ethereum accounts. After a short verification process, this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [zkConnect app](../../what-is-sismo/zkconnect.md) 🙌
+At the end of this tutorial, you will have a [Group](../../technical-documentation/zk-badge-protocol/groups.md) of Twitter, GitHub, and Ethereum accounts. After a short verification process, this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [zkConnect app](../../what-is-sismo/zkconnect.md) 🙌
 
-## What are [Groups](../../technical-documentation/zk-badges-protocol/groups.md)?
+## What are [Groups](../../technical-documentation/zk-badge-protocol/groups.md)?
 
-[Groups](../../technical-documentation/zk-badges-protocol/groups.md) are composed of Data Sources:
+[Groups](../../technical-documentation/zk-badge-protocol/groups.md) are composed of Data Sources:
 
 * Web2 Data Sources: Twitter, Github
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles
@@ -25,18 +25,18 @@ Here's an example of what a Group looks like:
 ...
 ```
 
-If you want more info on Groups, check out this [page](../../technical-documentation/zk-badges-protocol/groups.md).
+If you want more info on Groups, check out this [page](../../technical-documentation/zk-badge-protocol/groups.md).
 
 ## Group use-cases
 
 For now, you can create 2 different usages on top of Groups:
 
-* [ZK Badges](../../technical-documentation/zk-badges-protocol/badges.md)
+* [ZK Badges](../../technical-documentation/zk-badge-protocol/badges.md)
 * [zkConnect app](../../what-is-sismo/zkconnect.md)
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
-#### [ZK Badge](../../technical-documentation/zk-badges-protocol/badges.md)
+#### [ZK Badge](../../technical-documentation/zk-badge-protocol/badges.md)
 
 Here you can see an [example](https://app.sismo.io/?badge=proof-of-humanity-zk-badge) of a Badge created from a Group:
 
@@ -99,7 +99,7 @@ There are 3 different ways to define the data of a Group Generator, you can use:
 
 * A defined list of Data Source ("By uploading a list of accounts")
 * [Data Providers](../../technical-documentation/sismo-hub/data-providers.md) : function that allows fetching Data Sources ("From data providers")
-* Already existing [Groups](../../technical-documentation/zk-badges-protocol/groups.md) ("From data group")
+* Already existing [Groups](../../technical-documentation/zk-badge-protocol/groups.md) ("From data group")
 
 
 

@@ -1,12 +1,12 @@
 ---
-description: Tokenize your identity
+description: Tokenize your identity.
 ---
 
 # Sismo Badges
 
-Badges are non-transferable tokens (SBTs) that represent verifiable statements (Data Gems) authenticated by Sismo’s attestation protocol.
+Badges are non-transferable tokens (SBTs) that represent verifiable claims authenticated by Sismo’s [ZK Badge protocol](../technical-documentation/zk-badge-protocol/).
 
-Fundamentally, Badges prove ownership of specific Data Shards—derived from Data Sources stored in a user’s Data Vault. Data Shards are valuable aspects of a user’s personal data that categorize users into specific groups—such as being long-term Ethereum users, contributors to a specific GitHub repository, or French citizens.
+Fundamentally, Badges prove ownership of specific Data Gems—derived from Data Sources stored in a user’s Data Vault. Data Gems are valuable aspects of a user’s personal data that categorize users into specific groups—such as being long-term Ethereum users, contributors to a specific GitHub repository, or French citizens.
 
 {% hint style="success" %}
 Anyone can create their own Badge on the Sismo [Factory](https://factory.sismo.io/).&#x20;
@@ -14,9 +14,9 @@ Anyone can create their own Badge on the Sismo [Factory](https://factory.sismo.i
 
 ## Tokenized attestations
 
-When minting a Badge, a user generates a proof to authenticate an anonymized verifiable statement about Data Shards that they own. This proof is then verified and tokenized as a Badge by Sismo’s attester smart contract.
+When minting a Badge, a user generates a proof to authenticate an anonymized verifiable claim about Data Gems that they own. This proof is then verified and tokenized as a Badge by Sismo’s attester smart contract.
 
-Once a verifiable statement has been verified, it is recorded as an attestation by the Sismo protocol. Badges are therefore tokenized attestations issued by attesters—smart contracts that convert proven data into non-transferable tokens (SBTs) As Badges are issued as tokens on-chain, they are compatible with the burgeoning ecosystem of web3 applications.
+Once a verifiable claim has been verified, it is recorded as an attestation by the Sismo protocol. Badges are therefore tokenized attestations issued by attesters—smart contracts that convert proven data into non-transferable tokens (SBTs) As Badges are issued as tokens on-chain, they are compatible with the burgeoning ecosystem of web3 applications.
 
 As such, Badges represent verified acts about a user’s digital identity. For example, a user could have a ZK Badge proving they have a certain threshold of Twitter followers, hold a certain NFT, or are active contributors to a particular community.
 
@@ -30,9 +30,9 @@ Picture a user with two wallets—one public and one private. The user has valua
 
 ## Reputation curation
 
-On web3, owning certain pieces of data (i.e, Data Shards) can be considered valuable social capital. Badges allow the transfer of this social capital from one account to another in a privacy-preserving and granular way. In this sense, Badges facilitate reputation curation and can enable access to web3 applications via Sign-In with Ethereum (SIWE).
+On web3, owning certain pieces of data (i.e, Data Gems) can be considered valuable social capital. Badges allow the transfer of this social capital from one account to another in a privacy-preserving and granular way. In this sense, Badges facilitate reputation curation and can enable access to web3 applications via Sign-In with Ethereum (SIWE).
 
-Badges excel at reputation curation in particular—giving users a way to import and aggregate data from their private accounts to their public-facing accounts (such as an ENS address). Sismo’s Badge minting application can therefore be viewed as a reputation curation tool that converts verifiable statements into verified on-chain SBTs.
+Badges excel at reputation curation in particular—giving users a way to import and aggregate data from their private accounts to their public-facing accounts (such as an ENS address). Sismo’s Badge minting application can therefore be viewed as a reputation curation tool that converts verifiable claims into verified on-chain SBTs.
 
 {% hint style="info" %}
 Users can mint Badges they are eligible for on Sismo's minting [app](https://app.sismo.io/).

@@ -1,5 +1,5 @@
 ---
-description: Dive in to tutorials on how to start building with Sismo
+description: Dive in to tutorials on how to start building with Sismo.
 ---
 
 # Start Building with Sismo

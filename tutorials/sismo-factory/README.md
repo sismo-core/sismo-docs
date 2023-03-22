@@ -1,5 +1,5 @@
 ---
-description: Tutorials for the Sismo Factory
+description: Tutorials for the Sismo Factory.
 ---
 
 # Sismo Factory

@@ -1,5 +1,5 @@
 ---
-description: The sovereign SSO
+description: The crypto-native SSO.
 ---
 
 # zkConnect
@@ -29,7 +29,7 @@ Developers can use zkConnect on their applications by integrating the associated
 
 ## On-chain verification (coming soon)
 
-After integrating the zkConnect Solidity Library, built on top of Sismo’s on-chain verifiers, in-app smart contracts can verify statements (e.g, a user claims to own a specific NFT) and accept them for access control or reputation importation. In this sense, users combine aspects of their data (Data Shards) to create verifiable statements (Data Gems). These Gems are verified by on-chain applications—importing valuable elements of their owner’s identity in the process.
+After integrating the zkConnect Solidity Library, built on top of Sismo’s on-chain verifiers, in-app smart contracts can verify user claims (e.g, a user claims to own a specific NFT) and accept them for access control or reputation importation. Users make claims about their data and generate proofs to verify ownership of valuable social capital. Ownership is verified by on-chain applications—importing valuable elements of their owner’s identity in the process.
 
 Integrating zkConnect unlocks a privacy-preserving method of accessing on-chain applications or services. After clicking an integrated button, users are redirected to their Data Vault—where they generate a ZKP that an on-chain verifier subsequently authenticates. The entire experience requires minimal input from the user. Alternatively, it is possible to use zkConnect to mint Badges, which can likewise be utilized as an access tool.
 
@@ -37,9 +37,9 @@ Integrating zkConnect unlocks a privacy-preserving method of accessing on-chain 
 
 ## Off-chain verification (beta)
 
-In addition, off-chain applications can make use of zkConnect. While an on-chain application integrates Sismo’s verifier into a smart contract, an off-chain application must integrate Sismo’s verifier code into its backend. If an off-chain application limits its services to a single verifiable statement, it can also store Sismo’s anonymous app-specific Vault Identifier.
+In addition, off-chain applications can make use of zkConnect. While an on-chain application integrates Sismo’s verifier into a smart contract, an off-chain application must integrate Sismo’s verifier code into its backend. If an off-chain application limits its services to a single verifiable claim, it can also store Sismo’s anonymous app-specific Vault Identifier.
 
-If an off-chain application has already integrated Sign-In with Ethereum (SIWE), zkConnect can enhance its existing infrastructure. By integrating Sismo’s verifier code, the application can accept verifiable statements (Data Gems) from users directly—adding a privacy-preserving layer to SIWE. Furthermore, off-chain applications can use Badges, the tokenized equivalents of Data Gems, as an access tool.
+If an off-chain application has already integrated Sign-In with Ethereum (SIWE), zkConnect can enhance its existing infrastructure. By integrating Sismo’s verifier code, the application can accept verifiable claims from users directly—adding a privacy-preserving layer to SIWE. Furthermore, off-chain applications can use Badges, the tokenized equivalents of Data Gems, as an access tool.
 
-[zksub.io](https://www.zksub.io) is an example of an off-chain application using zkConnect. Currently, it enables The Merge contributors to register their email addresses in a privacy-preserving manner—gaining access to exclusive tickets for upcoming web3 events. zkConnect acts as a ZK layer between a contributor’s email address and private account.
+[zksub.io](http://www.zksub.io) is an example of an off-chain application using zkConnect. Currently, it enables The Merge contributors to register their email addresses in a privacy-preserving manner—gaining access to exclusive tickets for upcoming web3 events. zkConnect acts as a ZK layer between a contributor’s email address and private account.
 

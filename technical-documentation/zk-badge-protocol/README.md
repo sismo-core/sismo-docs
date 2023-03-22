@@ -1,10 +1,10 @@
-# ZK Badges Protocol
+# ZK Badge Protocol
 
 Sismo's ZK Badges protocol oversees the creation, updating, and deletion of **attestations**. An attestation is a 'certificate' showing that a user proved some fact about the current state or the history of their account(s).
 
-The protocol is built on multiple modular concepts: [**Groups**](technical-documentation/zk-badges-protocol/groups.md), [**Attesters**](technical-documentation/zk-badges-protocol/attesters.md)**,** [**Attestations Registry**](technical-documentation/zk-badges-protocol/attestations-registry.md)**,** and [**Badges**](technical-documentation/zk-badges-protocol/badges.md)**.**
+The protocol is built on multiple modular concepts: [**Groups**](groups.md), [**Attesters**](attesters.md)**,** [**Attestations Registry**](attestations-registry.md)**,** and [**Badges**](badges.md)**.**
 
-![Sismo Protocol](.gitbook/assets/1\_Intro.png)
+![Sismo Protocol](../../.gitbook/assets/1\_Intro.png)
 
 Let's introduce the core modules of the protocol:&#x20;
 

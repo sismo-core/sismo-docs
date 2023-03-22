@@ -1,5 +1,5 @@
 ---
-description: Factory Guide
+description: End user tutorial.
 ---
 
 # Create your ZK Badge
