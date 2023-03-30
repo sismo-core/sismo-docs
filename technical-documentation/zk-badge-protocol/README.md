@@ -4,7 +4,7 @@ Sismo's ZK Badges protocol oversees the creation, updating, and deletion of **at
 
 The protocol is built on multiple modular concepts: [**Groups**](groups.md), [**Attesters**](attesters.md)**,** [**Attestations Registry**](attestations-registry.md)**,** and [**Badges**](badges.md)**.**
 
-![Sismo Protocol](../../.gitbook/assets/1\_Intro.png)
+![Sismo Protocol](<../../.gitbook/assets/1\_Intro (2).png>)
 
 Let's introduce the core modules of the protocol:&#x20;
 

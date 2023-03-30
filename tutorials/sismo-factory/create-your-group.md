@@ -1,5 +1,5 @@
 ---
-description: Non developer tutorial.
+description: Non-developer tutorial
 ---
 
 # Create your Group
@@ -12,7 +12,7 @@ At the end of this tutorial, you will have a [Group](../../technical-documentati
 
 [Groups](../../technical-documentation/zk-badge-protocol/groups.md) are composed of Data Sources:
 
-* Web2 Data Sources: Twitter, Github
+* Web2 Data Sources: Twitter, GitHub
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles
 
 Here's an example of what a Group looks like:
@@ -48,7 +48,7 @@ This Badge was generated from the [proof-of-humanity](https://github.com/sismo-c
 
 Here is an instance of a zkConnect App that has been implemented using the proof-of-humanity Group:
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie.png" alt=""><figcaption><p>zkConnect App example</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie (1).png" alt=""><figcaption><p>zkConnect App example</p></figcaption></figure>
 
 This zkConnect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.&#x20;
 
@@ -67,11 +67,7 @@ In this tutorial, we will create a group composed of:
 
 ### Group creation page
 
-First, go to the Factory: [https://factory.sismo.io/](https://factory.sismo.io/)
-
-Click on the <mark style="background-color:blue;">**Explore and create new Data Groups ->**</mark> (<mark style="color:red;">red box</mark>)
-
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-13 à 17.31.45.png" alt=""><figcaption><p>Sismo Factory - main page</p></figcaption></figure>
+First, go to the Factory (in Data Group section): [https://factory.sismo.io/groups-explorer](https://factory.sismo.io/groups-explorer)
 
 Next, you will have to sign in to the factory with your Ethereum address. To do this click on the login button at the top left corner and sign the message.
 
@@ -127,7 +123,7 @@ Here we can see that the 7 accounts have been found (<mark style="color:blue;">b
 If you need to import a huge number of Data Sources, you can also directly import them through a json file by clicking on <mark style="background-color:blue;">**Replace json**</mark> button (<mark style="color:green;">green box</mark>)
 {% endhint %}
 
-For our case, we didn't specify the value of each account, so they will be all have a value of 1. But you can define the value you want for each account if desired.
+For our case, we didn't specify the value of each account, so they will all have a value of 1. But you can define the value you want for each account if desired.
 
 For example: at Sismo, we use a the Sismo Contributor ZK Badge to vote on Sismo DAO Proposals. There are 3 different values in the Group:
 

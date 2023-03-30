@@ -63,7 +63,7 @@ We will take the example of a **Lens Data Provider** on top of the Lens API and 
 
 At the end of this tutorial, it will be up to you to do a pull request on the [Sismo Hub](https://github.com/sismo-core/sismo-hub) to see your Data Provider integrated and be usable in the [Factory](https://factory.sismo.io/) (<mark style="color:green;">green box</mark>) and in the Sismo Hub (<mark style="color:red;">red box</mark>) 🙌
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-03 à 13.45.55 2 (1).png" alt=""><figcaption><p>Use of the data provider </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-03 à 13.45.55 2.png" alt=""><figcaption><p>Use of the data provider </p></figcaption></figure>
 
 ## Tutorial
 

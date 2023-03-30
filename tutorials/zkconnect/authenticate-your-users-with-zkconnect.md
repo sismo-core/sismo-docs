@@ -53,7 +53,7 @@ You can learn more about this notion in the [Vault & Proof Identifiers article](
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52.png" alt=""><figcaption><p>Register your zkConnect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1).png" alt=""><figcaption><p>Register your zkConnect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
 
 You can register a zkConnect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \

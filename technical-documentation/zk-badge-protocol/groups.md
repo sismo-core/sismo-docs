@@ -27,7 +27,7 @@ Anyone can propose a new group. Learn how to make your own with our tutorials:
 
 Attesters issue attestations from **claims about** **group membership** that are made by users. Groups must be available to the attester.
 
-![Group membership claims](<../../.gitbook/assets/2\_Groups (4).png>)
+![Group membership claims](<../../.gitbook/assets/2\_Groups (2).png>)
 
 Technically, a user claim consist of:
 
@@ -43,7 +43,7 @@ Sismo has built an off-chain infrastructure that periodically generates off-chai
 The off-chain group of ENS DAO Voters can be made available to several on-chain attesters
 {% endhint %}
 
-![Group generation](../../.gitbook/assets/2\_Groups-Lists.png)
+![Group generation](<../../.gitbook/assets/2\_Groups-Lists (1).png>)
 
 Every off-chain group has a name and a generation timestamp.
 

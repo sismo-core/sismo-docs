@@ -59,7 +59,7 @@ You can learn more about this notion in the [Vault & Proof identifiers article](
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1).png" alt=""><figcaption><p>Register your zkConnect app in the Factory</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52.png" alt=""><figcaption><p>Register your zkConnect app in the Factory</p></figcaption></figure>
 
 You can register a zkConnect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
@@ -111,7 +111,7 @@ yarn add @sismo-core/zk-connect-react
 \
 After importing, you will be able to use the zkConnect button in your app.
 
-<figure><img src="../../.gitbook/assets/zkConnect (1).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/zkConnect.png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
 
 
 

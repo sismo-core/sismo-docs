@@ -1,50 +1,78 @@
 ---
-description: End user tutorial.
+description: Non-developer tutorial
 ---
 
 # Create your ZK Badge
 
-In this guide, we will learn how to create a ZK Badge from start to finish using the [Sismo Factory](https://factory.sismo.io/). Anyone can design, set eligible users for, and request to deploy a ZK Badge within five minutes.&#x20;
+In this tutorial, we will learn how to create a ZK Badge from start to finish using the [Sismo Factory](https://factory.sismo.io/). Anyone can design, set eligible users for, and request to deploy a ZK Badge within five minutes 🙌
 
-At the end of this guide, we will have a ZK Badge for friends of the Sismo protocol—derived from Twitter, GitHub, and Ethereum accounts. After a short verification process, this ZK Badge will be deployed on our chain(s) of choice and be available on Sismo's [Badge minting app](https://app.sismo.io/).&#x20;
+## What is a Badge?
 
-## Design your Badge
+Badges are non-transferable tokens (SBTs) that represent verifiable statements (Data Gems) authenticated by Sismo’s ZK Badge attestation protocol.
+
+They are built on top of [Groups](../../technical-documentation/zk-badge-protocol/groups.md) and allow users to share aspects of their digital identities derived from Data Sources (web2 or web3 accounts and other credentials) without revealing the Data Source itself.
+
+You can find more info on Badges [**here**](../../what-is-sismo/sismo-badges.md).
+
+## Tutorial use-case
+
+For this tutorial, you create a ZK Badge for friends of the Sismo protocol—derived from Twitter, GitHub, and Ethereum accounts. After a short verification process, this ZK Badge will be deployed on our chain(s) of choice and be available on Sismo's [Badge minting app](https://app.sismo.io/).
+
+This is what you will get at the end of this tutorial:
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-17 à 15.24.53 3 2 2.png" alt=""><figcaption><p>Sismo Frens ZK Badge</p></figcaption></figure>
+
+## Creation of the group
+
+### Badge creation page
+
+First, go to the Factory (in Sismo Badges section): [https://factory.sismo.io/badges-explorer](https://factory.sismo.io/badges-explorer)
+
+Next, you will have to sign in to the factory with your Ethereum address. To do this click on the login button at the top left corner and sign the message.
+
+Once you are logged in, click on **Create new Badge** (<mark style="color:red;">red box</mark>):&#x20;
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-17 à 11.31.42.png" alt=""><figcaption><p>Badge creation page</p></figcaption></figure>
+
+### Design your Badge
 
 First and foremost, we need to give our ZK Badge a name and description. This information will identify our ZK Badge to our intended users.&#x20;
 
-<figure><img src="https://lh6.googleusercontent.com/NuTjR-U5dMZ67JoNDYqoyS0eDPtpFHmp85ihta8scDHp9ycUj2gVL4HsNm13y61A-cqC6ololPgXQiMVeaOPR5naK0C6YDlX4bUcvj8rL1mk4CiNm8ZDH9UbS2trl6ENkzTKG3SNKhsH1H0_FndgzR1RXUSBHyjMvNr2GH-3zj3cn_KAVnqnPQ0GoF1mKQ" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh6.googleusercontent.com/NuTjR-U5dMZ67JoNDYqoyS0eDPtpFHmp85ihta8scDHp9ycUj2gVL4HsNm13y61A-cqC6ololPgXQiMVeaOPR5naK0C6YDlX4bUcvj8rL1mk4CiNm8ZDH9UbS2trl6ENkzTKG3SNKhsH1H0_FndgzR1RXUSBHyjMvNr2GH-3zj3cn_KAVnqnPQ0GoF1mKQ" alt=""><figcaption><p>Badge metadata</p></figcaption></figure>
 
 Next, we need to give our ZK Badge an identifying image. We will click ‘**Open SVG editor**’ to design our ZK Badge’s appearance. Alternatively, we can click ‘**Upload .svg**’ to upload an existing file that conforms to Sismo’s [style guidelines](https://www.notion.so/sismo/Badge-Artwork-Style-Guide-921d853497fb45efb17459c1ed30c24b).&#x20;
 
-<figure><img src="https://lh5.googleusercontent.com/dEh4ZHEo-UhQyBBKJ8inqSC9Bi0bCHfyl4ltPjMswjww9LTTVgtx4-2UrDaKXN3qY_GDq0BHw6AxeYuCmEMYdCZGhLHVGeszzv6O0FDW-oCsNhwasHSyf63E-IhirLtlfjkG6hlQwUpAWmImr4ZLUWiT2ytoXNCtVFVDODeFU0Df7MtCKSmPXH0Rz-v6mg" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh5.googleusercontent.com/dEh4ZHEo-UhQyBBKJ8inqSC9Bi0bCHfyl4ltPjMswjww9LTTVgtx4-2UrDaKXN3qY_GDq0BHw6AxeYuCmEMYdCZGhLHVGeszzv6O0FDW-oCsNhwasHSyf63E-IhirLtlfjkG6hlQwUpAWmImr4ZLUWiT2ytoXNCtVFVDODeFU0Df7MtCKSmPXH0Rz-v6mg" alt=""><figcaption><p>Badge SVG creation</p></figcaption></figure>
 
 After designing our image, we click ‘**Save SVG and continue**’.
 
-### Set group of eligible users
+### Set a group of eligible users
 
 Now that our ZK Badge has been designed, we need to set our group of eligible users. Adding a group of eligible users makes it possible for our ZK Badge to be minted by its intended owners.&#x20;
 
 To add eligible users, we click ‘**Add eligible accounts**.’
 
-<figure><img src="https://lh6.googleusercontent.com/-LsO_513UI3X2t6YQl8qUhNs5Oz2wTloqwXNoqCQsdYggJ6mJSyK0qz3s4gd-Zirmm8IAKNS9Y-0PLBNUyH8e76K0N_zHksvV6bdBzbIFUw5bcGWpzWDlgjXkxjqpmd-0MbNwqfJXqBInMb-7uvpQkaWTFifrOsyYD3OL9A6218nifVQdFAbPvcJlWetHQ" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh6.googleusercontent.com/-LsO_513UI3X2t6YQl8qUhNs5Oz2wTloqwXNoqCQsdYggJ6mJSyK0qz3s4gd-Zirmm8IAKNS9Y-0PLBNUyH8e76K0N_zHksvV6bdBzbIFUw5bcGWpzWDlgjXkxjqpmd-0MbNwqfJXqBInMb-7uvpQkaWTFifrOsyYD3OL9A6218nifVQdFAbPvcJlWetHQ" alt=""><figcaption><p>Group creation process</p></figcaption></figure>
 
 After doing so, it is possible to add accounts using three different methods:
 
-<figure><img src="https://lh6.googleusercontent.com/YrFfrSBRhfgYWoMi_BpZTwpZ4C1C4szPzDDTG8V6FZ3PtDKEUQWLa1O0nxtCAWBXLROOL035bHlnykMQTeLTqwoQ-dwtJhQzavUEsKdpvi0dc4e6a37ZJuignFC0fSuK59lOdf9q4Hr0OzrnOm9-OJgzSZ8k-gtLaaeAMdkz6uM9yPbEbVVAv1jKOTMq4A" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-30 à 11.54.49.png" alt=""><figcaption><p>Group creation methods</p></figcaption></figure>
 
 If we manually upload a list of accounts, we upload a JSON file containing our list of eligible users. For our Sismo Frens ZK Badge, we want to add Twitter, GitHub, and Ethereum accounts owned by Sismo core team members. To do so, we enter the platform name accompanied by the appropriate account names and click ‘**Add**’.
 
-<figure><img src="https://lh3.googleusercontent.com/pcUqRhjsC5EAS-Ig18YrFSiiLVSz7Dd18Zgs6U4NEA6O4PQmrE3w5NojoGbMvu1EMpra7yrXMD4_z7viGwN1zVVJrhYskShd5EcpTWbkA9yYGlNCVy0qBUWbxTOEG3h0Zwf6ad1R113cnspiHseVStfOLTQOYrMTCVEEV52fyopmFDCq25zj-ukOj9QLKw" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh3.googleusercontent.com/pcUqRhjsC5EAS-Ig18YrFSiiLVSz7Dd18Zgs6U4NEA6O4PQmrE3w5NojoGbMvu1EMpra7yrXMD4_z7viGwN1zVVJrhYskShd5EcpTWbkA9yYGlNCVy0qBUWbxTOEG3h0Zwf6ad1R113cnspiHseVStfOLTQOYrMTCVEEV52fyopmFDCq25zj-ukOj9QLKw" alt=""><figcaption><p>Import a list of eligible accounts</p></figcaption></figure>
 
 If we add eligible accounts from data providers, we select the desired data provider and the type of data we want to use. We want to make it possible for all Sismo followers on Lens to mint our Sismo Frens ZK Badge. To do so, we select ‘**Lens**’ from the list of data providers, select ‘**Get followers of**,’ enter Sismo’s lens profile identifier, then finally click ‘**Add**.’&#x20;
 
-<figure><img src="https://lh5.googleusercontent.com/77rC7V-mB8DA78YKIp4mBLuVjhLrMydht2VEW4qABOwEWd7-VzPCCVvBoTwMX2pVSA_yXst87ozbmwgY27CBKNZ9JfDSmk0E26tJHzN7RrpfyV73UhpFHqbPKbYuBlZqefGT5XVgvfoR_rnCCQTIBbPwMQcjHzZ__bSuZRq5SNMrTpUbeOjUBglnmVz_vQ" alt=""><figcaption></figcaption></figure>
+<figure><img src="https://lh5.googleusercontent.com/77rC7V-mB8DA78YKIp4mBLuVjhLrMydht2VEW4qABOwEWd7-VzPCCVvBoTwMX2pVSA_yXst87ozbmwgY27CBKNZ9JfDSmk0E26tJHzN7RrpfyV73UhpFHqbPKbYuBlZqefGT5XVgvfoR_rnCCQTIBbPwMQcjHzZ__bSuZRq5SNMrTpUbeOjUBglnmVz_vQ" alt=""><figcaption><p>Import sismo.lens followers</p></figcaption></figure>
 
-If we add eligible accounts from existing Badges, we simply select the desired Badge from the menu or search for it in the search bar. We want all Sismo Contributor ZK Badge holders to be able to mint our Sismo Frens ZK Badge. To do this, we simply search for the Badge, select it, and press ‘**Add**.’&#x20;
+If we want to add eligible accounts from existing Groups, we can simply select the desired Group from the menu or search for it in the search bar. For our tutorial, we want all Sismo Contributors to be able to mint our Sismo Frens ZK Badge. To do this, we simply search for the Group, select it, and press ‘**Add**.’&#x20;
 
-After adding eligible accounts using the three different methods, we have our final group of eligible users. All members of this group will be able to mint the Sismo Frens ZK Badge once it has been deployed.&#x20;
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-30 à 12.01.15.png" alt=""><figcaption><p>Import accounts of sismo-contributors group</p></figcaption></figure>
 
-<figure><img src="https://lh4.googleusercontent.com/F6_71jNaHZ3p5GQz_h5vDtVnpIZ_ar8G9JO6DRjHv30MI3HCEpJvTunOLEc_Ajz1wK0KgQGNNtrvEF4aVZF2ubLMGK1z0GBJqlhpagMWTKu-jd0Ltl5DiPeuXg1ZYws-R0WnkbFrRjmGdmlSCPBXRh0rouxA1euVPeKDNr9krwvI2HMkvJmMcnB_b0M7xw" alt=""><figcaption></figcaption></figure>
+After adding eligible accounts using the three different methods, we have our final group of eligible users. All members of this group will be able to mint the Sismo Frens ZK Badge once it has been deployed.
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-30 à 11.42.38.png" alt=""><figcaption><p>Group of eligible users</p></figcaption></figure>
 
 ### Group update frequency
 
@@ -75,13 +103,17 @@ On this page, we are reminded of the information we have thus far. As our Badge 
 Drafts, as well as previously created Badges, are accessible via the My Badges tab: [https://factory.sismo.io/my-profile](https://factory.sismo.io/my-profile)
 {% endhint %}
 
-<figure><img src="https://lh6.googleusercontent.com/8xWwlD6C2hk92JIP0d1th60lAcqdNVkdmNop-Ec-ANEBshFHbg5p2URySWRq2ZYQnxf3SAsR_3fgghHP9OIA4ExcApcjJs-wvPp67-warKow4mBfK7jHPAVIXJ_sqk0RzeQBYunqae_q4Eu3v1ij-io" alt=""><figcaption><p>Important information about our Badge is visible here. Namely, the Badge's deployment status, deposit history, and remaining credit.</p></figcaption></figure>
+<figure><img src="https://lh6.googleusercontent.com/8xWwlD6C2hk92JIP0d1th60lAcqdNVkdmNop-Ec-ANEBshFHbg5p2URySWRq2ZYQnxf3SAsR_3fgghHP9OIA4ExcApcjJs-wvPp67-warKow4mBfK7jHPAVIXJ_sqk0RzeQBYunqae_q4Eu3v1ij-io" alt=""><figcaption><p>Sismo Frens ZK Badge in the Factory, pending funding</p></figcaption></figure>
+
+{% hint style="info" %}
+Important information about our Badge is visible here. Namely, the Badge's deployment status, deposit history, and remaining credit.
+{% endhint %}
 
 Next, we add credit to our Badge by clicking ‘**Add Credit**.’ Sismo uses a relayer to pay for user fees and increase user privacy. Badge creators fund the relayer by adding credit to their Badge. After adding credit, a request to deploy the Badge is sent to the Sismo core team.&#x20;
 
 Clicking '**Add Credit**' opens a smaller window where we must select our desired chains and the number of Badges we want to add credit for. By selecting ‘**100k**’ on the slider, we determine that eligible users will only be able to mint a total of 100,000 Sismo Frens ZK Badges. After this number of Badges has been minted, more credit can be added. As our Badge only has fewer than 100,000 eligible users, 100,000 is more than enough for every user to mint a Badge, even after weekly group updates.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>On this window, users choose their desired chains and how many mintable Badges to fund.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>On this window, users choose their desired chains and how many mintable Badges to fund.</p></figcaption></figure>
 
 Finally, we have to deposit enough ETH to cover our Badge’s relayer fees. These fees are calculated using the mean gas price on our selected chain, converted to ETH. As we have selected to deploy on Polygon and Gnosis Chain, our relayer fees are calculated using the mean gas price on those chains over the last month.&#x20;
 
