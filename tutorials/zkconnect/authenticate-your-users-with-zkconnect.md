@@ -14,7 +14,7 @@ You can access an open-source repository implementing zkConnect:
 * In React [here](https://github.com/sismo-core/zksub)
 * In Next.js [here](https://github.com/sismo-core/zksub-next)
 
-These 2 repositories use the [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)`package to request the proof, to see a full example of the` [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)`package, you can see` [`this branch`](https://github.com/sismo-core/zksub/tree/zk-connect-client-package) `of the React repository.`
+These 2 repositories use the [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)`package to request the proof, if your project is not on react you can use the`[`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)`package.`
 {% endhint %}
 
 ### Choose your stack (Next.js recommended)
@@ -96,10 +96,13 @@ After importing, you will be able to use the zkConnect button in your app.
 
 To do so, you have to use the `ZkConnectButton` component:
 
-<pre class="language-typescript"><code class="lang-typescript">import { ZkConnectButton, ZkConnectResponse } from "@sismo-core/zk-connect-react";
+<pre class="language-typescript"><code class="lang-typescript">import { ZkConnectButton, ZkConnectResponse, AuthType } from "@sismo-core/zk-connect-react";
 
 &#x3C;ZkConnectButton 
   appId={"0x0ad03e347304dd6c19d9aa75db8659d9"} // appId you registered
+  authRequest={{
+    authType: AuthType.ANON
+  }}
 <strong>  onResponse={async (zkConnectResponse: ZkConnectResponse) => {
 </strong>    //Send the response to your server to verify it
     //thanks to the @sismo-core/zk-connect-server package
@@ -143,7 +146,11 @@ You can then redirect your users to the [Data Vault App](../../technical-documen
 ```typescript
 // The `request` function sends your user to the Sismo Data Vault App 
 // to generate the proof of Data Vault ownerhsip.
-zkConnect.request();
+zkConnect.request({
+    authRequest: {
+        authType: AuthType.ANON
+    }
+});
 ```
 
 After your user is done generating the proof in its Data Vault, he will be redirected to your app. You need to receive the generated proof via `getResponse` .
@@ -188,13 +195,16 @@ const zkConnect = ZkConnect(zkConnectConfig);
 
 With this ZkConnect instance, you can call the verify function which takes the `zkConnectResponse` sent by the frontend:
 
-```typescript
-const { vaultId } = await zkConnect.verify(zkConnectResponse);
-```
+<pre class="language-typescript"><code class="lang-typescript"><strong>const { verifiedAuths } = await zkConnect.verify(zkConnectResponse, {
+</strong>    authRequest: { authType: AuthType.ANON }
+});
 
-If the proof is valid, a vaultId is returned. If not, an error is received.
+const anonUserId = verifiedAuths[0].userId;
+</code></pre>
 
-The `vaultId` corresponds to a unique identifier for the user Data Vault, the best part of it is that this `vaultId` is derived from the `appId` so it is impossible to compare two vault ids from two different apps implementing zkConnect. **The vaultId can be used in your application as a user identifier**.
+If the proof is valid, an anonUserId is returned. If not, an error is received.
+
+The `anonUserId` corresponds to a unique identifier for the user Data Vault, the best part of it is that this `anonUserId` is derived from the `appId` so it is impossible to compare two vault ids from two different apps implementing zkConnect. **The `anonUserId` can be used in your application as a user identifier**.
 
 A user has now the ability to privately authenticate himself in any application integrating zkConnect by proving that he owns a Data Vault. 🤘
 

@@ -12,7 +12,7 @@ You can access the open-source repository of the demo:
 * In React [here](https://github.com/sismo-core/zksub)
 * In Next.js [here](https://github.com/sismo-core/zksub-next)
 
-These 2 repositories use the [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)`package to request the proof, to see a full example of the` [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)`package, you can see` [`this branch`](https://github.com/sismo-core/zksub/tree/zk-connect-client-package) `of the React repository.`
+These 2 repositories use the [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)`package to request the proof, if your project is not on react you can use the`[`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)`package.`
 {% endhint %}
 
 ### Tutorial use case
@@ -122,9 +122,12 @@ import { ZkConnectButton, ZkConnectResponse } from "@sismo-core/zk-connect-react
 
 <ZkConnectButton 
   appId={"0x8f347ca31790557391cec39b06f02dc2"} // appId you registered
-  // Declare your dataRequest for the-merge-contributor group
-  dataRequest={{
+  // Declare your claimRequest for the-merge-contributor group
+  claimRequest={{
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a" 
+  }},
+  authRequest: {{
+    authType: AuthType.ANON
   }}
   // get a response 
   onResponse={async (zkConnectResponse: ZkConnectResponse) => {
@@ -137,7 +140,7 @@ import { ZkConnectButton, ZkConnectResponse } from "@sismo-core/zk-connect-react
 
 
 
-With the `dataRequest` props, you can request your users to generate a proof for a requested groupId, here the group `the-merge-contributor`.
+With the `claimRequest` props, you can request your users to generate a proof for a requested groupId, here the group `the-merge-contributor`. With the authRequest with authType AuthType.ANON you can request an anonUserId.
 
 
 
@@ -145,8 +148,8 @@ With the `dataRequest` props, you can request your users to generate a proof for
 The `dataRequest` has more optional parameters available:
 
 * **`groupTimestamp`**: This parameter specifies the timestamp of the group snapshot a user wants to prove membership in. By default, this timestamp is set to ‘latest’ to use the latest generated snapshot.
-* **`requestedValue`**: In groups, every account is associated with a value, which can represent the number of tokens staked, the voting power of the account, etc. The `requestedValue` parameter allows you to specify the value your user needs to have in the group to generate the proof. By default, it is set to 1.
-* **`comparator`**: The comparator can force users to prove that they have a value in the group greater than or equal (`”GTE”`) to the `requestedValue` or strictly equal (`”EQ”`)to the `requestedValue`. By default, it is `“GTE”.`\
+* **`value`**: In groups, every account is associated with a value, which can represent the number of tokens staked, the voting power of the account, etc. The `requestedValue` parameter allows you to specify the value your user needs to have in the group to generate the proof. By default, it is set to 1.
+* **`claimType`**: The claimType can force users to prove that they have a value in the group greater than or equal (`ClaimType.GTE`) to the `requested value` or strictly equal (`ClaimType.EQ`)to the `requested value`. By default, it is `“GTE”.`\
   ``
 
 You can see the [documentation](../../technical-documentation/zkconnect/zkconnect-client-request.md) if you want to learn more about this.
@@ -159,7 +162,7 @@ By clicking on this button your user will be redirected to the [Data Vault App](
 
 
 {% hint style="info" %}
-If you are not part of the group, feel free to use the optional `devMode` in your zkConnectConfig. Set the boolean field enabled as true and input a list of addresses that will be used instead of the actual group. Beware that this devMode should only be used when prototyping, if you keep such config in production, these dev addresses will be able to make proofs in their Vaults.
+If you are not part of the group, feel free to use the optional `devMode` in your zkConnectConfig. Set the boolean field enabled as true and input a list of groups that will be used instead of the actual Sismo groups. Beware that this devMode should only be used when prototyping, if you keep such config in production, these groups will be able to make proofs in their Vaults.
 {% endhint %}
 
 
@@ -170,20 +173,27 @@ import { ZkConnectButton, ZkConnectClientConfig, ZkConnectResponse } from "@sism
 
 const config: ZkConnectClientConfig = {
   appId: "0x8f347ca31790557391cec39b06f02dc2", // ethcc appId I created
-  devMode: {
-    enabled: true, // will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
-    devAddresses : [ // Will insert these addresses in data groups as eligible addresse
-	"0x123...abc", 
-	"0x456...efa"
-    ]
+  devMode?: {
+    // will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
+    enabled?: true, 
+    // overrides a group with these addresses
+    devGroups?: {
+      groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+      data: {
+        "0x123...abc": 1, 
+        "0x456...efa": 2
+      },
   }
 }
 
 <ZkConnectButton 
   config={config}
-  // Declare your dataRequest for the-merge-contributor group
-  dataRequest={{
+  // Declare your claimRequest for the-merge-contributor group
+  claimRequest={{
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a" 
+  }}
+  authRequest={{
+    authType: AuthType.ANON
   }}
   // get a response 
   onResponse={async (zkConnectResponse: ZkConnectResponse) => {
@@ -219,7 +229,7 @@ yarn add @sismo-core/zk-connect-client
 
 After importing, the first step is to create a `zkConnectConfig` for your client and initialize a new ZKConnect client instance with it:
 
-<pre class="language-typescript"><code class="lang-typescript"><strong>import { ZkConnect, ZkConnectClientConfig, DataRequest } from "@sismo-core/zk-connect-client";
+<pre class="language-typescript"><code class="lang-typescript"><strong>import { ZkConnect, ZkConnectClientConfig } from "@sismo-core/zk-connect-client";
 </strong>
 const zkConnectConfig: ZkConnectClientConfig = {
   appId: "0x8f347ca31790557391cec39b06f02dc2", // ethcc appId I created
@@ -230,24 +240,26 @@ const zkConnect = new ZkConnect(zkConnectConfig);
 
 
 {% hint style="info" %}
-If you are not part of the group, feel free to use the optional `devMode` in your zkConnectConfig. Set the boolean field enabled as true and input a list of addresses that will be used instead of the actual group. Beware that this devMode should only be used when prototyping, if you keep such config in production, these dev addresses will be able to make proofs in their Vaults.
-
-
+If you are not part of the group, feel free to use the optional `devMode` in your zkConnectConfig. Set the boolean field enabled as true and input a list of groups that will be used instead of the actual Sismo groups. Beware that this devMode should only be used when prototyping, if you keep such config in production, these groups will be able to make proofs in their Vaults.
 {% endhint %}
 
 
 
 ```typescript
-import { ZkConnect, ZkConnectClientConfig, DataRequest } from "@sismo-core/zk-connect-client";
+import { ZkConnect, ZkConnectClientConfig } from "@sismo-core/zk-connect-client";
 
 const zkConnectConfig: ZkConnectClientConfig = {
   appId: "0x8f347ca31790557391cec39b06f02dc2", // ethcc appId I created
-  devMode: {
-    enabled: true, // will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
-    devAddresses : [ // Will insert these addresses in data groups as eligible addresse
-	"0x123...abc", 
-	"0x456...efa"
-    ]
+  devMode?: {
+    // will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
+    enabled?: true, 
+    // overrides a group with these addresses
+    devGroups?: {
+      groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+      data: {
+        "0x123...abc": 1, 
+        "0x456...efa": 2
+      },
   }
 }
 
@@ -259,15 +271,15 @@ const zkConnect = new ZkConnect(zkConnectConfig);
 With this ZkConnect instance, you can request your users to generate a proof for a requested groupId, here the group `the-merge-contributor`.
 
 ```typescript
-// Declare your dataRequest for the-merge-contributor group
-const THE_MERGE_CONTRIBUTOR_REQUEST = DataRequest({ 
-  groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a" 
-});
-
 // The `request` function sends your user to the Sismo vault app to generate the proof.
 zkConnect.request({
   // we request a proof for a specific group
-  dataRequest: THE_MERGE_CONTRIBUTOR_REQUEST,
+  claimRequest: { 
+    groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a" 
+  },
+  authRequest: {
+    authType: AuthType.ANON
+  }
 });
 
 // get a response 
@@ -280,8 +292,8 @@ By calling the `request` function, your users will be redirected to the Sismo Va
 The `dataRequest` has more optional parameters available:
 
 * **`groupTimestamp`**: This parameter specifies the timestamp of the group snapshot a user wants to prove membership in. By default, this timestamp is set to ‘latest’ to use the latest generated snapshot.
-* **`requestedValue`**: In groups, every account is associated with a value, which can represent the number of tokens staked, the voting power of the account, etc. The `requestedValue` parameter allows you to specify the value your user needs to have in the group to generate the proof. By default, it is set to 1.
-* **`comparator`**: The comparator can force users to prove that they have a value in the group greater than or equal (`”GTE”`) to the `requestedValue` or strictly equal (`”EQ”`)to the `requestedValue`. By default, it is `“GTE”.`\
+* **`value`**: In groups, every account is associated with a value, which can represent the number of tokens staked, the voting power of the account, etc. The `requestedValue` parameter allows you to specify the value your user needs to have in the group to generate the proof. By default, it is set to 1.
+* **claimType**: The claimType can force users to prove that they have a value in the group greater than or equal (`ClaimType.GTE`) to the `requested value` or strictly equal (`ClaimType.EQ`)to the `requested value`. By default, it is `“GTE”.`\
   ``
 
 You can see the [documentation](../../technical-documentation/zkconnect/zkconnect-client-request.md) if you want to learn more about this.
@@ -358,24 +370,27 @@ const zkConnectConfig: ZkConnectServerConfig = {
 const zkConnect = ZkConnect(zkConnectConfig);
 ```
 
-With this ZkConnect instance, you can call the verify function which takes the dataRequest for the group and the `zkConnectResponse` sent by the frontend:
+With this ZkConnect instance, you can call the verify function which takes the claimRequest for the group and the `zkConnectResponse` sent by the frontend:
 
 ```typescript
-const THE_MERGE_CONTRIBUTOR_REQUEST = DataRequest({ groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",});
-
-const { vaultId } = await zkConnect.verify(
+const { verifiedAuths } = await zkConnect.verify(
   zkConnectResponse,
-  { dataRequest: THE_MERGE_CONTRIBUTOR_REQUEST }
+  { 
+    claimRequest: { groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a" }, 
+    authRequest: { authType: AuthType.ANON}
+  }
 );
+
+const anonUserId = verifiedAuths[0].userId;
 ```
 
 {% hint style="info" %}
-By doing this, you'll be able to verify the validity of the proof for the requested group. The DataRequest is crucial here as far as users could gain unauthorized access by providing valid proof for any group.
+By doing this, you'll be able to verify the validity of the proof for the requested group. The ClaimRequest is crucial here as far as users could gain unauthorized access by providing valid proof for any group.
 {% endhint %}
 
-If the proof and the requested group are valid, a vaultId is returned. If not, an error is received.
+If the proof and the requested group are valid, an anonUserId is returned. If not, an error is received.
 
-The vaultId corresponds to a unique identifier for the user Data Vault, the best part of it is that this vaultId is derived from the appId so it is impossible to compare two vault ids from two different apps implementing zkConnect.
+The anonUserId corresponds to a unique identifier for the user Data Vault, the best part of it is that this anonUserId is derived from the appId so it is impossible to compare two anon user ids from two different apps implementing zkConnect.
 
 A user has now the ability to authenticate himself by sharing only proof of private data he owns while not leaking any addresses or accounts where this data comes from. 🤘
 
@@ -383,20 +398,20 @@ You can find the full code snippet for the backend [here](https://github.com/sis
 
 You can now certify that the email sent to your API belongs to a contributor of The Merge without knowing which contributor. 🤯 You are now at 95% of the job! There is one last issue to resolve: what if one of your users adds multiple emails to gain access more than once?
 
-### Avoid double spending with vaultId
+### Avoid double spending with anonUserId
 
-As you saw, the verify function will return you the vaultId.
+As you saw, the verify function will return you the anonUserId.
 
-This vaultId can be used as a user identifier, it is deterministically generated based on the following elements:
+This anonUserId can be used as a user identifier, it is deterministically generated based on the following elements:
 
 * The vault used to generate the proof
 * The app ID
 
-This means that the vaultId will remain constant for a specific app if your user tries to prove something twice.
+This means that the anonUserId will remain constant for a specific app if your user tries to prove something twice.
 
 With this property, we can check if a user has already generated a proof to gain EthCC access.
 
-To do so, we only need to store the vaultId with the added email, and every time a proof is sent to the back end, check that the vaultId returned is not already associated with an email address.
+To do so, we only need to store the anonUserId with the added email, and every time a proof is sent to the back end, check that the anonUserId returned is not already associated with an email address.
 
 And that’s it! 💜
 
