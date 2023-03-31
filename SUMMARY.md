@@ -17,6 +17,7 @@
 * [zkConnect](tutorials/zkconnect/README.md)
   * [Authenticate your users with zkConnect](tutorials/zkconnect/authenticate-your-users-with-zkconnect.md)
   * [Request data privately with zkConnect](tutorials/zkconnect/zk-connect-guide.md)
+  * [Gate your contracts with zkConnect (Advanced)](tutorials/zkconnect/gate-your-contracts-with-zkconnect-advanced.md)
 
 ## Technical Documentation
 
