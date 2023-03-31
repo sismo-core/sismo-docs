@@ -35,16 +35,20 @@ To integrate it you have access through the package to the `ZkConnectButton` com
 import { ZkConnectButton } from "@sismo-core/zk-connect-react";
 
 <ZkConnectButton 
-		//You will need to register an appId in the Factory
+    //You will need to register an appId in the Factory
     appId={"0x8f347ca31790557391cec39b06f02dc2"}
-		//Request proofs from your users for a groupId
-		dataRequest={{
-          groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
+    //Request proofs from your users for a groupId
+    claimRequest={{
+        groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
     }}
-		//After user redirection get a response containing his proofs 
+    authRequest={{
+        authType: AuthType.ANON
+    }}
+    messageSignatureRequest={"Your message"}
+    //After user redirection get a response containing his proofs 
     onResponse={async (response) => {
-      //Send the response to your server to verify proofs
-			//thanks to the @sismo-core/zk-connect-server package
+        //Send the response to your server to verify proofs
+        //thanks to the @sismo-core/zk-connect-server package
     }}
 />
 ```
@@ -56,7 +60,7 @@ import { useZkConnect, ZkConnectClientConfig } from "@sismo-core/zk-connect-reac
 
 const config: ZkConnectClientConfig = { appId: "0x8f347ca31790557391cec39b06f02dc2" };
 
-const { response } = useZkConnect({ config });
+const { response, responseBytes } = useZkConnect({ config });
 ```
 
 The `useZkConnect` hook also exposes the zkConnect variable which provides access to all the features available in the zkConnect Client package.
@@ -65,11 +69,11 @@ The `useZkConnect` hook also exposes the zkConnect variable which provides acces
 const { zkConnect } = useZkConnect({ config });
 ```
 
-Please see the [`zkConnect Client documentation`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request) to see all the possibilities around the zkCOnnect instance.
+Please see the [`zkConnect Client documentation`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request) to see all the possibilities around the zkConnect instance.
 
 ### Documentation
 
-This package is a wrapper of the zkConnect Client package, which means that all the core concepts such as config, dataRequest, and response are the same as in the client package. If you need to explore these concepts in detail, we advise you to refer to the [@sismo-core/zk-connect-client](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request) page, which provides more detailed information.
+This package is a wrapper of the zkConnect Client package, which means that all the core concepts such as config, claimRequest, authRequest, messageSignatureRequest, and response are the same as in the client package. If you need to explore these concepts in detail, we advise you to refer to the [@sismo-core/zk-connect-client](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request) page, which provides more detailed information.
 
 #### ZkConnectButton
 
@@ -79,33 +83,34 @@ The ZkConnectButton component will allow you to easily request proofs from your 
 import { ZkConnectButton, ZkConnectClientConfig, ZkConnectResponse } from "@sismo-core/zk-connect-react";
 
 const config: ZkConnectClientConfig = {
-	appId: "0x8f347ca31790557391cec39b06f02dc2", 
-	devMode: {
-		// will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io
-		// active the devMode only in your dev environment 
-		enabled: env.name === "DEV", 
-		// overrides any group with these addresses
-		devAddresses?: [ 
-		      "0x123...abc", 
-		      "0x456...efa"
-		],
-		// you can also customize values
-		// devAddresses?: {
-		//   "0x123...abc": 2,
-		//   "0x456...efa": 3
-		// },
-	}
+    appId: "0x8f347ca31790557391cec39b06f02dc2", 
+    devMode?: {
+    	// will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
+    	enabled?: true, 
+    	// overrides a group with these addresses
+    	devGroups?: {
+      		groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+      		data: {
+        		"0x123...abc": 1, 
+        		"0x456...efa": 2
+      		},
+  	},
+    }
 }
-
+ 
 <ZkConnectButton 
 	//Request proofs for this groupId
-	dataRequest:{{
-		groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-	}}
+	claimRequest={{
+            groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
+        }}
+        authRequest={{
+            authType: AuthType.ANON
+        }}
+        messageSignatureRequest={"Your message"}
     	config={config}
 	onResponse={async (response: ZkConnectResponse) => {
-		//Send the response to your server to verify it
-		//thanks to the @sismo-core/zk-connect-server package
+	    //Send the response to your server to verify it
+	    //thanks to the @sismo-core/zk-connect-server package
 	}}
 	//boolean to trigger the loading version of the button
 	//put it to true while your server verification
@@ -118,7 +123,9 @@ const config: ZkConnectClientConfig = {
 | Prop                                                                  | Type                                                                                                                                            | Description                                                                                                                                                                             |
 | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | appId _(optional but must at least provide this appId or a config)_   | string                                                                                                                                          | appId of your zkConnect app. Go on the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register your appId.                                                                  |
-| dataRequest _(optional)_                                              | [DataRequestType](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#datarequest)                      | The DataRequest object holds all the information needed to generate the proofs.                                                                                                         |
+| claimRequest                                                          | [ClaimRequest](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#claimrequest)                        | The ClaimRequest object holds all the information needed to generate a proof of membership.                                                                                             |
+| authRequest                                                           | [AuthRequest](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#authrequest)                          | The AuthRequest object holds all the information needed to generate a proof of account ownership.                                                                                       |
+| messageSignatureRequest                                               | string                                                                                                                                          | Message to sign in the vault                                                                                                                                                            |
 | config _(optional but must at least provide this config or an appId)_ | [ZkConnectClientConfig](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#zkconnectclientconfig)      | The config allows you to fully customize your zkConnect integration.                                                                                                                    |
 | verifying _(optional)_                                                | boolean                                                                                                                                         | This prop allows you to trigger the loading of the button.                                                                                                                              |
 | onResponse _(optional)_                                               | (response: [ZkConnectResponse](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#getresponse)) ⇒ void | Return a response that contains the proofs generated by your users that must be sent to your backend and verified thanks to the @sismo-core/zk-connect-server package.                  |
@@ -154,7 +161,7 @@ The `useZkConnect` hook makes it easy for you to obtain the response containing 
 ```typescript
 import { useZkConnect } from "@sismo-core/zk-connect-react";
 
-const { zkConnect, response } = useZkConnect({ config });
+const { zkConnect, response, responseBytes } = useZkConnect({ config });
 ```
 
 **Params**
@@ -165,7 +172,8 @@ const { zkConnect, response } = useZkConnect({ config });
 
 **States returned**
 
-| State     | Type                                                                                                                                 | Description                                                                                                                                                  |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| response  | [ZkConnectResponse](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#getresponse) \| null | The response contains the proofs generated by your users that must be sent to your backend and verified thanks to the @sismo-core/zk-connect-server package. |
-| zkConnect | [ZkConnectClient](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request)                       | ZkConnect instance with the client configuration.                                                                                                            |
+| State         | Type                                                                                                                                 | Description                                                                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| response      | [ZkConnectResponse](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#getresponse) \| null | The response contains the proofs generated by your users that must be sent to your backend and verified thanks to the @sismo-core/zk-connect-server package. |
+| responseBytes | string \| null                                                                                                                       | The response contains the proofs generated by your users that must be sent to your contract.                                                                 |
+| zkConnect     | [ZkConnectClient](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request)                       | ZkConnect instance with the client configuration.                                                                                                            |

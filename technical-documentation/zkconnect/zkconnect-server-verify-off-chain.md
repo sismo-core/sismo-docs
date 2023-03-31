@@ -28,7 +28,7 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 The first step for integrating zkConnect in your backend is to create a `zkConnectConfig`. This config will require an `appId` and can be customized with optional fields. You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId.
 
 ```typescript
-import { ZkConnect, ZkConnectServerConfig, DataRequest } from "@sismo-core/zk-connect-server";
+import { ZkConnect, ZkConnectServerConfig } from "@sismo-core/zk-connect-server";
 
 const zkConnectConfig: ZkConnectServerConfig = {
   // you will need to register an appId in the Factory
@@ -39,25 +39,32 @@ const zkConnectConfig: ZkConnectServerConfig = {
 const zkConnect = ZkConnect(zkConnectConfig);
 ```
 
-#### Create a DataRequest
+#### Create a ClaimRequest and or AuthRequest
 
-The dataRequest will be used to verify that the proof is valid with respect to a particular groupId.
+The claimRequest and the authRequest will be used to verify that the proof is valid, these requests must match with the requests in your frontend.
 
 ```typescript
-const DATA_REQUEST = DataRequest({ groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"});
+const CLAIM_REQUEST = { groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"};
+const AUTH_REQUEST = { authType: AuthType.ANON };
 ```
 
 #### Verify proofs from your users
 
-Proofs need to be sent to your backend with a ZkConnectResponse. The verify function takes as inputs a ZkConnectResponse and a DataRequest and verifies that the proof is cryptographically valid with respect to the groupId of the DataRequest.
+Proofs need to be sent to your backend with a ZkConnectResponse. The verify function takes as inputs a ZkConnectResponse, a ClaimRequest, an AuthRequest and verifies that the proof is cryptographically valid with respect to these requests.
 
 ```typescript
 // verifies the proofs contained in the zkConnectResponse 
 // with respect to the group in the dataRequest
-const { vaultId } = await zkConnect.verify(
+const { verifiedAuths, verifiedClaims } = await zkConnect.verify(
   zkConnectResponse,
-  { dataRequest: DATA_REQUEST }
+  { 
+    claimRequest: CLAIM_REQUEST,
+    authRequest: AUTH_REQUEST
+  }
 );
+
+const anonUserId = verifiedAuths[0].userId;
+const proofId = verifiedClaims[0].proofId;
 ```
 
 ## Documentation
@@ -104,79 +111,98 @@ export type HydraS2VerifierOpts = {
 
 #### `ZkConnectResponse`
 
-The ZkConnectResponse needs to be sent by the frontend so that the backend can verify the proofs contained in it. You can in the types that the ZkConnectResponse can contain an `authProof`, that is a proof of Data Vault ownership, or `verifiableStatements` that can contain proofs about [Data Shards](../../what-is-sismo/data-vault.md).&#x20;
-
-{% hint style="info" %}
-The `authProof` will only be provided if `verifableStatements` are empty, i.e when no `DataRequests` where made by the frontend.
-{% endhint %}
+The ZkConnectResponse needs to be sent by the frontend so that the backend can verify the proofs contained in it.
 
 ```typescript
-type ZkConnectRequest = {
+type ZkConnectResponse = {
     // the appId registered in the Factory
     appId: string;
-    // the dataRequest with the statementRequests
-    dataRequest?: DataRequestType;
-    // service from which the proof is requested
-    namespace?: string;
-    // the path to redirect your users with proofs
-    callbackPath?: string;
     // zk connect version
     version: string;
-};
+    // service from which the proof is requested
+    namespace?: string;
+    proofs: ZkConnectProof[]
+}
 
-type ZkConnectResponse = Omit<ZkConnectRequest, "callbackPath" | "dataRequest"> & {
-    // proof of a Data Vault ownership
-    authProof?: AuthProof;
-    // statements containing proofs to verify
-    verifiableStatements: VerifiableStatement[];
-};
+type ZkConnectProof = {
+    auth?: Auth;
+    claim?: Claim;
+    signedMessage?: string | any;
+    provingScheme: string;
+    proofData: string;
+    extraData: any;
+}
 ```
 
 #### `verify`
 
 ```typescript
-export type ZkConnectVerifiedResult = ZkConnectResponse & {
-  // id of the user Data Vault for your appId
-  vaultId: string;
-  // statements containing proofs that were verified
-  verifiedStatements: VerifiedStatement[];
-};
+type ZkConnectVerifiedResult = ZkConnectResponse & {
+  signedMessages: string[]
+  verifiedClaims: VerifiedClaim[]
+  verifiedAuths: VerifiedAuth[]
+}
 
-export type VerifiedStatement = VerifiableStatement & { 
-  // id of the verified proof
-  proofId: string 
-};
+type VerifiedClaim = Claim & {
+  proofId: string
+  __proof: string
+}
 
-async function verify(zkConnectResponse: ZkConnectResponse,{ dataRequest, namespace }: VerifyParamsZkConnect): Promise<ZkConnectVerifiedResult>;
+export type Claim = {
+  groupId?: string
+  groupTimestamp?: number | 'latest' // default to "latest"
+  value?: number // default to 1
+  claimType?: ClaimType // default to GTE
+  extraData?: any // default to ''
+}
+
+type VerifiedAuth = Auth & {
+  __proof: string
+}
+
+export type Auth = {
+  authType: AuthType
+  // Contain the id of the auth you ask
+  // May contain an anon userId, a github id or a twitterId
+  userId?: string 
+}
+
+async function verify(zkConnectResponse: ZkConnectResponse,{ claimRequest, authRequest, namespace }: VerifyParamsZkConnect): Promise<ZkConnectVerifiedResult>;
 ```
 
-If the proof contained in the `zkConnectResponse` is valid, the function should return a `ZkConnectVerifiedResult`, otherwise, it should return an error.
+If the proof contained in the `zkConnectResponse` is valid, the function should return a `ZkConnectVerifiedResult`, otherwise, it should throw an error.
 
-In a `ZkConnectVerifiedResult`, you can get a [`vaultId`](../../technical-concepts/vault-and-proof-identifiers.md), which is a unique identifier that identifies a [Data Vault](../../what-is-sismo/data-vault.md) from Sismo. You can also choose to get `proofIds` in `verifiedStatements`.
+In a `ZkConnectVerifiedResult`, you can get a userId, which is a unique identifier that identifies an account from your user Sismo Vault.&#x20;
 
 ```typescript
 // get a vaultId out of valid proofs
-const { vaultId } = await zkConnect.verify(
+const { verifiedAuths } = await zkConnect.verify(
+  zkConnectResponse,
+  { 
+    authRequest: AUTH_REQUEST,
+    claimRequest: CLAIM_REQUEST
+  }
+);
+
+const userId = verifiedAuths[0].userId;
+
+// get proofId out of valid proofs
+const { verifiedClaims } = await zkConnect.verify(
   zkConnectResponse,
   { dataRequest: DATA_REQUEST }
 );
 
-// get vaultId and verifiedStatements out of valid proofs
-const { vaultId, verifiedStatements } = await zkConnect.verify(
-  zkConnectResponse,
-  { dataRequest: DATA_REQUEST }
-);
-
-// get a proofId out of a verifiedStatement
-const firstProofId = verifiedStatements[0].proofId;
+const proofId = verifiedClaims[0].proofId;
 
 ```
 
-#### VaultId and Proof Ids
+#### `anonUserId` and Proof Ids
 
-It is worth noting that the `vaultId` is deterministically generated based on the user vault secret and the `appId` with a Poseidon hash. This means that if a user has already used your app, the `vaultId` will be the same each time this user use your app but it will be different for other apps. This is useful if you want to store the `vaultId` in your database to link it to a user while preserving the privacy of this same user between apps. You can learn more about the `vaultId` [here](../../technical-concepts/vault-and-proof-identifiers.md).
+In the userId you can find depending on the authType you ask a Github Id for AuthType.Github, a Twitter id for AuthType.Twitter or an anonUserId for AuthType.ANON.
 
-You can also find a `proofId` in the `verifiedStatements` of the `ZkConnectVerifiedResult`. This `proofId` is a unique identifier that identifies a proof from Sismo. This `proofId` is also deterministically generated based on the `appId`, the `namespace`, the `groupId` and the `groupTimestamp`. This `proofId` will allow you to know if a user already proved something to your app for a specific namespace and group.&#x20;
+It is worth noting that the `anonUserId` is deterministically generated based on the user vault secret and the `appId` with a Poseidon hash. This means that if a user has already used your app, the `vaultId` will be the same each time this user use your app but it will be different for other apps. This is useful if you want to store the `vaultId` in your database to link it to a user while preserving the privacy of this same user between apps. You can learn more about the `vaultId` [here](../../technical-concepts/vault-and-proof-identifiers.md).
+
+You can also find a `proofId` in the `verifiedClaims` of the `ZkConnectVerifiedResult`. This `proofId` is a unique identifier that identifies a proof from Sismo. This `proofId` is also deterministically generated based on the `appId`, the `namespace`, the `groupId` and the `groupTimestamp`. This `proofId` will allow you to know if a user already proved something to your app for a specific namespace and group.&#x20;
 
 This `proofId` can be useful if you want to allow your users to participate in private polls while ensuring only one vote each time. For each poll, you can specify a different namespace such as `namespace: "my-poll-x"` so that a different proofId is computed each time. By storing the `proofId` alongside the `vaultId` in your apps, you can now ensure that a user with a specific `vaultId` only votes one time for each private polls.
 
@@ -185,18 +211,22 @@ Here are some small snippets to get&#x20;
 #### Frontend
 
 <pre class="language-typescript"><code class="lang-typescript">// private-poll-1.tsx
-import { ZkConnect, ZkConnectClientConfig, DataRequest } from "@sismo-core/zk-connect-client";
+import { ZkConnect, ZkConnectClientConfig, DataRequest, AuthType } from "@sismo-core/zk-connect-client";
 
 const zkConnect = ZkConnect({
   // zkConnectClientConfig will only appId
   appId: "0x8f347ca31790557391cec39b06f02dc2", 
 });
 
-const DATA_REQUEST = DataRequest({ 
+const CLAIM_REQUEST = { 
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-});
+};
+const AUTH_REQUEST = { 
+    authType: AuthType.ANON,
+};
 <strong>zkConnect.request({ 
-</strong>  dataRequest: DATA_REQUEST,
+</strong>  claimRequest: CLAIM_REQUEST,
+  authRequest: AUTH_REQUEST,
   namespace: "my-private-poll-1", // 👈 --> namespace for private poll 1
 });
 
@@ -208,17 +238,18 @@ const zkConnectResponseOne = zkConnect.getResponse();
 ```typescript
 // you do the same with another poll 
 // private-poll-2.tsx
-import { ZkConnect, ZkConnectClientConfig, DataRequest } from "@sismo-core/zk-connect-client";
+import { ZkConnect, ZkConnectClientConfig, DataRequest, AuthType } from "@sismo-core/zk-connect-client";
 
 const zkConnect = ZkConnect({
   appId: "0x8f347ca31790557391cec39b06f02dc2", 
 });
 
-const DATA_REQUEST = DataRequest({ 
+const CLAIM_REQUEST = { 
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-});
+};
 zkConnect.request({ 
-  dataRequest: DATA_REQUEST, 
+  claimRequest: CLAIM_REQUEST, 
+  authRequest: AUTH_REQUEST,
   namespace: "my-private-poll-2", // 👈 --> namespace for private poll 2
 });
 
@@ -235,31 +266,41 @@ const zkConnectResponseTwo = zkConnect.getResponse();
 </strong>  appId: "0x8f347ca31790557391cec39b06f02dc2", 
 });
 
-const DATA_REQUEST = DataRequest({ 
+const CLAIM_REQUEST = { 
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-});
+};
 
+const AUTH_REQUEST = { 
+    authType: AuthType.ANON,
+};
 
-const { vaultIdOne, verifiedStatementsOne } = await zkConnect.verify(
+const { verifiedClaimsOne, verifiedAuthsOne } = await zkConnect.verify(
     zkConnectResponseOne, // 👈 --> zkConnectResponse for private poll 1
     {
-      dataRequest: DATA_REQUEST,
+      claimRequest: CLAIM_REQUEST,
+      authRequest: AUTH_REQUEST,
     }
 );
 
-const { vaultIdTwo, verifiedStatementsTwo } = await zkConnect.verify(
-    zkConnectResponseOne, // 👈 --> zkConnectResponse for private poll 2
+
+const { verifiedClaimsTwo, verifiedAuthsTwo } = await zkConnect.verify(
+    zkConnectResponseTwo, // 👈 --> zkConnectResponse for private poll 2
     {
-      dataRequest: DATA_REQUEST,
+      claimRequest: CLAIM_REQUEST,
+      authRequest: AUTH_REQUEST,
     }
 );
 
-const proofIdOne = verifiedStatementsOne[0].proofId;
-const proofIdTwo = verifiedStatementsTwo[0].proofId;
 
-// vaultIdOne === vaultIdTwo
+const proofIdOne = verifiedClaimsOne[0].proofId;
+const anonUserIdOne = verifiedAuthsOne[0].userId
+
+const proofIdTwo = verifiedClaimsTwo[0].proofId;
+const anonUserIdTwo = verifiedAuthsTwo[0].userId
+
+// anonUserIdOne === anonUserIdTwo
 // but
 // proofIdOne !== proofIdTwo
-// You can know if a vaultId has already voted on a private poll 
+// You can know if an anonUserId has already voted on a private poll 
 // by storing the proofIds 🤘
 </code></pre>
