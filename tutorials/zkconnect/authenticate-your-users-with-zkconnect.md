@@ -90,7 +90,7 @@ First, you will need to import the following:
 \
 After importing, you will be able to use the zkConnect button in your app.
 
-<figure><img src="../../.gitbook/assets/zkConnect (2).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/zkConnect (1).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
 
 
 
@@ -217,7 +217,7 @@ Here's how to get started:
 1. Create an account on [Vercel](https://vercel.com/) with your Github account
 2. Create a new project and import your zksub repository in Vercel
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.00.30.png" alt=""><figcaption><p>Import a Git repository</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.00.30 (1).png" alt=""><figcaption><p>Import a Git repository</p></figcaption></figure>
 
 3. When your repository is linked to Vercel, you should see this page appear:
 

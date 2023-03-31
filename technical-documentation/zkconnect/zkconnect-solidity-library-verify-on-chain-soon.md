@@ -1,7 +1,240 @@
 ---
-description: Soon!
+description: Verify proofs from your users
 ---
 
-# zkConnect Solidity Library: Verify On-chain (soon)
+# zkConnect Solidity Library: Verify On-chain
 
-By the end of March :)
+The [zkConnect](../../what-is-sismo/zkconnect.md) Solidity Library is built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) and allows to easily verify proofs from your users **on-chain**. You can see a full guide on how to integrate zkConnect into your application here.
+
+<figure><img src="../../.gitbook/assets/onchain (2).png" alt=""><figcaption><p>zkConnect onchain full flow</p></figcaption></figure>
+
+This page will detail all the specifications of the zkConnect Solidity Library.
+
+{% hint style="info" %}
+Learn more about Sismo zero-knowledge proofs and use cases [**here**](https://docs.sismo.io/sismo-docs/technical-concepts/proof-identifier).
+
+Learn more about zkConnect [**here**](../../what-is-sismo/zkconnect.md).
+{% endhint %}
+
+## Usage
+
+Import the ZkConnect lib to your contract:
+
+```solidity
+import "zk-connect-solidity/libs/zk-connect/ZkConnectLib.sol";
+```
+
+Then:
+
+* **Inherits** your contract from the zkConnect Library
+* **Call** the ZkConnect constructor in the constructor of your contract
+* **Create** the request objects:
+  * Create a [Claim](./#claim) OR an [Auth](./#auth) object in the constructor.
+  *   Create a [signedMessage](./#signedmessage):&#x20;
+
+      * By hardcoding a signedMessage in your contract, you can ensure that the zkConnectResponse have the same signed message that the one you hardcoded.
+
+      > **Example 1**: Define a specific message (like the one used fo Sign-in with Ethereum), so the lib can verify the user use the same message to generate the proof.
+
+      * You can also define it by passing it as argument of a function of your contract. And verify it regarding the zkConnectResponse one.
+
+      > **Example 2**: A user need to specify an address to receive an airdrop. He will send his address as parameter of the contract function, so the lib can verify that is the same address that the one used to generate the proof.
+
+This will then allow you to check if the proof the user wants to check corresponds to the proof expected by the contract.
+
+```solidity
+contract MyContract is ZkConnect { // inherits from zkConnect library
+ // call ZkConnect constructor
+ constructor(bytes16 appId, bytes16 groupId) ZkConnect(appId) {
+  // creation of the claim request with a groupId
+  Claim memory claimRequest = buildClaim({groupId: groupId});
+  
+  // you can also pass in arguments other objects in order to 
+  // create an AuthRequest
+  // Auth memory authRequest = buildAuth({authRequest: authRequest});
+  
+  // Or a signedMessage
+  // bytes memory signedMessage = "yes"
+}
+...
+}
+```
+
+Finally, use the `verify()` function to verify the proof stored in `zkConnectResponse`:
+
+```solidity
+function doSomethingWithZkConnect(bytes memory zkConnectResponse) public {
+    // store the result of the verification
+    ZkConnectVerifiedResult memory zkConnectVerifiedResult = 
+    // verify the proof
+    verify(zkConnectResponse, claimRequest);
+    
+    // You can also pass the signedMessage as argument here (see Example 2)
+    // verify(zkConnectResponse, claimRequest, _signedMessage);
+}
+```
+
+If your proof is valid, the contract will continue his execution, otherwise it will reject an error.
+
+## Documentation
+
+### `verify()`
+
+```solidity
+function verify(
+    bytes memory responseBytes, // required
+    Auth memory authRequest, // optional
+    Claim memory claimRequest, // optional
+    bytes memory messageSignatureRequest, // optional
+    bytes16 namespace // optional
+) public returns (ZkConnectVerifiedResult memory)
+```
+
+`verify()` can take these 3 arguments:
+
+* `responseBytes`: the requested proof, the appId and the service
+
+The next objects are requested by the frontend. The `verify()` function need to verify that the proof has been generated from these objects:
+
+* `authRequest`: An Auth request will request a proof of account ownership from your user.
+* `claimRequest`: A Claim request will request a proof of group membership from your user.
+* `messageSignatureRequest`: A Signed Message request will request to generate a proof that can't be verified without this specific message associated to it.
+* `namespace`: the namespace of the application for which the contract is used
+
+And it returns a `ZkConnectVerifiedResult`
+
+
+
+### `responseBytes` _(required)_
+
+The `responseBytes` is the encoded version of the `zkConnectResponse`, the response that the frontend received from the Data Vault App.
+
+Once decoded here is the type of the `zkConnectResponse`:
+
+```solidity
+struct ZkConnectResponse {
+    bytes16 appId; // the app identifier
+    bytes16 namespace; // app service from which the proof is requested
+    bytes32 version; // the version of the Data Vault app.
+    ZkConnectProof[] proofs;
+}
+```
+
+**``**[**`appId`**](./#appid) : The unique identifier of your application registered on the Sismo Factory app.
+
+**``**[**`namespace`**](./#namespace) : By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application.
+
+**``**[**`version`**](./#version) : The version of the Data Vault app queried. The only version that work is now `zk-connect-v2`.
+
+**`proofs[]`** : The array that contains all the proofs the frontend provide to the contract. Learn more about proofs [**here**](./#proofs). A proof can be 3 different things:
+
+```solidity
+struct ZkConnectProof {
+  Claim claim; // optional
+  Auth auth; // optional
+  bytes signedMessage; // optional
+  bytes32 provingScheme; // required
+  bytes proofData; // required
+  bytes extraData; // required
+}
+```
+
+**``**[**`claim`**](./#claim) : The group membership proof for a specific value.
+
+* ``[`groupId`](./#groupid) : The unique identifier of the group of accounts to which the user must prove that he belongs to in order to generate the proof.
+* ``[`groupTimeStamp`](./#grouptimestamp) : By default the latest Group Snapshot. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated to them.
+* `value`: A group is a mapping of account and value pairs. Each account is associated with a value. Querying a specific `value` restricts eligibility to users belonging to the group with `value` that respect the `claimType` defined.
+* `claimType` : Allow choosing if we want to restrict the eligibility for the accounts that have the exact (`EQ`), at least (`GTE`) (or other type of comparison) the `value` specified before. Comparators accepted: `EMPTY`, `GTE`, `GT`, `EQ`, `LT`, `LTE`, `USER_SELECT`.
+* `extraData`: other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/hydra-zk-proving-schemes/hydra-s2.md).
+
+**``**[**`auth`**](./#auth) : The proof of account ownership
+
+* `authType` : The type of the account you want to authenticate through the vault. Types accepted: `EMPTY`, `ANON`, `GITHUB`, `TWITTER`, `EVM_ACCOUNT`
+* `anonMode` : if anonMode = true (**soon™**), the user does not reveal the Id of his account, so he only proves the ownership of one account of the type `authType` in the vault. For now only anonMode = false works.
+* `userId` : the userId depends on the authType you specified. For instance, if the authType is TWITTER, the userId will be your twitterId. \
+  Note: If the authType is ANON, the userId is the vaultId. You can find more info on the vaultId [**here**](../../technical-concepts/vault-and-proof-identifiers.md#vault-identifier).
+* `extraData` :
+
+**`signedMessage`** : A message provided by the user and signed with the vault.
+
+**`provingScheme`** : The proving scheme that the [Data Vault app](../data-vault-app.md) used to generate the proof and by the verify to verify the proof.
+
+**`proofData`** : The proof content.
+
+**`extraData`** : other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/hydra-zk-proving-schemes/hydra-s2.md).
+
+
+
+The next objects are the references that allow the `verify()` function to ensure that the proof sent by the user matches to the proof expected by the contract.
+
+### ``[`authRequest`](./#auth) _(optional)_
+
+A request of a proof of account ownership
+
+```solidity
+struct Auth {
+    AuthType authType; // required
+    bool anonMode; // optional
+    uint256 userId; // optional
+    bytes extraData; //optional
+}
+
+// Example: Build your Twitter auth
+Auth memory myExampleAuth = buildAuth({
+    authType: authType.TWITTER
+})
+```
+
+### ``[`claimRequest`](./#claim) _(optional)_
+
+A request of a group membership proof for a specific value.
+
+```solidity
+struct Claim {
+  bytes16 groupId; // required
+  bytes16 groupTimestamp; // optional
+  uint256 value; // optional
+  ClaimType claimType; // optional
+  bytes extraData; // optional
+}
+
+// Example: Build your Sismo Contributor level 2 claim
+Claim memory myExampleClaim = buildClaim({
+    groupId: 0xe9ed316946d3d98dfcd829a53ec9822e,
+    value 2
+})
+```
+
+### ``[`messageSignatureRequest`](./#signedmessage) _(optional)_
+
+```solidity
+// Example of a signedMessage
+bytes memory signedMessage = "yes"
+```
+
+### ``[`namespace`](./#namespace) _(optional)_
+
+By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application.
+
+
+
+### ZkConnectVerifiedResult
+
+The `zkConnectVerifiedResult` is the object returned by the `verify()` function if the verification passed. It contains all the verifications processed, that is:
+
+* the claim: `verifiedClaims`
+* the auth: `verifiedAuth`
+* the signed message `signedMessages`
+
+```solidity
+struct ZkConnectVerifiedResult {
+    bytes16 appId;
+    bytes16 namespace;
+    bytes32 version;
+    VerifiedClaim[] verifiedClaims;
+    VerifiedAuth[] verifiedAuths;
+    bytes[] signedMessages;
+}
+```
+
+As said previously, for now we can only generate 1 proof, that can contain a claim, an auth and a signedMessage. Thats is why, only the first element of the three array (verifiedClaims, verifiedAuths, signedMessages) can be used.

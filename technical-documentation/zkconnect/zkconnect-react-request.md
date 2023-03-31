@@ -27,7 +27,7 @@ To integrate zkConnect into your front end, you can use the zkConnect button. Cl
 
 After your user generates the proof, they will be automatically redirected back to your app with a response containing the generated proof.
 
-<figure><img src="../../.gitbook/assets/zkConnect (1).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/zkConnect (1) (1).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
 
 To integrate it you have access through the package to the `ZkConnectButton` component.
 

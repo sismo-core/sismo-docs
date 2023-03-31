@@ -7,7 +7,7 @@ The ENS Holder Public Attester issues attestations to ENS owners based on their 
 * If 10^2 < user ENS balance ≤ 1000 (10^3) => get another attestation
 * ...
 
-![ENS Holder Public Attester](../../../.gitbook/assets/2.png)
+![ENS Holder Public Attester](<../../../.gitbook/assets/2 (2).png>)
 
 ### Available groups
 

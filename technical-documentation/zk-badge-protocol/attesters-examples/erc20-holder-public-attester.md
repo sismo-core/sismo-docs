@@ -2,7 +2,7 @@
 
 The ERC20 Holder Public Attester is a naive public attester that issues attestations to users based on their current ERC20 balances.&#x20;
 
-![ERC20 Holder Public Attester](<../../../.gitbook/assets/1 (10).png>)
+![ERC20 Holder Public Attester](<../../../.gitbook/assets/1 (4).png>)
 
 This attester will check whether a user currently holds more than a claimed amount of an ERC20 token, and issue an attestation that proves it.
 

@@ -6,6 +6,8 @@ description: Verify proofs from your users
 
 The [zkConnect](../../what-is-sismo/zkconnect.md) Server is a backend package built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) to easily verify proofs from your users off-chain. You can see a full guide on how to integrate zkConnect into your application [here](../../tutorials/zkconnect/zk-connect-guide.md).
 
+<figure><img src="../../.gitbook/assets/offchain.png" alt=""><figcaption><p>zkConnect offchain full flow</p></figcaption></figure>
+
 ## Installation
 
 Install [zkConnect](../../what-is-sismo/zkconnect.md) server package in your backend with `npm` or `yarn`:

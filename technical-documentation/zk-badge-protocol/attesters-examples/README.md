@@ -4,7 +4,7 @@ The following examples are meant to provide a more tangible overview of the Sism
 
 We will illustrate the modularity of the protocol by introducing 4 different attesters, all recording in the Attestation Registry.&#x20;
 
-![Authorized attesters](<../../../.gitbook/assets/7\_Governance\_e.g (1).png>)
+![Authorized attesters](../../../.gitbook/assets/7\_Governance\_e.g.png)
 
 The 4 attesters will need to be authorized by the Sismo governance to record in the Registry:
 

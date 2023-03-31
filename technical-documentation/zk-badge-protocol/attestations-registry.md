@@ -46,7 +46,7 @@ Even though there is an authorization system in place, the Sismo protocol aims t
 The issuers curation system is a net positive; it serves as a guarantee that the Attestations Registries are filled with high-value attestations and that external applications can consume them with trust.
 {% endhint %}
 
-![Governance and Attestations Registry](../../.gitbook/assets/5\_Governance.png)
+![Governance and Attestations Registry](<../../.gitbook/assets/5\_Governance (1).png>)
 
 The authorized **issuers** include attesters, bridges (which relay attestations between chains) and attestation operators, which create attestations derived from pre-existing attestations (e.g: you can claim the attestation #304 if you have attestations #1 and #2)
 

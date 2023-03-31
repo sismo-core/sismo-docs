@@ -48,7 +48,7 @@ This Badge was generated from the [proof-of-humanity](https://github.com/sismo-c
 
 Here is an instance of a zkConnect App that has been implemented using the proof-of-humanity Group:
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie (1).png" alt=""><figcaption><p>zkConnect App example</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie.png" alt=""><figcaption><p>zkConnect App example</p></figcaption></figure>
 
 This zkConnect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.&#x20;
 

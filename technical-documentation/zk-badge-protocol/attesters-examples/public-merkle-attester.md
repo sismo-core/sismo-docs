@@ -2,7 +2,7 @@
 
 The Public Merkle Attester issues attestations to users with an account that's part of an accounts merkle tree. ([more](../../../technical-concepts/accounts-registry-tree.md) on accounts tree)
 
-![Public Merkle Attester](../../../.gitbook/assets/3.png)
+![Public Merkle Attester](<../../../.gitbook/assets/3 (1).png>)
 
 The accounts merkle tree exists off-chain, and its root must be published on-chain in a roots registry accessible by the attester.
 

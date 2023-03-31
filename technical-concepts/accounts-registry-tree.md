@@ -14,7 +14,7 @@ This makes it easy and cheap for a verifier with access to the root of the tree 
 
 This prover just has to send the merkle proof to the verifier
 
-![Accounts tree structure](<../.gitbook/assets/Merkle Tree1 (1).png>)
+![Accounts tree structure](<../.gitbook/assets/Merkle Tree1 (3).png>)
 
 {% hint style="info" %}
 An Accounts Tree can store a group of accounts.

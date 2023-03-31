@@ -25,7 +25,7 @@
   * [zkConnect Client: Request](technical-documentation/zkconnect/zkconnect-client-request.md)
   * [zkConnect React: Request](technical-documentation/zkconnect/zkconnect-react-request.md)
   * [zkConnect Server: Verify Off-chain](technical-documentation/zkconnect/zkconnect-server-verify-off-chain.md)
-  * [zkConnect Solidity Library: Verify On-chain (soon)](technical-documentation/zkconnect/zkconnect-solidity-library-verify-on-chain-soon.md)
+  * [zkConnect Solidity Library: Verify On-chain](technical-documentation/zkconnect/zkconnect-solidity-library-verify-on-chain-soon.md)
 * [ZK Badge Protocol](technical-documentation/zk-badge-protocol/README.md)
   * [Groups](technical-documentation/zk-badge-protocol/groups.md)
   * [Attesters](technical-documentation/zk-badge-protocol/attesters.md)

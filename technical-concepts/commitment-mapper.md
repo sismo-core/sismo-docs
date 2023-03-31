@@ -26,7 +26,7 @@ Next, the mapper will send a signed commitment receipt to the user, which guaran
 
 A commitment receipt can be retrieved at any time by the account owner by sending a new proof of ownership.
 
-<figure><img src="../.gitbook/assets/commitment_mapper (1).png" alt=""><figcaption><p>Delegated Proof of Ownership workflow</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/commitment_mapper.png" alt=""><figcaption><p>Delegated Proof of Ownership workflow</p></figcaption></figure>
 
 {% hint style="info" %}
 Example: Hydra Delegated Proof of Ownership via Commitment Mapper which uses Poseidon hash function and EdDSA digital signature schemes which are SNARK-friendly
