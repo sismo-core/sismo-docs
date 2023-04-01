@@ -118,7 +118,7 @@ After importing, you will be able to use the zkConnect button in your app.
 To do so, you have to use the `ZkConnectButton` component:
 
 ```typescript
-import { ZkConnectButton, ZkConnectResponse } from "@sismo-core/zk-connect-react";
+import { ZkConnectButton, ZkConnectResponse, AuthType } from "@sismo-core/zk-connect-react";
 
 <ZkConnectButton 
   appId={"0x8f347ca31790557391cec39b06f02dc2"} // appId you registered
@@ -168,23 +168,23 @@ If you are not part of the group, feel free to use the optional `devMode` in you
 
 
 ```typescript
-
-import { ZkConnectButton, ZkConnectClientConfig, ZkConnectResponse } from "@sismo-core/zk-connect-react";
+import { AuthType, ZkConnectButton, ZkConnectClientConfig, ZkConnectResponse } from "@sismo-core/zk-connect-react";
 
 const config: ZkConnectClientConfig = {
-  appId: "0x8f347ca31790557391cec39b06f02dc2", // ethcc appId I created
-  devMode?: {
-    // will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
-    enabled?: true, 
-    // overrides a group with these addresses
-    devGroups?: {
-      groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-      data: {
-        "0x123...abc": 1, 
-        "0x456...efa": 2
-      },
-  }
-}
+    appId: "0x8f347ca31790557391cec39b06f02dc2", // ethcc appId I created
+    devMode: {
+      // will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
+      enabled: true, 
+      // overrides a group with these addresses
+      devGroups: [{
+        groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+        data: {
+          "0x123...abc": 1, 
+          "0x456...efa": 2
+        },
+      }]
+    }
+};
 
 <ZkConnectButton 
   config={config}

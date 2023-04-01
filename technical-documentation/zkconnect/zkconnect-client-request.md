@@ -111,7 +111,7 @@ export type ZkConnectClientConfig = {
       groupId?: string;
       groupTimestamp?: number | "latest";
       data?: Record<string, Number | BigNumberish>
-    }
+    }[]
   },
   // url of the Sismo Vault App to redirect to
   vaultAppBaseUrl?: string
@@ -124,29 +124,30 @@ Here is an example of a customized `ZkConnectClientConfig` with a `devMode` enab
 
 ```typescript
 const zkConnectConfig: ZkConnectClientConfig = {
-  // you will need to register an appId in the Factory
-  appId: "0x8f347ca31790557391cec39b06f02dc2", 
-  // allows to create valid proofs for specific addresses
-  // should only be used when prototyping
-  // default: undefined
-  devMode?: {
-    // will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
-    enabled?: true, 
-    // overrides a group with these addresses
-    devGroups?: {
-      groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-      data: {
-        "0x123...abc": 1, 
-        "0x456...efa": 2
-      },
-  },
-  // url of the Sismo Vault App to redirect to
-  // default: https://vault-beta.sismo.io
-  // automatically move to https://dev.vault-beta.sismo.io when devMode.enabled = true
-  vaultAppBaseUrl?: "https://dev.vault-beta.sismo.io", 
-  // url of the Sismo API used
-  // default: https://api.sismo.io
-  sismoApiUrl?: "https://api.sismo.io"
+    // you will need to register an appId in the Factory
+    appId: "0x8f347ca31790557391cec39b06f02dc2", 
+    // allows to create valid proofs for specific addresses
+    // should only be used when prototyping
+    // default: undefined
+    devMode: {
+        // will use the Dev Sismo Data Vault https://dev.vault-beta.sismo.io/
+        enabled: true, 
+        // overrides a group with these addresses
+        devGroups: [{
+            groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+            data: {
+                "0x123...abc": 1, 
+                "0x456...efa": 2
+            },
+        }]
+    },
+    // url of the Sismo Vault App to redirect to
+    // default: https://vault-beta.sismo.io
+    // automatically move to https://dev.vault-beta.sismo.io when devMode.enabled = true
+    vaultAppBaseUrl: "https://dev.vault-beta.sismo.io", 
+    // url of the Sismo API used
+    // default: https://api.sismo.io
+    sismoApiUrl: "https://api.sismo.io"
 }
 ```
 
@@ -183,13 +184,13 @@ const CLAIM_REQUEST = {
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
     // timestamp of the data used for the group
     // default: latest
-    groupTimestamp?: "latest" 
+    groupTimestamp: "latest",
     // value the user should have in the group
     // default: 1
-    value?: 2, 
+    value: 2, 
     // comparator for the requested value
     // default: "GTE" -> "greater than or equal"
-    claimType?: ClaimType.EQ,
+    claimType: ClaimType.EQ,
 };
 zkConnect.request({ claimRequest: CLAIM_REQUEST });
 ```
@@ -263,8 +264,8 @@ Here is an example of a customized usage of the request function. You want that 
 ```typescript
 const CLAIM_REQUEST = { 
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-    value?: 2, 
-    claimType?: ClaimType.GTE,
+    value: 2, 
+    claimType: ClaimType.GTE,
 };
 
 zkConnect.request({
