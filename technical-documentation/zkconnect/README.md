@@ -16,7 +16,7 @@ Here is the 2 different flows of zkConnect:
   * ``[`@sismo-core/zk-connect-client`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-client): the frontend package to easily request ZKPs from users of Sismo in a privacy-preserving manner.
   * ``[`@sismo-core/zk-connect-react`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-react): the React frontend package to easily integrate the zkConnectButton and zk-connect-client in your React app.
   * [`@sismo-core/zk-connect-server`](https://github.com/sismo-core/zk-connect-packages/blob/main/packages/zk-connect-server): the backend package to easily verify these ZKPs offchain.
-  * [@sismo-core/zk-connect-solidity](https://github.com/sismo-core/zk-connect-onchain-verifier) : the Solidity Library to easily verify these ZKPs onchain.
+  * ``[`@sismo-core/zk-connect-solidity`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-solidity) : the Solidity Library to easily verify these ZKPs onchain.
 
 In order to use [zkConnect](../../what-is-sismo/zkconnect.md), you will need to have an `appId` registered in the [Sismo Factory](https://factory.sismo.io/apps-explorer). You can register your appId [here](https://factory.sismo.io/apps-explorer).
 
@@ -26,7 +26,7 @@ You can see this guide for a full example on how to integrate zkConnect in your 
 
 ### appId
 
-The unique identifier of your application registered on the Sismo Factory app.
+The unique identifier of your zkConnect application registered on the Sismo Factory app.
 
 ### namespace&#x20;
 
@@ -46,28 +46,26 @@ Learn more about groups [**here**](../sismo-api/group/).
 
 Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated to them. By default, the selected group is the latest Group Snapshot generated. But you are free to select a Group Snapshot with a different timestamp than the latest generated one.
 
+### Data Requests
 
+Claim, Auth and SignedMessage are objects used to prove facts about your data.
 
-Claim, Auth and SignedMessage are objects used to prove facts about your data:
+#### Claim
 
-### Claim
-
-A Claim is requested through a claimRequest to the Data Vault in order to generate a group membership proof. It contains the group Id, the groupTimestamp, the value you claim to have in this group.&#x20;
-
-A claim is a group membership request for a specific value.
+A Claim is requested through a claimRequest to the Data Vault in order to generate a group membership proof. It contains the group Id, the groupTimestamp, the value you claim to have in this group.
 
 Example: Prove that you are part of the Sismo Contributor Group with a minimum value of 2.
 
 Learn more about accounts and value [**here**](../zk-badge-protocol/groups.md)**.**
 
-### Auth
+#### Auth
 
 An Auth is requested through an authRequest to the Data Vault in order to generate a proof of account ownership. It can be an ownership of a Ethereum address or a Twitter, GitHub account.
 
 Example: Prove that you own a Twitter account.
 
-### SignedMessage
+#### SignedMessage
 
-A Signed Message request will request to generate a proof that can't be verified without this specific message associated to it.
+A Signed Message will request to generate a proof that can't be verified without this specific message associated to it.
 
-Example: You are a DAO voting website, and you want to get the vote of a user. The user will create a signedMessage containing this vote. Then this vote will be used to generate the proof validity.
+Example: You are a DAO voting website, and you want to get the vote of a user. To do so, the user will create a signedMessage containing this vote that will be used to generate the proof. Then by verifying the proof, you are also verifying the authenticity of the signedMessage thus the vote.
