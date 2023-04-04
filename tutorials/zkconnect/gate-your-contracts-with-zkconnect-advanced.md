@@ -107,7 +107,7 @@ yarn add @sismo-core/zk-connect-react
 \
 After importing, you will be able to use the zkConnect button in your app.
 
-<figure><img src="../../.gitbook/assets/zkConnect (2).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/zkConnect (1).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
 
 
 

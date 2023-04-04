@@ -4,6 +4,7 @@
   * [Data Vault](what-is-sismo/data-vault.md)
   * [Sismo Badges](what-is-sismo/sismo-badges.md)
   * [zkConnect](what-is-sismo/zkconnect.md)
+  * [Understanding Sismo: Glossary](readme/understanding-sismo-glossary.md)
 
 ## Tutorials
 
