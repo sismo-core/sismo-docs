@@ -12,6 +12,8 @@ zkConnect is a privacy-preserving single sign-on method for applications—wheth
 Applications may require just a fraction of a user’s data (e.g, being part of the PoH register) or data from multiple accounts (e.g, data from an Ethereum address and Twitter account) for access control or reputation importation.
 {% endhint %}
 
+
+
 ## A privacy-preserving single sign-on method
 
 Zero-knowledge proofs (ZKPs) allow users to selectively reveal valuable pieces of social capital in a privacy-preserving manner. These pieces of data, characterized as Data Gems, can be brought to applications—enabling users to reveal curated elements of their identities. However, zero-knowledge technology remains largely inaccessible to many developers.
@@ -27,13 +29,15 @@ Through zkConnect, users can execute either or both of the following functions:
 Developers can use zkConnect on their applications by integrating the associated frontend, backend, and Solidity packages. Read the full tutorial [here](../tutorials/zkconnect/zk-connect-guide.md).
 {% endhint %}
 
-## On-chain verification (coming soon)
+## On-chain verification
 
 After integrating the zkConnect Solidity Library, built on top of Sismo’s on-chain verifiers, in-app smart contracts can verify user claims (e.g, a user claims to own a specific NFT) and accept them for access control or reputation importation. Users make claims about their data and generate proofs to verify ownership of valuable social capital. Ownership is verified by on-chain applications—importing valuable elements of their owner’s identity in the process.
 
 Integrating zkConnect unlocks a privacy-preserving method of accessing on-chain applications or services. After clicking an integrated button, users are redirected to their Data Vault—where they generate a ZKP that an on-chain verifier subsequently authenticates. The entire experience requires minimal input from the user. Alternatively, it is possible to use zkConnect to mint Badges, which can likewise be utilized as an access tool.
 
 [zkdrop.io](http://zkdrop.io/) is an on-chain application that facilitates privacy-preserving airdrops via zkConnect. Only owners of eligible accounts can claim airdrops on the app. Users click an integrated zkConnect button to prove ownership of an eligible account and receive the airdrop on a separate account. No link between the two accounts is ever made.
+
+
 
 ## Off-chain verification (beta)
 
