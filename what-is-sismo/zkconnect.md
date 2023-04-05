@@ -2,7 +2,7 @@
 description: The crypto-native SSO.
 ---
 
-# zkConnect
+# zkConnect(Beta)
 
 Web3 gives users sovereign account ownership, yet data remains segregated on isolated sources. Furthermore, connecting to an application with a wallet address exposes all its associated data. These caveats create privacy concerns for users and limit the data applications can request.
 
