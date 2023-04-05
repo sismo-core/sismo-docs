@@ -166,7 +166,7 @@ struct ZkConnectProof {
 * ``[`groupTimeStamp`](./#grouptimestamp) : By default, the timestamp of the latest Group Snapshot. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated to it.
 * `value`: In a group, each account is associated with a value. Querying a specific `value` restricts eligibility to users belonging to the group with `value` that respect the `claimType` defined.
 * `claimType` : Allow choosing if we want to restrict the eligibility for the accounts that have the exact (`EQ`), at least (`GTE`) (or other type of comparison) the `value` specified before. Comparators accepted: `EMPTY`, `GTE`, `GT`, `EQ`, `LT`, `LTE`, `USER_SELECT`.
-* `extraData`: other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/hydra-zk-proving-schemes/hydra-s2.md).
+* `extraData`: other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
 
 **``**[**`auth`**](./#auth) : The data requested to generate a proof of account ownership
 
@@ -174,7 +174,7 @@ struct ZkConnectProof {
 * `anonMode` : if anonMode = true (**soon™**), the user does not reveal the Id of his account, so he only proves the ownership of one account of the type `authType` in the vault. For now only anonMode = false works.
 * `userId` : the userId depends on the authType you specified. For instance, if the authType is TWITTER, the userId will be your twitterId. \
   Note: If the authType is ANON, the userId is the vaultId. You can find more info on the vaultId [**here**](../../technical-concepts/vault-and-proof-identifiers.md#vault-identifier).
-* `extraData` : other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/hydra-zk-proving-schemes/hydra-s2.md).
+* `extraData` : other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
 
 **`signedMessage`** : A message provided by the user and signed with the vault.
 
@@ -182,7 +182,7 @@ struct ZkConnectProof {
 
 **`proofData`** : The proof content.
 
-**`extraData`** : other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/hydra-zk-proving-schemes/hydra-s2.md).
+**`extraData`** : other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
 
 
 

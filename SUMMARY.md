@@ -68,11 +68,10 @@
 * [Commitment Mapper](technical-concepts/commitment-mapper.md)
 * [Accounts Registry Tree](technical-concepts/accounts-registry-tree.md)
 * [Vault & Proof Identifiers](technical-concepts/vault-and-proof-identifiers.md)
-* [Hydra ZK Proving Schemes](technical-concepts/hydra-zk-proving-schemes/README.md)
-  * [Hydra-S1](technical-concepts/hydra-zk-proving-schemes/hydra-s1.md)
-  * [Hydra-S2](technical-concepts/hydra-zk-proving-schemes/hydra-s2.md)
-  * [Hydra M1](technical-concepts/hydra-zk-proving-schemes/hydra-m1.md)
-* [Pythia ZK Proving Scheme](technical-concepts/pythia-zk-proving-scheme.md)
+* [Proving Schemes](technical-concepts/proving-schemes/README.md)
+  * [Hydra-S1](technical-concepts/proving-schemes/hydra-s1.md)
+  * [Hydra-S2](technical-concepts/proving-schemes/hydra-s2.md)
+  * [Pythia ZK Proving Scheme](technical-concepts/proving-schemes/pythia-zk-proving-scheme.md)
 
 ## FAQ
 

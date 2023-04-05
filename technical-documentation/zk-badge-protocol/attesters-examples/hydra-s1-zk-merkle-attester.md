@@ -1,6 +1,6 @@
 # Hydra-S1: ZK Merkle Attester
 
-The[ Hydra-S1 Simple Attester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1SimpleAttester.sol), which uses the Hydra-S1 Proving scheme ([docs](../../../technical-concepts/hydra-zk-proving-schemes/hydra-s1.md), [circuits](https://github.com/sismo-core/hydra-s1-zkps)), is a Merkle ZK Attester that verifies ZK proofs of merkle proof verifications and issues ZK Attestations.
+The[ Hydra-S1 Simple Attester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1SimpleAttester.sol), which uses the Hydra-S1 Proving scheme ([docs](../../../technical-concepts/proving-schemes/hydra-s1.md), [circuits](https://github.com/sismo-core/hydra-s1-zkps)), is a Merkle ZK Attester that verifies ZK proofs of merkle proof verifications and issues ZK Attestations.
 
 ZK Attestations do not reveal anything about the source account(s) that was used to prove group ownership.
 
@@ -23,6 +23,6 @@ The attester verifies from users' ZK Proofs: &#x20;
 
 Please refer to the following documentation for more info:
 
-* [Hydra-S1 docs](../../../technical-concepts/hydra-zk-proving-schemes/hydra-s1.md)
+* [Hydra-S1 docs](../../../technical-concepts/proving-schemes/hydra-s1.md)
 * [contracts](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1SimpleAttester.sol)
 * [circuits](https://github.com/sismo-core/hydra-s1-zkps)
