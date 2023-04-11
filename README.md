@@ -12,7 +12,7 @@ Users aggregate their identity in Sismo’s Data Vault and start accumulating Da
 
 Standing at the crossroads between digital identity, web3 social, and zero-knowledge technology, Sismo has three core concepts:
 
-<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="what-is-sismo/data-vault.md">data-vault.md</a></td><td>Aggregate your identity</td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-Vault.png">Gitbook-Vault.png</a></td></tr><tr><td><a href="what-is-sismo/sismo-badges.md">sismo-badges.md</a></td><td>Tokenize your identity </td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-Badge.png">Gitbook-Badge.png</a></td></tr><tr><td><a href="what-is-sismo/zkconnect.md">zkconnect.md</a></td><td>The crypto-native SSO</td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-ZkConnect.png">Gitbook-ZkConnect.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="what-is-sismo/data-vault.md">data-vault.md</a></td><td>Aggregate your identity</td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-Vault.png">Gitbook-Vault.png</a></td></tr><tr><td><a href="what-is-sismo/sismo-badges.md">sismo-badges.md</a></td><td>Tokenize your identity </td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-Badge.png">Gitbook-Badge.png</a></td></tr><tr><td><a href="what-is-sismo/sismoconnect.md">sismoconnect.md</a></td><td>The crypto-native SSO</td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-SismoConnect.png">Gitbook-SismoConnect.png</a></td></tr></tbody></table>
 
 {% hint style="success" %}
 Anyone can start building with Sismo via the [Factory](https://factory.sismo.io/create-badge).&#x20;
@@ -38,12 +38,12 @@ Sismo revolves around attestations—tokenizable as [Badges](what-is-sismo/sismo
 
 ## Bring data to any app
 
-Sismo is particularly useful for applications seeking to gate their services or enable reputation importation. When accessing features on apps in the web3 social space and beyond, users are increasingly required to prove their eligibility to do so. [zkConnect](what-is-sismo/zkconnect.md) is a single sign-on (SSO) method that allows users to bring their identities to applications in a privacy-preserving manner.
+Sismo is particularly useful for applications seeking to gate their services or enable reputation importation. When accessing features on apps in the web3 social space and beyond, users are increasingly required to prove their eligibility to do so. [sismoConnect](what-is-sismo/sismoconnect.md) is a single sign-on (SSO) method that allows users to bring their identities to applications in a privacy-preserving manner.
 
-When integrated into applications, zkConnect can request private, granular data from a user’s Data Vault, while users can authenticate and selectively reveal their data. By clicking an integrated zkConnect button, users launch a frictionless experience that requires minimal input.
+When integrated into applications, sismoConnect can request private, granular data from a user’s Data Vault, while users can authenticate and selectively reveal their data. By clicking an integrated sismoConnect button, users launch a frictionless experience that requires minimal input.
 
-As zkConnect merely enhances web3’s existing Sign-In with Ethereum (SIWE) infrastructure, neither users nor integrators are exposed to the risks inherent in centralized web2 platforms. zkConnect promotes privacy and usability—allowing users to leverage their data without the implications of big tech overwatch.
+As sismoConnect merely enhances web3’s existing Sign-In with Ethereum (SIWE) infrastructure, neither users nor integrators are exposed to the risks inherent in centralized web2 platforms. sismoConnect promotes privacy and usability—allowing users to leverage their data without the implications of big tech overwatch.
 
 {% hint style="success" %}
-Developers can learn how to integrate zkConnect [here](tutorials/zkconnect/zk-connect-guide.md).
+Developers can learn how to integrate sismoConnect [here](tutorials/sismoconnect/sismo-connect-guide.md).
 {% endhint %}

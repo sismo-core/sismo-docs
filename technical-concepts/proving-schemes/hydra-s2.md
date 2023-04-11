@@ -13,7 +13,7 @@ The [Vault identifier](../vault-and-proof-identifiers.md) (`vaultId`) is a new n
 
 This `vaultId` is deterministically generated from a `vaultSecret` and an application Identifier (`appId`) by taking the Poseidon hash of these two values.&#x20;
 
-A [Proof Identifier](../vault-and-proof-identifiers.md) can be seen as the nullifier used in Hydra-S1, as far as it is deterministically generated from the Poseidon hash of a hashed sourceSecret and a requestIdentifier. The request Identifier is made of an application id, a group ID, a group timestamp, and a namespace (learn more about it in the [zkConnect package documentation](../../technical-documentation/zkconnect/)).
+A [Proof Identifier](../vault-and-proof-identifiers.md) can be seen as the nullifier used in Hydra-S1, as far as it is deterministically generated from the Poseidon hash of a hashed sourceSecret and a requestIdentifier. The request Identifier is made of an application id, a group ID, a group timestamp, and a namespace (learn more about it in the [sismoConnect package documentation](../../technical-documentation/sismoconnect/)).
 
 {% hint style="info" %}
 Vault and Proof Identifiers are two tools with different purposes. A Vault Identifier can help you to privately keep track of a user with an anonymous app-specific ID while a Proof Identifier can help you to prevent a user from using the same proof two times in your app.
