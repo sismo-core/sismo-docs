@@ -41,19 +41,19 @@ Before you begin integrating [**zkConnect**](../../what-is-sismo/zkconnect.md), 
 
 <summary>Why is an <code>appId</code> mandatory for zkConnect?</summary>
 
-The `appId` will be used to compute the Vault Identifier, which is the the unique identifier for a user on your app. The Vault Identifier is simply the hash of a user's Vault secret and the appId.
+The `appId` will be used to compute an AnonUserID, which is the the unique identifier for a user on your app. The AnonUserID is simply the hash of a user's Vault secret and the appId.
 
 $$vaultId = hash(vaultSecret, appId)$$
 
-If we remove the appId from this simple calculation, we would have had the same vaultIdentifier for the same vaultSecret, effectively leaking information about a user that uses zkConnect on two different apps. The vaultId would be the same across different apps, and the user could be tracked if Vault Identifiers became public.
+If we remove the appId from this simple calculation, we would have had the same AnonUserID for the same vaultSecret, effectively leaking information about a user that uses zkConnect on two different apps. The AnonUserID would be the same across different apps, and the user could be tracked if the AnonUserIDs became public.
 
-By introducing an appId, the vaultId is now different between apps, and the same user will have two different Vault IDs on two different apps, effectively preserving the user's privacy.&#x20;
+By introducing an appId, the vaultId is now different between apps, and the same user will have two different AnonUserIDs on two different apps, effectively preserving the user's privacy.&#x20;
 
-You can learn more about this notion in the [Vault & Proof Identifiers article](../../technical-concepts/vault-and-proof-identifiers.md).
+You can learn more about this notion in this [article](../../technical-concepts/vault-and-proof-identifiers.md).
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52.png" alt=""><figcaption><p>Register your zkConnect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1).png" alt=""><figcaption><p>Register your zkConnect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
 
 You can register a zkConnect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
@@ -78,7 +78,7 @@ Now that you have an appId registered for your application, you need to redirect
 To do that you will need to use one of our packages:
 
 * Javascript / Typescript: [`@sismo-core/zk-connect-client`](../../technical-documentation/zkconnect/zkconnect-client-request.md)
-* React: [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)``
+* React: [`@sismo-core/zk-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request)
 
 {% tabs %}
 {% tab title="React / Next.js" %}
@@ -90,7 +90,7 @@ First, you will need to import the following:
 \
 After importing, you will be able to use the zkConnect button in your app.
 
-<figure><img src="../../.gitbook/assets/zkConnect (2).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/zkConnect (1) (1).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
 
 
 
@@ -204,7 +204,7 @@ const anonUserId = verifiedAuths[0].userId;
 
 If the proof is valid, an anonUserId is returned. If not, an error is received.
 
-The `anonUserId` corresponds to a unique identifier for the user Data Vault, the best part of it is that this `anonUserId` is derived from the `appId` so it is impossible to compare two vault ids from two different apps implementing zkConnect. **The `anonUserId` can be used in your application as a user identifier**.
+The `anonUserId` corresponds to a unique identifier for the user Data Vault, the best part of it is that this `anonUserId` is derived from the `appId` so it is impossible to compare two identifiers from two different apps implementing zkConnect. **The `anonUserId` can be used in your application as a user identifier**.
 
 A user has now the ability to privately authenticate himself in any application integrating zkConnect by proving that he owns a Data Vault. 🤘
 
@@ -217,7 +217,7 @@ Here's how to get started:
 1. Create an account on [Vercel](https://vercel.com/) with your Github account
 2. Create a new project and import your zksub repository in Vercel
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.00.30.png" alt=""><figcaption><p>Import a Git repository</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.00.30 (1).png" alt=""><figcaption><p>Import a Git repository</p></figcaption></figure>
 
 3. When your repository is linked to Vercel, you should see this page appear:
 
@@ -234,5 +234,5 @@ If you have any questions about integrating zkConnect, don’t hesitate to reach
 Get involved in the Sismo community:
 
 * Look out for [**hackathons**](https://www.notion.so/sismo/Sismo-x-ETHPorto-2023-cbda827ea5f2469aa5fdbb4955fc18d6?pvs=4) that we are participating in
-* Join our [**Discord**](https://discord.gg/sismo) **** or our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0)****
-* See the [**Sismo-hub contributing page**](https://github.com/sismo-core/sismo-hub/issues)****
+* Join our [**Discord**](https://discord.gg/sismo) or our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0)
+* See the [**Sismo-hub contributing page**](https://github.com/sismo-core/sismo-hub/issues)

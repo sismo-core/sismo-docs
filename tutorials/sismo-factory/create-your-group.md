@@ -148,7 +148,7 @@ Next, by clicking on the <mark style="background-color:blue;">**Add**</mark> but
 
 After this, you can click on the second <mark style="background-color:blue;">**Add**</mark> button (<mark style="color:red;">red box</mark>) in order to add these Lens accounts (sismo.lens followers) to the group.
 
-* **Get the holders of** [**Sismo - EthCC 2022 POAP**](https://poap.gallery/r/event/53325)****
+* **Get the holders of** [**Sismo - EthCC 2022 POAP**](https://poap.gallery/r/event/53325)
 
 To get the holders of this POAP, we will use the Poap Provider:
 
@@ -156,7 +156,7 @@ To get the holders of this POAP, we will use the Poap Provider:
 
 With the same logic as before, by clicking on the <mark style="background-color:blue;">**Add**</mark> button, we will add the holders of the POAP to the list of Data Sources.
 
-* **Get the** [**Sismo Contributor Level 3**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/sismo-contributors-tier3-builders)****
+* **Get the** [**Sismo Contributor Level 3**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/sismo-contributors-tier3-builders)
 
 To do this, you have to go to the "_From data group_" section and search for the group you want to use, for our case we want to get the [sismo-contributors-tier3-builders](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/sismo-contributors-tier3-builders):
 

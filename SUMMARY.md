@@ -67,7 +67,7 @@
 
 * [Commitment Mapper](technical-concepts/commitment-mapper.md)
 * [Accounts Registry Tree](technical-concepts/accounts-registry-tree.md)
-* [Vault & Proof Identifiers](technical-concepts/vault-and-proof-identifiers.md)
+* [AnonUserID & Proof Identifiers](technical-concepts/vault-and-proof-identifiers.md)
 * [Proving Schemes](technical-concepts/proving-schemes/README.md)
   * [Hydra-S1](technical-concepts/proving-schemes/hydra-s1.md)
   * [Hydra-S2](technical-concepts/proving-schemes/hydra-s2.md)

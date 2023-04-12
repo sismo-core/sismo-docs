@@ -84,10 +84,10 @@ The complete proof request url with the `zkConnectRequest` in query parameters f
 * <mark style="color:red;">`callbackPath`</mark> _(optional)_: by default, the Data Vault app redirects users to the referrer url (your application url) at the end of the proof generation flow. You can specify an optional callback path to the referrer url.
 
 > **Example of a Data Vault app query**\
-> ****\
-> ****<mark style="color:blue;">`https://vault-beta.sismo.io/connect?version=off-chain-1&appId=0x112a692a2005259c25f6094161007967&dataRequest={"statementRequests":[{"groupId":"0xe9ed316946d3d98dfcd829a53ec9822e","groupTimestamp":"latest","requestedValue":1,"comparator":"GTE","provingScheme":"hydra-s1.2"}],"operator":null}&namespace=main`</mark>.
+> \
+> <mark style="color:blue;">`https://vault-beta.sismo.io/connect?version=off-chain-1&appId=0x112a692a2005259c25f6094161007967&dataRequest={"statementRequests":[{"groupId":"0xe9ed316946d3d98dfcd829a53ec9822e","groupTimestamp":"latest","requestedValue":1,"comparator":"GTE","provingScheme":"hydra-s1.2"}],"operator":null}&namespace=main`</mark>.
 >
-> ****
+>
 >
 > **When we deconstruct this query, it means:**
 >

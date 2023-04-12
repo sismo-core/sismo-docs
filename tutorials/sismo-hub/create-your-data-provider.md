@@ -103,7 +103,7 @@ cd tutorial-lens
 For our case in this tutorial, we will split our Data Provider into 3 different files:
 
 * `index.ts`: <mark style="color:orange;">\[mandatory]</mark> Contains all the functions you make available to use in a group generator. It will help format data that come from your API queries.
-* `types.ts`: <mark style="color:orange;">\[mandatory]</mark> **** The file where you can define all the types you need.
+* `types.ts`: <mark style="color:orange;">\[mandatory]</mark> The file where you can define all the types you need.
 * `queries.ts`: Define all your request to the API you want to use.
 
 {% hint style="info" %}

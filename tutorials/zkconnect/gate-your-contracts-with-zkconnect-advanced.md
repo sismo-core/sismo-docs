@@ -46,19 +46,19 @@ Before you begin integrating [**zkConnect**](../../what-is-sismo/zkconnect.md), 
 
 <summary>Why is an <code>appId</code> mandatory for zkConnect?</summary>
 
-The `appId` will be used to compute the vault identifier which is the the unique identifier for a user creating a proof for your app. The vault identifier is simply the hash of the user vault secret and the appId.
+The `appId` will be used to compute an AnonUserID, which is the the unique identifier for a user on your app. The AnonUserID is simply the hash of a user's Vault secret and the appId.
 
 $$vaultId = hash(vaultSecret, appId)$$
 
-If we had removed the appId from this simple calculus, we would have had the same vaultIdentifier for the same vaultSecret, effectively leaking information about a user that uses zkConnect on two different apps. The vaultId would just be the same between the apps and the user can be tracked if vault identifiers become public.
+If we remove the appId from this simple calculation, we would have had the same AnonUserID for the same vaultSecret, effectively leaking information about a user that uses zkConnect on two different apps. The AnonUserID would be the same across different apps, and the user could be tracked if the AnonUserIDs became public.
 
-But if we introduce an appId, the vaultId is now different between apps and the same user will have two different vault ids between two different apps, effectively preserving the user privacy this time. 🤘&#x20;
+By introducing an appId, the vaultId is now different between apps, and the same user will have two different AnonUserIDs on two different apps, effectively preserving the user's privacy.&#x20;
 
-You can learn more about this notion in the [Vault & Proof identifiers article](../../technical-concepts/vault-and-proof-identifiers.md).
+You can learn more about this notion in this [article](../../technical-concepts/vault-and-proof-identifiers.md).
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (2).png" alt=""><figcaption><p>Register your zkConnect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1) (1).png" alt=""><figcaption><p>Register your zkConnect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
 
 You can register a zkConnect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
@@ -107,7 +107,7 @@ yarn add @sismo-core/zk-connect-react
 \
 After importing, you will be able to use the zkConnect button in your app.
 
-<figure><img src="../../.gitbook/assets/zkConnect (1).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/zkConnect (2).png" alt=""><figcaption><p>zkConnect button</p></figcaption></figure>
 
 
 
@@ -169,7 +169,7 @@ The `claimRequest` has more optional parameters available:
 * **`groupTimestamp`**: This parameter specifies the timestamp of the group snapshot a user wants to prove membership in. By default, this timestamp is set to ‘latest’ to use the latest generated snapshot.
 * **`requestedValue`**: In groups, every account is associated with a value, which can represent the number of tokens staked, the voting power of the account, etc. The `requestedValue` parameter allows you to specify the value your user needs to have in the group to generate the proof. By default, it is set to 1.
 * **`comparator`**: The comparator can force users to prove that they have a value in the group greater than or equal (`”GTE”`) to the `requestedValue` or strictly equal (`”EQ”`)to the `requestedValue`. By default, it is `“GTE”.`\
-  ``
+
 
 You can see the [documentation](../../technical-documentation/zkconnect/zkconnect-client-request.md) if you want to learn more about Claim requests. You can also learn more about Auth requests that can be requests of Data Vault ownership but only Twitter or GitHub account ownership for example.
 {% endhint %}
@@ -472,5 +472,5 @@ If you have any questions about integrating zkConnect, don’t hesitate to reach
 Get involved in the Sismo community:
 
 * Look out for [**hackathons**](https://www.notion.so/sismo/Sismo-x-ETHPorto-2023-cbda827ea5f2469aa5fdbb4955fc18d6?pvs=4) that we are participating in
-* Join our [**Discord**](https://discord.gg/sismo) **** or our **** [**Dev Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0)****
-* See the [**Sismo-hub contributing page**](https://github.com/sismo-core/sismo-hub/issues)****
+* Join our [**Discord**](https://discord.gg/sismo) or our [**Dev Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0)
+* See the [**Sismo-hub contributing page**](https://github.com/sismo-core/sismo-hub/issues)

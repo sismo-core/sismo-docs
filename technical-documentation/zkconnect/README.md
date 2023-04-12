@@ -13,10 +13,10 @@ Here is the 2 different flows of zkConnect:
 **zkConnect features:**
 
 * **4 packages:**
-  * ``[`@sismo-core/zk-connect-client`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-client): the frontend package to easily request ZKPs from users of Sismo in a privacy-preserving manner.
-  * ``[`@sismo-core/zk-connect-react`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-react): the React frontend package to easily integrate the zkConnectButton and zk-connect-client in your React app.
+  * [`@sismo-core/zk-connect-client`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-client): the frontend package to easily request ZKPs from users of Sismo in a privacy-preserving manner.
+  * [`@sismo-core/zk-connect-react`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-react): the React frontend package to easily integrate the zkConnectButton and zk-connect-client in your React app.
   * [`@sismo-core/zk-connect-server`](https://github.com/sismo-core/zk-connect-packages/blob/main/packages/zk-connect-server): the backend package to easily verify these ZKPs offchain.
-  * ``[`@sismo-core/zk-connect-solidity`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-solidity) : the Solidity Library to easily verify these ZKPs onchain.
+  * [`@sismo-core/zk-connect-solidity`](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-solidity) : the Solidity Library to easily verify these ZKPs onchain.
 
 In order to use [zkConnect](../../what-is-sismo/zkconnect.md), you will need to have an `appId` registered in the [Sismo Factory](https://factory.sismo.io/apps-explorer). You can register your appId [here](https://factory.sismo.io/apps-explorer).
 

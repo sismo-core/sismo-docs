@@ -111,10 +111,10 @@ The function can take these 5 arguments:
 
 The function needs to verify that the proof is cryptographically valid but also that it has been well generated from the Data request specified in the frontend. To do this, we also need to setup the same requests in the contract:
 
-* ``[`claimRequest`](./#claim): The object that holds all the information needed to generate proof of group ownership.
-* ``[`authRequest`](./#auth): The object that holds all the information needed to generate proof of account membership.
-* ``[`messageSignatureRequest`](./#signedmessage):  It contains the message that the user should sign.
-* ``[`namespace`](./#namespace): The namespace of the application that the contract uses.
+* [`claimRequest`](./#claim): The object that holds all the information needed to generate proof of group ownership.
+* [`authRequest`](./#auth): The object that holds all the information needed to generate proof of account membership.
+* [`messageSignatureRequest`](./#signedmessage):  It contains the message that the user should sign.
+* [`namespace`](./#namespace): The namespace of the application that the contract uses.
 
 And it returns a [`ZkConnectVerifiedResult`](zkconnect-solidity-library-verify-on-chain-soon.md#zkconnectverifiedresult).
 
@@ -140,11 +140,11 @@ struct ZkConnectResponse {
 }
 ```
 
-**``**[**`appId`**](./#appid) : The unique identifier of your application registered on the Sismo Factory app.
+[**`appId`**](./#appid) : The unique identifier of your application registered on the Sismo Factory app.
 
-**``**[**`namespace`**](./#namespace) : By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application.
+[**`namespace`**](./#namespace) : By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application.
 
-**``**[**`version`**](./#version) : The version of the Data Vault app queried. The only version that work is now `zk-connect-v2`.
+[**`version`**](./#version) : The version of the Data Vault app queried. The only version that work is now `zk-connect-v2`.
 
 **`proofs[]`** : The array that contains all the zkConnectProofs the frontend provide to the contract. Learn more about proofs [**here**](./#proofs). **NB**: for now, only 1 proof can be generated.\
 A zkConnectProof stores several objects:
@@ -160,15 +160,15 @@ struct ZkConnectProof {
 }
 ```
 
-**``**[**`claim`**](./#claim) : The data requested to generate a group membership proof for a specific value.
+[**`claim`**](./#claim) : The data requested to generate a group membership proof for a specific value.
 
-* ``[`groupId`](./#groupid) : The unique identifier of the group of accounts to which the user must prove that he belongs to in order to generate the proof.
-* ``[`groupTimeStamp`](./#grouptimestamp) : By default, the timestamp of the latest Group Snapshot. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated to it.
+* [`groupId`](./#groupid) : The unique identifier of the group of accounts to which the user must prove that he belongs to in order to generate the proof.
+* [`groupTimeStamp`](./#grouptimestamp) : By default, the timestamp of the latest Group Snapshot. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated to it.
 * `value`: In a group, each account is associated with a value. Querying a specific `value` restricts eligibility to users belonging to the group with `value` that respect the `claimType` defined.
 * `claimType` : Allow choosing if we want to restrict the eligibility for the accounts that have the exact (`EQ`), at least (`GTE`) (or other type of comparison) the `value` specified before. Comparators accepted: `EMPTY`, `GTE`, `GT`, `EQ`, `LT`, `LTE`, `USER_SELECT`.
 * `extraData`: other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
 
-**``**[**`auth`**](./#auth) : The data requested to generate a proof of account ownership
+[**`auth`**](./#auth) : The data requested to generate a proof of account ownership
 
 * `authType` : The type of the account you want to authenticate through the vault. Types accepted: `EMPTY`, `ANON`, `GITHUB`, `TWITTER`, `EVM_ACCOUNT`
 * `anonMode` : if anonMode = true (**soon™**), the user does not reveal the Id of his account, so he only proves the ownership of one account of the type `authType` in the vault. For now only anonMode = false works.
@@ -188,7 +188,7 @@ struct ZkConnectProof {
 
 The next objects are the references that allow the `verify()` function to ensure that the proof sent by the user matches to the proof expected by the contract:
 
-### ``[`claimRequest`](./#claim) _(optional)_
+### [`claimRequest`](./#claim) _(optional)_
 
 The data requested to generate a group membership proof for a specific value.
 
@@ -218,7 +218,7 @@ Claim memory myExampleClaim = buildClaim({
 })
 ```
 
-### ``[`authRequest`](./#auth) _(optional)_
+### [`authRequest`](./#auth) _(optional)_
 
 The data requested to generate a proof of account ownership.
 
@@ -244,7 +244,7 @@ Auth memory myExampleAuth = buildAuth({
 })
 ```
 
-### ``[`messageSignatureRequest`](./#signedmessage) _(optional)_
+### [`messageSignatureRequest`](./#signedmessage) _(optional)_
 
 A message provided by the user and signed with the Vault.
 
@@ -253,7 +253,7 @@ A message provided by the user and signed with the Vault.
 bytes memory signedMessage = "yes"
 ```
 
-### ``[`namespace`](./#namespace) _(optional)_
+### [`namespace`](./#namespace) _(optional)_
 
 By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [zkConnect server documentation](zkconnect-server-verify-off-chain.md).
 
