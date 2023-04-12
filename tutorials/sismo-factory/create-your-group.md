@@ -4,9 +4,9 @@ description: Non-developer tutorial
 
 # Create your Group
 
-This tutorial will show you how to create a [Group](../../technical-documentation/zk-badge-protocol/groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
+This tutorial will show you how to create a [Group](../../technical-concepts/data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a [Group](../../technical-documentation/zk-badge-protocol/groups.md) of Twitter, GitHub, and Ethereum accounts. After a short verification process, this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [zkConnect app](../../what-is-sismo/zkconnect.md) 🙌
+At the end of this tutorial, you will have a [Group](../../technical-concepts/data-groups.md) of Twitter, GitHub, and Ethereum accounts. After a short verification process, this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [zkConnect app](../../what-is-sismo/zkconnect.md) 🙌
 
 ## What are [Groups](../../technical-documentation/zk-badge-protocol/groups.md)?
 
@@ -25,7 +25,7 @@ Here's an example of what a Group looks like:
 ...
 ```
 
-If you want more info on Groups, check out this [page](../../technical-documentation/zk-badge-protocol/groups.md).
+If you want more info on Groups, check out this [page](../../technical-concepts/data-groups.md).
 
 ## Group use-cases
 

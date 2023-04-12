@@ -8,7 +8,7 @@ description: Developer Tutorial
 
 This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../../build-on-sismo/sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of [Groups](../../technical-documentation/zk-badge-protocol/groups.md) at the center of the Sismo protocol. Groups are the foundation of all what you can create with Sismo such as [zkConnect Apps](../../what-is-sismo/zkconnect.md) and [ZK Badges](../../technical-documentation/zk-badge-protocol/badges.md).
+Group Generators are functions that enable the creation of [Groups](../../technical-concepts/data-groups.md) at the center of the Sismo. Groups are the foundation of all what you can create with Sismo such as [zkConnect apps](../../what-is-sismo/zkconnect.md) and [ZK Badges](../../technical-documentation/zk-badge-protocol/badges.md).
 
 {% hint style="info" %}
 You can find all already existing Group Generators [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators)**.**
@@ -16,11 +16,11 @@ You can find all already existing Group Generators [**here**](https://github.com
 
 You can find the pull request associated with this tutorial [**here**](https://github.com/sismo-core/sismo-hub/pull/1484). It will give you a good feeling of what we are going to create in this tutorial! 👌
 
-### What are [Groups](../../technical-documentation/zk-badge-protocol/groups.md)?&#x20;
+### What are Groups?&#x20;
 
-[Groups](../../technical-documentation/zk-badge-protocol/groups.md) are composed of Data Sources:
+[Groups](../../technical-concepts/data-groups.md) are composed of Data Sources:
 
-* Web2 accounts: Twitter, Github
+* Web2 accounts: Twitter, GitHub
 * Web3 accounts: Ethereum addresses, ENS, Lens handles
 
 In order to create a Group, we need to build a [Group Generator](../../build-on-sismo/sismo-protocol-overview.md). This tutorial will guide you through the process of creating one.
@@ -31,7 +31,7 @@ There are 3 different ways to define the data of a Group generator, you can use:
 * [Data Providers](../../technical-documentation/sismo-hub/data-providers.md) (e.g. [proof-of-humanity](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/proof-of-humanity/index.ts))
 * Already existing [Groups](../../technical-documentation/zk-badge-protocol/groups.md) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
 
-If you want more info on Groups, check out this [page](../../technical-documentation/zk-badge-protocol/groups.md).
+If you want more info on Groups, check out this [page](../../technical-concepts/data-groups.md).
 
 If you want to know how to contribute to the Sismo Hub by creating Groups don't hesitate to check the [Contributor Guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
 

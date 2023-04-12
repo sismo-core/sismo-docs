@@ -65,6 +65,7 @@
 
 ## Technical Concepts
 
+* [Data Groups](technical-concepts/data-groups.md)
 * [Commitment Mapper](technical-concepts/commitment-mapper.md)
 * [Accounts Registry Tree](technical-concepts/accounts-registry-tree.md)
 * [AnonUserID & Proof Identifiers](technical-concepts/vault-and-proof-identifiers.md)

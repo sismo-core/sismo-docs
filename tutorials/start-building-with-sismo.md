@@ -14,7 +14,7 @@ Currently, Sismo has three core components:
 
 ## Create Data Groups, zkConnect apps, and ZK Badges
 
-Behind Sismo's three core components lie the Data Groups fundamental to Sismo. To create zkConnect applications or ZK Badges, builders must first create or reuse Data Groups. These Data Groups are represented as groups of Data Shards—atomic pieces of data in a user’s Data Vault that categorize users by similar characteristics.
+Behind Sismo's three core components lie the [Data Groups](../technical-concepts/data-groups.md) fundamental to Sismo. To create zkConnect applications or ZK Badges, builders must first create or reuse Data Groups. These Data Groups are represented as groups of Data Gems—atomic pieces of data in a user’s Data Vault that categorize users by similar characteristics.
 
 There are currently two ways of creating Data Groups:
 
@@ -22,7 +22,7 @@ There are currently two ways of creating Data Groups:
 * Through a pull request on the [Sismo Hub](../technical-documentation/sismo-hub/) — our open source back end
 
 {% hint style="info" %}
-By creating a Data Group, builders can subsequently create their own zkConnect apps or ZK Badges.&#x20;
+By creating a [Data Group](../technical-concepts/data-groups.md), builders can subsequently create their own zkConnect apps or ZK Badges.&#x20;
 {% endhint %}
 
 See the following sections for full tutorials on how to use the Sismo Factory and Sismo Hub:
