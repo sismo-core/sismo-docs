@@ -4,7 +4,7 @@ description: Technical documentation
 
 # Data Vault App
 
-The Sismo Data Vault application is the prover from which a [zkConnect](../what-is-sismo/zkconnect.md) application requests user proofs.&#x20;
+The Sismo Data Vault application is the prover from which a [zkConnect](../readme/sismo-connect.md) application requests user proofs.&#x20;
 
 This page details the input and output specifications of the Data Vault application and the way it communicates with your application after integrating zkConnect.
 
@@ -19,7 +19,7 @@ Users are redirected from your application to the Data Vault application, where 
 {% hint style="info" %}
 Learn more about Sismo zero-knowledge proofs and use cases [**here**](https://docs.sismo.io/sismo-docs/technical-concepts/proof-identifier).
 
-Learn more about zkConnect [**here**](../what-is-sismo/zkconnect.md).
+Learn more about zkConnect [**here**](../readme/sismo-connect.md).
 {% endhint %}
 
 ## zkConnectRequest (input):
@@ -161,4 +161,4 @@ The `zkConnectResponse` is composed of the following properties:
 
 The `zkConnectResponse` validity must be verified by your application backend.
 
-To do checkout the [zkConnect packages docs ](zkconnect/)and follow the [zkConnect package tutorial](../tutorials/zkconnect/zk-connect-guide.md).
+To do checkout the [zkConnect packages docs ](sismo-connect/)and follow the [zkConnect package tutorial](../tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).

@@ -6,7 +6,7 @@ description: Aggregate your identity.
 
 Sismo’s Data Vault stores a user’s encrypted personal data irrespective of its origin. The atomic data accumulated in the Vault, known as Data Gems, categorizes users into specific groups—such as being long-term Ethereum users, holders of a certain NFT, or contributors to a DAO. Data Gems are valuable pieces of social capital extracted from Data Sources—accounts (web2 or web3) or other credentials added to a user’s Data Vault.
 
-After aggregating data inside the Vault, users can make verifiable claims about Data Gems that they own. These verifiable claims can be proven in the Vault, selectively revealed to applications (on-chain or off-chain), and verified via zkConnect or tokenized as Badges. The Data Vault enables users to verify ownership of valuable personal data (e.g, being part of the Proof of Humanity registry) and reveal it in a granular and privacy-preserving manner (e.g, proving to own more than 100 ETH held on multiple unlinked accounts without revealing them).
+After aggregating data inside the Vault, users can make verifiable claims about Data Gems that they own. These verifiable claims can be proven in the Vault, selectively revealed to applications (on-chain or off-chain), and verified via sismoConnect or tokenized as Badges. The Data Vault enables users to verify ownership of valuable personal data (e.g, being part of the Proof of Humanity registry) and reveal it in a granular and privacy-preserving manner (e.g, proving to own more than 100 ETH held on multiple unlinked accounts without revealing them).
 
 {% hint style="info" %}
 Users can create their own Data Vault and start aggregating their identity [here](https://vault-beta.sismo.io/).
@@ -34,11 +34,11 @@ Web3 accounts added to the Vault are designated as owners by default, though thi
 
 ## Verify and reveal Data Gems
 
-Where password managers store passwords, the Data Vault stores Data Sources and extracts the atomic data (i.e, Data Gems) about a user inside. Each Data Gem has an owner, value, and categorizes a user into a specific Data Group. Users formulate verifiable claims about Data Gems that they own to access applications via zkConnect or mint Sismo Badges.
+Where password managers store passwords, the Data Vault stores Data Sources and extracts the atomic data (i.e, Data Gems) about a user inside. Each Data Gem has an owner, value, and categorizes a user into a specific Data Group. Users formulate verifiable claims about Data Gems that they own to access applications via sismoConnect or mint Sismo Badges.
 
 As verifiable claims can be leveraged independently of their source, they can be seen as fungible and account-agnostic within the confines of the Data Vault. Data Gems, once extracted from the Data Sources hosting them, can be revealed without exposing the source of truth or associated owner via verifiable claims.
 
-Inside the Data Vault, users can participate in proving schemes to establish that they own a given Data Gem. Thanks to zkConnect, these verifiable statements can be revealed to applications (either on-chain or off-chain) and verified in a trustless and privacy-preserving manner. Alternatively, verifiable statements, once verified, can be tokenized as Badges—facilitating the private transfer of data from a Data Source to a web3 address.
+Inside the Data Vault, users can participate in proving schemes to establish that they own a given Data Gem. Thanks to sismoConnect, these verifiable statements can be revealed to applications (either on-chain or off-chain) and verified in a trustless and privacy-preserving manner. Alternatively, verifiable statements, once verified, can be tokenized as Badges—facilitating the private transfer of data from a Data Source to a web3 address.
 
 When adding Data Sources to the Vault and revealing the Data Gems within, users sign a message to generate an off-chain commitment. After submitting the commitment to the Commitment Mapper, the Data Vault receives a commitment receipt. This receipt verifies proof of ownership and privately associates a Data Source with a commitment. The commitment receipt is subsequently used to verify ownership in a zk-SNARK.
 

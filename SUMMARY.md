@@ -3,7 +3,7 @@
 * [What is Sismo?](README.md)
   * [Data Vault](what-is-sismo/data-vault.md)
   * [Sismo Badges](what-is-sismo/sismo-badges.md)
-  * [zkConnect](what-is-sismo/zkconnect.md)
+  * [sismoConnect](readme/sismo-connect.md)
   * [Understanding Sismo: Glossary](readme/understanding-sismo-glossary.md)
 
 ## Tutorials
@@ -15,18 +15,18 @@
 * [Sismo Hub](tutorials/sismo-hub/README.md)
   * [Create your Group](tutorials/sismo-hub/create-your-group.md)
   * [Create your Data Provider](tutorials/sismo-hub/create-your-data-provider.md)
-* [zkConnect](tutorials/zkconnect/README.md)
-  * [Authenticate your users with zkConnect](tutorials/zkconnect/authenticate-your-users-with-zkconnect.md)
-  * [Request data privately with zkConnect](tutorials/zkconnect/zk-connect-guide.md)
-  * [Gate your contracts with zkConnect (Advanced)](tutorials/zkconnect/gate-your-contracts-with-zkconnect-advanced.md)
+* [sismoConnect](tutorials/sismo-connect/README.md)
+  * [Authenticate your users with sismoConnect](tutorials/sismo-connect/authenticate-your-users-with-sismo-connect.md)
+  * [Request data privately with sismoConnect](tutorials/sismo-connect/request-data-privately-with-sismo-connect.md)
+  * [Gate your contracts with sismoConnect (Advanced)](tutorials/sismo-connect/gate-your-contracts-with-sismo-connect-advanced.md)
 
 ## Technical Documentation
 
-* [zkConnect](technical-documentation/zkconnect/README.md)
-  * [zkConnect Client: Request](technical-documentation/zkconnect/zkconnect-client-request.md)
-  * [zkConnect React: Request](technical-documentation/zkconnect/zkconnect-react-request.md)
-  * [zkConnect Server: Verify Off-chain](technical-documentation/zkconnect/zkconnect-server-verify-off-chain.md)
-  * [zkConnect Solidity Library: Verify On-chain](technical-documentation/zkconnect/zkconnect-solidity-library-verify-on-chain-soon.md)
+* [sismoConnect](technical-documentation/sismo-connect/README.md)
+  * [sismoConnect Client: Request](technical-documentation/sismo-connect/client.md)
+  * [sismoConnect React: Request](technical-documentation/sismo-connect/react.md)
+  * [sismoConnect Server: Verify Off-chain](technical-documentation/sismo-connect/server.md)
+  * [sismoConnect Solidity Library: Verify On-chain](technical-documentation/sismo-connect/solidity-library.md)
 * [ZK Badge Protocol](technical-documentation/zk-badge-protocol/README.md)
   * [Groups](technical-documentation/zk-badge-protocol/groups.md)
   * [Attesters](technical-documentation/zk-badge-protocol/attesters.md)

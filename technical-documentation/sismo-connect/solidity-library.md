@@ -2,88 +2,88 @@
 description: Verify proofs from your users
 ---
 
-# zkConnect Solidity Library: Verify On-chain
+# sismoConnect Solidity Library: Verify On-chain
 
-The [zkConnect](../../what-is-sismo/zkconnect.md) Solidity Library is built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) and allows to easily verify proofs from your users **on-chain**. You can see a full guide on how to integrate zkConnect into your application [here](../../tutorials/zkconnect/gate-your-contracts-with-zkconnect-advanced.md).
+The [sismoConnect](../../readme/sismo-connect.md) Solidity Library is built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) and allows to easily verify proofs from your users **on-chain**. You can see a full guide on how to integrate sismoConnect into your application [here](../../tutorials/sismo-connect/gate-your-contracts-with-sismo-connect-advanced.md).
 
-<figure><img src="../../.gitbook/assets/onchain (2).png" alt=""><figcaption><p>zkConnect onchain full flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/onchain (2).png" alt=""><figcaption><p>sismoConnect onchain full flow</p></figcaption></figure>
 
-This page will detail all the specifications of the zkConnect Solidity Library.
+This page will detail all the specifications of the sismoConnect Solidity Library.
 
 You can find the Solidity Lib GitHub repository [here](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-solidity).
 
 {% hint style="info" %}
-Learn more about Sismo zero-knowledge proofs and use cases [**here**](https://docs.sismo.io/sismo-docs/technical-concepts/proof-identifier).
+Learn more about Sismo zero-knowledge proofs and use cases [**here**](../../technical-concepts/vault-and-proof-identifiers.md).
 
-Learn more about zkConnect [**here**](../../what-is-sismo/zkconnect.md).
+Learn more about sismoConnect [**here**](../../readme/sismo-connect.md).
 {% endhint %}
 
 ## Usage
 
-Import the ZkConnect lib to your contract:
+Import the SismoConnect Lib to your contract:
 
 ```solidity
-import "zk-connect-solidity/libs/zk-connect/ZkConnectLib.sol";
+import "./libs/sismo-connect/SismoConnectLib.sol";
 ```
 
 Then:
 
-* **Inherit** your contract from the zkConnect Library
-* **Call** the ZkConnect constructor in the constructor of your contract
+* **Inherit** your contract from the sismoConnect Library
+* **Call** the SismoConnect constructor in the constructor of your contract
 * **Create** the request objects:
   * Create a [Claim](./#claim) OR an [Auth](./#auth) object in the constructor.
   *   Create a [signedMessage](./#signedmessage):&#x20;
 
-      * By hardcoding a signedMessage in your contract, you can ensure that the zkConnectResponse have the same signed message that the one you hardcoded.
+      * By hardcoding a signedMessage in your contract, you can ensure that the sismoConnectResponse have the same signed message that the one you hardcoded.
 
       > **Example 1**: Define a specific message (like the one used fo Sign-in with Ethereum), so the lib can verify the user use the same message to generate the proof.
 
-      * You can also define it by passing it as argument of a function of your contract. And verify it regarding the zkConnectResponse one.
+      * You can also define it by passing it as argument of a function of your contract. And verify it regarding the sismoConnectResponse one.
 
       > **Example 2**: A user need to specify an address to receive an airdrop. He will send his address as parameter of the contract function, so the lib can verify that is the same address that the one used to generate the proof.
 
 This will then allow you to check if the proof the user wants to check corresponds to the proof expected by the contract.
 
 ```solidity
-import "zk-connect-solidity/libs/zk-connect/ZkConnectLib.sol";
+import "sismo-connect-solidity/libs/sismo-connect/SismoConnectLib.sol";
 
-contract MyContract is ZkConnect { // inherits from zkConnect library
- // the Claim request object we want to verify the ZkConnectResponse with
- Claim claimRequest;
+contract MyContract is SismoConnect { // inherits from sismoConnect library
+ // the Claim object we want to verify the SismoConnectResponse with
+ ClaimRequest claim;
  
- // you can also have an Auth request
- //Auth authRequest;
+ // you can also have an Auth
+ // AuthRequest auth;
  
- // Or a signedMessage request
- // bytes signedMessageRequest;
+ // Or a signedMessage
+ // SignatureRequest signedMessage;
  
- // call ZkConnect constructor with your appId
- constructor(bytes16 appId, bytes16 groupId) ZkConnect(appId) {
-  // creation of the claim request with a groupId
-  claimRequest = buildClaim({groupId: groupId});
+ // call SismoConnect constructor with your appId
+ constructor(bytes16 appId, bytes16 groupId) SismoConnect(appId) {
+  // creation of the claim with a groupId
+  claim = buildClaim({groupId: groupId});
   
   // you can also pass in arguments other objects in order to create
-  // an AuthRequest
-  // authRequest = buildAuth({authRequest: authRequest});
+  // an Auth
+  // auth = buildAuth({authType: AuthType.VAULT});
 
   // Or a signedMessage request
-  // signedMessageRequest = "yes"
+  // signedMessage = buildSignature({message: message})
 }
 ...
 }
 ```
 
-Finally, use the `verify()` function to verify the proof stored in `zkConnectResponse` with respect to the requests you built. For example, here we verify that the proof in the `zkConnectResponse` is cryptographically valid for the `groupId` previously chosen in the constructor.
+Finally, use the `verify()` function to verify the proof stored in `sismoConnectResponse` with respect to the requests you built. For example, here we verify that the proof in the `sismoConnectResponse` is cryptographically valid for the `groupId` previously chosen in the constructor.
 
 ```solidity
-function doSomethingUsingZkConnect(bytes memory zkConnectResponse) public {
+function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {
     // store the result of the verification
-    ZkConnectVerifiedResult memory zkConnectVerifiedResult = 
+    SismoConnectVerifiedResult memory sismoConnectVerifiedResult = 
     // verify the proof with respect to the claim request
-    verify(zkConnectResponse, claimRequest);
+    verify(sismoConnectResponse, claimRequest);
     
     // You can also pass the signedMessage as argument here (see Example 2)
-    // verify(zkConnectResponse, claimRequest, _signedMessage);
+    // verify(sismoConnectResponse, claimRequest, signedMessage);
 }
 ```
 
@@ -98,11 +98,11 @@ The `verify()` function allows you to verify a proof generated by the [Sismo Vau
 ```solidity
 function verify(
     bytes memory responseBytes, // required
-    Auth memory authRequest, // optional
-    Claim memory claimRequest, // optional
-    bytes memory messageSignatureRequest, // optional
+    AuthRequest memory auth, // optional
+    ClaimRequest memory claim, // optional
+    SignatureRequest memory signature, // optional
     bytes16 namespace // optional
-) public returns (ZkConnectVerifiedResult memory)
+) public returns (SismoConnectVerifiedResult memory)
 ```
 
 The function can take these 5 arguments:
@@ -111,49 +111,51 @@ The function can take these 5 arguments:
 
 The function needs to verify that the proof is cryptographically valid but also that it has been well generated from the Data request specified in the frontend. To do this, we also need to setup the same requests in the contract:
 
-* [`claimRequest`](./#claim): The object that holds all the information needed to generate proof of group ownership.
-* [`authRequest`](./#auth): The object that holds all the information needed to generate proof of account membership.
-* [`messageSignatureRequest`](./#signedmessage):  It contains the message that the user should sign.
+* [`claim`](./#claim): The object that holds all the information needed to generate proof of group ownership.
+* [`auth`](./#auth): The object that holds all the information needed to generate proof of account membership.
+* [`signature`](./#signedmessage):  It contains the message that the user should sign.
 * [`namespace`](./#namespace): The namespace of the application that the contract uses.
 
-And it returns a [`ZkConnectVerifiedResult`](zkconnect-solidity-library-verify-on-chain-soon.md#zkconnectverifiedresult).
+And it returns a [`SismoConnectVerifiedResult`](solidity-library.md#zkconnectverifiedresult).
 
 ### `responseBytes` _(required)_
 
-The `responseBytes` is the encoded version of the `zkConnectResponse`, the response that the frontend received from the Data Vault App.
+The `responseBytes` is the encoded version of the `sismoConnectResponse`, the response that the frontend received from the Data Vault App.
 
-Once decoded here is the type of the `zkConnectResponse`:
+Once decoded here is the type of the `sismoConnectResponse`:
 
 ```solidity
-struct ZkConnectResponse {
+struct SismoConnectResponse {
     // the app identifier (registered in the Sismo Factory)
-    bytes16 appId; 
+    bytes16 appId;
     // the app service from which the proof is requested
     // default: bytes16(keccak256("main"))
-    bytes16 namespace; 
+    bytes16 namespace;
     // the version of the Data Vault app
-    // default: "zk-connect-v2"
-    bytes32 version; 
-    // the array of zkConnect proofs generated
+    // default: "sismo-connect-v2"
+    bytes32 version;
+    bytes signedMessage;
+    // the array of sismoConnect proofs generated
     // only one proof is generated for now)
-    ZkConnectProof[] proofs;
+    SismoConnectProof[] proofs;
 }
 ```
 
 [**`appId`**](./#appid) : The unique identifier of your application registered on the Sismo Factory app.
 
-[**`namespace`**](./#namespace) : By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application.
+[**`namespace`**](./#namespace) : By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the sismoConnect flow in different parts of your application.
 
-[**`version`**](./#version) : The version of the Data Vault app queried. The only version that work is now `zk-connect-v2`.
+[**`version`**](./#version) : The version of the Data Vault app queried. The only version that work is now `sismo-connect-v2`.
 
-**`proofs[]`** : The array that contains all the zkConnectProofs the frontend provide to the contract. Learn more about proofs [**here**](./#proofs). **NB**: for now, only 1 proof can be generated.\
-A zkConnectProof stores several objects:
+**`signedMessage`** : A message provided by the user and signed with the vault.
+
+**`proofs[]`** : The array that contains all the sismoConnectProofs the frontend provide to the contract. Learn more about proofs [**here**](./#proofs). **NB**: for now, only 1 proof can be generated.\
+A sismoConnectProof stores several objects:
 
 ```solidity
-struct ZkConnectProof {
-  Claim claim;
-  Auth auth;
-  bytes signedMessage;
+struct SismoConnectProof {
+  Claim[] claims;
+  Auth[] auths;
   bytes32 provingScheme;
   bytes proofData;
   bytes extraData;
@@ -165,18 +167,16 @@ struct ZkConnectProof {
 * [`groupId`](./#groupid) : The unique identifier of the group of accounts to which the user must prove that he belongs to in order to generate the proof.
 * [`groupTimeStamp`](./#grouptimestamp) : By default, the timestamp of the latest Group Snapshot. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated to it.
 * `value`: In a group, each account is associated with a value. Querying a specific `value` restricts eligibility to users belonging to the group with `value` that respect the `claimType` defined.
-* `claimType` : Allow choosing if we want to restrict the eligibility for the accounts that have the exact (`EQ`), at least (`GTE`) (or other type of comparison) the `value` specified before. Comparators accepted: `EMPTY`, `GTE`, `GT`, `EQ`, `LT`, `LTE`, `USER_SELECT`.
+* `claimType` : Allow choosing if we want to restrict the eligibility for the accounts that have the exact (`EQ`), at least (`GTE`) (or other type of comparison) the `value` specified before. Comparators accepted: `GTE`, `GT`, `EQ`, `LT`, `LTE`.
 * `extraData`: other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
 
 [**`auth`**](./#auth) : The data requested to generate a proof of account ownership
 
-* `authType` : The type of the account you want to authenticate through the vault. Types accepted: `EMPTY`, `ANON`, `GITHUB`, `TWITTER`, `EVM_ACCOUNT`
-* `anonMode` : if anonMode = true (**soon™**), the user does not reveal the Id of his account, so he only proves the ownership of one account of the type `authType` in the vault. For now only anonMode = false works.
+* `authType` : The type of the account you want to authenticate through the vault. Types accepted: `VAULT`, `GITHUB`, `TWITTER`, `EVM_ACCOUNT`
+* `anonMode` : if anonMode = true (**soon™**), the user does not reveal the Id of his account, so he only proves the ownership of one account of the type `authType` in the vault. **For now only anonMode = false works**.
 * `userId` : the userId depends on the authType you specified. For instance, if the authType is TWITTER, the userId will be your twitterId. \
   Note: If the authType is ANON, the userId is the vaultId. You can find more info on the vaultId [**here**](../../technical-concepts/vault-and-proof-identifiers.md#vault-identifier).
 * `extraData` : other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
-
-**`signedMessage`** : A message provided by the user and signed with the vault.
 
 **`provingScheme`** : The proving scheme that the [Data Vault app](../data-vault-app.md) used to generate the proof and by the verify to verify the proof.
 
@@ -199,22 +199,21 @@ struct Claim {
   uint256 value; // optional
   ClaimType claimType; // optional
   bytes extraData; // optional
+  bool isSelectableByUser; // optional
 }
 
 enum ClaimType {
-  EMPTY,
   GTE,
   GT,
   EQ,
   LT,
   LTE,
-  USER_SELECT
 }
 
 // Example: Build your Sismo Contributor level 2 claim
 Claim memory myExampleClaim = buildClaim({
     groupId: 0xe9ed316946d3d98dfcd829a53ec9822e,
-    value 2
+    value: 2
 })
 ```
 
@@ -225,14 +224,14 @@ The data requested to generate a proof of account ownership.
 ```solidity
 struct Auth {
     AuthType authType; // required
-    bool anonMode; // optional
+    bool isAnon; // optional
+    bool isSelectableByUser; // optional
     uint256 userId; // optional
     bytes extraData; //optional
 }
 
 enum AuthType {
-  EMPTY,
-  ANON,
+  VAULT,
   GITHUB,
   TWITTER,
   EVM_ACCOUNT
@@ -250,35 +249,39 @@ A message provided by the user and signed with the Vault.
 
 ```solidity
 // Example of a signedMessage
-bytes memory signedMessage = "yes"
+struct Signature {
+  bytes message;
+  bytes extraData;
+}
+
+// Example: Build your signed message
+signature: buildSignature({message: message})
 ```
 
 ### [`namespace`](./#namespace) _(optional)_
 
-By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [zkConnect server documentation](zkconnect-server-verify-off-chain.md).
+By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [zkConnect server documentation](server.md).
 
 
 
-### ZkConnectVerifiedResult
+### SismoConnectVerifiedResult
 
-The `zkConnectVerifiedResult` is the object returned by the `verify()` function if the proof verification passed. It contains all the verifications processed, that is:
+The `sismoConnectVerifiedResult` is the object returned by the `verify()` function if the proof verification passed. It contains all the verifications processed, that is:
 
 * The claim: `verifiedClaims`
 * The auth: `verifiedAuths`
 * The signed message `signedMessages`
 
 ```solidity
-struct ZkConnectVerifiedResult {
+struct SismoConnectVerifiedResult {
     bytes16 appId;
     bytes16 namespace;
     bytes32 version;
-    VerifiedClaim[] verifiedClaims;
-    VerifiedAuth[] verifiedAuths;
-    bytes[] signedMessages;
+    VerifiedClaim[] claims;
+    VerifiedAuth[] auths;
+    bytes signedMessage;
 }
 ```
-
-As said previously, for now we can only generate 1 zkConnectProof, that can contain a claim, an auth and a signedMessage. Thats is why, only the first element of the three array (verifiedClaims, verifiedAuths, signedMessages) can be used.
 
 {% hint style="info" %}
 You can find more detailed description of certain objects in the Glossary [**here**](./#glossary).
