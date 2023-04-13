@@ -1,20 +1,20 @@
-# Request data privately with sismoConnect
+# Request data privately with Sismo Connect
 
 ### What’s inside?
 
-This tutorial will walk you through how to request data from your users privately thanks to [**sismoConnect**](../../readme/sismo-connect.md) integration. This tutorial will not be centered around only one example but it is meant to showcase many ways of using sismoConnect in your app.&#x20;
+This tutorial will walk you through how to request data from your users privately thanks to [**Sismo Connect**](../../readme/sismo-connect.md) integration. This tutorial will not be centered around only one example but it is meant to showcase many ways of using Sismo Connect in your app.&#x20;
 
-To get a feel of what you could build with this tutorial, you can try out a demo [**here**](https://demo.zksub.io/)**.** This sismoConnect app enables  whitelisted wallets and GitHub accounts to register to a service with their email without revealing their eligible account.
+To get a feel of what you could build with this tutorial, you can try out a demo [**here**](https://demo.zksub.io/)**.** This Sismo Connect app enables  whitelisted wallets and GitHub accounts to register to a service with their email without revealing their eligible account.
 
 {% hint style="success" %}
-You can find all the code showcased in this tutorial in [this open-source boilerplate repository](https://github.com/sismo-core/sismo-connect-boilerplate) showcasing multiple sismoConnect integrations in Next.
+You can find all the code showcased in this tutorial in [this open-source boilerplate repository](https://github.com/sismo-core/sismo-connect-boilerplate) showcasing multiple Sismo Connect integrations in Next.
 
 The repository use the [`@sismo-core/sismo-connect-react`](../../technical-documentation/sismo-connect/react.md)package to request the proof, if your project is not on react you can use the[`@sismo-core/sismo-connect-client`](../../technical-documentation/sismo-connect/client.md)package`.`
 {% endhint %}
 
 ### Choose your stack (Next.js recommended)
 
-To implement sismoConnect, you'll need both a frontend and a backend. The frontend will request the proof, and the backend will verify it.
+To implement Sismo Connect, you'll need both a frontend and a backend. The frontend will request the proof, and the backend will verify it.
 
 For this tutorial, we recommend using the Next.js stack, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.&#x20;
 
@@ -26,15 +26,15 @@ yarn create next-app --typescript
 
 That's it! Your frontend will be located in `src/pages/index.tsx`, and your backend will be located in `src/pages/api`.
 
-You can find the complete Next.js boilerplate repository setup with sismoConnect [here](https://github.com/sismo-core/sismo-connect-boilerplate).
+You can find the complete Next.js boilerplate repository setup with Sismo Connect [here](https://github.com/sismo-core/sismo-connect-boilerplate).
 
-### Register your sismoConnect App in the Factory
+### Register your Sismo Connect App in the Factory
 
-Before you begin integrating [**sismoConnect**](../../readme/sismo-connect.md), you must create first a sismoConnect app in the [**Sismo Factory**](https://factory.sismo.io/apps-explorer). This step is mandatory to obtain an application Id (`appId`), which is required during the sismoConnect development process.
+Before you begin integrating [**Sismo Connect**](../../readme/sismo-connect.md), you must create first a Sismo Connect app in the [**Sismo Factory**](https://factory.sismo.io/apps-explorer). This step is mandatory to obtain an application Id (`appId`), which is required during the Sismo Connect development process.
 
 <details>
 
-<summary>Why is an <code>appId</code> mandatory for sismoConnect?</summary>
+<summary>Why is an <code>appId</code> mandatory for Sismo Connect?</summary>
 
 The `appId` will be used to compute an AnonUserID, which is the the unique identifier for a user on your app. The AnonUserID is simply the hash of a user's Vault secret and the appId.
 
@@ -48,11 +48,11 @@ You can learn more about this notion in this [article](../../technical-concepts/
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 11.26.24.png" alt=""><figcaption><p>Register your sismoConnect app in the Factory</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 11.26.24.png" alt=""><figcaption><p>Register your Sismo Connect app in the Factory</p></figcaption></figure>
 
-You can register a sismoConnect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
+You can register a Sismo Connect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
-To create a sismoConnect app, you need to log in with Sign-In With Ethereum and click on “create a new sismoConnect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the appId that will be created can be used for [sismoConnect](../../readme/sismo-connect.md).&#x20;
+To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the appId that will be created can be used for [Sismo Connect](../../readme/sismo-connect.md).&#x20;
 
 {% hint style="info" %}
 Feel free to add `*.com` to authorized domains when following along this tutorial. This will allow to whitelist `localhost`.
@@ -60,7 +60,7 @@ Feel free to add `*.com` to authorized domains when following along this tutoria
 
 Once created, you should have all information about your app displayed in your profile:
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 16.04.56.png" alt=""><figcaption><p>Your sismoConnect apps profile</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 16.04.56.png" alt=""><figcaption><p>Your Sismo Connect apps profile</p></figcaption></figure>
 
 The appId displayed on your app’s profile in the Factory is its unique identifier. You will use it to request proof from your users in your app’s frontend and to verify it in the backend.
 
@@ -68,23 +68,23 @@ For this guide, you can use your own `appId`, such as `0x0ad03e347304dd6c19d9aa7
 
 ### Select or create your group of users and get the groupId
 
-The core concept of sismoConnect is to enable users to selectively disclose statements to applications regarding pieces of personal data, that we call Data Shards, stored in their Data Vault. This is done through the use of zero-knowledge proofs. Data Shards originate from groups that can also be created in the Factory.
+The core concept of Sismo Connect is to enable users to selectively disclose statements to applications regarding pieces of personal data, that we call Data Shards, stored in their Data Vault. This is done through the use of zero-knowledge proofs. Data Shards originate from groups that can also be created in the Factory.
 
 All groups created on the Sismo protocol are public, so if someone has already created a group that meets your needs, you can reuse it. You can explore all existing groups on our [**Factory explorer**](https://factory.sismo.io/groups-explorer). If you have very specific needs, you can create your own group using our [**no-code interface**](https://factory.sismo.io/groups-explorer) or by following this [**tutorial**](../sismo-hub/create-your-group.md) to submit a pull request to our repository.
 
-If you create a new group in the Factory, when members of this group will add their account in their Data Vault, they will get the associated Data Shard and will be able to start proving statements from it (e.g. I own one shard of “contributors to The Merge” group) when using sismoConnect.
+If you create a new group in the Factory, when members of this group will add their account in their Data Vault, they will get the associated Data Shard and will be able to start proving statements from it (e.g. I own one shard of “contributors to The Merge” group) when using Sismo Connect.
 
-To use a group in a sismoConnect app, we need to find its unique group ID (groupId). To do so, you can use the [group explorer in the Factory](https://factory.sismo.io/groups-explorer?search=sismo-contributors):
+To use a group in a Sismo Connect app, we need to find its unique group ID (groupId). To do so, you can use the [group explorer in the Factory](https://factory.sismo.io/groups-explorer?search=sismo-contributors):
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 16.10.37.png" alt=""><figcaption><p>sismo-contributors search result in the group explorer</p></figcaption></figure>
 
 It’s better to try it out yourself, but you should ultimately find the group’s unique id that interests you, we will take the groupId of `sismo-contributors` group for example `0xe9ed316946d3d98dfcd829a53ec9822e`
 
-Congratulations! You now have an appId (`0x0ad03e347304dd6c19d9aa75db8659d9`) and a groupId (`0xe9ed316946d3d98dfcd829a53ec9822e`), which means you can request some data from your users with [sismoConnect](../../readme/sismo-connect.md). Let’s focus on how to request and verify proofs.
+Congratulations! You now have an appId (`0x0ad03e347304dd6c19d9aa75db8659d9`) and a groupId (`0xe9ed316946d3d98dfcd829a53ec9822e`), which means you can request some data from your users with [Sismo Connect](../../readme/sismo-connect.md). Let’s focus on how to request and verify proofs.
 
 ### Request Data ownership proof from your users on your frontend
 
-Now that you have an app and a group that users should prove membership in, you need to send your users to the Sismo Vault app to generate the required proof. When redirected, users will be able to privately create a proof from their Data Vault and the personal piece of data that comes from the requested group in sismoConnect before sending it to you.
+Now that you have an app and a group that users should prove membership in, you need to send your users to the Sismo Vault app to generate the required proof. When redirected, users will be able to privately create a proof from their Data Vault and the personal piece of data that comes from the requested group in Sismo Connect before sending it to you.
 
 To do that you will need to use one of our packages:
 
@@ -99,9 +99,9 @@ First, you will need to import the React package:
 yarn add @sismo-core/sismo-connect-react
 ```
 
-After importing, you will be able to use the sismoConnect button in your app. By clicking on this button your user will be redirected to the [Data Vault App](https://docs.sismo.io/sismo-docs/technical-documentation/data-vault-app), to generate a proof for the specified group.
+After importing, you will be able to use the Sismo Connect button in your app. By clicking on this button your user will be redirected to the [Data Vault App](https://docs.sismo.io/sismo-docs/technical-documentation/data-vault-app), to generate a proof for the specified group.
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 11.30.56.png" alt=""><figcaption><p>sismoConnect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 11.30.56.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
 
 To do so, you have to use the `SismoConnectButton` component, you can see below several examples one how to use the button and request different proofs from your user.&#x20;
 
@@ -293,7 +293,7 @@ With this SismoConnect instance, you can call the `verify` function which takes 
 
 ```typescript
 
-const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
+const result: SismoConnectVerifiedResult = await Sismo Connect.verify(response, {
     // the group memebership we want to check
     claims: [{groupId: "0xe9ed316946d3d98dfcd829a53ec9822e"}],
     // the Data Vault ownership we want to check
@@ -312,7 +312,7 @@ We also check that the proof is a Data Vault proof of ownership.
 
 If the proof and the requested group are valid, an anonUserId is returned. If not, an error is received.
 
-The anonUserId corresponds to a unique identifier for the user Data Vault, the best part of it is that this anonUserId is derived from the appId so it is impossible to compare two anon user ids from two different apps implementing sismoConnect.
+The anonUserId corresponds to a unique identifier for the user Data Vault, the best part of it is that this anonUserId is derived from the appId so it is impossible to compare two anon user ids from two different apps implementing Sismo Connect.
 
 A user has now the ability to authenticate himself by sharing only proof of private data he owns while not leaking any addresses or accounts where this data comes from. 🤘
 
@@ -362,7 +362,7 @@ Click on "Deploy", and congratulations! Your app is now deployed at https://\[Na
 
 As previously mentioned, all Data can be categorized into [Groups](../../technical-concepts/data-groups.md). This means you are now able to create apps where users can prove anything about their identities in a privacy-preserving manner. Get creative, as the possibilities are endless!
 
-If you have any questions about integrating sismoConnect, don’t hesitate to reach out. The team will be happy to answer any questions you may have.
+If you have any questions about integrating Sismo Connect, don’t hesitate to reach out. The team will be happy to answer any questions you may have.
 
 Get involved in the Sismo community:
 

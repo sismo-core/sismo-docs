@@ -2,15 +2,15 @@
 description: Verify proofs from your users
 ---
 
-# sismoConnect Server: Verify Off-chain
+# Sismo Connect Server: Verify Off-chain
 
-The [sismoConnect](../../readme/sismo-connect.md) Server is a backend package built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) to easily verify proofs from your users off-chain. You can see a full guide on how to integrate sismoConnect into your application [here](../../tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
+The [Sismo Connect](../../readme/sismo-connect.md) Server is a backend package built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) to easily verify proofs from your users off-chain. You can see a full guide on how to integrate Sismo Connect into your application [here](../../tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
 
-<figure><img src="../../.gitbook/assets/offchain.png" alt=""><figcaption><p>sismoConnect offchain full flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/offchain.png" alt=""><figcaption><p>Sismo Connect offchain full flow</p></figcaption></figure>
 
 ## Installation
 
-Install [sismoConnect](../../readme/sismo-connect.md) server package in your backend with `npm` or `yarn`:
+Install [Sismo Connect](../../readme/sismo-connect.md) server package in your backend with `npm` or `yarn`:
 
 ```bash
 # with npm
@@ -27,7 +27,7 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 #### Configuration
 
-The first step for integrating sismoConnect in your backend is to create a `sismoConnectConfig`. This config will require an `appId` and can be customized with optional fields. You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId.
+The first step for integrating Sismo Connect in your backend is to create a `sismoConnectConfig`. This config will require an `appId` and can be customized with optional fields. You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId.
 
 ```typescript
 import { SismoConnect, SismoConnectServerConfig } from "@sismo-core/sismo-connect-server";
@@ -37,7 +37,7 @@ const sismoConnectConfig: SismoConnectServerConfig = {
   appId: "0x8f347ca31790557391cec39b06f02dc2",
 }
 
-// create a new SismoConnect instance with the server configuration
+// create a new Sismo Connect instance with the server configuration
 const sismoConnect = SismoConnect(sismoConnectConfig);
 ```
 
@@ -72,7 +72,7 @@ const proofId = claims[0].proofId;
 
 #### **`SismoConnectServerConfig`**
 
-The `SismoConnectServerConfig` allows you to fully customize your sismoConnect integration in your backend. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional devMode field that allows developers to only verify that proofs are cryptographically valid without respect to a certain group.
+The `SismoConnectServerConfig` allows you to fully customize your Sismo Connect integration in your backend. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional devMode field that allows developers to only verify that proofs are cryptographically valid without respect to a certain group.
 
 ```typescript
 export type SismoConnectServerConfig = {
@@ -118,7 +118,7 @@ The SismoConnectResponse needs to be sent by the frontend so that the backend ca
 type SismoConnectResponse = {
     // the appId registered in the Factory
     appId: string;
-    // sismoConnect version
+    // Sismo Connect version
     version: string;
     // service from which the proof is requested
     namespace?: string;

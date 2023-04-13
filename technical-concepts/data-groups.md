@@ -1,6 +1,6 @@
 # Data Groups
 
-Data Groups are fundamental to Sismo—allowing users to prove facts about their data while enabling applications to gate particular features and services. Anyone building with Sismo must utilize Data Groups to request data via sismoConnect or create ZK Badges.
+Data Groups are fundamental to Sismo—allowing users to prove facts about their data while enabling applications to gate particular features and services. Anyone building with Sismo must utilize Data Groups to request data via Sismo Connect or create ZK Badges.
 
 Users in the same Data Group can bring the same element of their identity to gated applications. Data Groups contain pieces of data that categorize users by similar characteristics. Users become members of Data Groups by owning Data Gems of the same category. Data Gems are obtained by importing Data Sources (web2 or web3 accounts) into a user’s Data Vault.
 
@@ -17,7 +17,7 @@ Examples of Data Groups include:
 
 ## Creating Data Groups
 
-To create a sismoConnect application or ZK Badge, users need to create or re-use existing Data Groups. These Data Groups are used as sources of truth from which users can make verifiable claims (e.g, being part of the Proof of Humanity Data Group).
+To create a Sismo Connect application or ZK Badge, users need to create or re-use existing Data Groups. These Data Groups are used as sources of truth from which users can make verifiable claims (e.g, being part of the Proof of Humanity Data Group).
 
 There are currently two ways to create Data Groups:
 
@@ -32,7 +32,7 @@ Factory: [create-your-group.md](../tutorials/sismo-factory/create-your-group.md 
 Sismo Hub: [create-your-group.md](../tutorials/sismo-hub/create-your-group.md "mention")
 {% endhint %}
 
-Alternatively, users can make use of Data Groups created for other ZK Badges or sismoConnect applications. For example, [zkdrop.io](http://zkdrop.io) makes use of the [the-merge-contributor](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/the-merge-contributor) Data Group to gate features to The Merge contributors. This Data Group can be reused to gate features on entirely different applications to the same set of users.
+Alternatively, users can make use of Data Groups created for other ZK Badges or Sismo Connect applications. For example, [zkdrop.io](http://zkdrop.io) makes use of the [the-merge-contributor](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/the-merge-contributor) Data Group to gate features to The Merge contributors. This Data Group can be reused to gate features on entirely different applications to the same set of users.
 
 ## Data Group Characteristics
 
@@ -50,7 +50,7 @@ Therefore, a Data Group consists of Data Gems of the same type, with each indivi
 
 ## Verifiable Claims & Data Groups
 
-When using sismoConnect or minting ZK Badges, users make verifiable claims about their data that is subsequently verified by applications. By making these verifiable claims, users claim to be a part of a specific Data Group.
+When using Sismo Connect or minting ZK Badges, users make verifiable claims about their data that is subsequently verified by applications. By making these verifiable claims, users claim to be a part of a specific Data Group.
 
 Technically, a verifiable claim consists of:
 

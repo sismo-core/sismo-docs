@@ -4,7 +4,7 @@ description: Tutorials for sismoConnect
 
 # sismoConnect
 
-This section contains tutorials for [sismoConnect](../../technical-documentation/sismo-connect/). sismoConnect is a privacy-preserving SSO. By following these tutorials, you can learn how to use sismoConnect in your applications.&#x20;
+This section contains tutorials for [Sismo Connect](../../technical-documentation/sismo-connect/). Sismo Connect is a privacy-preserving SSO. By following these tutorials, you can learn how to use Sismo Connect in your applications.&#x20;
 
 {% hint style="success" %}
 If you want to see several code snippets of sismoConnect, we advise you to take a look at our boilerplate repository [here](https://github.com/sismo-core/sismo-connect-boilerplate).

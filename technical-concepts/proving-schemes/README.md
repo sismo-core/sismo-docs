@@ -2,7 +2,7 @@
 
 A proving scheme is a circuit in which users establish ownership of pieces of personal data known as Data Gems. Proving schemes consist of provers and verifiers. Provers generate proofs for user claims that are authenticated by verifiers integrated into applications.
 
-When users connect to applications via sismoConnect or mint Badges, they participate in a proving scheme to verify ownership of Data Gems (i.e, personal data) in their Data Vault.
+When users connect to applications via Sismo Connect or mint Badges, they participate in a proving scheme to verify ownership of Data Gems (i.e, personal data) in their Data Vault.
 
 This [article](https://vitalik.ca/general/2022/06/15/using\_snarks.html) from Vitalik Buterin should give you a precise understanding of the intent behind Hydra and a general overview of the ZK SNARK concepts behind it.
 
@@ -11,7 +11,7 @@ This [article](https://vitalik.ca/general/2022/06/15/using\_snarks.html) from Vi
 Currently, Sismo has two functional proving schemes deployed:
 
 * [Hydra S1 proving scheme](hydra-s1.md) — [ZK Badges](../../what-is-sismo/sismo-badges.md)
-* [Hydra S2 proving scheme](hydra-s2.md) — [sismoConnect](../../readme/sismo-connect.md)
+* [Hydra S2 proving scheme](hydra-s2.md) — [Sismo Connect](../../readme/sismo-connect.md)
 
 Both of these proving schemes belong to the Hydra family, which consists of proving schemes using zero-knowledge proofs (ZKPs) and Sismo’s Commitment Mapper.
 
