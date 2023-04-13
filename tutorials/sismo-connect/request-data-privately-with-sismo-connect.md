@@ -36,13 +36,13 @@ Before you begin integrating [**Sismo Connect**](../../readme/sismo-connect.md),
 
 <summary>Why is an <code>appId</code> mandatory for Sismo Connect?</summary>
 
-The `appId` will be used to compute an AnonUserID, which is the the unique identifier for a user on your app. The AnonUserID is simply the hash of a user's Vault secret and the appId.
+The `appId` will be used to compute an VaultId, which is the the unique identifier for a user on your app. The VaultId is simply the hash of a user's Vault secret and the appId.
 
 $$vaultId = hash(vaultSecret, appId)$$
 
-If we remove the appId from this simple calculation, we would have had the same AnonUserID for the same vaultSecret, effectively leaking information about a user that uses zkConnect on two different apps. The AnonUserID would be the same across different apps, and the user could be tracked if the AnonUserIDs became public.
+If we remove the appId from this simple calculation, we would have had the same VaultId for the same vaultSecret, effectively leaking information about a user that uses zkConnect on two different apps. The VaultId would be the same across different apps, and the user could be tracked if the VaultIds became public.
 
-By introducing an appId, the vaultId is now different between apps, and the same user will have two different AnonUserIDs on two different apps, effectively preserving the user's privacy.&#x20;
+By introducing an appId, the vaultId is now different between apps, and the same user will have two different VaultIds on two different apps, effectively preserving the user's privacy.&#x20;
 
 You can learn more about this notion in this [article](../../technical-concepts/vault-and-proof-identifiers.md).
 
@@ -301,7 +301,7 @@ const result: SismoConnectVerifiedResult = await Sismo Connect.verify(response, 
  });
 
 // we get an anonymized userId when we request a proof of Data Vault ownership
-const anonUserId = result.getUserId(AuthType.VAULT));
+const VaultId = result.getUserId(AuthType.VAULT));
 ```
 
 {% hint style="info" %}
@@ -310,9 +310,9 @@ By doing this, you'll be able to verify the validity of the proof for the reques
 We also check that the proof is a Data Vault proof of ownership.
 {% endhint %}
 
-If the proof and the requested group are valid, an anonUserId is returned. If not, an error is received.
+If the proof and the requested group are valid, an VaultId is returned. If not, an error is received.
 
-The anonUserId corresponds to a unique identifier for the user Data Vault, the best part of it is that this anonUserId is derived from the appId so it is impossible to compare two anon user ids from two different apps implementing Sismo Connect.
+The VaultId corresponds to a unique identifier for the user Data Vault, the best part of it is that this VaultId is derived from the appId so it is impossible to compare two anon user ids from two different apps implementing Sismo Connect.
 
 A user has now the ability to authenticate himself by sharing only proof of private data he owns while not leaking any addresses or accounts where this data comes from. 🤘
 
@@ -322,20 +322,20 @@ You can find the full code snippet for the backend [here](https://github.com/sis
 
 With the anon userId, you can now start to have a database without knowing which sismo contributor has used your app. You can for example allow them to register an email address for a waiting list but you still don't know their identity 🤯 You are now at 95% of the job! There is one last issue to resolve: what if one of your users adds multiple emails to gain access more than once to the waiting list?
 
-### Avoid double spending with anonUserId
+### Avoid double spending with VaultId
 
-As you saw, the verify function will return you the anonUserId.
+As you saw, the verify function will return you the VaultId.
 
-This anonUserId can be used as a user identifier, it is deterministically generated based on the following elements:
+This VaultId can be used as a user identifier, it is deterministically generated based on the following elements:
 
 * The vault used to generate the proof
 * The app ID
 
-This means that the anonUserId will remain constant for a specific app if your user tries to prove something twice.
+This means that the VaultId will remain constant for a specific app if your user tries to prove something twice.
 
 With this property, we can check if a user has already generated a proof for your app.
 
-To do so, we only need to store the anonUserId with an added email for example in a context of an anonymized wiating list, and every time a proof is sent to the back end, check that the anonUserId returned is not already associated with an email address.
+To do so, we only need to store the VaultId with an added email for example in a context of an anonymized wiating list, and every time a proof is sent to the back end, check that the VaultId returned is not already associated with an email address.
 
 And that’s it! 💜
 

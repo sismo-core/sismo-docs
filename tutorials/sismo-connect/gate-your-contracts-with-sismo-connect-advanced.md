@@ -46,13 +46,13 @@ Before you begin integrating [**Sismo Connect**](../../readme/sismo-connect.md),
 
 <summary>Why is an <code>appId</code> mandatory for Sismo Connect?</summary>
 
-The `appId` will be used to compute an AnonUserID, which is the the unique identifier for a user on your app. The AnonUserID is simply the hash of a user's Vault secret and the appId.
+The `appId` will be used to compute an VaultId, which is the the unique identifier for a user on your app. The VaultId is simply the hash of a user's Vault secret and the appId.
 
 $$vaultId = hash(vaultSecret, appId)$$
 
-If we remove the appId from this simple calculation, we would have had the same AnonUserID for the same vaultSecret, effectively leaking information about a user that uses Sismo Connect on two different apps. The AnonUserID would be the same across different apps, and the user could be tracked if the AnonUserIDs became public.
+If we remove the appId from this simple calculation, we would have had the same VaultId for the same vaultSecret, effectively leaking information about a user that uses Sismo Connect on two different apps. The VaultId would be the same across different apps, and the user could be tracked if the VaultIds became public.
 
-By introducing an appId, the vaultId is now different between apps, and the same user will have two different AnonUserIDs on two different apps, effectively preserving the user's privacy.
+By introducing an appId, the vaultId is now different between apps, and the same user will have two different VaultIds on two different apps, effectively preserving the user's privacy.
 
 You can learn more about this notion in this [article](../../technical-concepts/vault-and-proof-identifiers.md).
 

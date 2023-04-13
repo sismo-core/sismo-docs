@@ -7,16 +7,16 @@ The [Hydra-S2 ZK proving scheme](https://github.com/sismo-core/hydra-s2-zkps) is
 
 The proving scheme expands on the [Hydra-S1 proving scheme](hydra-s1.md) and introduces the notion of a Vault Identifier while offering a modular way of creating ZK proofs.
 
-### AnonUserID & Proof Identifiers
+### VaultId & Proof Identifiers
 
-[AnonUserID](../vault-and-proof-identifiers.md) is a new notion introduced with Hydra-S2; it is an anonymous app-specific identifier that can be utilized as an in-app user ID.
+[VaultId](../vault-and-proof-identifiers.md) is a new notion introduced with Hydra-S2; it is an anonymous app-specific identifier that can be utilized as an in-app user ID.
 
-This AnonUserID is deterministically generated from a `vaultSecret` and an application Identifier (`appId`) by taking the Poseidon hash of these two values.&#x20;
+This VaultId is deterministically generated from a `vaultSecret` and an application Identifier (`appId`) by taking the Poseidon hash of these two values.&#x20;
 
 A [Proof Identifier](../vault-and-proof-identifiers.md) can be seen as the nullifier used in Hydra-S1, as far as it is deterministically generated from the Poseidon hash of a hashed sourceSecret and a requestIdentifier. The request Identifier is made of an application id, a group ID, a group timestamp, and a namespace (learn more about it in the [Sismo Connect package documentation](../../technical-documentation/sismo-connect/)).
 
 {% hint style="info" %}
-AnonUserID and Proof Identifiers are two tools with different purposes. AnonUserID can help you to privately keep track of a user with an anonymous app-specific ID while a Proof Identifier can help you to prevent a user from using the same proof two times in your app.
+VaultId and Proof Identifiers are two tools with different purposes. VaultId can help you to privately keep track of a user with an anonymous app-specific ID while a Proof Identifier can help you to prevent a user from using the same proof two times in your app.
 {% endhint %}
 
 ### Hydra Proof Of Ownership
