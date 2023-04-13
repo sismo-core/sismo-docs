@@ -42,7 +42,7 @@ Try out a demo [here](https://demo.zkdrop.io/mergooor-pass). You can also find a
 
 ## Off-chain verification
 
-In addition, off-chain applications can make use of Sismo Connect. While an on-chain application integrates Sismo’s verifier into a smart contract, an off-chain application must integrate Sismo’s verifier code into its backend. If an off-chain application limits its services to a single verifiable claim, it can also store Sismo’s anonymous app-specific [AnonUserID](../technical-concepts/vault-and-proof-identifiers.md).
+In addition, off-chain applications can make use of Sismo Connect. While an on-chain application integrates Sismo’s verifier into a smart contract, an off-chain application must integrate Sismo’s verifier code into its backend. If an off-chain application limits its services to a single verifiable claim, it can also store Sismo’s anonymous app-specific [VaultId](../technical-concepts/vault-and-proof-identifiers.md).
 
 If an off-chain application has already integrated Sign-In with Ethereum (SIWE), Sismo Connect can enhance its existing infrastructure. By integrating Sismo’s verifier code, the application can accept verifiable claims from users directly—adding a privacy-preserving layer to SIWE. Furthermore, off-chain applications can use Badges, the tokenized equivalents of Data Gems, as an access tool.
 

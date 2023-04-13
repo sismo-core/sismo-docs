@@ -38,13 +38,13 @@ Before you begin integrating [**Sismo Connect**](../../readme/sismo-connect.md),
 
 <summary>Why is an <code>appId</code> mandatory for Sismo Connect?</summary>
 
-The `appId` will be used to compute an AnonUserID, which is the the unique identifier for a user on your app. The AnonUserID is simply the hash of a user's Vault secret and the appId.
+The `appId` will be used to compute an VaultId, which is the the unique identifier for a user on your app. The VaultId is simply the hash of a user's Vault secret and the appId.
 
 $$vaultId = hash(vaultSecret, appId)$$
 
-If we remove the appId from this simple calculation, we would have had the same AnonUserID for the same vaultSecret, effectively leaking information about a user that uses Sismo Connect on two different apps. The AnonUserID would be the same across different apps, and the user could be tracked if the AnonUserIDs became public.
+If we remove the appId from this simple calculation, we would have had the same VaultId for the same vaultSecret, effectively leaking information about a user that uses Sismo Connect on two different apps. The VaultId would be the same across different apps, and the user could be tracked if the VaultIds became public.
 
-By introducing an appId, the vaultId is now different between apps, and the same user will have two different AnonUserIDs on two different apps, effectively preserving the user's privacy.&#x20;
+By introducing an appId, the vaultId is now different between apps, and the same user will have two different VaultIds on two different apps, effectively preserving the user's privacy.&#x20;
 
 You can learn more about this notion in this [article](../../technical-concepts/vault-and-proof-identifiers.md).
 
@@ -201,12 +201,12 @@ With this `SismoConnect` instance, you can call the `verify` function which take
 
 // you can get the anonymized userId with the helper `getUserId`
 // and by specifying the authType as `VAULT`
-const anonUserId = result.getUserId(AuthType.VAULT);
+const VaultId = result.getUserId(AuthType.VAULT);
 </code></pre>
 
-If the proof is valid, an anonUserId is returned. If not, an error is received.
+If the proof is valid, an VaultId is returned. If not, an error is received.
 
-The `anonUserId` corresponds to a unique identifier for the user Data Vault, the best part of it is that this `anonUserId` is derived from the `appId` so it is impossible to compare two identifiers from two different apps implementing sismoConnect. **The `anonUserId` can be used in your application as a user identifier**.
+The `VaultId` corresponds to a unique identifier for the user Data Vault, the best part of it is that this `VaultId` is derived from the `appId` so it is impossible to compare two identifiers from two different apps implementing sismoConnect. **The `VaultId` can be used in your application as a user identifier**.
 
 A user has now the ability to privately authenticate himself in any application integrating Sismo Connect by proving that he owns a Data Vault. 🤘
 

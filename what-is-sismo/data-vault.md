@@ -44,7 +44,7 @@ When adding Data Sources to the Vault and revealing the Data Gems within, users 
 
 ## Stash Data Gems in encrypted storage
 
-When creating a Data Vault, users sign a message to generate a seed—derived deterministically from the user’s ECDSA wallet signature. The wallet address used to create the Vault is its designated owner and first Data Source. Adding a Data Source links it to the user’s Vault by creating a unique AnonUserID. Once a Data Source has been privately associated with a user’s Data Vault via an AnonUserID, it’s impossible to add the Data Source to Vaults owned by other addresses.
+When creating a Data Vault, users sign a message to generate a seed—derived deterministically from the user’s ECDSA wallet signature. The wallet address used to create the Vault is its designated owner and first Data Source. Adding a Data Source links it to the user’s Vault by creating a unique VaultId. Once a Data Source has been privately associated with a user’s Data Vault via an VaultId, it’s impossible to add the Data Source to Vaults owned by other addresses.
 
 The seed generated during Vault creation is used to encrypt and decrypt the Data Vault, controlling access to personal data (i.e, Data Gems) inside. The Data Vault only ever exists in its decrypted state in a user’s browser—remaining fully encrypted in the Data Vault’s back end.
 
