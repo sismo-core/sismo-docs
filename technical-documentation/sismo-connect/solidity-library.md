@@ -2,25 +2,25 @@
 description: Verify proofs from your users
 ---
 
-# sismoConnect Solidity Library: Verify On-chain
+# Sismo Connect Solidity Library: Verify On-chain
 
-The [sismoConnect](../../readme/sismo-connect.md) Solidity Library is built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) and allows to easily verify proofs from your users **on-chain**. You can see a full guide on how to integrate sismoConnect into your application [here](../../tutorials/sismo-connect/gate-your-contracts-with-sismo-connect-advanced.md).
+The [Sismo Connect](../../readme/sismo-connect.md) Solidity Library is built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) and allows to easily verify proofs from your users **on-chain**. You can see a full guide on how to integrate Sismo Connect into your application [here](../../tutorials/sismo-connect/gate-your-contracts-with-sismo-connect-advanced.md).
 
-<figure><img src="../../.gitbook/assets/onchain (2).png" alt=""><figcaption><p>sismoConnect onchain full flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/onchain (2).png" alt=""><figcaption><p>Sismo Connect onchain full flow</p></figcaption></figure>
 
-This page will detail all the specifications of the sismoConnect Solidity Library.
+This page will detail all the specifications of the Sismo Connect Solidity Library.
 
 You can find the Solidity Lib GitHub repository [here](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-solidity).
 
 {% hint style="info" %}
 Learn more about Sismo zero-knowledge proofs and use cases [**here**](../../technical-concepts/vault-and-proof-identifiers.md).
 
-Learn more about sismoConnect [**here**](../../readme/sismo-connect.md).
+Learn more about Sismo Connect [**here**](../../readme/sismo-connect.md).
 {% endhint %}
 
 ## Usage
 
-Import the SismoConnect Lib to your contract:
+Import the SismoConnectLib to your contract:
 
 ```solidity
 import "./libs/sismo-connect/SismoConnectLib.sol";
@@ -28,7 +28,7 @@ import "./libs/sismo-connect/SismoConnectLib.sol";
 
 Then:
 
-* **Inherit** your contract from the sismoConnect Library
+* **Inherit** your contract from the Sismo Connect Library
 * **Call** the SismoConnect constructor in the constructor of your contract
 * **Create** the request objects:
   * Create a [Claim](./#claim) OR an [Auth](./#auth) object in the constructor.
@@ -47,7 +47,7 @@ This will then allow you to check if the proof the user wants to check correspon
 ```solidity
 import "sismo-connect-solidity/libs/sismo-connect/SismoConnectLib.sol";
 
-contract MyContract is SismoConnect { // inherits from sismoConnect library
+contract MyContract is SismoConnect { // inherits from Sismo Connect library
  // the Claim object we want to verify the SismoConnectResponse with
  ClaimRequest claim;
  
@@ -135,7 +135,7 @@ struct SismoConnectResponse {
     // default: "sismo-connect-v2"
     bytes32 version;
     bytes signedMessage;
-    // the array of sismoConnect proofs generated
+    // the array of Sismo Connect proofs generated
     // only one proof is generated for now)
     SismoConnectProof[] proofs;
 }
@@ -143,7 +143,7 @@ struct SismoConnectResponse {
 
 [**`appId`**](./#appid) : The unique identifier of your application registered on the Sismo Factory app.
 
-[**`namespace`**](./#namespace) : By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the sismoConnect flow in different parts of your application.
+[**`namespace`**](./#namespace) : By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the Sismo Connect flow in different parts of your application.
 
 [**`version`**](./#version) : The version of the Data Vault app queried. The only version that work is now `sismo-connect-v2`.
 

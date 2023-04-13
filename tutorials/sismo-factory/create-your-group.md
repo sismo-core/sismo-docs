@@ -6,7 +6,7 @@ description: Non-developer tutorial
 
 This tutorial will show you how to create a [Group](../../technical-concepts/data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a [Group](../../technical-concepts/data-groups.md) of Twitter, GitHub, and Ethereum accounts. After a short verification process, this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [sismoConnect app](../../readme/sismo-connect.md) 🙌
+At the end of this tutorial, you will have a [Group](../../technical-concepts/data-groups.md) of Twitter, GitHub, and Ethereum accounts. After a short verification process, this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [Sismo Connect app](../../readme/sismo-connect.md) 🙌
 
 ## What are [Groups](../../technical-documentation/zk-badge-protocol/groups.md)?
 
@@ -32,7 +32,7 @@ If you want more info on Groups, check out this [page](../../technical-concepts/
 For now, you can create 2 different usages on top of Groups:
 
 * [ZK Badges](../../technical-documentation/zk-badge-protocol/badges.md)
-* [sismoConnect app](../../readme/sismo-connect.md)
+* [Sismo Connect app](../../readme/sismo-connect.md)
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
@@ -44,15 +44,15 @@ Here you can see an [example](https://app.sismo.io/?badge=proof-of-humanity-zk-b
 
 This Badge was generated from the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group. The Sismo tech stack ensures that only Proof of Humanity registered addresses can mint the Badge (on the address of their choice) without revealing the registered address.
 
-#### sismoConnect app
+#### Sismo Connect app
 
-Here is an instance of a sismoConnect App that has been implemented using the proof-of-humanity Group:
+Here is an instance of a Sismo Connect App that has been implemented using the proof-of-humanity Group:
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie.png" alt=""><figcaption><p>sismoConnect App example</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie.png" alt=""><figcaption><p>Sismo Connect App example</p></figcaption></figure>
 
-This sismoConnect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.&#x20;
+This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.&#x20;
 
-After this tutorial, you will be able to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [sismoConnect app](../../readme/sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
+After this tutorial, you will be able to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [Sismo Connect app](../../readme/sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
 
 ## Tutorial use case
 
@@ -225,6 +225,6 @@ When your Badge has been deployed on-chain, it will be displayed as <mark style=
 
 You have finally created your first Group through the [Factory](https://factory.sismo.io/), congrats! 🎉
 
-You can now use it to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [sismoConnect app](../../readme/sismo-connect.md) via the Factory.
+You can now use it to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [Sismo Connect app](../../readme/sismo-connect.md) via the Factory.
 
 If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **🧱︱build-on-sismo**. We will be glad to answer you 🤗

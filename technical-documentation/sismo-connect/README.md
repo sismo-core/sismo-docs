@@ -4,13 +4,13 @@ description: The packages for a sovereign SSO
 
 # sismoConnect
 
-[sismoConnect](../../readme/sismo-connect.md) is a privacy-preserving single sign-on method for applications. Once integrated, applications can request private, granular data from users, while users can authenticate and selectively reveal their data thanks to zero-knowledge proofs (ZKPs).
+[Sismo Connect](../../readme/sismo-connect.md) is a privacy-preserving single sign-on method for applications. Once integrated, applications can request private, granular data from users, while users can authenticate and selectively reveal their data thanks to zero-knowledge proofs (ZKPs).
 
 Here is the 2 different flows of sismoConnect:
 
-<figure><img src="../../.gitbook/assets/all.png" alt=""><figcaption><p>sismoConnect full flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/all.png" alt=""><figcaption><p>Sismo Connect full flow</p></figcaption></figure>
 
-**sismoConnect features:**
+**Sismo Connect features:**
 
 * **4 packages:**
   * [`@sismo-core/sismo-connect-client`](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-client): the frontend package to easily request ZKPs from users of Sismo in a privacy-preserving manner.
@@ -18,19 +18,19 @@ Here is the 2 different flows of sismoConnect:
   * [`@sismo-core/sismo-connect-server`](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-server): the backend package to easily verify these ZKPs offchain.
   * [`@sismo-core/sismo-connect-solidity`](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-solidity) : the Solidity Library to easily verify these ZKPs onchain.
 
-In order to use [sismoConnect](../../readme/sismo-connect.md), you will need to have an `appId` registered in the [Sismo Factory](https://factory.sismo.io/). You can register your appId [here](https://factory.sismo.io/apps-explorer).
+In order to use [Sismo Connect](../../readme/sismo-connect.md), you will need to have an `appId` registered in the [Sismo Factory](https://factory.sismo.io/). You can register your appId [here](https://factory.sismo.io/apps-explorer).
 
-You can see this guide for a full example on how to integrate sismoConnect in your application: [sismoConnect Guide](../../tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
+You can see this guide for a full example on how to integrate Sismo Connect in your application: [Sismo Connect Guide](../../tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
 
 ## Glossary&#x20;
 
 ### appId
 
-The unique identifier of your sismoConnect application registered on the Sismo Factory app.
+The unique identifier of your Sismo Connect application registered on the Sismo Factory app.
 
 ### namespace&#x20;
 
-By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the sismoConnect flow in different parts of your application. This is useful if you do not want users to generate the same proof for different services in your application. For example, if your application is a DAO voting website, you may define a different `namespace` for every vote and use the `proofId` as a nullifier. Henceforth, users will be able to vote only once as each proof request with a distinct `namespace` generates a distinct `proofId` for the same user. Learn more about the proof identifier [**here**](../../technical-concepts/vault-and-proof-identifiers.md).
+By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the Sismo Connect flow in different parts of your application. This is useful if you do not want users to generate the same proof for different services in your application. For example, if your application is a DAO voting website, you may define a different `namespace` for every vote and use the `proofId` as a nullifier. Henceforth, users will be able to vote only once as each proof request with a distinct `namespace` generates a distinct `proofId` for the same user. Learn more about the proof identifier [**here**](../../technical-concepts/vault-and-proof-identifiers.md).
 
 ### version
 

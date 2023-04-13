@@ -2,13 +2,13 @@
 description: Request proofs from your user
 ---
 
-# sismoConnect Client: Request
+# Sismo Connect Client: Request
 
-The [sismoConnect](../../readme/sismo-connect.md) Client is a frontend package built on top of the [Sismo Data Vault app](../data-vault-app.md) (the prover) to easily request proofs from your users. You can see a full guide on how to integrate sismoConnect into your application [here](../../tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
+The [Sismo Connect](../../readme/sismo-connect.md) Client is a frontend package built on top of the [Sismo Data Vault app](../data-vault-app.md) (the prover) to easily request proofs from your users. You can see a full guide on how to integrate Sismo Connect into your application [here](../../tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
 
 ## Installation
 
-Install sismoConnect Client package in your frontend with `npm` or `yarn`:
+Install Sismo Connect Client package in your frontend with `npm` or `yarn`:
 
 ```bash
 # with npm
@@ -25,7 +25,7 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 #### Configuration
 
-The first step for integrating sismoConnect in your frontend is to create a `sismoConnectConfig`. This config will require an `appId` and can be customized with [optional fields.](client.md#zkconnectclientconfig) You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId.
+The first step for integrating Sismo Connect in your frontend is to create a `sismoConnectConfig`. This config will require an `appId` and can be customized with [optional fields.](client.md#zkconnectclientconfig) You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId.
 
 ```typescript
 import { SismoConnect, SismoConnectClientConfig } from "@sismo-core/sismo-connect-client";
@@ -94,7 +94,7 @@ const sismoConnectResponseBytes = sismoConnect.getResponseBytes();
 
 #### SismoConnect**`ClientConfig`**
 
-The `SismoConnectClientConfig` allows you to fully customize your sismoConnect integration. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional devMode field that allows developers to add their addresses and compute cryptographically valid proofs when redirected to the Sismo Developer Vault.
+The `SismoConnectClientConfig` allows you to fully customize your Sismo Connect integration. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional devMode field that allows developers to add their addresses and compute cryptographically valid proofs when redirected to the Sismo Developer Vault.
 
 ```typescript
 export type SismoConnectClientConfig = {
@@ -289,7 +289,7 @@ sismoConnect.request({
 ```
 
 {% hint style="info" %}
-Namespace is highly interesting when you want your users to generate proofs for each service in an app. You can see more information about how to use it in the [sismoConnect Server package documentation](server.md).&#x20;
+Namespace is highly interesting when you want your users to generate proofs for each service in an app. You can see more information about how to use it in the [Sismo Connect Server package documentation](server.md).&#x20;
 {% endhint %}
 
 #### `getResponse()`
@@ -314,7 +314,7 @@ The `getResponseBytes` function returns the response encoded in bytes usable by 
 type SismoConnectResponse = {
     // the appId registered in the Factory
     appId: string;
-    // sismoConnect version
+    // Sismo Connect version
     version: string;
     // service from which the proof is requested
     namespace?: string;

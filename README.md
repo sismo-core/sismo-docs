@@ -38,12 +38,12 @@ Sismo revolves around attestations—tokenizable as [Badges](what-is-sismo/sismo
 
 ## Bring data to any app
 
-Sismo is particularly useful for applications seeking to gate their services or enable reputation importation. When accessing features on apps in the web3 social space and beyond, users are increasingly required to prove their eligibility to do so. [sismoConnect](readme/sismo-connect.md) is a single sign-on (SSO) method that allows users to bring their identities to applications in a privacy-preserving manner.
+Sismo is particularly useful for applications seeking to gate their services or enable reputation importation. When accessing features on apps in the web3 social space and beyond, users are increasingly required to prove their eligibility to do so. [Sismo Connect](readme/sismo-connect.md) is a single sign-on (SSO) method that allows users to bring their identities to applications in a privacy-preserving manner.
 
-When integrated into applications, sismoConnect can request private, granular data from a user’s Data Vault, while users can authenticate and selectively reveal their data. By clicking an integrated sismoConnect button, users launch a frictionless experience that requires minimal input.
+When integrated into applications, Sismo Connect can request private, granular data from a user’s Data Vault, while users can authenticate and selectively reveal their data. By clicking an integrated Sismo Connect button, users launch a frictionless experience that requires minimal input.
 
-As sismoConnect merely enhances web3’s existing Sign-In with Ethereum (SIWE) infrastructure, neither users nor integrators are exposed to the risks inherent in centralized web2 platforms. sismoConnect promotes privacy and usability—allowing users to leverage their data without the implications of big tech overwatch.
+As Sismo Connect merely enhances web3’s existing Sign-In with Ethereum (SIWE) infrastructure, neither users nor integrators are exposed to the risks inherent in centralized web2 platforms. Sismo Connect promotes privacy and usability—allowing users to leverage their data without the implications of big tech overwatch.
 
 {% hint style="success" %}
-Developers can learn how to integrate sismoConnect [here](tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
+Developers can learn how to integrate Sismo Connect [here](tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
 {% endhint %}
