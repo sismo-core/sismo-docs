@@ -27,12 +27,12 @@ To integrate Sismo Connect into your front end, you can use the Sismo Connect bu
 
 After your user generates the proof, they will be automatically redirected back to your app with a response containing the generated proof.
 
-<figure><img src="../../.gitbook/assets/zkConnect (1).png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/zkConnect.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
 
 To integrate it you have access through the package to the `SismoConnectButton` component.
 
 ```typescript
-import { SismoConnectButton, AuthType } from "@sismo-core/sismo-connect-react";
+import { SismoConnectButton, AuthType, SismoConnectClientConfig, SismoConnectResponse } from "@sismo-core/sismo-connect-react";
 
 export const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0x112a692a2005259c25f6094161007967",
@@ -42,23 +42,40 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
 <SismoConnectButton 
     //You will need to register an appId in the Factory
     appId={"0x8f347ca31790557391cec39b06f02dc2"}
+    
     //Request proofs from your users for a groupId
-    claimRequest={{
+    claim={{
         groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
     }}
-    authRequest={{
-        authType: AuthType.ANON
+    //OR
+    claims={[{
+        groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
+    }]}
+    
+    auth={{
+        authType: AuthType.VAULT
     }}
-    messageSignatureRequest={"Your message"}
+    //OR
+    auths={[{
+        authType: AuthType.VAULT
+    }]}
+    
+    signature={{
+        message: "Your message"
+    }}
     //After user redirection get a response containing his proofs 
-    onResponse={async (response) => {
-        //Send the response to your server to verify proofs
-        //thanks to the @sismo-core/sismo-connect-server package
+    onResponse={async (response: SismoConnectResponse) => {
+	//Send the response to your server to verify it
+	//thanks to the @sismo-core/sismo-connect-server package
+    }}
+    onResponseBytes={async (bytes: string) => {
+        //Send the response to your contract to verify it
+        //thanks to the @sismo-core/sismo-connect-solidity package
     }}
 />
 ```
 
-After a user generates the proof, he will be automatically redirected back to the app. The `onResponse` props will allow you to get the response containing the proof.
+After a user generates the proof, he will be automatically redirected back to the app. The `onResponse` and `onResponseBytes` props will allow you to get the response containing the proof.
 
 To get the response of your user after his redirection without using the `SismoConnectButton` you can also use the `useSismoConnect` hook. This allows you to redirect your user to a page other than the page with the button integrated.
 
@@ -107,21 +124,33 @@ const config: SismoConnectClientConfig = {
  
 <SismoConnectButton 
     //Request proofs for this groupId
-    claimRequest={{
+    claim={{
         groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
     }}
-    authRequest={{
-        authType: AuthType.ANON
+    //OR 
+    claims={[{
+        groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
+    }]}
+    
+    auth={{
+        authType: AuthType.VAULT
     }}
-    messageSignatureRequest={"Your message"}
+    //OR 
+    auths={[{
+        authType: AuthType.VAULT
+    }]}
+    
+    signature={{
+        message: "Your message"
+    }}
     config={config}
     onResponse={async (response: SismoConnectResponse) => {
 	//Send the response to your server to verify it
 	//thanks to the @sismo-core/sismo-connect-server package
     }}
     onResponseBytes={async (bytes: string) => {
-           //Send the response to your contract to verify it
-           //thanks to the @sismo-core/sismo-connect-solidity package
+        //Send the response to your contract to verify it
+        //thanks to the @sismo-core/sismo-connect-solidity package
     }}
 />
 ```
@@ -130,16 +159,18 @@ const config: SismoConnectClientConfig = {
 
 | Prop                                                                  | Type                                                                                                                                               | Description                                                                                                                                                                                |
 | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| appId _(optional but must at least provide this appId or a config)_   | string                                                                                                                                             | appId of your Sismo Connect app. Go on the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register your appId.                                                                  |
-| claimRequest                                                          | [ClaimRequest](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#claimrequest)                           | The ClaimRequest object holds all the information needed to generate a proof of membership.                                                                                                |
-| authRequest                                                           | [AuthRequest](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#authrequest)                             | The AuthRequest object holds all the information needed to generate a proof of account ownership.                                                                                          |
-| messageSignatureRequest                                               | string                                                                                                                                             | Message to sign in the vault                                                                                                                                                               |
-| config _(optional but must at least provide this config or an appId)_ | [SismoConnectClientConfig](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#zkconnectclientconfig)      | The config allows you to fully customize your Sismo Connect integration.                                                                                                                    |
+| appId _(optional but must at least provide this appId or a config)_   | string                                                                                                                                             | appId of your Sismo Connect app. Go on the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register your appId.                                                                 |
+| claim                                                                 | [ClaimRequest](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#claimrequest)                           | The ClaimRequest object holds all the information needed to generate a proof of membership.                                                                                                |
+| claims                                                                | [ClaimRequest](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#claimrequest)\[]                        | Aggregation of ClaimRequest                                                                                                                                                                |
+| auth                                                                  | [AuthRequest](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#authrequest)                             | The AuthRequest object holds all the information needed to generate a proof of account ownership.                                                                                          |
+| auths                                                                 | [AuthRequest](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#authrequest)\[]                          | Aggregation of AuthRequest                                                                                                                                                                 |
+| signature                                                             | string                                                                                                                                             | Message to sign in the vault                                                                                                                                                               |
+| config _(optional but must at least provide this config or an appId)_ | [SismoConnectClientConfig](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#zkconnectclientconfig)      | The config allows you to fully customize your Sismo Connect integration.                                                                                                                   |
 | verifying _(optional)_                                                | boolean                                                                                                                                            | This prop allows you to trigger the loading of the button.                                                                                                                                 |
 | onResponse _(optional)_                                               | (response: [SismoConnectResponse](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#getresponse)) ⇒ void | Return a response that contains the proofs generated by your users that must be sent to your backend and verified thanks to the @sismo-core/sismo-connect-server package.                  |
 | onResponseBytes (optional)                                            | (bytes: string) => void                                                                                                                            | Return a response in bytes usable in your contracts.                                                                                                                                       |
 | callbackPath _(optional)_                                             | string                                                                                                                                             | By default, the redirection will send you back to the same page as your button. The callback path props will send your user to another path. See useSismoConnect to get the user response. |
-| overrideStyle                                                         | React.CSSProperties                                                                                                                                | Override style of the Sismo Connect                                                                                                                                                         |
+| overrideStyle                                                         | React.CSSProperties                                                                                                                                | Override style of the Sismo Connect                                                                                                                                                        |
 
 **Customization**
 
@@ -177,7 +208,7 @@ const { useSismoConnect, response, responseBytes } = useSismoConnect({ config })
 
 | Param  | Type                                                                                                                                          | Description                                                                                |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| config | [SismoConnectClientConfig](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#zkconnectclientconfig) | The SismoConnectClientConfig allows you to fully customize your Sismo Connect integration.  |
+| config | [SismoConnectClientConfig](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#zkconnectclientconfig) | The SismoConnectClientConfig allows you to fully customize your Sismo Connect integration. |
 
 **States returned**
 
@@ -185,4 +216,4 @@ const { useSismoConnect, response, responseBytes } = useSismoConnect({ config })
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | response      | [SismoConnectResponse](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request#getresponse) \| null | The response contains the proofs generated by your users that must be sent to your backend and verified thanks to the @sismo-core/sismo-connect-server package. |
 | responseBytes | string \| null                                                                                                                          | The response contains the proofs generated by your users that must be sent to your contract.                                                                    |
-| Sismo Connect  | [SismoConnectClient](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request)                       | Sismo Connect instance with the client configuration.                                                                                                            |
+| sismoConnect  | [SismoConnectClient](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-client-request)                       | Sismo Connect instance with the client configuration.                                                                                                           |

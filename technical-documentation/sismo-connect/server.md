@@ -32,40 +32,45 @@ The first step for integrating Sismo Connect in your backend is to create a `sis
 ```typescript
 import { SismoConnect, SismoConnectServerConfig } from "@sismo-core/sismo-connect-server";
 
-const sismoConnectConfig: SismoConnectServerConfig = {
+const config: SismoConnectServerConfig = {
   // you will need to register an appId in the Factory
   appId: "0x8f347ca31790557391cec39b06f02dc2",
 }
 
 // create a new Sismo Connect instance with the server configuration
-const sismoConnect = SismoConnect(sismoConnectConfig);
+const sismoConnect = SismoConnect(config);
 ```
 
 #### Create a ClaimRequest and or AuthRequest
 
-The claimRequest and the authRequest will be used to verify that the proof is valid, these requests must match with the requests in your frontend.
+The ClaimRequest and the AuthRequest will be used to verify that the proof is valid, these requests must match with the requests in your frontend.
 
-```typescript
-const CLAIM_REQUEST = { groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"};
-const AUTH_REQUEST = { authType: AuthType.VAULT };
-```
+<pre class="language-typescript"><code class="lang-typescript"><strong>import { ClaimRequest, AuthRequest, AuthType } from "@sismo-core/sismo-connect-server";
+</strong>
+const CLAIM: ClaimRequest = { groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"};
+const AUTH: AuthRequest = { authType: AuthType.VAULT };
+</code></pre>
 
 #### Verify proofs from your users
 
 Proofs need to be sent to your backend with a SismoConnectResponse. The verify function takes as inputs a SismoConnectResponse, a ClaimRequest, an AuthRequest and verifies that the proof is cryptographically valid with respect to these requests.
 
 ```typescript
+import { SismoConnectVerifiedResult, AuthType } from "@sismo-core/sismo-connect-server";
+
 // verifies the proofs contained in the sismoConnectResponse 
 // with respect to the group(s) in the claim(s)
-const { auths, claims } = await sismoConnect.verify(
+const result: SismoConnectVerifiedResult = await sismoConnect.verify(
   sismoConnectResponse,
-  claims: [CLAIM_REQUEST],
-  auths: [AUTH_REQUEST],
+  {
+    claims: [CLAIM],
+    auths: [AUTH],
   }
 );
 
-const anonUserId = auths[0].userId;
-const proofId = claims[0].proofId;
+// vaultId = hash(userVaultSecret, appId). 
+// the vaultId is an app-specific, anonymous identifier of a vault
+const vaultId = result.getUserId(AuthType.VAULT);
 ```
 
 ## Documentation
@@ -110,7 +115,7 @@ export type HydraS2VerifierOpts = {
 };
 ```
 
-#### Sismo`ConnectResponse`
+#### `SismoConnectResponse`
 
 The SismoConnectResponse needs to be sent by the frontend so that the backend can verify the proofs contained in it.
 
@@ -175,113 +180,130 @@ export type Auth = {
 
 async function verify(
   sismoConnectResponse: SismoConnectResponse,
-  claims,
-  auths): Promise<SismoConnectVerifiedResult>;
+  {
+    claims: ClaimRequest[],
+    auths: AuthRequest[],
+    signature: SignatureRequest,
+    namespace: string,
+  }
+): Promise<SismoConnectVerifiedResult>;
 ```
 
 If the proof contained in the `sismoConnectResponse` is valid, the function should return a `SismoConnectVerifiedResult`, otherwise, it should throw an error.
 
-#### `anonUserId` and Proof Ids
+#### `Vault Id and Proof Ids`
 
-In the userId you can find depending on the authType you ask a Github Id for AuthType.Github, a Twitter id for AuthType.Twitter, a EVM address for AuthType.EVM\_ACCOUNT or an anonUserId for AuthType.VAULT.
+In the userId you can find depending on the authType you ask a Github Id for AuthType.Github, a Twitter id for AuthType.Twitter, a EVM address for AuthType.EVM\_ACCOUNT or an vaultId for AuthType.VAULT.
 
-It is worth noting that the `anonUserId` is deterministically generated based on the user vault secret and the `appId` with a Poseidon hash. This means that if a user has already used your app, the `vaultId` will be the same each time this user use your app but it will be different for other apps. This is useful if you want to store the `vaultId` in your database to link it to a user while preserving the privacy of this same user between apps. You can learn more about the `vaultId` [here](../../technical-concepts/vault-and-proof-identifiers.md).
+It is worth noting that the `vaultId` is deterministically generated based on the user vault secret and the `appId` with a Poseidon hash. This means that if a user has already used your app, the `vaultId` will be the same each time this user use your app but it will be different for other apps. This is useful if you want to store the `vaultId` in your database to link it to a user while preserving the privacy of this same user between apps. You can learn more about the `vaultId` [here](../../technical-concepts/vault-and-proof-identifiers.md).
 
-You can also find a `proofId` in the `verifiedClaim` of the `SismoConnectVerifiedResult`. This `proofId` is a unique identifier that identifies a proof from Sismo. This `proofId` is also deterministically generated based on the `appId`, the `namespace`, the `groupId` and the `groupTimestamp`. This `proofId` will allow you to know if a user already proved something to your app for a specific namespace and group.&#x20;
+You can also find a `proofId` in the `verifiedClaim` of the `SismoConnectVerifiedResult`. This `proofId` is a unique identifier that identifies a proof from Sismo. This `proofId` is also deterministically generated based on the `appId`, the `namespace`, the `groupId` and the `groupTimestamp`. This `proofId` will allow you to know if a user already proved something to your app for a specific namespace and group.
 
 This `proofId` can be useful if you want to allow your users to participate in private polls while ensuring only one vote each time. For each poll, you can specify a different namespace such as `namespace: "my-poll-x"` so that a different proofId is computed each time. By storing the `proofId` alongside the `vaultId` in your apps, you can now ensure that a user with a specific `vaultId` only votes one time for each private polls.
 
-Here are some small snippets to get&#x20;
+Here are some small snippets to get
 
 #### Frontend
 
 <pre class="language-typescript"><code class="lang-typescript">// private-poll-1.tsx
-import { SismoConnect, SismoConnectClientConfig, AuthType } from "@sismo-core/sismo-connect-client";
+import { SismoConnect, SismoConnectClientConfig, AuthType, ClaimRequest, AuthRequest } from "@sismo-core/sismo-connect-client";
 
 const sismoConnect = SismoConnect({
   // sismoConnectClientConfig will only appId
   appId: "0x8f347ca31790557391cec39b06f02dc2", 
 });
 
-const CLAIM_REQUEST = { 
+const CLAIM: ClaimRequest = { 
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
 };
-const AUTH_REQUEST = { 
+
+const AUTH: AuthRequest = { 
     authType: AuthType.VAULT,
 };
+
 <strong>sismoConnect.request({ 
-</strong>  claims: [CLAIM_REQUEST],
-  auths: [AUTH_REQUEST],
+</strong>  claims: [CLAIM],
+  auths: [AUTH],
   namespace: "my-private-poll-1", // 👈 --> namespace for private poll 1
 });
 
-const sismoConnectResponseOne = sismoConnect.getResponse();
+const responseOne = sismoConnect.getResponse();
 
 // you then send this sismoConnectResponse to your backend
 </code></pre>
 
-```typescript
-// you do the same with another poll 
-// private-poll-2.tsx
-import { SismoConnect, SismoConnectClientConfig, AuthType } from "@sismo-core/sismo-connect-client";
+<pre class="language-typescript"><code class="lang-typescript"><strong>// you do the same with another poll 
+</strong>// private-poll-2.tsx
+import { SismoConnect, SismoConnectClientConfig, AuthType, ClaimRequest, AuthRequest } from "@sismo-core/sismo-connect-client";
 
 const sismoConnect = SismoConnect({
   appId: "0x8f347ca31790557391cec39b06f02dc2", 
 });
 
-const CLAIM_REQUEST = { 
-    groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-};
-sismoConnect.request({ 
-  claims: [CLAIM_REQUEST],
-  auths: [AUTH_REQUEST],
-  namespace: "my-private-poll-2", // 👈 --> namespace for private poll 2
-});
-
-const sismoConnectResponseTwo = sismoConnect.getResponse();
-
-// you then send this sismoConnectResponse to your backend
-```
-
-#### Backend
-
-<pre class="language-typescript"><code class="lang-typescript">import { SismoConnect, SismoConnectServerConfig } from "@sismo-core/zk-connect-server";
-<strong>
-</strong><strong>const sismoConnect = SismoConnect({
-</strong>  appId: "0x8f347ca31790557391cec39b06f02dc2", 
-});
-
-const CLAIM_REQUEST = { 
+const CLAIM: ClaimRequest = { 
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
 };
 
-const AUTH_REQUEST = { 
+const AUTH: AuthRequest = { 
     authType: AuthType.VAULT,
 };
 
-const { verifiedClaimsOne, verifiedAuthsOne } = await sismoConnect.verify(
-    sismoConnectResponseOne, // 👈 --> sismoConnectResponse for private poll 1
-    claims: [CLAIM_REQUEST],
-    auths: [AUTH_REQUEST],
+sismoConnect.request({ 
+  claims: [CLAIM],
+  auths: [AUTH],
+  namespace: "my-private-poll-2", // 👈 --> namespace for private poll 2
+});
+
+const responseTwo = sismoConnect.getResponse();
+
+// you then send this sismoConnectResponse to your backend
+</code></pre>
+
+#### Backend
+
+<pre class="language-typescript"><code class="lang-typescript">import { SismoConnectVerifiedResult, SismoConnect, AuthType, ClaimRequest, AuthRequest } from "@sismo-core/zk-connect-server";
+
+<strong>const sismoConnect = SismoConnect({
+</strong>  appId: "0x8f347ca31790557391cec39b06f02dc2", 
+});
+
+const CLAIM: ClaimRequest = { 
+    groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+};
+
+const AUTH: AuthRequest = { 
+    authType: AuthType.VAULT,
+};
+
+const resultOne: SismoConnectVerifiedResult = await sismoConnect.verify(
+    responseOne, // 👈 --> sismoConnectResponse for private poll 1
+    {
+        claims: [CLAIM],
+        auths: [AUTH],
+    }
 );
 
 
-const { verifiedClaimsTwo, verifiedAuthsTwo } = await sismoConnect.verify(
-    sismoConnectResponseTwo, // 👈 --> sismoConnectResponse for private poll 2
-    claims: [CLAIM_REQUEST],
-    auths: [AUTH_REQUEST],
+const resultTwo: SismoConnectVerifiedResult = await sismoConnect.verify(
+    reponseTwo, // 👈 --> sismoConnectResponse for private poll 2
+    {
+        claims: [CLAIM],
+        auths: [AUTH],
+    }
 );
 
 
-const proofIdOne = verifiedClaimsOne[0].proofId;
-const anonUserIdOne = verifiedAuthsOne[0].userId
+const proofIdOne = resultOne.claims[0].proofId;
+// vaultId = hash(userVaultSecret, appId). 
+// the vaultId is an app-specific, anonymous identifier of a vault
+const vaultIdOne = resultOne.getUserId(AuthType.VAULT);
 
-const proofIdTwo = verifiedClaimsTwo[0].proofId;
-const anonUserIdTwo = verifiedAuthsTwo[0].userId
+const proofIdTwo = resultTwo.claims[0].proofId;
+const vaultIdTwo = resultOne.getUserId(AuthType.VAULT);
 
-// anonUserIdOne === anonUserIdTwo
+// vaultIdOne === vaultIdTwo
 // but
 // proofIdOne !== proofIdTwo
-// You can know if an anonUserId has already voted on a private poll 
-// by storing the proofIds 🤘
+// You can know if an vaultId has already voted on a private poll 
+// by storing it 🤘
 </code></pre>

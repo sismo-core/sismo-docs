@@ -14,19 +14,19 @@ The repository use the [`@sismo-core/sismo-connect-react`](https://docs.sismo.io
 
 ### Tutorial use case
 
-We will use the example of [The Merge](https://ethereum.org/en/upgrades/merge/) contributors and [the initiative of Tim Beiko](https://twitter.com/zkdrop\_io/status/1615716498000977921?s=20) to airdrop to contributors to The Merge a ZK Soulbound token (here an ERC721) to allow them to join events hosted by [ETHGlobal](https://ethglobal.com/), [EthCC](https://www.ethcc.io/), [Edcon](https://www.edcon.io/) and [Devcon](https://devcon.org/).&#x20;
+We will use the example of [The Merge](https://ethereum.org/en/upgrades/merge/) contributors and [the initiative of Tim Beiko](https://twitter.com/zkdrop\_io/status/1615716498000977921?s=20) to airdrop to contributors to The Merge a ZK Soulbound token (here an ERC721) to allow them to join events hosted by [ETHGlobal](https://ethglobal.com/), [EthCC](https://www.ethcc.io/), [Edcon](https://www.edcon.io/) and [Devcon](https://devcon.org/).
 
 For anonymous contributors to The Merge, we will build zkDrop that enables them to claim the airdrop on a public address in a privacy-preserving manner. These anonymous contributors will then be able to join events with this ERC721.
 
 {% hint style="info" %}
-We definitely recommend our entry-point tutorial for a quick off-chain Sismo Connect integration [here](authenticate-your-users-with-sismo-connect.md). Feel free to take a look or even try it first before following this more advanced one.&#x20;
+We definitely recommend our entry-point tutorial for a quick off-chain Sismo Connect integration [here](authenticate-your-users-with-sismo-connect.md). Feel free to take a look or even try it first before following this more advanced one.
 {% endhint %}
 
 ### Choose your stack ([Next.js](https://nextjs.org/) and [Foundry](https://book.getfoundry.sh/) recommended)
 
 To implement sismoConnect, you'll need both a frontend and some smart contracts using [Foundry](https://book.getfoundry.sh/). The frontend will request the proof, and the smart contracts will verify it on-chain thanks to the Sismo Connect Solidity library.
 
-For this tutorial, we recommend using the Next.js stack for your application, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.&#x20;
+For this tutorial, we recommend using the Next.js stack for your application, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.
 
 To create a new Next.js project, run the following command:
 
@@ -52,17 +52,17 @@ $$vaultId = hash(vaultSecret, appId)$$
 
 If we remove the appId from this simple calculation, we would have had the same AnonUserID for the same vaultSecret, effectively leaking information about a user that uses Sismo Connect on two different apps. The AnonUserID would be the same across different apps, and the user could be tracked if the AnonUserIDs became public.
 
-By introducing an appId, the vaultId is now different between apps, and the same user will have two different AnonUserIDs on two different apps, effectively preserving the user's privacy.&#x20;
+By introducing an appId, the vaultId is now different between apps, and the same user will have two different AnonUserIDs on two different apps, effectively preserving the user's privacy.
 
 You can learn more about this notion in this [article](../../technical-concepts/vault-and-proof-identifiers.md).
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1) (1).png" alt=""><figcaption><p>Register your Sismo Connect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1) (1) (1).png" alt=""><figcaption><p>Register your Sismo Connect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
 
 You can register a Sismo Connect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
-To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the appId that will be created can be used for [Sismo Connect](../../technical-documentation/sismo-connect/).&#x20;
+To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the appId that will be created can be used for [Sismo Connect](../../technical-documentation/sismo-connect/).
 
 {% hint style="info" %}
 Feel free to add `*.com` to authorized domains when following along this tutorial. This will allow to whitelist `localhost`.
@@ -108,7 +108,7 @@ After importing, you will be able to use the Sismo Connect button in your app. B
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 11.30.56.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
 
-To do so, you have to use the `SismoConnectButton` component, you can see below several examples one how to use the button and request different proofs from your user.&#x20;
+To do so, you have to use the `SismoConnectButton` component, you can see below several examples one how to use the button and request different proofs from your user.
 
 {% tabs %}
 {% tab title="Claim / Vault Auth" %}
@@ -163,8 +163,7 @@ The `dataRequest` has more optional parameters available:
 
 * **`groupTimestamp`**: This parameter specifies the timestamp of the group snapshot a user wants to prove membership in. By default, this timestamp is set to ‘latest’ to use the latest generated snapshot.
 * **`value`**: In groups, every account is associated with a value, which can represent the number of tokens staked, the voting power of the account, etc. The `requestedValue` parameter allows you to specify the value your user needs to have in the group to generate the proof. By default, it is set to 1.
-* **`claimType`**: The claimType can force users to prove that they have a value in the group greater than or equal (`ClaimType.GTE`) to the `requested value` or strictly equal (`ClaimType.EQ`)to the `requested value`. By default, it is `“GTE”.`\
-
+* **`claimType`**: The claimType can force users to prove that they have a value in the group greater than or equal (`ClaimType.GTE`) to the `requested value` or strictly equal (`ClaimType.EQ`)to the `requested value`. By default, it is `“GTE”.`\\
 
 You can see the [documentation](../../technical-documentation/sismo-connect/client.md) if you want to learn more about this.
 {% endhint %}
@@ -271,11 +270,11 @@ Well done! You’re halfway there! 💪
 
 Now that the frontend is done, let's jump to the contracts!
 
-As you noticed, you now have the proof as bytes and you will send this proof in your contracts to check its validity with respect to `the-merge-contributor` group, the Data Vault ownership requested and the message signed by the user.&#x20;
+As you noticed, you now have the proof as bytes and you will send this proof in your contracts to check its validity with respect to `the-merge-contributor` group, the Data Vault ownership requested and the message signed by the user.
 
 ### Verify the proof on-chain and gate your contracts
 
-To be able to use the [Sismo Connect Solidity Library](../../technical-documentation/sismo-connect/solidity-library.md), you will first need to install Foundry.&#x20;
+To be able to use the [Sismo Connect Solidity Library](../../technical-documentation/sismo-connect/solidity-library.md), you will first need to install Foundry.
 
 ```bash
 curl -L https://foundry.paradigm.xyz | bash
@@ -311,9 +310,9 @@ You can then run the following command to install all the needed dependencies in
 
 You can now put your contracts under `contracts/src` and start to use the [Sismo Connect Solidity Library](../../technical-documentation/sismo-connect/solidity-library.md).
 
-The first thing to setup is to make your contract inherit from Sismo Connect so that it can pass the appId in the constructor to configure Sismo Connect for your app (it is similar to the sismoConnectConfig we have in our frontend).&#x20;
+The first thing to setup is to make your contract inherit from Sismo Connect so that it can pass the appId in the constructor to configure Sismo Connect for your app (it is similar to the sismoConnectConfig we have in our frontend).
 
-We also pass the groupId in the constructor to have it as an immutable in the contract.&#x20;
+We also pass the groupId in the constructor to have it as an immutable in the contract.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -346,7 +345,7 @@ contract ZKDropERC721 is ERC721, SismoConnect {
 }
 ```
 
-You can now start to implement new functions that take a `SismoConnectResponse` of type `bytes`.  It will allow you to send the `responseBytes` that you received in your frontend to your contracts. For example, here is the function that will be used for claiming the ERC721 by users.&#x20;
+You can now start to implement new functions that take a `SismoConnectResponse` of type `bytes`. It will allow you to send the `responseBytes` that you received in your frontend to your contracts. For example, here is the function that will be used for claiming the ERC721 by users.
 
 ```solidity
 // the function takes the response as bytes 
@@ -388,7 +387,7 @@ We highly encourage you to take a look at the different on-chain boilerplates sh
 
 ### Test your contracts
 
-While following this tutorial, you obviously thought about testing your contracts before deploying them. To test them, you will need some custom proofs that can be generated easily with a script. \
+While following this tutorial, you obviously thought about testing your contracts before deploying them. To test them, you will need some custom proofs that can be generated easily with a script.\
 The aim of the script is to mock your frontend client.
 
 ```typescript
@@ -502,7 +501,7 @@ contract ZKDropERC721Test is Test {
 ```
 {% endcode %}
 
-Here it is! \
+Here it is!\
 \
 If you have any questions about integrating sismoConnect, don’t hesitate to reach out. The team will be happy to answer any questions you may have.
 
