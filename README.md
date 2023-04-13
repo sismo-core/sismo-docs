@@ -1,9 +1,3 @@
----
-description: Get the most out of your data.
-cover: .gitbook/assets/Docs_1900x400.png
-coverY: 7
----
-
 <table data-view="cards">
   <tbody>
     <tr>
