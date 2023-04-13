@@ -9,7 +9,7 @@ To get a feel of what you will build in this tutorial, you can try out a demo [*
 {% hint style="info" %}
 You can access the open-source repository of the demo (in Next) [here](https://github.com/sismo-core/zkdrop).
 
-The repository use the [`@sismo-core/sismo-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/zkconnect/zkconnect-react-request) package to request the proof and the [Sismo Connect Solidity library](../../technical-documentation/sismo-connect/solidity-library.md) to verify it.
+The repository use the [`@sismo-core/sismo-connect-react`](https://docs.sismo.io/sismo-docs/technical-documentation/sismoconnect/sismoconnect-react-request) package to request the proof and the [Sismo Connect Solidity library](../../technical-documentation/sismo-connect/solidity-library.md) to verify it.
 {% endhint %}
 
 ### Tutorial use case

@@ -80,7 +80,7 @@ After a user generates the proof, he will be automatically redirected back to th
 To get the response of your user after his redirection without using the `SismoConnectButton` you can also use the `useSismoConnect` hook. This allows you to redirect your user to a page other than the page with the button integrated.
 
 ```typescript
-import { useSismoConnect, SismoConnectClientConfig } from "@sismo-core/zk-connect-react";
+import { useSismoConnect, SismoConnectClientConfig } from "@sismo-core/sismo-connect-react";
 
 const config: SismoConnectClientConfig = { appId: "0x8f347ca31790557391cec39b06f02dc2" };
 

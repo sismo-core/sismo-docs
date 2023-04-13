@@ -10,7 +10,7 @@ The [Sismo Connect](../../readme/sismo-connect.md) Solidity Library is built on 
 
 This page will detail all the specifications of the Sismo Connect Solidity Library.
 
-You can find the Solidity Lib GitHub repository [here](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-solidity).
+You can find the Solidity Lib GitHub repository [here](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-solidity).
 
 {% hint style="info" %}
 Learn more about Sismo zero-knowledge proofs and use cases [**here**](../../technical-concepts/vault-and-proof-identifiers.md).
@@ -116,7 +116,7 @@ The function needs to verify that the proof is cryptographically valid but also 
 * [`signature`](./#signedmessage):  It contains the message that the user should sign.
 * [`namespace`](./#namespace): The namespace of the application that the contract uses.
 
-And it returns a [`SismoConnectVerifiedResult`](solidity-library.md#zkconnectverifiedresult).
+And it returns a [`SismoConnectVerifiedResult`](solidity-library.md#sismoconnectverifiedresult).
 
 ### `responseBytes` _(required)_
 
@@ -260,7 +260,7 @@ signature: buildSignature({message: message})
 
 ### [`namespace`](./#namespace) _(optional)_
 
-By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [zkConnect server documentation](server.md).
+By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the sismoConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [sismoConnect server documentation](server.md).
 
 
 
