@@ -6,7 +6,7 @@ description: Verify proofs from your users
 
 The [Sismo Connect](../../readme/sismo-connect.md) Solidity Library is built on top of the [Hydra-S2 Verifier](https://github.com/sismo-core/hydra-s2-zkps) and allows to easily verify proofs from your users **on-chain**. You can see a full guide on how to integrate Sismo Connect into your application [here](../../tutorials/sismo-connect/gate-your-contracts-with-sismo-connect-advanced.md).
 
-<figure><img src="../../.gitbook/assets/onchain (2).png" alt=""><figcaption><p>Sismo Connect onchain full flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/onchain (3).png" alt=""><figcaption><p>Sismo Connect onchain full flow</p></figcaption></figure>
 
 This page will detail all the specifications of the Sismo Connect Solidity Library.
 
@@ -32,7 +32,7 @@ Then:
 * **Call** the SismoConnect constructor in the constructor of your contract
 * **Create** the request objects:
   * Create a [Claim](./#claim) OR an [Auth](./#auth) object in the constructor.
-  *   Create a [signedMessage](./#signedmessage):&#x20;
+  *   Create a [signedMessage](./#signedmessage):
 
       * By hardcoding a signedMessage in your contract, you can ensure that the sismoConnectResponse have the same signed message that the one you hardcoded.
 
@@ -113,7 +113,7 @@ The function needs to verify that the proof is cryptographically valid but also 
 
 * [`claim`](./#claim): The object that holds all the information needed to generate proof of group ownership.
 * [`auth`](./#auth): The object that holds all the information needed to generate proof of account membership.
-* [`signature`](./#signedmessage):  It contains the message that the user should sign.
+* [`signature`](./#signedmessage): It contains the message that the user should sign.
 * [`namespace`](./#namespace): The namespace of the application that the contract uses.
 
 And it returns a [`SismoConnectVerifiedResult`](solidity-library.md#zkconnectverifiedresult).
@@ -134,6 +134,7 @@ struct SismoConnectResponse {
     // the version of the Data Vault app
     // default: "sismo-connect-v2"
     bytes32 version;
+    // A message provided by the user and signed with the vault.
     bytes signedMessage;
     // the array of Sismo Connect proofs generated
     // only one proof is generated for now)
@@ -141,15 +142,7 @@ struct SismoConnectResponse {
 }
 ```
 
-[**`appId`**](./#appid) : The unique identifier of your application registered on the Sismo Factory app.
-
-[**`namespace`**](./#namespace) : By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the Sismo Connect flow in different parts of your application.
-
-[**`version`**](./#version) : The version of the Data Vault app queried. The only version that work is now `sismo-connect-v2`.
-
-**`signedMessage`** : A message provided by the user and signed with the vault.
-
-**`proofs[]`** : The array that contains all the sismoConnectProofs the frontend provide to the contract. Learn more about proofs [**here**](./#proofs). **NB**: for now, only 1 proof can be generated.\
+**`proofs[]`** : The array that contains all the sismoConnectProofs the frontend provide to the contract. Learn more about proofs [**here**](./#proofs).\
 A sismoConnectProof stores several objects:
 
 ```solidity
@@ -164,27 +157,61 @@ struct SismoConnectProof {
 
 [**`claim`**](./#claim) : The data requested to generate a group membership proof for a specific value.
 
-* [`groupId`](./#groupid) : The unique identifier of the group of accounts to which the user must prove that he belongs to in order to generate the proof.
-* [`groupTimeStamp`](./#grouptimestamp) : By default, the timestamp of the latest Group Snapshot. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated to it.
-* `value`: In a group, each account is associated with a value. Querying a specific `value` restricts eligibility to users belonging to the group with `value` that respect the `claimType` defined.
-* `claimType` : Allow choosing if we want to restrict the eligibility for the accounts that have the exact (`EQ`), at least (`GTE`) (or other type of comparison) the `value` specified before. Comparators accepted: `GTE`, `GT`, `EQ`, `LT`, `LTE`.
-* `extraData`: other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
+```solidity
+struct Claim {
+  ClaimType claimType; // default: GTE
+  // the group identifier used to check
+  // if the user is eligible in order to generate the zero-knowledge proof.
+  bytes16 groupId;
+  // the timestamp of the group snapshot for which the user had to be eligible to
+  // in order to generate the zero-knowledge proof.
+  bytes16 groupTimestamp;
+  // Make the value the user wants to use to prove membership selectable
+  // e.g. value is 1, the user has a value of 3, he can choose to prove the value 2
+  bool isSelectableByUser;
+  // A group is a mapping of account and value pairs.
+  // Limit eligibility to users in the group with a specified value.
+  uint256 value;
+  bytes extraData;
+}
+
+enum ClaimType {
+  GTE,
+  GT,
+  EQ,
+  LT,
+  LTE
+}
+```
 
 [**`auth`**](./#auth) : The data requested to generate a proof of account ownership
 
-* `authType` : The type of the account you want to authenticate through the vault. Types accepted: `VAULT`, `GITHUB`, `TWITTER`, `EVM_ACCOUNT`
-* `anonMode` : if anonMode = true (**soon™**), the user does not reveal the Id of his account, so he only proves the ownership of one account of the type `authType` in the vault. **For now only anonMode = false works**.
-* `userId` : the userId depends on the authType you specified. For instance, if the authType is TWITTER, the userId will be your twitterId. \
-  Note: If the authType is ANON, the userId is the vaultId. You can find more info on the vaultId [**here**](../../technical-concepts/vault-and-proof-identifiers.md#vault-identifier).
-* `extraData` : other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
+```solidity
+struct Auth {
+  AuthType authType; // default: VAULT
+  // (soon™) Does not reveal the userId with which the user performs the auth
+  bool isAnon; // false
+  // Make the account whose ownership the user wants to prove selectable
+  bool isSelectableByUser;
+  // The id of the account
+  // e.g. if the authType is TWITTER, the userId will be your twitterId.
+  uint256 userId;
+  bytes extraData;
+}
+
+enum AuthType {
+  VAULT,
+  GITHUB,
+  TWITTER,
+  EVM_ACCOUNT
+}
+```
 
 **`provingScheme`** : The proving scheme that the [Data Vault app](../data-vault-app.md) used to generate the proof and by the verify to verify the proof.
 
 **`proofData`** : The proof content.
 
 **`extraData`** : other data that can be used in the future by other proving scheme. Currently not used in the current proving scheme use: the [Hydra-S2](../../technical-concepts/proving-schemes/hydra-s2.md).
-
-
 
 The next objects are the references that allow the `verify()` function to ensure that the proof sent by the user matches to the proof expected by the contract:
 
@@ -193,13 +220,15 @@ The next objects are the references that allow the `verify()` function to ensure
 The data requested to generate a group membership proof for a specific value.
 
 ```solidity
-struct Claim {
-  bytes16 groupId; // required
-  bytes16 groupTimestamp; // optional
-  uint256 value; // optional
-  ClaimType claimType; // optional
-  bytes extraData; // optional
-  bool isSelectableByUser; // optional
+struct ClaimRequest {
+  ClaimType claimType; // default: GTE
+  bytes16 groupId;
+  bytes16 groupTimestamp; // default: bytes16("latest")
+  uint256 value; // default: 1
+  // flags
+  bool isOptional; // default: false 
+  bool isSelectableByUser; // default: true
+  bytes extraData; // default: ""
 }
 
 enum ClaimType {
@@ -222,12 +251,14 @@ Claim memory myExampleClaim = buildClaim({
 The data requested to generate a proof of account ownership.
 
 ```solidity
-struct Auth {
-    AuthType authType; // required
-    bool isAnon; // optional
-    bool isSelectableByUser; // optional
-    uint256 userId; // optional
-    bytes extraData; //optional
+struct AuthRequest {
+  AuthType authType;
+  uint256 userId; // default: 0
+  // flags
+  bool isAnon; // default: false -> true not supported yet
+  bool isOptional; // default: false
+  bool isSelectableByUser; // default: true
+  bytes extraData; // default: ""
 }
 
 enum AuthType {
@@ -243,15 +274,16 @@ Auth memory myExampleAuth = buildAuth({
 })
 ```
 
-### [`messageSignatureRequest`](./#signedmessage) _(optional)_
+### [`signatureRequest`](./#signedmessage) _(optional)_
 
 A message provided by the user and signed with the Vault.
 
 ```solidity
 // Example of a signedMessage
-struct Signature {
-  bytes message;
-  bytes extraData;
+struct SignatureRequest {
+  bytes message; // default: "MESSAGE_SELECTED_BY_USER"
+  bool isSelectableByUser; // default: false
+  bytes extraData; // default: ""
 }
 
 // Example: Build your signed message
@@ -261,8 +293,6 @@ signature: buildSignature({message: message})
 ### [`namespace`](./#namespace) _(optional)_
 
 By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [zkConnect server documentation](server.md).
-
-
 
 ### SismoConnectVerifiedResult
 
@@ -274,14 +304,37 @@ The `sismoConnectVerifiedResult` is the object returned by the `verify()` functi
 
 ```solidity
 struct SismoConnectVerifiedResult {
-    bytes16 appId;
-    bytes16 namespace;
-    bytes32 version;
-    VerifiedClaim[] claims;
-    VerifiedAuth[] auths;
-    bytes signedMessage;
+  bytes16 appId;
+  bytes16 namespace;
+  bytes32 version;
+  VerifiedAuth[] auths;
+  VerifiedClaim[] claims;
+  bytes signedMessage; 
+}
+
+struct VerifiedAuth {
+  AuthType authType;
+  bool isAnon; // false
+  // Contains the account id of the user regarding the requested auth
+  // May contain a vaultId, a githubId or a twitterId
+  uint256 userId;
+  bytes extraData;
+  bytes proofData;
+}
+
+struct VerifiedClaim {
+  ClaimType claimType;
+  bytes16 groupId;
+  bytes16 groupTimestamp;
+  uint256 value;
+  bytes extraData;
+  // the identifier of the proof, unique for each different namespace
+  uint256 proofId;
+  bytes proofData;
 }
 ```
+
+If you want info on `VaultId` and `ProofId`, check this [Section](./#vault-id-and-proof-ids).
 
 {% hint style="info" %}
 You can find more detailed description of certain objects in the Glossary [**here**](./#glossary).

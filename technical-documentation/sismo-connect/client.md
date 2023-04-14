@@ -179,7 +179,7 @@ The ClaimRequest object holds all the information needed to generate proof of gr
     claimType?: ClaimType; // default to GTE
     // Make the claim optional
     isOptional?: boolean; // default to false
-    // Make the value the user wants to prove selectable
+    // Make the value the user wants to use to prove membership selectable
     isSelectableByUser?: boolean; // default to true
     extraData?: any; // default to ''
 }
@@ -225,10 +225,10 @@ export type AuthRequest = {
   userId?: string; // Request a specific user
   // Make the claim optional
   isOptional?: boolean; // default to false
-  // Make the value the user wants to prove selectable
+  // Make the account whose ownership the user wants to prove selectable
   isSelectableByUser?: boolean; // default to true
   // (soon™) Do not reveal the userId with which the user performs the auth
-  isAnon?: boolean;	 
+  isAnon?: boolean; // false
   extraData?: any; // default to ''
 }
 
