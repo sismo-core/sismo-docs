@@ -137,16 +137,16 @@ export const config: SismoConnectClientConfig = {
     claims={[{ groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a" }]}
     // request to generate a proof that can't valid without 
     // a message chosen by the user
-    signature={
+    signature={{
       // here we encode the message using ethers
       // we encode it as an address
       // we will use it to airdrop the ERC721 on this address in our contracts
-      ethers.utils.defaultAbiCoder.encode(
+      message: ethers.utils.defaultAbiCoder.encode(
        // you have to get the `destination` 
        // to add it in the messageSignatureRequest
        ["address"], [destination]) 
-    }
-    onResponseBytes={(response: SismoConnectResponse) => {
+    }}
+    onResponseBytes={(responseBytes: string) => {
      //Send the response to your contract to verify it
      //thanks to the @sismo-core/sismo-connect-solidity package
      //Will see how to do this in next part of this tutorial
@@ -196,16 +196,16 @@ export const config: SismoConnectClientConfig = {
     ]}
     // request a proof of group membership for `sismo-contributors`
     claims={[{ groupId: "0xe9ed316946d3d98dfcd829a53ec9822e" }]}
-    signature={
+    signature={{
        // here we encode the message using ethers
        // we encode it as an address
        // we will use it to airdrop the ERC721 on this address in our contracts
-       ethers.utils.defaultAbiCoder.encode(
+       message: ethers.utils.defaultAbiCoder.encode(
        // you have to get the `destination` 
        // to add it in the messageSignatureRequest
        ["address"], [destination]) 
-    }
-    onResponseBytes={(response: SismoConnectResponse) => {
+    }}
+    onResponseBytes={(responseBytes: string) => {
      //Send the response to your contract to verify it
      //thanks to the @sismo-core/sismo-connect-solidity package
      //Will see how to do this in next part of this tutorial
