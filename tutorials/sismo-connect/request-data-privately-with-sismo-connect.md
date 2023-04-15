@@ -40,7 +40,7 @@ The `appId` will be used to compute an VaultId, which is the the unique identifi
 
 $$vaultId = hash(vaultSecret, appId)$$
 
-If we remove the appId from this simple calculation, we would have had the same VaultId for the same vaultSecret, effectively leaking information about a user that uses zkConnect on two different apps. The VaultId would be the same across different apps, and the user could be tracked if the VaultIds became public.
+If we remove the appId from this simple calculation, we would have had the same VaultId for the same vaultSecret, effectively leaking information about a user that uses Sismo Connect on two different apps. The VaultId would be the same across different apps, and the user could be tracked if the VaultIds became public.
 
 By introducing an appId, the vaultId is now different between apps, and the same user will have two different VaultIds on two different apps, effectively preserving the user's privacy.&#x20;
 
@@ -180,7 +180,7 @@ export const config: SismoConnectClientConfig = {
     // get a response
     onResponse={(response: SismoConnectResponse) => {
     //Send the response to your server to verify it
-    //thanks to the @sismo-core/zk-connect-server package
+    //thanks to the @sismo-core/sismo-connect-server package
     //Will see how to do this in next part of this tutorial
   }}
 />
