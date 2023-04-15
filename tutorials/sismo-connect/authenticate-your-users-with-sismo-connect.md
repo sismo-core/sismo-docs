@@ -130,11 +130,11 @@ First, you will need to import the following:
 yarn add @sismo-core/sismo-connect-client
 ```
 
-After importing, the first step is to create a `sismoConnectConfig` for your client and initialize a new `sismoConnect` client instance with it:
+After importing, the first step is to create a `sismoConnectConfig` for your client and initialize a new ZKConnect client instance with it:
 
 ```typescript
 // in your frontend
-import { AuthType, SismoConnect, SismoConnectClientConfig } from "@sismo-core/sismo-connect-client";
+import { AuthType, SismoConnect, SismoConnectClientConfig } from "@sismo-core/zk-connect-client";
 
 const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0x0ad03e347304dd6c19d9aa75db8659d9", // appId you registered

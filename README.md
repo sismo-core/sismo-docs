@@ -1,17 +1,8 @@
-<table data-view="cards">
-  <tbody>
-    <tr>
-      <td>Description</td>
-      <td>Cover</td>
-      <td>CoverY</td>
-    </tr>
-    <tr>
-      <td>Get the most out of your data.</td>
-      <td><a href=".gitbook/assets/Docs_1900x400.png">Docs_1900x400.png</a></td>
-      <td>7</td>
-    </tr>
-  </tbody>
-</table>
+---
+description: Get the most out of your data.
+cover: .gitbook/assets/Docs_1900x400.png
+coverY: 7
+---
 
 # What is Sismo?
 
@@ -21,28 +12,11 @@ Users aggregate their identity in Sismo’s Data Vault and start accumulating Da
 
 Standing at the crossroads between digital identity, web3 social, and zero-knowledge technology, Sismo has three core concepts:
 
-<table data-view="cards">
-  <tbody>
-    <tr>
-      <td><a href="what-is-sismo/data-vault.md">data-vault.md</a></td>
-      <td>Aggregate your identity</td>
-      <td><a href=".gitbook/assets/Gitbook-Vault.png">Gitbook-Vault.png</a></td>
-    </tr>
-    <tr>
-      <td><a href="what-is-sismo/sismo-badges.md">sismo-badges.md</a></td>
-      <td>Tokenize your identity</td>
-      <td><a href=".gitbook/assets/Gitbook-Badge.png">Gitbook-Badge.png</a></td>
-    </tr>
-    <tr>
-      <td><a href="readme/sismo-connect.md">sismo-connect.md</a></td>
-      <td>The crypto-native SSO</td>
-      <td><a href=".gitbook/assets/Gitbook-SismoConnect.png">Gitbook-SismoConnect.png</a></td>
-    </tr>
-  </tbody>
-</table>
+<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="what-is-sismo/data-vault.md">data-vault.md</a></td><td>Aggregate your identity</td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-Vault.png">Gitbook-Vault.png</a></td></tr><tr><td><a href="what-is-sismo/sismo-badges.md">sismo-badges.md</a></td><td>Tokenize your identity </td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-Badge.png">Gitbook-Badge.png</a></td></tr><tr><td><a href="readme/sismo-connect.md">sismo-connect.md</a></td><td>The crypto-native SSO</td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-ZkConnect.png">Gitbook-ZkConnect.png</a></td></tr></tbody></table>
 
-
-**Anyone can start building with Sismo via the [Factory](https://factory.sismo.io/create-badge).**
+{% hint style="success" %}
+Anyone can start building with Sismo via the [Factory](https://factory.sismo.io/create-badge).&#x20;
+{% endhint %}
 
 ## Aggregate your identity&#x20;
 
@@ -52,7 +26,9 @@ While web3 puts people in control of their data, it remains segregated on isolat
 
 In this sense, Sismo provides users with the tools they need to choose how they reveal their data and curate their identities without sacrificing privacy.
 
-**Users can create their own Data Vault and start aggregating their identity [here](https://vault-beta.sismo.io/).**
+{% hint style="info" %}
+Users can create their own Data Vault and start aggregating their identity [here](https://vault-beta.sismo.io/).
+{% endhint %}
 
 ## Prove and verify
 
@@ -68,4 +44,6 @@ When integrated into applications, Sismo Connect can request private, granular d
 
 As Sismo Connect merely enhances web3’s existing Sign-In with Ethereum (SIWE) infrastructure, neither users nor integrators are exposed to the risks inherent in centralized web2 platforms. Sismo Connect promotes privacy and usability—allowing users to leverage their data without the implications of big tech overwatch.
 
-**Developers can learn how to integrate Sismo Connect [here](tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).**
+{% hint style="success" %}
+Developers can learn how to integrate Sismo Connect [here](tutorials/sismo-connect/request-data-privately-with-sismo-connect.md).
+{% endhint %}
