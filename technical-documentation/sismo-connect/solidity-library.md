@@ -10,7 +10,7 @@ The [Sismo Connect](../../readme/sismo-connect.md) Solidity Library is built on 
 
 This page will detail all the specifications of the Sismo Connect Solidity Library.
 
-You can find the Solidity Lib GitHub repository [here](https://github.com/sismo-core/zk-connect-packages/tree/main/packages/zk-connect-solidity).
+You can find the Solidity Lib GitHub repository [here](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-solidity).
 
 {% hint style="info" %}
 Learn more about Sismo zero-knowledge proofs and use cases [**here**](../../technical-concepts/vault-and-proof-identifiers.md).
