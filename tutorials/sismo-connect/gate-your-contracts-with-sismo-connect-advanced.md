@@ -7,9 +7,9 @@ This tutorial will walk you through how we built zkDrop, an application allowing
 To get a feel of what you will build in this tutorial, you can try out a demo [**here**](https://demo.zkdrop.io/mergooor-pass).
 
 {% hint style="info" %}
-You can access the open-source repository of the demo (in Next) [here](https://github.com/sismo-core/zkdrop).
+You can access the open-source repository of the demo [here](https://github.com/sismo-core/zkdrop).
 
-The repository use the [`@sismo-core/sismo-connect-react`](../../technical-documentation/sismo-connect/react.md) package to request the proof and the [Sismo Connect Solidity library](../../technical-documentation/sismo-connect/solidity-library.md) to verify it.
+The repository use the [`@sismo-core/sismo-connect-react`](../../technical-documentation/sismo-connect/react.md) package to request the proof and the [Sismo Connect Solidity library](../../technical-documentation/sismo-connect/solidity-library.md) to verify it.&#x20;
 {% endhint %}
 
 ### Tutorial use case
@@ -22,21 +22,46 @@ For anonymous contributors to The Merge, we will build zkDrop that enables them 
 We definitely recommend our entry-point tutorial for a quick off-chain Sismo Connect integration [here](authenticate-your-users-with-sismo-connect.md). Feel free to take a look or even try it first before following this more advanced one.
 {% endhint %}
 
-### Choose your stack ([Next.js](https://nextjs.org/) and [Foundry](https://book.getfoundry.sh/) recommended)
+### Requirements
+
+To be able to use the [Sismo Connect Solidity Library](../../technical-documentation/sismo-connect/solidity-library.md), you will first need to install Foundry.
+
+{% hint style="info" %}
+Install foundry by following this guide [https://book.getfoundry.sh/getting-started/installation](https://book.getfoundry.sh/getting-started/installation)&#x20;
+{% endhint %}
+
+### Setup your repository
 
 To implement sismoConnect, you'll need both a frontend and some smart contracts using [Foundry](https://book.getfoundry.sh/). The frontend will request the proof, and the smart contracts will verify it on-chain thanks to the Sismo Connect Solidity library.
 
-For this tutorial, we recommend using the Next.js stack for your application, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.
+To setup your repository with foundry we recommend you to use our zkDrop repository as a foundry template [https://github.com/sismo-core/zkdrop/tree/main](https://github.com/sismo-core/zkdrop/tree/main/contracts)
 
-To create a new Next.js project, run the following command:
+```bash
+forge init --template https://github.com/sismo-core/zkdrop zkdrop-tutorial
 
+# Go to zkdrop-tutorial folder
+cd zkdrop-tutorial
 ```
-yarn create next-app --typescript
+
+For the frontend part, we are using the Next.js stack, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.
+
+Your repository has been initiated on the zkdrop-tutorial folder.
+
+Install front dependencies
+
+```bash
+# Install forge dependencies
+forge install
+
+# Install front dependencies
+yarn install
 ```
 
-That's it! Your frontend will be located in `src/pages/index.tsx`. We will handle the installation of Foundry in the solidity part of the tutorial.
+That's it! Your contracts will be located in the `src` folder and your frontend will be located in the `front`. We will handle the installation of Foundry in the solidity part of the tutorial.
 
-You can find the complete Next.js boilerplate repository setup with Sismo Connect [here](https://github.com/sismo-core/sismo-connect-boilerplate).
+{% hint style="info" %}
+You can also inspire you from our boilerplate repository: [https://github.com/sismo-core/sismo-connect-boilerplate](https://github.com/sismo-core/sismo-connect-boilerplate)
+{% endhint %}
 
 ### Register your Sismo Connect App in the Factory
 
@@ -274,42 +299,6 @@ As you noticed, you now have the proof as bytes and you will send this proof in 
 
 ### Verify the proof on-chain and gate your contracts
 
-To be able to use the [Sismo Connect Solidity Library](../../technical-documentation/sismo-connect/solidity-library.md), you will first need to install Foundry.
-
-```bash
-curl -L https://foundry.paradigm.xyz | bash
-```
-
-{% hint style="info" %}
-Here is the link to the Foundry book if you are not familiar with it: [https://book.getfoundry.sh/](https://book.getfoundry.sh/)
-{% endhint %}
-
-{% hint style="success" %}
-We HIGHLY recommend to fork our`contracts` folder of zkDrop to be well setup : [https://github.com/sismo-core/zkdrop/tree/main/contracts](https://github.com/sismo-core/zkdrop/tree/main/contracts)\
-You can also fork the boilerplate repository: [https://github.com/sismo-core/sismo-connect-boilerplate](https://github.com/sismo-core/sismo-connect-boilerplate)
-{% endhint %}
-
-To fork our contracts folder, you can just clone the zkDrop repository on your machine and copy it to your project.
-
-```bash
-# clone the zkDrop repository in your home folder for example
-git clone https://github.com/sismo-core/zkdrop.git
-
-# copy the contracts folder in your project
-cd zkdrop
-cp -r ./contracts <your-project-path>
-```
-
-You can then run the following command to install all the needed dependencies in your project.
-
-<pre class="language-bash"><code class="lang-bash"><strong># go back to your project
-</strong><strong>cd &#x3C;your-project-path>
-</strong><strong>cd contracts
-</strong>forge install
-</code></pre>
-
-You can now put your contracts under `contracts/src` and start to use the [Sismo Connect Solidity Library](../../technical-documentation/sismo-connect/solidity-library.md).
-
 The first thing to setup is to make your contract inherit from Sismo Connect so that it can pass the appId in the constructor to configure Sismo Connect for your app (it is similar to the sismoConnectConfig we have in our frontend).
 
 We also pass the groupId in the constructor to have it as an immutable in the contract.
@@ -344,6 +333,10 @@ contract ZKDropERC721 is ERC721, SismoConnect {
   
 }
 ```
+
+{% hint style="info" %}
+You can find the contract here `src/ZKDropERC721.sol`
+{% endhint %}
 
 You can now start to implement new functions that take a `SismoConnectResponse` of type `bytes`. It will allow you to send the `responseBytes` that you received in your frontend to your contracts. For example, here is the function that will be used for claiming the ERC721 by users.
 
@@ -430,7 +423,7 @@ opn(url)
 You can then call this script by using:
 
 ```bash
-npx ts-node <script-name>.ts
+npx ts-node generate-proof.ts
 ```
 
 You will be provided a `SismoConnectResponse` of type `bytes` in a modal by completing the flow in the Data Vault app. You can choose to copy paste this response in your tests.
