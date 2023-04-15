@@ -47,7 +47,7 @@ For the frontend part, we are using the Next.js stack, which is a full-stack Rea
 
 Your repository has been initiated on the zkdrop-tutorial folder.
 
-Install front dependencies
+Install dependencies:
 
 ```bash
 # Install forge dependencies
@@ -57,7 +57,7 @@ forge install
 yarn install
 ```
 
-That's it! Your contracts will be located in the `src` folder and your frontend will be located in the `front`. We will handle the installation of Foundry in the solidity part of the tutorial.
+That's it! Your contracts will be located in the `src` folder and your frontend will be located in the `front` folder.&#x20;
 
 {% hint style="info" %}
 You can also inspire you from our boilerplate repository: [https://github.com/sismo-core/sismo-connect-boilerplate](https://github.com/sismo-core/sismo-connect-boilerplate)
