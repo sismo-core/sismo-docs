@@ -256,7 +256,7 @@ const responseTwo = sismoConnect.getResponse();
 
 #### Backend
 
-<pre class="language-typescript"><code class="lang-typescript">import { SismoConnectVerifiedResult, SismoConnect, AuthType, ClaimRequest, AuthRequest } from "@sismo-core/sismo-connect-server";
+<pre class="language-typescript"><code class="lang-typescript">import { SismoConnectVerifiedResult, SismoConnect, AuthType, ClaimRequest, AuthRequest } from "@sismo-core/zk-connect-server";
 
 <strong>const sismoConnect = SismoConnect({
 </strong>  appId: "0x8f347ca31790557391cec39b06f02dc2", 
