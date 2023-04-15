@@ -24,15 +24,16 @@ We definitely recommend our entry-point tutorial for a quick off-chain Sismo Con
 
 ### Requirements
 
-To be able to use the [Sismo Connect Solidity Library](../../technical-documentation/sismo-connect/solidity-library.md), you will first need to install Foundry.
+To implement Sismo Connect, you'll need both a frontend and some smart contracts using [Foundry](https://book.getfoundry.sh/). The frontend will request the proof, and the smart contracts will verify it on-chain thanks to the Sismo Connect Solidity library.
 
-{% hint style="info" %}
-Install foundry by following this guide [https://book.getfoundry.sh/getting-started/installation](https://book.getfoundry.sh/getting-started/installation)&#x20;
-{% endhint %}
+You can install Foundry by following this guide [https://book.getfoundry.sh/getting-started/installation](https://book.getfoundry.sh/getting-started/installation)&#x20;
+
+For the frontend part of the application you will need to install:
+
+* [Node.js](https://nodejs.org/en/download/) (v18.15.0, latest LTS version)
+* [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
 ### Setup your repository
-
-To implement sismoConnect, you'll need both a frontend and some smart contracts using [Foundry](https://book.getfoundry.sh/). The frontend will request the proof, and the smart contracts will verify it on-chain thanks to the Sismo Connect Solidity library.
 
 To setup your repository with foundry we recommend you to use our zkDrop repository as a foundry template [https://github.com/sismo-core/zkdrop/tree/main](https://github.com/sismo-core/zkdrop/tree/main/contracts)
 
