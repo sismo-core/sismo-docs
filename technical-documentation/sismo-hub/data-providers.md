@@ -4,16 +4,22 @@
 
 In a `GroupGenerator`, users can query data. We have developed `dataProviders` to facilitate querying. We currently support the following `dataProviders`:
 
+* `AlchemyProvider`: allows retrieving all holders of a specific NFT (ERC721 and ERC1155) on Ethereum mainnet
+* `AnkrProvider`:  allows all holders of a specific token (ERC20 and ERC721) on specific network
 * `AttestationStationProvider`: allows you to query any attestation on Optimism's AttestationStation using a [Subgraph](https://thegraph.com/hosted-service/subgraph/wslyvh/optimism-atst)
-* `GraphQLProvider`:  allows launching arbitrary graphQL queries
-* `RestProvider`:  allows launching arbitrary REST queries
 * `BigQueryProvider`: allows launching arbitrary BigQuery queries on the Ethereum mainnet and Polygon dataset
-* `SnapshotProvider`: allows querying all voters for a proposal or for an entire space
-* `SubgraphHostedServiceProvider`: allows launching arbitrary queries on any subGraph.
-* `PoapSubgraphProvider`: allows retrieving all attendees of any events.
-* `LensProvider`: allows retrieving social information on Lens Protocol (profiles, followers...)
+* `DegenScoreProvider`:  allows retrieving all holders of a beacon above a min score and with a specific trait
 * `GithubProvider`: allows you to quickly retrieve user information from GitHub (commiters, organization members, stargazers...)
+* `GitPoapProvider`:  allows retrieving all Ethereum Addresses which have received a GitPoap with a given eventId
+* `GraphQLProvider`:  allows launching arbitrary graphQL queries
+* `GuildProvider`:  allows easily retrieving data from Guild.xyz
 * `HiveProvider`: allows you to easily retrieve data about Twitter influencers
+* `LensProvider`: allows retrieving social information on Lens Protocol (profiles, followers...)
+* `PoapSubgraphProvider`: allows retrieving all attendees of any events
+* `RestProvider`:  allows launching arbitrary REST queries
+* `SafeProvider`:  allows retrieving all owners of given Safe wallet on the Ethereum mainnet.
+* `SnapshotProvider`: allows querying all voters for a proposal or for an entire space
+* `SubgraphHostedServiceProvider`: allows launching arbitrary queries on any subGraph
 * `TransposeProvider`: allows you to launch arbitrary SQL requests on the Ethereum mainnet with [Transpose](https://www.transpose.io/) (token holders, smart contracts interactions...)
 * `WiwBadgeProvider`: allows you to query WIW badge holders
 

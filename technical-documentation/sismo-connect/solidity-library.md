@@ -292,7 +292,7 @@ signature: buildSignature({message: message})
 
 ### [`namespace`](./#namespace) _(optional)_
 
-By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the zkConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [zkConnect server documentation](server.md).
+By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the sismoConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [sismoConnect server documentation](server.md).
 
 ### SismoConnectVerifiedResult
 

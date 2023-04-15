@@ -38,6 +38,8 @@ You can find our contracts deployed on the following networks:
 {% tab title="Goerli-Testnet" %}
 | Contract Name                                               | Address                                                                                                                      |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| AddressesProvider                                           | [0x3340Ac0CaFB3ae34dDD53dba0d7344C1Cf3EFE05](https://goerli.etherscan.io/address/0x3340Ac0CaFB3ae34dDD53dba0d7344C1Cf3EFE05) |
+| SismoConnectVerifier                                        | [0x7E69774d46d46EB0C3aF309f477ded8008Ac1996](https://goerli.etherscan.io/address/0x7E69774d46d46EB0C3aF309f477ded8008Ac1996) |
 | Front                                                       | [0x40713429614c47e94bC078069Df9C084fb44edfC](https://goerli.etherscan.io/address/0x40713429614c47e94bC078069Df9C084fb44edfC) |
 | AttestationsRegistry                                        | [0x7c0F3ba8e29ad7e28CA805933d6d43b35983B2b3](https://goerli.etherscan.io/address/0x7c0F3ba8e29ad7e28CA805933d6d43b35983B2b3) |
 | Badges                                                      | [0xA251eb9Be4e7E2bb382268eCdd0a5fca0A962E6c](https://goerli.etherscan.io/address/0xA251eb9Be4e7E2bb382268eCdd0a5fca0A962E6c) |
@@ -47,19 +49,27 @@ You can find our contracts deployed on the following networks:
 | HydraS1Verifier                                             | [0x6F470D565Effa8a2594B0BDB9E63Cd21D58FAC0f](https://goerli.etherscan.io/address/0x6F470D565Effa8a2594B0BDB9E63Cd21D58FAC0f) |
 | Pythia1SimpleAttester                                       | [0x65130b44f33E2E97Ea7031412eAFf7d5FC7bf9ad](https://goerli.etherscan.io/address/0x65130b44f33E2E97Ea7031412eAFf7d5FC7bf9ad) |
 | Pythia1Verifier                                             | [0xd6f79719F8e286987417F9910c0ED42AbF95B0EA](https://goerli.etherscan.io/address/0xd6f79719F8e286987417F9910c0ED42AbF95B0EA) |
+| HydraS2Verifier                                             | [0xaa7cc4E3E06D1Fb76184ae294f75619C5dDCE1b4](https://goerli.etherscan.io/address/0xaa7cc4E3E06D1Fb76184ae294f75619C5dDCE1b4) |
+| AvailableRootsRegistry (sismoConnect)                       | [0xF3dAc93c85e92cab8f811b3A3cCaCB93140D9304](https://goerli.etherscan.io/address/0xF3dAc93c85e92cab8f811b3A3cCaCB93140D9304) |
+| <p>CommitmentMapperRegistry<br>(sismoConnect)</p>           | [0xa3104F52bF6C8317a49144d864CB04f2A487327B](https://goerli.etherscan.io/address/0xa3104F52bF6C8317a49144d864CB04f2A487327B) |
 {% endtab %}
 
 {% tab title="Mumbai-Testnet" %}
-| Contract Name               | Address                                                                                                                         |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Front                       | [0xcAf720C39bcdF47476aDc0618e6d7B57B7533213](https://mumbai.polygonscan.com/address/0xcAf720C39bcdF47476aDc0618e6d7B57B7533213) |
-| AttestationsRegistry        | [0xc24F86a8D9f82401b693d4FFaa1DCf3109d88524](https://mumbai.polygonscan.com/address/0xc24F86a8D9f82401b693d4FFaa1DCf3109d88524) |
-| Badges                      | [0xc3Ee5Aad6Fb987cF69a2EE7B3B2c92E21E42F34B](https://mumbai.polygonscan.com/address/0xc3Ee5Aad6Fb987cF69a2EE7B3B2c92E21E42F34B) |
-| HydraS1AccountboundAttester | [0xEe6c299A09d352caf53C81621f6D757c7C0B4d7c](https://mumbai.polygonscan.com/address/0xEe6c299A09d352caf53C81621f6D757c7C0B4d7c) |
-| AvailableRootsRegistry      | [0xe51e46177505c31CE33791066E17E11d9D180305](https://mumbai.polygonscan.com/address/0xe51e46177505c31CE33791066E17E11d9D180305) |
-| CommitmentMapperRegistry    | [0xE6C1f01C71A184A44A21B10A7FBEb3b1604B4f2a](https://mumbai.polygonscan.com/address/0xE6C1f01C71A184A44A21B10A7FBEb3b1604B4f2a) |
-| HydraS1Verifier             | [0x09f35a46C6863F5C8Cd887F690974DCaaDe0A2a5](https://mumbai.polygonscan.com/address/0x09f35a46C6863F5C8Cd887F690974DCaaDe0A2a5) |
-| Pythia1SimpleAttester       | [0xBbb56145d961742b1f3E3fc2b91077639C8C302a](https://mumbai.polygonscan.com/address/0xBbb56145d961742b1f3E3fc2b91077639C8C302a) |
-| Pythia1Verifier             | [0xDA7124b003AeF27A1C44aEe4d6eB6E2Bb0eF9a08](https://mumbai.polygonscan.com/address/0xDA7124b003AeF27A1C44aEe4d6eB6E2Bb0eF9a08) |
+| Contract Name                           | Address                                                                                                                         |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| AddressesProvider                       | [0x3340Ac0CaFB3ae34dDD53dba0d7344C1Cf3EFE05](https://mumbai.polygonscan.com/address/0x3340Ac0CaFB3ae34dDD53dba0d7344C1Cf3EFE05) |
+| SismoConnectVerifier                    | [0xd3a60301E7725c46978DFDf67ecfDBECb72049F0](https://mumbai.polygonscan.com/address/0xd3a60301E7725c46978DFDf67ecfDBECb72049F0) |
+| Front                                   | [0xcAf720C39bcdF47476aDc0618e6d7B57B7533213](https://mumbai.polygonscan.com/address/0xcAf720C39bcdF47476aDc0618e6d7B57B7533213) |
+| AttestationsRegistry                    | [0xc24F86a8D9f82401b693d4FFaa1DCf3109d88524](https://mumbai.polygonscan.com/address/0xc24F86a8D9f82401b693d4FFaa1DCf3109d88524) |
+| Badges                                  | [0xc3Ee5Aad6Fb987cF69a2EE7B3B2c92E21E42F34B](https://mumbai.polygonscan.com/address/0xc3Ee5Aad6Fb987cF69a2EE7B3B2c92E21E42F34B) |
+| HydraS1AccountboundAttester             | [0xEe6c299A09d352caf53C81621f6D757c7C0B4d7c](https://mumbai.polygonscan.com/address/0xEe6c299A09d352caf53C81621f6D757c7C0B4d7c) |
+| AvailableRootsRegistry                  | [0xe51e46177505c31CE33791066E17E11d9D180305](https://mumbai.polygonscan.com/address/0xe51e46177505c31CE33791066E17E11d9D180305) |
+| CommitmentMapperRegistry                | [0xE6C1f01C71A184A44A21B10A7FBEb3b1604B4f2a](https://mumbai.polygonscan.com/address/0xE6C1f01C71A184A44A21B10A7FBEb3b1604B4f2a) |
+| HydraS1Verifier                         | [0x09f35a46C6863F5C8Cd887F690974DCaaDe0A2a5](https://mumbai.polygonscan.com/address/0x09f35a46C6863F5C8Cd887F690974DCaaDe0A2a5) |
+| Pythia1SimpleAttester                   | [0xBbb56145d961742b1f3E3fc2b91077639C8C302a](https://mumbai.polygonscan.com/address/0xBbb56145d961742b1f3E3fc2b91077639C8C302a) |
+| Pythia1Verifier                         | [0xDA7124b003AeF27A1C44aEe4d6eB6E2Bb0eF9a08](https://mumbai.polygonscan.com/address/0xDA7124b003AeF27A1C44aEe4d6eB6E2Bb0eF9a08) |
+| HydraS2Verifier                         | [0x38ee920F097E9E12Eb5C2A5949cBc1A9Fb72B6CE](https://mumbai.polygonscan.com/address/0x38ee920F097E9E12Eb5C2A5949cBc1A9Fb72B6CE) |
+| AvailableRootsRegistry (sismoConnect)   | [0x5449Cc7A7E4024a7192d70c9Ce60Bb823993fd81](https://mumbai.polygonscan.com/address/0x5449Cc7A7E4024a7192d70c9Ce60Bb823993fd81) |
+| CommitmentMapperRegistry (sismoConnect) | [0x041B342b3F114F58983A9179D2c90Da01b822BE0](https://mumbai.polygonscan.com/address/0x041B342b3F114F58983A9179D2c90Da01b822BE0) |
 {% endtab %}
 {% endtabs %}
