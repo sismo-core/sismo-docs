@@ -1,17 +1,8 @@
-<table data-view="cards">
-  <tbody>
-    <tr>
-      <td>Description</td>
-      <td>Cover</td>
-      <td>CoverY</td>
-    </tr>
-    <tr>
-      <td>Get the most out of your data.</td>
-      <td><a href=".gitbook/assets/Docs_1900x400.png">Docs_1900x400.png</a></td>
-      <td>7</td>
-    </tr>
-  </tbody>
-</table>
+---
+description: Get the most out of your data.
+cover: .gitbook/assets/Docs_1900x400.png
+coverY: 7
+---
 
 # What is Sismo?
 
@@ -21,25 +12,7 @@ Users aggregate their identity in Sismo’s Data Vault and start accumulating Da
 
 Standing at the crossroads between digital identity, web3 social, and zero-knowledge technology, Sismo has three core concepts:
 
-<table data-view="cards">
-  <tbody>
-    <tr>
-      <td><a href="what-is-sismo/data-vault.md">data-vault.md</a></td>
-      <td>Aggregate your identity</td>
-      <td><a href=".gitbook/assets/Gitbook-Vault.png">Gitbook-Vault.png</a></td>
-    </tr>
-    <tr>
-      <td><a href="what-is-sismo/sismo-badges.md">sismo-badges.md</a></td>
-      <td>Tokenize your identity</td>
-      <td><a href=".gitbook/assets/Gitbook-Badge.png">Gitbook-Badge.png</a></td>
-    </tr>
-    <tr>
-      <td><a href="readme/sismo-connect.md">sismo-connect.md</a></td>
-      <td>The crypto-native SSO</td>
-      <td><a href=".gitbook/assets/Gitbook-SismoConnect.png">Gitbook-SismoConnect.png</a></td>
-    </tr>
-  </tbody>
-</table>
+<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th></th><th data-hidden></th><th data-hidden></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="what-is-sismo/data-vault.md">data-vault.md</a></td><td>Aggregate your identity</td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-Vault.png">Gitbook-Vault.png</a></td></tr><tr><td><a href="what-is-sismo/sismo-badges.md">sismo-badges.md</a></td><td>Tokenize your identity </td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-Badge.png">Gitbook-Badge.png</a></td></tr><tr><td><a href="readme/sismo-connect.md">sismo-connect.md</a></td><td>The crypto-native SSO</td><td></td><td></td><td><a href=".gitbook/assets/Gitbook-ZkConnect.png">Gitbook-ZkConnect.png</a></td></tr></tbody></table>
 
 
 **Anyone can start building with Sismo via the [Factory](https://factory.sismo.io/create-badge).**
