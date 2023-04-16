@@ -130,7 +130,7 @@ First, you will need to import the following:
 yarn add @sismo-core/sismo-connect-client
 ```
 
-After importing, the first step is to create a `sismoConnectConfig` for your client and initialize a new ZKConnect client instance with it:
+After importing, the first step is to create a `sismoConnectConfig` for your client and initialize a new `sismoConnect` client instance with it:
 
 ```typescript
 // in your frontend
