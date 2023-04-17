@@ -35,7 +35,7 @@ For the frontend part of the application you will need to install:
 
 ### Setup your repository
 
-To setup your repository with foundry we recommend you to use our zkDrop repository as a foundry template [https://github.com/sismo-core/zkdrop/tree/main](https://github.com/sismo-core/zkdrop/tree/main/contracts)
+To setup your repository with foundry we recommend you to use our zkDrop repository as a foundry template [https://github.com/sismo-core/zkdrop](https://github.com/sismo-core/zkdrop)
 
 ```bash
 forge init --template https://github.com/sismo-core/zkdrop zkdrop-tutorial
@@ -84,7 +84,7 @@ You can learn more about this notion in this [article](../../technical-concepts/
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Register your Sismo Connect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 19.47.52 (1) (1) (1).png" alt=""><figcaption><p>Register your Sismo Connect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
 
 You can register a Sismo Connect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
@@ -310,6 +310,12 @@ As you noticed, you now have the proof as bytes and you will send this proof in 
 
 ### Verify the proof on-chain and gate your contracts
 
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+# follow the command ouput intructions
+# then open a new terminal to be able to use forge command later
+```
+
 The first thing to setup is to make your contract inherit from Sismo Connect so that it can pass the appId in the constructor to configure Sismo Connect for your app (it is similar to the sismoConnectConfig we have in our frontend).
 
 We also pass the groupId in the constructor to have it as an immutable in the contract.
@@ -398,7 +404,6 @@ The aim of the script is to mock your frontend client.
 const opn = require('better-opn')
 import {
   AuthType,
-  ClaimType,
   SismoConnect,
   SismoConnectClientConfig,
 } from '@sismo-core/sismo-connect-client'

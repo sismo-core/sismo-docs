@@ -2,9 +2,9 @@
 
 ### What’s inside?
 
-This tutorial will walk you through how to request data from your users privately thanks to [**Sismo Connect**](../../readme/sismo-connect.md) integration. This tutorial will not be centered around only one example but it is meant to showcase many ways of using Sismo Connect in your app.&#x20;
+This tutorial will walk you through how to request data from your users privately thanks to [**Sismo Connect**](../../readme/sismo-connect.md) integration. This tutorial will not be centered around only one example but it is meant to showcase many ways of using Sismo Connect in your app.
 
-To get a feel of what you could build with this tutorial, you can try out a demo [**here**](https://demo.zksub.io/)**.** This Sismo Connect app enables  whitelisted wallets and GitHub accounts to register to a service with their email without revealing their eligible account.
+To get a feel of what you could build with this tutorial, you can try out a demo [**here**](https://demo.zksub.io/)**.** This Sismo Connect app enables whitelisted wallets and GitHub accounts to register to a service with their email without revealing their eligible account.
 
 {% hint style="success" %}
 You can find all the code showcased in this tutorial in [this open-source boilerplate repository](https://github.com/sismo-core/sismo-connect-boilerplate) showcasing multiple Sismo Connect integrations in Next.
@@ -16,7 +16,7 @@ The repository use the [`@sismo-core/sismo-connect-react`](../../technical-docum
 
 To implement Sismo Connect, you'll need both a frontend and a backend. The frontend will request the proof, and the backend will verify it.
 
-For this tutorial, we recommend using the Next.js stack, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.&#x20;
+For this tutorial, we recommend using the Next.js stack, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.
 
 To create a new Next.js project, run the following command:
 
@@ -42,7 +42,7 @@ $$vaultId = hash(vaultSecret, appId)$$
 
 If we remove the appId from this simple calculation, we would have had the same VaultId for the same vaultSecret, effectively leaking information about a user that uses zkConnect on two different apps. The VaultId would be the same across different apps, and the user could be tracked if the VaultIds became public.
 
-By introducing an appId, the vaultId is now different between apps, and the same user will have two different VaultIds on two different apps, effectively preserving the user's privacy.&#x20;
+By introducing an appId, the vaultId is now different between apps, and the same user will have two different VaultIds on two different apps, effectively preserving the user's privacy.
 
 You can learn more about this notion in this [article](../../technical-concepts/vault-and-proof-identifiers.md).
 
@@ -52,7 +52,7 @@ You can learn more about this notion in this [article](../../technical-concepts/
 
 You can register a Sismo Connect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
-To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the appId that will be created can be used for [Sismo Connect](../../readme/sismo-connect.md).&#x20;
+To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the appId that will be created can be used for [Sismo Connect](../../readme/sismo-connect.md).
 
 {% hint style="info" %}
 Feel free to add `*.com` to authorized domains when following along this tutorial. This will allow to whitelist `localhost`.
@@ -103,7 +103,7 @@ After importing, you will be able to use the Sismo Connect button in your app. B
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 11.30.56.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
 
-To do so, you have to use the `SismoConnectButton` component, you can see below several examples one how to use the button and request different proofs from your user.&#x20;
+To do so, you have to use the `SismoConnectButton` component, you can see below several examples one how to use the button and request different proofs from your user.
 
 {% tabs %}
 {% tab title="Claim / Vault Auth" %}
@@ -143,10 +143,9 @@ The `dataRequest` has more optional parameters available:
 
 * **`groupTimestamp`**: This parameter specifies the timestamp of the group snapshot a user wants to prove membership in. By default, this timestamp is set to ‘latest’ to use the latest generated snapshot.
 * **`value`**: In groups, every account is associated with a value, which can represent the number of tokens staked, the voting power of the account, etc. The `requestedValue` parameter allows you to specify the value your user needs to have in the group to generate the proof. By default, it is set to 1.
-* **`claimType`**: The claimType can force users to prove that they have a value in the group greater than or equal (`ClaimType.GTE`) to the `requested value` or strictly equal (`ClaimType.EQ`)to the `requested value`. By default, it is `“GTE”.`\
+* **`claimType`**: The claimType can force users to prove that they have a value in the group greater than or equal (`ClaimType.GTE`) to the `requested value` or strictly equal (`ClaimType.EQ`)to the `requested value`. By default, it is `“GTE”.`\\
 
-
-You can see the [documentation](../../technical-documentation/sismo-connect/client.md) if you want to learn more about this.&#x20;
+You can see the [documentation](../../technical-documentation/sismo-connect/client.md) if you want to learn more about this.
 {% endhint %}
 {% endtab %}
 
@@ -305,7 +304,7 @@ const VaultId = result.getUserId(AuthType.VAULT));
 ```
 
 {% hint style="info" %}
-By doing this, you'll be able to verify the validity of the proof for the requested group. The `claims` field is crucial here as far as users could gain unauthorized access by providing valid proof for any group.&#x20;
+By doing this, you'll be able to verify the validity of the proof for the requested group. The `claims` field is crucial here as far as users could gain unauthorized access by providing valid proof for any group.
 
 We also check that the proof is a Data Vault proof of ownership.
 {% endhint %}
@@ -343,14 +342,14 @@ You are now able to request proofs from your users and verify them off chain wit
 
 ### Deploy your app (optional)
 
-If you chose to use Next.js, we recommended using the Vercel service for deployment. With Vercel you will deploy your frontend and your backend in two clicks.&#x20;
+If you chose to use Next.js, we recommended using the Vercel service for deployment. With Vercel you will deploy your frontend and your backend in two clicks.
 
 Here's how to get started:
 
 1. Create an account on [Vercel](https://vercel.com/) with your Github account
 2. Create a new project and import your zksub repository in Vercel
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.00.30 (1).png" alt=""><figcaption><p>Import a Git repository</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2023-03-21 at 10.00.30.png" alt=""><figcaption><p>Import a Git repository</p></figcaption></figure>
 
 3. When your repository is linked to Vercel, you should see this page appear:
 
