@@ -292,7 +292,7 @@ With this SismoConnect instance, you can call the `verify` function which takes 
 
 ```typescript
 
-const result: SismoConnectVerifiedResult = await Sismo Connect.verify(response, {
+const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
     // the group memebership we want to check
     claims: [{groupId: "0xe9ed316946d3d98dfcd829a53ec9822e"}],
     // the Data Vault ownership we want to check
