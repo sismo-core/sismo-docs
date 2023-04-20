@@ -32,6 +32,7 @@ For the frontend part of the application you will need to install:
 
 * [Node.js](https://nodejs.org/en/download/) (v18.15.0, latest LTS version)
 * [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+* [Foundry](https://book.getfoundry.sh/getting-started/installation)
 
 ### Setup your repository
 
@@ -55,7 +56,8 @@ Install dependencies:
 forge install
 
 # Install front dependencies
-yarn install
+cd front
+yarn
 ```
 
 That's it! Your contracts will be located in the `src` folder and your frontend will be located in the `front` folder.&#x20;
