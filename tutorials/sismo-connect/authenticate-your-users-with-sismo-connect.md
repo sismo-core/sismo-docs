@@ -2,9 +2,9 @@
 description: A simple privacy-preserving authentication system.
 ---
 
-# Authenticate your users with sismoConnect
+# Authenticate your users with Sismo Connect
 
-### What's inside?&#x20;
+### What's inside?
 
 This tutorial will walk you through a simple integration of [**Sismo Connect**](../../technical-documentation/sismo-connect/) as a way of privately authenticating users in your application. This tutorial does not need any group to work, just an application Id (appId) created in the [**Sismo Factory**](https://factory.sismo.io/apps-explorer). You will only ask your users to prove ownership of a [Data Vault](../../what-is-sismo/data-vault.md).
 
@@ -18,7 +18,7 @@ The repository use the [`@sismo-core/sismo-connect-react`](../../technical-docum
 
 To implement sismoConnect, you'll need both a frontend and a backend. The frontend will request the proof, and the backend will verify it.
 
-For this tutorial, we recommend using the Next.js stack, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.&#x20;
+For this tutorial, we recommend using the Next.js stack, which is a full-stack React framework. Next.js also offers a deployment service called Vercel, which makes it easy to deploy your app in just two clicks.
 
 To create a new Next.js project, run the following command:
 
@@ -44,7 +44,7 @@ $$vaultId = hash(vaultSecret, appId)$$
 
 If we remove the appId from this simple calculation, we would have had the same VaultId for the same vaultSecret, effectively leaking information about a user that uses Sismo Connect on two different apps. The VaultId would be the same across different apps, and the user could be tracked if the VaultIds became public.
 
-By introducing an appId, the vaultId is now different between apps, and the same user will have two different VaultIds on two different apps, effectively preserving the user's privacy.&#x20;
+By introducing an appId, the vaultId is now different between apps, and the same user will have two different VaultIds on two different apps, effectively preserving the user's privacy.
 
 You can learn more about this notion in this [article](../../technical-concepts/vault-and-proof-identifiers.md).
 
@@ -54,7 +54,7 @@ You can learn more about this notion in this [article](../../technical-concepts/
 
 You can register a Sismo Connect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
-To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the appId that will be created can be used for [Sismo Connect](../../readme/sismo-connect.md).&#x20;
+To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the appId that will be created can be used for [Sismo Connect](../../readme/sismo-connect.md).
 
 {% hint style="info" %}
 Feel free to add `*.com` to authorized domains when following along this tutorial. This will allow to whitelist `localhost`.
@@ -86,7 +86,7 @@ First, you will need to import the following:
 
 After importing, you will be able to use the Sismo Connect button in your app.
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 11.30.56.png" alt=""><figcaption><p>Sismo Connect React button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sign in with Sismo Buttonx1,5.png" alt=""><figcaption><p>Sismo Connect React button</p></figcaption></figure>
 
 To do so, you have to use the `SismoConnectButton` component:
 
@@ -216,7 +216,7 @@ You can view the complete backend integration for a simple auth [here](https://g
 
 ### Deploy your app (optional)
 
-If you chose to use Next.js, we recommended using the Vercel service for deployment. With Vercel you will deploy your frontend and your backend in two clicks.&#x20;
+If you chose to use Next.js, we recommended using the Vercel service for deployment. With Vercel you will deploy your frontend and your backend in two clicks.
 
 Here's how to get started:
 
@@ -233,7 +233,7 @@ Click on "Deploy", and congratulations! Your app is now deployed at https://\[Na
 
 ### **Next steps**
 
-All Data can be categorized into groups. If you liked this tutorial, you can see how to leverage Sismo Connect integration by asking for proof of user group membership in a privacy-preserving way with [this one](request-data-privately-with-sismo-connect.md).&#x20;
+All Data can be categorized into groups. If you liked this tutorial, you can see how to leverage Sismo Connect integration by asking for proof of user group membership in a privacy-preserving way with [this one](request-data-privately-with-sismo-connect.md).
 
 If you have any questions about integrating sismoConnect, don’t hesitate to reach out. The team will be happy to answer any questions you may have.
 

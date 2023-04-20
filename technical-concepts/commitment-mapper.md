@@ -1,103 +1,51 @@
 # Commitment Mapper
 
-The commitment mapper is an off-chain trusted service provided by Sismo. It is immutable in an isolated infrastructure.
+The Commitment Mapper, provided by Sismo, is a trusted offchain service housed in an isolated infrastructure. It allows account owners to transform proof of account ownership into proof of secret knowledge. The account owner receives a receipt from the Commitment Mapper, which connects their account to their commitment (e.g., the hash of their secret). This combination of the user's secret and the Commitment Mapper receipt forms the Delegated Proof of Ownership. The commitment can be used in zero-knowledge (ZK) systems as a [Vault or Proof Identifier](vault-and-proof-identifiers.md).
 
-It enables account owners to convert a proof of account ownership into a proof of secret knowledge.&#x20;
+## How It Works
 
-The account owner receives a receipt from the Commitment Mapper, which maps their account with their commitment (e.g hash of their secret).
-
-The combination of the user's secret and the commitment mapper receipt form the **Delegated Proof Of Ownership.**
-
-{% hint style="info" %}
-The commitment can be used in ZK systems as an account nullifier
-{% endhint %}
-
-
-
-### How it works
-
-Users submit a proof of account ownership (e.g ECDSA signature from a wallet for an Ethereum account or OAuth verification for a web2 account like GitHub or Twitter account) to the commitment mapper alongside a commitment (e.g hash of a secret only they know or the EdDSA public key of an account of theirs).&#x20;
-
-The commitment mapper will verify the validity of the account ownership proof and register the commitment for this account in a mapping stored on a database.&#x20;
-
-If the account is already mapped with a commitment, the commitment mapper will return an error.&#x20;
-
-Next, the mapper will send a signed commitment receipt to the user, which guarantees that they went through the commitment scheme.
-
-A commitment receipt can be retrieved at any time by the account owner by sending a new proof of ownership.
+* Users submit proof of account ownership (e.g., ECDSA signature for an Ethereum account, or OAuth verification for web2 accounts like GitHub or Twitter) along with a commitment (e.g., the hash of a secret known only to them, or the EdDSA public key of one of their accounts).
+* The Commitment Mapper verifies the validity of the account ownership proof and records the commitment for the account in a mapping stored in a database.
+* If the account is already mapped with a commitment, the Commitment Mapper returns an error.
+* The Commitment Mapper sends a signed commitment receipt to the user, confirming that they have completed the commitment process.
+* Account owners can retrieve a commitment receipt at any time by providing new proof of ownership.
 
 <figure><img src="../.gitbook/assets/commitment_mapper.png" alt=""><figcaption><p>Delegated Proof of Ownership workflow</p></figcaption></figure>
 
 {% hint style="info" %}
-Example: Hydra Delegated Proof of Ownership via Commitment Mapper which uses Poseidon hash function and EdDSA digital signature schemes which are SNARK-friendly
+Example: Using Hydra Delegated Proof of Ownership with the Commitment Mapper, the Poseidon hash function, and EdDSA digital signature schemes (which are SNARK-friendly), an Ethereum account owner and a secret commitment would follow these steps:
 
-For an Ethereum account and a secret commitment:
+* The owner of 0x123..def signs a message to prove ownership.
+* They send the signature along with the commitment (poseidonHash(secret)).
+* The Commitment Mapper verifies the signature and registers the key-value pair: {key: 0x123...def, value: commitment = poseidonHash(secret)}.
+* The Commitment Mapper signs the following receipt using its EdDSA private key: (poseidonHash(0x123...def, poseidonHash(secret)).
 
-* The owner of `0x123..def` will sign a message to prove ownership of the account
-* They will send the signature along with its commitment = poseidonHash(secret)
-* The commitment mapper will verify the signature and then register the following key: value
-  * key: 0x123...def
-  * value: commitment = poseidonHash(secret)
-* The commitment mapper will sign (with its EdDSA private key) the following receipt: (poseidonHash(0x123...def, poseidonHash(secret))
-
-Note: The user will be able to use this receipt to prove in a SNARK that:&#x20;
-
-1. They know the secret (they generate poseidonHash(secret) in the SNARK)
-2. They went through the commitment mapper (verify the commitment mapper EdDSA signature in the SNARK)
-3. Their commitment mapper was linked (verify the receipt construction in the SNARK)
+The user can then use this receipt to prove in a SNARK that they know the secret, went through the Commitment Mapper, and that their Commitment Mapper was linked.
 {% endhint %}
 
-#### Why?
+## Why Use The Commitment Mapper?
 
-Proving the ownership of an Ethereum account to a third party is generally simple via a message signature. Similarly, one can easily prove ownership of a Github or Twitter account via OAuth.
+In constrained environments like zk-SNARK circuits, traditional proofs of ownership become impractically expensive. Sismo alleviates this problem by using the Commitment Mapper signing with an EdDSA address, which is cheaper to prove and verify in a SNARK.
 
-However, in constrained environments like ZK-SNARKs circuits, those proofs of ownership become impractically expensive.&#x20;
+## Security Model
 
-For instance, the ECDSA signature of Ethereum accounts are very expensive to prove inside a SNARK. By using a Commitment Mapper signing received with an EdDSA address (cheap to prove and verify in a SNARK), Sismo alleviates this problem.&#x20;
+Users must trust the Commitment Mapper deployed by Sismo to:
 
-Also, the ECDSA signature cannot be used as a nullifier because it is malleable (several different valid signatures can be created using ECDSA). By enforcing a single commitment for an Ethereum account, the secret (only known to the user) that generated the commitment can be used as a nullifier.
+* Verify proof of account ownership correctly.
+* Authorize only one commitment per account.
+* Keep the data store (set of account identifiers) private.
 
-#### Proof of Ownership Independence
+Sismo follows best practices with high web2 security in mind when deploying the Commitment Mapper:
 
-It is interesting to note that compared to semaphore which also uses commitments, the commitment mapper only verifies proofs of ownership.
+* The Commitment Mapper is executed using an AWS Lambda deployed in an isolated infrastructure, within a dedicated AWS account.
+* Private keys are stored using AWS KMS.
+* Actions made inside the AWS account are traced, stored in another account, and cannot be modified, allowing for precise auditing.
+* Alerts are sent to the entire Sismo team if actions occur inside this AWS account.
 
-This means that a Delegated Proof of Ownership can be reused in any system.
+{% hint style="info" %}
+The Commitment Mapper code and its terraform deployment are open-source and accessible here: [https://github.com/sismo-core/sismo-commitment-mapper](https://github.com/sismo-core/sismo-commitment-mapper).
+{% endhint %}
 
-For instance, in Sismo Hydra-S1 Attesters, the same commitment can be used to prove group membership in any group of accounts.&#x20;
+## The Future
 
-The group data (e.g the list of accounts) is independent from the proof of ownership.
-
-#### Off-chain Commitments
-
-By keeping the mapping off-chain, the Commitment Mapper ensures that the set of all the accounts that interacted with it (called the Anonymity Set) remains private.
-
-Other projects such as semaphore or tornado cash use the same kind of commitments (though they link the data to it) but they do it publicly, creating anonymity sets.
-
-There is a path to more openness on our side: once the anonymity set is big enough, we will be able to publish our exact data.
-
-
-
-### Security model
-
-Users need to trust the commitment mapper deployed by Sismo to:
-
-* Verify proof of account ownership correctly
-* Authorize only one commitment per account
-* Keep the data store (set of account identifiers) private
-
-We deployed the commitment mapper with best practices and high web2 security in mind:
-
-* The commitment mapper is executed using an AWS lambda deployed in an isolated infrastructure. A entire AWS account is dedicated to hosting the commitment mapper.
-* The private keys (e.g EdDSA private key to sign commitment receipts for Hydra) are stored using AWS KMS.
-* All actions made inside this AWS account are traced and stored on an other account. These traces can't be modified. That means we can audit exactly what happened inside this AWS account.
-* Alerts are sent to the entire Sismo team in case of actions made inside this AWS account.
-
-The code (along its terraform deployment) for the commitment mapper is open source and accessible here [https://github.com/sismo-core/sismo-commitment-mapper](https://github.com/sismo-core/sismo-commitment-mapper).
-
-
-
-### Future of the commitment mapper
-
-We are developing another version of the commitment mapper that will require less trust towards Sismo.&#x20;
-
-Operations made inside the commitment mapper will be executed inside a SNARK and verified on-chain.
+Sismo is developing a new version of the Commitment Mapper that will require less trust. Operations within the Commitment Mapper will be executed inside a SNARK and verified onchain.

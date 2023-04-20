@@ -136,15 +136,15 @@ cd front
 yarn add @sismo-core/sismo-connect-react
 ```
 
-After importing, you will be able to use the Sismo Connect button in your app. By clicking on this button your user will be redirected to the [Data Vault App](https://docs.sismo.io/sismo-docs/technical-documentation/data-vault-app), to generate a proof for the specified group.
+After importing, you will be able to use the Sismo Connect button in your app. By clicking on this button, your user will be redirected to the [Data Vault App](https://docs.sismo.io/sismo-docs/technical-documentation/data-vault-app), to generate a proof for the specified group.
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-04-12 à 11.30.56.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sign in with Sismo Buttonx1,5.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
 
-To do so, you have to use the `SismoConnectButton` component, you can see below several examples one how to use the button and request different proofs from your user.
+To do so, you have to use the `SismoConnectButton` component, you can see below several examples on how to use the button and request different proofs from your user.
 
 {% tabs %}
 {% tab title="Claim / Vault Auth" %}
-Here is the request we make in the frontend for the rest of the tutorial. You can see a more complex request on the other tab.
+Here is the request we make in the front end for the rest of the tutorial. You can see a more complex request on the other tab.
 
 ```typescript
 import {

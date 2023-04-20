@@ -27,7 +27,7 @@ To integrate Sismo Connect into your front end, you can use the Sismo Connect bu
 
 After your user generates the proof, they will be automatically redirected back to your app with a response containing the generated proof.
 
-<figure><img src="../../.gitbook/assets/zkConnect.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sign in with Sismo Buttonx1,5.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
 
 To integrate it you have access through the package to the `SismoConnectButton` component.
 
