@@ -551,7 +551,7 @@ You are now able to use it on the Sismo Hub, here is the syntax:
 process.env.YOUR_DATA_PROVIDER_API_KEY
 ```
 
-> NB: To be able to use the API key in the Sismo Hub when your badge is deployed, please contact us in **🙋︱dev-support** ([Sismo Discord](https://discord.gg/sismo)) after creating your PR so we can add your access token to our infrastructure.
+> NB: To be able to use the API key in the Sismo Hub when your badge is deployed, please contact us in **#dev-support** ([Sismo Discord](https://discord.gg/sismo)) after creating your PR so we can add your access token to our infrastructure.
 
 ### See your work integrated on Sismo
 
@@ -613,7 +613,7 @@ For example, here is a valid pull request: [https://github.com/sismo-core/sismo-
 (The PR is closed because it's only used as an example for this tutorial)
 
 {% hint style="info" %}
-If your Data Provider requires an API key, contact the team on the [Sismo Discord](https://discord.gg/sismo) in **#🙋︱dev-support** in order for us to make your API key usable in the main Sismo Hub and on the Factory.
+If your Data Provider requires an API key, contact the team on the [Sismo Discord](https://discord.gg/sismo) in **#dev-support** in order for us to make your API key usable in the main Sismo Hub and on the Factory.
 {% endhint %}
 
 When your PR is merged, you'll be able to see your Data Provider implemented in the Sismo Factory
@@ -626,4 +626,4 @@ Finally, your Data Provider will be available in the Sismo Hub and anyone will b
 
 You want to contribute, but you don't have any ideas for Data Providers to create? Check out the current [Sismo Hub GitHub's issues](https://github.com/sismo-core/sismo-hub/issues), as you will find some interesting ideas for Data Providers to implement.
 
-If you have any questions or you need help regarding your Data Providers creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **#🙋︱dev-support**. We will be glad to answer you 🤗
+If you have any questions or you need help regarding your Data Providers creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **#dev-support**. We will be glad to answer you 🤗

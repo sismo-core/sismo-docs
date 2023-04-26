@@ -5,19 +5,19 @@
 In a `GroupGenerator`, users can query data. We have developed `dataProviders` to facilitate querying. We currently support the following `dataProviders`:
 
 * `AlchemyProvider`: allows retrieving all holders of a specific NFT (ERC721 and ERC1155) on Ethereum mainnet
-* `AnkrProvider`:  allows all holders of a specific token (ERC20 and ERC721) on specific network
+* `AnkrProvider`: allows all holders of a specific token (ERC20 and ERC721) on specific network
 * `AttestationStationProvider`: allows you to query any attestation on Optimism's AttestationStation using a [Subgraph](https://thegraph.com/hosted-service/subgraph/wslyvh/optimism-atst)
 * `BigQueryProvider`: allows launching arbitrary BigQuery queries on the Ethereum mainnet and Polygon dataset
-* `DegenScoreProvider`:  allows retrieving all holders of a beacon above a min score and with a specific trait
+* `DegenScoreProvider`: allows retrieving all holders of a beacon above a min score and with a specific trait
 * `GithubProvider`: allows you to quickly retrieve user information from GitHub (commiters, organization members, stargazers...)
-* `GitPoapProvider`:  allows retrieving all Ethereum Addresses which have received a GitPoap with a given eventId
-* `GraphQLProvider`:  allows launching arbitrary graphQL queries
-* `GuildProvider`:  allows easily retrieving data from Guild.xyz
+* `GitPoapProvider`: allows retrieving all Ethereum Addresses which have received a GitPoap with a given eventId
+* `GraphQLProvider`: allows launching arbitrary graphQL queries
+* `GuildProvider`: allows easily retrieving data from Guild.xyz
 * `HiveProvider`: allows you to easily retrieve data about Twitter influencers
 * `LensProvider`: allows retrieving social information on Lens Protocol (profiles, followers...)
 * `PoapSubgraphProvider`: allows retrieving all attendees of any events
-* `RestProvider`:  allows launching arbitrary REST queries
-* `SafeProvider`:  allows retrieving all owners of given Safe wallet on the Ethereum mainnet.
+* `RestProvider`: allows launching arbitrary REST queries
+* `SafeProvider`: allows retrieving all owners of given Safe wallet on the Ethereum mainnet.
 * `SnapshotProvider`: allows querying all voters for a proposal or for an entire space
 * `SubgraphHostedServiceProvider`: allows launching arbitrary queries on any subGraph
 * `TransposeProvider`: allows you to launch arbitrary SQL requests on the Ethereum mainnet with [Transpose](https://www.transpose.io/) (token holders, smart contracts interactions...)
@@ -109,11 +109,9 @@ And here is how to setup this:
 }
 ```
 
-
-
 Now, go to `group-generators/helpers/data-providers/index.ts` file:
 
-* Import your schema:&#x20;
+* Import your schema:
 
 ```typescript
 import <DATA_PROVIDER_NAME>InterfaceSchema from "./<DATA_PROVIDER_NAME>/interface-schema.json";
@@ -147,4 +145,4 @@ In addition, if you want to create a Data Provider that uses a GraphQL or a REST
 
 Want to contribute but don't have any ideas of Data Providers to add? Check out the Sismo GitHub's current issues [https://github.com/sismo-core/sismo-hub/issues](https://github.com/sismo-core/sismo-hub/issues) and our [Contributing guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
 
-If you have any questions or you need help regarding Data Providers, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **#🙋︱dev-support**. We will be glad to answer you 🤗
+If you have any questions or you need help regarding Data Providers, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **#dev-support**. We will be glad to answer you 🤗

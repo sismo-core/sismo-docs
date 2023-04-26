@@ -15,19 +15,12 @@ You will find more information on what are groups in this section:
 
 Generating groups and making them available for an attester require some infrastructures. We have developed a repository, the [sismo-hub](https://github.com/sismo-core/sismo-hub), to let anyone propose new groups, and make them available for the HydraS1Attester, with a simple PR.
 
-You will be able to:
+You will be able to create your own group of accounts (Ethereum addresses, Github accounts and Twitter accounts) and then use it in a Sismo Connect app.
 
-* Create your own group of accounts (Ethereum addresses, Github accounts and Twitter accounts)
-* Deploy your own metadata/image for an associated ZK badge
+**Here is a complete tutorial describing all the group creation process steps:**
 
-\=> Your ZK Badge will be available to mint on the Sismo UI.
-
-
-
-**Here is a complete tutorial describing all these steps:**
-
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="../tutorials/sismo-hub/create-your-group.md" %}
+[create-your-group.md](../tutorials/sismo-hub/create-your-group.md)
 {% endcontent-ref %}
 
 The following documentation aims to describe the code in a more theoretical way, we strongly recommend doing the tutorial to understand what the code below is for, especially for newcomers.
@@ -64,6 +57,8 @@ const generator: GroupGenerator = {
       {
         name: "my-simple-group",
         timestamp: context.timestamp,
+        description: "description of my-simple-group"
+        specs: "specs"
         data: {
           "0xF61CabBa1e6FC166A66bcA0fcaa83762EdB6D4Bd": 1,
           "0x8ab1760889f26cbbf33a75fd2cf1696bfccdc9e6": 1,

@@ -1,8 +1,9 @@
 # Badge Metadata
 
-Once you have created your group-generator, you need to specify the metadata for your Badge.
+All Badges metadata for the \`HydraS1AccountboundAttester\` can be declared in 2 different files:
 
-In the `bades-metadata/main/hydra-s1-accountbound.ts` file, all the badges metadata for the \`HydraS1AccountboundAttester\` are declared.&#x20;
+* `badges-metadata/main/hydra-s1-accountbound.ts` : for badges created through the Sismo Hub
+* `badges-metadata/main/factory/hydra-s1-accountbound-factory-badges.ts` : for badges created through the [Sismo Factory](https://factory.sismo.io/).
 
 ```typescript
 
@@ -18,19 +19,15 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
       name: "Ethereum Power User ZK Badge",
       description: "ZK Badge owned by the most active users on Ethereum",
       image: "ethereum_power_users.svg",
-      groupGeneratorName: "ethereum-power-users",
+      groupSnapshot: {
+        groupName: "ethereum-power-users",
+      },
       publicContacts: [
         {
           type: "twitter",
           contact: "@sismo_eth",
         },
       ],
-      eligibility: {
-        shortDescription:
-          "Be part of the top 0.1% most active users on Ethereum",
-        specification:
-          "Be part of the top 50k accounts that sent the most transactions (token transfers excluded) on Ethereum between 2015 and December 31st 2016, or be part of the top 50k accounts between 2015 and December 31st 2017, or be part of the top 50k accounts between 2015 and December 31st 2018, or be part of the top 50k accounts between 2015 and December 31st 2019, or be part of the top 50k accounts between 2015 and December 31st 2020, or be part of the top 50k accounts between 2015 and December 31st 2021",
-      },
       links: []
     },
   ],
@@ -38,7 +35,7 @@ export const hydraS1AccountboundBadges: BadgesCollection = {
 ```
 
 {% hint style="info" %}
-The svg file for your badge must be saved in the /static/badges folder
+Badge SVG files are saved in the `/static/badges` folder
 {% endhint %}
 
 This will automatically deploy the associated metadata for the badge&#x20;

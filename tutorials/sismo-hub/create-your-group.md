@@ -16,7 +16,7 @@ You can find all already existing Group Generators [**here**](https://github.com
 
 You can find the pull request associated with this tutorial [**here**](https://github.com/sismo-core/sismo-hub/pull/1484). It will give you a good feeling of what we are going to create in this tutorial! 👌
 
-### What are Groups?&#x20;
+### What are Groups?
 
 [Groups](../../technical-concepts/data-groups.md) are composed of Data Sources:
 
@@ -50,7 +50,7 @@ Here you can see an [example](https://app.sismo.io/?badge=proof-of-humanity-zk-b
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-07 à 16.18.19.png" alt=""><figcaption><p>Proof of Humanity ZK Badge</p></figcaption></figure>
 
-This Badge was generated from the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group. The Sismo tech stack ensures that only Proof of Humanity registered addresses can mint the Badge (on the address of their choice) without revealing the registered address.&#x20;
+This Badge was generated from the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group. The Sismo tech stack ensures that only Proof of Humanity registered addresses can mint the Badge (on the address of their choice) without revealing the registered address.
 
 #### [Sismo Connect App](../../readme/sismo-connect.md)
 
@@ -58,7 +58,7 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie.png" alt=""><figcaption><p>Sismo Connect App example</p></figcaption></figure>
 
-This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.&#x20;
+This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
 After this tutorial, you will be able to create a [ZK Badge](../../technical-documentation/sismo-api/badge/) or a [Sismo Connect App](../../readme/sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
 
@@ -191,7 +191,7 @@ export const groupGenerators: GroupGeneratorsLibrary = {
 };
 ```
 
-You can now generate the first version of the `tutorial-sismo-early-interactors` Group!&#x20;
+You can now generate the first version of the `tutorial-sismo-early-interactors` Group!
 
 ```bash
 # command to generate the Group
@@ -206,13 +206,11 @@ If the group generation went well, here is the log you should see on your termin
 
 As you can see we successfully generated the Group, and it contains the 3 elements (<mark style="color:red;">red box</mark>), this is the 3 accounts you defined in the `jsonListData0` variable.
 
-
-
 Now that you have an overview of the process of creating a Group, let's move on to the tutorial use case! 🧑‍💻
 
 As previously stated, we want to fetch all the collectors of the [first Sismo Lens post](https://lenster.xyz/posts/0x26e5-0x02) and all voters of one of the first [Sismo Proposals](https://snapshot.org/#/sismo.eth/proposal/0xe280e236c5afa533fc28472dd0ce14e5c3514a843c0563552c962226cda05c52).
 
-To fetch all the accounts we want, you will use the 2 different [Data Providers](../../technical-documentation/sismo-hub/data-providers.md):&#x20;
+To fetch all the accounts we want, you will use the 2 different [Data Providers](../../technical-documentation/sismo-hub/data-providers.md):
 
 * The [**Lens Data Provider**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/lens): it will allow you to fetch all the collectors of the [first Sismo Lens Post](https://lenster.xyz/posts/0x26e5-0x02). (1.)
 
@@ -292,8 +290,6 @@ export default generator;
 ```
 
 And... 🥁 It's already finished!
-
-
 
 As you may notice, the `data` field is where the Group of Data Sources is stored, and its type is a `FetchedData`:
 
@@ -384,10 +380,11 @@ As you can see on the screenshot, after the generation, the command returns us s
 
 You can retrieve the Group data at the path indicated in <mark style="color:yellow;">yellow</mark>, and if you want to see a sample of the Group you just generated:
 
-<pre class="language-sh"><code class="lang-sh"># in a terminal
+```sh
+# in a terminal
 # this will show you the first 10 line of the Group
-head -10 &#x3C;<a data-footnote-ref href="#user-content-fn-1">yellow-link</a>>
-</code></pre>
+head -10 <yellow-link>
+```
 
 Then the 2 others blue paths are API endpoints that allow you to get from the Group its data and metadata. To use the API:
 
@@ -413,7 +410,7 @@ Finally, you should see what is displayed on the screenshot in [#tutorial-use-ca
 
 Your Group Generator is now ready, so it's time to push it in prod!
 
-You don't have to store anything or launch anything on your side. You will  just have to add [a pull request to the Sismo Hub](https://github.com/sismo-core/sismo-hub/pulls) to see your Group Generator live! 😁
+You don't have to store anything or launch anything on your side. You will just have to add [a pull request to the Sismo Hub](https://github.com/sismo-core/sismo-hub/pulls) to see your Group Generator live! 😁
 
 First, you will have to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the [Sismo Hub repository](https://github.com/sismo-core/sismo-hub):
 
@@ -477,6 +474,4 @@ Now that you have your Group, you can build 2 different things from it:
 
 You want to contribute but you don't have any ideas for Groups to create? Check out the current [Sismo Hub GitHub's issues](https://github.com/sismo-core/sismo-hub/issues) for some interesting ideas.
 
-If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **#🙋︱dev-support**. We will be glad to answer you 🤗
-
-[^1]: 
+If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **#dev-support**. We will be glad to answer you 🤗
