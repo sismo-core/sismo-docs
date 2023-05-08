@@ -134,7 +134,7 @@ After importing, the first step is to create a `sismoConnectConfig` for your cli
 
 ```typescript
 // in your frontend
-import { AuthType, SismoConnect, SismoConnectClientConfig } from "@sismo-core/zk-connect-client";
+import { AuthType, SismoConnect, SismoConnectClientConfig } from "@sismo-core/sismo-connect-client";
 
 const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0x0ad03e347304dd6c19d9aa75db8659d9", // appId you registered
