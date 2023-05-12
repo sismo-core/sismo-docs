@@ -22,9 +22,9 @@ Using Sismo Connect, developers can implement any combination of the following f
 
 zkDrop is an onchain application that facilitates privacy-preserving airdrops via Sismo Connect. Users prove ownership of an eligible account and receive the airdrop on a separate account. No link between the two accounts is ever made.
 
-<figure><img src="../.gitbook/assets/zkDrop_Gnenerate_ZK Proof_Enabeled.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/zkDrop_Vault app_Gnenerate-ZK-Proof.jpg" alt=""><figcaption></figcaption></figure>
 
-zkDrop **authenticates** that users own a unique [Vault ID ](../knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md)(an anonymous identifier used to avoid double spends), **requests data** proving that users contributed to the Ethereum Merge and **requests a signature** from the recipient airdrop address to interact with an onchain smart contract.
+zkDrop **authenticates** that users own a unique [Vault ID ](../knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md)(an anonymous identifier used to avoid double spends), **requests data** from multiple sources and **requests a signature** from the recipient airdrop address to interact with an onchain smart contract.
 
 {% hint style="info" %}
 Learn how to integrate Sismo Connect into onchain applications [here](../build-with-sismo-connect/tutorials/onchain-tutorials/).
@@ -32,11 +32,11 @@ Learn how to integrate Sismo Connect into onchain applications [here](../build-w
 
 ### Offchain Example — zkSub
 
-zkSub is an example of an offchain application using Sismo Connect. Currently, it enables The Merge contributors to register their email addresses in a privacy-preserving manner—gaining access to exclusive tickets for upcoming web3 events. Sismo Connect acts as a ZK layer between a contributor’s email address and private account.
+zkSub is an example of an offchain application using Sismo Connect. It enables users to register their email addresses in a privacy-preserving manner. Sismo Connect acts as a ZK layer between a contributor’s email address and private account.
 
-<figure><img src="../.gitbook/assets/zkSub_Gnenerate_ZK Proof_Enabeled.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/zkSub_Vault app_Gnenerate-ZK-Proof.jpg" alt=""><figcaption></figcaption></figure>
 
-zkSub **authenticates** that users own a unique Vault ID, **requests data** proving that users contributed to the Ethereum Merge and **requests a signature** to interact with an offchain back-end database.
+zkSub **authenticates** that users own a unique Vault ID, **requests data** from multiple sources and **requests a signature** to interact with an offchain back-end database.
 
 {% hint style="info" %}
 Learn how to integrate Sismo Connect into offchain applications [here](../build-with-sismo-connect/tutorials/offchain-tutorials.md).
