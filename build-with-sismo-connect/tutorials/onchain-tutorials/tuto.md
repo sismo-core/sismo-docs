@@ -191,7 +191,7 @@ The signed message is not mandatory when you interact with your contracts but it
 
 To overcome this issue, we offer a way to embed a specific message in a proof. This way it can be thought as a signature since this proof could not be valid without checking successfully that the signed message is correct on-chain.&#x20;
 
-Here for example, we request the user to embed the address where they want to receive the airdrop in the proof. If a third party takes the proof, the call will be reverted with a signature mismatch message, effectively proteting your users from being front run.
+Here for example, we request the user to embed the address where they want to receive the airdrop in the proof. If a third party takes the proof, the call will be reverted with a signature mismatch message, effectively protecting your users from being front run.
 
 </details>
 

@@ -60,62 +60,48 @@ import "@sismo-core/sismo-connect-solidity/contracts/libs/SismoLib.sol";
 {% endtab %}
 {% endtabs %}
 
-Then:
+### Contract inheritance
 
-* **Inherit** your contract from the Sismo Connect Library
-* **Call** the SismoConnect constructor in the constructor of your contract with an `appId.` Here is a [tutorial](../../sismo-factory/create-a-sismo-connect-app.md) to get an `appId`.
-* **Create** the request objects:
-  * Create a Claim OR an Auth object in the constructor.
-  *   Create a signedMessage:
+**Inherit** your contract from the Sismo Connect Library.
 
-      * By hardcoding a signedMessage in your contract, you can ensure that the sismoConnectResponse has the same signed message that the one you hardcoded.
-
-      > **Example 1**: Define a specific message (like the one used fo Sign-in with Ethereum), so the lib can verify the user use the same message to generate the proof.
-
-      * You can also define it by passing it as an argument of a function of your contract. And verify it regarding the sismoConnectResponse one.
-
-      > **Example 2**: A user need to specify an address to receive an airdrop. He will send his address as parameter of the contract function, so the lib can verify that is the same address that the one used to generate the proof.
-
-This will then allow you to check if the proof the user wants to check corresponds to the proof expected by the contract.
+**Call** the SismoConnect constructor in the constructor of your contract with an `appId.` Here is a [tutorial](../../sismo-factory/create-a-sismo-connect-app.md) to get an `appId`.
 
 ```solidity
 contract MyContract is SismoConnect { // inherits from Sismo Connect library
- // the Claim object we want to verify the SismoConnectResponse with
- ClaimRequest claim;
- 
- // you can also have an Auth
- // AuthRequest auth;
- 
- // Or a signedMessage
- // SignatureRequest signedMessage;
  
  // call SismoConnect constructor with your appId
- constructor(bytes16 appId, bytes16 groupId) SismoConnect(appId) {
-  // creation of the claim with a groupId
-  claim = buildClaim({groupId: groupId});
-  
-  // you can also pass in arguments other objects in order to create
-  // an Auth
-  // auth = buildAuth({authType: AuthType.VAULT});
-
-  // Or a signedMessage request
-  // signedMessage = buildSignature({message: message})
-}
-...
+ constructor(bytes16 appId) SismoConnect(appId) {}
+ 
 }
 ```
 
-Finally, use the `verify()` function to verify the proof stored in `sismoConnectResponse` with respect to the requests you built. For example, here we verify that the proof in the `sismoConnectResponse` is cryptographically valid for the `groupId` previously chosen in the constructor.
+### Verify proofs from your users
+
+You will then need to create some request objects to check that the proofs from your users are valid with respect to these requests.
+
+Finally, use the `verify()` function to verify the proof stored in `sismoConnectResponse` with respect to some requests. For example, here we verify that the proof in the `sismoConnectResponse` is cryptographically valid for a certain `ClaimRequest`, `AuthRequests` and `SignatureRequest`.&#x20;
 
 ```solidity
-function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {
-    // store the result of the verification
-    SismoConnectVerifiedResult memory sismoConnectVerifiedResult = 
-    // verify the proof with respect to the claim request
-    verify(sismoConnectResponse, claimRequest);
+function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {    
+    SismoConnectVerifiedResult memory result = verify({
+        responseBytes: response,
+        // we want users to prove that they own a Sismo Vault
+        // and that they are members of the group with the id 0x42c768bb8ae79e4c5c05d3b51a4ec74a
+        // we are recreating the auth and claim requests made in the frontend to be sure that 
+        // the proofs provided in the response are valid with respect to this auth request
+        auth: buildAuth({authType: AuthType.VAULT}),       
+        claim: buildClaim({groupId: 0x42c768bb8ae79e4c5c05d3b51a4ec74a},
+        // we also want to check if the signed message provided in the response is the signature of the user's address
+        signature:  buildSignature({message: abi.encode(msg.sender)})
+    });
+
+    // if the proofs and signed message are valid, we can take the userId from the verified result
+    // in this case the userId is the vaultId (since we used AuthType.VAULT in the auth request) 
+    // it is the anonymous identifier of a user's vault for a specific app 
+    // --> vaultId = hash(userVaultSecret, appId)
+    uint256 vaultId = SismoConnectHelper.getUserId(result, AuthType.VAULT);
     
-    // You can also pass the signedMessage as argument here (see Example 2)
-    // verify(sismoConnectResponse, claimRequest, signedMessage);
+    // do something with this vaultId for example
 }
 ```
 
@@ -139,22 +125,22 @@ function verify(
 
 The function can take these 5 arguments:
 
-* `responseBytes` _(required)_: The response sent back by the [Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md). It contains the appId, the namespace, the version and the proof corresponding to the Data requests.
+* `responseBytes` _(required)_: The response sent back by the [Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md). It contains the `appId`, the `namespace`, the `version` and the proofs corresponding to the requests made in the frontend.
 
-The function needs to verify that the proof is cryptographically valid but also that it has been well generated from the Data request specified in the frontend. To do this, we also need to setup the same requests in the contract:
+The function needs to verify that the proof is cryptographically valid but also that it has been well generated from the requests specified in the frontend. To do this, we also need to setup the same requests in the contract:
 
-* `claim`: The object that holds all the information needed to generate proof of group ownership.
-* `auth`: The object that holds all the information needed to generate proof of account membership.
+* `claim`: The object that holds all the information needed to request a proof of group ownership.
+* `auth`: The object that holds all the information needed to request a proof of account membership.
 * `signature`: It contains the message that the user should sign.
-* [`namespace`](broken-reference): The namespace of the application that the contract uses.
+* `namespace`: The namespace of the application that the contract uses.
 
-And it returns a [`SismoConnectVerifiedResult`](solidity.md#zkconnectverifiedresult).
+And it returns a `SismoConnectVerifiedResult`.
 
 ### `responseBytes` _(required)_
 
 The `responseBytes` is the encoded version of the `sismoConnectResponse`, the response that the frontend received from the Data Vault App.
 
-Once decoded here is the type of the `sismoConnectResponse`:
+Once decoded here is the type of the `SismoConnectResponse`:
 
 ```solidity
 struct SismoConnectResponse {
@@ -326,9 +312,9 @@ signature: buildSignature({message: message})
 
 By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the sismoConnect flow in different parts of your application. You can see an example of two different namespaces used at the end of the [sismoConnect server documentation](server.md).
 
-### SismoConnectVerifiedResult
+### `SismoConnectVerifiedResult`
 
-The `sismoConnectVerifiedResult` is the object returned by the `verify()` function if the proof verification passed. It contains all the verifications processed, that is:
+The `SismoConnectVerifiedResult` is the object returned by the `verify()` function if the proofs are valid. It contains all the verifications processed, that is:
 
 * The claim: `verifiedClaims`
 * The auth: `verifiedAuths`
@@ -347,8 +333,9 @@ struct SismoConnectVerifiedResult {
 struct VerifiedAuth {
   AuthType authType;
   bool isAnon; // false
-  // Contains the account id of the user regarding the requested auth
-  // May contain a vaultId, a githubId or a twitterId
+  // Contains an id regarding the requested auth 
+  // that can be used to identify the user
+  // It may be a vaultId, a githubId or a twitterId
   uint256 userId;
   bytes extraData;
   bytes proofData;

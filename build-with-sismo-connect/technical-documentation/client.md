@@ -25,13 +25,13 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 #### Configuration
 
-The first step for integrating Sismo Connect in your frontend is to create a `SismoConnectConfig`. This config will require an `appId` and can be customized with [optional fields.](client.md#sismoconnectclientconfig) You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId.
+The first step for integrating Sismo Connect in your frontend is to create a `SismoConnectConfig`. This config will require an `appId` and can be customized with [optional fields.](client.md#sismoconnectclientconfig) You can go to the [Sismo Factory](../../sismo-factory/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId`.
 
 ```typescript
 import { SismoConnect, SismoConnectClientConfig } from "@sismo-core/sismo-connect-client";
 
 const config: SismoConnectClientConfig = {
-  // you will need to register an appId in the Factory
+  // you will need to get an appId from the Factory
   appId: "0x8f347ca31790557391cec39b06f02dc2", 
 }
 
@@ -39,43 +39,60 @@ const config: SismoConnectClientConfig = {
 const sismoConnect = SismoConnect(config);
 ```
 
-#### Request proofs from your users for a Claim
+#### Request proofs of group membership from your users
 
-Request proofs from your users by creating a `ClaimRequest` and calling the `request` function of the sismoConnect client. Only the `groupId` in the `ClaimRequest` is mandatory.
+Request proofs of group membership from your users by creating a `ClaimRequest` and calling the `request` function of the Sismo Connect client. Only the `groupId` in the `ClaimRequest` is mandatory.
 
 ```typescript
 import { ClaimRequest } from "@sismo-core/sismo-connect-client";
 
-const CLAIM: ClaimRequest = { 
+const claim: ClaimRequest = { 
     // ID of the group the user should be a member of
     groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
 };
 
-// The `request` function sends your user to the Sismo Vault App to generate the proof.
+// The `request` function sends your user to the Sismo Vault App 
+// to generate the proof of group membership
 // After the proof generation, the user is redirected with it to your app
-sismoConnect.request({ claims: [CLAIM] });
+sismoConnect.request({ claim: claim });
+
 //OR
-sismoConnect.request({ claim: CLAIM });
+// with multiple claims
+const secondClaim: ClaimRequest = { groupId: "0xe9ed316946d3d98dfcd829a53ec9822e" };
+sismoConnect.request({ claims: [claim, secondClaim] });
 ```
 
-#### Request proofs from your users for an Auth
+#### Request proofs of account ownership from your users
 
-Request proofs from your users by creating a `AuthRequest` and calling the `request` function of the sismoConnect client. Only the `authType` in the `ClaimRequest` is mandatory.
+Request proofs of account ownership from your users by creating an `AuthRequest` and calling the `request` function of the sismoConnect client. Only the `authType` in the `ClaimRequest` is mandatory.&#x20;
+
+You can request proofs of:
+
+* **Vault** ownership (AuthType.**VAULT**)
+* **EVM account** ownership (AuthType.**EVM\_ACCOUNT**)
+* **Github account** ownership (AuthType.**GITHUB**)
+* **Twitter account** ownership (AuthType.**TWITTER**)
 
 <pre class="language-typescript"><code class="lang-typescript">import { AuthType, AuthRequest } from "@sismo-core/sismo-connect-client";
 
-<strong>const AUTH: AuthRequest = { 
+<strong>const auth: AuthRequest = { 
+</strong><strong>    // user should prove that they own a Sismo Vault
 </strong>    authType: AuthType.VAULT,
 };
+// The `request` function sends your user to the Sismo Vault App 
+// to generate the proof of account ownership
+// After the proof generation, the user is redirected with it to your app
+sismoConnect.request({ auth: auth });
 
-sismoConnect.request({ auths: [AUTH] });
 //OR
-sismoConnect.request({ auth: AUTH });
+// with multiple auths
+const secondAuth: AuthRequest = { authType: AuthType.TWITTER };
+sismoConnect.request({ auths: [auth, secondAuth] });
 </code></pre>
 
-#### Request proofs from your users for a SignedMessage
+#### Request a message signature from your users
 
-Request proofs from your users by creating a `SignatureRequest` and calling the `request` function of the Sismo Connect client.
+Request to embed a message in your users proof by creating a `SignatureRequest` and calling the `request` function of the Sismo Connect client. When you create a `SignatureRequest`, users will embed this message in their proofs, it is then possible to verify if this message is present in the proof provided to you when verifying in your smart contract or server.
 
 <pre class="language-typescript"><code class="lang-typescript">import { SignatureRequest } from "@sismo-core/sismo-connect-client";
 
@@ -106,7 +123,7 @@ const sismoConnectResponseBytes = sismoConnect.getResponseBytes();
 
 #### SismoConnectClientConfig
 
-The `SismoConnectClientConfig` allows you to fully customize your Sismo Connect integration. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional devMode field that allows developers to add their addresses and compute cryptographically valid proofs when redirected to the Sismo Developer Vault.
+The `SismoConnectClientConfig` allows you to fully customize your Sismo Connect integration. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional `devMode` field that allows developers to add their addresses and compute cryptographically valid proofs when redirected to the Sismo Developer Vault.
 
 ```typescript
 export type SismoConnectClientConfig = {

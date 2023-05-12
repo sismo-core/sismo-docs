@@ -46,30 +46,36 @@ The ClaimRequest and the AuthRequest will be used to verify that the proof is va
 
 <pre class="language-typescript"><code class="lang-typescript"><strong>import { ClaimRequest, AuthRequest, AuthType } from "@sismo-core/sismo-connect-server";
 </strong>
-const CLAIM: ClaimRequest = { groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"};
-const AUTH: AuthRequest = { authType: AuthType.VAULT };
+const claim: ClaimRequest = { groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"};
+const vaultAuth: AuthRequest = { authType: AuthType.VAULT };
+const twitterAuth : AuthRequest = { authType: AuthType.TWITTER };
 </code></pre>
 
 #### Verify proofs from your users
 
-Proofs need to be sent to your backend with a SismoConnectResponse. The verify function takes as inputs a SismoConnectResponse, a ClaimRequest, an AuthRequest and verifies that the proof is cryptographically valid with respect to these requests.
+Proofs need to be sent to your backend with a `SismoConnectResponse`. The `verify` function takes as inputs a `SismoConnectResponse`, a `ClaimRequest`, an `AuthRequest` and verifies that the proof is cryptographically valid with respect to these requests.
 
 ```typescript
 import { SismoConnectVerifiedResult, AuthType } from "@sismo-core/sismo-connect-server";
 
-// verifies the proofs contained in the sismoConnectResponse 
-// with respect to the group(s) in the claim(s)
-const result: SismoConnectVerifiedResult = await sismoConnect.verify(
-  sismoConnectResponse,
-  {
-    claims: [CLAIM],
-    auths: [AUTH],
-  }
-);
+async function verifyResponse(sismoConnectResponse: SismoConnectResponse) {
+  // verifies the proofs contained in the sismoConnectResponse
+  // with respect to the group(s) in the claim(s)
+  // and the different auths for example
+  // i.e. user prove they own a Vault, a Twitter account
+  // and they are member of the group with id "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
+  const result: SismoConnectVerifiedResult = await sismoConnect.verify(
+    sismoConnectResponse,
+    {
+      claims: [claim],
+      auths: [vaultAuth, twitterAuth],
+    }
+  )
 
-// vaultId = hash(userVaultSecret, appId). 
-// the vaultId is an app-specific, anonymous identifier of a vault
-const vaultId = result.getUserId(AuthType.VAULT);
+  // vaultId = hash(userVaultSecret, appId).
+  // the vaultId is an app-specific, anonymous identifier of a vault
+  const vaultId = result.getUserId(AuthType.VAULT)
+}
 ```
 
 ## Documentation
