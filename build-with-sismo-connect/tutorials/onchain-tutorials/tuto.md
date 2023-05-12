@@ -119,20 +119,21 @@ In order to use Sismo Connect in your application, you will first need to create
 {% endhint %}
 
 ```typescript
-// you are in: front/src/claim-airdrop.tsx
+// you are in: front/src/pages/claim-airdrop.tsx
 
 import {
-  SismoConnectButton, // the react button displayed above
+  SismoConnectButton, // the Sismo Connect React button displayed below
   SismoConnectClientConfig, // the client config with your appId
   AuthType, // the authType enum, we will choose 'VAULT' in this tutorial
 } from "@sismo-core/sismo-connect-react";
 
+// you can create a new Sismo Connect app at https://factory.sismo.io
+// The SismoConnectClientConfig is a configuration needed to connect to Sismo Connect and requests data from your users.
+// You can find more information about the configuration here: https://docs.sismo.io/build-with-sismo-connect/technical-documentation/sismo-connect-react
+
 export const sismoConnectConfig: SismoConnectClientConfig = {
-  // you can create a new Sismo Connect app at https://factory.sismo.io
   appId: "0xf4977993e52606cfd67b7a1cde717069",
   devMode: {
-    // enable or disable dev mode here to use the development vault when developing
-    // you need to remove the devMode when deploying in production
     enabled: true,
   },
 };
@@ -154,7 +155,7 @@ The configuration is now helpful to setup properly our Sismo Connect button. You
 
 ```typescript
 
-// you are still in: front/src/claim-airdrop.tsx
+// you are still in: front/src/pages/claim-airdrop.tsx
  
 <SismoConnectButton
  // the client config created
@@ -295,10 +296,10 @@ Well, now that you have all this steps in mind, let's improve this airdrop contr
 
 To gate our airdrop contract to Gitcoin Passport holders, we simply need to ask for a proof of Gitcoin Passport group membership from our users. This can be done by taking the `groupId` of the Gitcoin Passport Holders group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders) and create a **claim request** from it.
 
-The groupId of the Gitcoin Passport Holders group is `0x1cde61966decb8600dfd0749bd371f12`. Let's add our claim request in the React button:
+The `groupId` of the Gitcoin Passport Holders group is `0x1cde61966decb8600dfd0749bd371f12`. Let's add our claim request in the React button:
 
 ```typescript
-// you are in: front/src/claim-airdrop.tsx
+// you are in: front/src/pages/claim-airdrop.tsx
 
 export default function ClaimAirdrop() {
 // add the groupId
@@ -362,7 +363,7 @@ Don't forget to remove the `devMode` in production.
 {% endhint %}
 
 ```typescript
-// you are in: front/src/claim-airdrop.tsx
+// you are in: front/src/pages/claim-airdrop.tsx
 
 export const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0xf4977993e52606cfd67b7a1cde717069",
@@ -417,7 +418,7 @@ If so:
 See [FAQ](../../faq.md) for more informations.
 {% endhint %}
 
-Congrats again! You have successfully gated your application for holders of Gitcoin Passport. You also prevent double spendings thanks to the vaultId used as the tokenId of the minted NFT.&#x20;
+Congrats again! You have successfully gated your application for holders of Gitcoin Passport. You also prevent double spendings thanks to the `vaultId` used as the `tokenId` of the minted NFT.&#x20;
 
 Let's see how to ultimately combine data aggregation with privacy now by gating the airdrop to Gitcoin Passport holders holding at least one Nouns Dao NFT.
 
@@ -428,11 +429,11 @@ To do this, we will simply do the same logic as before by creating an additional
 You can add the claim request in the frontend:
 
 ```typescript
-// you are in: front/src/claim-airdrop.tsx
+// you are in: front/src/pages/claim-airdrop.tsx
 
 export default function ClaimAirdrop() {
 // add the groupId
-const NOUNS_DAO_HOLDERS = "0x311ece950f9ec55757eb95f3182ae5e2";
+const NOUNS_DAO_HOLDERS_GROUP_ID = "0x311ece950f9ec55757eb95f3182ae5e2";
 
 ...
  
@@ -446,8 +447,8 @@ const NOUNS_DAO_HOLDERS = "0x311ece950f9ec55757eb95f3182ae5e2";
   // They should hold a Nouns DAO NFT
   // but also the Gitcoin Passport as before
   claims={[
-   { groupId: GITCOIN_PASSPORT_HOLDERS },
-   { groupId: NOUNS_DAO_HOLDERS } // <-- pass the groupId
+   { groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID },
+   { groupId: NOUNS_DAO_HOLDERS_GROUP_ID } // <-- pass the groupId
   ]}
   signature={{ message: signMessage(account) }}
   onResponseBytes={(responseBytes: string) => verify(responseBytes)}
@@ -465,7 +466,7 @@ Add the claim request in the smart contract:&#x20;
 contract Airdrop is ERC721, SismoConnect {
     ...
     // add your groupId as a constant
-    bytes16 public constant NOUNS_DAO_HOLDERS = 0x311ece950f9ec55757eb95f3182ae5e2;
+    bytes16 public constant NOUNS_DAO_HOLDERS_GROUP_ID = 0x311ece950f9ec55757eb95f3182ae5e2;
         
     ...
         
@@ -477,8 +478,8 @@ contract Airdrop is ERC721, SismoConnect {
         // with respect to the Gitcoin Passport requirement
         // but also the Nouns DAO requirement
         ClaimRequest[] memory claims = new ClaimRequest[](2);
-        claims[0] = buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS});
-        claims[1] = buildClaim({groupId: NOUNS_DAO_HOLDERS}); // &#x3C;-- pass the groupId
+        claims[0] = buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID});
+        claims[1] = buildClaim({groupId: NOUNS_DAO_HOLDERS_GROUP_ID}); // &#x3C;-- pass the groupId
         
         // we create a request object that will be passed in the verify function
         // with the response
@@ -504,7 +505,7 @@ contract Airdrop is ERC721, SismoConnect {
 Once you have done that, you can update the devGroups in the client config. Here we take all the devGroups (that contains fake groups for Gitcoin Passport and Nouns Dao holders groups). Remember to not let such configuration in a production environment!
 
 ```typescript
-// you are in: front/src/claim-airdrop.tsx
+// you are in: front/src/pages/claim-airdrop.tsx
 
 export const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0xf4977993e52606cfd67b7a1cde717069",
