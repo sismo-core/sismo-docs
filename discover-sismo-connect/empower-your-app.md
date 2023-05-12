@@ -20,7 +20,7 @@ Using Sismo Connect, developers can implement any combination of the following f
 
 ### Onchain Example — zkDrop
 
-zkDrop is an onchain application that facilitates privacy-preserving airdrops via Sismo Connect. Users prove ownership of an eligible account and receive the airdrop on a separate account. No link between the two accounts is ever made.
+zkDrop is an onchain application that facilitates privacy-preserving airdrops via Sismo Connect. Users can prove eligibility for the airdrop using aggregated data from multiple unlinked accounts and receive the airdrop on a separate account. No link between the source accounts and the airdrop destination address is ever made.
 
 <figure><img src="../.gitbook/assets/zkDrop_Vault app_Gnenerate-ZK-Proof.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -32,7 +32,7 @@ Learn how to integrate Sismo Connect into onchain applications [here](../build-w
 
 ### Offchain Example — zkSub
 
-zkSub is an example of an offchain application using Sismo Connect. It enables users to register their email addresses in a privacy-preserving manner. Sismo Connect acts as a ZK layer between a contributor’s email address and private account.
+zkSub is an example of an offchain application using Sismo Connect. It enables users to register their email addresses for certain services in a privacy-preserving manner. Users can prove eligibility for the service using aggregated data derived from multiple sources without creating links between them. Sismo Connect acts as a ZK layer between a contributor’s email address and private account.
 
 <figure><img src="../.gitbook/assets/zkSub_Vault app_Gnenerate-ZK-Proof.jpg" alt=""><figcaption></figcaption></figure>
 

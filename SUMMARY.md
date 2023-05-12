@@ -8,7 +8,7 @@
 ## Discover Sismo Connect
 
 * [Empower Your App](discover-sismo-connect/empower-your-app.md)
-* [Sismo Connect in Action](discover-sismo-connect/sismo-connect-in-action.md)
+* [Spaces: Sismo Connect in Action](discover-sismo-connect/spaces-sismo-connect-in-action.md)
 
 ## Build with Sismo Connect
 
