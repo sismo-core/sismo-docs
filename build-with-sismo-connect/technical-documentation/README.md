@@ -31,6 +31,24 @@ Learn how to integrate Sismo Connect via these [tutorials](../tutorials/).&#x20;
 
 The unique identifier of your Sismo Connect application registered on the [Sismo Factory](../../sismo-factory/what-is-the-sismo-factory.md).
 
+### Claim
+
+A claim is requested through a claimRequest to the Data Vault in order to generate a group membership proof. It contains the group Id, the groupTimestamp, and the value you claim to have in the associated [Data Group](../../knowledge-base/resources/technical-concepts/data-groups.md).
+
+> Example: Prove that you are part of the Sismo Contributor Group with a minimum value of 2.
+
+### Auth
+
+An auth is requested through an authRequest to the [Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md) in order to generate a proof of account ownership. It can be ownership of an Ethereum address or a Twitter, or GitHub account.
+
+> Example: Prove that you own a Twitter account.
+
+### Signature
+
+The Signature will request to generate a proof that can't be verified without a specific signature associated with it.
+
+> Example: You are a DAO voting platform, and you want to get the vote of a user. To do so, the user will create a signature containing a message (his vote) that will be used to generate the proof. Then by verifying the proof, you are also verifying the authenticity of the signature and thus the vote.
+
 ### namespace
 
 By default set to “main”. You can optionally define a `namespace` on top of the `appId` to use the Sismo Connect flow in different parts of your application. This is useful if you do not want users to generate the same proof for different services in your application. For example, if your application is a DAO voting website, you may define a different `namespace` for every vote and use the `proofId` as a nullifier. Subsequently, users will be able to vote only once as each proof request with a distinct `namespace` generates a distinct `proofId` for the same user. Learn more about Proof Identifiers [**here**](../../knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md).
@@ -46,24 +64,6 @@ The unique identifier of the group of accounts users prove membership in to gene
 ### groupTimeStamp
 
 Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has an associated timestamp. By default, the selected group is the latest Group Snapshot generated. However, you are free to select a Group Snapshot with a timestamp other than the latest one.
-
-### Claim
-
-A claim is requested through a claimRequest to the Data Vault in order to generate a group membership proof. It contains the group Id, the groupTimestamp, and the value you claim to have in the associated [Data Group](../../knowledge-base/resources/technical-concepts/data-groups.md).
-
-Example: Prove that you are part of the Sismo Contributor Group with a minimum value of 2.
-
-### Auth
-
-An auth is requested through an authRequest to the [Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md) in order to generate a proof of account ownership. It can be ownership of an Ethereum address or a Twitter, or GitHub account.
-
-Example: Prove that you own a Twitter account.
-
-### Signature
-
-The Signature will request to generate a proof that can't be verified without a specific signature associated with it.
-
-Example: You are a DAO voting platform, and you want to get the vote of a user. To do so, the user will create a signature containing a message (his vote) that will be used to generate the proof. Then by verifying the proof, you are also verifying the authenticity of the signature and thus the vote.
 
 ### Vault Id and Proof Identifiers
 

@@ -4,7 +4,7 @@ description: Request proofs from your user
 
 # Sismo Connect Client: Request
 
-The [Sismo Connect](../../discover-sismo-connect/empower-your-app.md) Client is a frontend package built on top of the [Sismo Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md) app (the prover) to easily request proofs from your users.&#x20;
+The [Sismo Connect](../../discover-sismo-connect/empower-your-app.md) Client is a frontend package built on top of the [Sismo Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md) app (the prover) to easily request Proofs ([Claims](./#claim), [Auths](./#auth)) or [Message Signatures](./#signature) from your users.
 
 ## Installation
 
@@ -41,14 +41,16 @@ const sismoConnect = SismoConnect(config);
 
 #### Request proofs of group membership from your users
 
-Request proofs of group membership from your users by creating a `ClaimRequest` and calling the `request` function of the Sismo Connect client. Only the `groupId` in the `ClaimRequest` is mandatory.
+Request proofs of group membership from your users by creating a `ClaimRequest` and calling the `request` function of the Sismo Connect Client. Only the `groupId` in the `ClaimRequest` is mandatory.
 
 ```typescript
 import { ClaimRequest } from "@sismo-core/sismo-connect-client";
 
+// claim 1: proof of owning a ENS
 const claim: ClaimRequest = { 
     // ID of the group the user should be a member of
-    groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+    // here: ens-domains-holders
+    groupId: "0x8b64c959a715c6b10aa8372100071ca7",
 };
 
 // The `request` function sends your user to the Sismo Vault App 
@@ -56,9 +58,10 @@ const claim: ClaimRequest = {
 // After the proof generation, the user is redirected with it to your app
 sismoConnect.request({ claim: claim });
 
-//OR
+// --- OR ---
+
 // with multiple claims
-const secondClaim: ClaimRequest = { groupId: "0xe9ed316946d3d98dfcd829a53ec9822e" };
+const secondClaim: ClaimRequest = { groupId: "0x1cde61966decb8600dfd0749bd371f12" };
 sismoConnect.request({ claims: [claim, secondClaim] });
 ```
 
