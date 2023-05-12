@@ -46,7 +46,7 @@ Request proofs of group membership from your users by creating a `ClaimRequest` 
 ```typescript
 import { ClaimRequest } from "@sismo-core/sismo-connect-client";
 
-// claim 1: proof of owning a ENS
+// claim 1: request a proof of ENS handle ownership
 const claim: ClaimRequest = { 
     // ID of the group the user should be a member of
     // here: ens-domains-holders
@@ -57,21 +57,25 @@ const claim: ClaimRequest = {
 // to generate the proof of group membership
 // After the proof generation, the user is redirected with it to your app
 sismoConnect.request({ claim: claim });
+```
 
-// --- OR ---
+You can ask users to **aggregate their data** by proving that they are human AND that they have an ENS. To do this, we can include several claims in our request:
 
-// with multiple claims
-const secondClaim: ClaimRequest = { groupId: "0x1cde61966decb8600dfd0749bd371f12" };
+```typescript
+// claim 2: request a proof of PoH ownership
+const secondClaim: ClaimRequest = { groupId: "0x682544d549b8a461d7fe3e589846bb7b" };
+
+// Request of multiple claims:
 sismoConnect.request({ claims: [claim, secondClaim] });
 ```
 
 #### Request proofs of account ownership from your users
 
-Request proofs of account ownership from your users by creating an `AuthRequest` and calling the `request` function of the sismoConnect client. Only the `authType` in the `ClaimRequest` is mandatory.&#x20;
+Request proofs of account ownership from your users by creating an `AuthRequest` and calling the `request` function of the Sismo Connect Client. Only the `authType` in the `ClaimRequest` is mandatory.&#x20;
 
 You can request proofs of:
 
-* **Vault** ownership (AuthType.**VAULT**)
+* **Data Vault** ownership (AuthType.**VAULT**)
 * **EVM account** ownership (AuthType.**EVM\_ACCOUNT**)
 * **Github account** ownership (AuthType.**GITHUB**)
 * **Twitter account** ownership (AuthType.**TWITTER**)
@@ -79,16 +83,16 @@ You can request proofs of:
 <pre class="language-typescript"><code class="lang-typescript">import { AuthType, AuthRequest } from "@sismo-core/sismo-connect-client";
 
 <strong>const auth: AuthRequest = { 
-</strong><strong>    // user should prove that they own a Sismo Vault
-</strong>    authType: AuthType.VAULT,
+</strong><strong>    // user should prove that they own a EVM account
+</strong>    authType: AuthType.EVM_ACCOUNT,
 };
 // The `request` function sends your user to the Sismo Vault App 
 // to generate the proof of account ownership
 // After the proof generation, the user is redirected with it to your app
 sismoConnect.request({ auth: auth });
 
-//OR
-// with multiple auths
+// Here again you can request users to have an EVM AND a Twitter twitter account
+// By making a request of multiple Auths:
 const secondAuth: AuthRequest = { authType: AuthType.TWITTER };
 sismoConnect.request({ auths: [auth, secondAuth] });
 </code></pre>
@@ -124,7 +128,7 @@ const sismoConnectResponseBytes = sismoConnect.getResponseBytes();
 
 ## Documentation
 
-#### SismoConnectClientConfig
+#### `SismoConnectClientConfig`
 
 The `SismoConnectClientConfig` allows you to fully customize your Sismo Connect integration. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional `devMode` field that allows developers to add their addresses and compute cryptographically valid proofs when redirected to the Sismo Developer Vault.
 
@@ -234,6 +238,10 @@ const CLAIM: ClaimRequest = {
 sismoConnect.request({ claim: CLAIM });
 ```
 
+{% hint style="info" %}
+More info on groups and values [here](../../knowledge-base/resources/technical-concepts/data-groups.md#verifiable-claims-and-data-groups)
+{% endhint %}
+
 #### `AuthRequest`
 
 The AuthRequest object holds all the information needed to generate proof of account ownership.
@@ -292,13 +300,14 @@ sismoConnect.request({ signature: SIGNATURE });
 function request({ 
     claims, 
     auths, 
-    //OR
+    // OR
     claim,
     auth,
     
     signature, 
     namespace, 
-    callbackPath 
+    callbackUrl,
+    callbackPath, // deprecated
 }: RequestParams): void
 ```
 
@@ -308,35 +317,64 @@ The `request` function redirects your user to the Sismo Vault App to generate th
 export type RequestParams = {
   claims?: ClaimRequest[];
   auths?: AuthRequest[];
-  //If you have only one claim or one auth
+  // If you have only one claim or one auth
   claim?: ClaimRequest;
   auth?: AuthRequest;
   
   signature?: SignatureRequest;
   namespace?: string;
-  // the path to redirect your users with proofs
+  // the url to redirect your users with proofs
   // default: empty
-  // example: /custom-callback-path
-  callbackPath?: string;
+  // example: /custom-callback-url
+  callbackUrl?: string;
+  callbackPath?: string; // deprecated
 };
 ```
 
-Here is an example of a customized usage of the request function. You want that your users generate a proof in their Sismo Data Vault that proves you they are a member of the group with id `0x42c768bb8ae79e4c5c05d3b51a4ec74a` with at least of value of 2 in it. This proof should be made for the service named "my-private-poll-1" and when generated you want them to be redirected to the path "https://poll.xyz/call-back-path/my-private-poll-1".
+**Here is an example of a customized usage of the request function:**
 
-<pre class="language-typescript"><code class="lang-typescript">import { ClaimRequest, ClaimType } from "@sismo-core/sismo-connect-client";
+You want to create an NFT Airdrop for specific users.
 
-<strong>const CLAIM: ClaimRequest = { 
-</strong>    groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
+So you want the users to prove that they are **Sismo Contributors with a level 2**. But in order to make your airdrop more Sybil resistant you will require them to also have a **Gitcoin Passport** and a **Twitter account**.&#x20;
+
+This proof should be made for the service named **"sismo-edition"** and when generated you want them to be redirected to the claim page of your website at the path **"https://my-nft-drop.xyz/sismo-edition/claim-nft"**.
+
+You will then use this proof to drop an NFT to these users.
+
+```typescript
+import { 
+  AuthRequest, 
+  AuthType, 
+  ClaimRequest, 
+  ClaimType,
+  SismoConnect
+} from "@sismo-core/sismo-connect-client";
+
+const sismoConnect = SismoConnect({
+  appId: '0x8f347ca31790557391cec39b06f02dc2',
+})
+
+const sismoContributorClaim: ClaimRequest = { 
+    groupId: "0xe9ed316946d3d98dfcd829a53ec9822e",
     value: 2, 
     claimType: ClaimType.GTE,
 };
 
+const gitcoinPassportClaim: ClaimRequest = { 
+    groupId: "0x1cde61966decb8600dfd0749bd371f12",
+};
+
+const twitterAuth: AuthRequest = { 
+    authType: AuthType.TWITTER,
+};
+
 sismoConnect.request({
-    claim: CLAIM,
-    namespace: "my-private-poll-1",
-    callbackPath: "/call-back-path/my-private-poll-1"
+    claims: [sismoContributorClaim, gitcoinPassportClaim],
+    auth: twitterAuth,
+    namespace: "sismo-edition",
+    callbackUrl: "https://my-nft-drop.xyz/sismo-edition/claim-nft"
 })
-</code></pre>
+```
 
 {% hint style="info" %}
 Namespace is highly interesting when you want your users to generate proofs for each service in an app. You can see more information about how to use it in the [Sismo Connect Server package documentation](server.md).
