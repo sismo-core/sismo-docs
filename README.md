@@ -10,6 +10,8 @@ The rapidly expanding ecosystem of applications on both web2 and web3 has made a
 
 Though web3 empowers individuals to control their data, there is a pressing need for tools that enable users to harness their personal data without compromising privacy. By bridging the gap between personal data and applications, Sismo empowers users to take control of their digital identities and get the most out of their data.
 
+<figure><img src=".gitbook/assets/Sismo_Com_Protocol1.png" alt=""><figcaption></figcaption></figure>
+
 ## Prove & Verify
 
 On a fundamental level, the Sismo communication protocol allows users to participate in [proving schemes](knowledge-base/resources/technical-concepts/proving-schemes/) that establish ownership of personal data. A proving scheme is a cryptographic approach in zero-knowledge technology that lets one party establish a statement's truth without revealing _how_ it is true. This is achieved through communication between provers, that generate proofs in a user’s [Data Vault](what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md) (an aggregator of personal data), and verifiers, that validate these proofs when integrated into applications via Sismo Connect.
@@ -17,6 +19,8 @@ On a fundamental level, the Sismo communication protocol allows users to partici
 Provers enable individuals to generate zero-knowledge proofs (ZKPs) that attest ownership of valuable personal data. After receiving a request, a user generates a proof to make a claim about specific pieces of data that they own—which can be subsequently verified. These valuable pieces of atomic data, which can be revealed without exposing the associated source of truth, are characterized as [Data Gems](what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md#data-gems-and-data-groups).
 
 In turn, verifiers accept proofs from users and ensure their validity—whether in onchain smart contracts or offchain databases. As a result, users can selectively disclose their data while applications access the information they need to provide personalized experiences without compromising user privacy.
+
+<figure><img src=".gitbook/assets/Sismo_Com_Protocol2.png" alt=""><figcaption></figcaption></figure>
 
 ## Sismo Connect: The Crypto-Native SSO
 
