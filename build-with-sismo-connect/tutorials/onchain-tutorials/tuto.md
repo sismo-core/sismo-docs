@@ -165,7 +165,7 @@ The configuration is now helpful to setup properly our Sismo Connect button. You
  auths={[{ authType: AuthType.VAULT }]}
  // we ask the user to sign a message
  // it will be used onchain to prevent front running
- signature={{ message: signMessage(account) }}
+ signature={{ message: signMessage(address) }}
  // onResponseBytes calls a 'setResponse' function 
  // with the responseBytes returned by the Sismo Vault
  onResponseBytes={(responseBytes: string) => setResponse(responseBytes)}
@@ -316,8 +316,8 @@ const GITCOIN_PASSPORT_HOLDERS_GROUP_ID = "0x1cde61966decb8600dfd0749bd371f12";
   // request a proof of group membership from your users
   // They should hold a Gitcoin Passport
   claims={[{ groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID }]} // <-- pass the groupId
-  signature={{ message: signMessage(account) }}
-  onResponseBytes={(responseBytes: string) => verify(responseBytes)}
+  signature={{ message: signMessage(address) }}
+  onResponseBytes={(responseBytes: string) => setResponse(responseBytes)}
   text={"Claim with Sismo"}
  />
  
@@ -450,8 +450,8 @@ const NOUNS_DAO_HOLDERS_GROUP_ID = "0x311ece950f9ec55757eb95f3182ae5e2";
    { groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID },
    { groupId: NOUNS_DAO_HOLDERS_GROUP_ID } // <-- pass the groupId
   ]}
-  signature={{ message: signMessage(account) }}
-  onResponseBytes={(responseBytes: string) => verify(responseBytes)}
+  signature={{ message: signMessage(address) }}
+  onResponseBytes={(responseBytes: string) => setResponse(responseBytes)}
   text={"Claim with Sismo"}
  />
  
