@@ -101,6 +101,10 @@ Once all required information has been entered, we can click '**Request to deplo
 * Add credit to our Badge and reserve our Badge's tokenID
 * Submit a pull request to deploy our Badge within 48 hours
 
+{% hint style="success" %}
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 30 minutes). We are committed during hackathon to quickly review any new Group pull request.
+{% endhint %}
+
 On this page, we are reminded of the information we have thus far. As our Badge has still not been funded, it can be considered a draft. It can exist in this state for a week before expiring if it is not funded.&#x20;
 
 {% hint style="info" %}
@@ -138,6 +142,10 @@ You can see all live pull requests here: [https://github.com/sismo-core/sismo-hu
 ## Verification Process
 
 Once we submitted our pull request, it will be checked by the Sismo core team within 48 hours.&#x20;
+
+{% hint style="success" %}
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 30 minutes). We are committed during hackathon to quickly review any new Group pull request.
+{% endhint %}
 
 To get verified, our Badge must:
 

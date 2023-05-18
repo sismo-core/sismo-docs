@@ -16,6 +16,10 @@ You can find all already existing Group Generators [**here**](https://github.com
 
 You can find the pull request associated with this tutorial [**here**](https://github.com/sismo-core/sismo-hub/pull/1484). It will give you a good feeling of what we are going to create in this tutorial! 👌
 
+{% hint style="success" %}
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).&#x20;
+{% endhint %}
+
 ### What are Groups?
 
 [Groups](../../technical-concepts/data-groups.md) are composed of Data Sources:
@@ -459,6 +463,10 @@ When your PR is merged your Group generator will be registered in the Sismo Hub,
 
 Finally, your Group will be available in the Sismo Hub and anyone will be able to use it to create **Badges** or **Sismo Connect apps**, great job! 💪
 
+{% hint style="success" %}
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).&#x20;
+{% endhint %}
+
 ### Use your Group
 
 Now that you have your Group, you can build 2 different things from it:
@@ -469,7 +477,7 @@ Now that you have your Group, you can build 2 different things from it:
 * [**Sismo Connect App**](../../../../discover-sismo-connect/empower-your-app.md):
   * using the [Factory](https://factory.sismo.io/apps-explorer)
   * creating by yourself using the [sismo-connect-packages](https://github.com/sismo-core/sismo-connect-packages/tree/main).
-    * You can find [**here**](../../../../build-with-sismo-connect/run-example-apps.md) sample projects to run on your computer.
+    * You can find [**here**](../../../../build-with-sismo-connect/run-example-apps/) sample projects to run on your computer.
     * And [**here**](../../../../build-with-sismo-connect/tutorials/) tutorials that shows how to build Sismo Connect apps.
 
 ### Contribute to the Sismo Hub

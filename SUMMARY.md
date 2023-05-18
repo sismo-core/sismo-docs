@@ -12,7 +12,9 @@
 ## Build with Sismo Connect
 
 * [Overview](build-with-sismo-connect/overview.md)
-* [Run Example Apps](build-with-sismo-connect/run-example-apps.md)
+* [Run Example Apps](build-with-sismo-connect/run-example-apps/README.md)
+  * [Onchain Sample Project](build-with-sismo-connect/run-example-apps/onchain-sample-project.md)
+  * [Offchain Sample Project](build-with-sismo-connect/run-example-apps/offchain-sample-project.md)
 * [Technical Documentation](build-with-sismo-connect/technical-documentation/README.md)
   * [Sismo Connect Client: Request](build-with-sismo-connect/technical-documentation/client.md)
   * [Sismo Connect React: Request](build-with-sismo-connect/technical-documentation/react.md)
@@ -21,6 +23,7 @@
 * [Tutorials](build-with-sismo-connect/tutorials/README.md)
   * [Onchain Tutorials](build-with-sismo-connect/tutorials/onchain-tutorials/README.md)
     * [Build a Gated Airdrop](build-with-sismo-connect/tutorials/onchain-tutorials/tuto.md)
+    * [Deploy your contracts](build-with-sismo-connect/tutorials/onchain-tutorials/deploy-your-contracts.md)
   * [Offchain Tutorials](build-with-sismo-connect/tutorials/offchain-tutorials.md)
 * [FAQ](build-with-sismo-connect/faq.md)
 

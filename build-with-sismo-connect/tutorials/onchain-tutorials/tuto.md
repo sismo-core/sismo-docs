@@ -524,6 +524,8 @@ And it is our final congrats! 🎉
 
 If we recap, you basically managed to go from a simple request of Vault ownership to a complex multi request of Vault ownership + group memberships. All these requests respect the user privacy since no ethereum address is ever shared during the flow and all of this is made possible thanks to the data aggregation that offers the Sismo Vault.&#x20;
 
+To see how to deploy your contracts, you can go to the [**associated tutorial**](deploy-your-contracts.md).
+
 ## Next steps
 
 If you have any questions about integrating sismoConnect, don’t hesitate to reach out. The team will be happy to answer any questions you may have. Any feedback is also welcomed!

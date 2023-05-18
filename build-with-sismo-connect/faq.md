@@ -8,7 +8,7 @@ description: Frequently asked questions.
 
 <summary>What to do if I am stuck with pending transactions on a fork network?</summary>
 
-You can end up in this situation if you are following the [onchain tutorial](tutorials/onchain-tutorials/tuto.md) or the [onchain sample project](run-example-apps.md). If it is the case, you are unable to make any transaction work on your local chain, and you surely view this type of message on your MetaMask:
+You can end up in this situation if you are following the [onchain tutorial](tutorials/onchain-tutorials/tuto.md) or the [onchain sample project](run-example-apps/). If it is the case, you are unable to make any transaction work on your local chain, and you surely view this type of message on your MetaMask:
 
 ![MetaMask connected to a locally forked Mumbai Testnet](<../.gitbook/assets/Capture d’écran 2023-05-12 à 01.10.06.png>)
 

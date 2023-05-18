@@ -6,10 +6,14 @@ description: Non-developer tutorial
 
 This tutorial will show you how to create a [Group](../knowledge-base/resources/technical-concepts/data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process, this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../knowledge-base/resources/sismo-badges/) or a [Sismo Connect app](../discover-sismo-connect/empower-your-app.md) 🙌
+At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process (usually under 1 hour), this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../knowledge-base/resources/sismo-badges/) or a [Sismo Connect app](../discover-sismo-connect/empower-your-app.md) 🙌
 
 {% hint style="info" %}
 If you are a developper and want to build your own a more customizable Data Group, go checkout this [tutorial](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-group.md), it will also explain you all the steps of the creation process.
+{% endhint %}
+
+{% hint style="success" %}
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it.
 {% endhint %}
 
 ## What are Groups?
@@ -180,6 +184,10 @@ We will have a total of **15750** **accounts** in our group (<mark style="color:
 
 After finalizing our list of Data Source, we can select how often this group is updated. For our Sismo Supporter Group, we select ‘Weekly’ from the drop-down menu. This means that users who become a Sismo Contributor level 3 or follow Sismo on Lens after our Group is created can still become eligible after the weekly update.
 
+{% hint style="success" %}
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton to ask for a custom group update.
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/Capture d’écran 2023-03-13 à 20.26.17.png" alt=""><figcaption><p>Update frequency</p></figcaption></figure>
 
 #### Description
@@ -206,6 +214,10 @@ We can see that now your Group request is in <mark style="background-color:blue;
 ### Verification Process
 
 Once we submitted our pull request, it will be checked by the Sismo core team within 48 hours.
+
+{% hint style="success" %}
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton to ask for help or for a custom group update. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 30 minutes). We are committed during hackathon to quickly review any new Group pull request.
+{% endhint %}
 
 To get verified, your Group must:
 

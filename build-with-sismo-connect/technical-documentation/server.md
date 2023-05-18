@@ -25,9 +25,11 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 ## Usage
 
-#### Configuration
+### Configuration
 
-The first step for integrating Sismo Connect in your backend is to create a `sismoConnectConfig`. This config will require an `appId` and can be customized with optional fields. You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId.
+The first step for integrating Sismo Connect in your backend is to create a `sismoConnectServerConfig`. This config will require an `appId` and can be customized with optional fields. You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId ([here is a tutorial](../../sismo-factory/create-a-sismo-connect-app.md)).
+
+This `config` is then used to create a `SismoConnect` instance that will be used to verify proofs.
 
 <pre class="language-typescript"><code class="lang-typescript"><strong>import { SismoConnect, SismoConnectServerConfig } from "@sismo-core/sismo-connect-server";
 </strong>
@@ -40,49 +42,48 @@ const config: SismoConnectServerConfig = {
 const sismoConnect = SismoConnect(config);
 </code></pre>
 
-#### Create a ClaimRequest and or AuthRequest
+### Verify proofs from your users
 
-The ClaimRequest and the AuthRequest will be used to verify that the proof is valid, these requests must match with the requests in your frontend.
-
-<pre class="language-typescript"><code class="lang-typescript"><strong>import { ClaimRequest, AuthRequest, AuthType } from "@sismo-core/sismo-connect-server";
-</strong>
-const claim: ClaimRequest = { groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"};
-const vaultAuth: AuthRequest = { authType: AuthType.VAULT };
-const twitterAuth : AuthRequest = { authType: AuthType.TWITTER };
-</code></pre>
-
-#### Verify proofs from your users
-
-Proofs need to be sent to your backend with a `SismoConnectResponse`. The `verify` function takes as inputs a `SismoConnectResponse`, a `ClaimRequest`, an `AuthRequest` and verifies that the proof is cryptographically valid with respect to these requests.
+Proofs need to be sent from your frontend to your backend with a `SismoConnectResponse`. The `verify` function takes as inputs the `SismoConnectResponse` but also requests to verify that proofs held in the response are cryptographically valid with respect to these requests.
 
 ```typescript
 import { SismoConnectVerifiedResult, AuthType } from "@sismo-core/sismo-connect-server";
 
 async function verifyResponse(sismoConnectResponse: SismoConnectResponse) {
   // verifies the proofs contained in the sismoConnectResponse
-  // with respect to the group(s) in the claim(s)
-  // and the different auths for example
+  // with respect to the different auths
+  // and the group(s) in the claim(s)
   // i.e. user prove they own a Vault, a Twitter account
   // and they are member of the group with id "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
   const result: SismoConnectVerifiedResult = await sismoConnect.verify(
     sismoConnectResponse,
     {
-      claims: [claim],
-      auths: [vaultAuth, twitterAuth],
+      // proofs in the sismoConnectResponse should be valid
+      // with respect to a Vault and Twitter account ownership
+      auths: [
+        { authType: AuthType.VAULT }, 
+        { authType: AuthType.TWITTER }
+      ],
+      // proofs in the sismoConnectResponse should be valid
+      // with respect to a specific group membership
+      // here the group with id 0x42c768bb8ae79e4c5c05d3b51a4ec74a
+      claims: [{ groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"}],
     }
   )
 
   // vaultId = hash(userVaultSecret, appId).
   // the vaultId is an app-specific, anonymous identifier of a vault
   const vaultId = result.getUserId(AuthType.VAULT)
+  // you can also get the twitterId of the user
+  const twitterId = result.getUserId(AuthType.TWITTER)
 }
 ```
 
 ## Documentation
 
-#### **`SismoConnectServerConfig`**
+### **`SismoConnectServerConfig`**
 
-The `SismoConnectServerConfig` allows you to fully customize your Sismo Connect integration in your backend. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional devMode field that allows developers to only verify that proofs are cryptographically valid without respect to a certain group.
+The `SismoConnectServerConfig` allows you to fully customize your Sismo Connect integration in your backend. Its only mandatory field is the `appId`. For more liberty when prototyping, it also comes with an optional devMode field that allows developers to only verify that proofs are cryptographically valid without checking the requests made.
 
 ```typescript
 export type SismoConnectServerConfig = {
@@ -120,7 +121,7 @@ export type HydraS2VerifierOpts = {
 };
 ```
 
-#### `SismoConnectResponse`
+### `SismoConnectResponse`
 
 The SismoConnectResponse needs to be sent by the frontend so that the backend can verify the proofs contained in it.
 
@@ -145,7 +146,7 @@ export type SismoConnectProof = {
 };
 ```
 
-#### `verify`
+### `verify()`
 
 ```typescript
 type SismoConnectVerifiedResult = {
@@ -195,13 +196,17 @@ async function verify(
 ): Promise<SismoConnectVerifiedResult>;
 ```
 
-If the proof contained in the `sismoConnectResponse` is valid, the function should return a `SismoConnectVerifiedResult`, otherwise, it should throw an error.
+If the proofs contained in the `sismoConnectResponse` are valid, the function should return a `SismoConnectVerifiedResult`, otherwise, it should throw an error.
 
-{% hint style="info" %}
-If you want infos on `VaultId` and `ProofId`, check this [Section](../../knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md).
+You can easily extract `userIds` and `proofIds` from this `SismoConnectVerifiedResult` , these are ids that can be leveraged in your application to create anonymous databases (with `vaultId`, a specific kind of `userId` that is the hash of the `appId` and the `userVaultSecret`) and prevent double spendings in your application (submitting two times the same cryptographic proof).
+
+{% hint style="success" %}
+If you want to learn more about `vaultId` and `proofId`, check the [**Vault & Proof Identifiers section**](../../knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md).
 {% endhint %}
 
-Here are some small snippets to get
+Here are some small snippets to understand how you can use `vaultIds` and `proofIds` to your advantage when building you application. While the `vaultId` will always be the same for any proof generated in the same vault, `proofIds` will change depending on the `appId`, the `groupId`, the `groupTimestamp` and the `namespace` that were used to generate the proof.
+
+You can see below an example with proofs generated for different namespaces in the same app and using the same exact group.
 
 #### Frontend
 
