@@ -6,7 +6,7 @@ description: Verify proofs from your users
 
 The Sismo Connect Server is a backend package built on top of the [Hydra-S2 Verifier](../../knowledge-base/resources/technical-concepts/proving-schemes/hydra-s2.md) to easily verify proofs from your users off-chain.&#x20;
 
-<figure><img src="../../.gitbook/assets/offchain (1).png" alt=""><figcaption><p>Sismo Connect offchain full flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Sismo Connect offchain Flow.png" alt=""><figcaption><p>Sismo Connect offchain Flow</p></figcaption></figure>
 
 ## Installation
 

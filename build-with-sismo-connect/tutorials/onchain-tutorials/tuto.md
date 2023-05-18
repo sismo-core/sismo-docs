@@ -102,13 +102,13 @@ Congrats on getting your airdrop! Now, let's see how this simple Sismo Connect i
 
 Among other things, Sismo Connect allows a simple user authentication for your application. It works by requesting an authentication (shorten to **auth**) of type **VAULT** to your users. What does it mean?&#x20;
 
-Each Sismo user has a Data Vault, where all his data is stored securely. As a developer, you can request to your users some proofs about the data in their Vault. In the case of an auth of type VAULT, you request a proof of ownership of a Sismo Vault from your users. When they are done generating the proof in their vault, they are redirected to your application with a Sismo Connect Response that holds the proof but also a `vaultId`.&#x20;
+Each Sismo user has a Data Vault, where all his data is stored securely. As a developer, you can request to your users some proofs about the data in their Vault thanks to a Sismo Connect Request. In the case of an auth of type VAULT, you request a proof of ownership of a Sismo Vault from your users. When they are done generating the proof in their vault, they are redirected to your application with a Sismo Connect Response that holds the proof but also a `vaultId`.&#x20;
 
 The **`vaultId`** is the **unique identifier of a user vault for a specific application**, it is computed as the **hash** of the **userVaultSecret** and the **appId**. If you want to learn more about the `vaultId`, you can read more about it in [Vault & Proof Identifiers](../../../knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md).
 
-You can also see a general scheme below showing you the high-level workflow with several proof requests to a user.
+You can also see a general scheme below showing you the high-level workflow:
 
-<figure><img src="../../../.gitbook/assets/sismo-connect-smart-contract-2.png" alt=""><figcaption><p>Sismo Connect high-level workflow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Sismo Connect onchain Flow.png" alt=""><figcaption><p>Sismo Connect onchain Flow</p></figcaption></figure>
 
 ### Create a Sismo Connect client configuration
 

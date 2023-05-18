@@ -6,7 +6,7 @@ description: Verify proofs from your users
 
 The Sismo Connect Solidity Library is built on top of the [Hydra-S2 Verifier](../../knowledge-base/resources/technical-concepts/proving-schemes/hydra-s2.md) and allows to easily verify proofs from your users **onchain**.&#x20;
 
-<figure><img src="../../.gitbook/assets/onchain (3).png" alt=""><figcaption><p>Sismo Connect onchain full flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Sismo Connect onchain Flow.png" alt=""><figcaption><p>Sismo Connect onchain Flow</p></figcaption></figure>
 
 This page will detail all the specifications of the Sismo Connect Solidity Library.
 

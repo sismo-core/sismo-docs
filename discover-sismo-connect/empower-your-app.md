@@ -8,7 +8,7 @@ description: Explore Sismo Connect's schema and functions.
 
 The schema below illustrates how Sismo Connect facilitates communication between a user’s personal data and applications:
 
-<figure><img src="../.gitbook/assets/sismo-connect-2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption><p>Sismo Connect Flow</p></figcaption></figure>
 
 ## Unlock the Power of Sismo Connect: Functions
 
