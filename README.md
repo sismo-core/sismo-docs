@@ -45,7 +45,7 @@ You can create your own Data Vault and start aggregating your identity [here](ht
 
 ## Prove & Verify: Selective Disclosure
 
-To prove ownership of Data Gems (granular data stored in the Vault), users leverage Sismo’s communication protocol to participate in [proving schemes](knowledge-base/resources/technical-concepts/proving-schemes/). Proving ownership of Data Gems proves membership in [Data Groups](knowledge-base/resources/technical-concepts/data-groups.md)—the Sismo protocol’s open-source data infrastructure.
+To prove ownership of Data Gems (granular data stored in the Vault), users leverage Sismo’s communication protocol to participate in [proving schemes](knowledge-base/resources/technical-concepts/proving-schemes/). Proving ownership of Data Gems proves membership in [Data Groups](knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md)—the Sismo protocol’s open-source data infrastructure.
 
 {% hint style="info" %}
 A proving scheme is a cryptographic method that allows one party (the prover) to prove to another party (the verifier) that a certain statement is true, without revealing how it is true—ensuring privacy.

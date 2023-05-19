@@ -6,7 +6,7 @@ This tutorial is designed as an **introduction** to **Sismo Connect Solidity** L
 
 You will learn how to request proofs about your users data, verify them in your contracts and how privacy and data aggregation can be leveraged for your app thanks to Sismo Connect.
 
-If you wish to understand what is Sismo Connect from a high level view, we advise you to read about it in the [Discover Sismo Connect section](../../../discover-sismo-connect/empower-your-app.md).
+If you wish to understand what is Sismo Connect from a high level view, we advise you to read about it in the [Discover Sismo Connect section](../../../what-is-sismo/discover-sismo-connect.md).
 
 ## Prerequisites
 

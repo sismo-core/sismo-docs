@@ -11,7 +11,7 @@ This [article](https://vitalik.ca/general/2022/06/15/using\_snarks.html) from Vi
 Currently, Sismo has two functional proving schemes deployed:
 
 * [Hydra S1 proving scheme](hydra-s1.md) — [ZK Badges](../../sismo-badges/)
-* [Hydra S2 proving scheme](hydra-s2.md) — [Sismo Connect](../../../../discover-sismo-connect/empower-your-app.md)
+* [Hydra S2 proving scheme](hydra-s2.md) — [Sismo Connect](../../../../what-is-sismo/discover-sismo-connect.md)
 
 Both of these proving schemes belong to the Hydra family, which consists of proving schemes using zero-knowledge proofs (ZKPs) and Sismo’s Commitment Mapper.
 

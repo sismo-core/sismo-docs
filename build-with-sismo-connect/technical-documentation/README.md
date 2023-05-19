@@ -4,7 +4,7 @@ description: The packages for Sismo Connect.
 
 # Technical Documentation
 
-[Sismo Connect](../../discover-sismo-connect/empower-your-app.md) is a crypto-native single sign-on method (SSO) for applications—whether on web2 or web3. Integration is simple with just a few lines of code: import the front-end package or React button for data requests, and verify proofs using Sismo Connect Solidity library in your smart contract OR server package in your backend. Once integrated, applications can **request** private and granular data, while users can **authenticate** and **selectively disclose** their personal data with the power of zero-knowledge proofs (ZKPs).
+[Sismo Connect](../../what-is-sismo/discover-sismo-connect.md) is a crypto-native single sign-on method (SSO) for applications—whether on web2 or web3. Integration is simple with just a few lines of code: import the front-end package or React button for data requests, and verify proofs using Sismo Connect Solidity library in your smart contract OR server package in your backend. Once integrated, applications can **request** private and granular data, while users can **authenticate** and **selectively disclose** their personal data with the power of zero-knowledge proofs (ZKPs).
 
 {% hint style="warning" %}
 In order to use Sismo Connect, you will need to have an `appId` registered in the [Sismo Factory](https://factory.sismo.io/). [Here is a tutorial](../../sismo-factory/create-a-sismo-connect-app.md).
@@ -33,19 +33,19 @@ The unique identifier of your Sismo Connect application created in the [Sismo Fa
 
 ### Auth
 
-An `Auth` is requested thanks to an `AuthRequest` to the [Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md) in order to generate a proof of account ownership. It can be ownership of a SismoVault, an Ethereum address, a Twitter or GitHub account.
+An `Auth` is requested thanks to an `AuthRequest` to the [Data Vault ](../../#data-vault-aggregate-your-identity)in order to generate a proof of account ownership. It can be ownership of a SismoVault, an Ethereum address, a Twitter or GitHub account.
 
 > Example: Prove that you own a Twitter account.
 
 ### Claim
 
-A `Claim` is requested thanks to a `ClaimRequest` to the Data Vault in order to generate a group membership proof. It contains the groupId, the groupTimestamp, and the value you claim to have in the associated [Data Group](../../knowledge-base/resources/technical-concepts/data-groups.md).
+A `Claim` is requested thanks to a `ClaimRequest` to the Data Vault in order to generate a group membership proof. It contains the groupId, the groupTimestamp, and the value you claim to have in the associated [Data Group](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md).
 
 > Example: Prove that you are part of the latest generated "Gitcoin Passport Holders" Group with a minimum value of 15. The `groupId` of the group is [0x1cde61966decb8600dfd0749bd371f12](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders).
 
 ### Signature
 
-A `Signature` is requested thanks to an `SignatureRequest` to the [Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md) in order to embed a specific message in a generated proof. As far as this proof can't be verified without this exact message checked, we call this message a signature.
+A `Signature` is requested thanks to an `SignatureRequest` to the Data Vault in order to embed a specific message in a generated proof. As far as this proof can't be verified without this exact message checked, we call this message a signature.
 
 > Example: You are a DAO voting platform, and you want to get the vote of a user onchain. To do so, the user will create a signature containing a message (his vote) that will be used to generate the proof. When verifying the proof onchain, you are also verifying that the proof contains the message, it is then impossible for a malicious actor to take your proof and vote another thing with it.
 
@@ -59,7 +59,7 @@ The version of the Data Vault app. The only version that currently works is `sis
 
 ### groupId
 
-The unique identifier of the group of accounts users prove membership in to generate a valid ZKP. [Data Groups](../../knowledge-base/resources/technical-concepts/data-groups.md) are maintained by Sismo and can be created by anyone using the [Sismo Factory](https://factory.sismo.io/). They are composed of a name, a description, specifications, a timestamp, and data. Moreover, they are split into Group Snapshots which are timestamped.
+The unique identifier of the group of accounts users prove membership in to generate a valid ZKP. [Data Groups](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) are maintained by Sismo and can be created by anyone using the [Sismo Factory](https://factory.sismo.io/). They are composed of a name, a description, specifications, a timestamp, and data. Moreover, they are split into Group Snapshots which are timestamped.
 
 ### groupTimeStamp
 

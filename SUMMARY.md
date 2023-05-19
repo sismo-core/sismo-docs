@@ -3,11 +3,7 @@
 ## What is Sismo?
 
 * [Sismo: A Communication Protocol](README.md)
-* [Personal Data: Sismo’s Data Vault, Gems & Groups](what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md)
-
-## Discover Sismo Connect
-
-* [Empower Your App](discover-sismo-connect/empower-your-app.md)
+* [Discover Sismo Connect](what-is-sismo/discover-sismo-connect.md)
 
 ## Build with Sismo Connect
 
@@ -76,7 +72,7 @@
       * [Transaction](knowledge-base/resources/sismo-api/other-models/transaction.md)
   * [Deployed Contract Addresses](knowledge-base/resources/sismo-101.md)
   * [Technical Concepts](knowledge-base/resources/technical-concepts/README.md)
-    * [Data Groups](knowledge-base/resources/technical-concepts/data-groups.md)
+    * [Data Gems & Data Groups](knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md)
     * [Vault & Proof Identifiers](knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md)
     * [Commitment Mapper](knowledge-base/resources/technical-concepts/commitment-mapper.md)
     * [Proving Schemes](knowledge-base/resources/technical-concepts/proving-schemes/README.md)

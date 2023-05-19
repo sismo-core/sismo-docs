@@ -4,21 +4,21 @@ description: Non-developer tutorial
 
 # Create a Data Group
 
-This tutorial will show you how to create a [Group](../knowledge-base/resources/technical-concepts/data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
+This tutorial will show you how to create a [Data Group](../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process (usually under 1 hour), this Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../knowledge-base/resources/sismo-badges/) or a [Sismo Connect app](../discover-sismo-connect/empower-your-app.md) 🙌
+At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../knowledge-base/resources/sismo-badges/) or a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) 🙌
 
 {% hint style="info" %}
-If you are a developper and want to build your own a more customizable Data Group, go checkout this [tutorial](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-group.md), it will also explain you all the steps of the creation process.
+If you are a developer and want to build your own customizable Data Group, go check out this [tutorial](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-group.md). It will also explain all the steps of the creation process.
 {% endhint %}
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it.
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it.
 {% endhint %}
 
-## What are Groups?
+## What are Data Groups?
 
-[Groups](../knowledge-base/resources/sismo-badges/zk-badge-protocol/groups.md) are composed of Data Sources:
+[Data Groups](../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) are derived from Data Sources:
 
 * Web2 Data Sources: Twitter, GitHub
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles
@@ -33,14 +33,12 @@ Here's an example of what a Group looks like:
 ...
 ```
 
-If you want more info on Groups, check out this [page](../knowledge-base/resources/technical-concepts/data-groups.md).
+## Data Group Use-Cases
 
-## Group use-cases
-
-For now, you can create 2 different usages on top of Groups:
+For now, you can create 2 different usages on top of Data Groups:
 
 * [ZK Badges](../knowledge-base/resources/sismo-badges/zk-badge-protocol/badges.md)
-* [Sismo Connect app](../discover-sismo-connect/empower-your-app.md)
+* [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md)
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
@@ -60,7 +58,7 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to create a [ZK Badge](../knowledge-base/resources/sismo-api/badge/) or a [Sismo Connect app](../discover-sismo-connect/empower-your-app.md) from your Group through the [Factory](https://factory.sismo.io/).
+After this tutorial, you will be able to create a [ZK Badge](../knowledge-base/resources/sismo-api/badge/) or a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
 
 ## Tutorial use case
 
@@ -103,7 +101,7 @@ There are 3 different ways to define the data of a Group Generator, you can use:
 
 * A defined list of Data Source ("By uploading a list of accounts")
 * [Data Providers](../knowledge-base/resources/sismo-hub/data-providers.md) : function that allows fetching Data Sources ("From data providers")
-* Already existing [Groups](../knowledge-base/resources/sismo-badges/zk-badge-protocol/groups.md) ("From data group")
+* Already existing Groups ("From data group")
 
 **For our case we need 3 main things:**
 
@@ -155,7 +153,7 @@ Next, by clicking on the <mark style="background-color:blue;">**Add**</mark> but
 After this, you can click on the second <mark style="background-color:blue;">**Add**</mark> button (<mark style="color:red;">red box</mark>) in order to add these Lens accounts (sismo.lens followers) to the group.
 
 {% hint style="info" %}
-If you are a developper and want to build your own Data Provider, go checkout this [tutorial](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-data-provider.md),  it will explain you all the steps of the creation process.
+If you are a developer and want to build your own Data Provider, go check out this [tutorial](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-data-provider.md). It will explain all the steps of the creation process.
 {% endhint %}
 
 * **Get the holders of** [**Sismo - EthCC 2022 POAP**](https://poap.gallery/r/event/53325)
@@ -168,7 +166,7 @@ With the same logic as before, by clicking on the <mark style="background-color:
 
 * **Get the** [**Sismo Contributor Level 3**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/sismo-contributors-tier3-builders)
 
-To do this, you have to go to the "_From data group_" section and search for the group you want to use, for our case we want to get the [sismo-contributors-tier3-builders](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/sismo-contributors-tier3-builders):
+To do this, you have to go to the "_From data group_" section and search for the group you want to use, for our case, we want to get the [sismo-contributors-tier3-builders](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/sismo-contributors-tier3-builders):
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2023-03-13 à 19.45.17.png" alt=""><figcaption><p>Import a group</p></figcaption></figure>
 
@@ -185,7 +183,7 @@ We will have a total of **15750** **accounts** in our group (<mark style="color:
 After finalizing our list of Data Source, we can select how often this group is updated. For our Sismo Supporter Group, we select ‘Weekly’ from the drop-down menu. This means that users who become a Sismo Contributor level 3 or follow Sismo on Lens after our Group is created can still become eligible after the weekly update.
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton to ask for a custom group update.
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon to ask for a custom Data Group update.
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2023-03-13 à 20.26.17.png" alt=""><figcaption><p>Update frequency</p></figcaption></figure>
@@ -216,7 +214,7 @@ We can see that now your Group request is in <mark style="background-color:blue;
 Once we submitted our pull request, it will be checked by the Sismo core team within 48 hours.
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton to ask for help or for a custom group update. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 30 minutes). We are committed during hackathon to quickly review any new Group pull request.
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon to ask for help or for a custom group update. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 30 minutes). During hackathons, we are committed to quickly reviewing any new Data Group pull request.
 {% endhint %}
 
 To get verified, your Group must:
@@ -243,6 +241,6 @@ When your Badge has been deployed on-chain, it will be displayed as <mark style=
 
 You have finally created your first Group through the [Factory](https://factory.sismo.io/), congrats! 🎉
 
-You can now use it to create a [ZK Badge](../knowledge-base/resources/sismo-badges/) or a [Sismo Connect app](../discover-sismo-connect/empower-your-app.md) via the Factory.
+You can now use it to create a [ZK Badge](../knowledge-base/resources/sismo-badges/) or a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) via the Factory.
 
 If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in the **#general-support**. We will be glad to answer you 🤗

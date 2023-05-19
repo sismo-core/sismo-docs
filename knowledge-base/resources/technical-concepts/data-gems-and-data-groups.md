@@ -1,33 +1,12 @@
 ---
-description: Aggregate your identity.
+description: Sismo's open-source data infrastructure.
 ---
 
-# Personal Data: Sismo’s Data Vault, Gems & Groups
+# Data Gems & Data Groups
 
-Fundamentally, Sismo revolves around communication between personal data and applications. To utilize Sismo’s communication protocol, users must aggregate their identity in the Data Vault—encrypted storage for a user's personal data from various web2 and web3 accounts, credentials, and attestations. These contents are collectively referred to as Data Sources.
+Fundamentally, Sismo revolves around communication between personal data and applications. To utilize Sismo’s communication protocol, users aggregate their identity in the Data Vault—encrypted storage for a user's personal data from various web2 and web3 accounts, credentials, and attestations. These contents are collectively referred to as Data Sources.
 
 Data Gems, derived from Data Sources stored in the Data Vault, represent valuable elements of a user's digital identity and categorize their owners into certain Data Groups. Proving ownership of Data Gems, and thus membership in Data Groups, enables users to leverage their data without revealing the associated Data Source. In addition, users can authenticate themselves by revealing a Data Source directly instead of the granular data inside.
-
-{% hint style="success" %}
-You can create your own Data Vault and start aggregating your identity [here](https://vault-beta.sismo.io/).
-{% endhint %}
-
-## Data Vault in Action
-
-Envision the Data Vault as an encrypted aggregator that securely stores various Data Sources, such as Ethereum addresses, GitHub and Twitter accounts, and other attestations from relevant authorities. Once users have imported a Data Source, Sismo enables them to prove ownership and selectively disclose information to applications without compromising privacy.
-
-<figure><img src="../.gitbook/assets/Untitled.png" alt=""><figcaption></figcaption></figure>
-
-For instance, imagine a user has imported two Ethereum addresses: a public ENS domain and a private wallet owning a specific NFT. Sismo allows them to:
-
-1. Prove ownership of their public wallet (Data Source)
-2. Selectively disclose they own the NFT (Data Gem) without revealing their private wallet.
-
-The Data Vault ensures users have full control over their aggregated digital identity, with the flexibility to authenticate and share information on their own terms. As the starting point for end users to leverage Sismo’s communication protocol, the Data Vault reshapes how users interact with applications and manage their digital presence.
-
-When accessing an application via [Sismo Connect](../#sismo-connect-the-crypto-native-sso), users can choose which Data Sources and Data Gems they want to selectively disclose.
-
-<figure><img src="../.gitbook/assets/The Merge Contributors Space.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Data Gems & Data Groups
 
@@ -53,7 +32,7 @@ Anyone building applications with Sismo Connect must utilize Data Groups to requ
 
 There are currently two ways to create Data Groups:
 
-* Through Sismo’s [Factory no-code interface](../sismo-factory/what-is-the-sismo-factory.md)
-* Through a pull request in the [Sismo Hub](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-group.md) - the Factory’s open-source back end
+* Through Sismo’s [Factory no-code interface](../../../sismo-factory/what-is-the-sismo-factory.md)
+* Through a pull request in the [Sismo Hub](../sismo-hub/sismo-hub/create-your-group.md) - the Factory’s open-source back end
 
 Alternatively, builders can utilize Data Groups created for existing Sismo Connect applications.

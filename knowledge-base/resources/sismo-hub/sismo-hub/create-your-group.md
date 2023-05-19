@@ -8,7 +8,7 @@ description: Developer Tutorial
 
 This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of [Groups](../../technical-concepts/data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all what you can create with Sismo such as [Sismo Connect Apps](../../../../discover-sismo-connect/empower-your-app.md) and [ZK Badges](../../sismo-badges/zk-badge-protocol/badges.md).
+Group Generators are functions that enable the creation of [Groups](../../technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with Sismo such as [Sismo Connect Apps](../../../../what-is-sismo/discover-sismo-connect.md) and [ZK Badges](../../sismo-badges/zk-badge-protocol/badges.md).
 
 {% hint style="info" %}
 You can find all already existing Group Generators [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators)**.**
@@ -17,12 +17,12 @@ You can find all already existing Group Generators [**here**](https://github.com
 You can find the pull request associated with this tutorial [**here**](https://github.com/sismo-core/sismo-hub/pull/1484). It will give you a good feeling of what we are going to create in this tutorial! 👌
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).&#x20;
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).&#x20;
 {% endhint %}
 
 ### What are Groups?
 
-[Groups](../../technical-concepts/data-groups.md) are composed of Data Sources:
+Groups are composed of Data Sources:
 
 * Web2 accounts: Twitter, GitHub
 * Web3 accounts: Ethereum addresses, ENS, Lens handles
@@ -35,7 +35,7 @@ There are 3 different ways to define the data of a Group generator, you can use:
 * [Data Providers](../data-providers.md) (e.g. [proof-of-humanity](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/proof-of-humanity/index.ts))
 * Already existing [Groups](../../sismo-badges/zk-badge-protocol/groups.md) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
 
-If you want more info on Groups, check out this [page](../../technical-concepts/data-groups.md).
+If you want more info on Groups, check out this [page](broken-reference).
 
 If you want to know how to contribute to the Sismo Hub by creating Groups don't hesitate to check the [Contributor Guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
 
@@ -44,7 +44,7 @@ If you want to know how to contribute to the Sismo Hub by creating Groups don't 
 For now, you can create 2 different usages on top of Groups:
 
 * [ZK Badges](../../sismo-badges/zk-badge-protocol/badges.md)
-* [Sismo Connect App](../../../../discover-sismo-connect/empower-your-app.md)
+* [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md)
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
@@ -56,7 +56,7 @@ Here you can see an [example](https://app.sismo.io/?badge=proof-of-humanity-zk-b
 
 This Badge was generated from the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group. The Sismo tech stack ensures that only Proof of Humanity registered addresses can mint the Badge (on the address of their choice) without revealing the registered address.
 
-#### [Sismo Connect App](../../../../discover-sismo-connect/empower-your-app.md)
+#### [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md)
 
 Here is an instance of a Sismo Connect App that has been implemented using the proof-of-humanity Group:
 
@@ -64,11 +64,11 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to create a [ZK Badge](../../sismo-api/badge/) or a [Sismo Connect App](../../../../discover-sismo-connect/empower-your-app.md) from your Group through the [Factory](https://factory.sismo.io/).
+After this tutorial, you will be able to create a [ZK Badge](../../sismo-api/badge/) or a [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
 
 ### Tutorial use-case
 
-This tutorial will show you how to create a [Group](../../sismo-badges/zk-badge-protocol/groups.md) and make it usable for creating ZK Badge or Sismo Connect App through the [Factory](https://factory.sismo.io/).
+This tutorial will show you how to create a Group and make it usable for creating ZK Badge or Sismo Connect App through the [Factory](https://factory.sismo.io/).
 
 In the course of this tutorial, you will build your first Group named `tutorial-sismo-early-interactors`, containing all the collectors of the [first Sismo Lens post](https://lenster.xyz/posts/0x26e5-0x02) and all voters of one of the first [Sismo Proposals](https://snapshot.org/#/sismo.eth).
 
@@ -208,7 +208,7 @@ If the group generation went well, here is the log you should see on your termin
 
 <figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-08 à 14.25.10.png" alt=""><figcaption><p>Group generation succeeded</p></figcaption></figure>
 
-As you can see we successfully generated the Group, and it contains the 3 elements (<mark style="color:red;">red box</mark>), this is the 3 accounts you defined in the `jsonListData0` variable.
+As you can see we successfully generated the Group, and it contains the 3 elements (<mark style="color:red;">red box</mark>), these are the 3 accounts you defined in the `jsonListData0` variable.
 
 Now that you have an overview of the process of creating a Group, let's move on to the tutorial use case! 🧑‍💻
 
@@ -324,7 +324,7 @@ Here there is only "`0x123...`" type addresses but the `fetchedData` object can 
 During the Group generation, all accounts are resolved into an Ethereum address through a [resolver](https://github.com/sismo-core/sismo-hub/tree/main/src/topics/resolver). There is a resolver for each type of Data Source.
 {% endhint %}
 
-Last but not least, you may have noticed the `"1"` at the end of each account in a Group. This is called: the value, and it allows you to add granularity to your Group. For our tutorial, we don't want to make distinction between each account in the Group, but if we wanted to, we could set a value of 2 for all collectors for instance.
+Last but not least, you may have noticed the `"1"` at the end of each account in a Group. This is called: the value and it allows you to add granularity to your Group. For our tutorial, we don't want to make a distinction between each account in the Group, but if we wanted to, we could set a value of 2 for all collectors for instance.
 
 {% hint style="info" %}
 Here is an example of how to use this value: at Sismo, we use a Sismo Contributor ZK Badge for voting on Sismo DAO Proposals. There is 3 different value in the Group:
@@ -474,7 +474,7 @@ Now that you have your Group, you can build 2 different things from it:
 * [**ZK Badge**](../../sismo-api/badge/):
   * using the [Factory](https://factory.sismo.io/badges-explorer)
   * creating by yourself through the Sismo Hub. And [**here**](../../../../sismo-factory/create-your-zk-badge.md) is a tutorial that shows how to build one.
-* [**Sismo Connect App**](../../../../discover-sismo-connect/empower-your-app.md):
+* [**Sismo Connect App**](../../../../what-is-sismo/discover-sismo-connect.md):
   * using the [Factory](https://factory.sismo.io/apps-explorer)
   * creating by yourself using the [sismo-connect-packages](https://github.com/sismo-core/sismo-connect-packages/tree/main).
     * You can find [**here**](../../../../build-with-sismo-connect/run-example-apps/) sample projects to run on your computer.

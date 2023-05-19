@@ -4,7 +4,7 @@ description: Request proofs from your user
 
 # Sismo Connect Client: Request
 
-The [Sismo Connect](../../discover-sismo-connect/empower-your-app.md) Client is a frontend package built on top of the [Sismo Data Vault](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md) app (the prover) to easily request proofs from your users with [AuthRequests](client.md#authrequest), [ClaimRequests](client.md#claimrequest) and [SignatureRequests](client.md#signaturerequest).
+The [Sismo Connect](../../what-is-sismo/discover-sismo-connect.md) Client is a frontend package built on top of the [Data Vault](../../#data-vault-aggregate-your-identity) app (the prover) to easily request proofs from your users with [AuthRequests](client.md#authrequest), [ClaimRequests](client.md#claimrequest) and [SignatureRequests](client.md#signaturerequest).
 
 ## Installation
 
@@ -156,7 +156,7 @@ export type SismoConnectClientConfig = {
 
 `devMode` is an object containing three fields:
 
-* `enabled`, a boolean which states where to redirect your users to generate proofs.&#x20;
+* `enabled`, a boolean that states where to redirect your users to generate proofs.&#x20;
   * If set to `true`, your users will be redirected to [https://dev.vault-beta.sismo.io/](https://dev.vault-beta.sismo.io/), an isolated developer vault to experiment with dev addresses or data that they do not wish to add in their production vault for example. This developer vault works with testnet chains under the hood (Mumbai and Goerli for now).
   * If set to `false`, your users will be redirected to [https://vault-beta.sismo.io/](https://vault-beta.sismo.io/), their production vault holding valuable data. This production vault works with mainnet chains under the hood (Ethereum, Polygon and Gnosis for now).
 
@@ -214,7 +214,7 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
 };
 ```
 
-Here is an example of a customized `SismoConnectClientConfig` with a `devMode` enabled and two developer addresses that will be able to generate valid proofs from their developer [Data Vaults](../../what-is-sismo/personal-data-sismos-data-vault-gems-and-groups.md).
+Here is an example of a customized `SismoConnectClientConfig` with a `devMode` enabled and two developer addresses that will be able to generate valid proofs from their developer Data Vaults.
 
 ```typescript
 const sismoConnectConfig: sismoConnectClientConfig = {
@@ -335,7 +335,7 @@ sismoConnect.request({ claim: CLAIM });
 ```
 
 {% hint style="info" %}
-More info on groups and values [here](../../knowledge-base/resources/technical-concepts/data-groups.md#verifiable-claims-and-data-groups).
+More info on Data Groups and values [here](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md).
 {% endhint %}
 
 ### `SignatureRequest`
