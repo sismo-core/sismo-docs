@@ -1,8 +1,8 @@
-# Build a Gated Airdrop
+# Build a Sybil-resistant Gated Airdrop
 
 ## Overview
 
-This tutorial is designed as an **introduction** to **Sismo Connect Solidity** Library. It aims at showcasing the integration steps of Sismo Connect to easily create a sybil-resistant airdrop gated to NFT holders while explaining some useful concepts of the Sismo Connect communication protocol.&#x20;
+This tutorial is designed as an **introduction** to **Sismo Connect Solidity** Library. It aims at showcasing the integration steps of Sismo Connect to easily create a sybil-resistant gated airdrop to NFT holders while explaining some useful concepts of the Sismo Connect communication protocol.&#x20;
 
 You will learn how to request proofs about your users data, verify them in your contracts and how privacy and data aggregation can be leveraged for your app thanks to Sismo Connect.
 
@@ -371,7 +371,8 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0xf4977993e52606cfd67b7a1cde717069",
   devMode: {
     enabled: true,
-    devGroups: [devGroups[1]], // <-- add this line
+    // add this line to override the "Gitcoin Passport Holders" group
+    devGroups: [devGroups[1]], 
   },
 };
 ```
@@ -513,7 +514,9 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
   appId: "0xf4977993e52606cfd67b7a1cde717069",
   devMode: {
     enabled: true,
-    devGroups, // <-- add this line instead of `devGroups: [devGroups[1]],`
+    // add this line to override the "Gitcoin Passport Holders" group
+    // and the Nouns DAO NFT Group as well
+    devGroups, 
   },
 };
 ```

@@ -12,7 +12,7 @@ Got questions? Join our Telegram for builders [**here**](https://t.me/+xvUbopYOX
 
 ## Onchain Tutorials
 
-* [**Build a Gated Airdrop**](onchain-tutorials/tuto.md): build a gated airdrop for users holding a Gitcoin Passport and Nouns NFT on separate wallets.&#x20;
+* [**Build a Sybil-resistant Gated Airdrop**](onchain-tutorials/tuto.md): build a sybil-resistant gated airdrop for holders of Nouns DAO NFT.&#x20;
 
 ## Offchain Tutorials
 
