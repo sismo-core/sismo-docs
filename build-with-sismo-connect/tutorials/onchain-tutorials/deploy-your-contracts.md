@@ -258,6 +258,23 @@ If you deploy the exact contract from the tutorial on Mumbai, you are likely to 
 
 And congrats for your deployment! You should be left with a verified contract at this point, if not don't hesitate to reach out to us on our [**developer telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0)**.**
 
+If you want to use the tutorial frontend with your contracts, you will need to add some minor changes in the `front/src/pages/claim-airdrop.tsx` file. You will first need to change how you get the `contractAddress` by changing 5151111 (the fork chain id) to 80001 (the Mumbai chain id) in your imports. And you also have to use the `polygonMumbai` chain config from viem isntead of `mumbaiFork` config for the chain.
+
+```typescript
+// you are in: front/src/pages/claim-airdrop.tsx
+
+// import { transactions } from "../../../broadcast/Airdrop.s.sol/5151111/run-latest.json";
+import { transactions } from "../../../broadcast/Airdrop.s.sol/80001/run-latest.json";
+// ------------------------------------------------------------^^^^^ 
+//                                                        REPLACE HERE
+// add also the viem import for polygonMumbai chain
+import { polygonMumbai } from "viem/chains";
+
+// replace
+// const userChain = mumbaiFork;
+const userChain = polygonMumbai;
+```
+
 ## Next steps
 
 If you have any questions about integrating sismoConnect, don’t hesitate to reach out. The team will be happy to answer any questions you may have. Any feedback is also welcomed!

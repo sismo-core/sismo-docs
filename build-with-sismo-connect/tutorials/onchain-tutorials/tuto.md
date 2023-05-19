@@ -2,7 +2,7 @@
 
 ## Overview
 
-This tutorial is designed as an **introduction** to **Sismo Connect Solidity** Library. It aims at showcasing the integration steps of Sismo Connect to easily gate an airdrop to Gitcoin Passport holders while explaining some useful concepts of the Sismo Connect communication protocol.&#x20;
+This tutorial is designed as an **introduction** to **Sismo Connect Solidity** Library. It aims at showcasing the integration steps of Sismo Connect to easily create a sybil-resistant airdrop gated to NFT holders while explaining some useful concepts of the Sismo Connect communication protocol.&#x20;
 
 You will learn how to request proofs about your users data, verify them in your contracts and how privacy and data aggregation can be leveraged for your app thanks to Sismo Connect.
 
@@ -294,9 +294,9 @@ Well, now that you have all this steps in mind, let's improve this airdrop contr
 
 ## Request proof of group membership
 
-To gate our airdrop contract to Gitcoin Passport holders, we simply need to ask for a proof of Gitcoin Passport group membership from our users. This can be done by taking the `groupId` of the Gitcoin Passport Holders group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders) and create a **claim request** from it.
+Our first aim is to make the aidrop sybil-resistant, to do this we simply need to request a proof of Gitcoin Passport group membership from our users. We also want them to have a passport score above 15. You can request such a proof by taking the `groupId` of the "Gitcoin Passport Holders" group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders) and create a **claim request** from it.
 
-The `groupId` of the Gitcoin Passport Holders group is `0x1cde61966decb8600dfd0749bd371f12`. Let's add our claim request in the React button:
+The `groupId` of the Gitcoin Passport Holders group is `0x1cde61966decb8600dfd0749bd371f12`. Let's add our claim request in the React button. We indicate the groupId of the group and the minimum value required in this group.
 
 ```typescript
 // you are in: front/src/pages/claim-airdrop.tsx
@@ -315,7 +315,8 @@ const GITCOIN_PASSPORT_HOLDERS_GROUP_ID = "0x1cde61966decb8600dfd0749bd371f12";
   auths={[{ authType: AuthType.VAULT }]}
   // request a proof of group membership from your users
   // They should hold a Gitcoin Passport
-  claims={[{ groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID }]} // <-- pass the groupId
+  // pass the groupId and the minimum value required in the group
+  claims={[{ groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15 }]} 
   signature={{ message: signMessage(address) }}
   onResponseBytes={(responseBytes: string) => setResponse(responseBytes)}
   text={"Claim with Sismo"}
@@ -343,7 +344,8 @@ contract Airdrop is ERC721, SismoConnect {
             auth: buildAuth({authType: AuthType.VAULT}),
             // add the claim request to check that the proof provided is valid
             // with respect to the Gitcoin Passport requirement
-            claim: buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID}), // <-- pass the groupId
+            // pass the groupId and the minimum value required in the group
+            claim: buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15}),
             signature:  buildSignature({message: abi.encode(msg.sender)})
         });
     
@@ -380,7 +382,7 @@ When you have added this devGroup, you should also add your address to it so tha
 The address you choose should be an address imported in your Vault. If it's not the case, don't forget to import it when you will be redirected to generate the proof.
 {% endhint %}
 
-To add your address, go to the `front/config.ts` file. You will see where to input your address at the top of the file.
+To add your address, go to the `front/config.ts` file. You will see where to input your address at the top of the file. You can see in the config that the score of your address for the group of Gitcoin Passport holders is set to 15 to be eligible.
 
 ```typescript
 // you are in : front/src/config.ts
@@ -402,7 +404,7 @@ When all of this is done, you can try again to go on your local application on [
 
 As you can see below, you are now asked to share your `vaultId` like before and you also should prove that you own a Gitcoin Passport. You also keep signing the address on which you want to receive the airdrop.
 
-<figure><img src="../../../.gitbook/assets/Capture d’écran 2023-05-11 à 16.28.03.png" alt=""><figcaption><p>Sismo Vault UI when redirected</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Capture d’écran 2023-05-19 à 08.53.00.png" alt=""><figcaption><p>Sismo Vault UI when redirected</p></figcaption></figure>
 
 {% hint style="warning" %}
 The interaction with the fork network can become quite unstable if you stop the `yarn anvil` command at some point or if you already use the sample app before.
@@ -418,9 +420,9 @@ If so:
 See [FAQ](../../faq.md) for more informations.
 {% endhint %}
 
-Congrats again! You have successfully gated your application for holders of Gitcoin Passport. You also prevent double spendings thanks to the `vaultId` used as the `tokenId` of the minted NFT.&#x20;
+Congrats again! You have successfully made your airdrop sybil-resistant by gating it for holders of Gitcoin Passport. You also prevent double spendings thanks to the `vaultId` used as the `tokenId` of the minted NFT.&#x20;
 
-Let's see how to ultimately combine data aggregation with privacy now by gating the airdrop to Gitcoin Passport holders holding at least one Nouns Dao NFT.
+Let's see how to ultimately combine data aggregation with privacy now by gating this sybil-resistant airdrop to holders of Nouns Dao NFT.
 
 ## Combine data aggregation and privacy
 
@@ -447,7 +449,7 @@ const NOUNS_DAO_HOLDERS_GROUP_ID = "0x311ece950f9ec55757eb95f3182ae5e2";
   // They should hold a Nouns DAO NFT
   // but also the Gitcoin Passport as before
   claims={[
-   { groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID },
+   { groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15 },
    { groupId: NOUNS_DAO_HOLDERS_GROUP_ID } // <-- pass the groupId
   ]}
   signature={{ message: signMessage(address) }}
@@ -478,7 +480,7 @@ contract Airdrop is ERC721, SismoConnect {
         // with respect to the Gitcoin Passport requirement
         // but also the Nouns DAO requirement
         ClaimRequest[] memory claims = new ClaimRequest[](2);
-        claims[0] = buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID});
+        claims[0] = buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15});
         claims[1] = buildClaim({groupId: NOUNS_DAO_HOLDERS_GROUP_ID}); // &#x3C;-- pass the groupId
         
         // we create a request object that will be passed in the verify function
@@ -518,11 +520,11 @@ export const sismoConnectConfig: SismoConnectClientConfig = {
 
 You can try again to claim the airdrop from your application, you will see the auth request with the two claim requests and the sign message.&#x20;
 
-<figure><img src="../../../.gitbook/assets/Capture d’écran 2023-05-11 à 23.39.05.png" alt=""><figcaption><p>Sismo Vault UI when redirected</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Capture d’écran 2023-05-19 à 08.57.10.png" alt=""><figcaption><p>Sismo Vault UI when redirected</p></figcaption></figure>
 
 And it is our final congrats! 🎉
 
-If we recap, you basically managed to go from a simple request of Vault ownership to a complex multi request of Vault ownership + group memberships. All these requests respect the user privacy since no ethereum address is ever shared during the flow and all of this is made possible thanks to the data aggregation that offers the Sismo Vault.&#x20;
+If we recap, you basically managed to go from a simple request of Vault ownership to a complex multi request of Vault ownership + group memberships allowing you to create a sybil-resistant gated airdrop to holders of Nouns DAO NFTs. All these requests respect the user privacy since no ethereum address is ever shared during the flow and all of this is made possible thanks to the data aggregation that offers the Sismo Vault.&#x20;
 
 To see how to deploy your contracts, you can go to the [**associated tutorial**](deploy-your-contracts.md).
 
