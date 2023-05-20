@@ -125,6 +125,7 @@ import {
   SismoConnectButton, // the Sismo Connect React button displayed below
   SismoConnectClientConfig, // the client config with your appId
   AuthType, // the authType enum, we will choose 'VAULT' in this tutorial
+  ClaimType // the claimType enum, we will choose 'GTE' in this tutorial, to check that the user has a value greater than a given threshold
 } from "@sismo-core/sismo-connect-react";
 
 // you can create a new Sismo Connect app at https://factory.sismo.io
@@ -316,7 +317,11 @@ const GITCOIN_PASSPORT_HOLDERS_GROUP_ID = "0x1cde61966decb8600dfd0749bd371f12";
   // request a proof of group membership from your users
   // They should hold a Gitcoin Passport
   // pass the groupId and the minimum value required in the group
-  claims={[{ groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15 }]} 
+  claims={[{ 
+   groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, 
+   value: 15, 
+   claimType: ClaimType.GTE
+  }]} 
   signature={{ message: signMessage(address) }}
   onResponseBytes={(responseBytes: string) => setResponse(responseBytes)}
   text={"Claim with Sismo"}
@@ -345,7 +350,11 @@ contract Airdrop is ERC721, SismoConnect {
             // add the claim request to check that the proof provided is valid
             // with respect to the Gitcoin Passport requirement
             // pass the groupId and the minimum value required in the group
-            claim: buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15}),
+            claim: buildClaim({
+                groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, 
+                value: 15, 
+                claimType: ClaimType.GTE
+            }),
             signature:  buildSignature({message: abi.encode(msg.sender)})
         });
     
@@ -450,7 +459,7 @@ const NOUNS_DAO_HOLDERS_GROUP_ID = "0x311ece950f9ec55757eb95f3182ae5e2";
   // They should hold a Nouns DAO NFT
   // but also the Gitcoin Passport as before
   claims={[
-   { groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15 },
+   { groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15, claimType: ClaimType.GTE },
    { groupId: NOUNS_DAO_HOLDERS_GROUP_ID } // <-- pass the groupId
   ]}
   signature={{ message: signMessage(address) }}
@@ -481,7 +490,7 @@ contract Airdrop is ERC721, SismoConnect {
         // with respect to the Gitcoin Passport requirement
         // but also the Nouns DAO requirement
         ClaimRequest[] memory claims = new ClaimRequest[](2);
-        claims[0] = buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15});
+        claims[0] = buildClaim({groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15, claimType: ClaimType.GTE});
         claims[1] = buildClaim({groupId: NOUNS_DAO_HOLDERS_GROUP_ID}); // &#x3C;-- pass the groupId
         
         // we create a request object that will be passed in the verify function
