@@ -25,7 +25,7 @@ With Sismo, you can:
 * Selectively disclose your data to apps via Sismo Connect—the crypto-native SSO.
 {% endhint %}
 
-<figure><img src=".gitbook/assets/Landing page.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/1. Introduction (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Data Vault: Aggregate Your Identity
 
