@@ -4,7 +4,13 @@ description: Get the most out of your data.
 
 # Sismo: A Communication Protocol
 
-Currently, the digital landscape is defined by the need for **aggregation,** with **privacy** as an essential precondition:
+Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technology to enable users to aggregate and selectively disclose personal data to applications. By using Sismo Connect, an easy-to-integrate SSO, applications can request access to personal data without compromising user privacy.&#x20;
+
+Sismo Connect aims to replace non-sovereign SSOs such as Sign in with Google and limited SSOs such as Sign in with Ethereum (SIWE).&#x20;
+
+## Fragmented Digital Identities
+
+Our digital identities are fragmented on the internet. A clear need for **ownership** and **aggregation** has risen**,** with **privacy** as an essential precondition:
 
 * Web2 platforms, such as Twitter, confine our data within their respective silos, preventing us from leveraging our social capital across multiple platforms.
 * On web3, privacy concerns create barriers for users and applications. Users hesitate to link their private and public accounts due to the fear of exposing sensitive information, while developers, fully aware of the privacy implications, avoid the concept of data aggregation entirely.
