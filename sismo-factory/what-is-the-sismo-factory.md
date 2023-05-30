@@ -6,7 +6,7 @@ description: No-code UI to build with Sismo's open-source infrastructure.
 
 The Sismo Factory is a no-code user interface designed to allow anyone to start building with Sismo and use its open-source infrastructure. It is designed for users of all experience levels, allowing anyone to deploy the infrastructure necessary to harness the capabilities of Sismo's communication protocol—no developer experience required.
 
-On the Sismo Factory, users can create Data Groups, Sismo Connect Apps, and ZK Badges. In addition, users can learn how to contribute to the Factory by creating  Data Providers.
+On the Sismo Factory, users can create Data Groups and Sismo Connect Apps. In addition, users can learn how to contribute to the Factory by creating Data Providers.
 
 ### In This Section
 
