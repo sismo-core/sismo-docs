@@ -9,8 +9,8 @@ Groups are a reusable tool used by Sismo to generate available groups for attest
 
 You will find more information on what are groups in this section:
 
-{% content-ref url="../sismo-badges/zk-badge-protocol/groups.md" %}
-[groups.md](../sismo-badges/zk-badge-protocol/groups.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 Generating groups and making them available for an attester require some infrastructures. We have developed a repository, the [sismo-hub](https://github.com/sismo-core/sismo-hub), to let anyone propose new groups, and make them available for the HydraS1Attester, with a simple PR.

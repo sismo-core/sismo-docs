@@ -8,7 +8,7 @@ description: Developer Tutorial
 
 This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of [Groups](../../technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with Sismo such as [Sismo Connect Apps](../../../../what-is-sismo/discover-sismo-connect.md) and [ZK Badges](../../sismo-badges/zk-badge-protocol/badges.md).
+Group Generators are functions that enable the creation of [Groups](../../technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../../../what-is-sismo/discover-sismo-connect.md).
 
 {% hint style="info" %}
 You can find all already existing Group Generators [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators)**.**
@@ -33,7 +33,7 @@ There are 3 different ways to define the data of a Group generator, you can use:
 
 * A hardcoded list of Data Source (e.g. [rhinofi-power-users](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/rhinofi-power-users/index.ts))
 * [Data Providers](../data-providers.md) (e.g. [proof-of-humanity](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/proof-of-humanity/index.ts))
-* Already existing [Groups](../../sismo-badges/zk-badge-protocol/groups.md) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
+* Already existing [Groups](broken-reference) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
 
 If you want more info on Groups, check out this [page](broken-reference).
 
@@ -41,20 +41,9 @@ If you want to know how to contribute to the Sismo Hub by creating Groups don't 
 
 ### Group use-cases
 
-For now, you can create 2 different usages on top of Groups:
-
-* [ZK Badges](../../sismo-badges/zk-badge-protocol/badges.md)
-* [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md)
+A Group can be used for a [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md).
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
-
-#### [ZK Badge](../../sismo-badges/zk-badge-protocol/badges.md)
-
-Here you can see an [example](https://app.sismo.io/?badge=proof-of-humanity-zk-badge) of a Badge created from a Group:
-
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-07 à 16.18.19.png" alt=""><figcaption><p>Proof of Humanity ZK Badge</p></figcaption></figure>
-
-This Badge was generated from the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group. The Sismo tech stack ensures that only Proof of Humanity registered addresses can mint the Badge (on the address of their choice) without revealing the registered address.
 
 #### [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md)
 
@@ -64,11 +53,11 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to create a [ZK Badge](../../sismo-api/badge/) or a [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
+After this tutorial, you will be able to create a [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
 
 ### Tutorial use-case
 
-This tutorial will show you how to create a Group and make it usable for creating ZK Badge or Sismo Connect App through the [Factory](https://factory.sismo.io/).
+This tutorial will show you how to create a Group and make it usable for a Sismo Connect App through the [Factory](https://factory.sismo.io/).
 
 In the course of this tutorial, you will build your first Group named `tutorial-sismo-early-interactors`, containing all the collectors of the [first Sismo Lens post](https://lenster.xyz/posts/0x26e5-0x02) and all voters of one of the first [Sismo Proposals](https://snapshot.org/#/sismo.eth).
 
@@ -469,11 +458,8 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 ### Use your Group
 
-Now that you have your Group, you can build 2 different things from it:
+Now that you have your Group, you can build the following with it:
 
-* [**ZK Badge**](../../sismo-api/badge/):
-  * using the [Factory](https://factory.sismo.io/badges-explorer)
-  * creating by yourself through the Sismo Hub. And [**here**](../../../../sismo-factory/create-your-zk-badge.md) is a tutorial that shows how to build one.
 * [**Sismo Connect App**](../../../../what-is-sismo/discover-sismo-connect.md):
   * using the [Factory](https://factory.sismo.io/apps-explorer)
   * creating by yourself using the [sismo-connect-packages](https://github.com/sismo-core/sismo-connect-packages/tree/main).

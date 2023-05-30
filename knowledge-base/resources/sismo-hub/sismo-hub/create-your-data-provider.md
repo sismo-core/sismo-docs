@@ -26,7 +26,7 @@ You can find the pull request associated with this tutorial [**here**](https://g
 
 Data Providers enable other group creators to reuse specific data fetching logic, such as calls to APIs.
 
-[Groups](../../sismo-badges/zk-badge-protocol/groups.md) are composed of Data Source:
+[Groups](broken-reference) are composed of Data Source:
 
 * Web2 accounts: Twitter, GitHub
 * Web3 accounts: Ethereum addresses, ENS, Lens handle
@@ -40,7 +40,7 @@ When creating a group, you need to create a [Group Generator](../sismo-protocol-
 Moreover, Data Providers are useful because they enable automatic and frequent group updates, whereas if the group was made of a hardcoded list of accounts it wouldn't be automatic.
 
 {% hint style="success" %}
-If you want to create a [group](../../sismo-badges/zk-badge-protocol/groups.md) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
+If you want to create a [group](broken-reference) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
 
 For example:
 

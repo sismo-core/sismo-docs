@@ -8,7 +8,7 @@ The Hydra-S1 proving scheme is the first proving scheme in the Hydra family:
 Currently, the proving scheme is utilized by the ZK Badge protocol. It allows users to verify ownership of a Data Gem on a single Data Source and mint a ZK Badge on an unlinked Ethereum address.
 
 {% hint style="info" %}
-Sismo’s [ZK Badge protocol](../../sismo-badges/zk-badge-protocol/) uses Hydra S1 Attesters to issue ZK Badges. You can see Sismo’s Hydra S1 attesters on GitHub [here](https://github.com/sismo-core/sismo-protocol/tree/main/contracts/attesters/hydra-s1).
+Sismo’s [ZK Badge protocol](broken-reference) uses Hydra S1 Attesters to issue ZK Badges. You can see Sismo’s Hydra S1 attesters on GitHub [here](https://github.com/sismo-core/sismo-protocol/tree/main/contracts/attesters/hydra-s1).
 {% endhint %}
 
 ## Hydra Proof of Ownership

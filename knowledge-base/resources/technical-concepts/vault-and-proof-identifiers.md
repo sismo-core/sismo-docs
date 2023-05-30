@@ -4,7 +4,7 @@ Zero-knowledge proofs (ZKPs) are malleable; from two valid ZKPs, it is impossibl
 
 As a result, zero-knowledge protocols such as Tornado Cash or Semaphore use a nullifier to prevent certain effects from occurring more than once (i.e, double spends). The nullifier is typically a unique ID inherited from the secret a user provides during ZK proving schemes. ZKPs allow users to prove this connection without revealing how it is true.
 
-Sismo uses the notion of a Vault or Proof Identifier to ensure the associated user has not already accessed certain features. These identifiers are used by applications to substantiate a user or proof’s origin in a privacy-preserving manner. This prevents users from minting duplicate [Badges](../sismo-badges/) or accessing gated features via [Sismo Connect](../../../what-is-sismo/discover-sismo-connect.md) multiple times when unintended.
+Sismo uses the notion of a Vault or Proof Identifier to ensure the associated user has not already accessed certain features. These identifiers are used by applications to substantiate a user or proof’s origin in a privacy-preserving manner. This prevents users from minting duplicate [Badges](broken-reference) or accessing gated features via [Sismo Connect](../../../what-is-sismo/discover-sismo-connect.md) multiple times when unintended.
 
 ## Vault Identifier
 

@@ -6,7 +6,7 @@ description: Non-developer tutorial
 
 This tutorial will show you how to create a [Data Group](../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available in the Factory to create a [ZK Badge](../knowledge-base/resources/sismo-badges/) or a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) 🙌
+At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available for a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) 🙌
 
 {% hint style="info" %}
 If you are a developer and want to build your own customizable Data Group, go check out this [tutorial](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-group.md). It will also explain all the steps of the creation process.
@@ -35,20 +35,9 @@ Here's an example of what a Group looks like:
 
 ## Data Group Use-Cases
 
-For now, you can create 2 different usages on top of Data Groups:
-
-* [ZK Badges](../knowledge-base/resources/sismo-badges/zk-badge-protocol/badges.md)
-* [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md)
+A Data Group can be used for a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md)
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
-
-#### [ZK Badge](../knowledge-base/resources/sismo-badges/zk-badge-protocol/badges.md)
-
-Here you can see an [example](https://app.sismo.io/?badge=proof-of-humanity-zk-badge) of a Badge created from a Group:
-
-<figure><img src="../.gitbook/assets/Capture d’écran 2023-03-07 à 16.18.19.png" alt=""><figcaption><p>Proof of Humanity ZK Badge</p></figcaption></figure>
-
-This Badge was generated from the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group. The Sismo tech stack ensures that only Proof of Humanity registered addresses can mint the Badge (on the address of their choice) without revealing the registered address.
 
 #### Sismo Connect app
 
@@ -58,7 +47,7 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to create a [ZK Badge](../knowledge-base/resources/sismo-api/badge/) or a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
+After this tutorial, you will be able to use your Group for a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md).
 
 ## Tutorial use case
 
@@ -129,7 +118,7 @@ If you need to import a huge number of Data Sources, you can also directly impor
 
 For our case, we didn't specify the value of each account, so they will all have a value of 1. But you can define the value you want for each account if desired.
 
-For example: at Sismo, we use a the Sismo Contributor ZK Badge to vote on Sismo DAO Proposals. There are 3 different values in the Group:
+For example, different values can be used for voting power:&#x20;
 
 * "1" --> gives you 1 voting power
 * "2" --> gives you 50 voting power
@@ -223,10 +212,6 @@ To get verified, your Group must:
 * Not contain obscene content
 * Not impersonate others or have otherwise malicious intent
 
-{% hint style="info" %}
-Read the full guidelines here: [https://sismo.notion.site/ZK-Badge-Creation-Guidelines-ee21ee33203b4d92bcd4668df311d67c](https://sismo.notion.site/ZK-Badge-Creation-Guidelines-ee21ee33203b4d92bcd4668df311d67c)
-{% endhint %}
-
 So at this point, you have to wait for a Sismo Core team member to accept your group, which will be done in less than 48 hours.
 
 {% hint style="info" %}
@@ -237,10 +222,8 @@ For this tutorial, you can find the generated PR [here](https://github.com/sismo
 
 Once your Group has been verified by the Sismo core team, it will be displayed as <mark style="background-color:blue;">**Deploying**</mark>.
 
-When your Badge has been deployed on-chain, it will be displayed as <mark style="background-color:green;">**Deployed**</mark>.
-
 You have finally created your first Group through the [Factory](https://factory.sismo.io/), congrats! 🎉
 
-You can now use it to create a [ZK Badge](../knowledge-base/resources/sismo-badges/) or a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) via the Factory.
+You can now use it to create a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) via the Factory.
 
 If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in the **#general-support**. We will be glad to answer you 🤗
