@@ -8,7 +8,7 @@ description: Developer Tutorial
 
 This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of [Groups](../../technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../../../what-is-sismo/discover-sismo-connect.md).
+Group Generators are functions that enable the creation of [Groups](../../technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../../../welcome-to-sismo/what-is-sismo-connect.md).
 
 {% hint style="info" %}
 You can find all already existing Group Generators [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators)**.**
@@ -41,11 +41,11 @@ If you want to know how to contribute to the Sismo Hub by creating Groups don't 
 
 ### Group use-cases
 
-A Group can be used for a [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md).
+A Group can be used for a [Sismo Connect App](../../../../welcome-to-sismo/what-is-sismo-connect.md).
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
-#### [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md)
+#### [Sismo Connect App](../../../../welcome-to-sismo/what-is-sismo-connect.md)
 
 Here is an instance of a Sismo Connect App that has been implemented using the proof-of-humanity Group:
 
@@ -53,7 +53,7 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to create a [Sismo Connect App](../../../../what-is-sismo/discover-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
+After this tutorial, you will be able to create a [Sismo Connect App](../../../../welcome-to-sismo/what-is-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
 
 ### Tutorial use-case
 
@@ -460,7 +460,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 Now that you have your Group, you can build the following with it:
 
-* [**Sismo Connect App**](../../../../what-is-sismo/discover-sismo-connect.md):
+* [**Sismo Connect App**](../../../../welcome-to-sismo/what-is-sismo-connect.md):
   * using the [Factory](https://factory.sismo.io/apps-explorer)
   * creating by yourself using the [sismo-connect-packages](https://github.com/sismo-core/sismo-connect-packages/tree/main).
     * You can find [**here**](../../../../build-with-sismo-connect/run-example-apps/) sample projects to run on your computer.

@@ -1,9 +1,9 @@
 # Table of contents
 
-## What is Sismo?
+## Welcome to Sismo
 
-* [Sismo: A Communication Protocol](README.md)
-* [Discover Sismo Connect](what-is-sismo/discover-sismo-connect.md)
+* [What is Sismo?](README.md)
+* [What is Sismo Connect?](welcome-to-sismo/what-is-sismo-connect.md)
 
 ## Build with Sismo Connect
 

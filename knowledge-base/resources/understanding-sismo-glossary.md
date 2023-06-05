@@ -8,7 +8,7 @@ Fundamentally, Sismo revolves around data ownership. By using Sismo, users and a
 
 ## Core Products
 
-Sismo’s core products include the [Data Vault](technical-concepts/data-gems-and-data-groups.md), [Sismo Connect](../../what-is-sismo/discover-sismo-connect.md), and [ZK Badges](broken-reference). Descriptions of these core products can be found in the table below.
+Sismo’s core products include the [Data Vault](technical-concepts/data-gems-and-data-groups.md), [Sismo Connect](../../welcome-to-sismo/what-is-sismo-connect.md), and [ZK Badges](broken-reference). Descriptions of these core products can be found in the table below.
 
 | Term          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -6,7 +6,7 @@ description: Non-developer tutorial
 
 This tutorial will show you how to create a [Data Group](../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available for a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) 🙌
+At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available for a [Sismo Connect app](../welcome-to-sismo/what-is-sismo-connect.md) 🙌
 
 {% hint style="info" %}
 If you are a developer and want to build your own customizable Data Group, go check out this [tutorial](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-group.md). It will also explain all the steps of the creation process.
@@ -35,7 +35,7 @@ Here's an example of what a Group looks like:
 
 ## Data Group Use-Cases
 
-A Data Group can be used for a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md)
+A Data Group can be used for a [Sismo Connect app](../welcome-to-sismo/what-is-sismo-connect.md)
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
@@ -47,7 +47,7 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to use your Group for a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md).
+After this tutorial, you will be able to use your Group for a [Sismo Connect app](../welcome-to-sismo/what-is-sismo-connect.md).
 
 ## Tutorial use case
 
@@ -224,6 +224,6 @@ Once your Group has been verified by the Sismo core team, it will be displayed a
 
 You have finally created your first Group through the [Factory](https://factory.sismo.io/), congrats! 🎉
 
-You can now use it to create a [Sismo Connect app](../what-is-sismo/discover-sismo-connect.md) via the Factory.
+You can now use it to create a [Sismo Connect app](../welcome-to-sismo/what-is-sismo-connect.md) via the Factory.
 
 If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in the **#general-support**. We will be glad to answer you 🤗

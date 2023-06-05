@@ -4,7 +4,7 @@ description: Start building with Sismo Connect.
 
 # Overview
 
-Welcome to the 'Build With Sismo Connect' section—the perfect place for developers and tech enthusiasts to gain a firm understanding of [Sismo Connect](../what-is-sismo/discover-sismo-connect.md)! Whether you're starting from scratch or integrating Sismo Connect into an existing project, this section has everything you need to start building.
+Welcome to the 'Build With Sismo Connect' section—the perfect place for developers and tech enthusiasts to gain a firm understanding of [Sismo Connect](../welcome-to-sismo/what-is-sismo-connect.md)! Whether you're starting from scratch or integrating Sismo Connect into an existing project, this section has everything you need to start building.
 
 Let's build with Sismo Connect!
 
