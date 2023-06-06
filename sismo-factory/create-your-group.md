@@ -13,7 +13,7 @@ If you are a developer and want to build your own customizable Data Group, go ch
 {% endhint %}
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it.
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon. We would love to talk to you and meet you there. **All new Groups under 100k accounts are automatically deployed**.
 {% endhint %}
 
 ## What are Data Groups?
@@ -188,6 +188,14 @@ Next, you will have to add 2 descriptions:
 
 ### Deploy your Group
 
+{% hint style="warning" %}
+Before deploying your group, please be sure to:
+
+* Have texts written in the English language
+* Not have obscene content
+* Not impersonate others or have otherwise malicious intent
+{% endhint %}
+
 After having completed the captcha, click on the "Request to deploy":
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2023-03-14 à 10.11.30.png" alt=""><figcaption><p>Deploy the group</p></figcaption></figure>
@@ -196,34 +204,28 @@ You will be redirected to the [Group Explorer Page](https://factory.sismo.io/gro
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2023-03-14 à 10.11.48 2.png" alt=""><figcaption><p>wainting for approval</p></figcaption></figure>
 
-We can see that now your Group request is in <mark style="background-color:blue;">**waiting for approval**</mark> (<mark style="color:red;">red box</mark>).
+We can see that now your Group request is in <mark style="background-color:blue;">**waiting for approval**</mark> (<mark style="color:red;">red box</mark>) and a few time after in   <mark style="background-color:blue;">**Deploying**</mark>.
 
-### Verification Process
-
-Once we submitted our pull request, it will be checked by the Sismo core team within 48 hours.
+Once you submit your Group, it will be **automatically accepted and deployed** on all [supported chains](../knowledge-base/resources/sismo-101.md) in \~20 minutes if it contains less than 100k accounts in it.
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon to ask for help or for a custom group update. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 30 minutes). During hackathons, we are committed to quickly reviewing any new Data Group pull request.
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon to ask for help or for a custom group update. We would love to talk to you and meet you there.
 {% endhint %}
 
-To get verified, your Group must:
+{% hint style="info" %}
+If you Group consist of more than 100k accounts then the Sismo Team will have to approve the Group before deploying it. So don't hesitate to send your PR there as well, we will quickly review and merge it (**usually under 30 minutes**). During hackathons, we are committed to quickly reviewing any new Data Group pull request.
+{% endhint %}
 
-* Be written in the English language
-* Not contain obscene content
-* Not impersonate others or have otherwise malicious intent
+So a few time after your Group will be in deployment and it will be displayed as <mark style="background-color:green;">✔</mark> <mark style="background-color:green;"></mark><mark style="background-color:green;">**Deployed**</mark>.
 
-So at this point, you have to wait for a Sismo Core team member to accept your group, which will be done in less than 48 hours.
+You have finally created your first Group through the [Factory](https://factory.sismo.io/), congrats! 🎉
+
+You can now use it to create a [Sismo Connect app](../welcome-to-sismo/what-is-sismo-connect.md) via the Factory.
 
 {% hint style="info" %}
 You can also click on the 🔽 icon in order to display more information on your group, including the GitHub Pull Request associated with your Group creation.
 
 For this tutorial, you can find the generated PR [here](https://github.com/sismo-core/sismo-hub/pull/1512).
 {% endhint %}
-
-Once your Group has been verified by the Sismo core team, it will be displayed as <mark style="background-color:blue;">**Deploying**</mark>.
-
-You have finally created your first Group through the [Factory](https://factory.sismo.io/), congrats! 🎉
-
-You can now use it to create a [Sismo Connect app](../welcome-to-sismo/what-is-sismo-connect.md) via the Factory.
 
 If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in the **#general-support**. We will be glad to answer you 🤗
