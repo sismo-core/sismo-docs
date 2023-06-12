@@ -2,9 +2,9 @@
 description: Get the most out of your data.
 ---
 
-# Sismo: A Communication Protocol
+# What is Sismo?
 
-Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technology to enable users to aggregate and selectively disclose personal data to applications. By using Sismo Connect, an easy-to-integrate SSO, applications can request access to personal data without compromising user privacy.&#x20;
+Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to enable users to aggregate and selectively disclose personal data to applications. By using Sismo Connect, an easy-to-integrate SSO, applications can request access to personal data without compromising user privacy.&#x20;
 
 Sismo Connect aims to replace non-sovereign SSOs such as Sign in with Google and limited SSOs such as Sign in with Ethereum (SIWE).&#x20;
 
