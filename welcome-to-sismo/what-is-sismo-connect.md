@@ -50,7 +50,7 @@ Learn how to integrate Sismo Connect into offchain applications [here](../build-
 
 When accessing an application via Sismo Connect, users selectively disclose the contents of their [Data Vault](../#data-vault-aggregate-your-identity).
 
-Envision the Data Vault as an encrypted aggregator that securely stores various Data Sources, such as Ethereum addresses, GitHub and Twitter accounts, and other attestations from relevant authorities.
+Envision the Data Vault as an encrypted aggregator that securely stores various Data Sources, such as Ethereum addresses, GitHub, Twitter and Telegram accounts, and other attestations from relevant authorities.
 
 <figure><img src="../.gitbook/assets/dv.png" alt=""><figcaption></figcaption></figure>
 

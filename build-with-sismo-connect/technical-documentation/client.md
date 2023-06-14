@@ -49,6 +49,7 @@ You can request proofs of:
 * **EVM account** ownership (AuthType.**EVM\_ACCOUNT**)
 * **Github account** ownership (AuthType.**GITHUB**)
 * **Twitter account** ownership (AuthType.**TWITTER**)
+* **Telegram account** ownership (AuthType.**TELEGRAM**)
 
 <pre class="language-typescript"><code class="lang-typescript">import { AuthType, AuthRequest } from "@sismo-core/sismo-connect-client";
 
@@ -247,7 +248,7 @@ The AuthRequest object holds all the information needed to request a proof of ac
 
 ```typescript
 export type AuthRequest = {
-  // VAULT / TWITTER / GITHUB / EVM_ACCOUNT
+  // VAULT / TWITTER / GITHUB / EVM_ACCOUNT / TELEGRAM
   authType: AuthType;
   // request a specific userId for the proof
   userId?: string;
@@ -268,6 +269,7 @@ export enum AuthType {
   GITHUB,
   TWITTER,
   EVM_ACCOUNT,
+  TELEGRAM
 }
 ```
 

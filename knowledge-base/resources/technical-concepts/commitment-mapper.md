@@ -4,7 +4,7 @@ The Commitment Mapper, provided by Sismo, is a trusted offchain service housed i
 
 ## How It Works
 
-* Users submit proof of account ownership (e.g., ECDSA signature for an Ethereum account, or OAuth verification for web2 accounts like GitHub or Twitter) along with a commitment (e.g., the hash of a secret known only to them, or the EdDSA public key of one of their accounts).
+* Users submit proof of account ownership (e.g., ECDSA signature for an Ethereum account, or OAuth verification for web2 accounts like GitHub, Twitter or Telegram) along with a commitment (e.g., the hash of a secret known only to them, or the EdDSA public key of one of their accounts).
 * The Commitment Mapper verifies the validity of the account ownership proof and records the commitment for the account in a mapping stored in a database.
 * If the account is already mapped with a commitment, the Commitment Mapper returns an error.
 * The Commitment Mapper sends a signed commitment receipt to the user, confirming that they have completed the commitment process.
