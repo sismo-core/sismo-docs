@@ -6,7 +6,7 @@ description: Non-developer tutorial
 
 This tutorial will show you how to create a [Data Group](../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a Group of Twitter, GitHub, and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available for a [Sismo Connect app](../welcome-to-sismo/what-is-sismo-connect.md) 🙌
+At the end of this tutorial, you will have a Group of Twitter, GitHub, Telegram and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available for a [Sismo Connect app](../welcome-to-sismo/what-is-sismo-connect.md) 🙌
 
 {% hint style="info" %}
 If you are a developer and want to build your own customizable Data Group, go check out this [tutorial](../knowledge-base/resources/sismo-hub/sismo-hub/create-your-group.md). It will also explain all the steps of the creation process.
@@ -20,7 +20,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 [Data Groups](../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) are derived from Data Sources:
 
-* Web2 Data Sources: Twitter, GitHub
+* Web2 Data Sources: Twitter, GitHub, Telegram
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles
 
 Here's an example of what a Group looks like:
@@ -105,6 +105,7 @@ Here are the different formats of Data Sources you can use:
 * Lens handles (e.g. `"sismo.lens":"1"`)
 * GitHub accounts (e.g. `"github:leosayous21":"1"`)
 * Twitter accounts (e.g. `"twitter:leosayous21":"1"`
+* Telegram accounts (e.g. `"telegram:pelealexandru":"1"`
 
 Here we will add some of the Sismo core team members:
 

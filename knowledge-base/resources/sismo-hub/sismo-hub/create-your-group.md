@@ -24,7 +24,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 Groups are composed of Data Sources:
 
-* Web2 accounts: Twitter, GitHub
+* Web2 accounts: Twitter, GitHub, Telegram
 * Web3 accounts: Ethereum addresses, ENS, Lens handles
 
 In order to create a Group, we need to build a [Group Generator](../sismo-protocol-overview.md). This tutorial will guide you through the process of creating one.
@@ -308,6 +308,7 @@ Here there is only "`0x123...`" type addresses but the `fetchedData` object can 
 * Lens handles (e.g. `"sismo.lens":"1"`)
 * GitHub accounts (e.g. `"github:leosayous21":"1"`)
 * Twitter accounts (e.g. `"twitter:leosayous21":"1"`)
+* Telegram accounts (e.g. `"telegram:pelealexandru":"1"`)
 
 {% hint style="info" %}
 During the Group generation, all accounts are resolved into an Ethereum address through a [resolver](https://github.com/sismo-core/sismo-hub/tree/main/src/topics/resolver). There is a resolver for each type of Data Source.

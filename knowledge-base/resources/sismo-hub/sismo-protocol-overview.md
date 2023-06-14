@@ -66,7 +66,8 @@ const generator: GroupGenerator = {
           "dhadrien.lens": 1,
           "github:leosayous21": 2,
           "github:dhadrien": 4,
-          "twitter:dhadrien_": 3
+          "twitter:dhadrien_": 3,
+          "telegram:pelealexandru": 1
         },
         valueType: ValueType.Info,
         tags: [Tags.Mainnet, Tags.User],

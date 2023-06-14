@@ -28,7 +28,7 @@ Data Providers enable other group creators to reuse specific data fetching logic
 
 [Groups](broken-reference) are composed of Data Source:
 
-* Web2 accounts: Twitter, GitHub
+* Web2 accounts: Twitter, GitHub, Telegram
 * Web3 accounts: Ethereum addresses, ENS, Lens handle
 
 When creating a group, you need to create a [Group Generator](../sismo-protocol-overview.md). There are 3 different ways to do so:
@@ -343,6 +343,7 @@ Here there is only "`0x123...`" type addresses but the `fetchedData` object can 
 * Lens handle: "stani.lens"
 * Twitter account: "twitter:Sismo\_eth"
 * GitHub account: "github:leosayous21"
+* Telegram account: "telegram:pelealexandru"
 {% endhint %}
 
 
