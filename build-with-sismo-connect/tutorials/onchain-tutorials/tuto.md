@@ -169,7 +169,7 @@ The configuration is now helpful to setup properly our Sismo Connect button. You
  signature={{ message: signMessage(address) }}
  // onResponseBytes calls a 'setResponse' function 
  // with the responseBytes returned by the Sismo Vault
- onResponseBytes={(responseBytes: string) => setResponse(responseBytes)}
+ onResponseBytes={(responseBytes: string) => setResponseBytes(responseBytes)}
  // Some text to display on the button
  text={"Claim with Sismo"}
 />
@@ -337,7 +337,7 @@ const GITCOIN_PASSPORT_HOLDERS_GROUP_ID = "0x1cde61966decb8600dfd0749bd371f12";
    claimType: ClaimType.GTE
   }]} 
   signature={{ message: signMessage(address) }}
-  onResponseBytes={(responseBytes: string) => setResponse(responseBytes)}
+  onResponseBytes={(responseBytes: string) => setResponseBytes(responseBytes)}
   text={"Claim with Sismo"}
  />
  
@@ -477,7 +477,7 @@ const SISMO_COMMUNITY_MEMBERS_GROUP_ID = "0xd630aa769278cacde879c5c0fe5d203c";
    { groupId: SISMO_COMMUNITY_MEMBERS_GROUP_ID } // <-- pass the groupId
   ]}
   signature={{ message: signMessage(address) }}
-  onResponseBytes={(responseBytes: string) => setResponse(responseBytes)}
+  onResponseBytes={(responseBytes: string) => setResponseBytes(responseBytes)}
   text={"Claim with Sismo"}
  />
  
