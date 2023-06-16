@@ -4,7 +4,7 @@ description: Request proofs from your user on your React project
 
 # Sismo Connect React: Request
 
-The [Sismo Connect](../../welcome-to-sismo/what-is-sismo-connect.md) React package is a wrapper of the Sismo Connect client package which is a package build on top of the [Sismo Data Vault](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) app (the prover) to easily request proofs from your users. It is strongly advised to read about the [**Sismo Connect client package**](client.md) to understand the React package.
+The [Sismo Connect](../../../welcome-to-sismo/what-is-sismo-connect.md) React package is a wrapper of the Sismo Connect client package which is a package build on top of the [Sismo Data Vault](../../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) app (the prover) to easily request proofs from your users. It is strongly advised to read about the [**Sismo Connect client package**](client.md) to understand the React package.
 
 ### Installation
 
@@ -25,12 +25,12 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 ### Configuration
 
-The first step for integrating Sismo Connect in your frontend is to create a `SismoConnectClientConfig` like in the client package. This config will require an `appId` and can be customized with [optional fields.](react.md#sismoconnectclientconfig) You can go to the [Sismo Factory](../../sismo-factory/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId` ([here is a tutorial](../../sismo-factory/create-a-sismo-connect-app.md)).
+The first step for integrating Sismo Connect in your frontend is to create a `SismoConnectClientConfig` like in the client package. This config will require an `appId` and can be customized with [optional fields.](react.md#sismoconnectclientconfig) You can go to the [Sismo Factory](../../../sismo-factory/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId` ([here is a tutorial](../../../sismo-factory/create-a-sismo-connect-app.md)).
 
 ```typescript
-import { SismoConnect, SismoConnectClientConfig } from "@sismo-core/sismo-connect-react";
+import { SismoConnect, SismoConnectConfig } from "@sismo-core/sismo-connect-react";
 
-const config: SismoConnectClientConfig = {
+const config: SismoConnectConfig = {
   // you will need to get an appId from the Factory
   appId: "0xf4977993e52606cfd67b7a1cde717069", 
 }
@@ -44,14 +44,14 @@ To easily integrate Sismo Connect into your frontend, you can use the Sismo Conn
 
 After users generate their proofs, they will be automatically redirected back to your app with a Sismo Connect Response containing the generated proofs.
 
-<figure><img src="../../.gitbook/assets/sign in with Sismo Buttonx1,5.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/sign in with Sismo Buttonx1,5.png" alt=""><figcaption><p>Sismo Connect button</p></figcaption></figure>
 
 To integrate it you have access through the package to the `SismoConnectButton` component.
 
 ```typescript
-import { SismoConnectButton, AuthType,  SismoConnectClientConfig, SismoConnectResponse } from "@sismo-core/sismo-connect-react";
+import { SismoConnectButton, AuthType,  SismoConnectConfig, SismoConnectResponse } from "@sismo-core/sismo-connect-react";
 
-const config: SismoConnectClientConfig = {
+const config: SismoConnectConfig = {
   appId: "0xf4977993e52606cfd67b7a1cde717069", 
 }
 
@@ -90,10 +90,10 @@ const config: SismoConnectClientConfig = {
     ]}
     // request multiple proofs of group membership 
     // (here the groups with id 0x42c768bb8ae79e4c5c05d3b51a4ec74a and 0x8b64c959a715c6b10aa8372100071ca7)
-    claims={[{
-        groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a",
-        groupId: "0x8b64c959a715c6b10aa8372100071ca7",
-    }]}
+    claims={[
+        {groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"},
+        {groupId: "0x8b64c959a715c6b10aa8372100071ca7"}
+    ]}
     signature={{message: "Your message"}}
     onResponse={async (response: SismoConnectResponse) => {
 	//Send the response to your server to verify it

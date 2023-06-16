@@ -1,4 +1,4 @@
-# Onchain Sample Project
+# Onchain Boilerplate
 
 ## Prerequisites
 
@@ -13,10 +13,8 @@ In a first terminal:
 
 ```bash
 # clone the repository
-git clone https://github.com/sismo-core/sismo-connect-onchain-sample-project.git
-cd sismo-connect-onchain-sample-project
-
-# install frontend dependencies
+git clone https://github.com/sismo-core/sismo-connect-boilerplate-onchain
+cd sismo-connect-boilerplate-onchain
 yarn
 
 # install contract dependencies with Forge
@@ -37,6 +35,10 @@ yarn anvil
 In a new terminal:
 
 ```bash
+# install frontend dependencies
+cd front
+yarn
+
 # this will start your Next.js app
 # the frontend is available on http://localhost:3000/
 # it deploys the contracts on the local blockchain
@@ -45,29 +47,13 @@ yarn dev
 
 After this command, you will have your local application running on [http://localhost:3000](http://localhost:3000) and all the contracts have been deployed on your local blockchain.&#x20;
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-05-12 à 11.02.45.png" alt="" width="375"><figcaption><p>Running app on <a href="http://localhost:3000">http://localhost:3000</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-06-16 à 22.15.47.png" alt=""><figcaption><p>Running app on <a href="http://localhost:3000">http://localhost:3000</a></p></figcaption></figure>
 
-If you wish to see the frontend code, you can go to the `src/pages` folder. The contract code is in the `contracts` folder.
-
-#### Be eligible for the airdrop
-
-To be eligible for the airdrop, you will then need to add your address in the `config.ts` file:
-
-```typescript
-// config.ts
-
-// Replace with your address to become eligible for the airdrop
-// make sure to have this address in your Vault
-export const yourAddress = "0x855193BCbdbD346B423FF830b507CBf90ecCc90B";
-```
-
-After changing the `config.ts` file, you don't need to restart the app or restart anvil. Simply refresh the page on the front end and you are good to go.
+If you wish to see the frontend code, you can go to the `front/src/app/page` folder. The contract code is in the `src` folder.
 
 {% hint style="success" %}
-&#x20;Make sure to import the address you reference in the `config.ts` file into your Data Vault when you try out the sample project application. If it is not done when you are redirected, you can add your address by clicking on the purple "connect" button.
+By default, the boilerplate lets you impersonate accounts to be eligible, if you want to learn more about it you can read about the [Sismo Connect Configuration](../technical-documentation/sismo-connect-configuration.md).
 {% endhint %}
-
-<figure><img src="../../.gitbook/assets/Screenshot 2023-05-11 at 16.57.13.png" alt=""><figcaption><p>Import the address referenced in the config.ts file</p></figcaption></figure>
 
 ## Important note
 
