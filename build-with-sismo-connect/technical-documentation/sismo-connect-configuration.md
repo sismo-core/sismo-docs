@@ -10,7 +10,7 @@ The `SismoConnectConfiguration` is an object with the following properties:
 * `vault.impersonate` (optional): by default set to `null`. The list of accounts that you want to impersonate while developing for easy testing. &#x20;
 * `displayRawResponse` (optional): by default set to `false`. If set to `true`, the Sismo Vault App will display the proof generated in a modal and will not redirect to your application once the proof is generated. It can be useful in development.&#x20;
 * `sismoApiUrl` (optional): API endpoint to fetch groups information.
-* `vaultAppBaseUrl` (optional): by default set to `https://vault-beta.sismo.io/`. If you want to switch to the development vault, you can use: `https://dev.vault-beta.sismo.io/`.
+* `vaultAppBaseUrl` (optional): by default set to `https://vault-beta.sismo.io/`.
 
 ```typescript
 type VaultConfig = {

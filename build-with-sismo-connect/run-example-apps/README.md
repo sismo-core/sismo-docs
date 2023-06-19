@@ -12,7 +12,7 @@ We've got two example projects ready for you to explore:
 2. The **offchain** boilerplate — where you can learn how to register a user in a database while ensuring their privacy.
 
 {% hint style="success" %}
-Like Sismo Connect? Dive deep into the codebase or jump into this [hands-on tutorial](../tutorials/onchain-tutorials/tuto.md) on integrating a gated airdrop for Gitcoin passport holders.&#x20;
+Like Sismo Connect? Dive deep into the codebase or jump into this [hands-on tutorial](../tutorials/onchain-tutorials/tuto.md) on integrating a Sybil-Resistant gated airdrop for Sismo Community members.&#x20;
 {% endhint %}
 
 {% content-ref url="onchain-sample-project.md" %}

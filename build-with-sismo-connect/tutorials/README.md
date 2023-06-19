@@ -4,7 +4,7 @@ description: Learn how to integrate Sismo Connect via hands-on tutorials.
 
 # Tutorials
 
-You found the tutorials for Sismo Connect! This section is designed to provide a hands-on learning experience for developers who wish to integrate Sismo Connect into their applications—whether onchain or offchain.
+This section is designed to provide a hands-on learning experience for developers who wish to integrate Sismo Connect into their applications—whether onchain or offchain.
 
 {% hint style="success" %}
 Got questions? Join our Telegram for builders [**here**](https://t.me/+xvUbopYOXg84NDE0).&#x20;
@@ -12,8 +12,8 @@ Got questions? Join our Telegram for builders [**here**](https://t.me/+xvUbopYOX
 
 ## Onchain Tutorials
 
-* [**Build a Sybil-resistant Gated Airdrop**](onchain-tutorials/tuto.md): build a sybil-resistant gated airdrop for holders of Nouns DAO NFT.&#x20;
-* [**Deploy your Sismo Connect contracts with Foundry**](onchain-tutorials/deploy-your-contracts.md)
+* [**Build a Sybil-resistant Gated Airdrop**](onchain-tutorials/tuto.md): build a Sybil-resistant ERC20 gated airdrop for Sismo Community members.
+* [**Deploy your Sismo Connect contracts with Foundry**](onchain-tutorials/deploy-your-contracts.md): learn how to easily deploy a contract inheriting Sismo Connect with Foundry.
 
 ## Offchain Tutorials
 

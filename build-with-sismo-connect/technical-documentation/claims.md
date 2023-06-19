@@ -41,7 +41,7 @@ Claim requests are made in the front-end using either the [`sismo-connect-react`
 
 Requests are then verified either in a backend using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
 
-### Making an ClaimRequest - Front-end integration
+### Making a ClaimRequest - Front-end integration
 
 {% hint style="info" %}
 Making an `ClaimRequest` is only possible in the front-end as the request redirects users to the Sismo Vault app where users can generate a zero-knowledge proof.
@@ -245,7 +245,7 @@ if(response || responseBytes) {
 {% endtab %}
 {% endtabs %}
 
-### Verifying an ClaimRequest
+### Verifying a ClaimRequest
 
 {% hint style="info" %}
 Once a user has generated the proof on the Sismo Vault App, your application must verify it. This can be made either offchain in you backend or onchain in your smartcontrat.

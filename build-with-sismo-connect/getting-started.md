@@ -33,6 +33,10 @@ npm install @sismo-core/sismo-connect-react
 {% endtab %}
 {% endtabs %}
 
+### Create a Sismo Connect App in the Factory
+
+[**Creating a Sismo Connect App in the Factory**](../sismo-factory/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your frontend and smart contracts/backend.
+
 ### Sismo Connect configuration
 
 Create a Sismo Connect configuration in a file of your choice and export it. You need to [create an app in the Sismo Factory](../sismo-factory/create-a-sismo-connect-app.md) to get an `appId`.
@@ -66,6 +70,8 @@ import { config } from "./sismo-connect-config.ts";
     }
 />
 ```
+
+
 
 ## Smart Contract
 
@@ -176,6 +182,10 @@ npm install @sismo-core/sismo-connect-react
 {% endtab %}
 {% endtabs %}
 
+### Create a Sismo Connect App in the Factory
+
+[**Creating a Sismo Connect App in the Factory**](../sismo-factory/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your frontend and smart contracts/backend.
+
 ### Sismo Connect configuration
 
 Create a Sismo Connect configuration in a file of your choice and export it. You need to [create an app in the Sismo Factory](../sismo-factory/create-a-sismo-connect-app.md) to get an `appId`.
@@ -213,6 +223,8 @@ import { config } from "./sismo-connect-config.ts";
 />
 ```
 
+
+
 ## Backend
 
 ### Installation
@@ -248,7 +260,7 @@ import { config } from "./sismo-connect-config.ts";
 
 const sismoConnect = SismoConnect(sismoConnectConfig);
 
-// api endpoint
+// NODEJS + EXPRESS API ENDPOINT EXAMPLE
 app.post('/api', (req, res) => {
   const { response } = req.body;
   const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
