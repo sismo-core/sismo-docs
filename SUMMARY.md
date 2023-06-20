@@ -64,7 +64,6 @@
     * [Proving Schemes](knowledge-base/resources/technical-concepts/proving-schemes/README.md)
       * [Hydra-S1](knowledge-base/resources/technical-concepts/proving-schemes/hydra-s1.md)
       * [Hydra-S2](knowledge-base/resources/technical-concepts/proving-schemes/hydra-s2.md)
-      * [Pythia ZK Proving Scheme](knowledge-base/resources/technical-concepts/proving-schemes/pythia-zk-proving-scheme.md)
     * [Accounts Registry Tree](knowledge-base/resources/technical-concepts/accounts-registry-tree.md)
   * [General FAQ](knowledge-base/resources/general-faq.md)
   * [Glossary](knowledge-base/resources/understanding-sismo-glossary.md)

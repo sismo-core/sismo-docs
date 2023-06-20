@@ -21,13 +21,13 @@ VaultId and Proof Identifiers are two tools with different purposes. VaultId can
 
 ### Hydra Proof Of Ownership
 
-[Hydra Proof of Ownership](./) also changes in Hydra-S2 as far as a new [Commitment Mapper](../commitment-mapper.md) and a new variable when creating commitments. The secret used to generate the commitment for the trusted [Commitment Mapper](../commitment-mapper.md) is now the hash of the Vault secret and the user secret instead of the user secret only.
+[Hydra Proof of Ownership](./) also changes in Hydra-S2 as far as a new [Commitment Mapper](../commitment-mapper.md) and a new variable when creating commitments are being used. The secret used to generate the commitment for the trusted [Commitment Mapper](../commitment-mapper.md) is now the hash of the Vault secret and the user secret instead of the user secret only.
 
 $$
 Commitment = PoseidonHash(VaultSecret, AccountSecret);
 $$
 
-To allow this, we created a new commitment mapper, and we ensure that an account can only be added to one vault since the commitment is now based on the vault secret.
+To allow this, we created a new commitment mapper, and we ensured that an account can only be added to one vault since the commitment is now based on the vault secret.
 
 ### Optional verifications
 
