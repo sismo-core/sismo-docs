@@ -31,15 +31,15 @@ The first step for integrating Sismo Connect in your backend is to create a `sis
 
 This `config` is then used to create a `SismoConnect` instance that will be used to verify proofs.
 
-<pre class="language-typescript"><code class="lang-typescript"><strong>import { SismoConnect, SismoConnectServerConfig } from "@sismo-core/sismo-connect-server";
+<pre class="language-typescript"><code class="lang-typescript"><strong>import { SismoConnect, SismoConnectConfig } from "@sismo-core/sismo-connect-server";
 </strong>
-const config: SismoConnectServerConfig = {
+const config: SismoConnectConfig = {
   // you will need to register an appId in the Factory
   appId: "0x8f347ca31790557391cec39b06f02dc2",
 }
 
 // create a new Sismo Connect instance with the server configuration
-const sismoConnect = SismoConnect(config);
+const sismoConnect = SismoConnect({ config });
 </code></pre>
 
 ### Verify proofs from your users

@@ -38,12 +38,17 @@ You will then use these proofs to airdrop a NFT if they are valid.
   AuthType, 
   ClaimRequest, 
   ClaimType,
-  SismoConnect
+  SismoConnect,
+  SismoConnectConfig
 } from "@sismo-core/sismo-connect-client";
 
-// create a client config with an appId
+const config: SismoConnectConfig = {
+  // you will need to get an appId from the Factory
+  appId: "0xf4977993e52606cfd67b7a1cde717069", 
+}
+
 const sismoConnect = SismoConnect({
-  appId: '0xf4977993e52606cfd67b7a1cde717069',
+  config
 })
 
 // auth request for a proof of Twitter account ownership
