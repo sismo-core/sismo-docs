@@ -1,8 +1,8 @@
 ---
-description: Get the most out of your data.
+description: A communication protocol.
 ---
 
-# What is Sismo?
+# What Is Sismo?
 
 Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to enable users to aggregate and selectively disclose personal data to applications. By using Sismo Connect, an easy-to-integrate SSO, applications can request access to personal data without compromising user privacy.&#x20;
 
@@ -51,7 +51,7 @@ You can create your own Data Vault and start aggregating your identity [here](ht
 
 ## Prove & Verify: Selective Disclosure
 
-To prove ownership of Data Gems (granular data stored in the Vault), users leverage Sismo’s communication protocol to participate in [proving schemes](knowledge-base/resources/technical-concepts/proving-schemes/). Proving ownership of Data Gems proves membership in [Data Groups](knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md)—the Sismo protocol’s open-source data infrastructure.
+To prove ownership of Data Sources or Data Gems, users leverage Sismo’s communication protocol to participate in [proving schemes](welcome-to-sismo/how-sismo-works.md#what-are-proving-schemes). With access to data uploaded to the [Sismo Hub](welcome-to-sismo/how-sismo-works.md#what-is-the-sismo-hub), the protocol's open data infrastructure, proving schemes enable users to prove ownership of Data Gems.
 
 {% hint style="info" %}
 A proving scheme is a cryptographic method that allows one party (the prover) to prove to another party (the verifier) that a certain statement is true, without revealing how it is true—ensuring privacy.

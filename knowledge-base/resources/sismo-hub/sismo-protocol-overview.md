@@ -9,8 +9,8 @@ Groups are a reusable tool used by Sismo to generate available groups for attest
 
 You will find more information on what are groups in this section:
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="broken-reference/" %}
+[broken-reference](broken-reference/)
 {% endcontent-ref %}
 
 Generating groups and making them available for an attester require some infrastructures. We have developed a repository, the [sismo-hub](https://github.com/sismo-core/sismo-hub), to let anyone propose new groups, and make them available for the HydraS1Attester, with a simple PR.
@@ -19,8 +19,8 @@ You will be able to create your own group of accounts (Ethereum addresses, Githu
 
 **Here is a complete tutorial describing all the group creation process steps:**
 
-{% content-ref url="sismo-hub/create-your-group.md" %}
-[create-your-group.md](sismo-hub/create-your-group.md)
+{% content-ref url="../../../create-data-gems/tutorials/create-your-group-1.md" %}
+[create-your-group-1.md](../../../create-data-gems/tutorials/create-your-group-1.md)
 {% endcontent-ref %}
 
 The following documentation aims to describe the code in a more theoretical way, we strongly recommend doing the tutorial to understand what the code below is for, especially for newcomers.
@@ -40,7 +40,7 @@ const generator: GroupGenerator = {
 export default generator;
 ```
 
-A group generator is a tool that allows to easily generate groups and store them in scalable infrastructure.&#x20;
+A group generator is a tool that allows to easily generate groups and store them in scalable infrastructure.
 
 The **GroupGenerator** object is made of a generate function which will be executed at a specific `GenerationFrequency`.
 

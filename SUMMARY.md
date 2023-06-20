@@ -2,8 +2,10 @@
 
 ## Welcome to Sismo
 
-* [What is Sismo?](README.md)
-* [What is Sismo Connect?](welcome-to-sismo/what-is-sismo-connect.md)
+* [What Is Sismo?](README.md)
+* [What Is Sismo Connect?](welcome-to-sismo/what-is-sismo-connect.md)
+* [What Is the Data Vault?](welcome-to-sismo/what-is-the-data-vault.md)
+* [How Sismo Works](welcome-to-sismo/how-sismo-works.md)
 
 ## Build with Sismo Connect
 
@@ -24,16 +26,20 @@
     * [Sismo Connect React: Request](build-with-sismo-connect/technical-documentation/packages/react.md)
     * [Sismo Connect Server: Verify Offchain](build-with-sismo-connect/technical-documentation/packages/server.md)
     * [Sismo Connect Solidity Library: Verify Onchain](build-with-sismo-connect/technical-documentation/packages/solidity.md)
+  * [Vault Identifiers](build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md)
 * [Boilerplates](build-with-sismo-connect/run-example-apps/README.md)
   * [Onchain Boilerplate](build-with-sismo-connect/run-example-apps/onchain-sample-project.md)
   * [Offchain Boilerplate](build-with-sismo-connect/run-example-apps/offchain-sample-project.md)
 * [FAQ](build-with-sismo-connect/faq.md)
 
-## Sismo Factory
+## Create Data Gems
 
-* [What is the Sismo Factory?](sismo-factory/what-is-the-sismo-factory.md)
-* [Create a Data Group](sismo-factory/create-your-group.md)
-* [Create a Sismo Connect App](sismo-factory/create-a-sismo-connect-app.md)
+* [How To Create Data Gems](create-data-gems/how-to-create-data-gems.md)
+* [Create a Sismo Connect App](create-data-gems/create-a-sismo-connect-app.md)
+* [Tutorials](create-data-gems/tutorials/README.md)
+  * [Create a Data Group](create-data-gems/tutorials/create-your-group.md)
+  * [Create your Data Provider](create-data-gems/tutorials/create-your-data-provider.md)
+  * [Create your Group Generator](create-data-gems/tutorials/create-your-group-1.md)
 
 ## Knowledge Base
 
@@ -43,9 +49,6 @@
     * [Data Providers](knowledge-base/resources/sismo-hub/data-providers.md)
     * [Data Operators](knowledge-base/resources/sismo-hub/data-operators.md)
     * [Command Line Interface](knowledge-base/resources/sismo-hub/command-line-interface.md)
-    * [Sismo Hub Tutorials](knowledge-base/resources/sismo-hub/sismo-hub/README.md)
-      * [Create your Group Generator](knowledge-base/resources/sismo-hub/sismo-hub/create-your-group.md)
-      * [Create your Data Provider](knowledge-base/resources/sismo-hub/sismo-hub/create-your-data-provider.md)
   * [Sismo API](knowledge-base/resources/sismo-api/README.md)
     * [API Links](knowledge-base/resources/sismo-api/api-links.md)
     * [Query from a client](knowledge-base/resources/sismo-api/query-from-a-client.md)
@@ -59,7 +62,6 @@
   * [Deployed Contract Addresses](knowledge-base/resources/sismo-101.md)
   * [Technical Concepts](knowledge-base/resources/technical-concepts/README.md)
     * [Data Gems & Data Groups](knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md)
-    * [Vault & Proof Identifiers](knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md)
     * [Commitment Mapper](knowledge-base/resources/technical-concepts/commitment-mapper.md)
     * [Proving Schemes](knowledge-base/resources/technical-concepts/proving-schemes/README.md)
       * [Hydra-S1](knowledge-base/resources/technical-concepts/proving-schemes/hydra-s1.md)

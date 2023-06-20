@@ -6,9 +6,9 @@ description: Developer Tutorial
 
 ## What’s inside?
 
-This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../sismo-protocol-overview.md).
+This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of [Groups](../../technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../../../welcome-to-sismo/what-is-sismo-connect.md).
+Group Generators are functions that enable the creation of [Groups](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../welcome-to-sismo/what-is-sismo-connect.md).
 
 {% hint style="info" %}
 You can find all already existing Group Generators [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators)**.**
@@ -17,7 +17,7 @@ You can find all already existing Group Generators [**here**](https://github.com
 You can find the pull request associated with this tutorial [**here**](https://github.com/sismo-core/sismo-hub/pull/1484). It will give you a good feeling of what we are going to create in this tutorial! 👌
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).&#x20;
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).
 {% endhint %}
 
 ### What are Groups?
@@ -27,33 +27,33 @@ Groups are composed of Data Sources:
 * Web2 accounts: Twitter, GitHub, Telegram
 * Web3 accounts: Ethereum addresses, ENS, Lens handles
 
-In order to create a Group, we need to build a [Group Generator](../sismo-protocol-overview.md). This tutorial will guide you through the process of creating one.
+In order to create a Group, we need to build a [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md). This tutorial will guide you through the process of creating one.
 
 There are 3 different ways to define the data of a Group generator, you can use:
 
 * A hardcoded list of Data Source (e.g. [rhinofi-power-users](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/rhinofi-power-users/index.ts))
-* [Data Providers](../data-providers.md) (e.g. [proof-of-humanity](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/proof-of-humanity/index.ts))
-* Already existing [Groups](broken-reference) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
+* [Data Providers](../../knowledge-base/resources/sismo-hub/data-providers.md) (e.g. [proof-of-humanity](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/proof-of-humanity/index.ts))
+* Already existing [Groups](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
 
-If you want more info on Groups, check out this [page](broken-reference).
+If you want more info on Groups, check out this [page](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/).
 
 If you want to know how to contribute to the Sismo Hub by creating Groups don't hesitate to check the [Contributor Guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
 
 ### Group use-cases
 
-A Group can be used for a [Sismo Connect App](../../../../welcome-to-sismo/what-is-sismo-connect.md).
+A Group can be used for a [Sismo Connect App](../../welcome-to-sismo/what-is-sismo-connect.md).
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
-#### [Sismo Connect App](../../../../welcome-to-sismo/what-is-sismo-connect.md)
+#### [Sismo Connect App](../../welcome-to-sismo/what-is-sismo-connect.md)
 
 Here is an instance of a Sismo Connect App that has been implemented using the proof-of-humanity Group:
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie.png" alt=""><figcaption><p>Sismo Connect App example</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-10 à 14.06.38 2 copie.png" alt=""><figcaption><p>Sismo Connect App example</p></figcaption></figure>
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to create a [Sismo Connect App](../../../../welcome-to-sismo/what-is-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
+After this tutorial, you will be able to create a [Sismo Connect App](../../welcome-to-sismo/what-is-sismo-connect.md) from your Group through the [Factory](https://factory.sismo.io/).
 
 ### Tutorial use-case
 
@@ -63,9 +63,9 @@ In the course of this tutorial, you will build your first Group named `tutorial-
 
 Here's a sample of the Group and the metadata you will get at the end of the tutorial:
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-07 à 18.38.39 2.png" alt=""><figcaption><p>Group data sample</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-07 à 18.38.39 2.png" alt=""><figcaption><p>Group data sample</p></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/spaces_DbBfd4ahlvVGlRudj8NR_uploads_Jc2HZkel01QFenlapLLg_Capture d’écran 2023-03-07 à 18.webp" alt=""><figcaption><p>Group Metadata</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/spaces_DbBfd4ahlvVGlRudj8NR_uploads_Jc2HZkel01QFenlapLLg_Capture d’écran 2023-03-07 à 18.webp" alt=""><figcaption><p>Group Metadata</p></figcaption></figure>
 
 Let's build our Group now 🧑‍💻
 
@@ -195,7 +195,7 @@ yarn generate-group tutorial-sismo-early-interactors
 
 If the group generation went well, here is the log you should see on your terminal:
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-08 à 14.25.10.png" alt=""><figcaption><p>Group generation succeeded</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-08 à 14.25.10.png" alt=""><figcaption><p>Group generation succeeded</p></figcaption></figure>
 
 As you can see we successfully generated the Group, and it contains the 3 elements (<mark style="color:red;">red box</mark>), these are the 3 accounts you defined in the `jsonListData0` variable.
 
@@ -203,7 +203,7 @@ Now that you have an overview of the process of creating a Group, let's move on 
 
 As previously stated, we want to fetch all the collectors of the [first Sismo Lens post](https://lenster.xyz/posts/0x26e5-0x02) and all voters of one of the first [Sismo Proposals](https://snapshot.org/#/sismo.eth/proposal/0xe280e236c5afa533fc28472dd0ce14e5c3514a843c0563552c962226cda05c52).
 
-To fetch all the accounts we want, you will use the 2 different [Data Providers](../data-providers.md):
+To fetch all the accounts we want, you will use the 2 different [Data Providers](../../knowledge-base/resources/sismo-hub/data-providers.md):
 
 * The [**Lens Data Provider**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/lens): it will allow you to fetch all the collectors of the [first Sismo Lens Post](https://lenster.xyz/posts/0x26e5-0x02). (1.)
 
@@ -213,7 +213,7 @@ If you want more info on how Data Provider works and how to create one, there is
 
 * The[ **Snapshot Data Provider**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot): it will allow you to fetch all the voters of one of the first [Sismo proposals](https://snapshot.org/#/sismo.eth/proposal/0xe280e236c5afa533fc28472dd0ce14e5c3514a843c0563552c962226cda05c52) on Snapshot. (2.)
 
-Once this data has been fetched, you'll need to merge it using [Data Operators](../data-operators.md). A few different Data Operators that allow you to make operations on the data exist. Here you want to keep all the collectors and voters in the Group, so you will use the **Union** Data Operator. (3.)
+Once this data has been fetched, you'll need to merge it using [Data Operators](../../knowledge-base/resources/sismo-hub/data-operators.md). A few different Data Operators that allow you to make operations on the data exist. Here you want to keep all the collectors and voters in the Group, so you will use the **Union** Data Operator. (3.)
 
 ```typescript
 // group-generators/generators/tutorial-first-sismo-post-collectors/index.ts
@@ -366,7 +366,7 @@ yarn generate-group tutorial-sismo-early-interactors
 
 If the Group generation went well, here is the log you should see on your terminal:
 
-<figure><img src="../../../../.gitbook/assets/spaces_DbBfd4ahlvVGlRudj8NR_uploads_Ar7MPrJaccllR1TdBBuh_Capture d’écran 2023-03-08 à 14.webp" alt=""><figcaption><p>Group generation succeeded</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/spaces_DbBfd4ahlvVGlRudj8NR_uploads_Ar7MPrJaccllR1TdBBuh_Capture d’écran 2023-03-08 à 14.webp" alt=""><figcaption><p>Group generation succeeded</p></figcaption></figure>
 
 The Group has been successfully generated and it contains 1550 accounts (<mark style="color:red;">red box</mark>) at the time of the tutorial. But you may have a different number depending on the number of new collectors from the Sismo Lens post.
 
@@ -396,7 +396,7 @@ Type on your web browser: [http://127.0.0.1:8000](http://127.0.0.1:8000/static/r
 
 NB: You can go to [http://127.0.0.1:8000/static/rapidoc/index.html](http://127.0.0.1:8000/static/rapidoc/index.html) to see the main endpoints of the Sismo Hub API
 
-Finally, you should see what is displayed on the screenshot in [#tutorial-use-case](create-your-group.md#tutorial-use-case "mention")
+Finally, you should see what is displayed on the screenshot in [#tutorial-use-case](create-your-group-1.md#tutorial-use-case "mention")
 
 </details>
 
@@ -408,7 +408,7 @@ You don't have to store anything or launch anything on your side. You will just 
 
 First, you will have to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the [Sismo Hub repository](https://github.com/sismo-core/sismo-hub):
 
-<figure><img src="../../../../.gitbook/assets/spaces_DbBfd4ahlvVGlRudj8NR_uploads_i1jUXC9Z3fjE8ww5tIr4_Capture d’écran 2023-02-28 à 20.webp" alt=""><figcaption><p>Fork Sismo Hub repository</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/spaces_DbBfd4ahlvVGlRudj8NR_uploads_i1jUXC9Z3fjE8ww5tIr4_Capture d’écran 2023-02-28 à 20.webp" alt=""><figcaption><p>Fork Sismo Hub repository</p></figcaption></figure>
 
 Then you will have to add a new remote to your repo:
 
@@ -441,31 +441,31 @@ git push
 
 You will then see on your forked repository the following message, you can click on "Compare & pull request" to begin creating your pull request:
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-07 à 19.04.21 2.png" alt=""><figcaption><p>Click on "Compare &#x26; pull request" to begin creating your PR</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-07 à 19.04.21 2.png" alt=""><figcaption><p>Click on "Compare &#x26; pull request" to begin creating your PR</p></figcaption></figure>
 
 You will finally see your branch being compared to the main branch of the [Sismo Hub](https://github.com/sismo-core/sismo-hub/) repository (<mark style="color:blue;">blue boxes</mark>). You can review your changes and add a meaningful title and comments, and when you are happy with your PR, click "Create Pull request". 😇
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-07 à 19.17.05.png" alt=""><figcaption><p>Create your pull request</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-07 à 19.17.05.png" alt=""><figcaption><p>Create your pull request</p></figcaption></figure>
 
 For example, here is a valid pull request: [https://github.com/sismo-core/sismo-hub/pull/1484](https://github.com/sismo-core/sismo-hub/pull/1484)
 
-When your PR is merged your Group generator will be registered in the Sismo Hub, and your Group will be generated and sent onchain (through the [Registry Tree](../../technical-concepts/accounts-registry-tree.md)).
+When your PR is merged your Group generator will be registered in the Sismo Hub, and your Group will be generated and sent onchain (through the [Registry Tree](../../knowledge-base/resources/technical-concepts/accounts-registry-tree.md)).
 
 Finally, your Group will be available in the Sismo Hub and anyone will be able to use it to create **Badges** or **Sismo Connect apps**, great job! 💪
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).&#x20;
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).
 {% endhint %}
 
 ### Use your Group
 
 Now that you have your Group, you can build the following with it:
 
-* [**Sismo Connect App**](../../../../welcome-to-sismo/what-is-sismo-connect.md):
+* [**Sismo Connect App**](../../welcome-to-sismo/what-is-sismo-connect.md):
   * using the [Factory](https://factory.sismo.io/apps-explorer)
   * creating by yourself using the [sismo-connect-packages](https://github.com/sismo-core/sismo-connect-packages/tree/main).
-    * You can find [**here**](../../../../build-with-sismo-connect/run-example-apps/) sample projects to run on your computer.
-    * And [**here**](../../../../build-with-sismo-connect/tutorials/) tutorials that shows how to build Sismo Connect apps.
+    * You can find [**here**](../../build-with-sismo-connect/run-example-apps/) sample projects to run on your computer.
+    * And [**here**](../../build-with-sismo-connect/tutorials/) tutorials that shows how to build Sismo Connect apps.
 
 ### Contribute to the Sismo Hub
 

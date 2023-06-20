@@ -25,7 +25,7 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 ### Configuration
 
-The first step for integrating Sismo Connect in your frontend is to create a `SismoConnectClientConfig` like in the client package. This config will require an `appId` and can be customized with [optional fields.](react.md#sismoconnectclientconfig) You can go to the [Sismo Factory](../../../sismo-factory/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId` ([here is a tutorial](../../../sismo-factory/create-a-sismo-connect-app.md)).
+The first step for integrating Sismo Connect in your frontend is to create a `SismoConnectClientConfig` like in the client package. This config will require an `appId` and can be customized with [optional fields.](react.md#sismoconnectclientconfig) You can go to the [Sismo Factory](../../../create-data-gems/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId` ([here is a tutorial](../../../create-data-gems/create-a-sismo-connect-app.md)).
 
 ```typescript
 import { SismoConnect, SismoConnectConfig } from "@sismo-core/sismo-connect-react";

@@ -98,7 +98,7 @@ Among other things, Sismo Connect allows a simple user authentication for your a
 
 Each Sismo user has a Data Vault, where all his data is stored securely. As a developer, you can request to your users some proofs about the data in their Vault thanks to a Sismo Connect Request. In the case of an auth of type VAULT, you request a proof of ownership of a Sismo Vault from your users. When they are done generating the proof in their vault, they are redirected to your application with a Sismo Connect Response that holds the proof but also a `vaultId`.&#x20;
 
-The **`vaultId`** is the **unique identifier of a user vault for a specific application**, it is computed as the **hash** of the **userVaultSecret** and the **appId**. If you want to learn more about the `vaultId`, you can read more about it in [Vault & Proof Identifiers](../../../knowledge-base/resources/technical-concepts/vault-and-proof-identifiers.md).
+The **`vaultId`** is the **unique identifier of a user vault for a specific application**, it is computed as the **hash** of the **userVaultSecret** and the **appId**. If you want to learn more about the `vaultId`, you can read more about it in [Vault & Proof Identifiers](../../technical-documentation/vault-and-proof-identifiers.md).
 
 You can also see a general scheme below showing you the high-level workflow:
 
@@ -109,7 +109,7 @@ You can also see a general scheme below showing you the high-level workflow:
 To see how we created the auth request, you can go to the `front/src/app/page.tsx` file. The first thing we do is defining a **Sismo Connect configuration**, this config will let the Sismo Vault app knows about the `appId` from which the requests are made. In this tutorial, we use `0xf4977993e52606cfd67b7a1cde717069` for the `appId`.
 
 {% hint style="success" %}
-In order to use Sismo Connect in your application, you will first need to create an application  in the [Sismo Factory](https://factory.sismo.io/apps-explorer) and get its `appId`. You can see a quick tutorial on how to do it [here](../../../sismo-factory/create-a-sismo-connect-app.md).
+In order to use Sismo Connect in your application, you will first need to create an application  in the [Sismo Factory](https://factory.sismo.io/apps-explorer) and get its `appId`. You can see a quick tutorial on how to do it [here](../../../create-data-gems/create-a-sismo-connect-app.md).
 {% endhint %}
 
 ```typescript

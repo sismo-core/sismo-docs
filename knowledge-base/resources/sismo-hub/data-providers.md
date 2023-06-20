@@ -56,8 +56,8 @@ The above information displays how to use data from external sources. Below, you
 
 **You can find here a complete tutorial describing all the Data Provider creation process steps:**
 
-{% content-ref url="sismo-hub/create-your-data-provider.md" %}
-[create-your-data-provider.md](sismo-hub/create-your-data-provider.md)
+{% content-ref url="../../../create-data-gems/tutorials/create-your-data-provider.md" %}
+[create-your-data-provider.md](../../../create-data-gems/tutorials/create-your-data-provider.md)
 {% endcontent-ref %}
 
 ## Create a new Data Provider

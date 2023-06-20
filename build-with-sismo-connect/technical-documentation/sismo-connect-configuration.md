@@ -1,6 +1,6 @@
 # Sismo Connect Configuration
 
-The `SismoConnectConfiguration` is the first object to understand when starting Sismo Connect integration in your application. Its main feature is to reference the `appId` you got from the **Sismo Factory** [when you created a new Sismo Connect App](../../sismo-factory/create-a-sismo-connect-app.md), it will then enable you to request proofs from your users and verify them.
+The `SismoConnectConfiguration` is the first object to understand when starting Sismo Connect integration in your application. Its main feature is to reference the `appId` you got from the **Sismo Factory** [when you created a new Sismo Connect App](../../create-data-gems/create-a-sismo-connect-app.md), it will then enable you to request proofs from your users and verify them.
 
 ## Type definitions&#x20;
 

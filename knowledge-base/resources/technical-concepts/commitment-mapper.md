@@ -1,6 +1,6 @@
 # Commitment Mapper
 
-The Commitment Mapper, provided by Sismo, is a trusted offchain service housed in an isolated infrastructure. It allows account owners to transform proof of account ownership into proof of secret knowledge. The account owner receives a receipt from the Commitment Mapper, which connects their account to their commitment (e.g., the hash of their secret). This combination of the user's secret and the Commitment Mapper receipt forms the Delegated Proof of Ownership. The commitment can be used in zero-knowledge (ZK) systems as a [Vault or Proof Identifier](vault-and-proof-identifiers.md).
+The Commitment Mapper, provided by Sismo, is a trusted offchain service housed in an isolated infrastructure. It allows account owners to transform proof of account ownership into proof of secret knowledge. The account owner receives a receipt from the Commitment Mapper, which connects their account to their commitment (e.g., the hash of their secret). This combination of the user's secret and the Commitment Mapper receipt forms the Delegated Proof of Ownership. The commitment can be used in zero-knowledge (ZK) systems as a [Vault or Proof Identifier](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md).
 
 ## How It Works
 

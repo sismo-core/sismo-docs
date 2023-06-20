@@ -21,7 +21,7 @@ The Hydra-S1 proving scheme allows participants to establish, in one ZK proof, t
 * A claim about their source account value is true
   * e.g: "my account value is superior to 5" (non-strict claim)
   * or "my account value is strictly equal to 5" (strict claim)
-* They correctly generated a [Proof Identifier](../vault-and-proof-identifiers.md)
+* They correctly generated a [Proof Identifier](../../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md)
 
 {% hint style="info" %}
 Proof Identifiers can be stored by verifiers to ensure a user cannot use two ZKPs for the same function when unintended.

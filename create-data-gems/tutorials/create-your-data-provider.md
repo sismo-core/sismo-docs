@@ -6,9 +6,9 @@ description: Developer tutorial.
 
 ## What's inside?
 
-This tutorial will explain how to create a [Data Provider](../data-providers.md) in the [Sismo Hub](https://github.com/sismo-core/sismo-hub). Users (through the [Factory](https://factory.sismo.io)) and developers (through the [Sismo Hub](../)) will be able to use your Data Provider in order to create [Group Generators](../sismo-protocol-overview.md).
+This tutorial will explain how to create a [Data Provider](../../knowledge-base/resources/sismo-hub/data-providers.md) in the [Sismo Hub](https://github.com/sismo-core/sismo-hub). Users (through the [Factory](https://factory.sismo.io)) and developers (through the [Sismo Hub](../../knowledge-base/resources/sismo-hub/)) will be able to use your Data Provider in order to create [Group Generators](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of groups at the center of the Sismo protocol. As groups need to contain data, we need Data Providers to fetch data from external APIs (e.g, Lens, GitHub, Snapshot).&#x20;
+Group Generators are functions that enable the creation of groups at the center of the Sismo protocol. As groups need to contain data, we need Data Providers to fetch data from external APIs (e.g, Lens, GitHub, Snapshot).
 
 {% hint style="info" %}
 You can find all already existing Data Providers [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers)**.**
@@ -22,25 +22,25 @@ Data providers are at the foundation of the Sismo Hub architecture. They are des
 You can find the pull request associated with this tutorial [**here**](https://github.com/sismo-core/sismo-hub/pull/1407/files)**.**
 {% endhint %}
 
-## What are [Data Providers](../data-providers.md)?
+## What are [Data Providers](../../knowledge-base/resources/sismo-hub/data-providers.md)?
 
 Data Providers enable other group creators to reuse specific data fetching logic, such as calls to APIs.
 
-[Groups](broken-reference) are composed of Data Source:
+[Groups](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/) are composed of Data Source:
 
 * Web2 accounts: Twitter, GitHub, Telegram
 * Web3 accounts: Ethereum addresses, ENS, Lens handle
 
-When creating a group, you need to create a [Group Generator](../sismo-protocol-overview.md). There are 3 different ways to do so:
+When creating a group, you need to create a [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md). There are 3 different ways to do so:
 
 * Enter a hardcoded list of accounts
-* Use an already existing [Group Generator](../sismo-protocol-overview.md)
-* Use a [Data Provider](../data-providers.md) to fetch accounts
+* Use an already existing [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md)
+* Use a [Data Provider](../../knowledge-base/resources/sismo-hub/data-providers.md) to fetch accounts
 
 Moreover, Data Providers are useful because they enable automatic and frequent group updates, whereas if the group was made of a hardcoded list of accounts it wouldn't be automatic.
 
 {% hint style="success" %}
-If you want to create a [group](broken-reference) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
+If you want to create a [group](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
 
 For example:
 
@@ -53,7 +53,7 @@ const snapshotProviderData0 = await snapshotProvider.queryProposalVoters({
 This will fetch all the voters of the CoW Swap proposal number 23 (CIP-23)
 {% endhint %}
 
-If you want to know more on Data Providers, check out this [page](../data-providers.md). Alternatively, you can check out the [Contributor Guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md) before creating one yourself.
+If you want to know more on Data Providers, check out this [page](../../knowledge-base/resources/sismo-hub/data-providers.md). Alternatively, you can check out the [Contributor Guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md) before creating one yourself.
 
 ## Tutorial use case
 
@@ -63,7 +63,7 @@ We will take the example of a **Lens Data Provider** on top of the Lens API and 
 
 At the end of this tutorial, it will be up to you to do a pull request on the [Sismo Hub](https://github.com/sismo-core/sismo-hub) to see your Data Provider integrated and be usable in the [Factory](https://factory.sismo.io/) (<mark style="color:green;">green box</mark>) and in the Sismo Hub (<mark style="color:red;">red box</mark>) 🙌
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-03 à 13.45.55 2 (1).png" alt=""><figcaption><p>Use of the data provider </p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-03 à 13.45.55 2 (1).png" alt=""><figcaption><p>Use of the data provider</p></figcaption></figure>
 
 ## Tutorial
 
@@ -300,7 +300,7 @@ export type PublicationId = {
 ```
 {% endhint %}
 
-It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../sismo-protocol-overview.md).
+It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md).
 
 Indeed, a Group Generator returns a group that is composed of metadata:
 
@@ -318,7 +318,7 @@ Indeed, a Group Generator returns a group that is composed of metadata:
 
 The `data` field is where the group of accounts is stored, and its type is a `FetchedData`.
 
-That's why [`FetchedData`](https://github.com/sismo-core/sismo-hub/blob/main/src/topics/group/group.types.ts) must be the format of the variable you return.&#x20;
+That's why [`FetchedData`](https://github.com/sismo-core/sismo-hub/blob/main/src/topics/group/group.types.ts) must be the format of the variable you return.
 
 ```typescript
 export type FetchedData = {
@@ -346,8 +346,6 @@ Here there is only "`0x123...`" type addresses but the `fetchedData` object can 
 * Telegram account: "telegram:pelealexandru"
 {% endhint %}
 
-
-
 Finally, you need to reference your newly created Data Provider in the `data-provider` folder in order to use it anywhere in the Sismo Hub:
 
 ```typescript
@@ -366,7 +364,7 @@ Congrats 🎉 You've just created your first Data Provider!
 
 But now that you have finished, you probably want to test it right?
 
-To do this you will have to create a group (only for testing) and import your Data Provider into it, so you can try your request. If you don't know how to create a group, check out the group tutorial [**here**](create-your-group.md).
+To do this you will have to create a group (only for testing) and import your Data Provider into it, so you can try your request. If you don't know how to create a group, check out the group tutorial [**here**](create-your-group-1.md).
 
 ### Make your Data Provider usable by anyone on the Factory
 
@@ -407,7 +405,7 @@ touch interface-schema.json
 ```
 
 {% hint style="info" %}
-If you want more info on this schema, check this [section](../data-providers.md#make-your-data-provider-usable-in-the-sismo-factory) on the Data Provider page.
+If you want more info on this schema, check this [section](../../knowledge-base/resources/sismo-hub/data-providers.md#make-your-data-provider-usable-in-the-sismo-factory) on the Data Provider page.
 {% endhint %}
 
 Then you have to reference your schema:
@@ -518,11 +516,11 @@ By adding this interface file and the count function, you just allowed the facto
 * Fetch information about your newly created Data Provider. It can be now displayed (<mark style="color:red;">red box</mark>) and used for Factory users when adding eligible accounts.
 * Call the right count function (regarding the user selection).
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-02 à 11.14.44 (1).png" alt=""><figcaption><p>Data Provider selection</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-02 à 11.14.44 (1).png" alt=""><figcaption><p>Data Provider selection</p></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-03-02 à 11.26.10.png" alt=""><figcaption><p>Run the count function</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-02 à 11.26.10.png" alt=""><figcaption><p>Run the count function</p></figcaption></figure>
 
-If you wish to choose the collectors for a Lens post, you would need to input the post's ID. After clicking the 'Add' button, the Factory will invoke your count function to verify the post's validity and display the number of eligible accounts at the bottom of the screen (see the example above).&#x20;
+If you wish to choose the collectors for a Lens post, you would need to input the post's ID. After clicking the 'Add' button, the Factory will invoke your count function to verify the post's validity and display the number of eligible accounts at the bottom of the screen (see the example above).
 
 You have finally set up your Data Provider for the Factory, congrats! 🎉
 
@@ -562,7 +560,7 @@ You don't have to store or launch anything on your side. You will just have to a
 
 First, you will have to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the [Sismo Hub repository](https://github.com/sismo-core/sismo-hub):
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-02-28 à 20.21.59 2.png" alt=""><figcaption><p>Fork Sismo Hub repository</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-02-28 à 20.21.59 2.png" alt=""><figcaption><p>Fork Sismo Hub repository</p></figcaption></figure>
 
 Then you will have to add a new remote to your repo:
 
@@ -578,7 +576,7 @@ git checkout -b tutorial-lens-data-provider
 
 In this tutorial you should have 5 different files changed:
 
-* 4 files created:&#x20;
+* 4 files created:
   * `group-generators/helpers/data-providers/tutorial-lens/index.ts`
   * `group-generators/helpers/data-providers/tutorial-lens/queries.ts`
   * `group-generators/helpers/data-providers/tutorial-lens/types.ts`
@@ -604,11 +602,11 @@ Don't forget to only add the files related to the Data Provider, and do not add 
 
 You will then see on your forked repository the following message, you can click on "Compare & pull request" to begin creating your pull request:
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-02-28 à 19.35.52 2.png" alt=""><figcaption><p>Click on "Compare &#x26; pull request" to begin creating your PR</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-02-28 à 19.35.52 2.png" alt=""><figcaption><p>Click on "Compare &#x26; pull request" to begin creating your PR</p></figcaption></figure>
 
 You will finally see your branch being compared to the main branch of the [Sismo Hub](https://github.com/sismo-core/sismo-hub/) repository (<mark style="color:blue;">blue boxes</mark>). You can review your changes and add a meaningful title and comments, and when you are happy with your PR, click "Create Pull request". 😇
 
-<figure><img src="../../../../.gitbook/assets/Capture d’écran 2023-02-28 à 19.47.50.png" alt=""><figcaption><p>Create your pull request</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-02-28 à 19.47.50.png" alt=""><figcaption><p>Create your pull request</p></figcaption></figure>
 
 For example, here is a valid pull request: [https://github.com/sismo-core/sismo-hub/pull/1407](https://github.com/sismo-core/sismo-hub/pull/1407)\
 (The PR is closed because it's only used as an example for this tutorial)
@@ -621,7 +619,7 @@ When your PR is merged, you'll be able to see your Data Provider implemented in 
 
 You will also see it in the Sismo Hub API: [https://hub.sismo.io/data-provider-interfaces](https://hub.sismo.io/data-provider-interfaces)
 
-Finally, your Data Provider will be available in the Sismo Hub and anyone will be able to use it to create groups. Great job! 💪&#x20;
+Finally, your Data Provider will be available in the Sismo Hub and anyone will be able to use it to create groups. Great job! 💪
 
 ### Contribute to the Sismo Hub
 
