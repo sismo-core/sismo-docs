@@ -16,6 +16,7 @@
     * [Build a Sybil-resistant Gated Airdrop](build-with-sismo-connect/tutorials/onchain-tutorials/tuto.md)
     * [Deploy your contracts](build-with-sismo-connect/tutorials/onchain-tutorials/deploy-your-contracts.md)
   * [Offchain Tutorials](build-with-sismo-connect/tutorials/offchain-tutorials.md)
+  * [Create a Sismo Connect App](build-with-sismo-connect/tutorials/create-a-sismo-connect-app.md)
 * [Technical Documentation](build-with-sismo-connect/technical-documentation/README.md)
   * [Sismo Connect Configuration](build-with-sismo-connect/technical-documentation/sismo-connect-configuration.md)
   * [Auths](build-with-sismo-connect/technical-documentation/auths.md)
@@ -35,7 +36,6 @@
 ## Create Data Gems
 
 * [How To Create Data Gems](create-data-gems/how-to-create-data-gems.md)
-* [Create a Sismo Connect App](create-data-gems/create-a-sismo-connect-app.md)
 * [Tutorials](create-data-gems/tutorials/README.md)
   * [Create a Data Group](create-data-gems/tutorials/create-your-group.md)
   * [Create your Data Provider](create-data-gems/tutorials/create-your-data-provider.md)

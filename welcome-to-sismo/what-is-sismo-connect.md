@@ -38,18 +38,10 @@ The case studies below showcase the power of Sismo Connect, demonstrating how it
 
 To celebrate privacy as a fundamental human right, Sismo launched the "Privacy Is Normal" lottery. This application allows Tornado Cash users to enter a lottery to win a printed tribute to the protocol’s revolutionary code or its NFT equivalent.
 
+<figure><img src="../.gitbook/assets/Docs_PrivacyIsNormal_UseCase.png" alt=""><figcaption></figcaption></figure>
+
 By integrating Sismo Connect, Privacy Is Normal enables users to generate a ZK proof establishing they own a Tornado Cash depositing address without directly revealing it. In addition, users prove ownership of a Gitcoin Passport to add an effective layer of Sybil resistance, allowing only those users with adequate scores to participate.
 
 {% hint style="success" %}
 Read the full case study [here](https://sismo.notion.site/PROD-Sybil-resistant-anonymous-Lottery-gated-to-Tornado-Cash-users-1cdeef27f4d243f4a40c7aaa74e40ee9).
-{% endhint %}
-
-### The Merge Contributors
-
-In recognition of the critical work done by Merge contributors during Ethereum's transition from Proof of Work (PoW) to Proof of Stake (PoS), Sismo launched the Merge Contributors Space. It integrates Sismo Connect to allow contributors to claim access to upcoming web3 events via an onchain ERC-721 NFT airdrop or offchain mailing list.
-
-The Merge Contributors Space integrates Sismo Connect to enable users to prove they contributed to Ethereum’s Merge. If users have an eligible account in their Data Vault, they can generate a ZK proof to gain access to gated features in the Space. Thus, users only what is necessary instead of sensitive information. During the process, users receive their unique Vault ID specific to them and the application—eliminating the potential of double spends.
-
-{% hint style="success" %}
-Read the full case study here.
 {% endhint %}

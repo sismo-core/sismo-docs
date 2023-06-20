@@ -64,7 +64,7 @@ import "@sismo-core/sismo-connect-solidity/contracts/libs/SismoLib.sol";
 
 **Inherit** your contract from the Sismo Connect Library.
 
-**Call** the SismoConnect constructor in the constructor of your contract with an `appId.` Here is a [tutorial](../../../create-data-gems/create-a-sismo-connect-app.md) to get an `appId`.
+**Call** the SismoConnect constructor in the constructor of your contract with an `appId.` Here is a [tutorial](../../tutorials/create-a-sismo-connect-app.md) to get an `appId`.
 
 ```solidity
 contract MyContract is SismoConnect { // inherits from Sismo Connect library

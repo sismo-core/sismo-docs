@@ -35,11 +35,11 @@ npm install @sismo-core/sismo-connect-react
 
 ### Create a Sismo Connect App in the Factory
 
-[**Creating a Sismo Connect App in the Factory**](../create-data-gems/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your frontend and smart contracts/backend.
+[**Creating a Sismo Connect App in the Factory**](tutorials/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your frontend and smart contracts/backend.
 
 ### Sismo Connect configuration
 
-Create a Sismo Connect configuration in a file of your choice and export it. You need to [create an app in the Sismo Factory](../create-data-gems/create-a-sismo-connect-app.md) to get an `appId`.
+Create a Sismo Connect configuration in a file of your choice and export it. You need to [create an app in the Sismo Factory](tutorials/create-a-sismo-connect-app.md) to get an `appId`.
 
 ```typescript
 // sismo-connect-config.ts
@@ -184,11 +184,11 @@ npm install @sismo-core/sismo-connect-react
 
 ### Create a Sismo Connect App in the Factory
 
-[**Creating a Sismo Connect App in the Factory**](../create-data-gems/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your frontend and smart contracts/backend.
+[**Creating a Sismo Connect App in the Factory**](tutorials/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your frontend and smart contracts/backend.
 
 ### Sismo Connect configuration
 
-Create a Sismo Connect configuration in a file of your choice and export it. You need to [create an app in the Sismo Factory](../create-data-gems/create-a-sismo-connect-app.md) to get an `appId`.
+Create a Sismo Connect configuration in a file of your choice and export it. You need to [create an app in the Sismo Factory](tutorials/create-a-sismo-connect-app.md) to get an `appId`.
 
 ```typescript
 // sismo-connect-config.ts
