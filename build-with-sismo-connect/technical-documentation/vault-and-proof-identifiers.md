@@ -47,7 +47,7 @@ SafeAirdrop, a Sybil-resistant airdrop leveraging privately aggregated data, use
 Although the application can identify whether a user is unique or not, privacy is not compromised as a `vaultId` does not contain any sensitive information and cannot be linked to other applications or the user’s private vault. In this context, `vaultId` acts as the nullifier frequently used by zero-knowledge protocols to prevent double spends.
 
 {% hint style="success" %}
-Read the full case study here.
+Read the full case study [here](https://case-studies.sismo.io/db/safe-drop).
 {% endhint %}
 
 ### Vault Identifier as a Sybil-Resistant User ID
@@ -57,5 +57,5 @@ Privacy Is Normal is an anonymous Sybil-resistant lottery for Tornado Cash users
 Despite knowing whether a user has already entered the lottery or not, the application has no access to sensitive information that could identify the user in question. As a result, `vaultId` functions as a Sybil-resistant user ID that allows the application to track user activity without infringing on their privacy.
 
 {% hint style="success" %}
-Read the full case study here.
+Read the full case study [here](https://case-studies.sismo.io/db/anon-lottery).
 {% endhint %}
