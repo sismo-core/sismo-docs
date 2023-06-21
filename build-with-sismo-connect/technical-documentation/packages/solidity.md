@@ -8,7 +8,7 @@ The Sismo Connect Solidity Library is built on top of the [Hydra-S2 Verifier](..
 
 <figure><img src="../../../.gitbook/assets/Sismo Connect onchain Flow.png" alt=""><figcaption><p>Sismo Connect onchain Flow</p></figcaption></figure>
 
-This page will detail all the specifications of the Sismo Connect Solidity Library.
+This page will detail all the specifications of the Sismo Connect Solidity Library that is deployed on [**the following chains**](../../../knowledge-base/resources/sismo-101.md).
 
 You can find the Solidity Library GitHub repository [here](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-solidity).
 

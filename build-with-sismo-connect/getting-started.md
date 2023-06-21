@@ -75,6 +75,8 @@ import { config } from "./sismo-connect-config.ts";
 
 ## Smart Contract
 
+You can see the chains where Sismo Connect is available [**here**](../knowledge-base/resources/sismo-101.md).
+
 ### Installation
 
 {% tabs %}

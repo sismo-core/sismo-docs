@@ -26,6 +26,7 @@ Sismo Connect is now deployed on **10 chains**, you can view all the contract ad
 
 * **Arbitrum One** (42161)
 * **Gnosis** (100)
+* **Mainnet** (1)
 * **Optimism** (10)
 * **Polygon** (137)
 * **Arbitrum Goerli** (421613)
