@@ -15,7 +15,6 @@ In a first terminal:
 # clone the repository
 git clone https://github.com/sismo-core/sismo-connect-boilerplate-onchain
 cd sismo-connect-boilerplate-onchain
-yarn
 
 # install contract dependencies with Forge
 foundryup
@@ -47,9 +46,9 @@ yarn dev
 
 After this command, you will have your local application running on [http://localhost:3000](http://localhost:3000) and all the contracts have been deployed on your local blockchain.&#x20;
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-06-16 à 22.15.47.png" alt=""><figcaption><p>Running app on <a href="http://localhost:3000">http://localhost:3000</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-06-22 à 15.41.08.png" alt=""><figcaption><p>Running app on <a href="http://localhost:3000">http://localhost:3000</a></p></figcaption></figure>
 
-If you wish to see the frontend code, you can go to the `front/src/app/page` folder. The contract code is in the `src` folder.
+If you wish to see the frontend code, you can go to the `front/src/app/page.tsx` file. The contract code is in the `src` folder.
 
 {% hint style="success" %}
 By default, the boilerplate lets you impersonate accounts to be eligible, if you want to learn more about it you can read about the [Sismo Connect Configuration](../technical-documentation/sismo-connect-configuration.md).
