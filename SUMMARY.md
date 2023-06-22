@@ -37,9 +37,9 @@
 
 * [How To Create Data Gems](create-data-gems/how-to-create-data-gems.md)
 * [Tutorials](create-data-gems/tutorials/README.md)
-  * [Create a Data Group](create-data-gems/tutorials/create-your-group.md)
-  * [Create your Data Provider](create-data-gems/tutorials/create-your-data-provider.md)
-  * [Create your Group Generator](create-data-gems/tutorials/create-your-group-1.md)
+  * [Sismo Factory: Create a Data Group in 5 Minutes](create-data-gems/tutorials/create-your-group.md)
+  * [Sismo Hub: Add a Data Provider to the Sismo Factory](create-data-gems/tutorials/create-your-data-provider.md)
+  * [Sismo Hub: Create Data Groups Programmatically](create-data-gems/tutorials/create-your-group-1.md)
 
 ## Knowledge Base
 

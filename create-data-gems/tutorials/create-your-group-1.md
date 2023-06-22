@@ -1,8 +1,8 @@
 ---
-description: Developer Tutorial
+description: Developer tutorial
 ---
 
-# Create your Group Generator
+# Sismo Hub: Create Data Groups Programmatically
 
 ## What’s inside?
 

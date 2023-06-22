@@ -54,8 +54,8 @@ Sismo Connect is the developer-friendly layer on top of proving schemes. It enab
 
 Currently, Sismo has the following proving schemes deployed:
 
-* [Hydra S1 proving scheme](https://www.notion.so/sismo-docs/knowledge-base/resources/technical-concepts/proving-schemes/hydra-s1)
-* [Hydra S2 proving scheme](https://www.notion.so/sismo-docs/knowledge-base/resources/technical-concepts/proving-schemes/hydra-s2)
+* [Hydra S1 proving scheme](../knowledge-base/resources/technical-concepts/proving-schemes/hydra-s1.md)
+* [Hydra S2 proving scheme](../knowledge-base/resources/technical-concepts/proving-schemes/hydra-s2.md)
 
 These schemes are part of the Hydra family, a collection of proving schemes utilizing ZKPs in combination with Sismo’s Commitment Mapper.
 

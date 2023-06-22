@@ -1,8 +1,8 @@
 ---
-description: Developer tutorial.
+description: Developer tutorial
 ---
 
-# Create your Data Provider
+# Sismo Hub: Add a Data Provider to the Sismo Factory
 
 ## What's inside?
 

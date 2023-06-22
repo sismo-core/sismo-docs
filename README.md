@@ -6,7 +6,7 @@ description: A communication protocol.
 
 Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to enable users to aggregate and selectively disclose personal data to applications. By using Sismo Connect, an easy-to-integrate SSO, applications can request access to personal data without compromising user privacy.&#x20;
 
-Sismo Connect aims to replace non-sovereign SSOs such as Sign in with Google and limited SSOs such as Sign in with Ethereum (SIWE).&#x20;
+[Sismo Connect](welcome-to-sismo/what-is-sismo-connect.md) aims to replace non-sovereign SSOs such as Sign in with Google and limited SSOs such as Sign in with Ethereum (SIWE).&#x20;
 
 ## Fragmented Digital Identities
 
@@ -29,7 +29,7 @@ With Sismo, you can:
 
 ## Data Vault: Aggregate Your Identity
 
-Fundamentally, Sismo revolves around communication between personal data and applications. To utilize Sismo’s communication protocol, users aggregate their identity in their own Data Vault. By doing so, they unlock the power to leverage their data across multiple platforms.
+Fundamentally, Sismo revolves around communication between personal data and applications. To utilize Sismo’s communication protocol, users aggregate their identity in their own [Data Vault](welcome-to-sismo/what-is-the-data-vault.md). By doing so, they unlock the power to leverage their data across multiple platforms.
 
 {% hint style="info" %}
 The Data Vault is encrypted storage for a user's personal data from various web2 and web3 accounts, credentials, and attestations.
@@ -68,7 +68,7 @@ Verifiers integrated into applications accept proofs from users and ensure their
 Sismo Connect is a crypto-native single sign-on method (SSO) for the next generation of applications, whether onchain or offchain. Designed with developers in mind, Sismo Connect establishes communication between the prover in a user’s Data Vault and verifiers integrated into applications. As a result, Sismo Connect serves as the developer-centered method of leveraging Sismo’s communication protocol.
 
 {% hint style="success" %}
-Discover applications leveraging the power of Sismo Connect on [Sismo Spaces](https://spaces.sismo.io/).
+Discover applications leveraging the power of Sismo Connect on the [Sismo App Store](https://spaces.sismo.io/).
 {% endhint %}
 
 Integration is simple with just a few lines of code: import the front-end package or React button for data requests, and verify proofs using Sismo’s Solidity or TypeScript package. Once integrated, applications can **request** private and granular data, while users can **authenticate** and **selectively disclose** their personal data.

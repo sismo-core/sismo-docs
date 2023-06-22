@@ -15,7 +15,7 @@ For instance, Sismo Connect facilitates:
 * Aggregating user data from multiple wallets without ‘doxing’
 
 {% hint style="info" %}
-Visit the Sismo App Store to explore applications built with Sismo Connect.
+Visit the [Sismo App Store](https://apps.sismo.io/) to explore applications built with Sismo Connect.
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption></figcaption></figure>
