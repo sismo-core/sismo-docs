@@ -12,7 +12,7 @@ Got questions? Join our Telegram for builders [**here**](https://t.me/+xvUbopYOX
 
 ## Onchain Tutorials
 
-* [**Build a Sybil-resistant Gated Airdrop**](onchain-tutorials/tuto.md): build a Sybil-resistant ERC20 gated airdrop for Sismo Community members.
+* [**Build a Sybil-resistant Airdrop from privately-aggregated data**](onchain-tutorials/tuto.md): build a Sybil-resistant ERC20 airdrop and send tokens to your users proportionally to their reputation, aggregated from diverse sources of data.
 * [**Deploy your Sismo Connect contracts with Foundry**](onchain-tutorials/deploy-your-contracts.md): learn how to easily deploy a contract inheriting Sismo Connect with Foundry.
 
 ## Offchain Tutorials
