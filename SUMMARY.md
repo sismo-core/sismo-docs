@@ -13,7 +13,7 @@
 * [Getting Started](build-with-sismo-connect/getting-started.md)
 * [Tutorials](build-with-sismo-connect/tutorials/README.md)
   * [Onchain Tutorials](build-with-sismo-connect/tutorials/onchain-tutorials/README.md)
-    * [Build a Sybil-resistant Gated Airdrop](build-with-sismo-connect/tutorials/onchain-tutorials/tuto.md)
+    * [Build a Sybil-resistant Airdrop from privately-aggregated data](build-with-sismo-connect/tutorials/onchain-tutorials/tuto.md)
     * [Deploy your contracts](build-with-sismo-connect/tutorials/onchain-tutorials/deploy-your-contracts.md)
   * [Offchain Tutorials](build-with-sismo-connect/tutorials/offchain-tutorials.md)
   * [Create a Sismo Connect App](build-with-sismo-connect/tutorials/create-a-sismo-connect-app.md)

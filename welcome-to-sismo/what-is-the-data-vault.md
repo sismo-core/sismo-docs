@@ -9,7 +9,7 @@ The Data Vault is encrypted storage for a user’s personal data. The accounts a
 After aggregating their identity, users can prove ownership of Data Sources and Data Gems. The Data Vault is encrypted and only ever exists in its decrypted state on a user’s device.
 
 {% hint style="info" %}
-You can create your own Data Vault and start aggregating your identity here.
+You can create your own Data Vault and start aggregating your identity [**here**](https://vault-beta.sismo.io/).
 {% endhint %}
 
 ## Aggregate Your Identity
