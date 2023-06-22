@@ -33,6 +33,6 @@ Anyone building applications with Sismo Connect must utilize Data Groups to requ
 There are currently two ways to create Data Groups:
 
 * Through Sismo’s [Factory no-code interface](../../../create-data-gems/how-to-create-data-gems.md)
-* Through a pull request in the [Sismo Hub](../../../create-data-gems/tutorials/create-your-group-1.md) - the Factory’s open-source back end
+* Through a pull request in the [Sismo Hub](../../../create-data-gems/tutorials/create-your-group-generator.md) - the Factory’s open-source back end
 
 Alternatively, builders can utilize Data Groups created for existing Sismo Connect applications.

@@ -4,14 +4,14 @@ The command line interface (CLI) is made of three commands.
 
 ### `generate-group`
 
-The `generate-group` command is used to store a specific group of users in a JSON format in an off-chain database. You have to choose a valid [Group Generator](sismo-protocol-overview.md) to run this command.
+The `generate-group` command is used to store a specific group of users in a JSON format in an off-chain database. You have to choose a valid [Group Generator](group-generators.md) to run this command.
 
 ```bash
 # generate a group with the 'ens-voters' Group Generator
 yarn generate-group ens-voters
 ```
 
-The mandatory argument is a valid `generator-name`, i.e a valid [Group Generator](sismo-protocol-overview.md).
+The mandatory argument is a valid `generator-name`, i.e a valid [Group Generator](group-generators.md).
 
 You then have the following options:
 

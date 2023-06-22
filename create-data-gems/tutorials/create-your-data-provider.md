@@ -6,7 +6,7 @@ description: Developer tutorial
 
 ## What's inside?
 
-This tutorial will explain how to create a [Data Provider](../../knowledge-base/resources/sismo-hub/data-providers.md) in the [Sismo Hub](https://github.com/sismo-core/sismo-hub). Users (through the [Factory](https://factory.sismo.io)) and developers (through the [Sismo Hub](../../knowledge-base/resources/sismo-hub/)) will be able to use your Data Provider in order to create [Group Generators](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md).
+This tutorial will explain how to create a [Data Provider](../../knowledge-base/resources/sismo-hub/data-providers.md) in the [Sismo Hub](https://github.com/sismo-core/sismo-hub). Users (through the [Factory](https://factory.sismo.io)) and developers (through the [Sismo Hub](../../knowledge-base/resources/sismo-hub/)) will be able to use your Data Provider in order to create [Group Generators](../../knowledge-base/resources/sismo-hub/group-generators.md).
 
 Group Generators are functions that enable the creation of groups at the center of the Sismo protocol. As groups need to contain data, we need Data Providers to fetch data from external APIs (e.g, Lens, GitHub, Snapshot).
 
@@ -31,16 +31,16 @@ Data Providers enable other group creators to reuse specific data fetching logic
 * Web2 accounts: Twitter, GitHub, Telegram
 * Web3 accounts: Ethereum addresses, ENS, Lens handle
 
-When creating a group, you need to create a [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md). There are 3 different ways to do so:
+When creating a group, you need to create a [Group Generator](../../knowledge-base/resources/sismo-hub/group-generators.md). There are 3 different ways to do so:
 
 * Enter a hardcoded list of accounts
-* Use an already existing [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md)
+* Use an already existing [Group Generator](../../knowledge-base/resources/sismo-hub/group-generators.md)
 * Use a [Data Provider](../../knowledge-base/resources/sismo-hub/data-providers.md) to fetch accounts
 
 Moreover, Data Providers are useful because they enable automatic and frequent group updates, whereas if the group was made of a hardcoded list of accounts it wouldn't be automatic.
 
 {% hint style="success" %}
-If you want to create a [group](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
+If you want to create a [group](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../../knowledge-base/resources/sismo-hub/group-generators.md) by giving the Proposal Identifier as an argument.
 
 For example:
 
@@ -300,7 +300,7 @@ export type PublicationId = {
 ```
 {% endhint %}
 
-It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md).
+It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../../knowledge-base/resources/sismo-hub/group-generators.md).
 
 Indeed, a Group Generator returns a group that is composed of metadata:
 
@@ -364,7 +364,7 @@ Congrats 🎉 You've just created your first Data Provider!
 
 But now that you have finished, you probably want to test it right?
 
-To do this you will have to create a group (only for testing) and import your Data Provider into it, so you can try your request. If you don't know how to create a group, check out the group tutorial [**here**](create-your-group-1.md).
+To do this you will have to create a group (only for testing) and import your Data Provider into it, so you can try your request. If you don't know how to create a group, check out the group tutorial [**here**](create-your-group-generator.md).
 
 ### Make your Data Provider usable by anyone on the Factory
 

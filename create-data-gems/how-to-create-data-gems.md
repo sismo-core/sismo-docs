@@ -17,7 +17,7 @@ Learn more about Data Gems and how Sismo works [here](../welcome-to-sismo/how-si
 The Sismo Hub includes an onchain registry of Data Groups. Anyone can use the Sismo Hub to create a Data Group, either via a pull request or the [Sismo Factory](https://factory.sismo.io/) (a no-code interface). Fundamentally, Data Groups are lists of accounts (Ethereum, GitHub, Twitter and Telegram) with an associated owner, reputation level and proving scheme. The entries in a Data Group are characterized as Data Gems.
 
 {% hint style="info" %}
-Learn how to create a Data Group [here](tutorials/create-your-group.md).
+Learn how to create a Data Group [here](tutorials/create-your-data-group.md).
 {% endhint %}
 
 The Sismo Hub takes the information in a Data Group and publishes it in an onchain Merkle tree, which is used as a source of truth in Hydra proving schemes. Currently, all Sismo proving schemes belong to the Hydra family. Future proving schemes could use different sources of truth.
@@ -31,7 +31,7 @@ A Group Generator, as used by Sismo, is essentially a tool that creates and mana
 As a result, Data Groups can be viewed as snapshots of data at a given time. For example, a Data Group containing holders of a certain NFT collection could be updated on a daily basis so that proving schemes have access to the latest and most accurate data.
 
 {% hint style="info" %}
-Learn how to create a Group Generator [here](tutorials/create-your-group-1.md).
+Learn how to create a Group Generator [here](tutorials/create-your-group-generator.md).
 {% endhint %}
 
 ## What is a Data Provider?

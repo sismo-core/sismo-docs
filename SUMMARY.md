@@ -37,15 +37,15 @@
 
 * [How To Create Data Gems](create-data-gems/how-to-create-data-gems.md)
 * [Tutorials](create-data-gems/tutorials/README.md)
-  * [Sismo Factory: Create a Data Group in 5 Minutes](create-data-gems/tutorials/create-your-group.md)
+  * [Sismo Factory: Create a Data Group in 5 Minutes](create-data-gems/tutorials/create-your-data-group.md)
   * [Sismo Hub: Add a Data Provider to the Sismo Factory](create-data-gems/tutorials/create-your-data-provider.md)
-  * [Sismo Hub: Create Data Groups Programmatically](create-data-gems/tutorials/create-your-group-1.md)
+  * [Sismo Hub: Create Data Groups Programmatically](create-data-gems/tutorials/create-your-group-generator.md)
 
 ## Knowledge Base
 
 * [Resources](knowledge-base/resources/README.md)
   * [Sismo Hub](knowledge-base/resources/sismo-hub/README.md)
-    * [Group Generators](knowledge-base/resources/sismo-hub/sismo-protocol-overview.md)
+    * [Group Generators](knowledge-base/resources/sismo-hub/group-generators.md)
     * [Data Providers](knowledge-base/resources/sismo-hub/data-providers.md)
     * [Data Operators](knowledge-base/resources/sismo-hub/data-operators.md)
     * [Command Line Interface](knowledge-base/resources/sismo-hub/command-line-interface.md)
