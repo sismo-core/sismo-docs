@@ -9,6 +9,8 @@
 
 ## Installation
 
+Repository: [https://github.com/sismo-core/sismo-connect-boilerplate-onchain](https://github.com/sismo-core/sismo-connect-boilerplate-onchain)
+
 In a first terminal:
 
 ```bash
@@ -46,7 +48,7 @@ yarn dev
 
 After this command, you will have your local application running on [http://localhost:3000](http://localhost:3000) and all the contracts have been deployed on your local blockchain.&#x20;
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-06-22 à 15.41.08.png" alt=""><figcaption><p>Running app on <a href="http://localhost:3000">http://localhost:3000</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-06-22 à 22.28.29.png" alt=""><figcaption><p>Running app on <a href="http://localhost:3000">http://localhost:3000</a></p></figcaption></figure>
 
 If you wish to see the frontend code, you can go to the `front/src/app/page.tsx` file. The contract code is in the `src` folder.
 

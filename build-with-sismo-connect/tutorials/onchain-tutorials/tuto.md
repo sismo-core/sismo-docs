@@ -134,7 +134,6 @@ const sismoConnectConfig: SismoConnectConfig = {
       "dhadrien.sismo.eth",
       "twitter:dhadrien_",
       "github:dhadrien",
-      "
     ],
   },
 };
@@ -252,13 +251,7 @@ contract Airdrop is ERC20, SismoConnect { // <--- add a Sismo Connect inheritanc
 }
 ```
 
-You can then take a look at the `claimWithSismo` function that will be called from the frontend. It takes a Sismo Connect Response as `bytes`  as argument and verifies the proof it holds with respect to the auth request and the signature expected. If the proof is valid, it gets the `vaultId` from the Sismo Connect Verified Result, verifies that the airdrop has not been claimed before and finally mints 100 token on the address encoded in the signature. The `vaultId` being the anonymous identifier of a user's vault for a specific app, defined as hash(`userVaultSecret`, `appId`).
-
-What is interesting here is that the **`vaultId` is a protection from double spendings**. Indeed, if a user generates a second proof from the same vault he would not be able to claim the airdrop again since each proof generated from a Vault has the same `vaultId` associated to it.&#x20;
-
-{% hint style="success" %}
-If you use Impersonation Mode, you will be able to claim the airdrop each time you try though. As far as the `vaultId` is randomized each time you use the Impersonation Vault, it is obvious that you will not be able to have the same one twice.&#x20;
-{% endhint %}
+You can then take a look in the below snippet at the `claimWithSismo` function that will be called from the frontend. It takes a Sismo Connect Response as `bytes`  as argument and verifies the proof it holds with respect to the auth request and the signature expected. If the proof is valid, it gets the `vaultId` from the Sismo Connect Verified Result, verifies that the airdrop has not been claimed before and finally mints 100 token on the address encoded in the signature. The `vaultId` being the anonymous identifier of a user's vault for a specific app, defined as hash(`userVaultSecret`, `appId`).
 
 <pre class="language-solidity"><code class="lang-solidity">// you are in src/Airdrop.sol
 
@@ -300,6 +293,12 @@ contract Airdrop is ERC20, SismoConnect {
 }
 </code></pre>
 
+What is interesting here is that the **`vaultId` is a protection from double spendings**. Indeed, if a user generates a second proof from the same vault he would not be able to claim the airdrop again since each proof generated from a Vault has the same `vaultId` associated to it.&#x20;
+
+{% hint style="success" %}
+If you use Impersonation Mode, you will be able to claim the airdrop each time you try though. As far as the `vaultId` is randomized each time you use the Impersonation Vault, it is obvious that you will not be able to have the same one twice.&#x20;
+{% endhint %}
+
 The integration is basically done!&#x20;
 
 Ok, so if we recap an onchain Sismo Connect integration, it all comes to:
@@ -315,37 +314,42 @@ Well, now that you have all this steps in mind, let's improve this airdrop contr
 
 Our first aim is to make the ERC20 Aidrop Sybil-resistant, to do this we simply need to request a proof of Gitcoin Passport group membership from our users. We also want them to have a passport score above 15. You can request such a proof by taking the `groupId` of the "Gitcoin Passport Holders" group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders) and create a [**Claim Request**](../../technical-documentation/claims.md) from it.
 
+{% hint style="success" %}
+You can learn how to create a Data Group with the [following tutorial](../../../create-data-gems/tutorials/create-your-data-group.md).
+{% endhint %}
+
 The `groupId` of the Gitcoin Passport Holders group is `0x1cde61966decb8600dfd0749bd371f12`. Let's add our claim request in the React button. We indicate the groupId of the group and the minimum value required in this group.
 
 ```typescript
 // you are in: front/src/app/page.tsx
 
-export default function ClaimAirdrop() {
-// add the groupId
-const GITCOIN_PASSPORT_HOLDERS_GROUP_ID = "0x1cde61966decb8600dfd0749bd371f12";
-
-...
+export default function Home() {
+ // add the groupId
+ const GITCOIN_PASSPORT_HOLDERS_GROUP_ID = "0x1cde61966decb8600dfd0749bd371f12";
  
- return (
-  ...
+ ...
   
- <SismoConnectButton
-  config={sismoConnectConfig}
-  auths={[{ authType: AuthType.VAULT }]}
-  // request a proof of Gitcoin Passport ownership from your users
-  // pass the groupId and the minimum value required in the group
-  claims={[{ 
-   groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, 
-   value: 15, 
-   claimType: ClaimType.GTE
-  }]} 
-  signature={{ message: signMessage(address) }}
-  onResponseBytes={(responseBytes: string) => setResponseBytes(responseBytes)}
-  text={"Claim with Sismo"}
- />
- 
-  ...
-)
+  return (
+   ...
+   
+  <SismoConnectButton
+   config={sismoConnectConfig}
+   auths={[{ authType: AuthType.VAULT }]}
+   // request a proof of Gitcoin Passport ownership from your users
+   // pass the groupId and the minimum value required in the group
+   claims={[{ 
+    groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, 
+    value: 15, 
+    claimType: ClaimType.GTE
+   }]} 
+   signature={{ message: signMessage(address) }}
+   onResponseBytes={(responseBytes: string) => setResponseBytes(responseBytes)}
+   text={"Claim with Sismo"}
+  />
+  
+   ...
+ )
+}
 ```
 
 Once you have created this claim request in the frontend, you also need to add it in the smart contract. Always remember that the proofs sent to the smart contract need to be checked with respect to some requests.&#x20;
@@ -449,39 +453,40 @@ You can add the claim requests in the frontend, notice that to claim the airdrop
 ```typescript
 // you are in: front/src/app/page.tsx
 
-export default function ClaimAirdrop() {
-// add the groupIds
-const SISMO_COMMUNITY_MEMBERS_GROUP_ID = "0xd630aa769278cacde879c5c0fe5d203c";
-const EARLY_SISMO_COMMUNITY_MEMBERS_GROUP_ID = "0xe4c011331d91b79639df349a93157a1b";
-const SISMO_FACTORY_USERS_GROUP_ID = "0x05629c9a54e30d8c8aea911a48cd9e30";
-
-...
+export default function Home() {
+ // add the groupIds
+ const SISMO_COMMUNITY_MEMBERS_GROUP_ID = "0xd630aa769278cacde879c5c0fe5d203c";
+ const EARLY_SISMO_COMMUNITY_MEMBERS_GROUP_ID = "0xe4c011331d91b79639df349a93157a1b";
+ const SISMO_FACTORY_USERS_GROUP_ID = "0x05629c9a54e30d8c8aea911a48cd9e30";
  
- return (
-  ...
+ ...
   
- <SismoConnectButton
-  config={sismoConnectConfig}
-  auths={[{ authType: AuthType.VAULT }]}
-  // request an additional proof of group membership from your users
-  // They should be part of the Sismo Community
-  // but also hold a Gitcoin Passport with a minimum value of 15 as before
-  claims={[
-   { groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15, claimType: ClaimType.GTE },
-   // the value of this dataGem can be selected by the user to gain more tokens
-   { groupId: SISMO_COMMUNITY_MEMBERS_GROUP_ID, isSelectableByUser: true }, 
-   // this dataGem is optional
-   { groupId: EARLY_SISMO_COMMUNITY_MEMBERS_GROUP_ID, isOptional: true }, 
-   // this dataGem is optional as well
-   { groupId: SISMO_FACTORY_USERS_GROUP_ID, isOptional: true } 
-  ]}
-  signature={{ message: signMessage(address) }}
-  onResponseBytes={(responseBytes: string) => setResponseBytes(responseBytes)}
-  text={"Claim with Sismo"}
- />
- 
-  ...
-)
+  return (
+   ...
+   
+  <SismoConnectButton
+   config={sismoConnectConfig}
+   auths={[{ authType: AuthType.VAULT }]}
+   // request an additional proof of group membership from your users
+   // They should be part of the Sismo Community
+   // but also hold a Gitcoin Passport with a minimum value of 15 as before
+   claims={[
+    { groupId: GITCOIN_PASSPORT_HOLDERS_GROUP_ID, value: 15, claimType: ClaimType.GTE },
+    // the value of this dataGem can be selected by the user to gain more tokens
+    { groupId: SISMO_COMMUNITY_MEMBERS_GROUP_ID, isSelectableByUser: true }, 
+    // this dataGem is optional
+    { groupId: EARLY_SISMO_COMMUNITY_MEMBERS_GROUP_ID, isOptional: true }, 
+    // this dataGem is optional as well
+    { groupId: SISMO_FACTORY_USERS_GROUP_ID, isOptional: true } 
+   ]}
+   signature={{ message: signMessage(address) }}
+   onResponseBytes={(responseBytes: string) => setResponseBytes(responseBytes)}
+   text={"Claim with Sismo"}
+  />
+  
+   ...
+ )
+}
 ```
 
 Add the claim requests in the smart contract:&#x20;

@@ -7,6 +7,8 @@
 
 ## Installation
 
+Repository: [https://github.com/sismo-core/sismo-connect-boilerplate-offchain](https://github.com/sismo-core/sismo-connect-boilerplate-offchain)
+
 In a first terminal:
 
 ```bash
