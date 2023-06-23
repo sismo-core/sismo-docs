@@ -4,9 +4,9 @@
 
 This tutorial is designed as an **introduction** to **Sismo Connect Solidity** Library. It aims at showcasing the integration steps of Sismo Connect to easily create a Sybil-resistant ERC20 airdrop from privately-aggregated data (known as [Data Gems](../../../welcome-to-sismo/how-sismo-works.md)). You can take a look at the [**SafeDrop Case Study**](https://case-studies.sismo.io/db/safe-drop) that we are going to use for this tutorial to deeply understand what issues we are easily solving thanks to Sismo Connect in the context of an ERC20 airdrop.
 
-You will learn how to request proofs about your users data, verify them in your contracts and how privacy and data aggregation can be leveraged for your app thanks to Sismo Connect.
+You will learn how to request proofs about your user's data, verify them in your contracts and how privacy and data aggregation can be leveraged for your app thanks to Sismo Connect.
 
-If you wish to understand what is Sismo Connect from a high level view, we advise you to read about it in the ["What is Sismo Connect"](../../../welcome-to-sismo/what-is-sismo-connect.md) section.&#x20;
+If you wish to understand Sismo Connect from a high-level view, you can read about it [here](../../../welcome-to-sismo/what-is-sismo-connect.md).
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ This tutorial requires:
 * Metamask installed in your browser
 
 {% hint style="info" %}
-We use Foundry for our smart contract dependencies but we also have a [**Hardhat library**](https://www.npmjs.com/package/@sismo-core/sismo-connect-solidity). A tutorial with Hardhat integration will be made in the coming weeks. Don't hesitate to ask questions on our [Builder Telegram](https://t.me/+Z-SwcvXZFRVhZTQ0) group if you have any.
+We use Foundry for our smart contract dependencies, but we also have a [**Hardhat library**](https://www.npmjs.com/package/@sismo-core/sismo-connect-solidity). A tutorial with Hardhat integration will be made in the coming weeks. Don't hesitate to ask questions on our [Builder Telegram](https://t.me/+Z-SwcvXZFRVhZTQ0) group if you have any.
 {% endhint %}
 
 ## Installation
@@ -65,7 +65,7 @@ This command starts the NextJs application that will call the contract in `src/A
 
 You can now play with the local app that already integrates Sismo Connect by connecting your wallet and signing in with Sismo.
 
-Once you are redirected from your Sismo Vault, you can click on the "Claim" button, you are then shown that you have successfully claim the airdrop.&#x20;
+Once you are redirected from your Data Vault, you can click on the "Claim" button. You are then shown that you have successfully claimed the airdrop.&#x20;
 
 <figure><img src="../../../.gitbook/assets/Capture d’écran 2023-06-16 à 23.38.53.png" alt=""><figcaption><p>Claim successfully your airdrop</p></figcaption></figure>
 
@@ -74,7 +74,7 @@ Once you are redirected from your Sismo Vault, you can click on the "Claim" butt
 {% hint style="warning" %}
 The interaction with the fork network can become quite unstable if you stop the `yarn anvil` command at some point or if you already use the sample app before.
 
-You can end up with a infinite pending transaction.
+You can end up with an infinitely pending transaction.
 
 If so:
 
@@ -82,14 +82,14 @@ If so:
 * make sure to delete your activity tab for the fork network in Metamask by going to "Settings > Advanced > Clear activity tab data" when connected to the fork network.&#x20;
 * relaunch the anvil node and the application
 
-See [FAQ](../../faq.md) for more informations.
+See the [FAQ](../../faq.md) for more information.
 {% endhint %}
 
 {% hint style="success" %}
-This tutorial does not need any `anvil` restart or frontend restart, everything auto reloads for you. You should only save the files you make changes to and play with your frontend.
+This tutorial does not need any `anvil` or front-end restart; everything auto-reloads for you. You should only save the files you make changes to and play with your front end.
 {% endhint %}
 
-Congrats on getting your airdrop! Now, let's see how this simple Sismo Connect integration works behind the scene and let's improve it along the way. Let's start with the flow you just experimented.
+Congrats on getting your airdrop! Now, let's see how this simple Sismo Connect integration works behind the scenes and improve it along the way. Let's start with the authentication you just experimented with.
 
 ## Authenticate your users
 
@@ -99,11 +99,11 @@ Each Sismo user has a [Data Vault](../../../welcome-to-sismo/what-is-the-data-va
 
 You can also see a general scheme below showing you the high-level workflow. In our case we ask for a `vaultId` in the Sismo Connect Request and we receive the `vaultId` alongside its proof in the Sismo Connect Response that will be verified onchain.
 
-<figure><img src="../../../.gitbook/assets/Sismo Connect onchain Flow.png" alt=""><figcaption><p>Sismo Connect onchain Flow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Sismo Connect onchain Flow.png" alt=""><figcaption></figcaption></figure>
 
 ### Create a Sismo Connect configuration
 
-To see how we created the Auth Request, you can go to the `front/src/app/page.tsx` file. The first thing we do is defining a **Sismo Connect configuration**, this config will let the Sismo Vault app knows about the `appId` from which the requests are made. In this tutorial, we use `0xf4977993e52606cfd67b7a1cde717069` for the `appId`.
+To see how we created the auth request, you can go to the `front/src/app/page.tsx` file. The first thing we do is define a **Sismo Connect configuration**, this config will let the Sismo Data Vault app knows about the `appId` from which the requests are made. In this tutorial, we use `0xf4977993e52606cfd67b7a1cde717069` for the `appId`.
 
 {% hint style="success" %}
 In order to use Sismo Connect in your application, you will first need to create an application  in the [Sismo Factory](https://factory.sismo.io/apps-explorer) and get its `appId`. You can see a quick tutorial on how to do it [here](../create-a-sismo-connect-app.md).
@@ -142,12 +142,12 @@ const sismoConnectConfig: SismoConnectConfig = {
 You can spot in the snippets all the imports needed for the tutorial to work smoothly and the Sismo Connect configuration that you create with the `appId` from the Factory. You can learn more about the Sismo Connect configuration [**here**](../../technical-documentation/sismo-connect-configuration.md).
 
 {% hint style="success" %}
-The `vault object` in the configuration should be omitted if you are in production mode, it enables you to specify which accounts you want to impersonate while developing your Sismo Connect app in order to generate impersonated proofs. In this example, we are impersonating `dhadrien.sismo.eth` ethereum address, but also his twitter and github account to generate proofs.
+The `vault object` in the configuration should be omitted if you are in production mode. It enables you to specify which accounts you want to impersonate while developing your Sismo Connect app in order to generate impersonated proofs. In this tutorial, we are impersonating dhadrien.sismo.eth (Ethereum address) to generate proofs.
 {% endhint %}
 
 ### Create a Sismo Connect button&#x20;
 
-The [**@sismo-core/sismo-connect-react**](../../technical-documentation/packages/react.md) library simplifies the Sismo Connect integration since it offers a React button to easily request proofs of your users data.&#x20;
+The [**@sismo-core/sismo-connect-react**](../../technical-documentation/packages/react.md) library simplifies the Sismo Connect integration since it offers a React button to easily request proofs of user data.&#x20;
 
 <figure><img src="../../../.gitbook/assets/sign in with Sismo Buttonx1.png" alt=""><figcaption><p>Sismo Connect React button</p></figcaption></figure>
 
@@ -176,36 +176,36 @@ The configuration is now helpful to setup properly our Sismo Connect button. You
 
 What are the different react button props?
 
-* the **`config`** prop will let the Sismo Vault app knows about the `appId`  from which the requests are made. You can learn more about the Sismo Connect config [**here**](../../technical-documentation/sismo-connect-configuration.md)**.**
-* the **`auths`** prop defines the different data Sources we want our users to prove ownership of (in this case, we want to know their `vaultId`). You can learn more about Auths [**here**](../../technical-documentation/auths.md).
-* the **`signature`** prop dictates which message should be signed by the user when generating the proof in there Sismo Vault (here we want them to sign the address on which they want to receive the airdrop). You can learn more about the Signature [**here**](../../technical-documentation/signature.md).
+* the **`config`** prop will let the Data Vault app know about the `appId`  from which the requests are made.  You can learn more about the **Sismo Connect Config** [**here**](../../technical-documentation/sismo-connect-configuration.md).
+* the **`auths`** prop defines the different auth requests we want our users to prove ownership of (in this case, that they own a Data Vault). You can learn more about **Auths** [**here**](../../technical-documentation/auths.md).
+* the **`signature`** prop dictates which message should be signed by the user when generating the proof in their Data Vault (here we want them to sign the address on which they want to receive the airdrop). You can learn more about [**Signature**](../../technical-documentation/signature.md) **here**.
 
 {% hint style="success" %}
-By making the user sign this message and by checking the signature in the contract, we ensure that the proof cannot be reused from someone else. It is basically a protection from being front run.&#x20;
+By making the user sign this message and by checking the signature in the contract, we ensure that the proof cannot be reused by someone else. It essentially functions as protection against frontrunning.&#x20;
 {% endhint %}
 
 <details>
 
 <summary>Why do we need a signature when verifying proofs on-chain?</summary>
 
-The signed message is not mandatory when you interact with your contracts but it is very often needed. As far as your users are generating valid proofs, it could be quite easy for a third party to front run them by just taking their proof and make their own call to your smart contracts with it.
+The signed message is not mandatory when you interact with your contracts, but it is very often needed. As far as your users are generating valid proofs, it could be quite easy for a third party to front-run them by just taking their proof and making their own call to your smart contracts with it.
 
-To overcome this issue, we offer a way to embed a specific message in a proof. This way it can be thought as a signature since this proof could not be valid without checking successfully that the signed message is correct on-chain.&#x20;
+To overcome this issue, we offer a way to embed a specific message in a proof. It can be thought of as a signature since this proof could not be valid without checking successfully that the signed message is correct onchain.&#x20;
 
-Here for example, we request the user to embed the address where they want to receive the airdrop in the proof. If a third party takes the proof, the call will be reverted with a signature mismatch message, effectively protecting your users from being front run.
+Here, for example, we request the user to embed the address where they want to receive the airdrop in the proof. If a third party takes the proof, the call will be reverted with a signature mismatch message, effectively protecting your users from being front-run.
 
 </details>
 
-* the **`onResponseBytes`** prop specifies which logic to trigger when we receive the Sismo Connect response (holding the proofs) from the Sismo Vault app (here we just want to save the response in a React state to use it after when calling the contract).
+* the **`onResponseBytes`** prop specifies which logic to trigger when we receive the Sismo Connect response (holding the proofs) from the Data Vault app (here we just want to save the response in a React state to use it after when calling the contract).
 * the **`text`** prop defines which text to display on the button (default being "Sign in with Sismo")
 
 You should have a pretty good understanding of the button at this point but if you want to see the complete documentation around the [**@sismo-core/sismo-connect-react**](../../technical-documentation/packages/react.md) library, feel free to check the [**technical documentation**](../../technical-documentation/packages/react.md).&#x20;
 
-Now let's see how the contracts are working!
+Now let's see how the contracts work!
 
 ## Verify proofs onchain
 
-Now that you know how to request proofs from your users data, you still need to know how to verify them. You can go to `src/Airdrop.sol` to see the contract code.
+Now that you know how to request proofs from user data, you still need to know how to verify them. You can go to `src/Airdrop.sol` to see the contract code.
 
 ```solidity
 // you are in: src/Airdrop.sol
@@ -218,10 +218,10 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "sismo-connect-solidity/SismoLib.sol"; 
 ```
 
-You will start by inheriting from Sismo Connect by importing the library, add the inheritance and specify your `appId` in the contract to be able to pass it in the constructor. If you wish to use the impersonation mode while testing, you also need to specify it.
+You will start by inheriting from Sismo Connect by importing the library, adding the inheritance and specifying your `appId` in the contract to be able to pass it in the constructor. If you wish to use the impersonation mode while testing, you also need to specify it.
 
 {% hint style="success" %}
-The `buildConfig` in the constructor is an helper in the Sismo Connect Solidity library that allows you to easily configure your contract by at least specifying an `appId`.
+The `buildConfig` in the constructor is a helper in the Sismo Connect Solidity library that allows you to easily configure your contract by at least specifying an `appId`.
 {% endhint %}
 
 ```solidity
@@ -251,7 +251,7 @@ contract Airdrop is ERC20, SismoConnect { // <--- add a Sismo Connect inheritanc
 }
 ```
 
-You can then take a look in the below snippet at the `claimWithSismo` function that will be called from the frontend. It takes a Sismo Connect Response as `bytes`  as argument and verifies the proof it holds with respect to the auth request and the signature expected. If the proof is valid, it gets the `vaultId` from the Sismo Connect Verified Result, verifies that the airdrop has not been claimed before and finally mints 100 token on the address encoded in the signature. The `vaultId` being the anonymous identifier of a user's vault for a specific app, defined as hash(`userVaultSecret`, `appId`).
+You can then take a look at the `claimWithSismo` function that we call from the front end. It takes a Sismo Connect Response as `bytes`  as an argument, and verifies the proof it holds with respect to the auth request and the signature expected. If the proof is valid, it gets the `vaultId` from the Sismo Connect Verified Result, verifies that the airdrop has not been claimed before and finally mints 100 tokens on the address in the signature. The `vaultId` is the anonymous identifier of a user's Vault for a specific app, defined as hash(`userVaultSecret`, `appId`).
 
 <pre class="language-solidity"><code class="lang-solidity">// you are in src/Airdrop.sol
 
@@ -293,7 +293,7 @@ contract Airdrop is ERC20, SismoConnect {
 }
 </code></pre>
 
-What is interesting here is that the **`vaultId` is a protection from double spendings**. Indeed, if a user generates a second proof from the same vault he would not be able to claim the airdrop again since each proof generated from a Vault has the same `vaultId` associated to it.&#x20;
+What is interesting here is that the `vaultId` protects against double spends. Indeed, if a user generates a second proof from the same Vault, he would not be able to claim the airdrop again since each proof generated from a Vault has the same `vaultId` associated with it.&#x20;
 
 {% hint style="success" %}
 If you use Impersonation Mode, you will be able to claim the airdrop each time you try though. As far as the `vaultId` is randomized each time you use the Impersonation Vault, it is obvious that you will not be able to have the same one twice.&#x20;
@@ -303,16 +303,16 @@ The integration is basically done!&#x20;
 
 Ok, so if we recap an onchain Sismo Connect integration, it all comes to:
 
-* the creation of an app in the Sismo Factory, to get an **`appId`**
-* a **Sismo Connect configuration** in the frontend and the smart contract with this **`appId`** and a possible "**Impersonation Mode**" enabled with chosen accounts for easy testing
-* the configuration of the **React button** **to choose which proofs to requests from your users**
-* the creation of a **smart contract to verify the user proofs onchain**
+* the creation of an app in the Sismo Factory to get an `appId`
+* a Sismo Connect configuration in the frontend and the smart contract with this `appId` and a possible "impersonation mode" enabled with chosen accounts for easy testing
+* the configuration of the React button to choose which proofs to request from your users
+* the creation of a smart contract to verify the user proofs onchain
 
-Well, now that you have all this steps in mind, let's improve this airdrop contract by only allowing **Gitcoin Passport holders** to claim it, effectively improving it to be Sybil-Resistant.
+Well, now that you have all these steps in mind, let's improve this airdrop contract by only allowing **Gitcoin Passport holders** to claim it.&#x20;
 
 ## Request proof of group membership
 
-Our first aim is to make the ERC20 Aidrop Sybil-resistant, to do this we simply need to request a proof of Gitcoin Passport group membership from our users. We also want them to have a passport score above 15. You can request such a proof by taking the `groupId` of the "Gitcoin Passport Holders" group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders) and create a [**Claim Request**](../../technical-documentation/claims.md) from it.
+Our first aim is to make the ERC20 airdrop Sybil-resistant. To do this, we simply need to request a proof of Gitcoin Passport group membership from our users. We also want them to have a passport score above 15. You can request such a proof by taking the `groupId` of the "Gitcoin Passport Holders" group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders) and create a [**claim request**](../../technical-documentation/claims.md) from it.
 
 {% hint style="success" %}
 You can learn how to create a Data Group with the [following tutorial](../../../create-data-gems/tutorials/create-your-data-group.md).
@@ -352,7 +352,7 @@ export default function Home() {
 }
 ```
 
-Once you have created this claim request in the frontend, you also need to add it in the smart contract. Always remember that the proofs sent to the smart contract need to be checked with respect to some requests.&#x20;
+Once you have created this claim request in the front end, you also need to add it to the smart contract. Always remember that the proofs sent to the smart contract need to be checked with respect to some requests.&#x20;
 
 <pre class="language-solidity"><code class="lang-solidity">// you are in src/Airdrop.sol
 
@@ -402,7 +402,7 @@ contract Airdrop is ERC20, SismoConnect {
 }
 </code></pre>
 
-These simple code additions now allow our smart contract to only airdrop some tokens to holders of a Gitcoin Passport. While this is exciting, how can we quickly test it in our local frontend if we are not a Gitcoin Passport holder?&#x20;
+These simple code additions now allow our smart contract to only airdrop some tokens to holders of a Gitcoin Passport. While this is exciting, how can we quickly test it in our local front end if we are not Gitcoin Passport holders?&#x20;
 
 The simplest solution is to impersonate an account holding a Gitcoin Passport. Remember that we are already impersonating dhadrien.sismo.eth ethereum account that holds a Gitcoin Passport on his ENS, therefore we are eligible.
 
@@ -423,7 +423,7 @@ As you can see below, you are now asked to share your `userId` like before and y
 {% hint style="warning" %}
 The interaction with the fork network can become quite unstable if you stop the `yarn anvil` command at some point or if you already use the sample app before.
 
-You can end up with a infinite pending transaction.
+You can end up with an infinitely pending transaction.
 
 If so:
 
@@ -431,7 +431,7 @@ If so:
 * make sure to delete your activity tab for the fork network in Metamask by going to "Settings > Advanced > Clear activity tab data" when connected to the fork network.&#x20;
 * relaunch the anvil node and the application
 
-See [FAQ](../../faq.md) for more informations.
+See [FAQ](../../faq.md) for more information.
 {% endhint %}
 
 Congrats again! You have successfully made your airdrop Sybil-Resistant by gating it for holders of Gitcoin Passport.
@@ -590,7 +590,7 @@ To see how to deploy your contracts, you can go to the [**associated tutorial**]
 
 ## Next steps
 
-If you have any questions about integrating sismoConnect, don’t hesitate to reach out. The team will be happy to answer any questions you may have. Any feedback is also welcomed! If you want to fork a repository with complex requests already setup and a nice UI, you can check our [**onchain boilerplate**](../../run-example-apps/onchain-sample-project.md) that also implements the [**case study**](https://case-studies.sismo.io/db/safe-drop) used for this tutorial.
+If you have any questions about integrating Sismo Connect, don’t hesitate to reach out. The team will be happy to answer any questions you may have. Any feedback is also welcomed! If you want to fork a repository with complex requests already set up, you can check our [**onchain boilerplate**](../../run-example-apps/onchain-sample-project.md).
 
 Get involved in the Sismo community! 🎭
 

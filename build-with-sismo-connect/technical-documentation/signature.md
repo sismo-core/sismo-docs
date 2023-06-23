@@ -6,13 +6,13 @@ A `Signature` is a specific message embedded in a generated proof that will be c
 
 <summary>Why a signature is often needed when verifying proofs onchain?</summary>
 
-The signed message is not mandatory when you interact with your contracts but it is very often needed. As far as your users are generating valid proofs, it could be quite easy for a third party to front run them by just taking their proof and make their own call to your smart contracts with it.
+The signed message is not mandatory when you interact with your contracts, but it is very often needed. As far as your users are generating valid proofs, it could be quite easy for a third party to front-run them by just taking their proof and making their own call to your smart contracts with it.
 
-To overcome this issue, we offer a way to embed a specific message in a proof. This way it can be thought as a signature since this proof could not be valid without checking successfully that the signed message is correct on-chain.&#x20;
+To overcome this issue, we offer a way to embed a specific message in a proof. This way it can be thought of as a signature since this proof could not be valid without checking successfully that the signed message is correct onchain.&#x20;
 
-For example, it is mandatory to request the user to embed the address where they want to receive an airdrop in a proof. If a third party takes the proof, the call will be reverted with a signature mismatch message, effectively protecting your users from being front run.
+For example, it is mandatory to request the user to embed the address where they want to receive an airdrop in a proof. If a third party takes the proof, the call will be reverted with a signature mismatch message, effectively protecting your users from being front-run.
 
-Example: You are a DAO voting platform, and you want to get the vote of a user onchain. To do so, the user will create a signature containing a message (his vote) that will be used to generate the proof. When verifying the proof onchain, you are also verifying that the proof contains the message, it is then impossible for a malicious actor to take your proof and vote another thing with it.
+Example: You are a DAO voting platform, and you want to get the vote of a user onchain. To do so, the user will create a signature containing a message (his vote) that will be used to generate the proof. When verifying the proof onchain, you are also verifying that the proof contains the message. It is then impossible for a malicious actor to take your proof and vote for something else.
 
 </details>
 
@@ -21,7 +21,7 @@ Example: You are a DAO voting platform, and you want to get the vote of a user o
 The `SignatureRequest` is an object with the following properties:
 
 * `message` (required): the message that the user is going to sign.
-* `isSelectableByUser`(optional): by default set to `false`. Allows the user to edit the message in the Sismo Vault app. &#x20;
+* `isSelectableByUser`(optional): by default set to `false`. Allows the user to edit the message in the Sismo Data Vault app. &#x20;
 
 ```typescript
 // Types (typescript version)
@@ -33,7 +33,7 @@ type SignatureRequest = {
 
 ## Integrations
 
-`SignatureRequest`  is made in the front-end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
+`SignatureRequest`  is made in the front end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
 
 The proof with the requested signature is then verified either in a backend using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
 
@@ -48,7 +48,7 @@ Making an `SignatureRequest` is only possible if it is made alongside an auth or
 The `SismoConnectButton` React component is available from the [sismo-connect-react package](packages/react.md).  It is a wrapper of the [sismo-connect-client package](packages/client.md).&#x20;
 
 * SignatureRequest is passed to the `SismoConnectButton` through the `signature` props
-* Response are received through either:
+* Responses are received through either:
   1. &#x20;the `onResponse: (response: SismoConnectResponse) => void` callback for offchain verification or,
   2. &#x20;the `onResponseBytes (response: string) => void` callback for onchain verification.
 
@@ -82,7 +82,7 @@ import { SismoConnectButton, SismoConnectClientConfig, SismoConnectResponse, Aut
 The `useSismoConnect` hook is available from the [sismo-connect-react package](packages/react.md).  It is a wrapper of the [sismo-connect-client package](packages/client.md).  The `useSismoConnect` hook  exposes the `sismoConnect` variable.&#x20;
 
 * One or multiple claim requests can be made using the `sismoConnect.request()` method available on the `sismoConnect` variable.
-* Response could be received through either:
+* Responses could be received through either:
   1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
   2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
 
@@ -120,7 +120,7 @@ if(response || responseBytes) {
 The [`sismo-connect-client` package](packages/client.md) exposes a `SismoConnect` variable.
 
 * One or multiple ClaimRequests can be made using the `sismoConnect.request()` method available on a `SismoConnect` instance.
-* Response could be received through either:
+* Responses could be received through either:
   1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
   2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
 
@@ -158,13 +158,11 @@ if(response || responseBytes) {
 ### Verifying a SignatureRequest
 
 {% hint style="info" %}
-Once a user has generated the proof on the Sismo Vault App, your application must verify it. This can be made either offchain in you backend or onchain in your smartcontrat.
+Once a user has generated the proof on the Sismo Data Vault App, your application must verify it. This can be made either offchain in you backend or onchain in your smart contract. The [`sismo-connect-server` package](packages/server.md) exposes a `SismoConnect` variable.
 {% endhint %}
 
 {% tabs %}
-{% tab title="offchain verification - Node.js" %}
-The [`sismo-connect-server` package](packages/server.md) exposes a `SismoConnect` variable.
-
+{% tab title="Offchain verification - Node.js" %}
 A signature request can be verified offchain on a backend server using the `sismoConnect.verify()` method available on a `SismoConnect` instance.
 
 If the proof is valid `sismoConnect.verify()` returns a `result` of type `SismoConnectVerifiedResult` else it will throw an error.
@@ -193,14 +191,14 @@ async function verifyResponse(sismoConnectResponse: SismoConnectResponse) {
 {% endcode %}
 {% endtab %}
 
-{% tab title="onchain verification - Solidity" %}
+{% tab title="Onchain verification - Solidity" %}
 The [`sismo-connect-solidity` package](packages/solidity.md) exposes a Sismo Connect Library which can be inherited by your contract either using Foundry or Hardhat.&#x20;
 
 The Sismo Connect Library exposes:&#x20;
 
-* &#x20;a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) with respect to some requests, directly in your contract. The verify() function takes an object containing:&#x20;
-  1. a `responseBytes` send from the frontend,
-  2. a signature corresponding to the signature request made in the frontend,
+* &#x20;a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) with respect to some requests directly in your contract. The verify() function takes an object containing:&#x20;
+  1. a `responseBytes` send from the front end,
+  2. a signature corresponding to the signature request made in the front end,
   3. an auth or a claim.&#x20;
 
 #### SignatureRequest - code example

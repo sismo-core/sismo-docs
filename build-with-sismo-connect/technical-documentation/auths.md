@@ -1,6 +1,6 @@
 # Auths
 
-Sismo Connect can be used to authenticate a user from multiple sources, either from web2 or web3 sources.
+Sismo Connect can be used to authenticate a user from multiple sources, either from web2 or web3.
 
 ## Type definitions&#x20;
 
@@ -8,13 +8,13 @@ The `AuthRequest` is an object with the following properties:
 
 * `AuthType` (required): defines the type of authentication required. The following authType are currently supported:&#x20;
   * `VAULT`: Sismo Connect returns the user's Vault id. It's noteworthy that the `vaultId` is deterministically generated from the user's vault secret and the `appId` using a Poseidon hash. Therefore, if a user revisits your app, the `vaultId` remains consistent, but it will differ for other apps. This feature is beneficial if you wish to link a `vaultId` to a user in your database while preserving the user's privacy across various apps. You can delve deeper into the `vaultId` concept [here](vault-and-proof-identifiers.md).
-  * `GITHUB`: Sismo Connect returns the user's Github account id.&#x20;
+  * `GITHUB`: Sismo Connect returns the user's GitHub account id.&#x20;
   * `TWITTER` Sismo Connect returns the user's Twitter account id.&#x20;
   * `EVM_ACCOUNT`: Sismo Connect returns the user's Ethereum address.
   * `TELEGRAM` : Sismo Connect returns the user's Telegram account id.&#x20;
 * `userId` (optional): requests the user to have a predefined account.
 * `isOptional`(optional): by default set to `false`.  Allows the user to optionally authenticate with this `AuthType`.
-* `isSelectableByUser`(optional): by default set to `true`. Allows to the user to selectively reveal its account whenever the user has imported several accounts of the `AuthType` in its vault.
+* `isSelectableByUser`(optional): by default set to `true`. Allows the user to selectively reveal their account whenever the user has imported several accounts of the `AuthType` into ther Vault.
 
 ```typescript
 // Types (typescript version)
@@ -36,14 +36,14 @@ type AuthRequest = {
 
 ## Integrations
 
-Authentication requests are made in the front-end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
+Authentication requests are made in the front end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
 
-Requests are then verified either in a backend using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
+Requests are then verified either in a back end using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
 
 ### Making an AuthRequest - Front-end integration
 
 {% hint style="info" %}
-Making an `AuthRequest` is only possible in the front-end as the request redirects users to the Sismo Vault app where users can generate a zero-knowledge proof.
+Making an `AuthRequest` is only possible in the front end as the request redirects users to the Sismo Data Vault app where users can generate a zero-knowledge proof.
 {% endhint %}
 
 {% tabs %}
@@ -52,8 +52,8 @@ The `SismoConnectButton` React component is available from the [sismo-connect-re
 
 * AuthRequests are passed as props of the `SismoConnectButton` either through:
   1. &#x20;the `auth`  props for one authentication request: `AuthRequest` or,
-  2. &#x20;the `auths` props for for several authentication requests: `AuthRequest[]`
-* Response are received through either:
+  2. &#x20;the `auths` props for several authentication requests: `AuthRequest[]`
+* Responses are received through either:
   1. &#x20;the `onResponse: (response: SismoConnectResponse) => void` callback for offchain verification or,
   2. &#x20;the `onResponseBytes (response: string) => void` callback for onchain verification.
 
@@ -247,7 +247,7 @@ if(response || responseBytes) {
 ### Verifying an AuthRequest
 
 {% hint style="info" %}
-Once a user has generated the proof on the Sismo Vault App, your application must verify it. This can be made either offchain in you backend or onchain in your smartcontrat.
+Once a user has generated the proof on the Sismo Data Vault App, your application must verify it. This can be made either offchain in your back end or onchain in your smart contract.
 {% endhint %}
 
 {% tabs %}
@@ -257,7 +257,7 @@ The [`sismo-connect-server` package](packages/server.md) exposes a `SismoConnect
 One or multiple AuthRequests can be verified offchain on a backend server using the `sismoConnect.verify()` method available on a `SismoConnect` instance.
 
 * If the proof is valid `sismoConnect.verify()` returns a `result` of type `SismoConnectVerifiedResult` else it will throw an error,
-* the `result.getUserId()` can be called as shown below to get the userId of corresponding type.&#x20;
+* the `result.getUserId()` can be called as shown below to get the userId of the corresponding type.&#x20;
 
 #### One AuthRequest - code example
 
@@ -326,11 +326,11 @@ The [`sismo-connect-solidity` package](packages/solidity.md) exposes a Sismo Con
 
 The Sismo Connect Library exposes:&#x20;
 
-* &#x20;a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) with respect to some requests, directly in your contract. The verify() function takes an object containing:&#x20;
-  1. a `responseBytes` send from the frontend,
-  2. an `auth` or `auths` corresponding to the authentification request made in the frontend.
+* &#x20;a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) with respect to some requests directly in your contract. The verify() function takes an object containing:&#x20;
+  1. a `responseBytes` send from the front end,
+  2. an `auth` or `auths` corresponding to the authentification request made in the front end.
 * a `buildAuth()` helper to recreate the `AuthRequest` made in the front-end
-* a `SismoConnectHelper.getUserId()` helper to retrieve the userId of corresponding type once the proof has been verified.
+* a `SismoConnectHelper.getUserId()` helper to retrieve the userId of the corresponding type once the proof has been verified.
 
 #### One AuthRequest - code example
 

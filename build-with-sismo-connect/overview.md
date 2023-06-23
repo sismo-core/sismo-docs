@@ -12,7 +12,7 @@ This section is a reservoir of resources aimed at aiding your journey with Sismo
 
 * [**Getting Started**](getting-started.md)**:** Feel how simple it is to integrate Sismo Connect into an existing application.
 * [**Tutorials**](tutorials/)**:** Get hands-on experience by following our step-by-step tutorials. These tutorials are designed to walk you through the process of integrating Sismo Connect into your **onchain** or **offchain** app.
-* [**Technical Documentation**](technical-documentation/)**:** Dive deep into our SSO solution with our comprehensive technical documentation. It covers all aspects of Sismo Connect, including its architecture, data flow, and API references.
+* [**Technical Documentation**](technical-documentation/)**:** Dive deep into Sismo Connect with our comprehensive technical documentation. It covers all aspects of Sismo Connect, including its architecture, data flow, and API references.
 * [**Boilerplates**](run-example-apps/)**:** Kickstart your Sismo Connect journey with our **onchain** and **offchain** boilerplates. Run them locally to give yourself a practical understanding of how Sismo Connect works.
 * [**FAQ**](faq.md)**:** Have questions? Our Frequently Asked Questions section addresses common queries about building with Sismo Connect.
 
@@ -22,13 +22,18 @@ Building with Sismo Connect? Check out [build.sismo.io ](https://build.sismo.io/
 
 ### Supported Chains
 
-Sismo Connect is now deployed on **11 chains**, you can view all the contract addresses [**here**](../knowledge-base/resources/sismo-101.md)**.**
+Sismo Connect is now deployed on **11 chains**. You can view all of the contract addresses [**here**](../knowledge-base/resources/sismo-101.md)**.**
+
+#### Mainnets
 
 * **Arbitrum One** (42161)
 * **Gnosis** (100)
 * **Mainnet** (1)
 * **Optimism** (10)
 * **Polygon** (137)
+
+#### Testnets
+
 * **Arbitrum Goerli** (421613)
 * **Goerli** (5)
 * **Mumbai** (80001)

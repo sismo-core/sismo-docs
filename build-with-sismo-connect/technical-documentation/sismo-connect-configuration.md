@@ -8,8 +8,8 @@ The `SismoConnectConfiguration` is an object with the following properties:
 
 * `appId` (required): the Sismo Connect application identifier that you have created on the Sismo Factory.
 * `vault.impersonate` (optional): by default set to `null`. The list of accounts that you want to impersonate while developing for easy testing. &#x20;
-* `displayRawResponse` (optional): by default set to `false`. If set to `true`, the Sismo Vault App will display the proof generated in a modal and will not redirect to your application once the proof is generated. It can be useful in development.&#x20;
-* `sismoApiUrl` (optional): API endpoint to fetch groups information.
+* `displayRawResponse` (optional): by default set to `false`. If set to `true`, the Sismo Data Vault App will display the proof generated in a modal and will not redirect to your application once the proof is generated. It can be useful in development.&#x20;
+* `sismoApiUrl` (optional): API endpoint to fetch group information.
 * `vaultAppBaseUrl` (optional): by default set to `https://vault-beta.sismo.io/`.
 
 ```typescript
@@ -27,12 +27,12 @@ type SismoConnectConfig = {
 ```
 
 {% hint style="info" %}
-As far as the configurations are the same in the client and server packages, **we highly recommend to have a common config located in a separated file** (`sismo-connect-config.ts` for example) **if you have a mono repo**. You can easily import the configuration in your frontend and backend from this file.
+As far as the configurations are the same in the client and server packages, **we highly recommend having a common config located in a separate file** (`sismo-connect-config.ts` for example) **if you have a mono repo**. You can easily import the configuration in your front end and back end from this file.
 {% endhint %}
 
 ## Integration
 
-Requests are made in the front-end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
+Requests are made in the front end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
 
 Requests are then verified either in a backend using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
 
@@ -73,7 +73,7 @@ const sismoConnect = SismoConnect({config});
 {% endtab %}
 
 {% tab title="Node.js" %}
-In you node.js backend, the most basic Sismo Connect Config looks like this:
+In your node.js backend, the most basic Sismo Connect Config looks like this:
 
 ```typescript
 import { SismoConnectConfig, SismoConnect } from "@sismo-core/sismo-connect-server";
@@ -106,7 +106,7 @@ contract MyContract is SismoConnect {
 
 ## Impersonating accounts in development
 
-Impersonating accounts allows you to be redirected to a Sismo Vault App with fake accounts imported that you defined in the `SismoConnectConfig` object. The impersonated Vault only exists in your browser memory. It does not affect your personal Sismo Vault.&#x20;
+Impersonating accounts allows you to be redirected to a Sismo Data Vault App with fake accounts imported that you defined in the `SismoConnectConfig` object. The impersonated Vault only exists in your browser memory. It does not affect your personal Data Vault.&#x20;
 
 It is useful in development to test your application flow. You are able to generate a proof based on a Sismo Connect request for which you would not be eligible otherwise.&#x20;
 
@@ -171,7 +171,7 @@ const sismoConnect = SismoConnect({config});
 {% endtab %}
 
 {% tab title="Node.js" %}
-In you node.js backend, the impersonation Sismo Connect Config looks like this:
+In your node.js backend, the impersonation Sismo Connect Config looks like this:
 
 ```typescript
 import { SismoConnectConfig, SismoConnect } from "@sismo-core/sismo-connect-server";

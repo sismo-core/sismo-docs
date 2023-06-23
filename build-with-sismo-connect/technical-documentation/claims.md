@@ -1,19 +1,19 @@
 # Claims
 
-Sismo Connect can be used to request user for zero-knowledge proofs of group memberships.&#x20;
+Sismo Connect can be used to request users for zero-knowledge proofs attesting group memberships.&#x20;
 
 ## Type definitions&#x20;
 
-The `ClaimRequest` holds all the information needed to generate such a proof. it has the following properties:
+The `ClaimRequest` holds all the information needed to generate such a proof. It has the following properties:
 
 * `groupId` (required): the group identifier that the user must prove membership of in order to generate the proof.
 * `value` (optional): by default set to “1”. Querying a specific value restricts eligibility to users belonging to the group with the minimum specified value or matching the exact value.
 * `claimType` (optional): by default `ClaimType.GTE`. Defines the type of group membership required. The following claim types are currently supported:&#x20;
-  * `ClaimType.GTE`: the use must prove that he owns an account with at least the requested value.
+  * `ClaimType.GTE`: the user must prove that they own an account with at least the requested value.
   * `ClaimType.EQ`: the user must prove that he owns an account with the exact requested value.
-* `groupTimestamp` (optional): by default set to “latest”. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated to them. By default, the selected group is the latest Group Snapshot generated. But you are free to select a Group Snapshot with a different timestamp than the latest generated one.
-* `isOptional`(optional): by default set to `false`. If set to `true` the user can optionally prove its group membership.
-* `isSelectableByUser`(optional): by default set to `false` and only available for  `ClaimType.GTE`. Allow user to selectively choose the value used to generate the proof.&#x20;
+* `groupTimestamp` (optional): by default set to “latest”. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated with them. By default, the selected group is the latest Group Snapshot generated. But you are free to select a Group Snapshot with a different timestamp than the latest generated one.
+* `isOptional`(optional): by default set to `false`. If set to `true` the user can optionally prove their group membership.
+* `isSelectableByUser`(optional): by default set to `false` and only available for  `ClaimType.GTE`. This allows users to selectively choose the value used to generate the proof.&#x20;
 
 ```typescript
 // Types (typescript version)
@@ -37,14 +37,14 @@ type ClaimRequest = {
 
 ## Integrations
 
-Claim requests are made in the front-end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
+Claim requests are made in the front end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
 
 Requests are then verified either in a backend using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
 
 ### Making a ClaimRequest - Front-end integration
 
 {% hint style="info" %}
-Making an `ClaimRequest` is only possible in the front-end as the request redirects users to the Sismo Vault app where users can generate a zero-knowledge proof.
+Making an `ClaimRequest` is only possible in the front end as the request redirects users to the Sismo Vault app where users can generate a zero-knowledge proof.
 {% endhint %}
 
 {% tabs %}
@@ -53,8 +53,8 @@ The `SismoConnectButton` React component is available from the [sismo-connect-re
 
 * ClaimRequests are passed as props to the `SismoConnectButton` either through:
   1. &#x20;the `claim`  props for one claim request: `ClaimRequest` or,
-  2. &#x20;the `claims` props for for several claim requests: `ClaimRequest[]`
-* Response are received through either:
+  2. &#x20;the `claims` props for several claim requests: `ClaimRequest[]`
+* Responses are received through either:
   1. &#x20;the `onResponse: (response: SismoConnectResponse) => void` callback for offchain verification or,
   2. &#x20;the `onResponseBytes (response: string) => void` callback for onchain verification.
 
@@ -112,10 +112,10 @@ import { SismoConnectButton, SismoConnectClientConfig, SismoConnectResponse } fr
 {% endtab %}
 
 {% tab title="React Hook" %}
-The `useSismoConnect` hook is available from the [sismo-connect-react package](packages/react.md).  It is a wrapper of the [sismo-connect-client package](packages/client.md).  The `useSismoConnect` hook  exposes the `sismoConnect` variable.&#x20;
+The `useSismoConnect` hook is available from the [sismo-connect-react package](packages/react.md).  It is a wrapper of the [sismo-connect-client package](packages/client.md).  The `useSismoConnect` hook exposes the `sismoConnect` variable.&#x20;
 
 * One or multiple claim requests can be made using the `sismoConnect.request()` method available on the `sismoConnect` variable.
-* Response could be received through either:
+* Responses could be received through either:
   1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
   2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
 
@@ -182,7 +182,7 @@ if(response || responseBytes) {
 The [`sismo-connect-client` package](packages/client.md) exposes a `SismoConnect` variable.
 
 * One or multiple ClaimRequests can be made using the `sismoConnect.request()` method available on a `SismoConnect` instance.
-* Response could be received through either:
+* Responses could be received through either:
   1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
   2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
 
@@ -248,13 +248,11 @@ if(response || responseBytes) {
 ### Verifying a ClaimRequest
 
 {% hint style="info" %}
-Once a user has generated the proof on the Sismo Vault App, your application must verify it. This can be made either offchain in you backend or onchain in your smartcontrat.
+Once a user has generated the proof on the Data Vault App, your application must verify it. This can be made either offchain in your backend or onchain in your smart contract.The [`sismo-connect-server` package](packages/server.md) exposes a `SismoConnect` variable.
 {% endhint %}
 
 {% tabs %}
-{% tab title="offchain verification - Node.js" %}
-The [`sismo-connect-server` package](packages/server.md) exposes a `SismoConnect` variable.
-
+{% tab title="Offchain verification - Node.js" %}
 One or multiple claim requests can be verified offchain on a backend server using the `sismoConnect.verify()` method available on a `SismoConnect` instance.
 
 If the proof is valid `sismoConnect.verify()` returns a `result` of type `SismoConnectVerifiedResult` else it will throw an error.
@@ -309,14 +307,14 @@ async function verifyResponse(sismoConnectResponse: SismoConnectResponse) {
 {% endcode %}
 {% endtab %}
 
-{% tab title="onchain verification - Solidity" %}
+{% tab title="Onchain verification - Solidity" %}
 The [`sismo-connect-solidity` package](packages/solidity.md) exposes a Sismo Connect Library which can be inherited by your contract either using Foundry or Hardhat.&#x20;
 
 The Sismo Connect Library exposes:&#x20;
 
-* &#x20;a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) with respect to some requests, directly in your contract. The verify() function takes an object containing:&#x20;
-  1. a `responseBytes` send from the frontend,
-  2. an `claim` or `claims` corresponding to the claim request made in the frontend.
+* &#x20;a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) with respect to some requests directly in your contract. The verify() function takes an object containing:&#x20;
+  1. a `responseBytes` send from the front end,
+  2. an `claim` or `claims` corresponding to the claim request made in the front end.
 * a `buildClaim()` helper to recreate the `ClaimRequest` made in the front-end
 
 #### One ClaimRequest - code example

@@ -18,3 +18,7 @@ Got questions? Join our Telegram for builders [**here**](https://t.me/+xvUbopYOX
 ## Offchain Tutorials
 
 Offchain tutorials are coming soon! 👀 You can still learn more about Sismo Connect offchain flow by trying out the [**offchain boilerplate**](../run-example-apps/offchain-sample-project.md)**.** You can also see the technical documentation to learn more about the [**client**](../technical-documentation/packages/client.md) and [**server**](../technical-documentation/packages/server.md) packages.&#x20;
+
+## Additional Tutorials
+
+* [Create a Sismo Connect App](create-a-sismo-connect-app.md): Register a Sismo Connect app in the [Factory](https://factory.sismo.io/) to obtain a unique appId. This is used throughout the development process when building with Sismo Connect.

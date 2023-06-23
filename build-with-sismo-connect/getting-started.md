@@ -1,23 +1,23 @@
 # Getting Started
 
-Sismo Connect is a crypto-native single sign-on method (SSO) for the next generation of applications, whether onchain or offchain. While Sismo enables users to aggregate and selectively disclose personal data to applications, Sismo Connect is the tool allowing developers to request such data from their users in the form of proofs and verify them in a smart contract or a backend.&#x20;
+Sismo Connect, a crypto-native single sign-on (SSO), enables applications to request any data aggregated in a user’s [Data Vault](../welcome-to-sismo/what-is-the-data-vault.md). More precisely, applications can request that users prove ownership of [Data Sources](../welcome-to-sismo/how-sismo-works.md#what-are-data-sources) (EVM, Twitter, Telegram and GitHub accounts) and [Data Gems](../welcome-to-sismo/how-sismo-works.md#what-are-data-gems) (e.g. that they own a certain NFT or voted in a DAO). By abstracting the underlying complexities, Sismo Connect allows developers to implement zero-knowledge technology in their applications with only a few lines of code.
 
 {% tabs %}
 {% tab title="Onchain" %}
-If you wish to fork a repository with all setup properly, you can fork our [**onchain boilerplate**](run-example-apps/onchain-sample-project.md).
+If you wish to fork a repository with everything set up properly, you can fork our [**onchain boilerplate**](run-example-apps/onchain-sample-project.md).
 
 ## Prerequisites
 
 * [Node.js](https://nodejs.org/en/download/) >= 18.15.0 (Latest LTS version)
 * [Yarn](https://classic.yarnpkg.com/en/docs/install)
 * [Foundry](https://book.getfoundry.sh/) (see how to install it [here](https://book.getfoundry.sh/getting-started/installation))&#x20;
-* Metamask installed in your browser
+* MetaMask installed in your browser
 
-## Frontend
+## Front end
 
 ### Installation
 
-Install Sismo Connect React package:
+Install the Sismo Connect React package:
 
 {% tabs %}
 {% tab title="yarn" %}
@@ -35,7 +35,7 @@ npm install @sismo-core/sismo-connect-react
 
 ### Create a Sismo Connect App in the Factory
 
-[**Creating a Sismo Connect App in the Factory**](tutorials/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your frontend and smart contracts/backend.
+[**Creating a Sismo Connect App in the Factory**](tutorials/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your front end and smart contracts/back end.
 
 ### Sismo Connect configuration
 
@@ -53,7 +53,7 @@ export const config: SismoConnectConfig = {
 
 ### Request proofs from your users
 
-Request proofs from your users by creating a Sismo Connect React Button, pass the config created earlier as a prop and implement the logic to call your contract with the response (as bytes) from users vault.&#x20;
+Request proofs from your users by creating a Sismo Connect React Button, pass the config created earlier as a prop and implement the logic to call your contract with the response (as bytes) from a user's Data Vault.&#x20;
 
 ```typescript
 // Component.tsx
@@ -156,8 +156,8 @@ Simply call the verify function with the response as bytes.&#x20;
 </code></pre>
 {% endtab %}
 
-{% tab title="OffChain" %}
-If you wish to fork a repository with all setup properly, you can fork our [**offchain boilerplate**](run-example-apps/offchain-sample-project.md).
+{% tab title="Offchain" %}
+If you wish to fork a repository with everything set up properly, you can fork our [**offchain boilerplate**](run-example-apps/offchain-sample-project.md).
 
 ## Prerequisites
 
@@ -186,7 +186,7 @@ npm install @sismo-core/sismo-connect-react
 
 ### Create a Sismo Connect App in the Factory
 
-[**Creating a Sismo Connect App in the Factory**](tutorials/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your frontend and smart contracts/backend.
+[**Creating a Sismo Connect App in the Factory**](tutorials/create-a-sismo-connect-app.md) will give you an application Id (`appId`) that is used to configure Sismo Connect in your front end and smart contracts/back end.
 
 ### Sismo Connect configuration
 
@@ -204,7 +204,7 @@ export const config: SismoConnectConfig = {
 
 ### Request proofs from your users
 
-Request proofs from your users by creating a Sismo Connect React Button, pass the config created earlier as a prop and implement the logic to call your backend with the response from users vault.&#x20;
+Request proofs from your users by creating a Sismo Connect React Button, pass the config created earlier as a prop and implement the logic to call your backend with the response from a user's Data Vault.&#x20;
 
 ```typescript
 // Component.tsx
@@ -227,7 +227,7 @@ import { config } from "./sismo-connect-config.ts";
 
 
 
-## Backend
+## Back end
 
 ### Installation
 
@@ -249,7 +249,7 @@ npm install @sismo-core/sismo-connect-server
 
 ### Sismo Connect configuration
 
-If you have your frontend and backend in the same repository, you can simply use the configuration you created earlier for the frontend. Otherwise, simply create the same configuration in a file for your backend.
+If you have your front end and back end in the same repository, you can simply use the configuration you created earlier for the front end. Otherwise, simply create the same configuration in a file for your back end.
 
 ### Verify proofs from your users
 

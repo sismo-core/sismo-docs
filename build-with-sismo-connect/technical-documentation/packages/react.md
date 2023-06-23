@@ -4,11 +4,11 @@ description: Request proofs from your user on your React project
 
 # Sismo Connect React: Request
 
-The [Sismo Connect](../../../welcome-to-sismo/what-is-sismo-connect.md) React package is a wrapper of the Sismo Connect client package which is a package build on top of the [Sismo Data Vault](../../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) app (the prover) to easily request proofs from your users. It is strongly advised to read about the [**Sismo Connect client package**](client.md) to understand the React package.
+The [Sismo Connect](../../../welcome-to-sismo/what-is-sismo-connect.md) React package is a wrapper of the Sismo Connect client package which is a package built on top of the [Sismo Data Vault](../../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) app (the prover) to easily request proofs from your users. It is strongly advised to read about the [**Sismo Connect client package**](client.md) to understand the React package.
 
 ### Installation
 
-Install the Sismo Connect React package in your frontend with `npm` or `yarn`:
+Install the Sismo Connect React package in your front end with `npm` or `yarn`:
 
 ```bash
 # with npm
@@ -25,7 +25,7 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 ### Configuration
 
-The first step for integrating Sismo Connect in your frontend is to create a `SismoConnectClientConfig` like in the client package. This config will require an `appId` and can be customized with [optional fields.](react.md#sismoconnectclientconfig) You can go to the [Sismo Factory](../../tutorials/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId` ([here is a tutorial](../../tutorials/create-a-sismo-connect-app.md)).
+The first step for integrating Sismo Connect in your front end is to create a `SismoConnectClientConfig` like in the client package. This config will require an `appId` and can be customized with [optional fields.](react.md#sismoconnectclientconfig) You can go to the [Sismo Factory](../../tutorials/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId` ([here is a tutorial](../../tutorials/create-a-sismo-connect-app.md)).
 
 ```typescript
 import { SismoConnect, SismoConnectConfig } from "@sismo-core/sismo-connect-react";
@@ -40,7 +40,7 @@ You can learn more about the Sismo Connect Client config in the [client package]
 
 ### Sismo Connect button
 
-To easily integrate Sismo Connect into your frontend, you can use the Sismo Connect button. Clicking on this button will redirect your users to the Sismo Data Vault app, where they can generate their proofs.
+To easily integrate Sismo Connect into your front end, you can use the Sismo Connect button. Clicking on this button will redirect your users to the Sismo Data Vault app, where they can generate their proofs.
 
 After users generate their proofs, they will be automatically redirected back to your app with a Sismo Connect Response containing the generated proofs.
 
@@ -132,7 +132,7 @@ This package is a wrapper of the Sismo Connect Client package, which means that 
 
 ### SismoConnectButton
 
-The SismoConnectButton component will allow you to easily request proofs from your user for a groupId he should be a member of.
+The SismoConnectButton component will allow you to easily request proofs from your user for a groupId they should be a member of.
 
 ```typescript
 <SismoConnectButton 
@@ -180,7 +180,7 @@ The SismoConnectButton component will allow you to easily request proofs from yo
 | auths                                                                 | AuthRequest\[]                          | Aggregation of AuthRequest                                                                                                                                                                 |
 | claim                                                                 | ClaimRequest                            | The ClaimRequest object holds all the information needed to generate a proof of group membership.                                                                                          |
 | claims                                                                | ClaimRequest\[]                         | Aggregation of ClaimRequest                                                                                                                                                                |
-| signature                                                             | string                                  | Message to sign in the vault                                                                                                                                                               |
+| signature                                                             | string                                  | Message to sign in the Vault                                                                                                                                                               |
 | loading _(optional)_                                                  | boolean                                 | This property allows you to disable the button and replace the badge icon with a loader.                                                                                                   |
 | **\[deprecated**_**]**_ verifying _(optional)_                        | boolean                                 | This prop allows you to trigger the loading of the button.                                                                                                                                 |
 | text                                                                  | string                                  | This property allows to replace the text of the button.                                                                                                                                    |
@@ -192,7 +192,7 @@ The SismoConnectButton component will allow you to easily request proofs from yo
 
 **Customization**
 
-If you want to customize the style of your button you can use 3 CSS classes `SismoConnectButton`, `sismoConnectButtonText`, and `sismoConnectButtonLogo`.
+If you want to customize the style of your button, you can use 3 CSS classes `SismoConnectButton`, `sismoConnectButtonText`, and `sismoConnectButtonLogo`.
 
 An overrideStyle prop is also available on the component which allows you to override the same style as the class `sismoConnectButton`.
 

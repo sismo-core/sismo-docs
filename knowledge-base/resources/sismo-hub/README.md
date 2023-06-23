@@ -1,7 +1,14 @@
 # Sismo Hub
 
-You can find in this section all the technical documentation of the [Sismo Hub repository](https://github.com/sismo-core/sismo-hub), the repository used for integrations on Sismo.\
-\
-The Sismo Hub is powered by an offchain infrastructure which:
+Here you can find all the technical documentation of the [Sismo Hub repository](https://github.com/sismo-core/sismo-hub), the repository used for integrations on Sismo.
 
-* Manages Groups: The infrastructure periodically generates off-chain Groups that aim to be reusable and sent on-chain for attesters like the [HydraS1SimpleAttester](https://github.com/sismo-core/sismo-protocol/blob/main/contracts/attesters/hydra-s1/HydraS1SimpleAttester.sol). A Group of accounts bundles accounts that share some reputational or historical characteristics. Anyone can propose a new group to Sismo. The infrastructure will send the groups on-chain to the right attester.
+{% hint style="info" %}
+Learn more about the Sismo Hub [here](../../../welcome-to-sismo/how-sismo-works.md#what-is-the-sismo-hub).
+{% endhint %}
+
+## In This Section
+
+* [Group Generators](sismo-protocol-overview.md)
+* [Data Providers](data-providers.md)
+* [Data Operators](data-operators.md)
+* [Command Line Interface](command-line-interface.md)

@@ -45,7 +45,7 @@
 
 * [Resources](knowledge-base/resources/README.md)
   * [Sismo Hub](knowledge-base/resources/sismo-hub/README.md)
-    * [Group Generators](knowledge-base/resources/sismo-hub/group-generators.md)
+    * [Group Generators](knowledge-base/resources/sismo-hub/sismo-protocol-overview.md)
     * [Data Providers](knowledge-base/resources/sismo-hub/data-providers.md)
     * [Data Operators](knowledge-base/resources/sismo-hub/data-operators.md)
     * [Command Line Interface](knowledge-base/resources/sismo-hub/command-line-interface.md)

@@ -6,7 +6,7 @@ description: Developer Tutorial
 
 ## What’s inside?
 
-This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../../knowledge-base/resources/sismo-hub/group-generators.md).
+This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md).
 
 Group Generators are functions that enable the creation of [Groups](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../welcome-to-sismo/what-is-sismo-connect.md).
 
@@ -27,7 +27,7 @@ Groups are composed of Data Sources:
 * Web2 accounts: Twitter, GitHub, Telegram
 * Web3 accounts: Ethereum addresses, ENS, Lens handles
 
-In order to create a Group, we need to build a [Group Generator](../../knowledge-base/resources/sismo-hub/group-generators.md). This tutorial will guide you through the process of creating one.
+In order to create a Group, we need to build a [Group Generator](../../knowledge-base/resources/sismo-hub/sismo-protocol-overview.md). This tutorial will guide you through the process of creating one.
 
 There are 3 different ways to define the data of a Group generator, you can use:
 

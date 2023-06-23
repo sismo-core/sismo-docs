@@ -47,9 +47,9 @@ Once this steps are done, you are well setup to use [Forge](https://book.getfoun
 
 Before deploying any Sismo Connect contract, it is better to understand the Sismo Connect config and especially how to impersonate accounts.&#x20;
 
-As you may already know, Sismo Connect is the communication layer allowing any Sismo Connect app to requests some proofs about user data and receive the expected proofs before verifying them. To be able to produce such proofs, users are required to import accounts ([data sources](../../../knowledge-base/resources/understanding-sismo-glossary.md)) into their [Sismo Vaults](../../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md). By doing so, they will be able to prove some group memberships and account ownerships to apps.&#x20;
+As you may already know, Sismo Connect is the communication layer allowing any Sismo Connect app to requests some proofs about user data and receive the expected proofs before verifying them. To be able to produce such proofs, users are required to import accounts (i.e. [Data Sources](../../../welcome-to-sismo/how-sismo-works.md#what-are-data-sources)) into their [Data Vaults](../../../welcome-to-sismo/what-is-the-data-vault.md). By doing so, they will be able to prove group membership and account ownership to apps.&#x20;
 
-Such proof generation is possible (among other things) thanks to the [**Commitment Mapper**](../../../knowledge-base/resources/technical-concepts/commitment-mapper.md)**.** Therefore, we allow **any developer to impersonate accounts** by automatically creating a fake Commitment Mapper in the Vault App frontend if the **vault object with impersonate field is defined in the Sismo Connect configuration**.
+Such proof generation is possible (among other things) thanks to the [**Commitment Mapper**](../../../knowledge-base/resources/technical-concepts/commitment-mapper.md)**.** Therefore, we allow **any developer to impersonate accounts** by automatically creating a fake Commitment Mapper in the Vault App front end if the **Vault object with impersonate field is defined in the Sismo Connect configuration**.
 
 You can learn more about the Sismo Connect configuration [**here**](../../technical-documentation/sismo-connect-configuration.md).
 
@@ -91,7 +91,7 @@ contract A is SismoConnect {
 
 ## The deployment script
 
-Solidity scripting is a way to declaratively deploy contracts using Solidity, instead of using the more limiting and less user friendly [`forge create`](https://book.getfoundry.sh/reference/forge/forge-create.html). You can look at the [example displayed in the Foundry documentation](https://book.getfoundry.sh/tutorials/solidity-scripting?highlight=script#solidity-scripting) if you want to learn more about it.&#x20;
+Solidity scripting is a way to declaratively deploy contracts using Solidity instead of using the more limiting and less user friendly [`forge create`](https://book.getfoundry.sh/reference/forge/forge-create.html). You can look at the [example displayed in the Foundry documentation](https://book.getfoundry.sh/tutorials/solidity-scripting?highlight=script#solidity-scripting) if you want to learn more about it.&#x20;
 
 We are going to use a simple solidity script to deploy our contract on our chosen network.&#x20;
 
@@ -155,7 +155,7 @@ SIMULATION COMPLETE. To broadcast these transactions, add --broadcast and wallet
 
 As you can see in the output logs, the simulation of the airdrop contract deployment was successful. You can even see the amount that will be required for you to deploy on the Mumbai Testnet. (You can use this Alchemy faucet if you need some testnet tokens: [https://mumbaifaucet.com/](https://mumbaifaucet.com/))
 
-Since we are happy with the the script simulation, we can broadcast it on Mumbai by inputing an EOA private key in the command line.
+Since we are happy with the script simulation, we can broadcast it on Mumbai by inputting an EOA private key in the command line.
 
 {% hint style="success" %}
 We strongly advise you to use a private key from a developer account when developing, do not leak any private key linked to some accounts with real assets in it.
@@ -186,9 +186,9 @@ To verify your contracts, you will need to register for an Etherscan API key.&#x
 The Etherscan API Key needs to be registered from Polygonscan if you want to deploy on Mumbai: [https://polygonscan.com/myaccount](https://polygonscan.com/myaccount)
 {% endhint %}
 
-You just need to directly specify the `--verify` option when deploying alongside your Etherscan api key.
+You just need to directly specify the `--verify` option when deploying alongside your Etherscan API key.
 
-It is pretty straight forward:
+It is pretty straightforward:
 
 {% code overflow="wrap" %}
 ```bash
@@ -239,9 +239,9 @@ All (1) contracts were verified!
 If you deploy the exact contract from the tutorial on Mumbai, you are likely to encounter a message stating "Already verified". As long as your contract is verified, it is totally fine!
 {% endhint %}
 
-And congrats for your deployment! You should be left with a verified contract at this point, if not don't hesitate to reach out to us on our [**developer telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0)**.**
+And congrats on your deployment! You should be left with a verified contract at this point. If not don't hesitate to reach out to us on our [**developer telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0)**.**
 
-If you want to use the tutorial frontend with your contracts, you will need to add some minor changes in the `front/src/app/page.tsx` file. You will first need to change how you get the `contractAddress` by changing 5151111 (the fork chain id) to 80001 (the Mumbai chain id) in your imports. And you also have to use the `polygonMumbai` chain config from viem isntead of `mumbaiFork` config for the chain.
+If you want to use the tutorial front end with your contracts, you will need to add some minor changes to the `front/src/app/page.tsx` file. You will first need to change how you get the `contractAddress` by changing 5151111 (the fork chain id) to 80001 (the Mumbai chain id) in your imports. You also have to use the `polygonMumbai` chain config from viem instead of `mumbaiFork` config for the chain.
 
 ```typescript
 // you are in: front/src/app/page.tsx
@@ -259,7 +259,7 @@ const CHAIN = polygonMumbai;
 
 ## Next steps
 
-If you have any questions about integrating sismoConnect, don’t hesitate to reach out. The team will be happy to answer any questions you may have. Any feedback is also welcomed!
+If you have any questions about integrating Sismo Connect, don’t hesitate to reach out. The team will be happy to answer any questions you may have. Any feedback is also welcomed!
 
 Get involved in the Sismo community! 🎭
 

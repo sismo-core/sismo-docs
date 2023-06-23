@@ -25,13 +25,13 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 **Here is an example of a customized usage of the request function:**
 
-You want to create an NFT Airdrop for **holders of a Nouns DAO NFT** owning a **Gitcoin Passport** and a **Twitter account**.
+You want to create an NFT airdrop for **holders of a Nouns DAO NFT** owning a **Gitcoin Passport** and a **Twitter account**.
 
-So you want your users to prove that they own a **Nouns DAO NFT**. But in order to make your airdrop more Sybil resistant you will require them to also prove a **Gitcoin Passport ownership with a passport value greater or equal to 15** and a **Twitter account ownership**.
+So you want your users to prove that they own a **Nouns DAO NFT**. But in order to make your airdrop more Sybil-resistant you will require them to also prove a **Gitcoin Passport ownership with a passport value greater or equal to 15** and a **Twitter account ownership**.
 
 These proofs should be made for the service named **"sismo-edition".** When the proofs are generated, you want your users to be redirected to the claim page of your website at the path **"https://my-nft-drop.xyz/sismo-edition/claim-nft"**.
 
-You will then use these proofs to airdrop a NFT if they are valid.
+You will then use these proofs to airdrop an NFT if they are valid.
 
 <pre class="language-typescript"><code class="lang-typescript">import { 
   AuthRequest, 
@@ -101,7 +101,7 @@ The `getResponse` function returns the [`SismoConnectResponse`](client.md#sismoc
 function getResponseBytes(): string | null
 ```
 
-The `getResponseBytes` function returns the response encoded in bytes usable by the [`@sismo-core/sismo-connect-solidity`](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-solidity) Librairy.
+The `getResponseBytes` function returns the response encoded in bytes usable by the [`@sismo-core/sismo-connect-solidity`](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-solidity) Library.
 
 #### `SismoConnectResponse`
 
