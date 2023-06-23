@@ -6,7 +6,7 @@ Sismo Connect can be used to request users for zero-knowledge proofs attesting g
 
 The `ClaimRequest` holds all the information needed to generate such a proof. It has the following properties:
 
-* `groupId` (required): the group identifier that the user must prove membership of in order to generate the proof.
+* `groupId` (required): the group identifier that the user must prove membership of in order to generate the proof. The groupId can be found in the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 * `value` (optional): by default set to “1”. Querying a specific value restricts eligibility to users belonging to the group with the minimum specified value or matching the exact value.
 * `claimType` (optional): by default `ClaimType.GTE`. Defines the type of group membership required. The following claim types are currently supported:&#x20;
   * `ClaimType.GTE`: the user must prove that they own an account with at least the requested value.
