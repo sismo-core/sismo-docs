@@ -37,6 +37,10 @@ type SignatureRequest = {
 
 The proof with the requested signature is then verified either in a backend using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
 
+{% hint style="success" %}
+If you are verifying your proofs in a smart contract, you will need to encode your singature with some ABI encoder like [Viem](https://viem.sh/docs/abi/encodeAbiParameters.html) or [EthersJS](https://docs.ethers.org/v5/api/utils/abi/coder/).
+{% endhint %}
+
 ### Making a SignatureRequest - Front-end integration
 
 {% hint style="info" %}
@@ -64,6 +68,7 @@ import { SismoConnectButton, SismoConnectClientConfig, SismoConnectResponse, Aut
     // signature request must be made with at least an auth or one claim
     auth={{authType: AuthType.VAULT}}
     // your signature request
+    // that needs to be encoded if you verify proofs in smart contracts
     signature={{message: "0x00"}}
     onResponse={async (response: SismoConnectResponse) => {
 	//Send the response to your server to verify it
@@ -99,6 +104,7 @@ function onClick(){
       // signature request must be made with at least an auth or one claim
       auth: {authType: AuthType.VAULT};
       // your signature request
+      // that needs to be encoded if you verify proofs in smart contracts
       signature: {message: "0x00"}
     });
 }
@@ -138,6 +144,7 @@ function onClick(){
       // signature request must be made with at least an auth or one claim
       auth: {authType: AuthType.VAULT};
       // your signature request
+      // that needs to be encoded if you verify proofs in smart contracts
       signature: {message: "0x00"}
     });
 }
@@ -210,12 +217,11 @@ contract MyContract is SismoConnect { // inherits from Sismo Connect library
 constructor(bytes16 appId) SismoConnect(buildConfig(appId)) {}
 
     function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {    
-    
         SismoConnectVerifiedResult memory result = verify({
             responseBytes: response,
-        // signature request must be made with at least an auth or one claim
+            // signature request must be made with at least an auth or one claim
             auth: buildAuth({authType: AuthType.VAULT}),       
-        // we want to check if the signed message provided in the response is the signature of the user's address
+            // we want to check if the signed message provided in the response is the signature of the user's address
             signature: buildSignature({message: abi.encode(msg.sender)})      
         });
         
