@@ -342,7 +342,7 @@ constructor(bytes16 appId) SismoConnect(buildConfig(appId)) {}
 
     function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {    
         SismoConnectVerifiedResult memory result = verify({
-            responseBytes: response,
+            responseBytes: sismoConnectResponse,
             // we want users to prove that they own a Sismo Vault
             // we are recreating the auth request made in the frontend to be sure that 
             // the proof provided in the response is valid with respect to this auth request
@@ -378,7 +378,7 @@ constructor(bytes16 appId) SismoConnect(buildConfig(appId)) {}
         auths[1] = buildAuth({authType: AuthType.TWITTER})
         
         SismoConnectVerifiedResult memory result = verify({
-            responseBytes: response,
+            responseBytes: sismoConnectResponse,
             auths: auths,       
         });
         

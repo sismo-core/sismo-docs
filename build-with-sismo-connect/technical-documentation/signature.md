@@ -218,7 +218,7 @@ constructor(bytes16 appId) SismoConnect(buildConfig(appId)) {}
 
     function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {    
         SismoConnectVerifiedResult memory result = verify({
-            responseBytes: response,
+            responseBytes: sismoConnectResponse,
             // signature request must be made with at least an auth or one claim
             auth: buildAuth({authType: AuthType.VAULT}),       
             // we want to check if the signed message provided in the response is the signature of the user's address

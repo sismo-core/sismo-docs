@@ -327,7 +327,7 @@ constructor(bytes16 appId) SismoConnect(buildConfig(appId)) {}
 
     function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {    
         SismoConnectVerifiedResult memory result = verify({
-            responseBytes: response,
+            responseBytes: sismoConnectResponse,
             claim: buildClaim({groupId: "0x42c768bb8ae79e4c5c05d3b51a4ec74a"}),       
         });
         
@@ -350,7 +350,7 @@ constructor(bytes16 appId) SismoConnect(buildConfig(appId)) {}
         claims[1] = buildClaim({groupId: "0x8b64c959a715c6b10aa8372100071ca7"})
         
         SismoConnectVerifiedResult memory result = verify({
-            responseBytes: response,
+            responseBytes: sismoConnectResponse,
             claims: claims,       
         });
 

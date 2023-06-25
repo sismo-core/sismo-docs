@@ -84,7 +84,7 @@ Finally, use the `verify()` function to verify the proof stored in `sismoConnect
 ```solidity
 function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {    
     SismoConnectVerifiedResult memory result = verify({
-        responseBytes: response,
+        responseBytes: sismoConnectResponse,
         // we want users to prove that they own a Sismo Vault
         // and that they are members of the group with the id 0x42c768bb8ae79e4c5c05d3b51a4ec74a
         // we are recreating the auth and claim requests made in the frontend to be sure that 
