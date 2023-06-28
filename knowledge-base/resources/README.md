@@ -15,7 +15,7 @@ The following pages of this documentation are brimming with resources meticulous
 * [**Sismo Hub**](sismo-hub/)**:** Resources related to the Sismo Hub, the Sismo communication protocols central open-source infrastructure.
 * [**Sismo API**](sismo-api/)**:** An outline of Sismo’s public API endpoints and how to use them.
 * [**Deployed Contract Addresses**](sismo-101.md)**:** This section provides a list of all deployed contract addresses related to Sismo
-* [**Technical Concepts**](../../build-with-sismo-connect/technical-documentation/)**:** This section elucidates the fundamental concepts that underpin Sismo.
+* [**Technical Concepts**](technical-concepts/)**:** This section elucidates the fundamental concepts that underpin Sismo.
 * [**General FAQ**](general-faq.md)**:** This FAQ provides answers to a broad spectrum of questions related to Sismo.
 * [**Glossary**](understanding-sismo-glossary.md)**:** The Glossary provides definitions of key terms and concepts used throughout the Sismo documentation.&#x20;
 
