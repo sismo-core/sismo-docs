@@ -63,8 +63,12 @@ import { config } from "./sismo-connect-config.ts";
 
 <SismoConnectButton
     config={config}
-    // request proof of Github ownership
-    auths={[{ authType: AuthType.GITHUB }]}
+    // request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
+    auths={auths}
+    // request proof of Data Gems (e.g NFT ownership, Dao Participation, GitHub commits)
+    claims={claims}
+    // request message signature from users (e.g intended recipient of an airdrop)
+    signature={signature}
     onResponseBytes={(response: string) => {
         // call your contract with the response as bytes
     }
@@ -148,7 +152,9 @@ Simply call the verify function with the response as bytes.&#x20;
 <pre class="language-solidity"><code class="lang-solidity"><strong>function foo(bytes memory response) public {
 </strong><strong>    SismoConnectVerifiedResult memory result = verify({
 </strong>        responseBytes: response,
-        auth: buildAuth({authType: AuthType.GITHUB}),
+        auths: auths,
+        claims: claims,
+        signature: signature
     });
 
     // implement some logic if the proof is successful
