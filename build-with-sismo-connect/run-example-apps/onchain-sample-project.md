@@ -1,5 +1,19 @@
 # Onchain Boilerplate
 
+This boilerplate can be used as a base to start coding onchain applications that use Sismo Connect. It is using Next.js for frontend and Foundry for smart contracts development.
+
+You are invited to modify:
+
+* `front/src/app/page.tsx` , the code of the frontend using Sismo Connect React Button to request ZK Proofs
+* `src/Airdrop.Sol` , the code of the smart contract using Sismo Connect Solidity Library to verify ZK Proofs\
+
+
+This boilerplates implements SafeDrop, a Sybil-resistant airdrop from privately-aggregated data explained.
+
+{% hint style="info" %}
+Read the [full case study](https://case-studies.sismo.io) of Safe Drop or complete its [tutorial](../tutorials/onchain-tutorials/tuto.md)
+{% endhint %}
+
 ## Prerequisites
 
 * [Node.js](https://nodejs.org/en/download/) >= 18.15.0 (Latest LTS version)

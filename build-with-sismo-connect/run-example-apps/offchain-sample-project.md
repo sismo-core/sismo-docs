@@ -1,5 +1,14 @@
 # Offchain Boilerplate
 
+This boilerplate can be used as a base to start coding offchain applications that use Sismo Connect. It is using Next.js for frontend and backend.
+
+You are invited to modify:
+
+* `front/src/app/page.tsx` , the code of the frontend using Sismo Connect React Button to request ZK Proofs from users.
+* &#x20;`src/app/api/verify/route.ts` , the backend code using Sismo Connect Typescrip library to verify ZK Proofs
+
+This boilerplate implements a simple user authentication.
+
 ## Prerequisites
 
 * [Node.js](https://nodejs.org/en/download/) >= 18.15.0 (Latest LTS version)

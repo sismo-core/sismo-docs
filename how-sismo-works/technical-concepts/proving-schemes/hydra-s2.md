@@ -3,17 +3,17 @@
 The [Hydra-S2 ZK proving scheme](https://github.com/sismo-core/hydra-s2-zkps) is the second proving scheme in the Hydra family:
 
 * Hydra = using Hydra Delegated Proof of Ownership via the [Commitment Mapper](../commitment-mapper.md)
-* S2 = single source, version 2: optional verifications and [Vault Identifier](../../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md)
+* S2 = single source, version 2: optional verifications and [Vault Identifier](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md)
 
 The proving scheme expands on the [Hydra-S1 proving scheme](hydra-s1.md) and introduces the notion of a Vault Identifier while offering a modular way of creating ZK proofs.
 
 ### VaultId & Proof Identifiers
 
-[VaultId](../../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md) is a new notion introduced with Hydra-S2; it is an anonymous app-specific identifier that can be utilized as an in-app user ID.
+[VaultId](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md) is a new notion introduced with Hydra-S2; it is an anonymous app-specific identifier that can be utilized as an in-app user ID.
 
 This VaultId is deterministically generated from a `vaultSecret` and an application Identifier (`appId`) by taking the Poseidon hash of these two values.
 
-A [Proof Identifier](../../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md) can be seen as the nullifier used in Hydra-S1, as far as it is deterministically generated from the Poseidon hash of a hashed sourceSecret and a requestIdentifier. The request Identifier is made of an application id, a group ID, a group timestamp, and a namespace (learn more about it in the [Sismo Connect package documentation](../../../../build-with-sismo-connect/technical-documentation/)).
+A [Proof Identifier](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md) can be seen as the nullifier used in Hydra-S1, as far as it is deterministically generated from the Poseidon hash of a hashed sourceSecret and a requestIdentifier. The request Identifier is made of an application id, a group ID, a group timestamp, and a namespace (learn more about it in the [Sismo Connect package documentation](../../../build-with-sismo-connect/technical-documentation/)).
 
 {% hint style="info" %}
 VaultId and Proof Identifiers are two tools with different purposes. VaultId can help you to privately keep track of a user with an anonymous app-specific ID while a Proof Identifier can help you to prevent a user from using the same proof two times in your app.
