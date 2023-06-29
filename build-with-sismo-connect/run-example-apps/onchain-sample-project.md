@@ -11,7 +11,7 @@ You are invited to modify:
 This boilerplates implements SafeDrop, a Sybil-resistant airdrop from privately-aggregated data explained.
 
 {% hint style="info" %}
-Read the [full case study](https://case-studies.sismo.io) of Safe Drop or complete its [tutorial](../tutorials/onchain-tutorials/tuto.md)
+Read the [full case study](https://case-studies.sismo.io) of SafeDrop or complete its [tutorial](../tutorials/onchain-tutorials/tuto.md)
 {% endhint %}
 
 ## Prerequisites
