@@ -2,7 +2,7 @@
 description: Sismo's open-source data infrastructure.
 ---
 
-# Data Gems & Data Groups
+# Data Groups
 
 Fundamentally, Sismo revolves around communication between personal data and applications. To utilize Sismo’s communication protocol, users aggregate their identity in the Data Vault—encrypted storage for a user's personal data from various web2 and web3 accounts, credentials, and attestations. These contents are collectively referred to as Data Sources.
 
@@ -32,7 +32,7 @@ Anyone building applications with Sismo Connect must utilize Data Groups to requ
 
 There are currently two ways to create Data Groups:
 
-* Through Sismo’s [Factory no-code interface](../../../create-data-gems/how-to-create-data-gems.md)
-* Through a pull request in the [Sismo Hub](../../../create-data-gems/tutorials/create-your-group-generator.md) - the Factory’s open-source back end
+* Through Sismo’s [Factory no-code interface](../how-to-create-data-gems/)
+* Through a pull request in the [Sismo Hub](../how-to-create-data-gems/create-your-group-generator.md) - the Factory’s open-source back end
 
 Alternatively, builders can utilize Data Groups created for existing Sismo Connect applications.

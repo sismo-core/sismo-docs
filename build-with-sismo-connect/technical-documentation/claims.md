@@ -1,19 +1,19 @@
 # Claims
 
-Sismo Connect can be used to request users for zero-knowledge proofs attesting group memberships.&#x20;
+Sismo Connect can be used to request users for zero-knowledge proofs attesting group memberships.
 
-## Type definitions&#x20;
+## Type definitions
 
 The `ClaimRequest` holds all the information needed to generate such a proof. It has the following properties:
 
 * `groupId` (required): the group identifier that the user must prove membership of in order to generate the proof. The groupId can be found in the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 * `value` (optional): by default set to “1”. Querying a specific value restricts eligibility to users belonging to the group with the minimum specified value or matching the exact value.
-* `claimType` (optional): by default `ClaimType.GTE`. Defines the type of group membership required. The following claim types are currently supported:&#x20;
+* `claimType` (optional): by default `ClaimType.GTE`. Defines the type of group membership required. The following claim types are currently supported:
   * `ClaimType.GTE`: the user must prove that they own an account with at least the requested value.
   * `ClaimType.EQ`: the user must prove that he owns an account with the exact requested value.
 * `groupTimestamp` (optional): by default set to “latest”. Groups are composed of snapshots generated either once, daily, or weekly. Each Group Snapshot generated has a timestamp associated with them. By default, the selected group is the latest Group Snapshot generated. But you are free to select a Group Snapshot with a different timestamp than the latest generated one.
 * `isOptional`(optional): by default set to `false`. If set to `true` the user can optionally prove their group membership.
-* `isSelectableByUser`(optional): by default set to `false` and only available for  `ClaimType.GTE`. This allows users to selectively choose the value used to generate the proof.&#x20;
+* `isSelectableByUser`(optional): by default set to `false` and only available for `ClaimType.GTE`. This allows users to selectively choose the value used to generate the proof.
 
 ```typescript
 // Types (typescript version)
@@ -49,16 +49,16 @@ Making an `ClaimRequest` is only possible in the front end as the request redire
 
 {% tabs %}
 {% tab title="React Component" %}
-The `SismoConnectButton` React component is available from the [sismo-connect-react package](packages/react.md).  It is a wrapper of the [sismo-connect-client package](packages/client.md).&#x20;
+The `SismoConnectButton` React component is available from the [sismo-connect-react package](packages/react.md). It is a wrapper of the [sismo-connect-client package](packages/client.md).
 
 * ClaimRequests are passed as props to the `SismoConnectButton` either through:
-  1. &#x20;the `claim`  props for one claim request: `ClaimRequest` or,
-  2. &#x20;the `claims` props for several claim requests: `ClaimRequest[]`
+  1. the `claim` props for one claim request: `ClaimRequest` or,
+  2. the `claims` props for several claim requests: `ClaimRequest[]`
 * Responses are received through either:
-  1. &#x20;the `onResponse: (response: SismoConnectResponse) => void` callback for offchain verification or,
-  2. &#x20;the `onResponseBytes (response: string) => void` callback for onchain verification.
+  1. the `onResponse: (response: SismoConnectResponse) => void` callback for offchain verification or,
+  2. the `onResponseBytes (response: string) => void` callback for onchain verification.
 
-#### One ClaimRequest - code example
+**One ClaimRequest - code example**
 
 {% code title="app.tsx" overflow="wrap" %}
 ```tsx
@@ -82,7 +82,7 @@ import { SismoConnectButton, SismoConnectClientConfig, SismoConnectResponse } fr
 ```
 {% endcode %}
 
-#### Multiple AuthRequests - code example
+**Multiple AuthRequests - code example**
 
 {% code title="app.tsx" overflow="wrap" %}
 ```tsx
@@ -112,14 +112,14 @@ import { SismoConnectButton, SismoConnectClientConfig, SismoConnectResponse } fr
 {% endtab %}
 
 {% tab title="React Hook" %}
-The `useSismoConnect` hook is available from the [sismo-connect-react package](packages/react.md).  It is a wrapper of the [sismo-connect-client package](packages/client.md).  The `useSismoConnect` hook exposes the `sismoConnect` variable.&#x20;
+The `useSismoConnect` hook is available from the [sismo-connect-react package](packages/react.md). It is a wrapper of the [sismo-connect-client package](packages/client.md). The `useSismoConnect` hook exposes the `sismoConnect` variable.
 
 * One or multiple claim requests can be made using the `sismoConnect.request()` method available on the `sismoConnect` variable.
 * Responses could be received through either:
-  1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
-  2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
+  1. the `sismoConnect.getReponse()` method for offchain verification or,
+  2. the `sismoConnect.getResponseBytes()` method for onchain verification.
 
-#### One ClaimRequest - code example
+**One ClaimRequest - code example**
 
 {% code title="App.tsx" overflow="wrap" %}
 ```tsx
@@ -147,7 +147,7 @@ if(response || responseBytes) {
 ```
 {% endcode %}
 
-#### Multiple ClaimRequests - code example
+**Multiple ClaimRequests - code example**
 
 {% code title="App.tsx" overflow="wrap" %}
 ```tsx
@@ -183,10 +183,10 @@ The [`sismo-connect-client` package](packages/client.md) exposes a `SismoConnect
 
 * One or multiple ClaimRequests can be made using the `sismoConnect.request()` method available on a `SismoConnect` instance.
 * Responses could be received through either:
-  1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
-  2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
+  1. the `sismoConnect.getReponse()` method for offchain verification or,
+  2. the `sismoConnect.getResponseBytes()` method for onchain verification.
 
-#### One ClaimRequest - code example
+**One ClaimRequest - code example**
 
 {% code title="app.ts" overflow="wrap" %}
 ```typescript
@@ -213,7 +213,7 @@ if(response || responseBytes) {
 ```
 {% endcode %}
 
-#### Multiple ClaimRequests - code example
+**Multiple ClaimRequests - code example**
 
 {% code title="app.ts" overflow="wrap" %}
 ```typescript
@@ -257,7 +257,7 @@ One or multiple claim requests can be verified offchain on a backend server usin
 
 If the proof is valid `sismoConnect.verify()` returns a `result` of type `SismoConnectVerifiedResult` else it will throw an error.
 
-#### One ClaimRequest - code example
+**One ClaimRequest - code example**
 
 {% code overflow="wrap" %}
 ```typescript
@@ -280,7 +280,7 @@ async function verifyResponse(sismoConnectResponse: SismoConnectResponse) {
 ```
 {% endcode %}
 
-#### Multiple ClaimRequests - code example
+**Multiple ClaimRequests - code example**
 
 {% code overflow="wrap" %}
 ```typescript
@@ -308,16 +308,16 @@ async function verifyResponse(sismoConnectResponse: SismoConnectResponse) {
 {% endtab %}
 
 {% tab title="Onchain verification - Solidity" %}
-The [`sismo-connect-solidity` package](packages/solidity.md) exposes a Sismo Connect Library which can be inherited by your contract either using Foundry or Hardhat.&#x20;
+The [`sismo-connect-solidity` package](packages/solidity.md) exposes a Sismo Connect Library which can be inherited by your contract either using Foundry or Hardhat.
 
-The Sismo Connect Library exposes:&#x20;
+The Sismo Connect Library exposes:
 
-* &#x20;a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) with respect to some requests directly in your contract. The verify() function takes an object containing:&#x20;
+* a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](../../how-sismo-works/technical-concepts/data-gems-and-data-groups.md) with respect to some requests directly in your contract. The verify() function takes an object containing:
   1. a `responseBytes` send from the front end,
   2. an `claim` or `claims` corresponding to the claim request made in the front end.
 * a `buildClaim()` helper to recreate the `ClaimRequest` made in the front-end
 
-#### One ClaimRequest - code example
+**One ClaimRequest - code example**
 
 ```solidity
 contract MyContract is SismoConnect { // inherits from Sismo Connect library
@@ -336,7 +336,7 @@ constructor(bytes16 appId) SismoConnect(buildConfig(appId)) {}
 }
 ```
 
-#### Multiple ClaimRequests - code example
+**Multiple ClaimRequests - code example**
 
 ```solidity
 contract MyContract is SismoConnect { // inherits from Sismo Connect library

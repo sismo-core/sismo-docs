@@ -4,7 +4,7 @@ description: Non-developer tutorial
 
 # Sismo Factory: Create a Data Group in 5 Minutes
 
-This tutorial will show you how to create a [Data Group](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
+This tutorial will show you how to create a [Data Group](../technical-concepts/data-gems-and-data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
 At the end of this tutorial, you will have a Group of Twitter, GitHub, Telegram and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available for a [Sismo Connect app](../../welcome-to-sismo/what-is-sismo-connect.md) 🙌
 
@@ -18,7 +18,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 ## What are Data Groups?
 
-[Data Groups](../../knowledge-base/resources/technical-concepts/data-gems-and-data-groups.md) are derived from Data Sources:
+[Data Groups](../technical-concepts/data-gems-and-data-groups.md) are derived from Data Sources:
 
 * Web2 Data Sources: Twitter, GitHub, Telegram
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles
@@ -89,7 +89,7 @@ After doing so, it is possible to add accounts using three different methods:
 There are 3 different ways to define the data of a Group Generator, you can use:
 
 * A defined list of Data Source ("By uploading a list of accounts")
-* [Data Providers](../../knowledge-base/resources/sismo-hub/data-providers.md) : function that allows fetching Data Sources ("From data providers")
+* [Data Providers](../resources/sismo-hub/data-providers.md) : function that allows fetching Data Sources ("From data providers")
 * Already existing Groups ("From data group")
 
 **For our case we need 3 main things:**
@@ -126,7 +126,7 @@ For example, different values can be used for voting power:
 * "3" --> gives you 500 voting power
 * **Get the list of** [**sismo.lens**](https://lenster.xyz/u/sismo) **Lens followers**
 
-To do this, you need to use a [Data Provider,](../../knowledge-base/resources/sismo-hub/data-providers.md) so we select the "_From Data Providers_" section.\
+To do this, you need to use a [Data Provider,](../resources/sismo-hub/data-providers.md) so we select the "_From Data Providers_" section.\
 Then we choose the Lens Provider and use the `getFollowers()` function:
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-13 à 18.41.53.png" alt=""><figcaption><p>Lens Provider</p></figcaption></figure>
@@ -204,7 +204,7 @@ You will be redirected to the [Group Explorer Page](https://factory.sismo.io/gro
 
 We can see that now your Group request is in <mark style="background-color:blue;">**waiting for approval**</mark> (<mark style="color:red;">red box</mark>) and a few time after in <mark style="background-color:blue;">**Deploying**</mark>.
 
-Once you submit your Group, it will be **automatically accepted and deployed** on all [supported chains](../../knowledge-base/resources/sismo-101.md) in \~20 minutes if it contains less than 100k accounts in it.
+Once you submit your Group, it will be **automatically accepted and deployed** on all [supported chains](../resources/sismo-101.md) in \~20 minutes if it contains less than 100k accounts in it.
 
 {% hint style="success" %}
 Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon to ask for help or for a custom group update. We would love to talk to you and meet you there.

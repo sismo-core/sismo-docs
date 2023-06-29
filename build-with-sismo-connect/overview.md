@@ -22,7 +22,7 @@ Building with Sismo Connect? Check out [build.sismo.io ](https://build.sismo.io/
 
 ### Supported Chains
 
-Sismo Connect is now deployed on **11 chains**. You can view all of the contract addresses [**here**](../knowledge-base/resources/sismo-101.md)**.**
+Sismo Connect is now deployed on **11 chains**. You can view all of the contract addresses [**here**](../how-sismo-works/resources/sismo-101.md)**.**
 
 #### Mainnets
 

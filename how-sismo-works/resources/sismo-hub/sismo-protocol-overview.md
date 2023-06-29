@@ -9,8 +9,8 @@ Groups are a reusable tool used by Sismo to generate available Data Groups for p
 
 You will find more information on what are groups in this section:
 
-{% content-ref url="broken-reference/" %}
-[broken-reference](broken-reference/)
+{% content-ref url="../../../knowledge-base/resources/sismo-hub/broken-reference/" %}
+[broken-reference](../../../knowledge-base/resources/sismo-hub/broken-reference/)
 {% endcontent-ref %}
 
 Generating Data Groups and making them available for proving schemes requires some infrastructure. We have developed a repository, the [sismo-hub](https://github.com/sismo-core/sismo-hub), to let anyone propose new Data Groups and make them available for Hydra proving schemes with a simple PR.
@@ -19,8 +19,8 @@ You will be able to create your own group of accounts (Ethereum addresses, Githu
 
 **Here is a complete tutorial describing all the group creation process steps:**
 
-{% content-ref url="../../../create-data-gems/tutorials/create-your-group-generator.md" %}
-[create-your-group-generator.md](../../../create-data-gems/tutorials/create-your-group-generator.md)
+{% content-ref url="../../how-to-create-data-gems/create-your-group-generator.md" %}
+[create-your-group-generator.md](../../how-to-create-data-gems/create-your-group-generator.md)
 {% endcontent-ref %}
 
 The following documentation aims to describe the code in a more theoretical way, we strongly recommend doing the tutorial to understand what the code below is for, especially for newcomers.

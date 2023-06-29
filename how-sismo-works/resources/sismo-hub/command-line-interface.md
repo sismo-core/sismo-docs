@@ -29,7 +29,7 @@ yarn generate-group ens-voters --additional-data 0x2a3..ab4=2,0x1e5..th0=4
 
 ### `send-to-attester`
 
-The `send-to-attester` command aims at sending generated groups on-chain. This command updates the on-chain [registry tree](../technical-concepts/accounts-registry-tree.md) by sending a new root.
+The `send-to-attester` command aims at sending generated groups on-chain. This command updates the on-chain [registry tree](../../technical-concepts/accounts-registry-tree.md) by sending a new root.
 
 ```bash
 # send groups on-chain for the 'hydra-s1-local' attester deployed on the 'local' chain

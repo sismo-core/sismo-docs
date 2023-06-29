@@ -6,7 +6,7 @@ description: The crypto-native SSO.
 
 Sismo Connect, a crypto-native single sign-on (SSO), enables applications to request any data aggregated in a user’s Data Vault. More precisely, applications can request that users prove ownership of Data Sources (EVM, Twitter, Telegram and GitHub accounts) and Data Gems (e.g. that they own a certain NFT or voted in a DAO). By abstracting the underlying complexities, Sismo Connect allows developers to implement zero-knowledge technology in their applications with only a few lines of code.
 
-With Sismo Connect, developers can request multiple Data Gems at once, aggregating data from multiple web2 and web3 accounts. This allows applications to access more data without compromising user privacy. For a practical understanding, refer to these case studies.
+With Sismo Connect, developers can request multiple Data Gems at once, aggregating data from multiple web2 and web3 accounts. This allows applications to access more data without compromising user privacy. For a practical understanding, refer to these [case studies](https://case-studies.sismo.io/).
 
 For instance, Sismo Connect facilitates:
 
@@ -22,7 +22,7 @@ Visit the [Sismo App Store](https://apps.sismo.io/) to explore applications buil
 
 ## Empower Your App
 
-Envision the Data Vault as an encrypted aggregator that securely stores various Data Sources, such as Ethereum addresses, GitHub, Twitter and Telegram accounts, and other attestations from relevant authorities.
+Envision the Data Vault as a local identity aggregator of various Data Sources, such as Ethereum addresses, GitHub, Twitter and Telegram accounts.
 
 Using Sismo Connect, you can implement any combination of the following functions in your application:
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This tutorial is designed as an **introduction** to **Sismo Connect Solidity** Library. It aims at showcasing the integration steps of Sismo Connect to easily create a Sybil-resistant ERC20 airdrop from privately-aggregated data (known as [Data Gems](../../../welcome-to-sismo/how-sismo-works.md)). You can take a look at the [**SafeDrop Case Study**](https://case-studies.sismo.io/db/safe-drop) that we are going to use for this tutorial to deeply understand what issues we are easily solving thanks to Sismo Connect in the context of an ERC20 airdrop.
+This tutorial is designed as an **introduction** to **Sismo Connect Solidity** Library. It aims at showcasing the integration steps of Sismo Connect to easily create a Sybil-resistant ERC20 airdrop from privately-aggregated data (known as [Data Gems](../../../how-sismo-works/core-components.md)). You can take a look at the [**SafeDrop Case Study**](https://case-studies.sismo.io/db/safe-drop) that we are going to use for this tutorial to deeply understand what issues we are easily solving thanks to Sismo Connect in the context of an ERC20 airdrop.
 
 You will learn how to request proofs about your user's data, verify them in your contracts and how privacy and data aggregation can be leveraged for your app thanks to Sismo Connect.
 
@@ -95,7 +95,7 @@ Congrats on getting your airdrop! Now, let's see how this simple Sismo Connect i
 
 Among other things, Sismo Connect allows a simple user authentication for your application. It works by requesting a [**vault Identifier**](../../technical-documentation/vault-and-proof-identifiers.md) (shorten to `vaultId`) from your users thanks to an **Auth request** of type **VAULT**. But what is a `vaultId`? &#x20;
 
-Each Sismo user has a [Data Vault](../../../welcome-to-sismo/what-is-the-data-vault.md), where all his data from different Data Sources is stored securely. As a developer, you can request to your users some proofs about the data in their Vault (known as [**Data Gems**](../../../welcome-to-sismo/how-sismo-works.md)) thanks to a Sismo Connect Request. To quickly identify your users, you can request a `vaultId` that acts as a sovereign an anonymous ID for Sismo Connect Apps. This **`vaultId`** is the **unique identifier of a user vault for a specific application**, it is computed as the **hash** of the **userVaultSecret** and the **appId**. If you want to learn more about the `vaultId`, you can read more about it in [**Vault Identifiers.**](../../technical-documentation/vault-and-proof-identifiers.md)
+Each Sismo user has a [Data Vault](../../../welcome-to-sismo/what-is-the-data-vault.md), where all his data from different Data Sources is stored securely. As a developer, you can request to your users some proofs about the data in their Vault (known as [**Data Gems**](../../../how-sismo-works/core-components.md)) thanks to a Sismo Connect Request. To quickly identify your users, you can request a `vaultId` that acts as a sovereign an anonymous ID for Sismo Connect Apps. This **`vaultId`** is the **unique identifier of a user vault for a specific application**, it is computed as the **hash** of the **userVaultSecret** and the **appId**. If you want to learn more about the `vaultId`, you can read more about it in [**Vault Identifiers.**](../../technical-documentation/vault-and-proof-identifiers.md)
 
 You can also see a general scheme below showing you the high-level workflow. In our case we ask for a `vaultId` in the Sismo Connect Request and we receive the `vaultId` alongside its proof in the Sismo Connect Response that will be verified onchain.
 
@@ -315,7 +315,7 @@ Well, now that you have all these steps in mind, let's improve this airdrop cont
 Our first aim is to make the ERC20 airdrop Sybil-resistant. To do this, we simply need to request a proof of Gitcoin Passport group membership from our users. We also want them to have a passport score above 15. You can request such a proof by taking the `groupId` of the "Gitcoin Passport Holders" group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders) and create a [**claim request**](../../technical-documentation/claims.md) from it.
 
 {% hint style="success" %}
-You can learn how to create a Data Group with the [following tutorial](../../../create-data-gems/tutorials/create-your-data-group.md).
+You can learn how to create a Data Group with the [following tutorial](../../../how-sismo-works/how-to-create-data-gems/create-your-data-group.md).
 {% endhint %}
 
 The `groupId` of the Gitcoin Passport Holders group is `0x1cde61966decb8600dfd0749bd371f12`. Let's add our claim request in the React button. We indicate the groupId of the group and the minimum value required in this group.

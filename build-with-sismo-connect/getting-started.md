@@ -1,6 +1,6 @@
 # Getting Started
 
-Sismo Connect, a crypto-native single sign-on (SSO), enables applications to request any data aggregated in a user’s [Data Vault](../welcome-to-sismo/what-is-the-data-vault.md). More precisely, applications can request that users prove ownership of [Data Sources](../welcome-to-sismo/how-sismo-works.md#what-are-data-sources) (EVM, Twitter, Telegram and GitHub accounts) and [Data Gems](../welcome-to-sismo/how-sismo-works.md#what-are-data-gems) (e.g. that they own a certain NFT or voted in a DAO). By abstracting the underlying complexities, Sismo Connect allows developers to implement zero-knowledge technology in their applications with only a few lines of code.
+Sismo Connect, a crypto-native single sign-on (SSO), enables applications to request any data aggregated in a user’s [Data Vault](../welcome-to-sismo/what-is-the-data-vault.md). More precisely, applications can request that users prove ownership of [Data Sources](../how-sismo-works/core-components.md#what-are-data-sources) (EVM, Twitter, Telegram and GitHub accounts) and [Data Gems](../how-sismo-works/core-components.md#what-are-data-gems) (e.g. that they own a certain NFT or voted in a DAO). By abstracting the underlying complexities, Sismo Connect allows developers to implement zero-knowledge technology in their applications with only a few lines of code.
 
 {% tabs %}
 {% tab title="Onchain" %}
@@ -75,7 +75,7 @@ import { config } from "./sismo-connect-config.ts";
 
 ## Smart Contract
 
-You can see the chains where Sismo Connect is available [**here**](../knowledge-base/resources/sismo-101.md).
+You can see the chains where Sismo Connect is available [**here**](../how-sismo-works/resources/sismo-101.md).
 
 ### Installation
 

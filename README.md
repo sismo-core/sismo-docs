@@ -29,17 +29,17 @@ With Sismo, you can:
 
 ## Data Vault: Aggregate Your Identity
 
-Fundamentally, Sismo revolves around communication between personal data and applications. To utilize Sismo’s communication protocol, users aggregate their identity in their own [Data Vault](welcome-to-sismo/what-is-the-data-vault.md). By doing so, they unlock the power to leverage their data across multiple platforms.
+Users aggregate their identity in their sovereign, local and private [Data Vault](welcome-to-sismo/what-is-the-data-vault.md). By doing so, they can start generating ZK Proofs and leverage their data across multiple platforms.
 
 {% hint style="info" %}
 The Data Vault is encrypted storage for a user's personal data from various web2 and web3 accounts, credentials, and attestations.
 {% endhint %}
 
-These contents of a Data Vault are collectively referred to as Data Sources. The granular pieces of data within Data Sources are characterized as Data Gems. A Data Gem is a valuable element of a user’s digital identity. Examples of Data Gems include:
+These contents of a Data Vault are collectively referred to as Data Sources. The granular pieces of data within Data Sources are characterized as [Data Gems](how-sismo-works/core-components.md#what-are-data-gems-and-data-groups). A Data Gem is a valuable element of a user’s digital identity. Examples of Data Gems include:
 
-* Entrants to the Proof of Humanity registry
-* Contributors to Sismo
-* French citizens
+* NFT ownership of a specific collection
+* GitHub commit to a specific repository
+* Participation in a specific DAO governance
 
 The Data Vault acts as a private, local and secure place where users can have a complete overview of their digital identity, providing ownership and control over personal data.
 
@@ -51,13 +51,13 @@ You can create your own Data Vault and start aggregating your identity [here](ht
 
 ## Prove & Verify: Selective Disclosure
 
-To prove ownership of Data Sources or Data Gems, users leverage Sismo’s communication protocol to participate in [proving schemes](welcome-to-sismo/how-sismo-works.md#what-are-proving-schemes). With access to data uploaded to the [Sismo Hub](welcome-to-sismo/how-sismo-works.md#what-is-the-sismo-hub), the protocol's open data infrastructure, proving schemes enable users to prove ownership of Data Gems.
+To prove ownership of Data Sources or Data Gems, users participate in [proving schemes](how-sismo-works/core-components.md#what-are-proving-schemes). Proving schemes enable users to prove ownership of a Data Source and prove that a Data Source is a member of a [Data Group](how-sismo-works/technical-concepts/data-gems-and-data-groups.md) (e.g. a group of NFT holders, DAO participants or GitHub contributors). This attestation of group membership is called a Data Gem. Data Groups can be created in the [Sismo Factory](https://factory.sismo.io/). The [Sismo Hub](how-sismo-works/core-components.md#what-is-the-sismo-hub), Sismo's open data infrastructure, periodically publishes Data Groups onchain.
 
 {% hint style="info" %}
 A proving scheme is a cryptographic method that allows one party (the prover) to prove to another party (the verifier) that a certain statement is true, without revealing how it is true—ensuring privacy.
 {% endhint %}
 
-The Data Vault acts as a prover, enabling users to generate zero-knowledge proofs (ZKPs) that attest ownership of Data Gems. A user generates a proof to make a claim about Data Gems that they own—which can be subsequently verified.
+The Data Vault includes the provers, enabling users to generate zero-knowledge proofs (ZKPs) that attest ownership of Data Gems. A user generates a proof to make a claim about Data Gems that they own—which can be subsequently verified.
 
 Verifiers integrated into applications accept proofs from users and ensure their validity—whether in onchain smart contracts or offchain backends. In this sense, users can selectively disclose Data Gems to applications without revealing the associated Data Source.
 
@@ -65,7 +65,7 @@ Verifiers integrated into applications accept proofs from users and ensure their
 
 ## Sismo Connect: The Crypto-Native SSO
 
-Sismo Connect is a crypto-native single sign-on method (SSO) for the next generation of applications, whether onchain or offchain. Designed with developers in mind, Sismo Connect establishes communication between the prover in a user’s Data Vault and verifiers integrated into applications. As a result, Sismo Connect serves as the developer-centered method of leveraging Sismo’s communication protocol.
+Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Designed with developers in mind, Sismo Connect makes it easy for application developers to request and verify ZK proofs attesting ownership of personal data (i.e. Data Sources and Data Gems).
 
 {% hint style="success" %}
 Discover applications leveraging the power of Sismo Connect on the [Sismo App Store](https://spaces.sismo.io/).
