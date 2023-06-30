@@ -48,10 +48,20 @@ const config: SismoConnectConfig = {
   appId: "0xf4977993e52606cfd67b7a1cde717069", 
 }
 
-<SismoConnectButton 
-    // the client config created
+<SismoConnectButton
+    // config
     config={config}
-   ...
+
+    // Sismo Connect Request Data
+    // request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
+    auths={[{ authType: AuthType.GITHUB }]}
+    // request proof of Data Gems (e.g NFT ownership, Dao Participation, GitHub commits)
+    claims=[{{groupId: ENS_DAO_VOTERS_GROUP_ID}}]
+    // request message signature from users.
+    signature={message: "I vote Yes to Privacy"}}
+    onResponseBytes={(response: string) => {
+        // call your contract/backend with the response as bytes
+    }
 />
 
 ```
@@ -137,10 +147,19 @@ const config: SismoConnectConfig = {
   }
 }
 
-<SismoConnectButton 
-    // the client config created
+<SismoConnectButton
     config={config}
-   ...
+    
+    // Sismo Connect Request
+    // request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
+    auths={[{ authType: AuthType.GITHUB }]}
+    // request proof of Data Gems (e.g NFT ownership, Dao Participation, GitHub commits)
+    claims=[{{groupId: ENS_DAO_VOTERS_GROUP_ID}}]
+    // request message signature from users.
+    signature={message: "I vote Yes to Privacy"}}
+    onResponseBytes={(response: string) => {
+        // call your contract with the response as bytes
+    }
 />
 
 ```

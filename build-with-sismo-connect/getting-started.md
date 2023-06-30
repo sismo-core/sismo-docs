@@ -64,11 +64,11 @@ import { config } from "./sismo-connect-config.ts";
 <SismoConnectButton
     config={config}
     // request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
-    auths={auths}
+    auths={[{ authType: AuthType.GITHUB }]}
     // request proof of Data Gems (e.g NFT ownership, Dao Participation, GitHub commits)
-    claims={claims}
-    // request message signature from users (e.g intended recipient of an airdrop)
-    signature={signature}
+    claims=[{{groupId: ENS_DAO_VOTERS_GROUP_ID}}]
+    // request message signature from users.
+    signature={message: "I vote Yes to Privacy"}}
     onResponseBytes={(response: string) => {
         // call your contract with the response as bytes
     }
