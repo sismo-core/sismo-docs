@@ -18,7 +18,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 ## What are Data Groups?
 
-[Data Groups](../technical-concepts/data-gems-and-data-groups.md) are derived from Data Sources:
+[Data Groups](../technical-concepts/data-gems-and-data-groups.md) are set of Data Sources with each an associated value:
 
 * Web2 Data Sources: Twitter, GitHub, Telegram
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles
@@ -26,11 +26,22 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 Here's an example of what a Group looks like:
 
 ```json
-"0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045": "1",
-"dhadrien.sismo.eth": "3",
-"bigq11.eth": "10",
-"martingbz.lens":"2",
-...
+ {
+  // Sismo Community Group made of multiple types of accounts
+  // full group: https://sismo-prod-hub-data.s3.eu-west-1.amazonaws.com/group-snapshot-store/0xd630aa769278cacde879c5c0fe5d203c/1687260637.json
+   ...
+   "0xb08db4cd36b0309c069f515ced754205912a707a": "2",
+   "0xf1fc0b43f8fd0e8b8fce983732d48925148438c1": "2",
+   "twitter:robsvensek": "3",
+   "twitter:PN79161154": "3",
+   "github:leosayous21": "2",
+   "github:mme022": "2",
+   "dhadrien.eth": "2",
+   "stani.lens": "2",
+   "telegram:dhadrien": "3",
+   ...
+ }
+  
 ```
 
 ## Data Group Use-Cases
