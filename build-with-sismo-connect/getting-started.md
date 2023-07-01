@@ -1,6 +1,6 @@
 # Overview
 
-<figure><img src="../.gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption></figcaption></figure>
 
 Integrating Sismo Connect means two things:
 

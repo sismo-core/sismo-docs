@@ -326,6 +326,8 @@ const sismoConnectResponse:SismoConnectResponse =
 </details>
 
 ```typescript
+// backend
+
 import {
   SismoConnect,
   AuthType,
@@ -341,9 +343,8 @@ import {
 // reusing the exaxt same config as the frontend's
 const sismoConnect = SismoConnect({ config });
 
-
 const result: SismoConnectVerifiedResult = await sismoConnect.verify(
-      sismoConnectResponse, // copied from previous step
+      sismoConnectResponse, // copied from previous step or received from api call
       {
         auths,
         claims,
