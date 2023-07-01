@@ -19,10 +19,10 @@ The `ClaimRequest` holds all the information needed to generate such a proof. It
 // Types (typescript version)
 enum ClaimType {
     GTE = 0,
-    GT = 1,
+    GT = 1, // not supported
     EQ = 2,
-    LT = 3,
-    LTE = 4
+    LT = 3, // not supported
+    LTE = 4 // not supported
 }
 
 type ClaimRequest = {
