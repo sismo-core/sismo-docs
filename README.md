@@ -6,7 +6,7 @@ description: Making your data sovereign.
 
 Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to **enable** **users to aggregate and selectively disclose personal data** to applications.&#x20;
 
-By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain users data that was previously inaccessible,** without respecting users' privacy.
+By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain users data that was previously inaccessible,** while respecting users' privacy.
 
 [Sismo Connect](welcome-to-sismo/what-is-sismo-connect.md) aims to replace non-sovereign SSOs such Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
@@ -35,7 +35,7 @@ With Sismo, you can:
 
 Users aggregate their identity in their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md). By doing so, they can start generating ZK Proofs from their personal data and leverage it across multiple platforms.
 
-<figure><img src=".gitbook/assets/Aggregation.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (5).png" alt=""><figcaption></figcaption></figure>
 
 Data Vaults contain Data Sources. The granular data contained in Data Sources are called [Data Gems](how-sismo-works/core-components.md#what-are-data-gems-and-data-groups).  Users generate ZK proofs to attest ownership of Data Sources and Data Gems.
 
@@ -75,13 +75,13 @@ The Data Vault includes the provers, enabling users to generate zero-knowledge p
 
 Verifiers verify proofs from users and ensure their validity without accessing to the Data Source used to generate the ZK Proof. In this sense, users can selectively disclose Data Gems to applications without revealing the associated Data Source.
 
-<figure><img src=".gitbook/assets/Selective Disclosure.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Selective Disclosure (2).png" alt=""><figcaption></figcaption></figure>
 
 ## Sismo Connect: The Crypto-Native SSO
 
 Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to request and verify ZK proofs attesting ownership of personal data (i.e. Data Sources and Data Gems).
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Discover applications leveraging the power of Sismo Connect on the [Sismo App Store](https://spaces.sismo.io/) and read the[ case studies](https://case-studies.sismo.io/) that we built around them.
