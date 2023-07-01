@@ -4,9 +4,9 @@ description: An overview of how Sismo works.
 
 # Core Components
 
-The Sismo protocol enables communication between a user’s personal data and applications. The following components are fundamental in facilitating this communication:
+Sismo enables communication between a user’s personal data and applications. The following components are fundamental in facilitating this communication:
 
-* [Data Vault](../welcome-to-sismo/what-is-the-data-vault.md) — a local, sovereign and private identity aggregator
+* [Data Vault](technical-concepts/what-is-the-data-vault.md) — a local, sovereign and private identity aggregator
 * [Data Sources](core-components.md#what-are-data-sources) — web2 or web3 accounts and other credentials aggregated in a user’s Data Vault
 * [Data Gems](core-components.md#what-are-data-gems) — provable granular pieces of sovereign data derived from Data Sources in a user’s Data Vault
 * [Proving schemes](technical-concepts/proving-schemes/) — cryptographic circuits that enable users to prove ownership of Data Sources and Data Gems

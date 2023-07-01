@@ -47,7 +47,7 @@ Once this steps are done, you are well setup to use [Forge](https://book.getfoun
 
 Before deploying any Sismo Connect contract, it is better to understand the Sismo Connect config and especially how to impersonate accounts.&#x20;
 
-As you may already know, Sismo Connect is the communication layer allowing any Sismo Connect app to requests some proofs about user data and receive the expected proofs before verifying them. To be able to produce such proofs, users are required to import accounts (i.e. [Data Sources](../../../how-sismo-works/core-components.md#what-are-data-sources)) into their [Data Vaults](../../../welcome-to-sismo/what-is-the-data-vault.md). By doing so, they will be able to prove group membership and account ownership to apps.&#x20;
+As you may already know, Sismo Connect is the communication layer allowing any Sismo Connect app to requests some proofs about user data and receive the expected proofs before verifying them. To be able to produce such proofs, users are required to import accounts (i.e. [Data Sources](../../../how-sismo-works/core-components.md#what-are-data-sources)) into their [Data Vaults](../../../how-sismo-works/technical-concepts/what-is-the-data-vault.md). By doing so, they will be able to prove group membership and account ownership to apps.&#x20;
 
 Such proof generation is possible (among other things) thanks to the [**Commitment Mapper**](../../../how-sismo-works/technical-concepts/commitment-mapper.md)**.** Therefore, we allow **any developer to impersonate accounts** by automatically creating a fake Commitment Mapper in the Vault App front end if the **Vault object with impersonate field is defined in the Sismo Connect configuration**.
 

@@ -4,7 +4,6 @@
 
 * [What Is Sismo?](README.md)
 * [What Is Sismo Connect?](welcome-to-sismo/what-is-sismo-connect.md)
-* [What Is the Data Vault?](welcome-to-sismo/what-is-the-data-vault.md)
 
 ## Build with Sismo Connect
 
@@ -40,6 +39,7 @@
   * [Sismo Hub: Add a Data Provider to the Sismo Factory](how-sismo-works/how-to-create-data-gems/create-your-data-provider.md)
   * [Sismo Hub: Create Data Groups Programmatically](how-sismo-works/how-to-create-data-gems/create-your-group-generator.md)
 * [Technical Concepts](how-sismo-works/technical-concepts/README.md)
+  * [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md)
   * [Data Groups](how-sismo-works/technical-concepts/data-gems-and-data-groups.md)
   * [Proving Schemes](how-sismo-works/technical-concepts/proving-schemes/README.md)
     * [Hydra-S1](how-sismo-works/technical-concepts/proving-schemes/hydra-s1.md)
