@@ -42,6 +42,25 @@ import { SismoConnectConfig } from "@sismo-core/sismo-connect-react";
 
 export const config: SismoConnectConfig = {
   appId: "0xf4977993e52606cfd67b7a1cde717069", // replace with your appId
+  // vault: {
+  //   // For development purposes insert the Data Sources that you want to impersonate here
+  //   // Never use this in production
+  //   impersonate: [
+  //     // EVM
+  //     "dhadrien.sismo.eth",
+  //     "leo21.sismo.eth",
+  //     "0xa4c94a6091545e40fc9c3e0982aec8942e282f38",
+  //     "vitalik.eth",
+  //     // Github
+  //     "github:dhadrien",
+  //     // Twitter
+  //     "twitter:dhadrien_",
+  //     // Telegram
+  //     "telegram:dhadrien",
+  //   ],
+  // },
+  // displayRawResponse: true,
+
 };
 ```
 
@@ -71,7 +90,7 @@ import { config } from "./sismo-connect-config.ts";
 />
 ```
 
-{% hint style="info" %}
+{% hint style="success" %}
 Check the [Sismo Connect Example Requests](sismo-connect-request-cheatsheet.md) to get a large set of interesting requests
 {% endhint %}
 
