@@ -25,6 +25,10 @@ SIsmo Connect Response (with ZK Proof in it)
 
 ### Frontend: Make a Sismo Connect Request with React Button
 
+{% hint style="info" %}
+As an alternative to the React Button, you can use the [<mark style="color:blue;">`@sismo-core/sismo-connect-client`</mark>](technical-documentation/packages/client.md) [library](technical-documentation/packages/client.md)
+{% endhint %}
+
 ```tsx
 // react page
 import {
@@ -158,7 +162,7 @@ Copy-pasted from the test Sismo Connect Request 👉 [https://test-request.sismo
 ```typescript
 
 
-const sismoConnectResponse:SismoConnectResponse = 
+const sismoConnectResponse = 
     {
       "appId": "0x32403ced4b65f2079eda77c84e7d2be6",
       "namespace": "main",
@@ -369,6 +373,11 @@ import {
   console.log(result.getUserIds(AuthType.TELEGRAM));
   // [ '875608110' ] // telegram id of @dhadrien 
 })()
-
-
 ```
+
+### Verify the Sismo Connect Reponse in a Smart Contract
+
+WIP!&#x20;
+
+In the meantime, please, refer to the [Sismo Connect Solidity Library](technical-documentation/packages/solidity.md), the [onchain app boilerplate](run-example-apps/onchain-sample-project.md) or the [Onchain Tutorial](tutorials/tuto.md).
+
