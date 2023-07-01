@@ -9,7 +9,7 @@
 
 * [Overview](build-with-sismo-connect/getting-started.md)
 * [Quickstart](build-with-sismo-connect/getting-started-1.md)
-* [Sismo Connect Request Cheatsheet](build-with-sismo-connect/sismo-connect-request-cheatsheet.md)
+* [Sismo Connect Cheatsheet](build-with-sismo-connect/sismo-connect-cheatsheet.md)
 * [Boilerplates](build-with-sismo-connect/run-example-apps/README.md)
   * [Onchain Boilerplate](build-with-sismo-connect/run-example-apps/onchain-sample-project.md)
   * [Offchain Boilerplate](build-with-sismo-connect/run-example-apps/offchain-sample-project.md)
