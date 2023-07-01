@@ -37,7 +37,7 @@ The case studies below showcase the power of Sismo Connect, demonstrating how it
 
 SafeDrop is a Sybil-resistant and privacy-preserving ERC20 airdrop that distributes AIR tokens to users proportionally based on their reputation, aggregated from diverse sources of data (EVM wallets, Telegram, Twitter and GitHub accounts).
 
-<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 Learn how to build the Sybil-resistant airdrop [here](../build-with-sismo-connect/tutorials/tuto.md). Alternatively, check out the [onchain boilerplate](../build-with-sismo-connect/run-example-apps/onchain-sample-project.md).

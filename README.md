@@ -18,9 +18,9 @@ Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
 
 To be sovereign on the internet, we need both **ownership** over our digital identities and the **ability to aggregate them.**&#x20;
 
-While blockchains made us owners of our data, Zero-Knowledge proofs - that enable private aggregation and selective disclosure - will give us true power over them. Together they provide sovereignty over one's digital identity.
+While blockchains made us owners of our data, Zero-Knowledge proofs - that enable private aggregation and selective disclosure - will give us unlimited control over them.
 
-With Sismo, users can finally leverage the entirety of their social capital at once, onchain and offchain. Smart contracts can access any personal data onchain, while backends no longer need to store more user information than necessary.
+With Sismo, users can finally **leverage the entirety of their social capital at once, onchain and offchain**. Smart contracts can access any personal data onchain, while backends no longer need to store more user information than necessary.
 
 {% hint style="success" %}
 With Sismo, you can:
@@ -35,7 +35,7 @@ With Sismo, you can:
 
 Users aggregate their identity in their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md). By doing so, they can start generating ZK Proofs from their personal data and leverage it across multiple platforms.
 
-<figure><img src=".gitbook/assets/Aggregation.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (2).png" alt=""><figcaption></figcaption></figure>
 
 Data Vaults contain Data Sources. The granular data contained in Data Sources are called [Data Gems](how-sismo-works/core-components.md#what-are-data-gems-and-data-groups).  Users generate ZK proofs to attest ownership of Data Sources and Data Gems.
 
