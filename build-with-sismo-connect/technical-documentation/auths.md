@@ -14,7 +14,6 @@ The `AuthRequest` is an object with the following properties:
   * `TELEGRAM` : Sismo Connect returns the user's Telegram account id.&#x20;
 * `userId` (optional): requests the user to have a predefined account.
 * `isOptional`(optional): by default set to `false`.  Allows the user to optionally authenticate with this `AuthType`.
-* `isSelectableByUser`(optional): by default set to `true`. Allows the user to selectively reveal their account whenever the user has imported several accounts of the `AuthType` into ther Vault.
 
 ```typescript
 // Types (typescript version)
@@ -30,7 +29,6 @@ type AuthRequest = {
     authType: AuthType;
     userId?: string;
     isOptional?: boolean;
-    isSelectableByUser?: boolean;
 };
 ```
 

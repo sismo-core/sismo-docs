@@ -7,17 +7,16 @@
 
 ## Build with Sismo Connect
 
-* [Overview](build-with-sismo-connect/overview.md)
-* [Getting Started](build-with-sismo-connect/getting-started.md)
+* [Overview](build-with-sismo-connect/getting-started.md)
+* [Quickstart](build-with-sismo-connect/getting-started-1.md)
+* [Sismo Connect Request Cheatsheet](build-with-sismo-connect/sismo-connect-request-cheatsheet.md)
 * [Boilerplates](build-with-sismo-connect/run-example-apps/README.md)
   * [Onchain Boilerplate](build-with-sismo-connect/run-example-apps/onchain-sample-project.md)
   * [Offchain Boilerplate](build-with-sismo-connect/run-example-apps/offchain-sample-project.md)
 * [Tutorials](build-with-sismo-connect/tutorials/README.md)
-  * [Onchain Tutorials](build-with-sismo-connect/tutorials/onchain-tutorials/README.md)
-    * [Build a Sybil-resistant Airdrop from privately-aggregated data](build-with-sismo-connect/tutorials/onchain-tutorials/tuto.md)
-    * [Deploy your contracts](build-with-sismo-connect/tutorials/onchain-tutorials/deploy-your-contracts.md)
-  * [Offchain Tutorials](build-with-sismo-connect/tutorials/offchain-tutorials.md)
-  * [Create a Sismo Connect App](build-with-sismo-connect/tutorials/create-a-sismo-connect-app.md)
+  * [Get your appId - Create a Sismo Connect App](build-with-sismo-connect/tutorials/create-a-sismo-connect-app.md)
+  * [Onchain Tutorial (1/2): code your Airdrop contract with privately-aggregated data](build-with-sismo-connect/tutorials/tuto.md)
+  * [Onchain Tutorial (2/2): deploy your  Airdrop contract](build-with-sismo-connect/tutorials/deploy-your-contracts.md)
 * [Technical Documentation](build-with-sismo-connect/technical-documentation/README.md)
   * [Sismo Connect Configuration](build-with-sismo-connect/technical-documentation/sismo-connect-configuration.md)
   * [Auths](build-with-sismo-connect/technical-documentation/auths.md)

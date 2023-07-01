@@ -12,18 +12,17 @@ Sismo Connect allows developers to implement Zero-Knowledge proofs in their appl
 
 <table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href="../.gitbook/assets/AppStore.png">AppStore.png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href="../.gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
 
-
-
-<figure><img src="../.gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Sismo Connect Flow (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Apps can access powerful data at once
 
 Apps can request at once:
 
-* **Authentications:** Request users to prove ownership of Data Sources in their Data Vault. As such, your backend or smart contracts can easily authenticate that a user owns account
+* **Authentications:** Request users to prove ownership of Data Sources in their Data Vault. As such, your backend or smart contracts can easily authenticate that a user owns account:
   * Ethereum wallets
   * GitHub, Twitter or Telegram accounts
-* **Selective disclosures:** Request the granular and anonymized data aggregated in a user’s Data Vault, known as Data Gems.&#x20;
+* **Selective disclosures:** Request the granular and anonymized data aggregated in a user’s Data Vault, called Data Gems. \
+  Examples:
   * Minter of  "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT  ([Data Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters))
   * Contributor to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo ([Data Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github))
   * Gitcoin Passport Holders ([Data Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders))
@@ -38,10 +37,10 @@ The case studies below showcase the power of Sismo Connect, demonstrating how it
 
 SafeDrop is a Sybil-resistant and privacy-preserving ERC20 airdrop that distributes AIR tokens to users proportionally based on their reputation, aggregated from diverse sources of data (EVM wallets, Telegram, Twitter and GitHub accounts).
 
-<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (2).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Learn how to build the Sybil-resistant airdrop [here](../build-with-sismo-connect/tutorials/onchain-tutorials/tuto.md). Alternatively, check out the [onchain boilerplate](../build-with-sismo-connect/run-example-apps/onchain-sample-project.md).
+Learn how to build the Sybil-resistant airdrop [here](../build-with-sismo-connect/tutorials/tuto.md). Alternatively, check out the [onchain boilerplate](../build-with-sismo-connect/run-example-apps/onchain-sample-project.md).
 {% endhint %}
 
 By integrating Sismo Connect, SafeDrop users can generate a ZK proof to establish they own accounts making them eligible for the airdrop. No connection between these accounts and the airdrop destination address is ever made.

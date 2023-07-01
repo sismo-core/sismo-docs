@@ -7,7 +7,7 @@ The `SismoConnectConfiguration` is the first object to understand when starting 
 The `SismoConnectConfiguration` is an object with the following properties:
 
 * `appId` (required): the Sismo Connect application identifier that you have created on the Sismo Factory.
-* `vault.impersonate` (optional): by default set to `null`. The list of accounts that you want to impersonate while developing for easy testing. &#x20;
+* `vault.impersonate` (optional): by default set to `null`. The list of Data Source that you want to impersonate, they wll be automatically be added to your developer vault.
 * `displayRawResponse` (optional): by default set to `false`. If set to `true`, the Sismo Data Vault App will display the proof generated in a modal and will not redirect to your application once the proof is generated. It can be useful in development.&#x20;
 * `sismoApiUrl` (optional): API endpoint to fetch group information.
 * `vaultAppBaseUrl` (optional): by default set to `https://vault-beta.sismo.io/`.

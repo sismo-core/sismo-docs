@@ -16,7 +16,7 @@ You can use two boilerplates to be setup with Sismo Connect in minutes.
    * Sismo Connect typescript library to verify ZK Proofs in a backend
 
 {% hint style="success" %}
-Like Sismo Connect? Dive deep into the codebase or jump into this [hands-on tutorial](../tutorials/onchain-tutorials/tuto.md) on integrating a Sybil-Resistant gated airdrop for Sismo Community members.&#x20;
+Like Sismo Connect? Dive deep into the codebase or jump into this [hands-on tutorial](../tutorials/tuto.md) on integrating a Sybil-Resistant gated airdrop for Sismo Community members.&#x20;
 {% endhint %}
 
 {% content-ref url="onchain-sample-project.md" %}

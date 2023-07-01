@@ -55,7 +55,7 @@ Examples of Data Gems:
 * Gitcoin Passport Holders ([Data Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders))
 * [ENS DAO](https://docs.ens.domains/v/governance/) participant ([Data Group](https://factory.sismo.io/groups-explorer?search=ens-voters))
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption><p>What a Data Vault looks like</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>What a Data Vault looks like</p></figcaption></figure>
 
 {% hint style="success" %}
 You can create your own Data Vault and start aggregating your identity [here](https://vault-beta.sismo.io/).
@@ -81,7 +81,7 @@ Verifiers verify proofs from users and ensure their validity without accessing t
 
 Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to request and verify ZK proofs attesting ownership of personal data (i.e. Data Sources and Data Gems).
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow (4).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Discover applications leveraging the power of Sismo Connect on the [Sismo App Store](https://spaces.sismo.io/) and read the[ case studies](https://case-studies.sismo.io/) that we built around them.
@@ -90,5 +90,5 @@ Discover applications leveraging the power of Sismo Connect on the [Sismo App St
 Integration is simple with just a few lines of code: import the front-end package or React button for data requests, and verify proofs using Sismo’s Solidity or TypeScript package. Once integrated, applications can **request** private and granular data, while users can **authenticate** and **selectively disclose** their personal data.
 
 {% hint style="info" %}
-Learn how to integrate Sismo Connect into applications [here](build-with-sismo-connect/overview.md).
+Learn how to integrate Sismo Connect into applications [here](broken-reference).
 {% endhint %}
