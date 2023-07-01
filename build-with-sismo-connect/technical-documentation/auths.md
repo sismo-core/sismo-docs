@@ -7,7 +7,8 @@ Sismo Connect can be used to authenticate a user from multiple sources, either f
 The `AuthRequest` is an object with the following properties:
 
 * `AuthType` (required): defines the type of authentication required. The following authType are currently supported:&#x20;
-  * `VAULT`: Sismo Connect returns the user's Vault id. It's noteworthy that the `vaultId` is deterministically generated from the user's vault secret and the `appId` using a Poseidon hash. Therefore, if a user revisits your app, the `vaultId` remains consistent, but it will differ for other apps. This feature is beneficial if you wish to link a `vaultId` to a user in your database while preserving the user's privacy across various apps. You can delve deeper into the `vaultId` concept [here](vault-and-proof-identifiers.md).
+  * `VAULT`: Sismo Connect returns the user's vaultId for the application the requested it. It is a deterministic anonymous identifier (hash(userVaultSecret, AppId, ..))\
+    More information about Vault Identifiers [here](vault-and-proof-identifiers.md).
   * `GITHUB`: Sismo Connect returns the user's GitHub account id.&#x20;
   * `TWITTER` Sismo Connect returns the user's Twitter account id.&#x20;
   * `EVM_ACCOUNT`: Sismo Connect returns the user's Ethereum address.

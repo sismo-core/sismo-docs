@@ -6,7 +6,7 @@ description: Making your data sovereign.
 
 Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to **enable** **users to aggregate and selectively disclose personal data** to applications.&#x20;
 
-By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain users data that was previously inaccessible,** without infringing on user privacy.
+By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain users data that was previously inaccessible,** without respecting users' privacy.
 
 [Sismo Connect](welcome-to-sismo/what-is-sismo-connect.md) aims to replace non-sovereign SSOs such Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
@@ -29,13 +29,13 @@ With Sismo, you can:
 * Selectively disclose your data to apps via Sismo Connect—the crypto-native SSO.
 {% endhint %}
 
-<figure><img src=".gitbook/assets/Introduction.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Introduction (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Data Vault: Sovereign Identity Aggregator
 
 Users aggregate their identity in their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md). By doing so, they can start generating ZK Proofs from their personal data and leverage it across multiple platforms.
 
-<figure><img src=".gitbook/assets/Aggregation (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (5).png" alt=""><figcaption></figcaption></figure>
 
 Data Vaults contain Data Sources. The granular data contained in Data Sources are called [Data Gems](how-sismo-works/core-components.md#what-are-data-gems-and-data-groups).  Users generate ZK proofs to attest ownership of Data Sources and Data Gems.
 
@@ -55,7 +55,7 @@ Examples of Data Gems:
 * Gitcoin Passport Holders ([Data Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders))
 * [ENS DAO](https://docs.ens.domains/v/governance/) participant ([Data Group](https://factory.sismo.io/groups-explorer?search=ens-voters))
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption><p>What a Data Vault looks like</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>What a Data Vault looks like</p></figcaption></figure>
 
 {% hint style="success" %}
 You can create your own Data Vault and start aggregating your identity [here](https://vault-beta.sismo.io/).

@@ -12,7 +12,7 @@ In order to use Sismo Connect, you will need to have an `appId` registered in th
 
 In the schema below, you can observe how Sismo Connect functions with both **onchain** and **offchain** applications:
 
-<figure><img src="../../.gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption><p>Sismo Connect Flow</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Sismo Connect Flow (2).png" alt=""><figcaption><p>Sismo Connect Flow</p></figcaption></figure>
 
 ### Sismo Connect Flow Walkthrough
 
