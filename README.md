@@ -36,9 +36,9 @@ Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
 
 Users aggregate their identity in their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md).
 
-<figure><img src=".gitbook/assets/Aggregation (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (1).png" alt=""><figcaption></figcaption></figure>
 
-The current supported Data Sources are Ethereum wallets, GitHub, Twitter or Telegram accounts. They can generate ZK Proofs from the personal data of their Data Sources and leverage it across multiple platforms.
+The current supported Data Sources are Ethereum wallets, GitHub, Twitter or Telegram accounts. Users can generate ZK Proofs from the personal data of their Data Sources and leverage their aggregated data across multiple platforms.
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>What a Data Vault looks like</p></figcaption></figure>
 
@@ -50,11 +50,11 @@ You can create your own Data Vault and start aggregating your identity [here](ht
 
 Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to request and verify ZK proofs.
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption></figcaption></figure>
 
 Integration is simple with just a few lines of code: import the front-end package or React button to make Sismo Connect requests, and verify proofs in your backend/ smart contracts using Sismo’s Solidity or TypeScript package.
 
-Developers can request multiple personal data at once. There exist two types of data that can be request:
+Developers can request multiple personal data at once. There exist two types of data that can be requested:
 
 * ZK Proof of Data Source ownership. (Ethereum wallets, GitHub, Twitter or Telegram accounts)
 * ZK Proofs of Data Source inclusion in a specific Data Group. Data Groups can be created by anyone in the [Sismo Factory](https://factory.sismo.io).
@@ -67,7 +67,7 @@ Examples of Data Groups:
 * [ENS DAO](https://docs.ens.domains/v/governance/) participants ([Data Group](https://factory.sismo.io/groups-explorer?search=ens-voters))
 * Sismo Community Group ([Data Group](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c))
 
-ZK Proving inclusion in a Data Groups (e.g NFT owners) is actually revealing granular data about one's identity (e.g proving NFT ownership without revealing my wallet)
+ZK-Proving inclusion in a Data Groups (e.g proving to be part of NFT owners without revealing the wallet) is actually revealing granular data about one's identity.
 
 {% hint style="success" %}
 Discover applications leveraging the power of Sismo Connect on the [Sismo App Store](https://spaces.sismo.io/) and read the[ case studies](https://case-studies.sismo.io/) that we built around them.
