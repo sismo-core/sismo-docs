@@ -4,7 +4,7 @@ This cheatsheet presents all types of requests you can make with Sismo Connect. 
 
 It contains:&#x20;
 
-* How to impersonated Data Sources to your dev vault when developing an App
+* How to impersonate Data Sources in your dev vault when developing a Sismo Connect App
 * Request a large and diversified set of Data Sources ownerships/group membership
 * Verify them in a backend and access verified data
 
