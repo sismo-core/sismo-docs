@@ -245,7 +245,7 @@ app.post('/api', (req, res) => {
   const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
       / request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
     auths={[{ authType: AuthType.GITHUB }]}
-    // request proof of Data Gems (e.g NFT ownership, Dao Participation, GitHub commits)
+    // request group membership (e.g NFT ownership, Dao Participation, GitHub commits)
     claims=[{{groupId: ENS_DAO_VOTERS_GROUP_ID}}]
     // request message signature from users.
     signature={message: "I vote Yes to Privacy"}}
