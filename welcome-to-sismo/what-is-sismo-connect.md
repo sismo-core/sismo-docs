@@ -6,27 +6,26 @@ description: The crypto-native SSO.
 
 Sismo Connect, a crypto-native single sign-on (SSO), enables applications to request any data aggregated in a user’s Data Vault.
 
-Onchain and offchain applications can request users to prove ownership of Data Sources (Ethereum, Twitter, Telegram and GitHub accounts) and Data Gems (e.g. that they own a certain NFT, contributed to a GitHub repository or voted in a DAO).&#x20;
+Onchain and offchain applications can request users to prove ownership of Data Sources (Ethereum, Twitter, Telegram and GitHub accounts) and make anonymous claims about them (e.g. that they own a certain NFT, contributed to a GitHub repository or voted in a DAO).&#x20;
 
 Sismo Connect allows developers to implement Zero-Knowledge proofs in their applications with only a few lines of code.
 
-<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href="../.gitbook/assets/AppStore (1).png">AppStore (1).png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href="../.gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href="../.gitbook/assets/AppStore.png">AppStore.png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href="../.gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
 
 <figure><img src="../.gitbook/assets/Sismo Connect Flow (3).png" alt=""><figcaption></figcaption></figure>
 
 ## Apps can access powerful data at once
 
-Apps can request at once:
+Applications can request users to
 
-* **Authentications:** Request users to prove ownership of Data Sources in their Data Vault. As such, your backend or smart contracts can easily authenticate that a user owns account:
+* **Authenticate:** Request and verify proof of Data Source ownerships.
   * Ethereum wallets
   * GitHub, Twitter or Telegram accounts
-* **Selective disclosures:** Request the granular and anonymized data aggregated in a user’s Data Vault, called Data Gems. \
+* **Selective disclose data:** Request and verify claims about their Data Sources.\
   Examples:
-  * Minter of  "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT  ([Data Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters))
-  * Contributor to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo ([Data Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github))
-  * Gitcoin Passport Holders ([Data Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders))
-  * [ENS DAO](https://docs.ens.domains/v/governance/) participant ([Data Group](https://factory.sismo.io/groups-explorer?search=ens-voters))
+  * Minted more than 10  "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT
+  * Gitcoin Passport holder with Sybil-resistance score higher than 15
+  * Voted in the [ENS DAO](https://docs.ens.domains/v/governance/)  more than 3 time
 * **Signatures**: Your app can securely obtain user-signed messages, enabling front-running protection for instance.
 
 ## Case Studies
@@ -37,16 +36,16 @@ The case studies below showcase the power of Sismo Connect, demonstrating how it
 
 SafeDrop is a Sybil-resistant and privacy-preserving ERC20 airdrop that distributes AIR tokens to users proportionally based on their reputation, aggregated from diverse sources of data (EVM wallets, Telegram, Twitter and GitHub accounts).
 
-<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (1).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-Learn how to build the Sybil-resistant airdrop [here](../build-with-sismo-connect/tutorials/tuto.md). Alternatively, check out the [onchain boilerplate](../build-with-sismo-connect/run-example-apps/onchain-sample-project.md).
-{% endhint %}
+<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2.png" alt=""><figcaption></figcaption></figure>
 
 By integrating Sismo Connect, SafeDrop users can generate a ZK proof to establish they own accounts making them eligible for the airdrop. No connection between these accounts and the airdrop destination address is ever made.
 
 {% hint style="success" %}
 Read the full case study [here](https://case-studies.sismo.io/db/safe-drop).
+{% endhint %}
+
+{% hint style="info" %}
+Learn how to build the Sybil-resistant airdrop [here](../build-with-sismo-connect/tutorials/tuto.md). Alternatively, check out the [onchain boilerplate](../build-with-sismo-connect/run-example-apps/onchain-sample-project.md).
 {% endhint %}
 
 ### Sybil-resistant and anonymous Lottery

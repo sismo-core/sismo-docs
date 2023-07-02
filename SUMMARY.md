@@ -33,7 +33,7 @@
 ## How Sismo Works
 
 * [Core Components](how-sismo-works/core-components.md)
-* [How To Create Data Gems](how-sismo-works/how-to-create-data-gems/README.md)
+* [How To Create Data Groups](how-sismo-works/how-to-create-data-gems/README.md)
   * [Sismo Factory: Create a Data Group in 5 Minutes](how-sismo-works/how-to-create-data-gems/create-your-data-group.md)
   * [Sismo Hub: Add a Data Provider to the Sismo Factory](how-sismo-works/how-to-create-data-gems/create-your-data-provider.md)
   * [Sismo Hub: Create Data Groups Programmatically](how-sismo-works/how-to-create-data-gems/create-your-group-generator.md)

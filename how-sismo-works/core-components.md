@@ -8,11 +8,11 @@ Sismo enables communication between a user’s personal data and applications. T
 
 * [Data Vault](technical-concepts/what-is-the-data-vault.md) — a local, sovereign and private identity aggregator
 * [Data Sources](core-components.md#what-are-data-sources) — web2 or web3 accounts and other credentials aggregated in a user’s Data Vault
-* [Data Gems](core-components.md#what-are-data-gems) — provable granular pieces of sovereign data derived from Data Sources in a user’s Data Vault
-* [Proving schemes](technical-concepts/proving-schemes/) — cryptographic circuits that enable users to prove ownership of Data Sources and Data Gems
-* [The Sismo Hub](core-components.md#what-is-the-sismo-hub) — Sismo’s data infrastructure used to create Data Groups, thus defining new Data Gems
+* [Data Groups](core-components.md#what-are-data-gems) — enable users to make claims about their Data Sources.
+* [Proving schemes](technical-concepts/proving-schemes/) — cryptographic circuits that enable users to prove ownership of Data Sources and group membership of Data Sources
+* [The Sismo Hub](core-components.md#what-is-the-sismo-hub) — Sismo’s data infrastructure used to create Data Groups, thus enabling users to make claims of group membership.
 
-Sismo enables users to freely leverage Data Sources and Data Gems, bypassing the typical privacy limitations associated with web3 and the constraint of being confined to a single platform on web2.
+Sismo enables users to freely leverage Data Sources, bypassing the typical privacy limitations associated with web3 and the constraint of being confined to a single platform on web2.
 
 ## What are Data Sources?
 
@@ -24,35 +24,39 @@ Examples of Data Sources include:
 * Web2 accounts (GitHub, Twitter, Telegram, Discord)
 * Attestations issued by governments, institutions, etc (coming soon)
 
-## What are Data Gems and Data Groups?
+## What are Data Groups?
 
-Data Gems are the granular pieces of personal data that users selectively reveal to applications via Sismo Connect. They attest membership of a Data Source in a Data Group. A Data Group is a list of Data Sources with an associated value.
+```json
+{ // Data Group of Stand With Crypto NFT Minters. 
+  // groupId = 0xfae674b6cba3ff2f8ce2114defb200b1
+  // https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters
+  "0x93463a4f3af42de28f6840e59de6111b4192cf8b": "2", // this wallet minted 2 NFTs
+  "0x5c019da4fc7513c52c4e1d241157fe6f6950338b": "5", // this wallet minted 5 NFTs
+  "0x0f36cae6a166b3ee3ad840a6ac3dc8288ceabff9": "5", // this wallet minted 5 NFTs
+  "0xecadd8267c300283549ca012f378f7757398dd5d": "15",// this wallet minted 15 NFTs
+  "0x6944304c69cca8e90c9983d3f976f8049166b7b1": "6", // this wallet minted 6 NFTs
+  "0x575da796f34f488e9c860cd7cb9082bf0c5f2a7e": "10",// this wallet minted 10 NFTs
+}
+```
+
+Users with Sismo can make ZK Proof of group membership from Data Source.&#x20;
+
+The owner of 0x93463a4f3af42de28f6840e59de6111b4192cf8b (part of the Stand With Crypto NFT Minters Group) can generate a ZK Proof that he minted more than 1 NFT once they have imported their wallet in a their Data Vault
 
 Examples of Groups:
 
-* NFT Owners: number of NFT owners ([example](https://factory.sismo.io/groups-explorer?search=coinbase-shield-holder))
-* GitHub contributors to a specific repository: number of commits ([example](https://factory.sismo.io/groups-explorer?search=sismo-github-contributors))
-* Participants in a specific DAO: number of votes submitted ([example](https://factory.sismo.io/groups-explorer?search=ens-voters))
-
-All Data Gems have the following characteristics:
-
-* An owner - the Data Source
-* A value - a number corresponding to a certain level of reputation
-* A type - a unique ID used to identify the Data Gem
-
-Examples of Data Gems include:
-
-* NFT owners of a specific solution
-* GitHub committers of a specific repository
-* Participants in a specific DAO
+* Minter of  "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT  ([Data Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters))
+* Contributor to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo ([Data Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github))
+* Gitcoin Passport Holders ([Data Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders))
+* [ENS DAO](https://docs.ens.domains/v/governance/) participant ([Data Group](https://factory.sismo.io/groups-explorer?search=ens-voters))
 
 ## What are Proving Schemes?
 
-Sismo enables users to prove ownership of Data Gems by participating in proving schemes. Fundamentally, a proving scheme is a paired concept involving a prover and a verifier. The prover generates proofs while the verifier checks the validity of these proofs.
+Sismo enables users to prove ownership/ group membership of Data Sources by participating in proving schemes. Fundamentally, a proving scheme is a paired concept involving a prover and a verifier. The prover generates proofs while the verifier checks the validity of these proofs.
 
 In a proving scheme, both the prover and the verifier require access to the same data—the source of truth from which proofs are generated, called Data Groups. For instance, to prove ownership of a specific NFT at a certain time, the prover and verifier must be synchronized on the same snapshot of NFT owners (i.e. a Data Group).
 
-Sismo Connect is the developer-friendly layer on top of proving schemes. It enables apps to request and verify ownership of data, either Data Sources or Data Gems. Sismo Connect routes these requests to the associated proving scheme.
+Sismo Connect is the developer-friendly layer on top of proving schemes. It enables apps to request and verify ownership/ gropu membership of Data Sources. Sismo Connect routes these requests to the associated proving scheme.
 
 Currently, Sismo has the following proving schemes deploy_e_d:
 
@@ -63,7 +67,7 @@ These schemes are part of the Hydra family, a collection of proving schemes util
 
 ## What is the Sismo Hub?
 
-Proving schemes need access to data in a specific, agreed-upon format to function. The Sismo Hub is Sismo’s data infrastructure—open for anyone to use. It is the tool that standardizes raw data for the Sismo communication protocol, creating Data Groups and defining new Data Gems.
+Proving schemes need access to data in a specific, agreed-upon format to function. The Sismo Hub is Sismo’s data infrastructure—open for anyone to use. It is the tool that standardizes raw data for the Sismo communication protocol, creating Data Groups.
 
 Hydra proving schemes use onchain Merkle roots as sources of truth. The Sismo Hub generates Data Groups and transforms them into Merkle registry trees—publishing them onchain. Future proving schemes could utilize different sources of truth, such as public keys issued by centralized entities.
 
@@ -74,5 +78,3 @@ While Sismo manages the maintenance of Data Groups, anyone can create and regist
 {% endhint %}
 
 In addition to Data Groups, the Sismo Hub manages the creation and maintenance of Data Providers. They allow for the programmatic updates of Data Groups, further ensuring that provers and verifiers always work with the most relevant data.
-
-By organizing and anchoring data for proving schemes, the Sismo Hub plays a crucial role in facilitating the creation of Data Gems—giving application developers the power to request and verify ownership of them via Sismo Connect.

@@ -5,7 +5,7 @@ This cheatsheet presents all types of requests you can make with Sismo Connect. 
 It contains:&#x20;
 
 * How to impersonated Data Sources to your dev vault when developing an App
-* Request a large and diversified set of Data Sources/ Data Gems ownerships
+* Request a large and diversified set of Data Sources ownerships/group membership
 * Verify them in a backend and access verified data
 
 <details>
@@ -87,11 +87,10 @@ return (
       // telegram of @dhadrien
       { authType: AuthType.TELEGRAM, userId: "875608110", isOptional: true },
     ]}
-    // Claims = Data Gems Ownership Requests
-    // Data Gem == Groump membership of a Data Source, Data Source won't be revealed
+    // Claims = Groump membership of a Data Source, Data Source won't be revealed
     claims={[
       {
-        // Stand with Crypto NFT Minter Gem (= part of the Stand with Crypto NFT Minter Group)
+        // Stand with Crypto NFT Minters
         // https://sismo-prod-hub-data.s3.eu-west-1.amazonaws.com/group-snapshot-store/0xfae674b6cba3ff2f8ce2114defb200b1/1688203882.json
         // note: dhadrien.sismo.eth par of group with value 10 (minted 10 NFT)
         groupId: "0xfae674b6cba3ff2f8ce2114defb200b1",
@@ -100,7 +99,7 @@ return (
         // default isSelectableByUser: false,
       },
       {
-        // Gitcoin Passport Gem (= part of the Gitcoin Passport Group)
+        // Gitcoin Passport Holders
         // https://sismo-prod-hub-data.s3.eu-west-1.amazonaws.com/group-snapshot-store/0x1cde61966decb8600dfd0749bd371f12/1688218897.json
         // note dhadrien.sismo.eth is part of the group with score 46
         groupId: "0x1cde61966decb8600dfd0749bd371f12",
@@ -108,13 +107,13 @@ return (
         value: 15,
       },
       {
-        // Stand with Crypto NFT Minter Gem, dhadrien.sismo.eth minted 10
+        // Stand with Crypto NFT Minters, dhadrien.sismo.eth minted 10
         groupId: "0xfae674b6cba3ff2f8ce2114defb200b1",
         claimType: ClaimType.EQ, // member of the group with value equal to 10
         value: 10,
       },
       {
-        // Gitcoin Passport Gem, dhadrien.sismo.eth: score 46
+        // Gitcoin Passport Holders, dhadrien.sismo.eth: score 46
         groupId: "0x1cde61966decb8600dfd0749bd371f12",
         claimType: ClaimType.EQ, // member of the group with value == 15
         value: 15, // 46 not equal to 15 => won't be able to generate ZK PRoof
@@ -122,14 +121,14 @@ return (
         isOptional: true,
       },
       {
-        // Stand with Crypto NFT Minter Gem, dhadrien.sismo.eth minted 10
+        // Stand with Crypto NFT Minter Holders, dhadrien.sismo.eth minted 10
         groupId: "0xfae674b6cba3ff2f8ce2114defb200b1", //
         claimType: ClaimType.GTE, // member of the group
         isSelectableByUser: true, // can selectively discloe more if user wants
         isOptional: true, // can chose not to reveal
       },
       {
-        // Gitcoin Passport Gem, dhadrien.sismo.eth: score 46
+        // Gitcoin Passport Holders, dhadrien.sismo.eth: score 46
         groupId: "0x1cde61966decb8600dfd0749bd371f12",
         claimType: ClaimType.GTE, // member of the group with value greater or equal to 5
         value: 25,
