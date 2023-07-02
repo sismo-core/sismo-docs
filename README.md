@@ -36,9 +36,9 @@ Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
 
 Users aggregate their identity in their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md). They can now generate ZK Proofs from their personal data and leverage it across multiple platforms.
 
-<figure><img src=".gitbook/assets/Aggregation (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (4).png" alt=""><figcaption></figcaption></figure>
 
-Data Vaults contain Data Sources. Users generate ZK proofs to attest ownership of Data Sources and membership of their Data Sources in Data Groups that can be created by anyone in the [Sismo Factory](https://factory.sismo.io).
+Data Vaults contain Data Sources. Users generate ZK proofs to attest ownership of Data Sources. They can also reveal granular data by proving Data Sources are part in Data Groups. Data Groups can be created by anyone in the [Sismo Factory](https://factory.sismo.io).
 
 Examples of Data Sources:
 
@@ -61,17 +61,15 @@ You can create your own Data Vault and start aggregating your identity [here](ht
 
 ## Prove & Verify: Selective Disclosure
 
-Users participate in [proving schemes](how-sismo-works/core-components.md#what-are-proving-schemes) to prove ownership/group membership of Data Sources.
-
-New Data Groups can be easily created in the [Sismo Factory](https://factory.sismo.io/). This results in new claims that can be made by users and proven to applications.
+Users participate in [proving schemes](how-sismo-works/core-components.md#what-are-proving-schemes) to make claims from their Data Sources.
 
 {% hint style="info" %}
 A proving scheme is a cryptographic method that allows one party (the prover) to prove to another party (the verifier) that a certain statement is true without revealing how it is true—ensuring privacy.
 {% endhint %}
 
-The Data Vault includes the provers, enabling users to generate zero-knowledge proofs (ZKPs) that attest ownership/ group membership of Data Sources. The ZKP is then verified by the application (in a smart contract for onchain apps, in a backend of offchain apps, in a browser/client for p2p apps)
+The Data Vault includes the provers, enabling users to generate zero-knowledge proofs (ZKPs) from their Data Sources (proof of ownership/ proof of inclusion in a Data Group). The ZKP is then verified by the application (in a smart contract for onchain apps, in a backend of offchain apps, in a browser/client for p2p apps)
 
-Verifiers verify proofs from users and ensure their validity without accessing to the Data Source used to generate the ZK Proof. In this sense, users can selectively disclose granular data from their Data sources to applications without revealing those Data Sources.
+Verifiers verify proofs from users and ensure their validity.
 
 <figure><img src=".gitbook/assets/Selective Disclosure (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -79,7 +77,7 @@ Verifiers verify proofs from users and ensure their validity without accessing t
 
 Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to request and verify ZK proofs attesting ownership/ group membership of their Data Sources.
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow (3).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Discover applications leveraging the power of Sismo Connect on the [Sismo App Store](https://spaces.sismo.io/) and read the[ case studies](https://case-studies.sismo.io/) that we built around them.
