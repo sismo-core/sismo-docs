@@ -27,28 +27,35 @@ Examples of Data Sources include:
 ## What are Data Groups?
 
 ```json
-{ // Data Group of Stand With Crypto NFT Minters. 
-  // groupId = 0xfae674b6cba3ff2f8ce2114defb200b1
-  // https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters
-  "0x93463a4f3af42de28f6840e59de6111b4192cf8b": "2", // this wallet minted 2 NFTs
-  "0x5c019da4fc7513c52c4e1d241157fe6f6950338b": "5", // this wallet minted 5 NFTs
-  "0x0f36cae6a166b3ee3ad840a6ac3dc8288ceabff9": "5", // this wallet minted 5 NFTs
-  "0xecadd8267c300283549ca012f378f7757398dd5d": "15",// this wallet minted 15 NFTs
-  "0x6944304c69cca8e90c9983d3f976f8049166b7b1": "6", // this wallet minted 6 NFTs
-  "0x575da796f34f488e9c860cd7cb9082bf0c5f2a7e": "10",// this wallet minted 10 NFTs
-}
+ {
+  // Sismo Community Group made of multiple types of accounts
+  // full group: https://sismo-prod-hub-data.s3.eu-west-1.amazonaws.com/group-snapshot-store/0xd630aa769278cacde879c5c0fe5d203c/1687260637.json
+   ...
+   "0xb08db4cd36b0309c069f515ced754205912a707a": "2", // contributor level 2
+   "0xf1fc0b43f8fd0e8b8fce983732d48925148438c1": "2", // contributor level 2
+   "twitter:CharlsCharls_": "3",                      // contributor level 3  
+   "github:leosayous21": "2",                         // contributor level 2
+   "github:mme022": "2",
+   "dhadrien.eth": "2",
+   "telegram:dhadrien": "3",
+   ...
+ }
 ```
 
 Users with Sismo can make ZK Proof of group membership from Data Source.&#x20;
 
-The owner of 0x93463a4f3af42de28f6840e59de6111b4192cf8b (part of the Stand With Crypto NFT Minters Group) can generate a ZK Proof that he minted more than 1 NFT once they have imported their wallet in a their Data Vault
+The owner of dhadrien.eth (part of Sismo Community Group Group) can generate a ZK Proof that
+
+* He is a contributor of level higher than 1
+* He is a contributor of level exactly equal to 3
 
 Examples of Groups:
 
-* Minter of  "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT  ([Data Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters))
-* Contributor to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo ([Data Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github))
+* Minters of  "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT  ([Data Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters))
+* Contributors to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo ([Data Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github))
 * Gitcoin Passport Holders ([Data Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders))
-* [ENS DAO](https://docs.ens.domains/v/governance/) participant ([Data Group](https://factory.sismo.io/groups-explorer?search=ens-voters))
+* [ENS DAO](https://docs.ens.domains/v/governance/) participants ([Data Group](https://factory.sismo.io/groups-explorer?search=ens-voters))
+* Sismo Community Group ([Data Group](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c))
 
 ## What are Proving Schemes?
 

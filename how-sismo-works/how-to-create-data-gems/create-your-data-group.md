@@ -37,7 +37,6 @@ Here's an example of what a Group looks like:
    "github:leosayous21": "2",
    "github:mme022": "2",
    "dhadrien.eth": "2",
-   "stani.lens": "2",
    "telegram:dhadrien": "3",
    ...
  }

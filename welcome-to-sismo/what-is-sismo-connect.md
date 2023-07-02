@@ -10,7 +10,7 @@ Onchain and offchain applications can request users to prove ownership of Data S
 
 Sismo Connect allows developers to implement Zero-Knowledge proofs in their applications with only a few lines of code.
 
-<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href="../.gitbook/assets/AppStore.png">AppStore.png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href="../.gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href="../.gitbook/assets/AppStore (1).png">AppStore (1).png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href="../.gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
 
 <figure><img src="../.gitbook/assets/Sismo Connect Flow (3).png" alt=""><figcaption></figcaption></figure>
 
@@ -23,9 +23,11 @@ Applications can request users to
   * GitHub, Twitter or Telegram accounts
 * **Selective disclose data:** Request and verify claims about their Data Sources.\
   Examples:
-  * Minted more than 10  "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT
-  * Gitcoin Passport holder with Sybil-resistance score higher than 15
-  * Voted in the [ENS DAO](https://docs.ens.domains/v/governance/)  more than 3 time
+  * Member of the "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT Minters [Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters), with value > 10 (= minted more than 10 NFTs)
+  * Member of the Contributors to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo  [Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github)
+  * Member of the [Gitcoin Passport](https://passport.gitcoin.co/#/welcome) holders [Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders), with value > 15 (= Sybil-resistance score higher than 15)
+  * Member of the [ENS DAO](https://docs.ens.domains/v/governance/) Voters [Group](https://factory.sismo.io/groups-explorer?search=ens-voters), with value > 3 (= more than 3 times)
+  * Member of Sismo Community[ Group](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c), with value exactly = 3 (= community member level 3)
 * **Signatures**: Your app can securely obtain user-signed messages, enabling front-running protection for instance.
 
 ## Case Studies
@@ -36,7 +38,7 @@ The case studies below showcase the power of Sismo Connect, demonstrating how it
 
 SafeDrop is a Sybil-resistant and privacy-preserving ERC20 airdrop that distributes AIR tokens to users proportionally based on their reputation, aggregated from diverse sources of data (EVM wallets, Telegram, Twitter and GitHub accounts).
 
-<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (2).png" alt=""><figcaption></figcaption></figure>
 
 By integrating Sismo Connect, SafeDrop users can generate a ZK proof to establish they own accounts making them eligible for the airdrop. No connection between these accounts and the airdrop destination address is ever made.
 

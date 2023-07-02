@@ -35,7 +35,7 @@ With Sismo, you can:
 
 Users aggregate their identity in their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md). By doing so, they can start generating ZK Proofs from their personal data and leverage it across multiple platforms.
 
-<figure><img src=".gitbook/assets/Aggregation (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (3).png" alt=""><figcaption></figcaption></figure>
 
 Data Vaults contain Data Sources. Users generate ZK proofs to attest ownership of Data Sources and membership of their Data Sources in Data Groups.
 
@@ -50,6 +50,7 @@ Examples of Data Groups:
 * Contributors to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo ([Data Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github))
 * Gitcoin Passport Holders ([Data Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders))
 * [ENS DAO](https://docs.ens.domains/v/governance/) participants ([Data Group](https://factory.sismo.io/groups-explorer?search=ens-voters))
+* Sismo Community Group ([Data Group](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c))
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>What a Data Vault looks like</p></figcaption></figure>
 
@@ -71,7 +72,7 @@ The Data Vault includes the provers, enabling users to generate zero-knowledge p
 
 Verifiers verify proofs from users and ensure their validity without accessing to the Data Source used to generate the ZK Proof. In this sense, users can selectively disclose granular data from their Data sources to applications without revealing those Data Sources.
 
-<figure><img src=".gitbook/assets/Selective Disclosure (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Selective Disclosure.png" alt=""><figcaption></figcaption></figure>
 
 ## Sismo Connect: The Crypto-Native SSO
 
