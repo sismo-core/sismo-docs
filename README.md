@@ -26,7 +26,7 @@ By using Sismo Connect, an easy-to-integrate SSO, applications **can now safely 
 
 [Sismo Connect](welcome-to-sismo/what-is-sismo-connect.md) aims to replace non-sovereign SSOs such Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
-<figure><img src=".gitbook/assets/Introduction (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Introduction.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
@@ -36,7 +36,7 @@ Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
 
 Users aggregate their identity in their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md). They can now generate ZK Proofs from their personal data and leverage it across multiple platforms.
 
-<figure><img src=".gitbook/assets/Aggregation (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (1).png" alt=""><figcaption></figcaption></figure>
 
 Data Vaults contain Data Sources. Users generate ZK proofs to attest ownership of Data Sources. They can also reveal granular data by proving Data Sources are part in Data Groups. Data Groups can be created by anyone in the [Sismo Factory](https://factory.sismo.io).
 
@@ -77,7 +77,7 @@ Verifiers verify proofs from users and ensure their validity.
 
 Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to request and verify ZK proofs attesting ownership/ group membership of their Data Sources.
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Discover applications leveraging the power of Sismo Connect on the [Sismo App Store](https://spaces.sismo.io/) and read the[ case studies](https://case-studies.sismo.io/) that we built around them.
