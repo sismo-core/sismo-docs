@@ -12,7 +12,7 @@ Sismo Connect allows developers to implement Zero-Knowledge proofs in their appl
 
 <table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href="../.gitbook/assets/AppStore (1).png">AppStore (1).png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href="../.gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
 
-<figure><img src="../.gitbook/assets/Sismo Connect Flow (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Apps can access powerful data at once
 
@@ -38,7 +38,7 @@ The case studies below showcase the power of Sismo Connect, demonstrating how it
 
 SafeDrop is a Sybil-resistant and privacy-preserving ERC20 airdrop that distributes AIR tokens to users proportionally based on their reputation, aggregated from diverse sources of data (EVM wallets, Telegram, Twitter and GitHub accounts).
 
-<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (2).png" alt=""><figcaption></figcaption></figure>
 
 By integrating Sismo Connect, SafeDrop users can generate a ZK proof to establish they own accounts making them eligible for the airdrop. No connection between these accounts and the airdrop destination address is ever made.
 
