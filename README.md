@@ -26,7 +26,7 @@ By using Sismo Connect, an easy-to-integrate SSO, applications **can now safely 
 
 [Sismo Connect](welcome-to-sismo/what-is-sismo-connect.md) aims to replace non-sovereign SSOs such Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
-<figure><img src=".gitbook/assets/Introduction.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Introduction (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
@@ -34,9 +34,9 @@ Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
 
 ## Data Vault: Sovereign Identity Aggregator
 
-Users aggregate their identity in their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md).
+Users aggregate their identity by adding Data Sources to their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md).
 
-<figure><img src=".gitbook/assets/Aggregation.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (4).png" alt=""><figcaption></figcaption></figure>
 
 The Data Vault currently supports the following types of Data Sources: Ethereum wallets, GitHub, Twitter or Telegram accounts. Users can generate ZK Proofs from their Data Sources, enabling them to reveal data to applications in a sovereign way.
 
