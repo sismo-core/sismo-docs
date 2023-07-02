@@ -4,7 +4,7 @@ description: Non-developer tutorial
 
 # Sismo Factory: Create a Data Group in 5 Minutes
 
-This tutorial will show you how to create a [Data Group](../technical-concepts/data-gems-and-data-groups.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
+This tutorial will show you how to create a [Data Group](broken-reference) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
 At the end of this tutorial, you will have a Group of Twitter, GitHub, Telegram and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available for a [Sismo Connect app](../../welcome-to-sismo/what-is-sismo-connect.md) 🙌
 
@@ -18,7 +18,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 ## What are Data Groups?
 
-[Data Groups](../technical-concepts/data-gems-and-data-groups.md) are set of Data Sources with each an associated value:
+[Data Groups](broken-reference) are set of Data Sources with each an associated value:
 
 * Web2 Data Sources: Twitter, GitHub, Telegram
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles

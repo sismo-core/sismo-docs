@@ -4,9 +4,9 @@ description: Encrypted storage for personal data.
 
 # Data Vault
 
-The Data Vault is an encrypted storage for a user’s personal data. The accounts and other credentials that users store in the Data Vault are known as Data Sources. The granular pieces of data within Data Sources, representing valuable elements of a user’s digital identity, are known as Data Gems.
+The Data Vault is an encrypted storage for a user’s personal data. The accounts and other credentials that users store in the Data Vault are known as Data Sources.
 
-After aggregating their identity, users can prove ownership of Data Sources and Data Gems. The Data Vault is encrypted and only ever exists in its decrypted state on a user’s device.
+After aggregating their identity, users can prove ownership of Data Sources and make claims about the granular data they hold. The Data Vault is encrypted and only ever exists in its decrypted state on a user’s device.
 
 ##
 
@@ -28,11 +28,11 @@ On the Data Vault application, users can grant access to additional wallet addre
 
 ## Data Vault in Action
 
-Envision the Data Vault as an encrypted aggregator that securely stores various Data Sources. When accessing an application via Sismo Connect, users can choose which Data Sources and Data Gems they want to selectively disclose.
+Envision the Data Vault as an encrypted aggregator that securely stores various Data Sources. When accessing an application via Sismo Connect, users can choose which data from their Data Sources they want to selectively disclose.
 
 For instance, imagine a user has imported two Ethereum addresses: a public ENS domain and a private wallet holding a Gitcoin Passport. Sismo allows them to:
 
 1. Prove ownership of their public wallet (Data Source)
-2. Selectively disclose they own a Gitcoin Passport (Data Gem) without revealing their private wallet.
+2. Selectively disclose they own a Gitcoin Passport  without revealing their private wallet.
 
 The Data Vault ensures users have full control over their aggregated digital identity, with the flexibility to authenticate and share information on their own terms. As the starting point for end users to leverage Sismo’s communication protocol, the Data Vault reshapes how users interact with applications and manage their digital presence.

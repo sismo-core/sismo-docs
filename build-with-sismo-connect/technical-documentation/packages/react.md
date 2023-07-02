@@ -4,7 +4,7 @@ description: Request proofs from your user on your React project
 
 # Sismo Connect React: Request
 
-The [Sismo Connect](../../../welcome-to-sismo/what-is-sismo-connect.md) React package is a wrapper of the Sismo Connect client package which is a package built on top of the [Sismo Data Vault](../../../how-sismo-works/technical-concepts/data-gems-and-data-groups.md) app (the prover) to easily request proofs from your users. It is strongly advised to read about the [**Sismo Connect client package**](client.md) to understand the React package.
+The [Sismo Connect](../../../welcome-to-sismo/what-is-sismo-connect.md) React package is a wrapper of the Sismo Connect client package which is a package built on top of the [Sismo Data Vault](broken-reference) app (the prover) to easily request proofs from your users. It is strongly advised to read about the [**Sismo Connect client package**](client.md) to understand the React package.
 
 ### Installation
 

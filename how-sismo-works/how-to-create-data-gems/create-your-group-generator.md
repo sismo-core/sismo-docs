@@ -8,7 +8,7 @@ description: Developer Tutorial
 
 This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../resources/sismo-hub/sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of [Groups](../technical-concepts/data-gems-and-data-groups.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../welcome-to-sismo/what-is-sismo-connect.md).
+Group Generators are functions that enable the creation of [Groups](broken-reference) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../welcome-to-sismo/what-is-sismo-connect.md).
 
 {% hint style="info" %}
 You can find all already existing Group Generators [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators)**.**
