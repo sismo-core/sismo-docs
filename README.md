@@ -1,5 +1,5 @@
 ---
-description: Making your data sovereign.
+description: Sovereign Identity Aggregator and cryptonative SSO
 cover: .gitbook/assets/GITBOOK_1900x400.png
 coverY: 0
 layout:
@@ -73,7 +73,7 @@ The Data Vault includes the provers, enabling users to generate zero-knowledge p
 
 Verifiers verify proofs from users and ensure their validity without accessing to the Data Source used to generate the ZK Proof. In this sense, users can selectively disclose granular data from their Data sources to applications without revealing those Data Sources.
 
-<figure><img src=".gitbook/assets/Selective Disclosure (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Selective Disclosure.png" alt=""><figcaption></figcaption></figure>
 
 ## Sismo Connect: The Crypto-Native SSO
 
