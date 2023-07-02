@@ -1,6 +1,6 @@
 # Overview
 
-<figure><img src="../.gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Sismo Connect Flow (2).png" alt=""><figcaption></figcaption></figure>
 
 Integrating Sismo Connect means two things:
 
@@ -10,14 +10,6 @@ Integrating Sismo Connect means two things:
 <details>
 
 <summary>EVM Chains supported</summary>
-
-####
-
-####
-
-####
-
-####
 
 #### Mainnets
 
@@ -38,5 +30,5 @@ Integrating Sismo Connect means two things:
 
 </details>
 
-<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="../welcome-to-sismo/what-is-sismo-connect.md">what-is-sismo-connect.md</a></td><td><a href="../.gitbook/assets/What is Sismo Connect (1).png">What is Sismo Connect (1).png</a></td></tr><tr><td><a href="run-example-apps/">run-example-apps</a></td><td><a href="../.gitbook/assets/Boilerplates.png">Boilerplates.png</a></td></tr><tr><td><a href="tutorials/">tutorials</a></td><td><a href="../.gitbook/assets/Tutorials.png">Tutorials.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="../welcome-to-sismo/what-is-sismo-connect.md">what-is-sismo-connect.md</a></td><td><a href="../.gitbook/assets/What is Sismo Connect.png">What is Sismo Connect.png</a></td></tr><tr><td><a href="run-example-apps/">run-example-apps</a></td><td><a href="../.gitbook/assets/Boilerplates.png">Boilerplates.png</a></td></tr><tr><td><a href="tutorials/">tutorials</a></td><td><a href="../.gitbook/assets/Tutorials.png">Tutorials.png</a></td></tr></tbody></table>
 

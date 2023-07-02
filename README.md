@@ -50,7 +50,7 @@ You can create your own Data Vault and start aggregating your identity [here](ht
 
 Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to obtain users' personal data by requesting and verifying ZK proofs.
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow (2).png" alt=""><figcaption></figcaption></figure>
 
 Integration is simple with just a few lines of code: import the front-end package or React button to make Sismo Connect requests, and verify proofs in your backend/ smart contracts using Sismo’s Solidity or TypeScript package.
 

@@ -82,12 +82,12 @@ import { config } from "./sismo-connect-config.ts";
     auths={[{ authType: AuthType.GITHUB }]}
     // request zk proof that Data Source are part of a group
     // (e.g NFT ownership, Dao Participation, GitHub commits)
-    claims=[{{groupId: ENS_DAO_VOTERS_GROUP_ID}}]
+    claims={[{groupId: ENS_DAO_VOTERS_GROUP_ID}]}
     // request message signature from users.
     signature={message: "I vote Yes to Privacy"}}
     onResponseBytes={(response: string) => {
         // call your contract/ backend with the response as bytes
-    }
+    }}
 />
 ```
 
@@ -97,21 +97,13 @@ Check the [Sismo Connect Example Requests](sismo-connect-cheatsheet.md) to get a
 
 ## Step 3 - Verify: Sismo Connect in your Smart Contracts/ Backends
 
-You backend/smart contract will receive a Sismo Connect Response forwarded from your frontend that you must verify.
+Your backend/smart contract will receive a Sismo Connect Response forwarded from your frontend that you must verify.
 
 1. Install the Sismo Connect Library
 
 <details>
 
 <summary>EVM Chains supported</summary>
-
-####
-
-####
-
-####
-
-####
 
 #### Mainnets
 
@@ -202,9 +194,8 @@ contract Airdrop is SismoConnect {
     // use buildConfig helper to easily build a Sismo Connect config in Solidity
     SismoConnect(buildConfig(APP_ID))
   {}
-}
 <strong>
-</strong><strong>function verifySismoConnectResponse(bytes memory response) public {
+</strong><strong>  function verifySismoConnectResponse(bytes memory response) public {
 </strong><strong>    SismoConnectVerifiedResult memory result = verify({
 </strong>        responseBytes: response,
         auths: auths,
@@ -213,6 +204,7 @@ contract Airdrop is SismoConnect {
     });
 
     // implement some logic if the proof is successful
+  }
 }
 </code></pre>
 {% endtab %}
