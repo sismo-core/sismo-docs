@@ -4,7 +4,9 @@ description: App-specific anonymous user ID
 
 # Vault Identifiers
 
-Sismo uses zero-knowledge proofs (ZKPs) to let users prove ownership of anonymized granular pieces of personal data known as Data Gems. These Data Gems can be revealed to applications integrated with Sismo Connect without revealing the associated Data Source. For example, users can prove they own a certain NFT (i.e. Data Gem) without revealing the wallet address (i.e. Data Source) holding it.
+Sismo uses zero-knowledge proofs (ZKPs) to let users prove ownership/group membership of their Data Sources. Personal data (e.g I'm owner an NFT from a collection) can be revealed to applications integrated with Sismo Connect without revealing the associated Data Source.&#x20;
+
+For example, users can prove they own a certain NFT (i.e. prove they are part of the group of NFT owners) without revealing the wallet address (i.e. Data Source) holding it.
 
 Despite offering privacy, many applications still need to keep track of individual users to avoid double spends or enable more complex user management. Identifiers also need to remain specific to each application to avoid the possibility of tracking users across multiple applications.
 
@@ -22,7 +24,9 @@ Here's what each component represents:
 
 ### Anonymous
 
-Only the owner of a Data Vault knows their associated `vaultSecret`. As a result, they are the only person capable of computing their unique `vaultId` for a specific application. Computation occurs when users prove ownership of Data Gems during the generation of ZKPs. When the application verifies the ZKP, it receives the Vault Identifier as an output, thus authenticating the Data Gem owner as a unique user.
+Only the owner of a Data Vault knows their associated `vaultSecret`. As a result, they are the only person capable of computing their unique `vaultId` for a specific application.
+
+Computation occurs when users prove group memberships/ownership of Data Sources during the generation of ZKPs. When the application verifies the ZKP, it receives the Vault Identifier as an output, thus authenticating the owner as a unique user.
 
 ### App-Specific
 
@@ -30,11 +34,11 @@ The use of an application's **`appId`** in the formula ensures the uniqueness of
 
 ### Deterministic
 
-As a Vault Identifier is deterministically derived from a `vaultSecret` and `appId` , a single user cannot have multiple identifiers for a specific application unless they create another Data Vault. However, Data Sources can only be added to a single Data Vault, thus ensuring a user cannot use twice the same Data Source to prove a Data Gem ownership without the application knowing it.
+As a Vault Identifier is deterministically derived from a `vaultSecret` and `appId` , a single user cannot have multiple identifiers for a specific application unless they create another Data Vault. However, Data Sources can only be added to a single Data Vault, thus ensuring a user cannot use twice the same Data Source to prove a group memberships without the application knowing it.
 
 ### Native Data Sources
 
-In addition, Vault Identifiers can be used as native Data Sources in the Sismo ecosystem. This allows for the grouping of Vault Identifiers to create Data Gems, which can be used on additional Sismo Connect applications.
+In addition, Vault Identifiers can be used as native Data Sources in the Sismo ecosystem. This allows for creating Data Groups of Vault Identifiers, which can be used by users to make group membership claims on additional Sismo Connect applications.
 
 ## Case Studies
 
