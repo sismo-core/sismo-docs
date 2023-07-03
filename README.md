@@ -1,11 +1,11 @@
 ---
 description: Sovereign Identity Aggregator and cryptonative SSO
-cover: .gitbook/assets/GITBOOK_1900x400.png
+cover: .gitbook/assets/Gibook Banner1_1900x400.png
 coverY: 0
 layout:
   cover:
     visible: true
-    size: hero
+    size: full
   title:
     visible: true
   description:
@@ -50,7 +50,7 @@ You can create your own Data Vault and start aggregating your identity [here](ht
 
 Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to obtain users' personal data by requesting and verifying ZK proofs.
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption></figcaption></figure>
 
 Integration is simple with just a few lines of code: import the front-end package or React button to make Sismo Connect requests, and verify proofs in your backend/ smart contracts using Sismo’s Solidity or TypeScript package.
 
@@ -85,7 +85,7 @@ Sismo Connect technically let users participate in [proving schemes](how-sismo-w
 A proving scheme is a cryptographic method that allows one party (the prover) to prove to another party (the verifier) that a certain statement is true without revealing how it is true—ensuring privacy.
 {% endhint %}
 
-<figure><img src=".gitbook/assets/Selective Disclosure.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Selective Disclosure (1).png" alt=""><figcaption></figcaption></figure>
 
 The Data Vault includes the provers, enabling users to generate zero-knowledge proofs (ZKPs) from their Data Sources (proof of ownership/ proof of inclusion in a Data Group). The ZKP is then verified by the application (in a smart contract for onchain apps, in a backend of offchain apps, in a browser/client for p2p apps)
 
