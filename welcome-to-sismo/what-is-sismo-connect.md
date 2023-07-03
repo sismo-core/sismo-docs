@@ -28,23 +28,26 @@ Sismo Connect allows developers to implement Zero-Knowledge proofs in their appl
 
 <table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href="../.gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href="../.gitbook/assets/AppStore (1).png">AppStore (1).png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href="../.gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
 
-<figure><img src="../.gitbook/assets/Sismo Connect Flow.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Apps can access powerful data at once
 
 Applications can request users to
 
-* **Authenticate:** Request and verify proof of Data Source ownerships.
-  * Ethereum wallets
-  * GitHub, Twitter or Telegram accounts
-* **Selective disclose data:** Request and verify claims about their Data Sources.\
-  Examples:
-  * Member of the "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT Minters [Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters), with value > 10 (= minted more than 10 NFTs)
-  * Member of the Contributors to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo  [Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github)
-  * Member of the [Gitcoin Passport](https://passport.gitcoin.co/#/welcome) holders [Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders), with value > 15 (= Sybil-resistance score higher than 15)
-  * Member of the [ENS DAO](https://docs.ens.domains/v/governance/) Voters [Group](https://factory.sismo.io/groups-explorer?search=ens-voters), with value > 3 (= more than 3 times)
-  * Member of Sismo Community[ Group](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c), with value exactly = 3 (= community member level 3)
-* **Signatures**: Your app can securely obtain user-signed messages, enabling front-running protection for instance.
+**Authenticate:** Request and verify proof of Data Source ownerships.
+
+* Ethereum wallets
+* GitHub, Twitter or Telegram accounts
+
+**Selective disclose data:** Request and verify claims about their Data Sources.
+
+* Member of the "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT Minters [Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters), with value > 10 (= minted more than 10 NFTs)
+* Member of the Contributors to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo  [Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github)
+* Member of the [Gitcoin Passport](https://passport.gitcoin.co/#/welcome) holders [Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders), with value > 15 (= Sybil-resistance score higher than 15)
+* Member of the [ENS DAO](https://docs.ens.domains/v/governance/) Voters [Group](https://factory.sismo.io/groups-explorer?search=ens-voters), with value > 3 (= more than 3 times)
+* Member of Sismo Community[ Group](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c), with value exactly = 3 (= community member level 3)
+
+**Signatures**: Your app can securely obtain user-signed messages, enabling front-running protection for instance.
 
 ## Case Studies
 
@@ -54,7 +57,7 @@ The case studies below showcase the power of Sismo Connect, demonstrating how it
 
 SafeDrop is a Sybil-resistant and privacy-preserving ERC20 airdrop that distributes AIR tokens to users proportionally based on their reputation, aggregated from diverse sources of data (EVM wallets, Telegram, Twitter and GitHub accounts).
 
-<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/SafeDrop_Case Study_2 (4).png" alt=""><figcaption></figcaption></figure>
 
 By integrating Sismo Connect, SafeDrop users can generate a ZK proof to establish they own accounts making them eligible for the airdrop. No connection between these accounts and the airdrop destination address is ever made.
 
@@ -70,7 +73,7 @@ Learn how to build the Sybil-resistant airdrop [here](../build-with-sismo-connec
 
 Sismo built a "Privacy Is Normal" anon lottery. Only Tornado Cash users that have prove some proof of personhood via Gitcoin Passport can enter the lottery to win a printed tribute to the protocol’s revolutionary code or its NFT equivalent.
 
-<figure><img src="../.gitbook/assets/Lottery Registration App.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Lottery Registration App (1).png" alt=""><figcaption></figcaption></figure>
 
 By integrating Sismo Connect, Privacy Is Normal enables users to generate a ZK proof establishing they own a Tornado Cash depositing address without directly revealing it. In addition, users prove ownership of a Gitcoin Passport to add an effective layer of Sybil resistance, allowing only those users with adequate scores to participate.
 
