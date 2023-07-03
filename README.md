@@ -26,7 +26,7 @@ By using Sismo Connect, an easy-to-integrate SSO, applications **can now safely 
 
 [Sismo Connect](welcome-to-sismo/what-is-sismo-connect.md) aims to replace non-sovereign SSOs such Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
-<figure><img src=".gitbook/assets/Introduction.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Introduction (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
@@ -36,7 +36,7 @@ Try out [demo apps](https://demo.apps.sismo.io/) on the Sismo App Store.
 
 Users aggregate their identity by adding Data Sources to their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md).
 
-<figure><img src=".gitbook/assets/Aggregation (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Aggregation (1).png" alt=""><figcaption></figcaption></figure>
 
 The Data Vault currently supports the following types of Data Sources: Ethereum wallets, GitHub, Twitter or Telegram accounts. Users can generate ZK Proofs from their Data Sources, enabling them to reveal data to applications in a sovereign way.
 
@@ -50,7 +50,7 @@ You can create your own Data Vault and start aggregating your identity [here](ht
 
 Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to obtain users' personal data by requesting and verifying ZK proofs.
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow (3).png" alt=""><figcaption></figcaption></figure>
 
 Integration is simple with just a few lines of code: import the front-end package or React button to make Sismo Connect requests, and verify proofs in your backend/ smart contracts using Sismo’s Solidity or TypeScript package.
 
