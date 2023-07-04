@@ -219,18 +219,18 @@ import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "sismo-connect-solidity/SismoLib.sol"; 
 
 contract Airdrop is ERC20, SismoConnect { // <--- add a Sismo Connect inheritance
-  // add your appId as a constant
-  bytes16 public constant APP_ID = 0xf4977993e52606cfd67b7a1cde717069;
+  // add your appId
+  bytes16 private _appId = 0xf4977993e52606cfd67b7a1cde717069;
   // use impersonated mode for testing
-  bool public constant IS_IMPERSONATION_MODE = true;
+  bool private _isImpersonationMode = true;
     
   constructor(
-      string memory name,
-      string memory symbol
+    string memory name,
+    string memory symbol
   ) ERC20(name, symbol) 
   // Initiating the contract with the Sismo Connect Library, so it can verify 
  // Sismo Connect Responses (and their ZK Proofs)
-    SismoConnect(buildConfig(APP_ID, IS_IMPERSONATION_MODE))
+    SismoConnect(buildConfig(_appId, _isImpersonationMode))
   {}
 ...
 }
