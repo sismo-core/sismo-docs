@@ -20,7 +20,7 @@ layout:
 
 # What Is Sismo?
 
-Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to **enable** **users to aggregate their social capital and selectively disclose personal data** to applications.&#x20;
+Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to **enable** **users to aggregate their identities and selectively disclose personal data** to applications.&#x20;
 
 By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain personal data that was previously inaccessible, while respecting users' privacy.**
 
