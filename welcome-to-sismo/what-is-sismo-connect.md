@@ -41,10 +41,10 @@ Applications can request users to:
 
 **Selective disclose data:** Request and verify claims about their Data Sources.
 
-* Member of the "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT Minters [Group](https://factory.sismo.io/groups-explorer?search=stand-with-crypto-nft-minters), with value > 10 (= minted more than 10 NFTs)
-* Member of the Contributors to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo  [Group](https://factory.sismo.io/groups-explorer?search=sismo-hub-contributors-github)
-* Member of the [Gitcoin Passport](https://passport.gitcoin.co/#/welcome) holders [Group](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders), with value > 15 (= Sybil-resistance score higher than 15)
-* Member of the [ENS DAO](https://docs.ens.domains/v/governance/) Voters [Group](https://factory.sismo.io/groups-explorer?search=ens-voters), with value > 3 (= more than 3 times)
+* Member of the "[Stand with Crypto](https://nft.coinbase.com/collection/ethereum/0x9d90669665607f08005cae4a7098143f554c59ef)" NFT Minters [Group](https://factory.sismo.io/groups-explorer?search=0xfae674b6cba3ff2f8ce2114defb200b1), with value > 10 (= minted more than 10 NFTs)
+* Member of the Contributors to [Sismo Hub](https://github.com/sismo-core/sismo-hub) GitHub repo  [Group](https://factory.sismo.io/groups-explorer?search=0xda1c3726426d5639f4c6352c2c976b87), with value > 3 (= made more than 3 contributions to the repo)
+* Member of the [Gitcoin Passport](https://passport.gitcoin.co/#/welcome) holders [Group](https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12), with value > 15 (= Sybil-resistance score higher than 15)
+* Member of the [ENS DAO](https://docs.ens.domains/v/governance/) Voters [Group](https://factory.sismo.io/groups-explorer?search=0x85c7ee90829de70d0d51f52336ea4722), with value > 3 (= more than 3 times)
 * Member of Sismo Community[ Group](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c), with value exactly = 3 (= community member level 3)
 
 **Signatures**: Your app can securely obtain user-signed messages, enabling front-running protection for instance.

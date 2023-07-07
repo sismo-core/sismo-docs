@@ -299,7 +299,7 @@ Well, now that you have all these steps in mind, let's improve this airdrop cont
 
 ## Request proof of group membership
 
-Our first aim is to make the ERC20 airdrop Sybil-resistant. To do this, we simply need to request a proof of Gitcoin Passport group membership from our users. We also want them to have a passport score above 15. You can request such a proof by taking the `groupId` of the "Gitcoin Passport Holders" group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders](https://factory.sismo.io/groups-explorer?search=gitcoin-passport-holders) and create a [**claim request**](../technical-documentation/claims.md) from it.
+Our first aim is to make the ERC20 airdrop Sybil-resistant. To do this, we simply need to request a proof of Gitcoin Passport group membership from our users. We also want them to have a passport score above 15. You can request such a proof by taking the `groupId` of the "Gitcoin Passport Holders" group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12](https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12) and create a [**claim request**](../technical-documentation/claims.md) from it.
 
 {% hint style="success" %}
 You can learn how to create a Data Group with the [following tutorial](../../how-sismo-works/how-to-create-data-gems/create-your-data-group.md).
