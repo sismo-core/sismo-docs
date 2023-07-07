@@ -43,6 +43,7 @@
   * [Proving Schemes](how-sismo-works/core-components/proving-schemes/README.md)
     * [Hydra-S1](how-sismo-works/core-components/proving-schemes/hydra-s1.md)
     * [Hydra-S2](how-sismo-works/core-components/proving-schemes/hydra-s2.md)
+  * [Sismo Hub](how-sismo-works/core-components/what-is-the-data-vault-1.md)
 * [Technical Concepts](how-sismo-works/technical-concepts/README.md)
   * [Accounts Registry Tree](how-sismo-works/technical-concepts/accounts-registry-tree.md)
   * [Commitment Mapper](how-sismo-works/technical-concepts/commitment-mapper.md)
