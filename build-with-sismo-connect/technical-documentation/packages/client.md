@@ -4,7 +4,7 @@ description: Request proofs from your user
 
 # Sismo Connect Client: Request
 
-The [Sismo Connect](../../../welcome-to-sismo/what-is-sismo-connect.md) Client is a frontend package built on top of the [Data Vault](../../../#data-vault-aggregate-your-identity) app (the prover) to easily request proofs from your users with [AuthRequests](client.md#authrequest), [ClaimRequests](client.md#claimrequest) and [SignatureRequests](client.md#signaturerequest).
+The [Sismo Connect](broken-reference) Client is a frontend package built on top of the [Data Vault](../../../#data-vault-aggregate-your-identity) app (the prover) to easily request proofs from your users with [AuthRequests](client.md#authrequest), [ClaimRequests](client.md#claimrequest) and [SignatureRequests](client.md#signaturerequest).
 
 ## Installation
 

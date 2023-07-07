@@ -2,8 +2,7 @@
 
 ## Welcome to Sismo
 
-* [What Is Sismo?](README.md)
-* [What Is Sismo Connect?](welcome-to-sismo/what-is-sismo-connect.md)
+* [What is Sismo?](README.md)
 
 ## Build with Sismo Connect
 
@@ -32,6 +31,7 @@
 
 ## How Sismo Works
 
+* [Data Sources & Data Groups](how-sismo-works/data-sources-and-data-groups.md)
 * [Core Components](how-sismo-works/core-components.md)
 * [How To Create Data Groups](how-sismo-works/how-to-create-data-gems/README.md)
   * [Sismo Factory: Create a Data Group in 5 Minutes](how-sismo-works/how-to-create-data-gems/create-your-data-group.md)

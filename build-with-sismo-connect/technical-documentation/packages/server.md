@@ -10,7 +10,7 @@ The Sismo Connect Server is a backend package built on top of the [Hydra-S2 Veri
 
 ## Installation
 
-Install [Sismo Connect](../../../welcome-to-sismo/what-is-sismo-connect.md) server package in your backend with `npm` or `yarn`:
+Install [Sismo Connect](broken-reference) server package in your backend with `npm` or `yarn`:
 
 ```bash
 # with npm

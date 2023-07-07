@@ -92,7 +92,7 @@ import { config } from "./sismo-connect-config.ts";
 ```
 
 {% hint style="success" %}
-Check the [Sismo Connect Example Requests](sismo-connect-cheatsheet.md) to get a large set of interesting requests
+Check the [Sismo Connect Cheatsheet ](sismo-connect-cheatsheet.md) to get a large set of interesting requests
 {% endhint %}
 
 ## Step 3 - Verify: Sismo Connect in your Smart Contracts/ Backends

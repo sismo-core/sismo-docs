@@ -15,7 +15,7 @@ You will find more information on what are groups in this section:
 
 Generating Data Groups and making them available for proving schemes requires some infrastructure. We have developed a repository, the [sismo-hub](https://github.com/sismo-core/sismo-hub), to let anyone propose new Data Groups and make them available for Hydra proving schemes with a simple PR.
 
-You will be able to create your own group of accounts (Ethereum addresses, Github accounts and Twitter accounts) and then use it in a [Sismo Connect](../../../welcome-to-sismo/what-is-sismo-connect.md) app.
+You will be able to create your own group of accounts (Ethereum addresses, Github accounts and Twitter accounts) and then use it in a [Sismo Connect](broken-reference) app.
 
 **Here is a complete tutorial describing all the group creation process steps:**
 
