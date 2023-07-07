@@ -2,7 +2,7 @@
 
 The [Hydra-S2 ZK proving scheme](https://github.com/sismo-core/hydra-s2-zkps) is the second proving scheme in the Hydra family:
 
-* Hydra = using Hydra Delegated Proof of Ownership via the [Commitment Mapper](../commitment-mapper.md)
+* Hydra = using Hydra Delegated Proof of Ownership via the [Commitment Mapper](../../technical-concepts/commitment-mapper.md)
 * S2 = single source, version 2: optional verifications and [Vault Identifier](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md)
 
 The proving scheme expands on the [Hydra-S1 proving scheme](hydra-s1.md) and introduces the notion of a Vault Identifier while offering a modular way of creating ZK proofs.
@@ -21,7 +21,7 @@ VaultId and Proof Identifiers are two tools with different purposes. VaultId can
 
 ### Hydra Proof Of Ownership
 
-[Hydra Proof of Ownership](./) also changes in Hydra-S2 as far as a new [Commitment Mapper](../commitment-mapper.md) and a new variable when creating commitments are being used. The secret used to generate the commitment for the trusted [Commitment Mapper](../commitment-mapper.md) is now the hash of the Vault secret and the user secret instead of the user secret only.
+[Hydra Proof of Ownership](./) also changes in Hydra-S2 as far as a new [Commitment Mapper](../../technical-concepts/commitment-mapper.md) and a new variable when creating commitments are being used. The secret used to generate the commitment for the trusted [Commitment Mapper](../../technical-concepts/commitment-mapper.md) is now the hash of the Vault secret and the user secret instead of the user secret only.
 
 $$
 Commitment = PoseidonHash(VaultSecret, AccountSecret);
@@ -31,7 +31,7 @@ To allow this, we created a new commitment mapper, and we ensured that an accoun
 
 ### Optional verifications
 
-Hydra-S2 also offers a modular way of generating ZK proofs. Therefore, while [Hydra-S1](hydra-s1.md) obliged users to prove that they own two accounts and that the source account was in a specific [Account Tree](../accounts-registry-tree.md) (itself in a specific [Registry Tree](../accounts-registry-tree.md)) with a specific value and checking a nullifier value, we can avoid checking specific constraints in the circuits.
+Hydra-S2 also offers a modular way of generating ZK proofs. Therefore, while [Hydra-S1](hydra-s1.md) obliged users to prove that they own two accounts and that the source account was in a specific [Account Tree](../../technical-concepts/accounts-registry-tree.md) (itself in a specific [Registry Tree](../../technical-concepts/accounts-registry-tree.md)) with a specific value and checking a nullifier value, we can avoid checking specific constraints in the circuits.
 
 It can be now optional to prove while using Hydra-S2 Proving Scheme:
 

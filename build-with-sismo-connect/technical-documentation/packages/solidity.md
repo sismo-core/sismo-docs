@@ -4,7 +4,7 @@ description: Verify proofs from your users
 
 # Sismo Connect Solidity Library: Verify Onchain
 
-The Sismo Connect Solidity Library is built on top of the [Hydra-S2 Verifier](../../../how-sismo-works/technical-concepts/proving-schemes/hydra-s2.md) and allows to easily verify proofs from your users **onchain**.&#x20;
+The Sismo Connect Solidity Library is built on top of the [Hydra-S2 Verifier](../../../how-sismo-works/core-components/proving-schemes/hydra-s2.md) and allows to easily verify proofs from your users **onchain**.&#x20;
 
 <figure><img src="../../../.gitbook/assets/Sismo Connect onchain Flow.png" alt=""><figcaption><p>Sismo Connect onchain Flow</p></figcaption></figure>
 
@@ -229,7 +229,7 @@ enum AuthType {
 
 **`proofData`** : The proof content.
 
-**`extraData`** : other data that can be used in the future by other proving schemes. Currently not used in the current proving scheme use: the [Hydra-S2](../../../how-sismo-works/technical-concepts/proving-schemes/hydra-s2.md).
+**`extraData`** : other data that can be used in the future by other proving schemes. Currently not used in the current proving scheme use: the [Hydra-S2](../../../how-sismo-works/core-components/proving-schemes/hydra-s2.md).
 
 The next objects are the references that allow the `verify()` function to ensure that the proof sent by the user matches the proof expected by the contract:
 

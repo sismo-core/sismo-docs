@@ -3,7 +3,7 @@
 Here you can find all the technical documentation of the [Sismo Hub repository](https://github.com/sismo-core/sismo-hub), the repository used for integrations on Sismo.
 
 {% hint style="info" %}
-Learn more about the Sismo Hub [here](../../core-components.md#what-is-the-sismo-hub).
+Learn more about the Sismo Hub [here](../../core-components/#what-is-the-sismo-hub).
 {% endhint %}
 
 ## In This Section

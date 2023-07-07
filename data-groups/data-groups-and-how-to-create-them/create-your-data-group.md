@@ -2,7 +2,7 @@
 description: Non-developer tutorial
 ---
 
-# Sismo Factory: Create a Data Group in 5 Minutes
+# Factory Guide: Create a Data Group in 5 Minutes
 
 This tutorial will show you how to create a [Data Group](broken-reference) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
@@ -99,7 +99,7 @@ After doing so, it is possible to add accounts using three different methods:
 There are 3 different ways to define the data of a Group Generator, you can use:
 
 * A defined list of Data Source ("By uploading a list of accounts")
-* [Data Providers](../resources/sismo-hub/data-providers.md) : function that allows fetching Data Sources ("From data providers")
+* [Data Providers](../../how-sismo-works/resources/sismo-hub/data-providers.md) : function that allows fetching Data Sources ("From data providers")
 * Already existing Groups ("From data group")
 
 **For our case we need 3 main things:**
@@ -136,7 +136,7 @@ For example, different values can be used for voting power:
 * "3" --> gives you 500 voting power
 * **Get the list of** [**sismo.lens**](https://lenster.xyz/u/sismo) **Lens followers**
 
-To do this, you need to use a [Data Provider,](../resources/sismo-hub/data-providers.md) so we select the "_From Data Providers_" section.\
+To do this, you need to use a [Data Provider,](../../how-sismo-works/resources/sismo-hub/data-providers.md) so we select the "_From Data Providers_" section.\
 Then we choose the Lens Provider and use the `getFollowers()` function:
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-13 à 18.41.53.png" alt=""><figcaption><p>Lens Provider</p></figcaption></figure>
@@ -214,7 +214,7 @@ You will be redirected to the [Group Explorer Page](https://factory.sismo.io/gro
 
 We can see that now your Group request is in <mark style="background-color:blue;">**waiting for approval**</mark> (<mark style="color:red;">red box</mark>) and a few time after in <mark style="background-color:blue;">**Deploying**</mark>.
 
-Once you submit your Group, it will be **automatically accepted and deployed** on all [supported chains](../resources/sismo-101.md) in \~20 minutes if it contains less than 100k accounts in it.
+Once you submit your Group, it will be **automatically accepted and deployed** on all [supported chains](../../how-sismo-works/resources/sismo-101.md) in \~20 minutes if it contains less than 100k accounts in it.
 
 {% hint style="success" %}
 Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon to ask for help or for a custom group update. We would love to talk to you and meet you there.

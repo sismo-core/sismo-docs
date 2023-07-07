@@ -2,11 +2,11 @@
 description: Developer tutorial
 ---
 
-# Sismo Hub: Add a Data Provider to the Sismo Factory
+# Sismo Hub Guide: Add a Data Provider to the Sismo Factory
 
 ## What's inside?
 
-This tutorial will explain how to create a [Data Provider](../resources/sismo-hub/data-providers.md) in the [Sismo Hub](https://github.com/sismo-core/sismo-hub). Users (through the [Factory](https://factory.sismo.io)) and developers (through the [Sismo Hub](../resources/sismo-hub/)) will be able to use your Data Provider in order to create [Group Generators](../resources/sismo-hub/sismo-protocol-overview.md).
+This tutorial will explain how to create a [Data Provider](../../how-sismo-works/resources/sismo-hub/data-providers.md) in the [Sismo Hub](https://github.com/sismo-core/sismo-hub). Users (through the [Factory](https://factory.sismo.io)) and developers (through the [Sismo Hub](../../how-sismo-works/resources/sismo-hub/)) will be able to use your Data Provider in order to create [Group Generators](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md).
 
 Group Generators are functions that enable the creation of groups at the center of the Sismo protocol. As groups need to contain data, we need Data Providers to fetch data from external APIs (e.g, Lens, GitHub, Snapshot).
 
@@ -22,7 +22,7 @@ Data providers are at the foundation of the Sismo Hub architecture. They are des
 You can find the pull request associated with this tutorial [**here**](https://github.com/sismo-core/sismo-hub/pull/1407/files)**.**
 {% endhint %}
 
-## What are [Data Providers](../resources/sismo-hub/data-providers.md)?
+## What are [Data Providers](../../how-sismo-works/resources/sismo-hub/data-providers.md)?
 
 Data Providers enable other group creators to reuse specific data fetching logic, such as calls to APIs.
 
@@ -31,16 +31,16 @@ Data Providers enable other group creators to reuse specific data fetching logic
 * Web2 accounts: Twitter, GitHub, Telegram
 * Web3 accounts: Ethereum addresses, ENS, Lens handle
 
-When creating a group, you need to create a [Group Generator](../resources/sismo-hub/sismo-protocol-overview.md). There are 3 different ways to do so:
+When creating a group, you need to create a [Group Generator](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md). There are 3 different ways to do so:
 
 * Enter a hardcoded list of accounts
-* Use an already existing [Group Generator](../resources/sismo-hub/sismo-protocol-overview.md)
-* Use a [Data Provider](../resources/sismo-hub/data-providers.md) to fetch accounts
+* Use an already existing [Group Generator](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md)
+* Use a [Data Provider](../../how-sismo-works/resources/sismo-hub/data-providers.md) to fetch accounts
 
 Moreover, Data Providers are useful because they enable automatic and frequent group updates, whereas if the group was made of a hardcoded list of accounts it wouldn't be automatic.
 
 {% hint style="success" %}
-If you want to create a [group](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../resources/sismo-hub/sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
+If you want to create a [group](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
 
 For example:
 
@@ -53,7 +53,7 @@ const snapshotProviderData0 = await snapshotProvider.queryProposalVoters({
 This will fetch all the voters of the CoW Swap proposal number 23 (CIP-23)
 {% endhint %}
 
-If you want to know more on Data Providers, check out this [page](../resources/sismo-hub/data-providers.md). Alternatively, you can check out the [Contributor Guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md) before creating one yourself.
+If you want to know more on Data Providers, check out this [page](../../how-sismo-works/resources/sismo-hub/data-providers.md). Alternatively, you can check out the [Contributor Guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md) before creating one yourself.
 
 ## Tutorial use case
 
@@ -300,7 +300,7 @@ export type PublicationId = {
 ```
 {% endhint %}
 
-It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../resources/sismo-hub/sismo-protocol-overview.md).
+It is worth noting that the final variable you return at the end of your `getWhoCollectedPublication` function is of type `FetchedData`. This type is needed if you want to create [Group Generators](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md).
 
 Indeed, a Group Generator returns a group that is composed of metadata:
 
@@ -405,7 +405,7 @@ touch interface-schema.json
 ```
 
 {% hint style="info" %}
-If you want more info on this schema, check this [section](../resources/sismo-hub/data-providers.md#make-your-data-provider-usable-in-the-sismo-factory) on the Data Provider page.
+If you want more info on this schema, check this [section](../../how-sismo-works/resources/sismo-hub/data-providers.md#make-your-data-provider-usable-in-the-sismo-factory) on the Data Provider page.
 {% endhint %}
 
 Then you have to reference your schema:

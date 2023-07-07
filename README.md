@@ -30,7 +30,7 @@ By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain 
 
 ## Data Vault: Sovereign Identity Aggregator
 
-Users aggregate their identity by adding Data Sources to their sovereign, local and private [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md).
+Users aggregate their identity by adding Data Sources to their sovereign, local and private [Data Vault](how-sismo-works/core-components/what-is-the-data-vault.md).
 
 The Data Vault currently supports the following types of Data Sources: Ethereum wallets, GitHub, Twitter or Telegram accounts. Users can generate ZK Proofs from their Data Sources, enabling them to reveal data to applications in a sovereign way.
 
@@ -63,7 +63,7 @@ Data Groups are sets of Data Sources where each Data Source has an associated va
 
 <details>
 
-<summary>Concrete a Data Group and ZK Proofs you can request from users</summary>
+<summary>Concrete examples Data Groups and ZK Proofs you can request from users</summary>
 
 ```json
 { // "Stand With Crypto" NFT Minters Data Group
@@ -87,6 +87,35 @@ Data Groups are sets of Data Sources where each Data Source has an associated va
 
 * owner of `0x70ddb5abf21202602b57f4860ee1262a594a0086` can create a ZK Proof that they are part of the group with value > 10 (e.g minted more than 10 NFTs)
 * owner of 0xa2bf1b0a7e079767b4701b5a1d9d5700eb42d1d1 can create a ZK Proof that they are part of the group with value = 21 (e.g minted exactly 2 NFT)
+
+
+
+```json
+{ // Sismo Community Data Group, created by Sismo
+  // It regroups all community members, organized in 3 levels
+  // level 1 = supporter, level 2 = contributor, level 3 = builder
+  "0x32108e5f09f0df35aefc2ef4c520bbd06a57dae5": "2", // level 2 
+  "0x53deea1808b6d2b8681241e3857b6c6ed1e7e103": "1", // level 1
+  "0x1c494f1919c1512ebe74a5dcc17dac9a64069023": "2", // level 2
+  "dhadrien.eth": "3", // level 3
+  "github:yum0e": "2",
+  "github:leosayous21": "2",
+  "telegram:sampolgar": "2",
+  "telegram:zpedro": "2",
+  "twitter:wojtekwtf": "3",
+  "twitter:albiverse": "3",
+  [...]
+}
+```
+
+* All owners of these wallets can create a ZK Proof that they are part of this group
+
+<!---->
+
+* owner of `dhadrien.eth` can create a ZK Proof that they are part of the group with value > 2 (e.g community member with level > 2)
+* owner of  @wojtekwtf on twitter can create  a ZK Proof that they are part of the group with value = 3 (e.g community member with level 3)
+
+
 
 </details>
 
@@ -122,17 +151,3 @@ Read the full case study [here](https://case-studies.sismo.io/db/safe-drop).
 {% hint style="info" %}
 Learn how to build the Sybil-resistant airdrop [here](build-with-sismo-connect/tutorials/tuto.md). Alternatively, check out the [onchain boilerplate](build-with-sismo-connect/run-example-apps/onchain-sample-project.md).
 {% endhint %}
-
-## Prove & Verify
-
-Sismo Connect technically let users participate in [proving schemes](how-sismo-works/core-components.md#what-are-proving-schemes) to make claims from their Data Sources.
-
-{% hint style="info" %}
-A proving scheme is a cryptographic method that allows one party (the prover) to prove to another party (the verifier) that a certain statement is true without revealing how it is true—ensuring privacy.
-{% endhint %}
-
-<figure><img src=".gitbook/assets/Selective Disclosure (2).png" alt=""><figcaption></figcaption></figure>
-
-The Data Vault includes the provers, enabling users to generate zero-knowledge proofs (ZKPs) from their Data Sources (proof of ownership/ proof of inclusion in a Data Group). The ZKP is then verified by the application (in a smart contract for onchain apps, in a backend of offchain apps, in a browser/client for p2p apps)
-
-Sismo Connect is the developper experience (devX) layer on top of these proving schemes so developer do not have to think about them

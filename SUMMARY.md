@@ -29,21 +29,23 @@
   * [Vault Identifiers](build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md)
 * [FAQ](build-with-sismo-connect/faq.md)
 
+## Data Groups
+
+* [Data Groups & How to Create them?](data-groups/data-groups-and-how-to-create-them/README.md)
+  * [Factory Guide: Create a Data Group in 5 Minutes](data-groups/data-groups-and-how-to-create-them/create-your-data-group.md)
+  * [Sismo Hub Guide: Create Data Groups Programmatically](data-groups/data-groups-and-how-to-create-them/create-your-group-generator.md)
+  * [Sismo Hub Guide: Add a Data Provider to the Sismo Factory](data-groups/data-groups-and-how-to-create-them/create-your-data-provider.md)
+
 ## How Sismo Works
 
-* [Data Sources & Data Groups](how-sismo-works/data-sources-and-data-groups.md)
-* [Core Components](how-sismo-works/core-components.md)
-* [How To Create Data Groups](how-sismo-works/how-to-create-data-gems/README.md)
-  * [Sismo Factory: Create a Data Group in 5 Minutes](how-sismo-works/how-to-create-data-gems/create-your-data-group.md)
-  * [Sismo Hub: Add a Data Provider to the Sismo Factory](how-sismo-works/how-to-create-data-gems/create-your-data-provider.md)
-  * [Sismo Hub: Create Data Groups Programmatically](how-sismo-works/how-to-create-data-gems/create-your-group-generator.md)
+* [Core Components](how-sismo-works/core-components/README.md)
+  * [Data Vault](how-sismo-works/core-components/what-is-the-data-vault.md)
+  * [Proving Schemes](how-sismo-works/core-components/proving-schemes/README.md)
+    * [Hydra-S1](how-sismo-works/core-components/proving-schemes/hydra-s1.md)
+    * [Hydra-S2](how-sismo-works/core-components/proving-schemes/hydra-s2.md)
 * [Technical Concepts](how-sismo-works/technical-concepts/README.md)
-  * [Data Vault](how-sismo-works/technical-concepts/what-is-the-data-vault.md)
-  * [Proving Schemes](how-sismo-works/technical-concepts/proving-schemes/README.md)
-    * [Hydra-S1](how-sismo-works/technical-concepts/proving-schemes/hydra-s1.md)
-    * [Hydra-S2](how-sismo-works/technical-concepts/proving-schemes/hydra-s2.md)
-  * [Commitment Mapper](how-sismo-works/technical-concepts/commitment-mapper.md)
   * [Accounts Registry Tree](how-sismo-works/technical-concepts/accounts-registry-tree.md)
+  * [Commitment Mapper](how-sismo-works/technical-concepts/commitment-mapper.md)
 * [Resources](how-sismo-works/resources/README.md)
   * [Sismo Hub Repository](how-sismo-works/resources/sismo-hub/README.md)
     * [Group Generators](how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md)
@@ -64,9 +66,9 @@
 
 ## Links
 
-* [Data Vault](https://vault-beta.sismo.io/)
 * [Sismo Factory](https://factory.sismo.io/)
-* [Build with Sismo](https://build.sismo.io)
+* [Sismo App Store](https://apps.sismo.io)
+* [Sismo Builders Resources](https://resources.sismo.io)
 * [GitHub](https://github.com/sismo-core)
 * [Discord](https://discord.gg/xKTMeRUX6u)
 * [Twitter](https://twitter.com/sismo\_eth)

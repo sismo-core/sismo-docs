@@ -19,8 +19,8 @@ You will be able to create your own group of accounts (Ethereum addresses, Githu
 
 **Here is a complete tutorial describing all the group creation process steps:**
 
-{% content-ref url="../../how-to-create-data-gems/create-your-group-generator.md" %}
-[create-your-group-generator.md](../../how-to-create-data-gems/create-your-group-generator.md)
+{% content-ref url="../../../data-groups/data-groups-and-how-to-create-them/create-your-group-generator.md" %}
+[create-your-group-generator.md](../../../data-groups/data-groups-and-how-to-create-them/create-your-group-generator.md)
 {% endcontent-ref %}
 
 The following documentation aims to describe the code in a more theoretical way, we strongly recommend doing the tutorial to understand what the code below is for, especially for newcomers.
