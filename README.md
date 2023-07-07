@@ -20,9 +20,9 @@ layout:
 
 # What Is Sismo?
 
-Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to **enable** **users to aggregate and selectively disclose personal data** to applications.&#x20;
+Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to **enable** **users to aggregate their social capital and selectively disclose personal data** to applications.&#x20;
 
-By using Sismo Connect, an easy-to-integrate SSO, applications **can now safely obtain user data that was previously inaccessible.**
+By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain personal data that was previously inaccessible, while respecting users' privacy.**
 
 [Sismo Connect](welcome-to-sismo/what-is-sismo-connect.md) aims to replace non-sovereign SSOs such Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
