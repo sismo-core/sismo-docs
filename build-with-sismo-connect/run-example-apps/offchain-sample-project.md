@@ -7,7 +7,11 @@ You are invited to modify:
 * `front/src/app/page.tsx` , the code of the frontend using Sismo Connect React Button to request ZK Proofs from users.
 * &#x20;`src/app/api/verify/route.ts` , the backend code using Sismo Connect Typescrip library to verify ZK Proofs
 
-This boilerplate implements a simple user authentication.
+This boilerplate implements a simple user authentication to a server.
+
+{% hint style="success" %}
+Use the [Sismo Connect Cheatsheet](../sismo-connect-cheatsheet.md) to chose your own data requests
+{% endhint %}
 
 ## Prerequisites
 

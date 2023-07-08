@@ -8,6 +8,10 @@ You are invited to modify:
 * `src/Airdrop.Sol` , the code of the smart contract using Sismo Connect Solidity Library to verify ZK Proofs\
 
 
+{% hint style="success" %}
+Use the [Sismo Connect Cheatsheet](../sismo-connect-cheatsheet.md) to chose your own data requests
+{% endhint %}
+
 This boilerplates implements SafeDrop, a Sybil-resistant airdrop from privately-aggregated data explained.
 
 {% hint style="info" %}
