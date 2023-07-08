@@ -4,9 +4,9 @@ description: Non-developer tutorial
 
 # Factory Guide: Create a Data Group in 5 Minutes
 
-This tutorial will show you how to create a [Data Group](broken-reference) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
+This tutorial will show you how to create a [Data Group](./) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a Group of Twitter, GitHub, Telegram and Ethereum accounts. After a short verification process (usually under 1 hour), this Data Group will be deployed on our chain(s) of choice and be available for a [Sismo Connect app](broken-reference) 🙌
+At the end of this tutorial, you will have a Group of Twitter, GitHub, Telegram and Ethereum accounts. After a short automatic verification process (under 15 minutes), this Data Group will be deployed on our [chain(s) of choice](../../how-sismo-works/resources/sismo-101.md) and be available for a [Sismo Connect app](../../#sismo-connect-the-crypto-native-sso) 🙌
 
 {% hint style="info" %}
 If you are a developer and want to build your own customizable Data Group, go check out this [tutorial](create-your-group-generator.md). It will also explain all the steps of the creation process.
@@ -18,7 +18,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 ## What are Data Groups?
 
-[Data Groups](broken-reference) are set of Data Sources with each an associated value:
+[Data Groups](./) are set of Data Sources with each an associated value:
 
 * Web2 Data Sources: Twitter, GitHub, Telegram
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles
@@ -45,7 +45,7 @@ Here's an example of what a Group looks like:
 
 ## Data Group Use-Cases
 
-A Data Group can be used for a [Sismo Connect app](broken-reference)
+A Data Group can be used for a [Sismo Connect app](../../#sismo-connect-the-crypto-native-sso)
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
@@ -57,7 +57,7 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to use your Group for a [Sismo Connect app](broken-reference).
+After this tutorial, you will be able to use your Group for a [Sismo Connect app](../../#sismo-connect-the-crypto-native-sso).
 
 ## Tutorial use case
 
@@ -228,7 +228,7 @@ So a few time after your Group will be in deployment and it will be displayed as
 
 You have finally created your first Group through the [Factory](https://factory.sismo.io/), congrats! 🎉
 
-You can now use it to create a [Sismo Connect app](broken-reference) via the Factory.
+You can now use it to create a [Sismo Connect app](../../#sismo-connect-the-crypto-native-sso) via the Factory.
 
 {% hint style="info" %}
 You can also click on the 🔽 icon in order to display more information on your group, including the GitHub Pull Request associated with your Group creation.
@@ -236,4 +236,4 @@ You can also click on the 🔽 icon in order to display more information on your
 For this tutorial, you can find the generated PR [here](https://github.com/sismo-core/sismo-hub/pull/1512).
 {% endhint %}
 
-If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in the **#general-support**. We will be glad to answer you 🤗
+If you have any questions or you need help regarding your Group creation process, do not hesitate to join ou [Discord](https://discord.gg/sismo) and ask us in the **#general-support** or our [Dev Telegram](https://t.me/+Z-SwcvXZFRVhZTQ0). We will be glad to answer you 🤗

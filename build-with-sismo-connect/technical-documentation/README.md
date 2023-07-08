@@ -4,7 +4,7 @@ description: The packages for Sismo Connect.
 
 # Technical Documentation
 
-[Sismo Connect](broken-reference) is a crypto-native single sign-on method (SSO) for applications—whether on web2 or web3. Integration is simple with just a few lines of code: import the front-end package or React button for data requests, and verify proofs using Sismo Connect Solidity library in your smart contract OR server package in your backend. Once integrated, applications can **request** private and granular data, while users can **authenticate** and **selectively disclose** their personal data with the power of zero-knowledge proofs (ZKPs).
+[Sismo Connect](../../#sismo-connect-the-crypto-native-sso) is a crypto-native single sign-on method (SSO) for applications—whether on web2 or web3. Integration is simple with just a few lines of code: import the front-end package or React button for data requests, and verify proofs using Sismo Connect Solidity library in your smart contract OR server package in your backend. Once integrated, applications can **request** private and granular data, while users can **authenticate** and **selectively disclose** their personal data with the power of zero-knowledge proofs (ZKPs).
 
 {% hint style="warning" %}
 In order to use Sismo Connect, you will need to have an `appId` registered in the [Sismo Factory](https://factory.sismo.io/). [Here is a tutorial](../tutorials/create-a-sismo-connect-app.md).

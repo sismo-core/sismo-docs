@@ -151,4 +151,4 @@ In addition, if you want to create a Data Provider that uses a GraphQL or a REST
 
 Want to contribute but don't have any ideas of Data Providers to add? Check out the Sismo GitHub's current issues [https://github.com/sismo-core/sismo-hub/issues](https://github.com/sismo-core/sismo-hub/issues) and our [Contributing guide](https://github.com/sismo-core/sismo-hub/blob/main/CONTRIBUTING.md).
 
-If you have any questions or you need help regarding Data Providers, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **#dev-support**. We will be glad to answer you 🤗
+If you have any questions or you need help regarding Data Providers, do not hesitate to join our [Discord](https://discord.gg/sismo) and ask us in **#dev-support**. We will be glad to answer you 🤗

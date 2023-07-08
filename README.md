@@ -24,7 +24,7 @@ Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies
 
 By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain personal data that was previously inaccessible, while respecting users' privacy.**
 
-[Sismo Connect](broken-reference) aims to replace non-sovereign SSOs such as Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
+[Sismo Connect](./#sismo-connect-the-crypto-native-sso) aims to replace non-sovereign SSOs such as Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
 <figure><img src=".gitbook/assets/Introduction (1).png" alt=""><figcaption></figcaption></figure>
 

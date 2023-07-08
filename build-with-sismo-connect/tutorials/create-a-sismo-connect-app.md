@@ -1,6 +1,6 @@
 # Get your appId - Create a Sismo Connect App
 
-Before you begin integrating [**Sismo Connect**](broken-reference), you must register first a Sismo Connect app in the [**Sismo Factory**](https://factory.sismo.io/apps-explorer). This step is mandatory to obtain an application Id (`appId`), which is required during the Sismo Connect development process.
+Before you begin integrating [**Sismo Connect**](../../#sismo-connect-the-crypto-native-sso), you must register first a Sismo Connect app in the [**Sismo Factory**](https://factory.sismo.io/apps-explorer). This step is mandatory to obtain an application Id (`appId`), which is required during the Sismo Connect development process.
 
 <details>
 
@@ -22,7 +22,7 @@ You can learn more about this notion in this [article](../technical-documentatio
 
 You can register a Sismo Connect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
-To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the `appId` that will be created can be used for [Sismo Connect](broken-reference).
+To create a Sismo Connect app, you need to log in with Sign-In With Ethereum and click on “create a new Sismo Connect app”. You will need to register an App Name, enter a description, and upload a logo alongside registering authorized domains. Pay attention to authorized domains, as these are the urls where the `appId` that will be created can be used for [Sismo Connect](../../#sismo-connect-the-crypto-native-sso).
 
 {% hint style="info" %}
 Feel free to add `*.com` to authorized domains when developing in local. This will allow you to easily whitelist `localhost`. Don't forget to update the authorized domains when deploying in production though.

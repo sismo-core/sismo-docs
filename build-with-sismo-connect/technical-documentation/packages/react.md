@@ -4,7 +4,7 @@ description: Request proofs from your user on your React project
 
 # Sismo Connect React: Request
 
-The [Sismo Connect](broken-reference) React package is a wrapper of the Sismo Connect client package which is a package built on top of the [Sismo Data Vault](broken-reference) app (the prover) to easily request proofs from your users. It is strongly advised to read about the [**Sismo Connect client package**](client.md) to understand the React package.
+The [Sismo Connect](../../../#sismo-connect-the-crypto-native-sso) React package is a wrapper of the Sismo Connect client package which is a package built on top of the [Sismo Data Vault](../../../how-sismo-works/core-components/what-is-the-data-vault.md) app (the prover) to easily request proofs from your users. It is strongly advised to read about the [**Sismo Connect client package**](client.md) to understand the React package.
 
 ### Installation
 
@@ -25,7 +25,7 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 ### Configuration
 
-The first step for integrating Sismo Connect in your front end is to create a `SismoConnectClientConfig` like in the client package. This config will require an `appId` and can be customized with [optional fields.](react.md#sismoconnectclientconfig) You can go to the [Sismo Factory](../../tutorials/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId` ([here is a tutorial](../../tutorials/create-a-sismo-connect-app.md)).
+The first step for integrating Sismo Connect in your front end is to create a `SismoConnectClientConfig` like in the client package. This config will require an `appId` and can be customized with optional fields. You can go to the [Sismo Factory](../../tutorials/create-a-sismo-connect-app.md) to create a Sismo Connect App and get an `appId` ([here is a tutorial](../../tutorials/create-a-sismo-connect-app.md)).
 
 ```typescript
 import { SismoConnect, SismoConnectConfig } from "@sismo-core/sismo-connect-react";

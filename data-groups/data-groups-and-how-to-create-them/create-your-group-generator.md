@@ -8,7 +8,7 @@ description: Developer Tutorial
 
 This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of [Groups](broken-reference) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](broken-reference).
+Group Generators are functions that enable the creation of [Groups](./) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../#sismo-connect-the-crypto-native-sso).
 
 {% hint style="info" %}
 You can find all already existing Group Generators [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators)**.**
@@ -41,11 +41,11 @@ If you want to know how to contribute to the Sismo Hub by creating Groups don't 
 
 ### Group use-cases
 
-A Group can be used for a [Sismo Connect App](broken-reference).
+A Group can be used for a [Sismo Connect App](../../#sismo-connect-the-crypto-native-sso).
 
 Let's take the [proof-of-humanity](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators/proof-of-humanity) Group as an example and look at these use cases:
 
-#### [Sismo Connect App](broken-reference)
+#### [Sismo Connect App](../../#sismo-connect-the-crypto-native-sso)
 
 Here is an instance of a Sismo Connect App that has been implemented using the proof-of-humanity Group:
 
@@ -53,7 +53,7 @@ Here is an instance of a Sismo Connect App that has been implemented using the p
 
 This Sismo Connect App allows you to gate contents/features of your app to Proof of Humanity registrants without revealing the registered addresses.
 
-After this tutorial, you will be able to create a [Sismo Connect App](broken-reference) from your Group through the [Factory](https://factory.sismo.io/).
+After this tutorial, you will be able to create a [Sismo Connect App](../../#sismo-connect-the-crypto-native-sso) from your Group through the [Factory](https://factory.sismo.io/).
 
 ### Tutorial use-case
 
@@ -461,14 +461,14 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 Now that you have your Group, you can build the following with it:
 
-* [**Sismo Connect App**](broken-reference):
+* [**Sismo Connect App**](../../#sismo-connect-the-crypto-native-sso):
   * using the [Factory](https://factory.sismo.io/apps-explorer)
   * creating by yourself using the [sismo-connect-packages](https://github.com/sismo-core/sismo-connect-packages/tree/main).
-    * You can find [**here**](../../build-with-sismo-connect/run-example-apps/) sample projects to run on your computer.
+    * You can find [**here**](../../build-with-sismo-connect/run-example-apps/) boilerplates to run on your computer.
     * And [**here**](../../build-with-sismo-connect/tutorials/) tutorials that shows how to build Sismo Connect apps.
 
 ### Contribute to the Sismo Hub
 
 You want to contribute but you don't have any ideas for Groups to create? Check out the current [Sismo Hub GitHub's issues](https://github.com/sismo-core/sismo-hub/issues) for some interesting ideas.
 
-If you have any questions or you need help regarding your Group creation process, do not hesitate to join [Sismo Discord](https://discord.gg/sismo) and ask us in **#dev-support**. We will be glad to answer you 🤗
+If you have any questions or you need help regarding your Group creation process, do not hesitate to join our [Discord](https://discord.gg/sismo) and ask us in **#dev-support** or ou [Dev Telegram](https://t.me/+Z-SwcvXZFRVhZTQ0). We will be glad to answer you 🤗
