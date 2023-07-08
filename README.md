@@ -1,5 +1,5 @@
 ---
-description: Sovereign Identity Aggregator and cryptonative SSO
+description: Sovereign Identity Aggregator and Cryptonative SSO
 cover: .gitbook/assets/Gibook Banner1_1900x400.png
 coverY: 0
 layout:
@@ -40,9 +40,9 @@ The Data Vault currently supports the following types of Data Sources: Ethereum 
 You can create your own Data Vault and start aggregating your identity [here](https://vault-beta.sismo.io/).
 {% endhint %}
 
-## Sismo Connect: The Crypto-Native SSO
+## Sismo Connect: The Cryptonative SSO
 
-Sismo Connect is a crypto-native single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to obtain users' personal data by requesting and verifying ZK proofs.
+Sismo Connect is a cryptonative single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to obtain users' personal data by requesting and verifying ZK proofs.
 
 {% hint style="success" %}
 Experience Sismo Connect on the [Demo App Store](https://demo.apps.sismo.io)!
