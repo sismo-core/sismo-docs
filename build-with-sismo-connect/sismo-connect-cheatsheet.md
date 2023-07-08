@@ -5,8 +5,15 @@ This cheatsheet presents all types of requests you can make with Sismo Connect. 
 It contains:&#x20;
 
 * How to impersonate Data Sources in your dev vault when developing a Sismo Connect App
-* Request a large and diversified set of Data Sources ownerships/group membership
+  * Impersonating Data Sources enables you to be part of Data Groups and be able to make ZK Proofs claims.
+* Request a large and diversified request:
+  * authentication: Data Sources ownerships
+  * claims: Data Group memberships
 * Verify them in a backend and access verified data
+
+{% hint style="success" %}
+To understand Data Groups and how to create new ones Data Groups, [visit this section](../data-groups/data-groups-and-how-to-create-them/)
+{% endhint %}
 
 <details>
 

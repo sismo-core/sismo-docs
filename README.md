@@ -130,7 +130,7 @@ Examples of Data Groups:
 | [Sismo Community Members](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c)         | Wallets, GitHub, Telegram and twitter accounts of all people that helped Sismo | level of their contributions (1, 2 or 3) |
 
 {% hint style="info" %}
-Anyone can create a new Data Group in the [Sismo Factory](https://factory.sismo.io).
+Anyone can [create a new Data Group](data-groups/data-groups-and-how-to-create-them/).&#x20;
 {% endhint %}
 
 <table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href=".gitbook/assets/AppStore.png">AppStore.png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href=".gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>

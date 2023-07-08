@@ -1,10 +1,18 @@
 # Data Groups & How to Create them?
 
-Data Groups are created via the [Factory](https://factory.sismo.io) or by creating a pull request on the [Sismo Hub](https://github.com/sismo-core/sismo-hub).
+Data Groups are created via the [Factory UI](https://factory.sismo.io) or by creating a pull request on the [Sismo Hub](https://github.com/sismo-core/sismo-hub).
 
-The Factory is an interface to create groups on the Sismo Hub. The Sismo Hub will compute merkle trees of Data Groups and publish the roots onchain.
+<figure><img src="../../.gitbook/assets/Sismo Connect_ Under the Hood.png" alt=""><figcaption></figcaption></figure>
 
-Smart contracts and backends, to verify ZK Proofs, needs access to these merkle tree roots of the Data Groups.
+The Factory is an interface to easily create Data Groups on the Sismo Hub infrastructure.&#x20;
+
+The Sismo Hub computes merkle trees of groups, store them in its database and publish the merkle tree roots onchain.&#x20;
+
+Onchain roots are the source of truth for backend and smart contracts to verify whether a ZK Proof is valid.
+
+{% hint style="info" %}
+Everything is [open-source](https://github.com/sismo-core/sismo-hub) and all groups can be computed by all.
+{% endhint %}
 
 ## Data Sources
 

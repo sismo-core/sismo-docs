@@ -13,6 +13,10 @@ You must create a Sismo Connect App in the [Sismo Factory](https://factory.sismo
 Your frontend must make a Sismo Connect request, users will be redirected to their Data Vault to generate a ZK Proof and your frontend will receive a Sismo Connect Response from them. \
 This response, containing the ZK Proof, will be verified on your backend/smart contract.
 
+{% hint style="success" %}
+Check the [Sismo Connect Cheatsheet](sismo-connect-cheatsheet.md) to see examples of requests.
+{% endhint %}
+
 1. Install our React Library
 
 {% tabs %}
