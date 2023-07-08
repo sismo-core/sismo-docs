@@ -2,7 +2,7 @@
 
 <figure><img src="../.gitbook/assets/Sismo Connect Flow (4).png" alt=""><figcaption></figcaption></figure>
 
-Integrating Sismo Connect means 3 things main steps:
+Integrating Sismo Connect means 3 main steps:
 
 * Create a **Sismo Connect Application in the Sismo Factory**
 * **In your Frontend: Use our React button or client library to request ZK Proofs from users** (like you would request a signature with Wallet Connect)
