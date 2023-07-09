@@ -134,7 +134,7 @@ function onClick(){
 }
 
 // Proofs are available in two differents types depending on usage (offchain or onchaon verification)
-const response: SismoConnectResponse | null = sismoConnect.getReponse();
+const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
 if(response || responseBytes) {
