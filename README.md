@@ -52,7 +52,7 @@ Experience Sismo Connect on the [Demo App Store](https://demo.apps.sismo.io)!
 
 Integration is simple with just a few lines of code: import the front-end package or React button to make Sismo Connect requests, and verify proofs in your backend/ smart contracts using Sismo’s Solidity or TypeScript package.
 
-Developers can request multiple personal data at once. There exist two types of data that can be requested:
+Applications can request many data at once. There exist two types request that can be made:
 
 * authentication: ZK Proof of Data Source ownership. (Ethereum wallets, GitHub, Twitter or Telegram accounts)
 * disclosure of anonymised personal data: ZK Proofs of Data Source inclusion in a specific Data Group (+ claim about its value in the group).&#x20;
