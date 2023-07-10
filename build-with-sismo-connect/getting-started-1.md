@@ -88,7 +88,7 @@ import { config } from "./sismo-connect-config.ts";
     // (e.g NFT ownership, Dao Participation, GitHub commits)
     claims={[{groupId: ENS_DAO_VOTERS_GROUP_ID}]}
     // request message signature from users.
-    signature={message: "I vote Yes to Privacy"}}
+    signature={{message: "I vote Yes to Privacy"}}
     onResponseBytes={(response: string) => {
         // call your contract/ backend with the response as bytes
     }}
