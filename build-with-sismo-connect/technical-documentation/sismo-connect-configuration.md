@@ -57,9 +57,9 @@ const config: SismoConnectConfig = {
     auths={[{ authType: AuthType.GITHUB }]}
     // request proof of Data Group memberships of source
     // (e.g part of NFT owners, Dao Participants, GitHub commiters)
-    claims=[{{groupId: ENS_DAO_VOTERS_GROUP_ID}}]
+    claims={[{groupId: ENS_DAO_VOTERS_GROUP_ID}]}
     // request message signature from users.
-    signature={message: "I vote Yes to Privacy"}}
+    signature={{message: "I vote Yes to Privacy"}}
     onResponseBytes={(response: string) => {
         // call your contract/backend with the response as bytes
     }
@@ -156,9 +156,9 @@ const config: SismoConnectConfig = {
     auths={[{ authType: AuthType.GITHUB }]}
     // request proof of Data Group memberships of source
     // (e.g part of NFT owners, Dao Participants, GitHub commiters)
-    claims=[{{groupId: ENS_DAO_VOTERS_GROUP_ID}}]
+    claims={[{groupId: ENS_DAO_VOTERS_GROUP_ID}]}
     // request message signature from users.
-    signature={message: "I vote Yes to Privacy"}}
+    signature={{message: "I vote Yes to Privacy"}}
     onResponseBytes={(response: string) => {
         // call your contract with the response as bytes
     }
