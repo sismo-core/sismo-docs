@@ -74,6 +74,9 @@ const config: SismoConnectConfig = {
 
 ```typescript
 
+// in nextjs page.tsx
+"use client";
+
 import {
   SismoConnectButton,
   AuthType,
@@ -116,6 +119,10 @@ export default function Home() {
           method: "POST",
           body: JSON.stringify(response),
         });
+        // to call contracts
+        // onResponseBytes={async (response: SismoConnectResponse) => {
+        //   await myContract.claimWithSismo(response.responseBytes);
+        // }
       }}
     />
   );
