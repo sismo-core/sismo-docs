@@ -26,7 +26,7 @@ By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain 
 
 [Sismo Connect](./#sismo-connect-the-crypto-native-sso) aims to replace non-sovereign SSOs such as Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
-<figure><img src=".gitbook/assets/Introduction (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Introduction (2).png" alt=""><figcaption><p>Sismo: Personal Data Aggregation and Selective Disclosure</p></figcaption></figure>
 
 ## Data Vault: Sovereign Identity Aggregator
 
