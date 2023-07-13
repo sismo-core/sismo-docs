@@ -208,7 +208,7 @@ To fetch all the accounts we want, you will use the 2 different [Data Providers]
 * The [**Lens Data Provider**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/lens): it will allow you to fetch all the collectors of the [first Sismo Lens Post](https://lenster.xyz/posts/0x26e5-0x02). (1.)
 
 {% hint style="info" %}
-If you want more info on how Data Provider works and how to create one, there is a tutorial for you [**here**](create-your-data-provider.md). This tutorial makes you create a Lens data provider and a function that fetch all Lens post collectors (It's a good time, isn't it 😉)
+If you want more info on how Data Provider works and how to create one, there is a tutorial for you [**here**](../data-groups-and-how-to-create-them/create-your-data-provider.md). This tutorial makes you create a Lens data provider and a function that fetch all Lens post collectors (It's a good time, isn't it 😉)
 {% endhint %}
 
 * The[ **Snapshot Data Provider**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot): it will allow you to fetch all the voters of one of the first [Sismo proposals](https://snapshot.org/#/sismo.eth/proposal/0xe280e236c5afa533fc28472dd0ce14e5c3514a843c0563552c962226cda05c52) on Snapshot. (2.)

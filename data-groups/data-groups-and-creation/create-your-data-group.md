@@ -150,7 +150,7 @@ Next, by clicking on the <mark style="background-color:blue;">**Add**</mark> but
 After this, you can click on the second <mark style="background-color:blue;">**Add**</mark> button (<mark style="color:red;">red box</mark>) in order to add these Lens accounts (sismo.lens followers) to the group.
 
 {% hint style="info" %}
-If you are a developer and want to build your own Data Provider, go check out this [tutorial](create-your-data-provider.md). It will explain all the steps of the creation process.
+If you are a developer and want to build your own Data Provider, go check out this [tutorial](../data-groups-and-how-to-create-them/create-your-data-provider.md). It will explain all the steps of the creation process.
 {% endhint %}
 
 * **Get the holders of** [**Sismo - EthCC 2022 POAP**](https://poap.gallery/r/event/53325)

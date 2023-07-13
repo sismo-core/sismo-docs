@@ -34,7 +34,7 @@
 * [Data Groups & Creation](data-groups/data-groups-and-creation/README.md)
   * [Factory Guide: Create a Data Group in 5 Minutes](data-groups/data-groups-and-creation/create-your-data-group.md)
   * [Sismo Hub Guide: Create Data Groups Programmatically](data-groups/data-groups-and-creation/create-your-group-generator.md)
-  * [Sismo Hub Guide: Add a Data Provider to the Sismo Factory](data-groups/data-groups-and-creation/create-your-data-provider.md)
+  * [Sismo Hub Guide: Add a Data Provider to the Sismo Factory](data-groups/data-groups-and-how-to-create-them/create-your-data-provider.md)
 
 ## How Sismo Works
 
@@ -61,7 +61,7 @@
       * [Get group snapshots](how-sismo-works/resources/sismo-api/group/get-group-snapshots.md)
     * [Common Parameters](how-sismo-works/resources/sismo-api/common-parameters.md)
     * [Advanced Filtering](how-sismo-works/resources/sismo-api/advanced-filtering.md)
-    * [Transaction](how-sismo-works/resources/sismo-api/transaction.md)
+    * [Transaction](how-sismo-works/resources/sismo-api/other-models/transaction.md)
   * [Deployed Contract Addresses](how-sismo-works/resources/sismo-101.md)
 
 ## Links

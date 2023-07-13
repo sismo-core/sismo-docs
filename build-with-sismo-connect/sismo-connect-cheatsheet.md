@@ -43,16 +43,15 @@ As an alternative to the React Button, you can use the [<mark style="color:blue;
 import {
   SismoConnectButton,
   SismoConnectConfig,
-  ClaimRequest,
-  AuthRequest,
-  SignatureRequest,
-
+  AuthType,
+  ClaimType,
+  SismoConnectResponse
 } from "@sismo-core/sismo-connect-react";
 
 const config: SismoConnectConfig = {
   appId: "0x32403ced4b65f2079eda77c84e7d2be6",
   vault: {
-    // For development purposes, insert the Data Sources that you want to impersonate
+    // For development purposes insert the Data Sources that you want to impersonate
     // Never use this in production
     impersonate: [
       // EVM Data Sources
@@ -100,9 +99,9 @@ return (
       { authType: AuthType.TELEGRAM, userId: "875608110", isOptional: true },
     ]}
     
-      // Claims = prove group membership of a Data Source in a specific Data Group.
+      // Claims = prove groump membership of a Data Source in a specific Data Group.
       // Data Groups = [{[dataSource1]: value1}, {[dataSource1]: value1}, .. {[dataSource]: value}]
-      // When doing so, the Data Source is not shared with the app.
+      // When doing so Data Source is not shared to the app.
     claims={[
       {
         // claim on Sismo Hub GitHub Contributors Data Group membership: https://factory.sismo.io/groups-explorer?search=0xda1c3726426d5639f4c6352c2c976b87
@@ -124,16 +123,16 @@ return (
         // claim on Stand with Crypto NFT Minters Data Group membership: https://factory.sismo.io/groups-explorer?search=0xfae674b6cba3ff2f8ce2114defb200b1
         // Data Group members          = minters of the Stand with Crypto NFT
         // value for each group member = number of NFT minted
-        // request the user to prove membership in the group with a value = 10
+        // request user to prove membership in the group with value = 10
         groupId: "0xfae674b6cba3ff2f8ce2114defb200b1",
         claimType: ClaimType.EQ,
-        value: 10, // dhadrien.sismo.eth minted exactly 10, eligible
+        value: 10, // dhadrin.sismo.eth minted exactly 10, eligible
       },
       {
         // claim Gitcoin Passport Holders Data Group membership: https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12
         // Data Group members          = Gitcoin Passport Holders
         // value for each group member = Gitcoin Passport Score
-        // request the user to prove membership in the group with a value > 15, the user can reveal more if they want
+        // request user to prove membership in the group with value > 15, user can reveal more if they want
         groupId: "0x1cde61966decb8600dfd0749bd371f12",
         claimType: ClaimType.GTE,
         value: 15, // dhadrien.sismo.eth has a score of 46, eligible. Can reveal more.
@@ -161,7 +160,7 @@ return (
         groupId: "0xda1c3726426d5639f4c6352c2c976b87",
         claimType: ClaimType.GTE,
         value: 1,
-        isSelectableByUser: true, // can selectively disclose more if the user wants
+        isSelectableByUser: true, // can selectively disclose more if user wants
         isOptional: true, // can chose not to reveal
       },
     ]}
@@ -448,18 +447,18 @@ import "sismo-connect-solidity/SismoLib.sol";
 
 contract MyContract is SismoConnect {
   // reference your appId
-  bytes16 public constant APP_ID = 0x32403ced4b65f2079eda77c84e7d2be6;
+  bytes16 private _appId = 0x32403ced4b65f2079eda77c84e7d2be6;
   // allow impersonation
-  bool public constant IS_IMPERSONATION_MODE = true;
+  bool private _isImpersonationMode = true;
 
   constructor()
     // use buildConfig helper to easily build a Sismo Connect config in Solidity
-    SismoConnect(buildConfig({appId: APP_ID, isImpersonationMode: IS_IMPERSONATION_MODE}))
+    SismoConnect(buildConfig({appId: _appId, isImpersonationMode: _isImpersonationMode}))
   {}
 
   function verifySismoConnectResponse(bytes memory response) public {
-    // Recreate the request made in the front end to verify the proof
-    // We will verify the Sismo Connect Response containing the ZK proofs against it
+    // Recreate the request made in the fontend to verify the proof
+    // We will verify the Sismo Connect Response containing the ZK Proofs against it
     AuthRequest[] memory auths = new AuthRequest[](6);
     auths[0] = _authRequestBuilder.build({authType: AuthType.VAULT});
     auths[1] = _authRequestBuilder.build({authType: AuthType.EVM_ACCOUNT});
@@ -481,7 +480,7 @@ contract MyContract is SismoConnect {
       isSelectableByUser: false
     });
 
-    ClaimRequest[] memory claims = new ClaimRequest[](6);
+    ClaimRequest[] memory claims = new ClaimRequest[](7);
     claims[0] = _claimRequestBuilder.build({groupId: 0xda1c3726426d5639f4c6352c2c976b87});
     claims[1] = _claimRequestBuilder.build({
       groupId: 0x85c7ee90829de70d0d51f52336ea4722,
@@ -504,12 +503,14 @@ contract MyContract is SismoConnect {
       groupId: 0xfae674b6cba3ff2f8ce2114defb200b1,
       claimType: ClaimType.GTE,
       value: 6,
+      isSelectableByUser: true,
       isOptional: true
     });
     claims[5] = _claimRequestBuilder.build({
       groupId: 0x1cde61966decb8600dfd0749bd371f12,
       claimType: ClaimType.EQ,
       value: 15,
+      isSelectableByUser: true,
       isOptional: true
     });
     claims[6] = _claimRequestBuilder.build({
@@ -533,7 +534,7 @@ contract MyContract is SismoConnect {
     uint256[] memory evmAccountIds = SismoConnectHelper.getUserIds(result, AuthType.EVM_ACCOUNT);
 
     console.log("Vault ID: %s", vaultId);
-    console.log("GitHub ID: %s", githubId);
+    console.log("Github ID: %s", githubId);
     console.log("Telegram ID: %s", telegramId);
     console.log("First EVM Account ID: %s", evmAccountIds[0]);
     console.log("Second EVM Account ID: %s", evmAccountIds[1]);

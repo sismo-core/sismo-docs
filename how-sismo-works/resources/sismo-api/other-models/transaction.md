@@ -76,7 +76,7 @@ type Query {
 
 ### Query stats for a list of transactions
 
-Use this query to get stats for a list of transactions. You can use [common parameters](common-parameters.md#parameters-when-querying-a-list) to filters them. The tab Schema below provides more details.
+Use this query to get stats for a list of transactions. You can use [common parameters](../common-parameters.md#parameters-when-querying-a-list) to filters them. The tab Schema below provides more details.
 
 {% tabs %}
 {% tab title="Query" %}

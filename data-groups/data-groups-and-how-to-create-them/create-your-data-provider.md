@@ -40,7 +40,7 @@ When creating a group, you need to create a [Group Generator](../../how-sismo-wo
 Moreover, Data Providers are useful because they enable automatic and frequent group updates, whereas if the group was made of a hardcoded list of accounts it wouldn't be automatic.
 
 {% hint style="success" %}
-If you want to create a [group](./) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
+If you want to create a [group](../data-groups-and-creation/) that contains all the voters of your last DAO proposal on Snapshot, simply use the `queryProposalVoters` function from the [Snapshot Data Provider](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot) in your [Group Generator](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md) by giving the Proposal Identifier as an argument.
 
 For example:
 
@@ -364,7 +364,7 @@ Congrats 🎉 You've just created your first Data Provider!
 
 But now that you have finished, you probably want to test it right?
 
-To do this you will have to create a group (only for testing) and import your Data Provider into it, so you can try your request. If you don't know how to create a group, check out the group tutorial [**here**](create-your-group-generator.md).
+To do this you will have to create a group (only for testing) and import your Data Provider into it, so you can try your request. If you don't know how to create a group, check out the group tutorial [**here**](../data-groups-and-creation/create-your-group-generator.md).
 
 ### Make your Data Provider usable by anyone on the Factory
 
