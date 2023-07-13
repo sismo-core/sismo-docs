@@ -103,7 +103,7 @@ return (
       // Claims = prove group membership of a Data Source in a specific Data Group.
       // Data Groups = [{[dataSource1]: value1}, {[dataSource1]: value1}, .. {[dataSource]: value}]
       // When doing so, the Data Source is not shared with the app.
-    sclaims={[
+    claims={[
       {
         // claim on Sismo Hub GitHub Contributors Data Group membership: https://factory.sismo.io/groups-explorer?search=0xda1c3726426d5639f4c6352c2c976b87
         // Data Group members          = contributors to sismo-core/sismo-hub
