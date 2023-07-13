@@ -1,30 +1,30 @@
 # Sismo Connect Cheatsheet
 
-This cheatsheet presents all types of requests you can make with Sismo Connect. It should be a great companion when developing a Sismo Connect App.
+This cheatsheet presents all of the types of requests you can make with Sismo Connect. It should be a great companion when developing a Sismo Connect app.
 
 It contains:&#x20;
 
-* How to impersonate Data Sources in your dev vault when developing a Sismo Connect App
-  * Impersonating Data Sources enables you to be part of Data Groups and be able to make ZK Proofs claims.
+* How to impersonate Data Sources in your dev Vault when developing a Sismo Connect app
+  * Impersonating Data Sources enables you to be part of Data Groups and generate ZK proofs.
 * Request a large and diversified request:
-  * authentication: Data Sources ownerships
-  * claims: Data Group memberships
-* Verify them in a backend and access verified data
+  * Authentication: Data Source ownership
+  * Claims: Data Group membership
+* Verify them in a back end and access verified data
 
 {% hint style="success" %}
-To understand Data Groups and how to create new ones Data Groups, [visit this section](../data-groups/data-groups-and-how-to-create-them/)
+Visit [this section](../data-groups/data-groups-and-creation/) to understand Data Groups and how to create them.
 {% endhint %}
 
 <details>
 
-<summary>How the Request and Response look like 👉 <a href="https://test-request.sismo.io">https://test-request.sismo.io </a></summary>
+<summary>What the Request and Response looks like 👉 <a href="https://test-request.sismo.io">https://test-request.sismo.io </a></summary>
 
 \
-SIsmo Connect Response generation (ZK Proof generation)
+SIsmo Connect Response generation (ZK proof generation)
 
 <img src="../.gitbook/assets/Capture d’écran 2023-07-07 à 18.46.40 2.png" alt="" data-size="original">
 
-SIsmo Connect Response (with ZK Proof in it)
+SIsmo Connect Response (with a ZK proof in it)
 
 <img src="../.gitbook/assets/Capture d’écran 2023-07-07 à 18.48.29.png" alt="" data-size="original">
 
@@ -32,7 +32,7 @@ SIsmo Connect Response (with ZK Proof in it)
 
 </details>
 
-### Frontend: Make a Sismo Connect Request with React Button
+### Front End: Make a Sismo Connect Request with React Button
 
 {% hint style="info" %}
 As an alternative to the React Button, you can use the [<mark style="color:blue;">`@sismo-core/sismo-connect-client`</mark>](technical-documentation/packages/client.md) [library](technical-documentation/packages/client.md)
@@ -52,7 +52,7 @@ import {
 const config: SismoConnectConfig = {
   appId: "0x32403ced4b65f2079eda77c84e7d2be6",
   vault: {
-    // For development purposes insert the Data Sources that you want to impersonate
+    // For development purposes, insert the Data Sources that you want to impersonate
     // Never use this in production
     impersonate: [
       // EVM Data Sources
@@ -100,9 +100,9 @@ return (
       { authType: AuthType.TELEGRAM, userId: "875608110", isOptional: true },
     ]}
     
-      // Claims = prove groump membership of a Data Source in a specific Data Group.
+      // Claims = prove group membership of a Data Source in a specific Data Group.
       // Data Groups = [{[dataSource1]: value1}, {[dataSource1]: value1}, .. {[dataSource]: value}]
-      // When doing so Data Source is not shared to the app.
+      // When doing so, the Data Source is not shared with the app.
     sclaims={[
       {
         // claim on Sismo Hub GitHub Contributors Data Group membership: https://factory.sismo.io/groups-explorer?search=0xda1c3726426d5639f4c6352c2c976b87
@@ -124,16 +124,16 @@ return (
         // claim on Stand with Crypto NFT Minters Data Group membership: https://factory.sismo.io/groups-explorer?search=0xfae674b6cba3ff2f8ce2114defb200b1
         // Data Group members          = minters of the Stand with Crypto NFT
         // value for each group member = number of NFT minted
-        // request user to prove membership in the group with value = 10
+        // request the user to prove membership in the group with a value = 10
         groupId: "0xfae674b6cba3ff2f8ce2114defb200b1",
         claimType: ClaimType.EQ,
-        value: 10, // dhadrin.sismo.eth minted exactly 10, eligible
+        value: 10, // dhadrien.sismo.eth minted exactly 10, eligible
       },
       {
         // claim Gitcoin Passport Holders Data Group membership: https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12
         // Data Group members          = Gitcoin Passport Holders
         // value for each group member = Gitcoin Passport Score
-        // request user to prove membership in the group with value > 15, user can reveal more if they want
+        // request the user to prove membership in the group with a value > 15, the user can reveal more if they want
         groupId: "0x1cde61966decb8600dfd0749bd371f12",
         claimType: ClaimType.GTE,
         value: 15, // dhadrien.sismo.eth has a score of 46, eligible. Can reveal more.
@@ -161,7 +161,7 @@ return (
         groupId: "0xda1c3726426d5639f4c6352c2c976b87",
         claimType: ClaimType.GTE,
         value: 1,
-        isSelectableByUser: true, // can selectively disclose more if user wants
+        isSelectableByUser: true, // can selectively disclose more if the user wants
         isOptional: true, // can chose not to reveal
       },
     ]}
@@ -177,8 +177,6 @@ return (
   />
 )}
 ```
-
-
 
 ### Verify the Sismo Connect Response in a simple backend
 
@@ -399,11 +397,11 @@ import {
 } from "@sismo-core/sismo-connect-server";
 
 (async () => {
-  // reusing the exact same config as the frontend's
+  // reusing the exact same config as the front end's
   const sismoConnect = SismoConnect({ config });
   
   const result: SismoConnectVerifiedResult = await sismoConnect.verify(
-        sismoConnectResponse, // copied from previous step or received from api call
+        sismoConnectResponse, // copied from the previous step or received from API call
         {
           auths,
           claims,
@@ -415,16 +413,16 @@ import {
   // vault anonymous identifier = hash(vaultSecret, AppId)
   // ['0x225c5b67c39778b40ef2528707c9fbdfed96f31b9a50826b95c2ac40e15e4c6b']
   console.log(result.getUserIds(AuthType.GITHUB));
-  // [ '35774097' ] github id of @dhadrien
+  // [ '35774097' ] GitHub id of @dhadrien
   console.log(result.getUserIds(AuthType.TWITTER));
-  // [ '2390703980' ] twitter id of @dhadrien_
+  // [ '2390703980' ] Twitter id of @dhadrien_
   console.log(result.getUserIds(AuthType.EVM_ACCOUNT));
   // [
   //   '0x8ab1760889f26cbbf33a75fd2cf1696bfccdc9e6', // dhadrien.sismo.eth
   //   '0xa4c94a6091545e40fc9c3e0982aec8942e282f38' // requested wallet auth
   // ]
   console.log(result.getUserIds(AuthType.TELEGRAM));
-  // [ '875608110' ] // telegram id of @dhadrien 
+  // [ '875608110' ] // Telegram id of @dhadrien 
 })()
 ```
 
@@ -460,8 +458,8 @@ contract MyContract is SismoConnect {
   {}
 
   function verifySismoConnectResponse(bytes memory response) public {
-    // Recreate the request made in the fontend to verify the proof
-    // We will verify the Sismo Connect Response containing the ZK Proofs against it
+    // Recreate the request made in the front end to verify the proof
+    // We will verify the Sismo Connect Response containing the ZK proofs against it
     AuthRequest[] memory auths = new AuthRequest[](6);
     auths[0] = _authRequestBuilder.build({authType: AuthType.VAULT});
     auths[1] = _authRequestBuilder.build({authType: AuthType.EVM_ACCOUNT});
@@ -535,7 +533,7 @@ contract MyContract is SismoConnect {
     uint256[] memory evmAccountIds = SismoConnectHelper.getUserIds(result, AuthType.EVM_ACCOUNT);
 
     console.log("Vault ID: %s", vaultId);
-    console.log("Github ID: %s", githubId);
+    console.log("GitHub ID: %s", githubId);
     console.log("Telegram ID: %s", telegramId);
     console.log("First EVM Account ID: %s", evmAccountIds[0]);
     console.log("Second EVM Account ID: %s", evmAccountIds[1]);
@@ -543,4 +541,4 @@ contract MyContract is SismoConnect {
 }
 ```
 
-Refer to the [Sismo Connect Solidity Library](technical-documentation/packages/solidity.md), the [onchain app boilerplate](run-example-apps/onchain-sample-project.md) or the [Onchain Tutorial](tutorials/tuto.md) for more information.
+Refer to the [Sismo Connect Solidity Library](technical-documentation/packages/solidity.md), the [onchain app boilerplate](run-example-apps/onchain-sample-project.md) or the [onchain tutorial](tutorials/tuto.md) for more information.

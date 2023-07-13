@@ -1,14 +1,14 @@
 # Sismo Connect Configuration
 
-The `SismoConnectConfiguration` is the first object to understand when starting Sismo Connect integration in your application. Its main feature is to reference the `appId` you got from the **Sismo Factory** [when you created a new Sismo Connect App](../tutorials/create-a-sismo-connect-app.md), it will then enable you to request proofs from your users and verify them.
+The `SismoConnectConfiguration` is the first object to understand when starting Sismo Connect integration in your application. Its main feature is to reference the `appId` you got from the **Sismo Factory** [when you created a new Sismo Connect app](../tutorials/create-a-sismo-connect-app.md). It will then enable you to request proofs from your users and verify them.
 
 ## Type definitions&#x20;
 
 The `SismoConnectConfiguration` is an object with the following properties:
 
 * `appId` (required): the Sismo Connect application identifier that you have created on the Sismo Factory.
-* `vault.impersonate` (optional): by default set to `null`. The list of Data Source that you want to impersonate, they wll be automatically be added to your developer vault.
-* `displayRawResponse` (optional): by default set to `false`. If set to `true`, the Sismo Data Vault App will display the proof generated in a modal and will not redirect to your application once the proof is generated. It can be useful in development.&#x20;
+* `vault.impersonate` (optional): by default set to `null`. The list of Data Sources that you want to impersonate. They will be automatically added to your developer Vault.
+* `displayRawResponse` (optional): by default set to `false`. If set to `true`, the Sismo Data Vault app will display the proof generated in a modal and will not redirect to your application once the proof is generated. It can be useful in development.&#x20;
 * `sismoApiUrl` (optional): API endpoint to fetch group information.
 * `vaultAppBaseUrl` (optional): by default set to `https://vault-beta.sismo.io/`.
 
@@ -34,7 +34,7 @@ As far as the configurations are the same in the client and server packages, **w
 
 Requests are made in the front end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
 
-Requests are then verified either in a backend using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
+Requests are then verified either in a back end using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
 
 {% tabs %}
 {% tab title="React.js" %}
@@ -53,7 +53,7 @@ const config: SismoConnectConfig = {
     config={config}
 
     // Sismo Connect Request Data
-    // request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
+    // request proof of Data Sources ownership (e.g EVM, GitHub, Twitter or Telegram)
     auths={[{ authType: AuthType.GITHUB }]}
     // request proof of Data Group memberships of source
     // (e.g part of NFT owners, Dao Participants, GitHub commiters)
@@ -69,7 +69,7 @@ const config: SismoConnectConfig = {
 {% endtab %}
 
 {% tab title="Typescript (client)" %}
-In your frontend application, the most basic Sismo Connect Config looks like this:
+In your front-end application, the most basic Sismo Connect Config looks like this:
 
 ```typescript
 import { SismoConnectConfig, SismoConnect } from "@sismo-core/sismo-connect-client";
@@ -99,7 +99,7 @@ const sismoConnect = SismoConnect({config});
 {% endtab %}
 
 {% tab title="Solidity (foundry)" %}
-In your Smart Contract, the most basic Sismo Connect Config looks like this:
+In your smart contract, the most basic Sismo Connect Config looks like this:
 
 ```solidity
 import "sismo-connect-solidity/SismoLib.sol"; // <--- add a Sismo Connect import
@@ -117,7 +117,7 @@ contract MyContract is SismoConnect {
 
 ## Impersonating accounts in development
 
-Impersonating accounts allows you to be redirected to a Sismo Data Vault App with fake accounts imported that you defined in the `SismoConnectConfig` object. The impersonated Vault only exists in your browser memory. It does not affect your personal Data Vault.&#x20;
+Impersonating accounts allows you to be redirected to a Sismo Data Vault app with fake accounts imported that you defined in the `SismoConnectConfig` object. The impersonated Vault only exists in your browser memory. It does not affect your personal Data Vault.&#x20;
 
 It is useful in development to test your application flow. You are able to generate a proof based on a Sismo Connect request for which you would not be eligible otherwise.&#x20;
 
@@ -152,7 +152,7 @@ const config: SismoConnectConfig = {
     config={config}
     
     // Sismo Connect Request
-    // request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
+    // request proof of Data Sources ownership (e.g EVM, GitHub, Twitter or Telegram)
     auths={[{ authType: AuthType.GITHUB }]}
     // request proof of Data Group memberships of source
     // (e.g part of NFT owners, Dao Participants, GitHub commiters)
@@ -168,7 +168,7 @@ const config: SismoConnectConfig = {
 {% endtab %}
 
 {% tab title="Typescript (client)" %}
-In your frontend application, the impersonation Sismo Connect Config looks like this:
+In your front-end application, the impersonation Sismo Connect Config looks like this:
 
 ```typescript
 import { SismoConnectConfig, SismoConnect } from "@sismo-core/sismo-connect-client";
@@ -216,7 +216,7 @@ const sismoConnect = SismoConnect({config});
 {% endtab %}
 
 {% tab title="Solidity (foundry)" %}
-In your Smart Contract, the most basic Sismo Connect Config looks like this:
+In your smart contract, the most basic Sismo Connect Config looks like this:
 
 ```solidity
 import "sismo-connect-solidity/SismoLib.sol"; // <--- add a Sismo Connect import

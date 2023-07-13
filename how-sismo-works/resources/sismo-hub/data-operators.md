@@ -2,13 +2,13 @@
 
 #### Data Operators
 
-Data Operators is an helper to create new groups by combining existing groups.
+Data Operators are helpers to create new Data Groups by combining existing ones.
 
-Currently, there are 3 data operators:
+Currently, there are 3 Data Operators:
 
-* `Union`: join multiples groups data together
-* `Intersection`: take the intersection between 2 groups data
-* `Map`: map values of a group data with an other value
+* `Union`: join multiples groups of data together
+* `Intersection`: take the intersection between 2 groups of data
+* `Map`: map values of a group data with another value
 * `Aggregation`: aggregate the value with multiples groups&#x20;
 
 ```typescript

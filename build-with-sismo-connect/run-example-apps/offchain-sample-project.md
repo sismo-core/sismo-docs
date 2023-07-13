@@ -1,16 +1,16 @@
 # Offchain Boilerplate
 
-This boilerplate can be used as a base to start coding offchain applications that use Sismo Connect. It is using Next.js for frontend and backend.
+This boilerplate can be used as a base to start coding offchain applications that use Sismo Connect. It is using Next.js for front ends and back ends.
 
-You are invited to modify:
+You are invited to modify the following:
 
-* `front/src/app/page.tsx` , the code of the frontend using Sismo Connect React Button to request ZK Proofs from users.
-* &#x20;`src/app/api/verify/route.ts` , the backend code using Sismo Connect Typescrip library to verify ZK Proofs
+* `front/src/app/page.tsx` , the code of the front end using the Sismo Connect React Button to request ZK proofs from users.
+* &#x20;`src/app/api/verify/route.ts` , the back-end code using the Sismo Connect TypeScript library to verify ZK proofs.
 
 This boilerplate implements a simple user authentication to a server.
 
 {% hint style="success" %}
-Use the [Sismo Connect Cheatsheet](../sismo-connect-cheatsheet.md) to chose your own data requests
+Use the [Sismo Connect Cheatsheet](../sismo-connect-cheatsheet.md) to choose your own data requests
 {% endhint %}
 
 ## Prerequisites
@@ -29,7 +29,7 @@ In a first terminal:
 git clone https://github.com/sismo-core/sismo-connect-boilerplate-offchain.git
 cd sismo-connect-boilerplate-offchain
 
-# install frontend / backend dependencies
+# install front-end/back-end dependencies
 yarn
 ```
 
@@ -39,7 +39,7 @@ In a new terminal:
 
 ```bash
 # this will start your Next.js app
-# the frontend is available on http://localhost:3000/
+# the front end is available on http://localhost:3000/
 # it also starts a local backend
 yarn dev
 ```
@@ -49,5 +49,5 @@ After this command, you will have your local application running on [http://loca
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-06-16 à 22.20.46.png" alt=""><figcaption><p>Running app on <a href="http://localhost:3000">http://localhost:3000</a></p></figcaption></figure>
 
 {% hint style="success" %}
-By default, the boilerplate lets you impersonate accounts to be eligible, if you want to learn more about it you can read about the [Sismo Connect Configuration](../technical-documentation/sismo-connect-configuration.md).
+By default, the boilerplate lets you impersonate accounts to be eligible for the airdrop. If you want to learn more about it, you can read about the [Sismo Connect Configuration](../technical-documentation/sismo-connect-configuration.md).
 {% endhint %}

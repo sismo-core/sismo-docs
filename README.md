@@ -1,5 +1,5 @@
 ---
-description: Sovereign Identity Aggregator and Cryptonative SSO
+description: Sovereign identity aggregator and crypto-native SSO
 cover: .gitbook/assets/Gibook Banner1_1900x400.png
 coverY: 0
 layout:
@@ -22,7 +22,7 @@ layout:
 
 Sismo leverages zero-knowledge proofs (ZKPs) and privacy-preserving technologies to **enable** **users to aggregate their identities and selectively disclose personal data** to applications.&#x20;
 
-By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain personal data that was previously inaccessible, while respecting users' privacy.**
+By using Sismo Connect, an easy-to-integrate single sign-on (SSO), applications **can now obtain personal data that was previously inaccessible, while respecting user privacy.**
 
 [Sismo Connect](./#sismo-connect-the-crypto-native-sso) aims to replace non-sovereign SSOs such as Google Connect and improve limited SSOs such as Wallet Connect.&#x20;
 
@@ -30,9 +30,9 @@ By using Sismo Connect, an easy-to-integrate SSO, applications **can now obtain 
 
 ## Data Vault: Sovereign Identity Aggregator
 
-Users aggregate their identity by adding Data Sources to their sovereign, local and private [Data Vault](how-sismo-works/core-components/what-is-the-data-vault.md).
+Users aggregate their identity by adding Data Sources to their private, local and sovereign [Data Vault](how-sismo-works/core-components/what-is-the-data-vault.md).
 
-The Data Vault currently supports the following types of Data Sources: Ethereum wallets, GitHub, Twitter or Telegram accounts. Users can generate ZK Proofs from their Data Sources, enabling them to reveal data to applications in a sovereign way.
+The Data Vault currently supports the following types of Data Sources: Ethereum wallets, GitHub, Twitter or Telegram accounts. Users can generate ZK proofs from their Data Sources, enabling them to reveal data to applications in a sovereign way.
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>What a Data Vault looks like</p></figcaption></figure>
 
@@ -40,9 +40,9 @@ The Data Vault currently supports the following types of Data Sources: Ethereum 
 You can create your own Data Vault and start aggregating your identity [here](https://vault-beta.sismo.io/).
 {% endhint %}
 
-## Sismo Connect: The Cryptonative SSO
+## Sismo Connect: The Crypto-Native SSO
 
-Sismo Connect is a cryptonative single sign-on method (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to obtain users' personal data by requesting and verifying ZK proofs.
+Sismo Connect is a crypto-native single sign-on (SSO) for onchain and offchain apps. Sismo Connect makes it easy for developers to access personal data without infringing on user privacy by requesting and verifying ZK proofs.
 
 {% hint style="success" %}
 Experience Sismo Connect on the [Demo App Store](https://demo.apps.sismo.io)!
@@ -50,20 +50,20 @@ Experience Sismo Connect on the [Demo App Store](https://demo.apps.sismo.io)!
 
 <figure><img src=".gitbook/assets/Sismo Connect Flow (4).png" alt=""><figcaption></figcaption></figure>
 
-Integration is simple with just a few lines of code: import the front-end package or React button to make Sismo Connect requests, and verify proofs in your backend/ smart contracts using Sismo’s Solidity or TypeScript package.
+Integration is simple with just a few lines of code: import the front-end package or React button to make Sismo Connect requests, and verify proofs in your back end/smart contracts using Sismo’s Solidity or TypeScript package.
 
-Applications can request many data at once. There exist two types request that can be made:
+With Sismo Connect, applications can request data from multiple sources at once. There are two types of requests that can be made:
 
-* authentication: ZK Proof of Data Source ownership. (Ethereum wallets, GitHub, Twitter or Telegram accounts)
-* disclosure of anonymised personal data: ZK Proofs of Data Source inclusion in a specific Data Group (+ claim about its value in the group).&#x20;
+* **Authentication**: ZK proof of Data Source ownership (e.g. Ethereum wallets, GitHub, Twitter or Telegram accounts).
+* **Disclosure of anonymized personal data**: ZK proofs of Data Source inclusion in a specific Data Group (e.g. GR15 contributor).
 
 {% hint style="info" %}
-Data Groups are sets of Data Sources where each Data Source has an associated value.
+Data Groups are sets of Data Sources in which each Data Source has an associated value.
 {% endhint %}
 
 <details>
 
-<summary>Concrete examples Data Groups and ZK Proofs you can request from users</summary>
+<summary>Concrete examples Data Groups and ZK proofs you can request from users</summary>
 
 ```json
 { // "Stand With Crypto" NFT Minters Data Group
@@ -81,12 +81,12 @@ Data Groups are sets of Data Sources where each Data Source has an associated va
 }
 ```
 
-* All owners of these wallets can create a ZK Proof that they are part of this group
+* All owners of these wallets can generate a ZK proof attesting that they are part of this group
 
 <!---->
 
-* owner of `0x70ddb5abf21202602b57f4860ee1262a594a0086` can create a ZK Proof that they are part of the group with value > 10 (e.g minted more than 10 NFTs)
-* owner of 0xa2bf1b0a7e079767b4701b5a1d9d5700eb42d1d1 can create a ZK Proof that they are part of the group with value = 21 (e.g minted exactly 2 NFT)
+* The owner of `0x70ddb5abf21202602b57f4860ee1262a594a0086` can generate a ZK proof attesting that they are part of this group with a value > 10 (e.g, minted more than 10 NFTs)
+* The owner of 0xa2bf1b0a7e079767b4701b5a1d9d5700eb42d1d1 can generate a ZK proof attesting that they are part of this group with a value = 2 (e.g, minted exactly 2 NFTs)
 
 
 
@@ -108,12 +108,12 @@ Data Groups are sets of Data Sources where each Data Source has an associated va
 }
 ```
 
-* All owners of these wallets can create a ZK Proof that they are part of this group
+* All owners of these wallets can generate a ZK proof attesting that they are part of this group
 
 <!---->
 
-* owner of `dhadrien.eth` can create a ZK Proof that they are part of the group with value > 2 (e.g community member with level > 2)
-* owner of  @wojtekwtf on twitter can create  a ZK Proof that they are part of the group with value = 3 (e.g community member with level 3)
+* The owner of `dhadrien.eth` can generate a ZK proof attesting that they are part of the group with a value > 2 (e.g, community member with level > 2)
+* The owner of  @wojtekwtf on Twitter can generate a ZK proof attesting that they are part of the group with a value = 3 (e.g, community member with level 3)
 
 
 
@@ -123,26 +123,25 @@ Examples of Data Groups:
 
 | Data Group Examples                                                                                                   | Members (Data Sources)                                                         | Value for each Data Source               |
 | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------- |
-| ["Stand With Crypto" NFT Minters](https://factory.sismo.io/groups-explorer?search=0xfae674b6cba3ff2f8ce2114defb200b1) | Wallets of minters                                                             | number of NFT minted                     |
-| [Gitcoin Passport Holders](https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12)        | Wallets of Gitcoin Passport holders                                            | sybil-resistant score                    |
-| [Sismo Hub Github Contributors ](https://factory.sismo.io/groups-explorer?search=0xda1c3726426d5639f4c6352c2c976b87)  | Github accounts of contributors to sismo-core/sismo-hub repo                   | number of contributions                  |
-| [ENS DAO Voters](https://factory.sismo.io/groups-explorer?search=0x85c7ee90829de70d0d51f52336ea4722)                  | Wallets of voters in ENS DAO                                                   | number of votes                          |
-| [Sismo Community Members](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c)         | Wallets, GitHub, Telegram and twitter accounts of all people that helped Sismo | level of their contributions (1, 2 or 3) |
+| ["Stand With Crypto" NFT Minters](https://factory.sismo.io/groups-explorer?search=0xfae674b6cba3ff2f8ce2114defb200b1) | Wallets of minters                                                             | Number of NFT minted                     |
+| [Gitcoin Passport Holders](https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12)        | Wallets of Gitcoin Passport holders                                            | Sybil-resistant score                    |
+| [Sismo Hub GitHub Contributors ](https://factory.sismo.io/groups-explorer?search=0xda1c3726426d5639f4c6352c2c976b87)  | GitHub accounts of contributors to sismo-core/sismo-hub repo                   | Number of contributions                  |
+| [ENS DAO Voters](https://factory.sismo.io/groups-explorer?search=0x85c7ee90829de70d0d51f52336ea4722)                  | Wallets of voters in ENS DAO                                                   | Number of votes                          |
+| [Sismo Community Members](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c)         | Wallets, GitHub, Telegram and Twitter accounts of all people that helped Sismo | Level of their contributions (1, 2 or 3) |
 
 {% hint style="info" %}
-Anyone can [create a new Data Group](data-groups/data-groups-and-how-to-create-them/).&#x20;
+Anyone can [create a new Data Group](data-groups/data-groups-and-creation/).&#x20;
 {% endhint %}
 
 <table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href=".gitbook/assets/AppStore.png">AppStore.png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href=".gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
 
 ## Case Study: Sybil-Resistant Airdrop from Privately Aggregated Data
 
-SafeDrop is a Sybil-resistant and privacy-preserving ERC20 airdrop that distributes AIR tokens to users proportionally based on their reputation, aggregated from diverse sources of data (EVM wallets, Telegram, Twitter and GitHub accounts).
+SafeDrop is a Sybil-resistant and privacy-preserving ERC20 airdrop that distributes $AIR tokens to users proportionally based on their reputation, aggregated from diverse sources of data (EVM wallets, Telegram, Twitter and GitHub accounts).
 
 <figure><img src=".gitbook/assets/SafeDrop_Case Study (2).png" alt=""><figcaption></figcaption></figure>
 
-By integrating Sismo Connect, SafeDrop users can generate a ZK proof to establish they own data in their accounts that make them eligible for the airdrop. \
-No connection between these accounts and the airdrop destination address is ever made.
+By integrating Sismo Connect, SafeDrop users can generate a ZK proof to establish ownership of the data that makes them eligible for the airdrop. No connection between these accounts and the airdrop destination address is ever made.
 
 {% hint style="success" %}
 Read the full case study [here](https://case-studies.sismo.io/db/safe-drop).

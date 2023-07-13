@@ -5,7 +5,7 @@ coverY: 0
 
 # Group Generators
 
-Groups are a reusable tool used by Sismo to generate available Data Groups for proving schemes.
+Groups are a reusable tool used by Sismo to generate available Data Groups for [proving schemes](../../core-components/proving-schemes/).
 
 You will find more information on what are groups in this section:
 
@@ -19,8 +19,8 @@ You will be able to create your own group of accounts (Ethereum addresses, Githu
 
 **Here is a complete tutorial describing all the group creation process steps:**
 
-{% content-ref url="../../../data-groups/data-groups-and-how-to-create-them/create-your-group-generator.md" %}
-[create-your-group-generator.md](../../../data-groups/data-groups-and-how-to-create-them/create-your-group-generator.md)
+{% content-ref url="../../../data-groups/data-groups-and-creation/create-your-group-generator.md" %}
+[create-your-group-generator.md](../../../data-groups/data-groups-and-creation/create-your-group-generator.md)
 {% endcontent-ref %}
 
 The following documentation aims to describe the code in a more theoretical way, we strongly recommend doing the tutorial to understand what the code below is for, especially for newcomers.

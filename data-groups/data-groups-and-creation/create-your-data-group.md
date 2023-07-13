@@ -13,7 +13,7 @@ If you are a developer and want to build your own customizable Data Group, go ch
 {% endhint %}
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon. We would love to talk to you and meet you there. **All new Groups under 100k accounts are automatically deployed**.
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon. We would love to talk to you and meet you there. **All new Data Groups under 100k accounts are automatically deployed**.
 {% endhint %}
 
 ## What are Data Groups?

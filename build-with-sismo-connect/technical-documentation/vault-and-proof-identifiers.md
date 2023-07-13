@@ -1,10 +1,10 @@
 ---
-description: App-specific anonymous user ID
+description: App-specific anonymous user ID.
 ---
 
 # Vault Identifiers
 
-Sismo uses zero-knowledge proofs (ZKPs) to let users prove ownership/group membership of their Data Sources. Personal data (e.g I'm owner an NFT from a collection) can be revealed to applications integrated with Sismo Connect without revealing the associated Data Source.&#x20;
+Sismo uses zero-knowledge proofs (ZKPs) to let users prove ownership/group membership of their Data Sources. Personal data (e.g. data that proves ownership of an NFT from a specific collection) can be revealed to applications integrated with Sismo Connect without revealing the associated Data Source.&#x20;
 
 For example, users can prove they own a certain NFT (i.e. prove they are part of the group of NFT owners) without revealing the wallet address (i.e. Data Source) holding it.
 
@@ -34,11 +34,11 @@ The use of an application's **`appId`** in the formula ensures the uniqueness of
 
 ### Deterministic
 
-As a Vault Identifier is deterministically derived from a `vaultSecret` and `appId` , a single user cannot have multiple identifiers for a specific application unless they create another Data Vault. However, Data Sources can only be added to a single Data Vault, thus ensuring a user cannot use twice the same Data Source to prove a group memberships without the application knowing it.
+As a Vault Identifier is deterministically derived from a `vaultSecret` and `appId` , a single user cannot have multiple identifiers for a specific application unless they create another Data Vault. However, Data Sources can only be added to a single Data Vault, thus ensuring a user cannot use the same Data Source twice to prove membership in a Data Group without the application being aware.&#x20;
 
 ### Native Data Sources
 
-In addition, Vault Identifiers can be used as native Data Sources in the Sismo ecosystem. This allows for creating Data Groups of Vault Identifiers, which can be used by users to make group membership claims on additional Sismo Connect applications.
+In addition, Vault Identifiers can be used as native Data Sources in the Sismo ecosystem. This allows for the creation of Data Groups containing Vault Identifiers, which can be used by users to make group membership claims on additional Sismo Connect applications.
 
 ## Case Studies
 

@@ -13,9 +13,9 @@
   * [Onchain Boilerplate](build-with-sismo-connect/run-example-apps/onchain-sample-project.md)
   * [Offchain Boilerplate](build-with-sismo-connect/run-example-apps/offchain-sample-project.md)
 * [Tutorials](build-with-sismo-connect/tutorials/README.md)
-  * [Get your appId - Create a Sismo Connect App](build-with-sismo-connect/tutorials/create-a-sismo-connect-app.md)
-  * [Onchain Tutorial (1/2): code your Airdrop contract with privately-aggregated data](build-with-sismo-connect/tutorials/tuto.md)
-  * [Onchain Tutorial (2/2): deploy your  Airdrop contract](build-with-sismo-connect/tutorials/deploy-your-contracts.md)
+  * [Get Your appId - Create a Sismo Connect App](build-with-sismo-connect/tutorials/create-a-sismo-connect-app.md)
+  * [Onchain Tutorial (1/2): Code Your Airdrop Contract With Privately-Aggregated Data](build-with-sismo-connect/tutorials/tuto.md)
+  * [Onchain Tutorial (2/2): Deploy Your  Airdrop Contract](build-with-sismo-connect/tutorials/deploy-your-contracts.md)
 * [Technical Documentation](build-with-sismo-connect/technical-documentation/README.md)
   * [Sismo Connect Configuration](build-with-sismo-connect/technical-documentation/sismo-connect-configuration.md)
   * [Auths](build-with-sismo-connect/technical-documentation/auths.md)
@@ -31,10 +31,10 @@
 
 ## Data Groups
 
-* [Data Groups & How to Create them?](data-groups/data-groups-and-how-to-create-them/README.md)
-  * [Factory Guide: Create a Data Group in 5 Minutes](data-groups/data-groups-and-how-to-create-them/create-your-data-group.md)
-  * [Sismo Hub Guide: Create Data Groups Programmatically](data-groups/data-groups-and-how-to-create-them/create-your-group-generator.md)
-  * [Sismo Hub Guide: Add a Data Provider to the Sismo Factory](data-groups/data-groups-and-how-to-create-them/create-your-data-provider.md)
+* [Data Groups & Creation](data-groups/data-groups-and-creation/README.md)
+  * [Factory Guide: Create a Data Group in 5 Minutes](data-groups/data-groups-and-creation/create-your-data-group.md)
+  * [Sismo Hub Guide: Create Data Groups Programmatically](data-groups/data-groups-and-creation/create-your-group-generator.md)
+  * [Sismo Hub Guide: Add a Data Provider to the Sismo Factory](data-groups/data-groups-and-creation/create-your-data-provider.md)
 
 ## How Sismo Works
 
@@ -55,21 +55,22 @@
     * [Command Line Interface](how-sismo-works/resources/sismo-hub/command-line-interface.md)
   * [Sismo API](how-sismo-works/resources/sismo-api/README.md)
     * [API Links](how-sismo-works/resources/sismo-api/api-links.md)
-    * [Query from a client](how-sismo-works/resources/sismo-api/query-from-a-client.md)
+    * [Query From a Client](how-sismo-works/resources/sismo-api/query-from-a-client.md)
     * [Group](how-sismo-works/resources/sismo-api/group/README.md)
       * [Get groups](how-sismo-works/resources/sismo-api/group/get-groups.md)
       * [Get group snapshots](how-sismo-works/resources/sismo-api/group/get-group-snapshots.md)
-    * [Common parameters](how-sismo-works/resources/sismo-api/common-parameters.md)
-    * [Advanced filtering](how-sismo-works/resources/sismo-api/advanced-filtering.md)
-    * [Other models](how-sismo-works/resources/sismo-api/other-models/README.md)
-      * [Transaction](how-sismo-works/resources/sismo-api/other-models/transaction.md)
+    * [Common Parameters](how-sismo-works/resources/sismo-api/common-parameters.md)
+    * [Advanced Filtering](how-sismo-works/resources/sismo-api/advanced-filtering.md)
+    * [Transaction](how-sismo-works/resources/sismo-api/transaction.md)
   * [Deployed Contract Addresses](how-sismo-works/resources/sismo-101.md)
 
 ## Links
 
+* [Sismo Landing Page](https://www.sismo.io/)
 * [Sismo Factory](https://factory.sismo.io/)
 * [Sismo App Store](https://apps.sismo.io)
-* [Sismo Builders Resources](https://resources.sismo.io)
+* [Sismo Builder Resources](https://resources.sismo.io)
 * [GitHub](https://github.com/sismo-core)
 * [Discord](https://discord.gg/xKTMeRUX6u)
 * [Twitter](https://twitter.com/sismo\_eth)
+* [Blog](https://blog.sismo.io/)

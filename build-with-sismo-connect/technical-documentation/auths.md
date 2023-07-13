@@ -7,8 +7,8 @@ Sismo Connect can be used to authenticate a user from multiple sources, either f
 The `AuthRequest` is an object with the following properties:
 
 * `AuthType` (required): defines the type of authentication required. The following authType are currently supported:&#x20;
-  * `VAULT`: Sismo Connect returns the user's vaultId for the application the requested it. It is a deterministic anonymous identifier (hash(userVaultSecret, AppId, ..))\
-    More information about Vault Identifiers [here](vault-and-proof-identifiers.md).
+  * `VAULT`: Sismo Connect returns the user's vaultId for the application that requested it. It is a deterministic anonymous identifier (hash(userVaultSecret, AppId, ..))\
+    See more information about Vault Identifiers [here](vault-and-proof-identifiers.md).
   * `GITHUB`: Sismo Connect returns the user's GitHub account id.&#x20;
   * `TWITTER` Sismo Connect returns the user's Twitter account id.&#x20;
   * `EVM_ACCOUNT`: Sismo Connect returns the user's Ethereum address.
@@ -35,14 +35,12 @@ type AuthRequest = {
 
 ## Integrations
 
-Authentication requests are made in the front end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md).
-
-Requests are then verified either in a back end using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
+Authentication requests are made in the front end using either the [`sismo-connect-react` package](packages/react.md) or the [`sismo-connect-client` package](packages/client.md). Requests are then verified either in a back end using the [`sismo-connect-server` package](packages/server.md) or in a smart contract using the [`sismo-connect-solidity` package](packages/solidity.md).
 
 ### Making an AuthRequest - Front-end integration
 
 {% hint style="info" %}
-Making an `AuthRequest` is only possible in the front end as the request redirects users to the Sismo Data Vault app where users can generate a zero-knowledge proof.
+Making an `AuthRequest` is only possible in the front end as the request redirects users to the Sismo Data Vault app, where users can generate a zero-knowledge proof.
 {% endhint %}
 
 {% tabs %}
@@ -110,10 +108,10 @@ import { SismoConnectButton, AuthType, SismoConnectClientConfig, SismoConnectRes
 {% endtab %}
 
 {% tab title="React Hook" %}
-The `useSismoConnect` hook is available from the [sismo-connect-react package](packages/react.md).  It is a wrapper of the [sismo-connect-client package](packages/client.md).  The `useSismoConnect` hook  exposes the `sismoConnect` variable.&#x20;
+The `useSismoConnect` hook is available from the [sismo-connect-react package](packages/react.md).  It is a wrapper of the [sismo-connect-client package](packages/client.md).  The `useSismoConnect` hook exposes the `sismoConnect` variable.&#x20;
 
 * One or multiple AuthRequests can be made using the `sismoConnect.request()` method available on the `sismoConnect` variable.
-* Response could be received through either:
+* The response could be received through either:
   1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
   2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
 
@@ -176,11 +174,11 @@ if(response || responseBytes) {
 {% endcode %}
 {% endtab %}
 
-{% tab title="Typescript" %}
+{% tab title="TypeScript" %}
 The [`sismo-connect-client` package](packages/client.md) exposes a `SismoConnect` variable.
 
 * One or multiple AuthRequests can be made using the `sismoConnect.request()` method available on a `SismoConnect` instance.
-* Response could be received through either:
+* The response could be received through either:
   1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
   2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
 
@@ -245,9 +243,7 @@ if(response || responseBytes) {
 
 ### Verifying an AuthRequest
 
-{% hint style="info" %}
-Once a user has generated the proof on the Sismo Data Vault App, your application must verify it. This can be made either offchain in your back end or onchain in your smart contract.
-{% endhint %}
+Once a user has generated a ZKP on the Data Vault app, your application must verify it. This can be achieved in onchain smart contracts or offchain back ends.
 
 {% tabs %}
 {% tab title="offchain verification - Node.js" %}
@@ -321,11 +317,11 @@ async function verifyResponse(sismoConnectResponse: SismoConnectResponse) {
 {% endtab %}
 
 {% tab title="onchain verification - Solidity" %}
-The [`sismo-connect-solidity` package](packages/solidity.md) exposes a Sismo Connect Library which can be inherited by your contract either using Foundry or Hardhat.&#x20;
+The [`sismo-connect-solidity` package](packages/solidity.md) exposes a Sismo Connect Library, which can be inherited by your contract either using Foundry or Hardhat.&#x20;
 
 The Sismo Connect Library exposes:&#x20;
 
-* &#x20;a `verify()` function which allows you to verify a proof generated by the [Sismo Vault app](broken-reference) with respect to some requests directly in your contract. The verify() function takes an object containing:&#x20;
+* &#x20;a `verify()` function, which allows you to verify a proof generated by the [Sismo Vault app](broken-reference) with respect to some requests directly in your contract. The verify() function takes an object containing:&#x20;
   1. a `responseBytes` send from the front end,
   2. an `auth` or `auths` corresponding to the authentification request made in the front end.
 * a `buildAuth()` helper to recreate the `AuthRequest` made in the front-end

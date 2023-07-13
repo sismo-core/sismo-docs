@@ -1,6 +1,6 @@
 # Commitment Mapper
 
-The Commitment Mapper, provided by Sismo, is a trusted offchain service housed in an isolated infrastructure. It allows account owners to transform proof of account ownership into proof of secret knowledge. The account owner receives a receipt from the Commitment Mapper, which connects their account to their commitment (e.g., the hash of their secret). This combination of the user's secret and the Commitment Mapper receipt forms the Delegated Proof of Ownership. The commitment can be used in zero-knowledge (ZK) systems as a [Vault or Proof Identifier](../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md).
+The Commitment Mapper, provided by Sismo, is a trusted offchain service housed in an isolated infrastructure. It allows account owners to transform proof of account ownership into proof of secret knowledge. The account owner receives a receipt from the Commitment Mapper, which connects their account to their commitment (e.g., the hash of their secret). This combination of the user's secret and the Commitment Mapper receipt forms the Delegated Proof of Ownership. The commitment can be used in zero-knowledge (ZK) systems as a [Vault Identifier](../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md).
 
 ## How It Works
 
@@ -25,7 +25,7 @@ The user can then use this receipt to prove in a SNARK that they know the secret
 
 ## Why Use The Commitment Mapper?
 
-In constrained environments like zk-SNARK circuits, traditional proofs of ownership become impractically expensive. Sismo alleviates this problem by using the Commitment Mapper signing with an EdDSA address, which is cheaper to prove and verify in a SNARK.
+In constrained environments like zk-SNARK circuits, traditional proofs of ownership become impractically expensive. Sismo alleviates this problem by using the Commitment Mapper signing with an EdDSA address, which is cheaper to prove and verify in a zk-SNARK.
 
 ## Security Model
 
@@ -40,7 +40,7 @@ Sismo follows best practices with high web2 security in mind when deploying the 
 * The Commitment Mapper is executed using an AWS Lambda deployed in an isolated infrastructure, within a dedicated AWS account.
 * Private keys are stored using AWS KMS.
 * Actions made inside the AWS account are traced, stored in another account, and cannot be modified, allowing for precise auditing.
-* Alerts are sent to the entire Sismo team if actions occur inside this AWS account.
+* Alerts are sent to the Sismo team if actions occur inside this AWS account.
 
 {% hint style="info" %}
 The Commitment Mapper code and its terraform deployment are open-source and accessible here: [https://github.com/sismo-core/sismo-commitment-mapper](https://github.com/sismo-core/sismo-commitment-mapper).
@@ -48,4 +48,4 @@ The Commitment Mapper code and its terraform deployment are open-source and acce
 
 ## The Future
 
-Sismo is developing a new version of the Commitment Mapper that will require less trust. Operations within the Commitment Mapper will be executed inside a SNARK and verified onchain.
+Sismo is developing a new version of the Commitment Mapper that will require less trust. Operations within the Commitment Mapper will be executed inside a zk-SNARK and verified onchain.

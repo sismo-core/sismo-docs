@@ -4,7 +4,9 @@ description: Verify proofs from your users
 
 # Sismo Connect Server: Verify Offchain
 
-The Sismo Connect Server is a backend package built on top of the [Hydra-S2 Verifier](../../../how-sismo-works/core-components/proving-schemes/hydra-s2.md) to easily verify proofs from your users off-chain.&#x20;
+The Sismo Connect Server is a back-end package built on top of the [Hydra-S2 Verifier](../../../how-sismo-works/core-components/proving-schemes/hydra-s2.md) to easily verify proofs from your users offchain.&#x20;
+
+The Sismo Connect Server is
 
 <figure><img src="../../../.gitbook/assets/Sismo Connect offchain Flow.png" alt=""><figcaption><p>Sismo Connect offchain Flow</p></figcaption></figure>
 
@@ -27,7 +29,7 @@ Make sure to have at least v18.15.0 as Node version. You can encounter issues wi
 
 ### Configuration
 
-The first step for integrating Sismo Connect in your backend is to create a `sismoConnectServerConfig`. This config will require an `appId` and can be customized with optional fields. You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId ([here is a tutorial](../../tutorials/create-a-sismo-connect-app.md)).
+The first step for integrating Sismo Connect in your back end is to create a `sismoConnectServerConfig`. This config will require an `appId` and can be customized with optional fields. You can go to the [Sismo Factory](https://factory.sismo.io/apps-explorer) to register an appId ([here is a tutorial](../../tutorials/create-a-sismo-connect-app.md)).
 
 This `config` is then used to create a `SismoConnect` instance that will be used to verify proofs.
 
@@ -44,7 +46,7 @@ const sismoConnect = SismoConnect({ config });
 
 ### Verify proofs from your users
 
-Proofs need to be sent from your frontend to your backend with a `SismoConnectResponse`. The `verify` function takes as inputs the `SismoConnectResponse` but also requests to verify that proofs held in the response are cryptographically valid with respect to these requests.
+Proofs need to be sent from your front end to your back end with a `SismoConnectResponse`. The `verify` function takes the `SismoConnectResponse`as inputs but also requests to verify that proofs held in the response are cryptographically valid with respect to these requests.
 
 ```typescript
 import { SismoConnectVerifiedResult, AuthType } from "@sismo-core/sismo-connect-server";

@@ -1,17 +1,20 @@
 # Quickstart
 
-This section targets developers experienced with installation of new tools to their own repositories.
+&#x20;If you have difficulties, head over to the pre-configured [boilerplates](run-example-apps/) or [tutorials](tutorials/). Neither demand experience in our tech stack to get you setup.
 
-&#x20;If you have difficulties, head over to the pre-configured [boilerplates](run-example-apps/) or [tutorials](tutorials/). Neither demand experience in our tech stack to get you setup.&#x20;
+This section is intended for developers who have prior experience with incorporating new tools into their existing repositories.
 
-## Step 1 - Setup: Create your Sismo Connect App
+{% hint style="info" %}
+Having difficulties? Head over to the pre-configured [boilerplates](run-example-apps/) or [tutorials](tutorials/). Neither demand experience with Sismo's tech stack to get set up.
+{% endhint %}
 
-You must create a Sismo Connect App in the [Sismo Factory](https://factory.sismo.io) ([tutorial](tutorials/create-a-sismo-connect-app.md)) and get your appId. this appId will be required both in your frontend and smart contracts/ backend.
+## Step 1 - Setup: Create Your Sismo Connect App
 
-## Step 2 - Request: Integrate Sismo Connect in your frontend
+You must create a Sismo Connect app in the [Sismo Factory](https://factory.sismo.io) ([tutorial](tutorials/create-a-sismo-connect-app.md)) and get your appId. This appId will be required both in your front end and smart contracts/back end.
 
-Your frontend must make a Sismo Connect request, users will be redirected to their Data Vault to generate a ZK Proof and your frontend will receive a Sismo Connect Response from them. \
-This response, containing the ZK Proof, will be verified on your backend/smart contract.
+## Step 2 - Request: Integrate Sismo Connect in Your Front End
+
+Your front end must make a Sismo Connect request for users to be redirected to their Data Vault to generate a ZK proof and send your front end a Sismo Connect Response. This response, containing the ZK proof, will be verified on your back end/smart contract.
 
 {% hint style="success" %}
 Check the [Sismo Connect Cheatsheet](sismo-connect-cheatsheet.md) to see examples of requests.
@@ -34,19 +37,20 @@ npm install @sismo-core/sismo-connect-react
 {% endtabs %}
 
 {% hint style="info" %}
-<mark style="color:purple;">`@sismo-core/sismo-connect-client`</mark> is also available for non react frontend. ([docs](technical-documentation/packages/client.md))
+<mark style="color:purple;">`@sismo-core/sismo-connect-client`</mark> is also available for non-React front ends. ([docs](technical-documentation/packages/client.md))
 {% endhint %}
 
 2. Create your Sismo Connect config
 
 ```typescript
+// sismo-connect-config.ts
 
 import { SismoConnectConfig } from "@sismo-core/sismo-connect-react";
 
-const config: SismoConnectConfig = {
+export const config: SismoConnectConfig = {
   appId: "0xf4977993e52606cfd67b7a1cde717069", // replace with your appId
   // vault: {
-  //   // For development purposes insert the Data Sources that you want to impersonate here
+  //   // For development purposes, insert the Data Sources that you want to impersonate here
   //   // Never use this in production
   //   impersonate: [
   //     // EVM
@@ -63,85 +67,50 @@ const config: SismoConnectConfig = {
   //   ],
   // },
   // displayRawResponse: true,
+
 };
 ```
 
 {% hint style="info" %}
-[Learn more](technical-documentation/sismo-connect-configuration.md) about Sismo Connect config and impersonation mode
+[Learn more](technical-documentation/sismo-connect-configuration.md) about Sismo Connect config and impersonation mode.
 {% endhint %}
 
 3. Use our React Button to make Sismo Connect Requests
 
 ```typescript
+// Component.tsx
 
-// in nextjs page.tsx
-"use client";
+import { SismoConnectButton, AuthType, SismoConnectResponse } from "@sismo-core/sismo-connect-react";
+import { config } from "./sismo-connect-config.ts";
 
-import {
-  SismoConnectButton,
-  AuthType,
-  SismoConnectResponse,
-} from "@sismo-core/sismo-connect-react";
-
-export default function Home() {
-  return (
-    <SismoConnectButton
-      config={{
-        appId: "0xf4977993e52606cfd67b7a1cde717069", // replace with your appId
-        // vault: {
-        //   // For development purposes insert the Data Sources that you want to impersonate here
-        //   // Never use this in production
-        //   impersonate: [
-        //     // EVM
-        //     "dhadrien.sismo.eth",
-        //     "leo21.sismo.eth",
-        //     "0xa4c94a6091545e40fc9c3e0982aec8942e282f38",
-        //     "vitalik.eth",
-        //     // Github
-        //     "github:dhadrien",
-        //     // Twitter
-        //     "twitter:dhadrien_",
-        //     // Telegram
-        //     "telegram:dhadrien",
-        //   ],
-        // },
-        // displayRawResponse: true,
-      }}
-      // request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
-      auths={[{ authType: AuthType.GITHUB }]}
-      // request zk proof that Data Source are part of a group
-      // (e.g NFT ownership, Dao Participation, GitHub commits)
-      claims={[{ groupId: "0x85c7ee90829de70d0d51f52336ea4722" }]} // ENS DAO Voters
-      // request message signature from users.
-      signature={{ message: "I vote Yes to Privacy" }}
-      onResponse={async (response: SismoConnectResponse) => {
-        await fetch("/api/verify", {
-          method: "POST",
-          body: JSON.stringify(response),
-        });
-        // to call contracts
-        // onResponseBytes={async (response: SismoConnectResponse) => {
-        //   await myContract.claimWithSismo(response.responseBytes);
-        // }
-      }}
-    />
-  );
-}
+<SismoConnectButton
+    config={config}
+    // request proof of Data Sources ownership (e.g, EVM, GitHub, Twitter or Telegram)
+    auths={[{ authType: AuthType.GITHUB }]}
+    // request zk proof that Data Source are part of a group
+    // (e.g NFT ownership, DAO Participation, GitHub commits)
+    claims={[{groupId: ENS_DAO_VOTERS_GROUP_ID}]}
+    // request message signature from users.
+    signature={{message: "I vote Yes to Privacy"}}
+    onResponseBytes={(response: string) => {
+        // call your contract/back end with the response as bytes
+    }}
+/>
 ```
 
 {% hint style="success" %}
-Check the [Sismo Connect Cheatsheet ](sismo-connect-cheatsheet.md) to get a large set of interesting requests
+Check the [Sismo Connect Cheatsheet ](sismo-connect-cheatsheet.md)to get a large set of interesting requests.
 {% endhint %}
 
-## Step 3 - Verify: Sismo Connect in your Smart Contracts/ Backends
+## Step 3 - Verify: Sismo Connect in Your Smart Contracts/Back Ends
 
-Your backend/smart contract will receive a Sismo Connect Response forwarded from your frontend that you must verify.
+Your back end/smart contract will receive a Sismo Connect Response forwarded from your front end that you must verify.
 
 1. Install the Sismo Connect Library
 
 <details>
 
-<summary>EVM Chains supported</summary>
+<summary>Supported EVM Chains</summary>
 
 #### Mainnets
 
@@ -170,7 +139,7 @@ Your backend/smart contract will receive a Sismo Connect Response forwarded from
 Make sure to have [Foundry](https://book.getfoundry.sh/getting-started/installation) installed.
 {% endhint %}
 
-Install the forge dependency:
+Install the Forge dependency:
 
 ```bash
 foundryup
@@ -192,7 +161,7 @@ yarn add @sismo-core/sismo-connect-solidity
 
 #### Import the library
 
-In your solidity file:
+In your Solidity file:
 
 ```solidity
 import "@sismo-core/sismo-connect-solidity/contracts/libs/SismoLib.sol";
@@ -201,7 +170,7 @@ import "@sismo-core/sismo-connect-solidity/contracts/libs/SismoLib.sol";
 {% endtabs %}
 {% endtab %}
 
-{% tab title="Offchain - Verify in a Backend" %}
+{% tab title="Offchain - Verify in a Back End" %}
 Install the TypeScript library
 
 {% tabs %}
@@ -214,10 +183,10 @@ yarn add @sismo-core/sismo-connect-server
 {% endtab %}
 {% endtabs %}
 
-2. Reuse your Sismo Connect config and verify Sismo Connect responses sent from your frontend
+2. Reuse your Sismo Connect config and verify Sismo Connect responses sent from your front end
 
 {% hint style="warning" %}
-The config you use in your smart contract/ backend must exactly match the one from your frontend.
+The config you use in your smart contract/backend must exactly match the one from your front end.
 {% endhint %}
 
 {% tabs %}
@@ -247,8 +216,8 @@ contract Airdrop is SismoConnect {
 </code></pre>
 {% endtab %}
 
-{% tab title="Offchain - Verify in a Backend" %}
-Reuse the Sismo Connect configuration from your frontend
+{% tab title="Offchain - Verify in a Back End" %}
+Reuse the Sismo Connect configuration from your front end
 
 ```solidity
 // sismo-connect-config.ts
@@ -260,7 +229,7 @@ export const config: SismoConnectConfig = {
 };
 ```
 
-Create an api route to receive the Sismo Connect response and verify it.
+Create an API route to receive the Sismo Connect response and verify it.
 
 ```typescript
 // my-api.ts
@@ -273,7 +242,7 @@ const sismoConnect = SismoConnect(sismoConnectConfig);
 app.post('/api', (req, res) => {
   const { response } = req.body;
   const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
-      / request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
+      / request proof of Data Sources ownership (e.g EVM, GitHub, Twitter or Telegram)
     auths=[{ authType: AuthType.GITHUB }]
     // request group membership (e.g NFT ownership, Dao Participation, GitHub commits)
     claims=[{groupId: ENS_DAO_VOTERS_GROUP_ID}]
@@ -298,4 +267,3 @@ const sismoConnect = SismoConnect(sismoConnectConfig);
 ```
 {% endtab %}
 {% endtabs %}
-

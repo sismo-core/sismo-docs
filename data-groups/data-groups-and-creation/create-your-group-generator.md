@@ -1,5 +1,5 @@
 ---
-description: Developer Tutorial
+description: Developer tutorial
 ---
 
 # Sismo Hub Guide: Create Data Groups Programmatically

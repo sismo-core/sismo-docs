@@ -22,7 +22,7 @@ You can find the Solidity Library GitHub repository [here](https://github.com/si
 Make sure to have [Foundry](https://book.getfoundry.sh/getting-started/installation) installed.
 {% endhint %}
 
-Install the forge dependency:
+Install the Forge dependency:
 
 ```bash
 foundryup
@@ -37,7 +37,7 @@ echo $'sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect
 
 #### Import the library
 
-In your solidity file:
+In your Solidity file:
 
 ```solidity
 import "sismo-connect-solidity/SismoLib.sol"; 
@@ -79,7 +79,7 @@ contract MyContract is SismoConnect { // inherits from Sismo Connect library
 
 You will then need to create some request objects to check that the proofs from your users are valid with respect to these requests.
 
-Finally, use the `verify()` function to verify the proof stored in `sismoConnectResponse` with respect to some requests. For example, here we verify that the proof in the `sismoConnectResponse` is cryptographically valid for a certain `ClaimRequest`, `AuthRequests` and `SignatureRequest`.&#x20;
+Finally, use the `verify()` function to verify the proof stored in `sismoConnectResponse` with respect to some requests. For example, below we verify that the proof in the `sismoConnectResponse` is cryptographically valid for a certain `ClaimRequest`, `AuthRequests` and `SignatureRequest`.&#x20;
 
 ```solidity
 function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public {    
@@ -105,7 +105,7 @@ function doSomethingUsingSismoConnect(bytes memory sismoConnectResponse) public 
 }
 ```
 
-If your proof is valid, the contract will continue its execution, otherwise it will reject an error.
+If your proof is valid, the contract will continue its execution, otherwise, it will produce an error.
 
 ## Documentation
 
@@ -125,12 +125,12 @@ function verify(
 
 The function can take these 5 arguments:
 
-* `responseBytes` _(required)_: The response sent back by the [Data Vault](broken-reference). It contains the `appId`, the `namespace`, the `version` and the proofs corresponding to the requests made in the frontend.
+* `responseBytes` _(required)_: The response sent back by the [Data Vault](broken-reference). It contains the `appId`, the `namespace`, the `version` and the proofs corresponding to the requests made in the front end.
 
-The function needs to verify that the proof is cryptographically valid but also that it has been well generated from the requests specified in the frontend. To do this, we also need to setup the same requests in the contract:
+The function needs to verify that the proof is cryptographically valid but also that it has been well generated from the requests specified in the front end. To do this, we also need to set up the same requests in the contract:
 
-* `claim`: The object that holds all the information needed to request a proof of group ownership.
-* `auth`: The object that holds all the information needed to request a proof of account membership.
+* `claim`: The object that holds all the information needed to request a proof of group membership.
+* `auth`: The object that holds all the information needed to request a proof of account ownership.
 * `signature`: It contains the message that the user should sign.
 * `namespace`: The namespace of the application that the contract uses.
 
@@ -138,9 +138,9 @@ And it returns a `SismoConnectVerifiedResult`.
 
 ### `responseBytes` _(required)_
 
-The `responseBytes` is the encoded version of the `sismoConnectResponse`, the response that the frontend received from the Data Vault App.
+The `responseBytes` is the encoded version of the `sismoConnectResponse`, the response that the front end receives from the Data Vault app.
 
-Once decoded here is the type of the `SismoConnectResponse`:
+Once decoded, here is the type of the `SismoConnectResponse`:
 
 ```solidity
 struct SismoConnectResponse {
@@ -160,7 +160,7 @@ struct SismoConnectResponse {
 }
 ```
 
-**`proofs[]`** : The array that contains all the sismoConnectProofs the frontend provides to the contract.\
+**`proofs[]`** : The array that contains all the sismoConnectProofs the front end provides to the contract.\
 A sismoConnectProof contains several objects:
 
 ```solidity
@@ -225,9 +225,9 @@ enum AuthType {
 }
 ```
 
-**`provingScheme`** : The proving scheme that the Data Vault app used to generate the proof and by the verify to verify the proof.
+**`provingScheme`** : The proving scheme that the Data Vault app uses to generate and verify the proof.
 
-**`proofData`** : The proof content.
+**`proofData`** : The proof's content.
 
 **`extraData`** : other data that can be used in the future by other proving schemes. Currently not used in the current proving scheme use: the [Hydra-S2](../../../how-sismo-works/core-components/proving-schemes/hydra-s2.md).
 

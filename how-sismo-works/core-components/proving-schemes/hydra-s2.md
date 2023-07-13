@@ -7,19 +7,15 @@ The [Hydra-S2 ZK proving scheme](https://github.com/sismo-core/hydra-s2-zkps) is
 
 The proving scheme expands on the [Hydra-S1 proving scheme](hydra-s1.md) and introduces the notion of a Vault Identifier while offering a modular way of creating ZK proofs.
 
-### VaultId & Proof Identifiers
+### Vault Identifiers
 
-[VaultId](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md) is a new notion introduced with Hydra-S2; it is an anonymous app-specific identifier that can be utilized as an in-app user ID.
+[VaultId](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md) is a new notion introduced with the Hydra-S2 proving scheme. This VaultId is deterministically generated from a `vaultSecret` and an application identifier (`appId`) by taking the Poseidon hash of these two values.&#x20;
 
-This VaultId is deterministically generated from a `vaultSecret` and an application Identifier (`appId`) by taking the Poseidon hash of these two values.
-
-A [Proof Identifier](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md) can be seen as the nullifier used in Hydra-S1, as far as it is deterministically generated from the Poseidon hash of a hashed sourceSecret and a requestIdentifier. The request Identifier is made of an application id, a group ID, a group timestamp, and a namespace (learn more about it in the [Sismo Connect package documentation](../../../build-with-sismo-connect/technical-documentation/)).
-
-{% hint style="info" %}
-VaultId and Proof Identifiers are two tools with different purposes. VaultId can help you to privately keep track of a user with an anonymous app-specific ID while a Proof Identifier can help you to prevent a user from using the same proof two times in your app.
-{% endhint %}
+This differs from the Proof Identifier used in the Hydra-S1 proving scheme, which functions as a nullifier—preventing the same proof from being used more than once. Meanwhile, a Vault Identifier functions as an anonymous app-specific identifier that can be utilized as an in-app user ID.
 
 ### Hydra Proof Of Ownership
+
+Hydra Proof of Ownership differs in the Hydra-S2 proving scheme as far as a new Commitment Mapper and new variable when creating commitments are being used. The secret used to generate the commitment for the trusted Commitment Mapper is now the hash of the Vault secret.
 
 [Hydra Proof of Ownership](./) also changes in Hydra-S2 as far as a new [Commitment Mapper](../../technical-concepts/commitment-mapper.md) and a new variable when creating commitments are being used. The secret used to generate the commitment for the trusted [Commitment Mapper](../../technical-concepts/commitment-mapper.md) is now the hash of the Vault secret and the user secret instead of the user secret only.
 
@@ -27,16 +23,16 @@ $$
 Commitment = PoseidonHash(VaultSecret, AccountSecret);
 $$
 
-To allow this, we created a new commitment mapper, and we ensured that an account can only be added to one vault since the commitment is now based on the vault secret.
+To allow this, we created a new Commitment Mapper, and we ensured that a Data Source can only be added to a single Data Vault, as the commitment is now based on the Vault secret.
 
-### Optional verifications
+### Optional Verifications
 
 Hydra-S2 also offers a modular way of generating ZK proofs. Therefore, while [Hydra-S1](hydra-s1.md) obliged users to prove that they own two accounts and that the source account was in a specific [Account Tree](../../technical-concepts/accounts-registry-tree.md) (itself in a specific [Registry Tree](../../technical-concepts/accounts-registry-tree.md)) with a specific value and checking a nullifier value, we can avoid checking specific constraints in the circuits.
 
-It can be now optional to prove while using Hydra-S2 Proving Scheme:
+During the Hydra-S2 proving scheme, it is now optional to prove the following:
 
-* any account ownership via Hydra Proof Of Ownership and the new commitment generation
-* any Registry Tree or Account Tree Merkle Proof of inclusion
-* any value held by a source of data (Ethereum address, web2 account, etc.)
-* any Vault Identifier generation
-* any Proof Identifier generation
+* Any account ownership via Hydra Proof Of Ownership and the new commitment generation
+* Any Registry Tree or Account Tree Merkle Proof of inclusion
+* Any value held by a source of data (Ethereum address, web2 account, etc.)
+* Any [Vault Identifier](../../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md) generation
+* Any [Proof Identifier](hydra-s1.md) generation

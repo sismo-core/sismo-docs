@@ -1,48 +1,46 @@
 # Accounts Registry Tree
 
-Accounts Registry Trees are used by some attesters as a data structure to store their available groups.
+Accounts Registry Trees are used to structure data and store it onchain in the form of [Data Groups](broken-reference). As a result, users can participate in [proving schemes](../core-components/proving-schemes/) and prove facts about data aggregated in their [Data Vault](../core-components/what-is-the-data-vault.md).&#x20;
 
 ### Key-Value Merkle tree
 
-A KV Merkle tree is a key-value store enhanced with a merkle tree. The merkle tree stores in its leaves the following data: hash(key, value).
+A KV Merkle tree is a key-value database enhanced with a Merkle tree. The Merkle tree stores the following data: hash(key, value).&#x20;
 
 ### Accounts Tree
 
-An Accounts Tree is a KV Merkle tree where the keys and values are accounts (e.g keys = account identifiers, values = accounts values)
+An Accounts Tree is a KV Merkle tree where the keys and values are accounts (e.g. keys = account identifiers, values = accounts values).
 
-This makes it easy and cheap for a verifier with access to the root of the tree (say a smart contract) to verify that a prover (a user) owns an account in the KV store.&#x20;
+This makes it easy and cheap for a verifier with access to the root of the tree (e.g. a smart contract) to verify that a prover (a user) owns an account in the KV database. This prover just has to send the Merkle proof to the verifier.
 
-This prover just has to send the merkle proof to the verifier
-
-![Accounts tree structure](<../../.gitbook/assets/Merkle Tree1 (3).png>)
+![](<../../.gitbook/assets/Merkle Tree1 (3).png>)
 
 {% hint style="info" %}
-An Accounts Tree can store a group of accounts.
+An Accounts Tree can store a group of accounts (i.e. a [Data Group](../../data-groups/data-groups-and-creation/)).
 
-An example of such group:
+For example:
 
-* account identifiers:  all addresses that voted in the ENS DAO
-* account values: the number of submitted voted for each address
-* (group identifier): 3
+* Account identifiers — all addresses that voted in the ENS DAO
+* Account values — the number of votes submitted for each address
+* (Group identifier): 3
 
-A user (owner of `0x123..def`) can easily prove to a smart contract (an attester with access to the root) that they voted 5 times.
+A user (owner of `0x123..def`) can easily prove to a smart contract with access to the root) that they voted 5 times.
 
 They just need to provide the following information:
 
 * Proof of `0x123..def` ownership: signature of a message with their private key
 * 5: the account value
-* merkle proof (data needed for the attester to reconstruct the accounts tree root)
+* Merkle proof (data needed for the smart contract to reconstruct the Accounts Tree root)
 
 The attester will then just need to:
 
-* verify the signature
-* compute the leaf = hash(`0x123..def,5)`
-* Verify the merkle proof (hashing the leaf against the merkle proof elements to check whether it corresponds to the accounts tree root)
+* Verify the signature
+* Compute the leaf = hash(`0x123..def,5)`
+* Verify the Merkle proof (hashing the leaf against the Merkle proof elements to check whether it corresponds to the Accounts Tree root)
 {% endhint %}
 
 ### Registry tree
 
-The registry tree is another KV merkle tree where the key is an accounts tree root, and the value a specific value linked to the accounts tree (e.g for Hydra-S1 we chose the groupIndex as the accounts tree value)
+The registry tree is another KV Merkle tree where the key is an accounts tree root, and the value is a specific value linked to the accounts tree (e.g. for Hydra-S1, we choose the groupIndex as the accounts tree value).&#x20;
 
 ![Registry tree structure](<../../.gitbook/assets/Merkle Tree2.png>)
 
@@ -56,17 +54,13 @@ We can register the previous accounts tree of ENS Voters in the Registry tree wi
 Users will then be able to prove to a verifier (that only has access to the registry tree root) that:
 
 * They have an account that's part of one of the accounts trees registered
-* The accounts tree they are a part of has the value of 3
+* The accounts tree they are a part of has a value of 3
 
-\=> They will have effectively proved they are part of the group 3!
+\=> They will have effectively proved they are part of group 3!
 {% endhint %}
 
 ![Registry tree structure](<../../.gitbook/assets/Merkle Tree3.png>)
 
-### Hydra-S1 Attesters
+### Hydra Proving Schemes
 
-Hydra-S1 Attester uses this scheme to enable users to prove they have accounts that are part of groups.
-
-The proof of ownership is a bit more complex than signing a message, but the general flow is exactly the same.
-
-The scheme is done in a ZK-SNARK which makes it impossible for anyone to know which account was used to prove that they are part of a group with a specific account!
+Hydra [proving schemes](../core-components/proving-schemes/) use Account Registry Trees to enable users to prove they are part of a [Data Group](../../data-groups/data-groups-and-creation/). Generating proof of ownership is more complex than simply signing a message, but the general flow is exactly the same. As the scheme is done in a zk-SNARK, it is impossible for anyone to know which account was used.
