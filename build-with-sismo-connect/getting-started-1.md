@@ -1,7 +1,5 @@
 # Quickstart
 
-&#x20;If you have difficulties, head over to the pre-configured [boilerplates](run-example-apps/) or [tutorials](tutorials/). Neither demand experience in our tech stack to get you setup.
-
 This section is intended for developers who have prior experience with incorporating new tools into their existing repositories.
 
 {% hint style="info" %}
@@ -40,66 +38,76 @@ npm install @sismo-core/sismo-connect-react
 <mark style="color:purple;">`@sismo-core/sismo-connect-client`</mark> is also available for non-React front ends. ([docs](technical-documentation/packages/client.md))
 {% endhint %}
 
-2. Create your Sismo Connect config
+2. Use our React Button to make Sismo Connect Requests
 
 ```typescript
-// sismo-connect-config.ts
+// Next.js https://nextjs.org/docs/getting-started/installation
+// in src/page.tsx 
+"use client";
 
-import { SismoConnectConfig } from "@sismo-core/sismo-connect-react";
+import {
+  SismoConnectButton,
+  AuthType,
+  SismoConnectResponse,
+  ClaimType,
+} from "@sismo-core/sismo-connect-react";
 
-export const config: SismoConnectConfig = {
-  appId: "0xf4977993e52606cfd67b7a1cde717069", // replace with your appId
-  // vault: {
-  //   // For development purposes, insert the Data Sources that you want to impersonate here
-  //   // Never use this in production
-  //   impersonate: [
-  //     // EVM
-  //     "dhadrien.sismo.eth",
-  //     "leo21.sismo.eth",
-  //     "0xa4c94a6091545e40fc9c3e0982aec8942e282f38",
-  //     "vitalik.eth",
-  //     // Github
-  //     "github:dhadrien",
-  //     // Twitter
-  //     "twitter:dhadrien_",
-  //     // Telegram
-  //     "telegram:dhadrien",
-  //   ],
-  // },
-  // displayRawResponse: true,
-
-};
-```
-
-{% hint style="info" %}
-[Learn more](technical-documentation/sismo-connect-configuration.md) about Sismo Connect config and impersonation mode.
-{% endhint %}
-
-3. Use our React Button to make Sismo Connect Requests
-
-```typescript
-// Component.tsx
-
-import { SismoConnectButton, AuthType, SismoConnectResponse } from "@sismo-core/sismo-connect-react";
-import { config } from "./sismo-connect-config.ts";
-
-<SismoConnectButton
-    config={config}
-    // request proof of Data Sources ownership (e.g, EVM, GitHub, Twitter or Telegram)
-    auths={[{ authType: AuthType.GITHUB }]}
-    // request zk proof that Data Source are part of a group
-    // (e.g NFT ownership, DAO Participation, GitHub commits)
-    claims={[{groupId: ENS_DAO_VOTERS_GROUP_ID}]}
-    // request message signature from users.
-    signature={{message: "I vote Yes to Privacy"}}
-    onResponseBytes={(response: string) => {
-        // call your contract/back end with the response as bytes
-    }}
-/>
+export default function Home() {
+  return (
+    <SismoConnectButton
+      config={{
+        appId: "0xf4977993e52606cfd67b7a1cde717069", // replace with your appId
+        vault: {
+          // For development purposes insert the Data Sources that you want to impersonate here
+          // Never use this in production
+          impersonate: [
+            // EVM
+            "dhadrien.sismo.eth",
+            "0xa4c94a6091545e40fc9c3e0982aec8942e282f38",
+            // Github
+            "github:dhadrien",
+            // Twitter
+            "twitter:dhadrien_",
+            // Telegram
+            "telegram:dhadrien",
+          ],
+        },
+        // displayRawResponse: true,
+      }}
+      // request proof of Data Sources ownership (e.g EVM, GitHub, twitter or telegram)
+      auths={[{ authType: AuthType.GITHUB }]}
+      // request zk proof that Data Source are part of a group
+      // (e.g NFT ownership, Dao Participation, GitHub commits)
+      claims={[
+        // ENS DAO Voters
+        { groupId: "0x85c7ee90829de70d0d51f52336ea4722" }, 
+        // Gitcoin passport with at least a score of 15
+        { groupId: "0x1cde61966decb8600dfd0749bd371f12", value: 15, claimType: ClaimType.GTE }
+      ]} 
+      // request message signature from users.
+      signature={{ message: "I vote Yes to Privacy" }}
+      onResponse={async (response: SismoConnectResponse) => {
+        const res = await fetch("/api/verify", {
+          method: "POST",
+          body: JSON.stringify(response),
+        });
+        console.log(await res.json());
+        // to call contracts
+        // onResponseBytes={async (response: SismoConnectResponse) => {
+        //   await myContract.claimWithSismo(response.responseBytes);
+        // }
+      }}
+    />
+  );
+}
 ```
 
 {% hint style="success" %}
 Check the [Sismo Connect Cheatsheet ](sismo-connect-cheatsheet.md)to get a large set of interesting requests.
+{% endhint %}
+
+{% hint style="info" %}
+[Learn more](technical-documentation/sismo-connect-configuration.md) about Sismo Connect config and impersonation mode.
 {% endhint %}
 
 ## Step 3 - Verify: Sismo Connect in Your Smart Contracts/Back Ends
@@ -217,53 +225,64 @@ contract Airdrop is SismoConnect {
 {% endtab %}
 
 {% tab title="Offchain - Verify in a Back End" %}
-Reuse the Sismo Connect configuration from your front end
-
-```solidity
-// sismo-connect-config.ts
-
-import { SismoConnectConfig } from "@sismo-core/sismo-connect-server";
-
-export const config: SismoConnectConfig = {
-  appId: "0xf4977993e52606cfd67b7a1cde717069", // replace with your appId
-};
-```
-
 Create an API route to receive the Sismo Connect response and verify it.
 
 ```typescript
-// my-api.ts
-import { SismoConnect, SismoConnectVerifiedResult } from "@sismo-core/sismo-connect-server";
-import { config } from "./sismo-connect-config.ts";
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+// in src/app/api/verify/route.ts
 
-const sismoConnect = SismoConnect(sismoConnectConfig);
+import {
+  AuthType,
+  ClaimType,
+  SismoConnect,
+  SismoConnectVerifiedResult,
+} from "@sismo-core/sismo-connect-server";
+import { NextResponse } from "next/server";
 
-// NODEJS + EXPRESS API ENDPOINT EXAMPLE
-app.post('/api', (req, res) => {
-  const { response } = req.body;
-  const result: SismoConnectVerifiedResult = await sismoConnect.verify(response, {
-      / request proof of Data Sources ownership (e.g EVM, GitHub, Twitter or Telegram)
-    auths=[{ authType: AuthType.GITHUB }]
-    // request group membership (e.g NFT ownership, Dao Participation, GitHub commits)
-    claims=[{groupId: ENS_DAO_VOTERS_GROUP_ID}]
-    // request message signature from users.
-    signature={message: "I vote Yes to Privacy"}
-   },
-    );
-    
-  // some logic if the verification is successful
-  
+const sismoConnect = SismoConnect({
+  config: {
+    appId: "0xf4977993e52606cfd67b7a1cde717069",
+    vault: {
+      // For development purposes insert the Data Sources that you want to impersonate here
+      // Never use this in production
+      impersonate: [
+        // EVM
+        "dhadrien.sismo.eth",
+        "0xa4c94a6091545e40fc9c3e0982aec8942e282f38",
+        // Github
+        "github:dhadrien",
+        // Twitter
+        "twitter:dhadrien_",
+        // Telegram
+        "telegram:dhadrien",
+      ],
+    },
+  },
 });
 
-```
+// this is the API route that is called by the SismoConnectButton
+export async function POST(req: Request) {
+  const sismoConnectResponse = await req.json();
+  try {
+    // verify the sismo connect response that corresponds to the request
+    const result: SismoConnectVerifiedResult = await sismoConnect.verify(sismoConnectResponse, {
+      auths: [{ authType: AuthType.GITHUB }],
+      claims: [
+        // ENS DAO Voters
+        { groupId: "0x85c7ee90829de70d0d51f52336ea4722" }, 
+        // Gitcoin passport with at least a score of 15
+        { groupId: "0x1cde61966decb8600dfd0749bd371f12", value: 15, claimType: ClaimType.GTE },
+      ],
+      // verify signature from users.
+      signature: { message: "I vote Yes to Privacy" },
+    });
+    return NextResponse.json(JSON.stringify(result), { status: 200 });
+  } catch (e: any) {
+    console.error(e);
+    return NextResponse.json(e.message, { status: 500 });
+  }
+}
 
-```typescript
-// verify.ts
-
-import { SismoConnect, SismoConnectVerifiedResult } from "@sismo-core/sismo-connect-server";
-import { config } from "./sismo-connect-config.ts";
-
-const sismoConnect = SismoConnect(sismoConnectConfig);
 ```
 {% endtab %}
 {% endtabs %}
