@@ -86,17 +86,18 @@ export default function Home() {
       ]} 
       // request message signature from users.
       signature={{ message: "I vote Yes to Privacy" }}
+      // retrieve the Sismo Connect Reponse from the user's Sismo data vault
       onResponse={async (response: SismoConnectResponse) => {
         const res = await fetch("/api/verify", {
           method: "POST",
           body: JSON.stringify(response),
         });
         console.log(await res.json());
-        // to call contracts
-        // onResponseBytes={async (response: SismoConnectResponse) => {
-        //   await myContract.claimWithSismo(response.responseBytes);
-        // }
       }}
+      // reponse in bytes to call a contract
+      // onResponseBytes={async (response: string) => {
+      //   console.log(response);
+      // }}
     />
   );
 }
@@ -191,37 +192,66 @@ yarn add @sismo-core/sismo-connect-server
 {% endtab %}
 {% endtabs %}
 
-2. Reuse your Sismo Connect config and verify Sismo Connect responses sent from your front end
+2. verify Sismo Connect responses sent from your front end
 
 {% hint style="warning" %}
-The config you use in your smart contract/backend must exactly match the one from your front end.
+The Sismo Connect configuration and request used in your smart contract/backend must exactly match those from your frontend.
 {% endhint %}
 
 {% tabs %}
 {% tab title="Onchain - Verify in a Smart Contract " %}
-<pre class="language-solidity"><code class="lang-solidity">import "sismo-connect-solidity/SismoLib.sol";
+```solidity
+// in src/Airdrop.sol of a Foundry project - https://book.getfoundry.sh/getting-started/first-steps
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
+import "sismo-connect-solidity/SismoLib.sol";
+
+// This is a sample contract that shows how to use the SismoConnect library
 contract Airdrop is SismoConnect {
-  // reference your appId
-  bytes16 public constant APP_ID = 0xf4977993e52606cfd67b7a1cde717069;
+    event ResponseVerified(SismoConnectVerifiedResult result);
 
-  constructor()
-    // use buildConfig helper to easily build a Sismo Connect config in Solidity
-    SismoConnect(buildConfig(APP_ID))
-  {}
-<strong>
-</strong><strong>  function verifySismoConnectResponse(bytes memory response) public {
-</strong><strong>    SismoConnectVerifiedResult memory result = verify({
-</strong>        responseBytes: response,
-        auths: auths,
-        claims: claims,
-        signature: signature
-    });
+    constructor()
+        SismoConnect(
+            buildConfig({
+                // replace with your appId from the Sismo factory https://factory.sismo.io/
+                // should match the appId used to generate the response in your frontend
+                appId: 0xf4977993e52606cfd67b7a1cde717069,
+                // For development purposes insert when using proofs that contains impersonation
+                // Never use this in production
+                isImpersonationMode: true
+            })
+        )
+    {}
 
-    // implement some logic if the proof is successful
-  }
+    function verifySismoConnectResponse(bytes memory response) public {
+        // build the auth and claim requests that should match the response
+        AuthRequest[] memory auths = new AuthRequest[](1);
+        auths[0] = buildAuth({authType: AuthType.GITHUB});
+
+        ClaimRequest[] memory claims = new ClaimRequest[](2);
+        // ENS DAO Voters
+        claims[0] = buildClaim({groupId: 0x85c7ee90829de70d0d51f52336ea4722});
+        // Gitcoin passport with at least a score of 15
+        claims[1] = buildClaim({
+            groupId: 0x1cde61966decb8600dfd0749bd371f12,
+            value: 15,
+            claimType: ClaimType.GTE
+        });
+
+        // verify the response regarding our original request
+        SismoConnectVerifiedResult memory result = verify({
+            responseBytes: response,
+            auths: auths,
+            claims: claims,
+            signature: buildSignature({message: "I vote Yes to Privacy"})
+        });
+
+        emit ResponseVerified(result);
+    }
 }
-</code></pre>
+
+```
 {% endtab %}
 
 {% tab title="Offchain - Verify in a Back End" %}
@@ -276,7 +306,7 @@ export async function POST(req: Request) {
       // verify signature from users.
       signature: { message: "I vote Yes to Privacy" },
     });
-    return NextResponse.json(JSON.stringify(result), { status: 200 });
+    return NextResponse.json(result, { status: 200 });
   } catch (e: any) {
     console.error(e);
     return NextResponse.json(e.message, { status: 500 });
