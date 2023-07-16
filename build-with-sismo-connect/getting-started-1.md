@@ -16,7 +16,7 @@ npx create-sismo-connect-app@latest
 npm create sismo-connect-app@latest
 ```
 
-This command enables to you install one of the available Starters:
+This command enables to you install one of the available starters:
 
 1. **offchain: Sismo Connect +** [**Next.js**](https://nextjs.org/docs)\
    request ZK Proofs from users and verify them in a backend
