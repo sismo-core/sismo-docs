@@ -1,8 +1,14 @@
+---
+description: >-
+  Sismo Connect enables applications to request data from users. Applications
+  receive ZK Proofs they can verify onchain or offchain.
+---
+
 # Overview
 
 <figure><img src="../.gitbook/assets/Sismo Connect Flow (4).png" alt=""><figcaption></figcaption></figure>
 
-Integrating Sismo Connect in 3 steps:
+Integrate Sismo Connect in 3 steps:
 
 * Create a Sismo Connect app in the [Sismo Factory](https://factory.sismo.io/)
 * Frontend: Use our React button or client library to request ZK proofs from users (like you would request a signature with Wallet Connect)
