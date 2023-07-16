@@ -1,18 +1,44 @@
-# Quickstart
+# Installation
+
+## Get your appId - (30 secs)
+
+Before anything, go to the [Sismo Factory](https://https/factory.sismo.io/apps-explorer) and create your app. Once your app is created, make sure to get your appId.
+
+## Quick start  - (1 min)
+
+Chose and install the starter of your choice in one unique command line.
+
+```bash
+yarn create sismo-connect-app@latest
+# or
+npx create-sismo-connect-app@latest
+# or
+npm create sismo-connect-app@latest
+```
+
+### Available Starters
+
+1. **offchain: Sismo Connect +** [**Next.js**](https://nextjs.org/docs)  \
+   request ZK Proofs from users and verify them in a backend
+2. **onchain: Sismo Connect +** [**Next.js**](https://nextjs.org/docs) **+** [**Foundry**](https://getfoundry.sh/) **+** [**wagmi**](https://wagmi.sh/)\
+   request ZK Proofs from users and verify them in a smart contract
+3. **\[Upcoming] onchain: Sismo Connect + Next.js + hardhat + ethers**\
+   coming very soon, until then, head over the [Manual Installation](getting-started-1.md#manual-installation) if you want to use Sismo Connect with hardhat&#x20;
+
+Feel free to check the [Sismo Connect Cheatsheet](sismo-connect-cheatsheet.md), a great companion when developing an app using Sismo Connect.
+
+{% hint style="success" %}
+We are here to support you on our [builders telegram group](https://buidlers.sismo.io)
+{% endhint %}
+
+## Manual Installation
 
 This section is intended for developers who have prior experience with incorporating new tools into their existing repositories.
 
-{% hint style="info" %}
-Having difficulties? Head over to the pre-configured [boilerplates](run-example-apps/) or [tutorials](tutorials/). Neither demand experience with Sismo's tech stack to get set up.
-{% endhint %}
+### Integrate Sismo Connect in Your Front End
 
-## Step 1 - Setup: Create Your Sismo Connect App
-
-You must create a Sismo Connect app in the [Sismo Factory](https://factory.sismo.io) ([tutorial](tutorials/create-a-sismo-connect-app.md)) and get your appId. This appId will be required both in your front end and smart contracts/back end.
-
-## Step 2 - Request: Integrate Sismo Connect in Your Front End
-
-Your front end must make a Sismo Connect request for users to be redirected to their Data Vault to generate a ZK proof and send your front end a Sismo Connect Response. This response, containing the ZK proof, will be verified on your back end/smart contract.
+Make a Sismo Connect Request, users will be redirected to their Data Vault to generate a ZK proof and send your front end a Sismo Connect Response. \
+This response, containing the ZK proof, will be verified on your back end/smart contract.
 
 {% hint style="success" %}
 Check the [Sismo Connect Cheatsheet](sismo-connect-cheatsheet.md) to see examples of requests.
@@ -111,7 +137,7 @@ Check the [Sismo Connect Cheatsheet ](sismo-connect-cheatsheet.md)to get a large
 [Learn more](technical-documentation/sismo-connect-configuration.md) about Sismo Connect config and impersonation mode.
 {% endhint %}
 
-## Step 3 - Verify: Sismo Connect in Your Smart Contracts/Back Ends
+### Sismo Connect in Your Smart Contracts/Back Ends
 
 Your back end/smart contract will receive a Sismo Connect Response forwarded from your front end that you must verify.
 

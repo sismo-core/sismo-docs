@@ -148,5 +148,5 @@ Read the full case study [here](https://case-studies.sismo.io/db/safe-drop).
 {% endhint %}
 
 {% hint style="info" %}
-Learn how to build the Sybil-resistant airdrop [here](build-with-sismo-connect/tutorials/tuto.md). Alternatively, check out the [onchain boilerplate](build-with-sismo-connect/run-example-apps/onchain-sample-project.md).
+Learn how to build the Sybil-resistant airdrop [here](build-with-sismo-connect/tutorials/tuto.md). Alternatively, check out the [onchain boilerplate](broken-reference).
 {% endhint %}

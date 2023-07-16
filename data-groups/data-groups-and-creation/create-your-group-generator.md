@@ -464,7 +464,7 @@ Now that you have your Group, you can build the following with it:
 * [**Sismo Connect App**](../../#sismo-connect-the-crypto-native-sso):
   * using the [Factory](https://factory.sismo.io/apps-explorer)
   * creating by yourself using the [sismo-connect-packages](https://github.com/sismo-core/sismo-connect-packages/tree/main).
-    * You can find [**here**](../../build-with-sismo-connect/run-example-apps/) boilerplates to run on your computer.
+    * You can find [**here**](broken-reference) boilerplates to run on your computer.
     * And [**here**](../../build-with-sismo-connect/tutorials/) tutorials that shows how to build Sismo Connect apps.
 
 ### Contribute to the Sismo Hub

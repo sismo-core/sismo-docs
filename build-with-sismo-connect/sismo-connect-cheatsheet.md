@@ -35,7 +35,7 @@ SIsmo Connect Response (with a ZK proof in it)
 ### Front End: Make a Sismo Connect Request with React Button
 
 {% hint style="info" %}
-As an alternative to the React Button, you can use the [<mark style="color:blue;">`@sismo-core/sismo-connect-client`</mark>](technical-documentation/packages/client.md) [library](technical-documentation/packages/client.md)
+As an alternative to the React Button, you can use the [<mark style="color:blue;">`@sismo-core/sismo-connect-client`</mark>](technical-documentation/packages/client.md) library
 {% endhint %}
 
 ```tsx
@@ -542,4 +542,4 @@ contract MyContract is SismoConnect {
 }
 ```
 
-Refer to the [Sismo Connect Solidity Library](technical-documentation/packages/solidity.md), the [onchain app boilerplate](run-example-apps/onchain-sample-project.md) or the [onchain tutorial](tutorials/tuto.md) for more information.
+Refer to the [Sismo Connect Solidity Library](technical-documentation/packages/solidity.md), the [onchain app boilerplate](broken-reference) or the [onchain tutorial](tutorials/tuto.md) for more information.

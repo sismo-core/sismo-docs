@@ -577,7 +577,7 @@ To see how to deploy your contracts, you can go to the [**associated tutorial**]
 
 ## Next steps
 
-If you have any questions about integrating Sismo Connect, don’t hesitate to reach out. The team will be happy to answer any questions you may have. Any feedback is also welcomed! If you want to fork a repository with complex requests already set up, you can check our [**onchain boilerplate**](../run-example-apps/onchain-sample-project.md).
+If you have any questions about integrating Sismo Connect, don’t hesitate to reach out. The team will be happy to answer any questions you may have. Any feedback is also welcomed! If you want to fork a repository with complex requests already set up, you can check our [**onchain boilerplate**](broken-reference).
 
 Get involved in the Sismo community! 🎭
 
