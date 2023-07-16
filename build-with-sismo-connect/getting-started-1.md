@@ -2,9 +2,9 @@
 
 ## Get your appId - (30 secs)
 
-Before anything, go to the [Sismo Factory](https/factory.sismo.io/apps-explorer) and create your app. Once your app is created, make sure to get your appId.
+Before anything, go to the [Sismo Factory](https/factory.sismo.io/apps-explorer/) and create your app. Once your app is created, make sure to get your appId.
 
-## Quick start  - (1 min)
+## Quick start - (1 min)
 
 Chose and install the starter of your choice in one unique command line.
 
@@ -16,14 +16,14 @@ npx create-sismo-connect-app@latest
 npm create sismo-connect-app@latest
 ```
 
-### Available Starters
+This command enables to you install one of the available Starters:
 
-1. **offchain: Sismo Connect +** [**Next.js**](https://nextjs.org/docs)  \
+1. **offchain: Sismo Connect +** [**Next.js**](https://nextjs.org/docs)\
    request ZK Proofs from users and verify them in a backend
 2. **onchain: Sismo Connect +** [**Next.js**](https://nextjs.org/docs) **+** [**Foundry**](https://getfoundry.sh/) **+** [**wagmi**](https://wagmi.sh/)\
    request ZK Proofs from users and verify them in a smart contract
 3. **\[Upcoming] onchain: Sismo Connect + Next.js + hardhat + ethers**\
-   coming very soon, until then, head over the [Manual Installation](getting-started-1.md#manual-installation) if you want to use Sismo Connect with hardhat&#x20;
+   coming very soon, until then, head over the [Manual Installation](getting-started-1.md#manual-installation) if you want to use Sismo Connect with hardhat
 
 Feel free to check the [Sismo Connect Cheatsheet](sismo-connect-cheatsheet.md), a great companion when developing an app using Sismo Connect.
 
@@ -37,7 +37,7 @@ This section is intended for developers who have prior experience with incorpora
 
 ### Integrate Sismo Connect in Your Front End
 
-Make a Sismo Connect Request, users will be redirected to their Data Vault to generate a ZK proof and send your front end a Sismo Connect Response. \
+Make a Sismo Connect Request, users will be redirected to their Data Vault to generate a ZK proof and send your front end a Sismo Connect Response.\
 This response, containing the ZK proof, will be verified on your back end/smart contract.
 
 {% hint style="success" %}
@@ -147,7 +147,7 @@ Your back end/smart contract will receive a Sismo Connect Response forwarded fro
 
 <summary>Supported EVM Chains</summary>
 
-#### Mainnets
+**Mainnets**
 
 * **Arbitrum One** (42161)
 * **Gnosis** (100)
@@ -155,7 +155,7 @@ Your back end/smart contract will receive a Sismo Connect Response forwarded fro
 * **Optimism** (10)
 * **Polygon** (137)
 
-#### Testnets
+**Testnets**
 
 * **Arbitrum Goerli** (421613)
 * **Goerli** (5)
@@ -194,7 +194,7 @@ echo $'sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect
 yarn add @sismo-core/sismo-connect-solidity
 ```
 
-#### Import the library
+**Import the library**
 
 In your Solidity file:
 
