@@ -2,7 +2,7 @@
 
 ## Get your appId - (30 secs)
 
-Before anything, go to the [Sismo Factory](https://https/factory.sismo.io/apps-explorer) and create your app. Once your app is created, make sure to get your appId.
+Before anything, go to the [Sismo Factory](https/factory.sismo.io/apps-explorer) and create your app. Once your app is created, make sure to get your appId.
 
 ## Quick start  - (1 min)
 
@@ -28,7 +28,7 @@ npm create sismo-connect-app@latest
 Feel free to check the [Sismo Connect Cheatsheet](sismo-connect-cheatsheet.md), a great companion when developing an app using Sismo Connect.
 
 {% hint style="success" %}
-We are here to support you on our [builders telegram group](https://buidlers.sismo.io)
+We are here to support you on our [builders telegram group](https://builders.sismo.io)
 {% endhint %}
 
 ## Manual Installation
