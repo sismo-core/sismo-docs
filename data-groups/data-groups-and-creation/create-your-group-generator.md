@@ -33,7 +33,7 @@ There are 3 different ways to define the data of a Group generator, you can use:
 
 * A hardcoded list of Data Source (e.g. [rhinofi-power-users](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/rhinofi-power-users/index.ts))
 * [Data Providers](../../how-sismo-works/resources/sismo-hub/data-providers.md) (e.g. [proof-of-humanity](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/proof-of-humanity/index.ts))
-* Already existing [Groups](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
+* Already existing [Groups](https://factory.sismo.io/groups-explorer) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
 
 If you want more info on Groups, check out this [page](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/).
 

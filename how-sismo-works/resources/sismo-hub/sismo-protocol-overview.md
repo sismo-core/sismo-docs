@@ -9,8 +9,8 @@ Groups are a reusable tool used by Sismo to generate available Data Groups for [
 
 You will find more information on what are groups in this section:
 
-{% content-ref url="../../../knowledge-base/resources/sismo-hub/broken-reference/" %}
-[broken-reference](../../../knowledge-base/resources/sismo-hub/broken-reference/)
+{% content-ref url="../../../data-groups/data-groups-and-creation/" %}
+[data-groups-and-creation](../../../data-groups/data-groups-and-creation/)
 {% endcontent-ref %}
 
 Generating Data Groups and making them available for proving schemes requires some infrastructure. We have developed a repository, the [sismo-hub](https://github.com/sismo-core/sismo-hub), to let anyone propose new Data Groups and make them available for Hydra proving schemes with a simple PR.
