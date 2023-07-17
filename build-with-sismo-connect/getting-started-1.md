@@ -8,13 +8,12 @@ Before anything, go to the [Sismo Factory](https/factory.sismo.io/apps-explorer/
 
 Chose and install the starter of your choice in one unique command line.
 
-```bash
-yarn create sismo-connect-app@latest
+<pre class="language-bash"><code class="lang-bash">npx create-sismo-connect-app@latest
 # or
-npx create-sismo-connect-app@latest
-# or
-npm create sismo-connect-app@latest
-```
+<strong>npm create sismo-connect-app@latest
+</strong># or
+yarn create sismo-connect-app
+</code></pre>
 
 This command enables to you install one of the available starters:
 
