@@ -10,7 +10,7 @@ The Sismo Connect Solidity Library allows to easily verify proofs from your user
 
 This page will detail all the specifications of the Sismo Connect Solidity Library that is deployed on [**the following chains**](../../../how-sismo-works/resources/sismo-101.md).
 
-You can find the Solidity Library GitHub repository [here](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-solidity).
+You can find the Solidity Library GitHub repository [**here**](https://github.com/sismo-core/sismo-connect-solidity).
 
 ## Usage
 
@@ -26,13 +26,13 @@ Install the Forge dependency:
 
 ```bash
 foundryup
-forge install sismo-core/sismo-connect-packages
+forge install sismo-core/sismo-connect-solidity --no-commit
 ```
 
-Add the remapping in remappings.txt:
+Add the remapping in `remappings.txt`:
 
 ```bash
-echo $'sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/' >> remappings.txt
+echo $'sismo-connect-solidity/=lib/sismo-connect-solidity/src/' >> remappings.txt
 ```
 
 #### Import the library
@@ -40,7 +40,7 @@ echo $'sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect
 In your Solidity file:
 
 ```solidity
-import "sismo-connect-solidity/SismoLib.sol"; 
+import "sismo-connect-solidity/SismoConnectLib.sol"; 
 ```
 {% endtab %}
 
