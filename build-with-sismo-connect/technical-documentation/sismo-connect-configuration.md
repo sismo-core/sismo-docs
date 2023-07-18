@@ -102,7 +102,7 @@ const sismoConnect = SismoConnect({config});
 In your smart contract, the most basic Sismo Connect Config looks like this:
 
 ```solidity
-import "sismo-connect-solidity/SismoLib.sol"; // <--- add a Sismo Connect import
+import "sismo-connect-solidity/SismoConnectLib.sol"; // <--- add a Sismo Connect import
 
 contract MyContract is SismoConnect {
   bytes16 public constant APP_ID = 0xf4977993e52606cfd67b7a1cde717069;
@@ -219,7 +219,7 @@ const sismoConnect = SismoConnect({config});
 In your smart contract, the most basic Sismo Connect Config looks like this:
 
 ```solidity
-import "sismo-connect-solidity/SismoLib.sol"; // <--- add a Sismo Connect import
+import "sismo-connect-solidity/SismoConnectLib.sol"; // <--- add a Sismo Connect import
 
 contract MyContract is SismoConnect {
   bytes16 public constant APP_ID = 0xf4977993e52606cfd67b7a1cde717069;

@@ -443,7 +443,7 @@ import {
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import "sismo-connect-solidity/SismoLib.sol";
+import "sismo-connect-solidity/SismoConnectLib.sol";
 
 contract MyContract is SismoConnect {
   // reference your appId

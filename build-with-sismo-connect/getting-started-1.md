@@ -177,13 +177,13 @@ Install the Forge dependency:
 
 ```bash
 foundryup
-forge install sismo-core/sismo-connect-packages
+forge install sismo-core/sismo-connect-solidity --no-commit
 ```
 
-Add the remapping in remappings.txt:
+Add the remapping in `remappings.txt`:
 
 ```bash
-echo $'sismo-connect-solidity/=lib/sismo-connect-packages/packages/sismo-connect-solidity/src/' >> remappings.txt
+echo $'sismo-connect-solidity/=lib/sismo-connect-solidity/src/' >> remappings.txt
 ```
 {% endtab %}
 
@@ -230,7 +230,7 @@ The Sismo Connect configuration and request used in your smart contract/backend 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "sismo-connect-solidity/SismoLib.sol";
+import "sismo-connect-solidity/SismoConnectLib.sol";
 
 // This is a sample contract that shows how to use the SismoConnect library
 contract Airdrop is SismoConnect {

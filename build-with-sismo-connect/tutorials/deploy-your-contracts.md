@@ -1,4 +1,4 @@
-# Onchain Tutorial (2/2): Deploy Your  Airdrop Contract
+# Onchain Tutorial (2/2): Deploy Your Airdrop Contract
 
 ## Overview
 
@@ -74,7 +74,7 @@ export const sismoConnectConfig: SismoConnectConfig = {
 ```solidity
 // in your contract
 
-import "sismo-connect-solidity/SismoLib.sol";
+import "sismo-connect-solidity/SismoConnectLib.sol";
 
 contract A is SismoConnect {
   // add your appId as a constant
