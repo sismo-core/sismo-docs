@@ -216,7 +216,7 @@ pragma solidity ^0.8.17;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 // Sismo Connect import
-import "sismo-connect-solidity/SismoLib.sol"; 
+import "sismo-connect-solidity/SismoConnectLib.sol"; 
 
 contract Airdrop is ERC20, SismoConnect { // <--- add a Sismo Connect inheritance
   // add your appId

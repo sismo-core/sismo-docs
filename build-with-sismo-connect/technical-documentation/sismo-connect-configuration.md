@@ -105,10 +105,10 @@ In your smart contract, the most basic Sismo Connect Config looks like this:
 import "sismo-connect-solidity/SismoConnectLib.sol"; // <--- add a Sismo Connect import
 
 contract MyContract is SismoConnect {
-  bytes16 public constant APP_ID = 0xf4977993e52606cfd67b7a1cde717069;
+  bytes16 private _appId = 0xf4977993e52606cfd67b7a1cde717069;
   
   constructor()
-    SismoConnect(buildConfig(APP_ID)) // <--- Sismo Connect constructor
+    SismoConnect(buildConfig(_appId)) // <--- Sismo Connect constructor
   {}
 }
 ```
@@ -222,11 +222,11 @@ In your smart contract, the most basic Sismo Connect Config looks like this:
 import "sismo-connect-solidity/SismoConnectLib.sol"; // <--- add a Sismo Connect import
 
 contract MyContract is SismoConnect {
-  bytes16 public constant APP_ID = 0xf4977993e52606cfd67b7a1cde717069;
-  bool isImpersonationMode = true;
+  bytes16 private _appId = 0xf4977993e52606cfd67b7a1cde717069;
+  bool private _isImpersonationMode = true;
   
   constructor()
-    SismoConnect(buildConfig(APP_ID, isImpersonationMode))
+    SismoConnect(buildConfig(_appId, _isImpersonationMode))
   {}
 }
 ```
