@@ -42,7 +42,7 @@ foundryup
 ```bash
 # in another terminal
 # starts a local fork of Mumbai
-yarn anvil
+yarn chain
 ```
 
 #### Launch the local application
@@ -67,7 +67,7 @@ You can now play with the local app that already integrates Sismo Connect. You s
 ### Important note
 
 {% hint style="warning" %}
-The interaction with the fork network can become quite unstable if you stop the `yarn anvil` command at some point or if you already used the sample app before.
+The interaction with the fork network can become quite unstable if you stop the `yarn chain` command at some point or if you already used the sample app before.
 
 You can end up with an infinitely pending transaction.
 
@@ -118,9 +118,9 @@ const sismoConnectConfig: SismoConnectConfig = {
   vault: {
     // We will impersonate those Data Sources, which will be useful later
     impersonate: [
-      "dhadrien.sismo.eth",
-      "twitter:dhadrien_",
-      "github:dhadrien",
+      "leo21.sismo.eth",
+      "twitter:leo21_eth",
+      "github:leo21",
     ],
   },
 };
@@ -391,7 +391,7 @@ contract Airdrop is ERC20, SismoConnect {
 
 These simple code additions now allow our smart contract to only airdrop some tokens to holders of a Gitcoin Passport. While this is exciting, how can we quickly test it in our local front end if we are not Gitcoin Passport holders?&#x20;
 
-The simplest solution is to impersonate an account holding a Gitcoin Passport. Remember that we are already impersonating the dhadrien.sismo.eth Ethereum account that holds a Gitcoin Passport, making us eligible.
+The simplest solution is to impersonate an account holding a Gitcoin Passport. Remember that we are already impersonating the leo21.sismo.eth Ethereum account that holds a Gitcoin Passport, making us eligible.
 
 {% hint style="success" %}
 Don't forget to remove the `vault object` in the config when deploying in production.
@@ -405,10 +405,12 @@ When all of this is done, you can try again to go on your local application on [
 
 As you can see below, you are now asked to share your `userId` like before, and you also should prove that you own a Gitcoin Passport. You also keep signing the address on which you want to receive the airdrop.
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-06-22 à 17.44.37.png" alt=""><figcaption><p>Sismo Vault UI when redirected</p></figcaption></figure>
+
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-07-19 à 10.12.43.png" alt=""><figcaption><p>Sismo Vault UI when redirected</p></figcaption></figure>
 
 {% hint style="warning" %}
-The interaction with the fork network can become quite unstable if you stop the `yarn anvil` command at some point or if you already used the sample app before.
+The interaction with the fork network can become quite unstable if you stop the `yarn chain` command at some point or if you already used the sample app before.
 
 You can end up with an infinitely pending transaction.
 
@@ -567,7 +569,9 @@ function _getRewardAmount(
 
 You can try again to claim the airdrop from your application. You will see the auth request with the four claim requests and the sign message. If you share all the information by default, you should end up with 400 tokens!
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-06-22 à 17.26.51.png" alt=""><figcaption><p>Sismo Vault UI when redirected</p></figcaption></figure>
+
+
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-07-19 à 10.15.44.png" alt=""><figcaption><p>Sismo Vault UI when redirected</p></figcaption></figure>
 
 And it is our final congrats! 🎉
 

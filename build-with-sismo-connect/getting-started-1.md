@@ -87,14 +87,14 @@ export default function Home() {
           // Never use this in production
           impersonate: [
             // EVM
-            "dhadrien.sismo.eth",
+            "leo21.sismo.eth",
             "0xa4c94a6091545e40fc9c3e0982aec8942e282f38",
             // Github
-            "github:dhadrien",
+            "github:leo21",
             // Twitter
-            "twitter:dhadrien_",
+            "twitter:leo21_eth",
             // Telegram
-            "telegram:dhadrien",
+            "telegram:leo21",
           ],
         },
         // displayRawResponse: true,
@@ -302,14 +302,14 @@ const sismoConnect = SismoConnect({
       // Never use this in production
       impersonate: [
         // EVM
-        "dhadrien.sismo.eth",
+        "leo21.sismo.eth",
         "0xa4c94a6091545e40fc9c3e0982aec8942e282f38",
         // Github
-        "github:dhadrien",
+        "github:leo21",
         // Twitter
-        "twitter:dhadrien_",
+        "twitter:leo21_eth",
         // Telegram
-        "telegram:dhadrien",
+        "telegram:leo21",
       ],
     },
   },

@@ -18,6 +18,6 @@ To get rid of this issue, you will need to go to "Settings > Advanced > Clear ac
 
 ![MetaMask settings to clear activity tab data](<../.gitbook/assets/Capture d’écran 2023-05-12 à 01.18.14 (1).png>)
 
-You can then stop your anvil local node and the frontend of your application before relaunching the anvil node with `yarn anvil` and then your frontend with `yarn dev`. If you are still stuck with this restart, come ask your questions in our [Discord](https://discord.gg/sismo) in the **#dev-support** channel or in our [Dev Telegram](https://t.me/+Z-SwcvXZFRVhZTQ0).
+You can then stop your anvil local node and the frontend of your application before relaunching the anvil node with `yarn chain` and then your frontend with `yarn dev`. If you are still stuck with this restart, come ask your questions in our [Discord](https://discord.gg/sismo) in the **#dev-support** channel or in our [Dev Telegram](https://t.me/+Z-SwcvXZFRVhZTQ0).
 
 </details>
