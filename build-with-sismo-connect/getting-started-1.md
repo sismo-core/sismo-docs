@@ -2,7 +2,7 @@
 
 ## Get your appId - (30 secs)
 
-Before anything, go to the [Sismo Factory](https/factory.sismo.io/apps-explorer/) and create your app. Once your app is created, make sure to get your appId.
+Before anything, go to the [Sismo Factory](https://factory.sismo.io) and create your app. Once your app is created, make sure to get your appId.
 
 ## Quick start - (1 min)
 
