@@ -88,7 +88,10 @@ export default function Home() {
           impersonate: [
             // EVM
             "leo21.sismo.eth",
-            "0xa4c94a6091545e40fc9c3e0982aec8942e282f38",
+            "0xA4C94A6091545e40fc9c3E0982AEc8942E282F38",
+            "0x1b9424ed517f7700e7368e34a9743295a225d889",
+            "0x82fbed074f62386ed43bb816f748e8817bf46ff7",
+            "0xc281bd4db5bf94f02a8525dca954db3895685700",
             // Github
             "github:leo21",
             // Twitter
