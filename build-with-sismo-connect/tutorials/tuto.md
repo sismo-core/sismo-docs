@@ -201,7 +201,7 @@ Here, for example, we request the user to embed the address where they want to r
 * **`text:`** Content on the button
 
 {% hint style="info" %}
-For more: check the Cheatsheet, the  [**@sismo-core/sismo-connect-react**](../technical-documentation/packages/react.md) library, and feel free to check the [**technical documentation**](../technical-documentation/packages/react.md).&#x20;
+For more: check the [**Cheatsheet**](../sismo-connect-cheatsheet.md), the [**@sismo-core/sismo-connect-react**](../technical-documentation/packages/react.md) library, and feel free to check the [**technical documentation**](../technical-documentation/packages/react.md).&#x20;
 {% endhint %}
 
 Now let's see how the contracts work!
