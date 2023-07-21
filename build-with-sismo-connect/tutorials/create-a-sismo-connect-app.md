@@ -18,7 +18,7 @@ You can learn more about this notion in this [article](../technical-documentatio
 
 </details>
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-05-10 à 09.59.04.png" alt=""><figcaption><p>Register your Sismo Connect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-07-21 à 11.16.56.png" alt="" width="477"><figcaption><p>Register your Sismo Connect App in the <a href="https://factory.sismo.io/apps-explorer">Sismo Factory</a></p></figcaption></figure>
 
 You can register a Sismo Connect app here: [https://factory.sismo.io/apps-explorer](https://factory.sismo.io/apps-explorer).\
 \
