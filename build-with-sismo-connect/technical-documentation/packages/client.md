@@ -101,7 +101,7 @@ The `getResponse` function returns the [`SismoConnectResponse`](client.md#sismoc
 function getResponseBytes(): string | null
 ```
 
-The `getResponseBytes` function returns the response encoded in bytes usable by the [`@sismo-core/sismo-connect-solidity`](https://github.com/sismo-core/sismo-connect-packages/tree/main/packages/sismo-connect-solidity) Library.
+The `getResponseBytes` function returns the response encoded in bytes usable by the [`@sismo-core/sismo-connect-solidity`](https://github.com/sismo-core/sismo-connect-solidity) Library.
 
 #### `SismoConnectResponse`
 
