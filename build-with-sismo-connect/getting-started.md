@@ -6,7 +6,7 @@ description: >-
 
 # Overview
 
-<figure><img src="../.gitbook/assets/Sismo Connect Flow (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Sismo Connect Flow (6).png" alt=""><figcaption></figcaption></figure>
 
 Integrate Sismo Connect in 3 steps:
 

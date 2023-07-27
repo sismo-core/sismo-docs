@@ -48,7 +48,7 @@ Sismo Connect is a crypto-native single sign-on (SSO) for onchain and offchain a
 Experience Sismo Connect on the [Demo App Store](https://demo.apps.sismo.io)!
 {% endhint %}
 
-<figure><img src=".gitbook/assets/Sismo Connect Flow (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Sismo Connect Flow (6).png" alt=""><figcaption></figcaption></figure>
 
 Integration is simple with just a few lines of code: import the front-end package or React button to make Sismo Connect requests, and verify proofs in your back end/smart contracts using Sismo’s Solidity or TypeScript package.
 

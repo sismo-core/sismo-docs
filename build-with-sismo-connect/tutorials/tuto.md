@@ -86,7 +86,7 @@ This tutorial does not need any `anvil` or front-end restart; everything auto-re
 
 Congrats on getting your airdrop! Now, let's see how this simple Sismo Connect integration works behind the scenes and improve it along the way.
 
-<figure><img src="../../.gitbook/assets/Sismo Connect onchain Flow.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Sismo Connect onchain Flow (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Sismo Connect Configuration
 
@@ -140,7 +140,7 @@ Don't forget to remove impersonated accounts if you plan to deploy in production
 
 The [**@sismo-core/sismo-connect-react**](../technical-documentation/packages/react.md) library simplifies the Sismo Connect integration since it offers a React button to easily request proofs of user data.&#x20;
 
-<figure><img src="../../.gitbook/assets/sign in with Sismo Buttonx1.png" alt=""><figcaption><p>Sismo Connect React button</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Sismo Connect (2).png" alt=""><figcaption><p>Sismo Connect React button</p></figcaption></figure>
 
 Let's add the Sismo Connect Button and request  the`vaultId` of users.
 

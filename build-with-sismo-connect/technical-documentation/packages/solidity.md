@@ -6,7 +6,7 @@ description: Verify proofs from your users
 
 The Sismo Connect Solidity Library allows to easily verify proofs from your users **onchain**.&#x20;
 
-<figure><img src="../../../.gitbook/assets/Sismo Connect onchain Flow.png" alt=""><figcaption><p>Sismo Connect onchain Flow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Sismo Connect onchain Flow (2).png" alt=""><figcaption><p>Sismo Connect onchain Flow</p></figcaption></figure>
 
 This page will detail all the specifications of the Sismo Connect Solidity Library that is deployed on [**the following chains**](../../../how-sismo-works/resources/sismo-101.md).
 

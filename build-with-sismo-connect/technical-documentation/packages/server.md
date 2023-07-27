@@ -8,7 +8,7 @@ The Sismo Connect Server is a back-end package built on top of the [Hydra-S2 Ver
 
 The Sismo Connect Server is
 
-<figure><img src="../../../.gitbook/assets/Sismo Connect offchain Flow.png" alt=""><figcaption><p>Sismo Connect offchain Flow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Sismo Connect offchain Flow (2).png" alt=""><figcaption><p>Sismo Connect offchain Flow</p></figcaption></figure>
 
 ## Installation
 
