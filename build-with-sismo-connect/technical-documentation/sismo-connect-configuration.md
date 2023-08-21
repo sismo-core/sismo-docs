@@ -56,7 +56,7 @@ const config: SismoConnectConfig = {
     // request proof of Data Sources ownership (e.g EVM, GitHub, Twitter or Telegram)
     auths={[{ authType: AuthType.GITHUB }]}
     // request proof of Data Group memberships of source
-    // (e.g part of NFT owners, Dao Participants, GitHub commiters)
+    // (e.g part of NFT owners, Dao Participants, GitHub committers)
     claims={[{groupId: ENS_DAO_VOTERS_GROUP_ID}]}
     // request message signature from users.
     signature={{message: "I vote Yes to Privacy"}}
@@ -155,7 +155,7 @@ const config: SismoConnectConfig = {
     // request proof of Data Sources ownership (e.g EVM, GitHub, Twitter or Telegram)
     auths={[{ authType: AuthType.GITHUB }]}
     // request proof of Data Group memberships of source
-    // (e.g part of NFT owners, Dao Participants, GitHub commiters)
+    // (e.g part of NFT owners, Dao Participants, GitHub committers)
     claims={[{groupId: ENS_DAO_VOTERS_GROUP_ID}]}
     // request message signature from users.
     signature={{message: "I vote Yes to Privacy"}}
