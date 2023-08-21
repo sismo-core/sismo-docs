@@ -47,7 +47,7 @@ This command enables to you install one of the available starters:
 2. **onchain: Sismo Connect +** [**Next.js**](https://nextjs.org/docs) **+** [**Foundry**](https://getfoundry.sh/) **+** [**wagmi**](https://wagmi.sh/)\
    request ZK Proofs from users and verify them in a smart contract
 3. **\[Upcoming] onchain: Sismo Connect + Next.js + hardhat + ethers**\
-   coming very soon, until then, head over the [Manual Installation](getting-started-1.md#manual-installation) if you want to use Sismo Connect with hardhat
+   coming very soon, until then, head over to the [Manual Installation](getting-started-1.md#manual-installation) if you want to use Sismo Connect with hardhat
 
 Feel free to check the [Sismo Connect Cheatsheet](sismo-connect-cheatsheet.md), a great companion when developing an app using Sismo Connect.
 
@@ -139,7 +139,7 @@ export default function Home() {
       ]} 
       // request message signature from users.
       signature={{ message: "I vote Yes to Privacy" }}
-      // retrieve the Sismo Connect Reponse from the user's Sismo data vault
+      // retrieve the Sismo Connect Response from the user's Sismo data vault
       onResponse={async (response: SismoConnectResponse) => {
         const res = await fetch("/api/verify", {
           method: "POST",
@@ -147,7 +147,7 @@ export default function Home() {
         });
         console.log(await res.json());
       }}
-      // reponse in bytes to call a contract
+      // response in bytes to call a contract
       // onResponseBytes={async (response: string) => {
       //   console.log(response);
       // }}
