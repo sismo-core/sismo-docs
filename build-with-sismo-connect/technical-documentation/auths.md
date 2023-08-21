@@ -12,7 +12,7 @@ The `AuthRequest` is an object with the following properties:
   * `GITHUB`: Sismo Connect returns the user's GitHub account id.&#x20;
   * `TWITTER` Sismo Connect returns the user's Twitter account id.&#x20;
   * `EVM_ACCOUNT`: Sismo Connect returns the user's Ethereum address.
-  * `TELEGRAM` : Sismo Connect returns the user's Telegram account id.&#x20;
+  * `TELEGRAM`: Sismo Connect returns the user's Telegram account id.&#x20;
 * `userId` (optional): requests the user to have a predefined account.
 * `isOptional`(optional): by default set to `false`.  Allows the user to optionally authenticate with this `AuthType`.
 
@@ -131,7 +131,7 @@ function onClick(){
     });
 }
 
-// Proofs are available in two differents types depending on usage (offchain or onchaon verification)
+// Proofs are available in two different types depending on usage (offchain or onchain verification)
 const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
@@ -162,7 +162,7 @@ function onClick(){
     });
 }
 
-// Proofs are available in two differents types depending on usage (offchain or onchaon verification)
+// Proofs are available in two different types depending on usage (offchain or onchain verification)
 const response: SismoConnectResponse | null = sismoConnect.getReponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
