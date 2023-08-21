@@ -21,6 +21,7 @@ Integrate Sismo Connect in 3 steps:
 #### Mainnets
 
 * **Arbitrum One** (42161)
+* **Base** (8453)
 * **Gnosis** (100)
 * **Mainnet** (1)
 * **Optimism** (10)
@@ -29,6 +30,7 @@ Integrate Sismo Connect in 3 steps:
 #### Testnets
 
 * **Arbitrum Goerli** (421613)
+* **BaseGoerli** (84531)
 * **Goerli** (5)
 * **Mumbai** (80001)
 * **Optimism Goerli** (420)
