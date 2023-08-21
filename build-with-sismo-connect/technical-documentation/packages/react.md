@@ -128,7 +128,7 @@ Please see the [Sismo Connect Client documentation](client.md) to see all the po
 
 ## Documentation
 
-This package is a wrapper of the Sismo Connect Client package, which means that all the core concepts such as `SismoConnectClientConfig`, `AuthRequest`,`ClaimRequest`, `SignatureRequest`, and `SismoConnectResponse` are the same as in the client package. If you need to explore these concepts in detail, we advise you to refer to the [Sismo Connect Client](client.md) page, which provides more detailed information.
+This package is a wrapper of the Sismo Connect Client package, which means that all the core concepts such as `SismoConnectClientConfig`, `AuthRequest`, `ClaimRequest`, `SignatureRequest`, and `SismoConnectResponse` are the same as in the client package. If you need to explore these concepts in detail, we advise you to refer to the [Sismo Connect Client](client.md) page, which provides more detailed information.
 
 ### SismoConnectButton
 
