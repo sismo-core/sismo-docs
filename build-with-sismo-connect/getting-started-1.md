@@ -1,5 +1,30 @@
 # Installation
 
+<details>
+
+<summary>Supported EVM Chains</summary>
+
+**Mainnets**
+
+* **Mainnet** (1)
+* **Optimism** (10)
+* **Gnosis** (100)
+* **Polygon** (137)
+* **Base** (8453)
+* **Arbitrum One** (42161)
+
+**Testnets**
+
+* **Arbitrum Goerli** (421613)
+* **Goerli** (5)
+* **BaseGoerli** (84531)
+* **Mumbai** (80001)
+* **Optimism Goerli** (420)
+* **Scroll Alpha Testnet** (534353)
+* **Sepolia** (11155111)
+
+</details>
+
 ## Get your appId - (30 secs)
 
 Before anything, go to the [Sismo Factory](https://factory.sismo.io) and create your app. Once your app is created, make sure to get your appId.
@@ -144,29 +169,6 @@ Check the [Sismo Connect Cheatsheet ](sismo-connect-cheatsheet.md)to get a large
 Your back end/smart contract will receive a Sismo Connect Response forwarded from your front end that you must verify.
 
 1. Install the Sismo Connect Library
-
-<details>
-
-<summary>Supported EVM Chains</summary>
-
-**Mainnets**
-
-* **Arbitrum One** (42161)
-* **Gnosis** (100)
-* **Mainnet** (1)
-* **Optimism** (10)
-* **Polygon** (137)
-
-**Testnets**
-
-* **Arbitrum Goerli** (421613)
-* **Goerli** (5)
-* **Mumbai** (80001)
-* **Optimism Goerli** (420)
-* **Scroll Alpha Testnet** (534353)
-* **Sepolia** (11155111)
-
-</details>
 
 {% tabs %}
 {% tab title="Onchain - Verify in a Smart Contract " %}
