@@ -454,7 +454,7 @@ When your PR is merged your Group generator will be registered in the Sismo Hub,
 Finally, your Group will be available in the Sismo Hub and anyone will be able to use it to create **Badges** or **Sismo Connect apps**, great job! 💪
 
 {% hint style="success" %}
-Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during hackaton. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).
+Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during the hackathon. We would love to talk to you and meet you there. Don't hesitate to send your PR there as well, we will quickly review and merge it (usually under 1 hour).
 {% endhint %}
 
 ### Use your Group
