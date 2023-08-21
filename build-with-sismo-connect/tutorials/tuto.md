@@ -146,7 +146,7 @@ Let's add the Sismo Connect Button and request  the`vaultId` of users.
 
 <details>
 
-<summary>vaultId: anonymous indentifier for a user. Will be used to avoid users to claim twice</summary>
+<summary>vaultId: anonymous identifier for a user. Will be used to avoid users to claim twice</summary>
 
 Sismo users have a sovereign [Data Vault](../../how-sismo-works/core-components/what-is-the-data-vault.md) where they import Data Sources from which they will generate ZK proofs. Each Data Vault has a secret only known by its owner.
 
@@ -529,7 +529,7 @@ contract Airdrop is ERC20, SismoConnect {
         revert AlreadyClaimed();
       }
   
-      // each vaultId can claim tokens relatively to their its aggregated reputation
+      // each vaultId can claim tokens relative to their aggregated reputation
       uint256 airdropAmount = _getRewardAmount(result);
   
       // we mark the user as claimed. We could also have stored more user airdrop information for a more complex airdrop system. But we keep it simple here.

@@ -56,7 +56,7 @@ async function verifyResponse(sismoConnectResponse: SismoConnectResponse) {
   // with respect to the different auths
   // and the group(s) in the claim(s)
   // i.e. user prove they own a Vault, a Twitter account
-  // and they are member of the group with id "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
+  // and they are members of the group with id "0x42c768bb8ae79e4c5c05d3b51a4ec74a"
   const result: SismoConnectVerifiedResult = await sismoConnect.verify(
     sismoConnectResponse,
     {

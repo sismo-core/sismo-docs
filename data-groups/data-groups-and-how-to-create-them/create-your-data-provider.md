@@ -256,7 +256,7 @@ export class TutorialLensProvider extends GraphQLProvider {
     return dataProfiles;
   }
 
-  // method that iterate on the getWhoCollectedPublicationQuery
+  // method that iterates on the getWhoCollectedPublicationQuery
   private async *_getWhoCollectedPublication({
     publicationId,
   }: PublicationId): AsyncGenerator<Wallet, void, undefined> {
@@ -279,7 +279,7 @@ export class TutorialLensProvider extends GraphQLProvider {
 {% hint style="warning" %}
 It is very important to pass an object that contains all your argument as argument of the function that the Factory will use.
 
-Indeed, when the Factory create the group using your data provider, it will use take all the arguments gave by the user as input and create an object from it. Then it will call your function with this object, like this:
+Indeed, when the Factory create the group using your data provider, it will use take all the arguments given by the user as input and create an object from it. Then it will call your function with this object, like this:
 
 ```typescript
 const lensProviderData0 = await lensProvider.getWhoCollectedPublication({
@@ -625,4 +625,4 @@ Finally, your Data Provider will be available in the Sismo Hub and anyone will b
 
 You want to contribute, but you don't have any ideas for Data Providers to create? Check out the current [Sismo Hub GitHub's issues](https://github.com/sismo-core/sismo-hub/issues), as you will find some interesting ideas for Data Providers to implement.
 
-If you have any questions or you need help regarding your Data Providers creation process, do not hesitate to join our [Discord](https://discord.gg/sismo) and ask us in **#dev-support** or ou [Dev Telegram](https://t.me/+Z-SwcvXZFRVhZTQ0). We will be glad to answer you 🤗
+If you have any questions or you need help regarding your Data Providers creation process, do not hesitate to join our [Discord](https://discord.gg/sismo) and ask us in **#dev-support** or [Dev Telegram](https://t.me/+Z-SwcvXZFRVhZTQ0). We will be glad to answer you 🤗

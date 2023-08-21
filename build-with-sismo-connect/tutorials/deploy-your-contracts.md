@@ -122,7 +122,7 @@ You can simply run this command to see the simulation of your contract deploymen
 ```bash
 forge script DeployAirdrop --rpc-url <your-mumbai-rpc-url>
 
-# if you dont have any personal rpc url
+# if you don't have any personal rpc url
 # you can try to use https://rpc.ankr.com/polygon_mumbai
 ```
 
@@ -167,12 +167,12 @@ Here is how to deploy the airdrop smart contract on the Mumbai testnet network. 
 ```bash
 forge script DeployAirdrop --rpc-url <your-mumbai-rpc-url> --private-key '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80' --broadcast
 
-# if you dont have any personal rpc url
+# if you don't have any personal rpc url
 # you can try to use https://rpc.ankr.com/polygon_mumbai
 ```
 {% endcode %}
 
-If you try to run this exact command without changing the private key, you will encounter an error since the account has no funds. You should replace the private key by your own developer private key and have some funds on your dev account (Mumbai faucet link: [https://mumbaifaucet.com/](https://mumbaifaucet.com/)).
+If you try to run this exact command without changing the private key, you will encounter an error since the account has no funds. You should replace the private key with your own developer private key and have some funds on your dev account (Mumbai faucet link: [https://mumbaifaucet.com/](https://mumbaifaucet.com/)).
 
 {% hint style="success" %}
 Notice the `--broadcast` option, which states that you want to actually trigger the transaction on the Mumbai testnet.
@@ -200,7 +200,7 @@ forge script DeployAirdrop \
 --verify \
 --watch
 
-# if you dont have any personal rpc url
+# if you don't have any personal rpc url
 # you can try to use https://rpc.ankr.com/polygon_mumbai
 ```
 {% endcode %}

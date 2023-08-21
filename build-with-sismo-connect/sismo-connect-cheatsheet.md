@@ -74,7 +74,7 @@ const config: SismoConnectConfig = {
   // Sismo Connect Response in the vault instead of redirecting back to the app
 };
 
-// button that will redirect tu users faults
+// button that will redirect to users faults
 export default function Home() {
 return (
   <SismoConnectButton
@@ -102,7 +102,7 @@ return (
       { authType: AuthType.TELEGRAM, userId: "875608110", isOptional: true },
     ]}
     
-      // Claims = prove groump membership of a Data Source in a specific Data Group.
+      // Claims = prove group membership of a Data Source in a specific Data Group.
       // Data Groups = [{[dataSource1]: value1}, {[dataSource1]: value1}, .. {[dataSource]: value}]
       // When doing so Data Source is not shared to the app.
     claims={[

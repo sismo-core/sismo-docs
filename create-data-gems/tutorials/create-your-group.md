@@ -200,7 +200,7 @@ After having completed the captcha, click on the "Request to deploy":
 
 You will be redirected to the [Group Explorer Page](https://factory.sismo.io/groups-explorer):
 
-<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 10.11.48 2.png" alt=""><figcaption><p>wainting for approval</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-14 à 10.11.48 2.png" alt=""><figcaption><p>waiting for approval</p></figcaption></figure>
 
 We can see that now your Group request is in <mark style="background-color:blue;">**waiting for approval**</mark> (<mark style="color:red;">red box</mark>) and a few time after in <mark style="background-color:blue;">**Deploying**</mark>.
 
@@ -211,7 +211,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 {% endhint %}
 
 {% hint style="info" %}
-If you Group consist of more than 100k accounts then the Sismo Team will have to approve the Group before deploying it. So don't hesitate to send your PR there as well, we will quickly review and merge it (**usually under 30 minutes**). During hackathons, we are committed to quickly reviewing any new Data Group pull request.
+If your Group consists of more than 100k accounts then the Sismo Team will have to approve the Group before deploying it. So don't hesitate to send your PR there as well, we will quickly review and merge it (**usually under 30 minutes**). During hackathons, we are committed to quickly reviewing any new Data Group pull request.
 {% endhint %}
 
 So a few time after your Group will be in deployment and it will be displayed as <mark style="background-color:green;">✔</mark> <mark style="background-color:green;">**Deployed**</mark>.

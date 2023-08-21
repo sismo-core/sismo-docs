@@ -58,18 +58,18 @@ const config: SismoConnectConfig = {
   // Sismo Connect Response in the vault instead of redirecting back to the app
 };
 
-// button that will redirect tu users faults
+// button that will redirect to users faults
 export default function Home() {
 return (
   <SismoConnectButton
     config={config}
     // Auths = Data Source Ownership Requests
     auths={[
-      // Anonymus identifier of the vault for this app
+      // Anonymous identifier of the vault for this app
       // vaultId = hash(vaultSecret, appId).
       // full docs: https://docs.sismo.io/sismo-docs/build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers
       { authType: AuthType.VAULT },
-      // can chose any EVM account from the vault
+      // can choose any EVM account from the vault
       { authType: AuthType.EVM_ACCOUNT },
       {
         authType: AuthType.EVM_ACCOUNT,
@@ -83,12 +83,12 @@ return (
       { authType: AuthType.TELEGRAM, userId: "875608110", isOptional: true },
     ]}
     // Claims = Data Gems Ownership Requests
-    // Data Gem == Groump membership of a Data Source, Data Source won't be revealed
+    // Data Gem == Group membership of a Data Source, Data Source won't be revealed
     claims={[
       {
         // Stand with Crypto NFT Minter Gem (= part of the Stand with Crypto NFT Minter Group)
         // https://sismo-prod-hub-data.s3.eu-west-1.amazonaws.com/group-snapshot-store/0xfae674b6cba3ff2f8ce2114defb200b1/1688203882.json
-        // note: dhadrien.sismo.eth par of group with value 10 (minted 10 NFT)
+        // note: dhadrien.sismo.eth part of group with value 10 (minted 10 NFT)
         groupId: "0xfae674b6cba3ff2f8ce2114defb200b1",
         // default: claimType: ClaimType.GTE
         // default value: 1,
@@ -113,14 +113,14 @@ return (
         groupId: "0x1cde61966decb8600dfd0749bd371f12",
         claimType: ClaimType.EQ, // member of the group with value == 15
         value: 15, // 46 not equal to 15 => won't be able to generate ZK PRoof
-        isSelectableByUser: true, // can selectively discloe more if user wants
+        isSelectableByUser: true, // can selectively disclose more if user wants
         isOptional: true,
       },
       {
         // Stand with Crypto NFT Minter Gem, dhadrien.sismo.eth minted 10
         groupId: "0xfae674b6cba3ff2f8ce2114defb200b1", //
         claimType: ClaimType.GTE, // member of the group
-        isSelectableByUser: true, // can selectively discloe more if user wants
+        isSelectableByUser: true, // can selectively disclose more if user wants
         isOptional: true, // can chose not to reveal
       },
       {
@@ -128,7 +128,7 @@ return (
         groupId: "0x1cde61966decb8600dfd0749bd371f12",
         claimType: ClaimType.GTE, // member of the group with value greater or equal to 5
         value: 25,
-        isSelectableByUser: true, // can selectively discloe more if user wants
+        isSelectableByUser: true, // can selectively disclose more if user wants
       },
     ]}
     // we ask the user to sign a message
@@ -150,7 +150,7 @@ return (
 
 <details>
 
-<summary>Sismo Connect Reponse from the previous Request</summary>
+<summary>Sismo Connect Response from the previous Request</summary>
 
 Copy-pasted from the test Sismo Connect Request 👉 [https://test-request.sismo.io ](https://test-request.sismo.io)
 
@@ -340,7 +340,7 @@ import {
   SismoConnectResponse
 } from "@sismo-core/sismo-connect-server";
 
-// reusing the exaxt same config as the frontend's
+// reusing the exact same config as the frontend's
 const sismoConnect = SismoConnect({ config });
 
 const result: SismoConnectVerifiedResult = await sismoConnect.verify(

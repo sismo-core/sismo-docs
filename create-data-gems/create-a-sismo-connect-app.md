@@ -6,7 +6,7 @@ Before you begin integrating [**Sismo Connect**](../welcome-to-sismo/what-is-sis
 
 <summary>Why is an <code>appId</code> required for Sismo Connect?</summary>
 
-The `appId` will be used to compute a VaultId, which is the the unique identifier for a user on your app. The VaultId is simply the hash of a user's Vault secret and the appId.
+The `appId` will be used to compute a VaultId, which is the unique identifier for a user on your app. The VaultId is simply the hash of a user's Vault secret and the appId.
 
 $$vaultId = hash(vaultSecret, appId)$$
 

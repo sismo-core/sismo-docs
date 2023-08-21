@@ -79,7 +79,7 @@ const generator: GroupGenerator = {
 export default generator;
 ```
 
-In the above example, the group generator will create a group named `my-simple-group`. Its timestamp will corresponds to the execution of the `generate` function.
+In the above example, the group generator will create a group named `my-simple-group`. Its timestamp will correspond to the execution of the `generate` function.
 
 This group, `my-simple-group`, contains 7 accounts, four Ethereum addresses (two addresses as you know them, one ENS handle and one Lens handle) which all have a value of 1, two Github accounts with values of 2 and 4 and one Twitter account with a value of 3 as you can see in the `data` field.
 
