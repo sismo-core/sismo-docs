@@ -44,7 +44,7 @@ If you are verifying your proofs in a smart contract, you will need to encode yo
 ### Making a SignatureRequest - Front-end integration
 
 {% hint style="info" %}
-Making an `SignatureRequest` is only possible if it is made alongside an auth or a claim request.&#x20;
+Making a `SignatureRequest` is only possible if it is made alongside an auth or a claim request.&#x20;
 {% endhint %}
 
 {% tabs %}
@@ -109,7 +109,7 @@ function onClick(){
     });
 }
 
-// Proofs are available in two differents types depending on usage (offchain or onchaon verification)
+// Proofs are available in two different types depending on usage (offchain or onchain verification)
 const response: SismoConnectResponse | null = sismoConnect.getReponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
