@@ -4,9 +4,9 @@ description: Non-developer tutorial
 
 # Factory Guide: Create a Data Group in 5 Minutes
 
-This tutorial will show you how to create a [Data Group](./) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
+This tutorial will show you how to create a [Data Group](../data-groups-and-creation.md) from start to finish using the [Sismo Factory](https://factory.sismo.io/groups-explorer).
 
-At the end of this tutorial, you will have a Group of Twitter, GitHub, Telegram and Ethereum accounts. After a short automatic verification process (under 15 minutes), this Data Group will be deployed on our [chain(s) of choice](../../how-sismo-works/resources/sismo-101.md) and be available for a [Sismo Connect app](../../#sismo-connect-the-crypto-native-sso) 🙌
+At the end of this tutorial, you will have a Group of Twitter, GitHub, Telegram and Ethereum accounts. After a short automatic verification process (under 15 minutes), this Data Group will be deployed on our [chain(s) of choice](../../resources/sismo-101.md) and be available for a [Sismo Connect app](../../#sismo-connect-the-crypto-native-sso) 🙌
 
 {% hint style="info" %}
 If you are a developer and want to build your own customizable Data Group, go check out this [tutorial](create-your-group-generator.md). It will also explain all the steps of the creation process.
@@ -18,7 +18,7 @@ Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0
 
 ## What are Data Groups?
 
-[Data Groups](./) are set of Data Sources with each an associated value:
+[Data Groups](../data-groups-and-creation.md) are set of Data Sources with each an associated value:
 
 * Web2 Data Sources: Twitter, GitHub, Telegram
 * Web3 Data Sources: Ethereum addresses, ENS, Lens handles
@@ -99,7 +99,7 @@ After doing so, it is possible to add accounts using three different methods:
 There are 3 different ways to define the data of a Group Generator, you can use:
 
 * A defined list of Data Source ("By uploading a list of accounts")
-* [Data Providers](../../how-sismo-works/resources/sismo-hub/data-providers.md) : function that allows fetching Data Sources ("From data providers")
+* [Data Providers](../what-is-the-data-vault-1/sismo-hub/data-providers.md) : function that allows fetching Data Sources ("From data providers")
 * Already existing Groups ("From data group")
 
 **For our case we need 3 main things:**
@@ -136,7 +136,7 @@ For example, different values can be used for voting power:
 * "3" --> gives you 500 voting power
 * **Get the list of** [**sismo.lens**](https://lenster.xyz/u/sismo) **Lens followers**
 
-To do this, you need to use a [Data Provider,](../../how-sismo-works/resources/sismo-hub/data-providers.md) so we select the "_From Data Providers_" section.\
+To do this, you need to use a [Data Provider,](../what-is-the-data-vault-1/sismo-hub/data-providers.md) so we select the "_From Data Providers_" section.\
 Then we choose the Lens Provider and use the `getFollowers()` function:
 
 <figure><img src="../../.gitbook/assets/Capture d’écran 2023-03-13 à 18.41.53.png" alt=""><figcaption><p>Lens Provider</p></figcaption></figure>
@@ -150,7 +150,7 @@ Next, by clicking on the <mark style="background-color:blue;">**Add**</mark> but
 After this, you can click on the second <mark style="background-color:blue;">**Add**</mark> button (<mark style="color:red;">red box</mark>) in order to add these Lens accounts (sismo.lens followers) to the group.
 
 {% hint style="info" %}
-If you are a developer and want to build your own Data Provider, go check out this [tutorial](../data-groups-and-how-to-create-them/create-your-data-provider.md). It will explain all the steps of the creation process.
+If you are a developer and want to build your own Data Provider, go check out this [tutorial](create-your-data-provider.md). It will explain all the steps of the creation process.
 {% endhint %}
 
 * **Get the holders of** [**Sismo - EthCC 2022 POAP**](https://poap.gallery/r/event/53325)
@@ -214,7 +214,7 @@ You will be redirected to the [Group Explorer Page](https://factory.sismo.io/gro
 
 We can see that now your Group request is in <mark style="background-color:blue;">**waiting for approval**</mark> (<mark style="color:red;">red box</mark>) and a few time after in <mark style="background-color:blue;">**Deploying**</mark>.
 
-Once you submit your Group, it will be **automatically accepted and deployed** on all [supported chains](../../how-sismo-works/resources/sismo-101.md) in \~20 minutes if it contains less than 100k accounts in it.
+Once you submit your Group, it will be **automatically accepted and deployed** on all [supported chains](../../resources/sismo-101.md) in \~20 minutes if it contains less than 100k accounts in it.
 
 {% hint style="success" %}
 Don't hesitate to join our [**Dev** **Telegram**](https://t.me/+Z-SwcvXZFRVhZTQ0) and ping us during a hackathon to ask for help or for a custom group update. We would love to talk to you and meet you there.

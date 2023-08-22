@@ -5,12 +5,12 @@ coverY: 0
 
 # Group Generators
 
-Groups are a reusable tool used by Sismo to generate available Data Groups for [proving schemes](../../core-components/proving-schemes/).
+Groups are a reusable tool used by Sismo to generate available Data Groups for [proving schemes](../../../data-vault/proving-schemes/).
 
 You will find more information on what are groups in this section:
 
-{% content-ref url="../../../data-groups/data-groups-and-creation/" %}
-[data-groups-and-creation](../../../data-groups/data-groups-and-creation/)
+{% content-ref url="../../data-groups-and-creation.md" %}
+[data-groups-and-creation.md](../../data-groups-and-creation.md)
 {% endcontent-ref %}
 
 Generating Data Groups and making them available for proving schemes requires some infrastructure. We have developed a repository, the [sismo-hub](https://github.com/sismo-core/sismo-hub), to let anyone propose new Data Groups and make them available for Hydra proving schemes with a simple PR.
@@ -19,8 +19,8 @@ You will be able to create your own group of accounts (Ethereum addresses, Githu
 
 **Here is a complete tutorial describing all the group creation process steps:**
 
-{% content-ref url="../../../data-groups/data-groups-and-creation/create-your-group-generator.md" %}
-[create-your-group-generator.md](../../../data-groups/data-groups-and-creation/create-your-group-generator.md)
+{% content-ref url="../../tutorials/create-your-group-generator.md" %}
+[create-your-group-generator.md](../../tutorials/create-your-group-generator.md)
 {% endcontent-ref %}
 
 The following documentation aims to describe the code in a more theoretical way, we strongly recommend doing the tutorial to understand what the code below is for, especially for newcomers.

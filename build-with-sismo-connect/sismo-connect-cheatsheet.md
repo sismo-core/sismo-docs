@@ -12,7 +12,7 @@ It contains:&#x20;
 * Verify them in a back end and access verified data
 
 {% hint style="success" %}
-Visit [this section](../data-groups/data-groups-and-creation/) to understand Data Groups and how to create them.
+Visit [this section](../data-groups/data-groups-and-creation.md) to understand Data Groups and how to create them.
 {% endhint %}
 
 <details>

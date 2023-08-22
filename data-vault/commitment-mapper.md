@@ -1,6 +1,6 @@
 # Commitment Mapper
 
-The Commitment Mapper, provided by Sismo, is a trusted offchain service housed in an isolated infrastructure. It allows account owners to transform proof of account ownership into proof of secret knowledge. The account owner receives a receipt from the Commitment Mapper, which connects their account to their commitment (e.g., the hash of their secret). This combination of the user's secret and the Commitment Mapper receipt forms the Delegated Proof of Ownership. The commitment can be used in zero-knowledge (ZK) systems as a [Vault Identifier](../../build-with-sismo-connect/technical-documentation/vault-and-proof-identifiers.md).
+The Commitment Mapper, provided by Sismo, is a trusted offchain service housed in an isolated infrastructure. It allows account owners to transform proof of account ownership into proof of secret knowledge. The account owner receives a receipt from the Commitment Mapper, which connects their account to their commitment (e.g., the hash of their secret). This combination of the user's secret and the Commitment Mapper receipt forms the Delegated Proof of Ownership. The commitment can be used in zero-knowledge (ZK) systems as a [Vault Identifier](vault-and-proof-identifiers.md).
 
 ## How It Works
 
@@ -10,7 +10,7 @@ The Commitment Mapper, provided by Sismo, is a trusted offchain service housed i
 * The Commitment Mapper sends a signed commitment receipt to the user, confirming that they have completed the commitment process.
 * Account owners can retrieve a commitment receipt at any time by providing new proof of ownership.
 
-<figure><img src="../../.gitbook/assets/commitment_mapper.png" alt=""><figcaption><p>Delegated Proof of Ownership workflow</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/commitment_mapper.png" alt=""><figcaption><p>Delegated Proof of Ownership workflow</p></figcaption></figure>
 
 {% hint style="info" %}
 Example: Using Hydra Delegated Proof of Ownership with the Commitment Mapper, the Poseidon hash function, and EdDSA digital signature schemes (which are SNARK-friendly), an Ethereum account owner and a secret commitment would follow these steps:

@@ -1,6 +1,6 @@
 # Accounts Registry Tree
 
-Accounts Registry Trees are used to structure data and store it onchain in the form of [Data Groups](broken-reference). As a result, users can participate in [proving schemes](../core-components/proving-schemes/) and prove facts about data aggregated in their [Data Vault](../core-components/what-is-the-data-vault.md).&#x20;
+Accounts Registry Trees are used to structure data and store it onchain in the form of [Data Groups](broken-reference). As a result, users can participate in [proving schemes](../../data-vault/proving-schemes/) and prove facts about data aggregated in their [Data Vault](../../data-vault/what-is-the-data-vault.md).&#x20;
 
 ### Key-Value Merkle tree
 
@@ -15,7 +15,7 @@ This makes it easy and cheap for a verifier with access to the root of the tree 
 ![](<../../.gitbook/assets/Merkle Tree1 (3).png>)
 
 {% hint style="info" %}
-An Accounts Tree can store a group of accounts (i.e. a [Data Group](../../data-groups/data-groups-and-creation/)).
+An Accounts Tree can store a group of accounts (i.e. a [Data Group](../data-groups-and-creation.md)).
 
 For example:
 
@@ -63,4 +63,4 @@ Users will then be able to prove to a verifier (that only has access to the regi
 
 ### Hydra Proving Schemes
 
-Hydra [proving schemes](../core-components/proving-schemes/) use Account Registry Trees to enable users to prove they are part of a [Data Group](../../data-groups/data-groups-and-creation/). Generating proof of ownership is more complex than simply signing a message, but the general flow is exactly the same. As the scheme is done in a zk-SNARK, it is impossible for anyone to know which account was used.
+Hydra [proving schemes](../../data-vault/proving-schemes/) use Account Registry Trees to enable users to prove they are part of a [Data Group](../data-groups-and-creation.md). Generating proof of ownership is more complex than simply signing a message, but the general flow is exactly the same. As the scheme is done in a zk-SNARK, it is impossible for anyone to know which account was used.

@@ -1,8 +1,12 @@
-# Data Groups & Creation
+---
+description: Data Groups and how to create them.
+---
+
+# Overview
 
 Data Groups are created via the [Factory UI](https://factory.sismo.io) or by creating a pull request on the [Sismo Hub](https://github.com/sismo-core/sismo-hub).
 
-<figure><img src="../../.gitbook/assets/Sismo Connect_ Under the Hood.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Sismo Connect_ Under the Hood.png" alt=""><figcaption></figcaption></figure>
 
 The Factory is an interface to easily create Data Groups on the Sismo Hub infrastructure.&#x20;
 
@@ -29,7 +33,7 @@ From imported Data Sources, Vault owners can generate ZK proofs of:
 * Inclusion of an owned Data Source in a Data Group (and a claim about its value in the group)
 
 {% hint style="info" %}
-Take a look at the [Sismo Connect Cheatsheet](../../build-with-sismo-connect/sismo-connect-cheatsheet.md) to see all requests.
+Take a look at the [Sismo Connect Cheatsheet](../build-with-sismo-connect/sismo-connect-cheatsheet.md) to see all requests.
 {% endhint %}
 
 ## Data Groups
@@ -92,6 +96,6 @@ Data Groups are sets of Data Sources in which each Data Source has an associated
 
 </details>
 
-<table><thead><tr><th width="254.33333333333331">Data Group Examples</th><th>Members (Data Sources)</th><th>Value for each Data Source</th></tr></thead><tbody><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0xfae674b6cba3ff2f8ce2114defb200b1">"Stand With Crypto" NFT Minters</a></td><td>Wallets of minters </td><td>Number of NFT minted</td></tr><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12">Gitcoin Passport Holders</a></td><td>Wallets of Gitcoin Passport holders</td><td>Sybil-resistant score</td></tr><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0xda1c3726426d5639f4c6352c2c976b87">Sismo Hub Github Contributors </a></td><td>GitHub accounts of contributors to sismo-core/sismo-hub repo</td><td>Number of contributions</td></tr><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0x85c7ee90829de70d0d51f52336ea4722">ENS DAO Voters</a></td><td>Wallets of voters in the ENS DAO</td><td>Number of votes</td></tr><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c">Sismo Community Members</a></td><td>Wallets, GitHub, Telegram and Twitter accounts of all people that helped Sismo</td><td>Level of their contributions (1, 2 or 3)</td></tr></tbody></table>
+<table><thead><tr><th width="223.33333333333331">Data Group Examples</th><th>Members (Data Sources)</th><th>Value for each Data Source</th></tr></thead><tbody><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0xfae674b6cba3ff2f8ce2114defb200b1">"Stand With Crypto" NFT Minters</a></td><td>Wallets of minters </td><td>Number of NFT minted</td></tr><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12">Gitcoin Passport Holders</a></td><td>Wallets of Gitcoin Passport holders</td><td>Sybil-resistant score</td></tr><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0xda1c3726426d5639f4c6352c2c976b87">Sismo Hub Github Contributors </a></td><td>GitHub accounts of contributors to sismo-core/sismo-hub repo</td><td>Number of contributions</td></tr><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0x85c7ee90829de70d0d51f52336ea4722">ENS DAO Voters</a></td><td>Wallets of voters in the ENS DAO</td><td>Number of votes</td></tr><tr><td><a href="https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c">Sismo Community Members</a></td><td>Wallets, GitHub, Telegram and Twitter accounts of all people that helped Sismo</td><td>Level of their contributions (1, 2 or 3)</td></tr></tbody></table>
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><p>Factory Guide: </p><p>Create a Data Group in 5 Minutes</p></td><td></td><td></td><td><a href="create-your-data-group.md">create-your-data-group.md</a></td></tr><tr><td>Sismo Hub Guide: <br>Create Data Groups Programmatically</td><td></td><td></td><td><a href="create-your-group-generator.md">create-your-group-generator.md</a></td></tr><tr><td>Sismo Hub Guide: <br>Add a Data Provider to the Sismo Factory</td><td></td><td></td><td><a href="../data-groups-and-how-to-create-them/create-your-data-provider.md">create-your-data-provider.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><p>Factory Guide: </p><p>Create a Data Group in 5 Minutes</p></td><td></td><td></td><td><a href="tutorials/create-your-data-group.md">create-your-data-group.md</a></td></tr><tr><td>Sismo Hub Guide: <br>Create Data Groups Programmatically</td><td></td><td></td><td><a href="tutorials/create-your-group-generator.md">create-your-group-generator.md</a></td></tr><tr><td>Sismo Hub Guide: <br>Add a Data Provider to the Sismo Factory</td><td></td><td></td><td><a href="tutorials/create-your-data-provider.md">create-your-data-provider.md</a></td></tr></tbody></table>

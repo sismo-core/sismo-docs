@@ -4,7 +4,7 @@ description: Verify proofs from your users
 
 # Sismo Connect Server: Verify Offchain
 
-The Sismo Connect Server is a back-end package built on top of the [Hydra-S2 Verifier](../../../how-sismo-works/core-components/proving-schemes/hydra-s2.md) to easily verify proofs from your users offchain.&#x20;
+The Sismo Connect Server is a back-end package built on top of the [Hydra-S2 Verifier](../../../data-vault/proving-schemes/hydra-s2.md) to easily verify proofs from your users offchain.&#x20;
 
 The Sismo Connect Server is
 

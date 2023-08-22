@@ -14,7 +14,7 @@ If we remove the `appId` from this simple calculation, we would have had the sam
 
 By introducing an `appId`, the vaultId is now different between apps, and the same user will have two different vaultIds on two different apps, effectively preserving the user's privacy.
 
-You can learn more about this notion in this [article](../technical-documentation/vault-and-proof-identifiers.md).
+You can learn more about this notion in this [article](../../data-vault/vault-and-proof-identifiers.md).
 
 </details>
 

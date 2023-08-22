@@ -47,9 +47,9 @@ Once these steps are done, you are well set up to use [Forge](https://book.getfo
 
 Before deploying any Sismo Connect contract, it is better to understand the Sismo Connect config and especially how to impersonate accounts.&#x20;
 
-As you may already know, Sismo Connect is the communication layer allowing any Sismo Connect app to request ZK proofs about user data and receive the expected proofs before verifying them. To be able to produce such proofs, users are required to import accounts (i.e. [Data Sources](../../data-groups/data-groups-and-creation/#data-sources)) into their [Data Vaults](../../how-sismo-works/core-components/what-is-the-data-vault.md). By doing so, they will be able to prove group membership and account ownership to apps.&#x20;
+As you may already know, Sismo Connect is the communication layer allowing any Sismo Connect app to request ZK proofs about user data and receive the expected proofs before verifying them. To be able to produce such proofs, users are required to import accounts (i.e. [Data Sources](../../data-groups/data-groups-and-creation.md#data-sources)) into their [Data Vaults](../../data-vault/what-is-the-data-vault.md). By doing so, they will be able to prove group membership and account ownership to apps.&#x20;
 
-Such proof generation is possible (among other things) thanks to the [**Commitment Mapper**](../../how-sismo-works/technical-concepts/commitment-mapper.md)**.** Therefore, we allow **any developer to impersonate accounts** by automatically creating a fake Commitment Mapper in the Vault app front end if the **Vault object with the impersonate field is defined in the Sismo Connect configuration**.
+Such proof generation is possible (among other things) thanks to the [**Commitment Mapper**](../../data-vault/commitment-mapper.md)**.** Therefore, we allow **any developer to impersonate accounts** by automatically creating a fake Commitment Mapper in the Vault app front end if the **Vault object with the impersonate field is defined in the Sismo Connect configuration**.
 
 You can learn more about the Sismo Connect configuration [**here**](../technical-documentation/sismo-connect-configuration.md).
 

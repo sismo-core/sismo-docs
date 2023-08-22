@@ -6,9 +6,9 @@ description: Developer tutorial
 
 ## What’s inside?
 
-This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md).
+This beginner-friendly tutorial will walk you through the creation of a [Group Generator](../what-is-the-data-vault-1/sismo-hub/sismo-protocol-overview.md).
 
-Group Generators are functions that enable the creation of [Groups](./) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../#sismo-connect-the-crypto-native-sso).
+Group Generators are functions that enable the creation of [Groups](../data-groups-and-creation.md) at the center of the Sismo protocol. Groups are the foundation of all that you can create with [Sismo Connect Apps](../../#sismo-connect-the-crypto-native-sso).
 
 {% hint style="info" %}
 You can find all already existing Group Generators [**here**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/generators)**.**
@@ -27,12 +27,12 @@ Groups are composed of Data Sources:
 * Web2 accounts: Twitter, GitHub, Telegram
 * Web3 accounts: Ethereum addresses, ENS, Lens handles
 
-In order to create a Group, we need to build a [Group Generator](../../how-sismo-works/resources/sismo-hub/sismo-protocol-overview.md). This tutorial will guide you through the process of creating one.
+In order to create a Group, we need to build a [Group Generator](../what-is-the-data-vault-1/sismo-hub/sismo-protocol-overview.md). This tutorial will guide you through the process of creating one.
 
 There are 3 different ways to define the data of a Group generator, you can use:
 
 * A hardcoded list of Data Source (e.g. [rhinofi-power-users](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/rhinofi-power-users/index.ts))
-* [Data Providers](../../how-sismo-works/resources/sismo-hub/data-providers.md) (e.g. [proof-of-humanity](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/proof-of-humanity/index.ts))
+* [Data Providers](../what-is-the-data-vault-1/sismo-hub/data-providers.md) (e.g. [proof-of-humanity](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/proof-of-humanity/index.ts))
 * Already existing [Groups](https://factory.sismo.io/groups-explorer) (e.g. [sismo-contributors](https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/sismo-contributors/index.ts))
 
 If you want more info on Groups, check out this [page](../../knowledge-base/resources/sismo-hub/sismo-hub/broken-reference/).
@@ -203,17 +203,17 @@ Now that you have an overview of the process of creating a Group, let's move on 
 
 As previously stated, we want to fetch all the collectors of the [first Sismo Lens post](https://lenster.xyz/posts/0x26e5-0x02) and all voters of one of the first [Sismo Proposals](https://snapshot.org/#/sismo.eth/proposal/0xe280e236c5afa533fc28472dd0ce14e5c3514a843c0563552c962226cda05c52).
 
-To fetch all the accounts we want, you will use the 2 different [Data Providers](../../how-sismo-works/resources/sismo-hub/data-providers.md):
+To fetch all the accounts we want, you will use the 2 different [Data Providers](../what-is-the-data-vault-1/sismo-hub/data-providers.md):
 
 * The [**Lens Data Provider**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/lens): it will allow you to fetch all the collectors of the [first Sismo Lens Post](https://lenster.xyz/posts/0x26e5-0x02). (1.)
 
 {% hint style="info" %}
-If you want more info on how Data Provider works and how to create one, there is a tutorial for you [**here**](../data-groups-and-how-to-create-them/create-your-data-provider.md). This tutorial makes you create a Lens data provider and a function that fetch all Lens post collectors (It's a good time, isn't it 😉)
+If you want more info on how Data Provider works and how to create one, there is a tutorial for you [**here**](create-your-data-provider.md). This tutorial makes you create a Lens data provider and a function that fetch all Lens post collectors (It's a good time, isn't it 😉)
 {% endhint %}
 
 * The[ **Snapshot Data Provider**](https://github.com/sismo-core/sismo-hub/tree/main/group-generators/helpers/data-providers/snapshot): it will allow you to fetch all the voters of one of the first [Sismo proposals](https://snapshot.org/#/sismo.eth/proposal/0xe280e236c5afa533fc28472dd0ce14e5c3514a843c0563552c962226cda05c52) on Snapshot. (2.)
 
-Once this data has been fetched, you'll need to merge it using [Data Operators](../../how-sismo-works/resources/sismo-hub/data-operators.md). A few different Data Operators that allow you to make operations on the data exist. Here you want to keep all the collectors and voters in the Group, so you will use the **Union** Data Operator. (3.)
+Once this data has been fetched, you'll need to merge it using [Data Operators](../what-is-the-data-vault-1/sismo-hub/data-operators.md). A few different Data Operators that allow you to make operations on the data exist. Here you want to keep all the collectors and voters in the Group, so you will use the **Union** Data Operator. (3.)
 
 ```typescript
 // group-generators/generators/tutorial-first-sismo-post-collectors/index.ts
@@ -449,7 +449,7 @@ You will finally see your branch being compared to the main branch of the [Sismo
 
 For example, here is a valid pull request: [https://github.com/sismo-core/sismo-hub/pull/1484](https://github.com/sismo-core/sismo-hub/pull/1484)
 
-When your PR is merged your Group generator will be registered in the Sismo Hub, and your Group will be generated and sent onchain (through the [Registry Tree](../../how-sismo-works/technical-concepts/accounts-registry-tree.md)).
+When your PR is merged your Group generator will be registered in the Sismo Hub, and your Group will be generated and sent onchain (through the [Registry Tree](../what-is-the-data-vault-1/accounts-registry-tree.md)).
 
 Finally, your Group will be available in the Sismo Hub and anyone will be able to use it to create **Badges** or **Sismo Connect apps**, great job! 💪
 

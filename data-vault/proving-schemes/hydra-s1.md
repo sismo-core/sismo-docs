@@ -2,8 +2,8 @@
 
 The Hydra-S1 proving scheme is the first proving scheme in the Hydra family:
 
-* Hydra = using Hydra Proof of Ownership via the [Commitment Mapper](../../technical-concepts/commitment-mapper.md)
-* S1 = single source, version 1: verifying membership in a single [Data Group](../../../data-groups/data-groups-and-creation/)
+* Hydra = using Hydra Proof of Ownership via the [Commitment Mapper](../commitment-mapper.md)
+* S1 = single source, version 1: verifying membership in a single [Data Group](../../data-groups/data-groups-and-creation.md)
 
 Currently, the proving scheme is utilized by the ZK Badge protocol, **which is no longer maintained.** It allows users to verify membership in a Data Group from a single Data Source and mint a ZK Badge on an unlinked Ethereum address.
 
@@ -16,8 +16,8 @@ Sismo’s [ZK Badge protocol](https://github.com/sismo-core/sismo-badges) uses H
 The Hydra-S1 proving scheme allows participants to establish, in one ZK proof, that for a given Proof Identifier:
 
 * They own 2 accounts (source and destination)
-* The source account is part of an [Accounts Registry Tree](../../technical-concepts/accounts-registry-tree.md)
-* The source account was registered in the [Accounts Registry Tree](../../technical-concepts/accounts-registry-tree.md) with a specific value
+* The source account is part of an [Accounts Registry Tree](../../data-groups/what-is-the-data-vault-1/accounts-registry-tree.md)
+* The source account was registered in the [Accounts Registry Tree](../../data-groups/what-is-the-data-vault-1/accounts-registry-tree.md) with a specific value
 * A claim about their source account value is true
   * e.g: "my account value is superior to 5" (non-strict claim)
   * or "my account value is strictly equal to 5" (strict claim)

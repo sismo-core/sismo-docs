@@ -148,13 +148,13 @@ Let's add the Sismo Connect Button and request  the`vaultId` of users.
 
 <summary>vaultId: anonymous indentifier for a user. Will be used to avoid users to claim twice</summary>
 
-Sismo users have a sovereign [Data Vault](../../how-sismo-works/core-components/what-is-the-data-vault.md) where they import Data Sources from which they will generate ZK proofs. Each Data Vault has a secret only known by its owner.
+Sismo users have a sovereign [Data Vault](../../data-vault/what-is-the-data-vault.md) where they import Data Sources from which they will generate ZK proofs. Each Data Vault has a secret only known by its owner.
 
 To identify users, you can request a `vaultId.`It is a sovereign and anonymous identifier natively provided to Sismo Connect Apps. vaultId = hash(userVaultSecret, AppId, 0)
 
 The `vaultId` will be used to make sure a user that claimed the airdrop is registered and cannot claim it twice!
 
-You can read more about it in [**Vault Identifiers.**](../technical-documentation/vault-and-proof-identifiers.md)&#x20;
+You can read more about it in [**Vault Identifiers.**](../../data-vault/vault-and-proof-identifiers.md)&#x20;
 
 </details>
 
@@ -306,7 +306,7 @@ Well, now that you have all these steps in mind, let's improve this airdrop cont
 Our first aim is to make the ERC20 airdrop Sybil-resistant. To do this, we simply need to request a proof of Gitcoin Passport group membership from our users. We also want them to have a passport score above 15. You can request such a proof by taking the `groupId` of the "Gitcoin Passport Holders" group that can be found on the Sismo Factory at this link: [https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12](https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12) and create a [**claim request**](../technical-documentation/claims.md) from it.
 
 {% hint style="success" %}
-You can learn how to create a Data Group with the [following tutorial](../../data-groups/data-groups-and-creation/create-your-data-group.md).
+You can learn how to create a Data Group with the [following tutorial](../../data-groups/tutorials/create-your-data-group.md).
 {% endhint %}
 
 The `groupId` of the Gitcoin Passport Holders group is `0x1cde61966decb8600dfd0749bd371f12`. Let's add our claim request in the React button. We indicate the groupId of the group and the minimum value required in this group.

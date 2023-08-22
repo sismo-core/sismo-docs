@@ -4,7 +4,7 @@ description: Sismo's data infrastructure.
 
 # Sismo Hub
 
-[Proving schemes](proving-schemes/) need access to data in a specific, agreed-upon format to function. The Sismo Hub is Sismo’s data infrastructure—open for anyone to use. It is the tool that standardizes raw data for Sismo, thus creating Data Groups.
+[Proving schemes](../../data-vault/proving-schemes/) need access to data in a specific, agreed-upon format to function. The Sismo Hub is Sismo’s data infrastructure—open for anyone to use. It is the tool that standardizes raw data for Sismo, thus creating Data Groups.
 
 ## Onchain Sources of Truth&#x20;
 
@@ -16,4 +16,4 @@ Data Groups essentially function as snapshots of a dataset at a given point in t
 While Sismo manages the maintenance of Data Groups, anyone can create and register a Data Group via the Sismo Hub—either via a pull request or the [Sismo Factory](https://factory.sismo.io/) (a no-code interface).
 {% endhint %}
 
-In addition to Data Groups, the Sismo Hub manages the creation and maintenance of [Data Providers](../resources/sismo-hub/data-providers.md). They allow for the programmatic updates of Data Groups, further ensuring that provers and verifiers always work with the most relevant data.
+In addition to Data Groups, the Sismo Hub manages the creation and maintenance of [Data Providers](sismo-hub/data-providers.md). They allow for the programmatic updates of Data Groups, further ensuring that provers and verifiers always work with the most relevant data.

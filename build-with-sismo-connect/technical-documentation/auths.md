@@ -8,7 +8,7 @@ The `AuthRequest` is an object with the following properties:
 
 * `AuthType` (required): defines the type of authentication required. The following authType are currently supported:&#x20;
   * `VAULT`: Sismo Connect returns the user's vaultId for the application that requested it. It is a deterministic anonymous identifier (hash(userVaultSecret, AppId, ..))\
-    See more information about Vault Identifiers [here](vault-and-proof-identifiers.md).
+    See more information about Vault Identifiers [here](../../data-vault/vault-and-proof-identifiers.md).
   * `GITHUB`: Sismo Connect returns the user's GitHub account id.&#x20;
   * `TWITTER` Sismo Connect returns the user's Twitter account id.&#x20;
   * `EVM_ACCOUNT`: Sismo Connect returns the user's Ethereum address.

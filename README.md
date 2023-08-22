@@ -30,7 +30,7 @@ By using Sismo Connect, an easy-to-integrate single sign-on (SSO), applications 
 
 ## Data Vault: Sovereign Identity Aggregator
 
-Users aggregate their identity by adding Data Sources to their private, local and sovereign [Data Vault](how-sismo-works/core-components/what-is-the-data-vault.md).
+Users aggregate their identity by adding Data Sources to their private, local and sovereign [Data Vault](data-vault/what-is-the-data-vault.md).
 
 The Data Vault currently supports the following types of Data Sources: Ethereum wallets, GitHub, Twitter or Telegram accounts. Users can generate ZK proofs from their Data Sources, enabling them to reveal data to applications in a sovereign way.
 
@@ -130,7 +130,7 @@ Examples of Data Groups:
 | [Sismo Community Members](https://factory.sismo.io/groups-explorer?search=0xd630aa769278cacde879c5c0fe5d203c)         | Wallets, GitHub, Telegram and Twitter accounts of all people that helped Sismo | Level of their contributions (1, 2 or 3) |
 
 {% hint style="info" %}
-Anyone can [create a new Data Group](data-groups/data-groups-and-creation/).&#x20;
+Anyone can [create a new Data Group](data-groups/data-groups-and-creation.md).&#x20;
 {% endhint %}
 
 <table data-view="cards"><thead><tr><th data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><a href="broken-reference">Broken link</a></td><td><a href=".gitbook/assets/Build with Sismo Connect.png">Build with Sismo Connect.png</a></td></tr><tr><td><a href="https://apps.sismo.io">https://apps.sismo.io</a></td><td><a href=".gitbook/assets/AppStore.png">AppStore.png</a></td></tr><tr><td><a href="https://case-studies.sismo.io">https://case-studies.sismo.io</a></td><td><a href=".gitbook/assets/Case Studies.png">Case Studies.png</a></td></tr></tbody></table>
