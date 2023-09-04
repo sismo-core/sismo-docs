@@ -112,7 +112,7 @@ The `useSismoConnect` hook is available from the [sismo-connect-react package](p
 
 * One or multiple AuthRequests can be made using the `sismoConnect.request()` method available on the `sismoConnect` variable.
 * The response could be received through either:
-  1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
+  1. &#x20;the `sismoConnect.getResponse()` method for offchain verification or,
   2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
 
 #### One AuthRequest - code example
@@ -163,7 +163,7 @@ function onClick(){
 }
 
 // Proofs are available in two differents types depending on usage (offchain or onchaon verification)
-const response: SismoConnectResponse | null = sismoConnect.getReponse();
+const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
 if(response || responseBytes) {
@@ -179,7 +179,7 @@ The [`sismo-connect-client` package](packages/client.md) exposes a `SismoConnect
 
 * One or multiple AuthRequests can be made using the `sismoConnect.request()` method available on a `SismoConnect` instance.
 * The response could be received through either:
-  1. &#x20;the `sismoConnect.getReponse()` method for offchain verification or,
+  1. &#x20;the `sismoConnect.getResponse()` method for offchain verification or,
   2. &#x20;the `sismoConnect.getResponseBytes()` method for onchain verification.
 
 #### One AuthRequest - code example
@@ -199,7 +199,7 @@ function onClick(){
 }
 
 // Receive the proofs in two different formats
-const response: SismoConnectResponse | null = sismoConnect.getReponse();
+const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
 if(response || responseBytes) {
@@ -229,7 +229,7 @@ function onClick(){
 }
 
 // Receive the proofs in two different formats
-const response: SismoConnectResponse | null = sismoConnect.getReponse();
+const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
 if(response || responseBytes) {
