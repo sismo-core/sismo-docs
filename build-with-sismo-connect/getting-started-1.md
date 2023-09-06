@@ -344,5 +344,21 @@ export async function POST(req: Request) {
 }
 
 ```
+
+{% hint style="success" %}
+If you are using Nextjs, you will need to add this config in the `next.config.js` file to be able to verify the proof. You can find more information [here](https://nextjs.org/docs/app/api-reference/next-config-js/serverComponentsExternalPackages).
+
+```javascript
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    serverComponentsExternalPackages: ["@sismo-core/sismo-connect-server"],
+  },
+}
+
+module.exports = nextConfig
+```
+{% endhint %}
 {% endtab %}
 {% endtabs %}
+
