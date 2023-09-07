@@ -203,7 +203,7 @@ yarn add @sismo-core/sismo-connect-solidity
 In your Solidity file:
 
 ```solidity
-import "@sismo-core/sismo-connect-solidity/contracts/libs/SismoLib.sol";
+import "@sismo-core/sismo-connect-solidity/contracts/SismoConnectLib.sol";
 ```
 {% endtab %}
 {% endtabs %}
