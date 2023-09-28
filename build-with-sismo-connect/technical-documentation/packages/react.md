@@ -219,7 +219,7 @@ The `useSismoConnect` hook makes it easy for you to obtain the response containi
 ```typescript
 import { useSismoConnect } from "@sismo-core/sismo-connect-react";
 
-const { useSismoConnect, response, responseBytes } = useSismoConnect({ config });
+const { sismoConnect, response, responseBytes } = useSismoConnect({ config });
 ```
 
 **Params**
