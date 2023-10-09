@@ -34,7 +34,7 @@ Integrate Sismo Connect in 3 steps:
 * **Goerli** (5)
 * **Mumbai** (80001)
 * **Optimism Goerli** (420)
-* **Scroll Alpha Testnet** (534353)
+* **Scroll Alpha Testnet** (534353) **\[deprecated]**
 * **Sepolia** (11155111)
 
 </details>

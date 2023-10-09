@@ -60,6 +60,8 @@ You can find our contracts deployed on the following networks:
 {% endtab %}
 
 {% tab title="Scroll Alpha Testnet" %}
+Scroll Alpha Testnet is now deprecated.
+
 <table><thead><tr><th width="267">Contract Name</th><th width="464">Address</th></tr></thead><tbody><tr><td>AddressesProvider</td><td><a href="https://scrollscan.co/address/0x3Cd5334eB64ebBd4003b72022CC25465f1BFcEe6">0x3Cd5334eB64ebBd4003b72022CC25465f1BFcEe6</a></td></tr><tr><td>SismoConnectVerifier</td><td><a href="https://scrollscan.co/address/0x90a7fe1D98303Af175Cb6BD0564D5a643Ba1a3c5">0x90a7fe1D98303Af175Cb6BD0564D5a643Ba1a3c5</a></td></tr><tr><td>HydraS3Verifier</td><td><a href="https://scrollscan.co/address/0x797Dd53c383f7819D54D3aDd6b90c7Ba67E89952">0x797Dd53c383f7819D54D3aDd6b90c7Ba67E89952</a></td></tr><tr><td>AvailableRootsRegistry</td><td><a href="https://scrollscan.co/address/0x32725B00400b799D41c852b6Fd94604e10cb487F">0x32725B00400b799D41c852b6Fd94604e10cb487F</a></td></tr><tr><td>CommitmentMapperRegistry</td><td><a href="https://scrollscan.co/address/0x497f369f94F207663A348b0ac085397C71279bf5">0x497f369f94F207663A348b0ac085397C71279bf5</a></td></tr></tbody></table>
 {% endtab %}
 
