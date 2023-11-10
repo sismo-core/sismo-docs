@@ -93,7 +93,7 @@ Congrats on getting your airdrop! Now, let's see how this simple Sismo Connect i
 Go to the `front/src/app/page.tsx`
 
 {% hint style="success" %}
-To use Sismo Connect in your application, you will need to create an application  in the [Sismo Factory](https://factory.sismo.io/apps-explorer) and get its `appId`. You can see a quick tutorial on how to do it [here](create-a-sismo-connect-app.md).
+To use Sismo Connect in your application, you will need to create an application  in the [Sismo Factory](https://factory.sismo.io/apps-explorer) and get it's appId`. You can see a quick tutorial on how to do it [here](create-a-sismo-connect-app.md).
 
 For this tutorial, we will use an already existing app (appId: 0xf4977993e52606cfd67b7a1cde717069)
 {% endhint %}
@@ -146,7 +146,7 @@ Let's add the Sismo Connect Button and request  the`vaultId` of users.
 
 <details>
 
-<summary>vaultId: anonymous indentifier for a user. Will be used to avoid users to claim twice</summary>
+<summary>vaultId: anonymous identifier for a user. Will be used to avoid users to claim twice</summary>
 
 Sismo users have a sovereign [Data Vault](../../data-vault/what-is-the-data-vault.md) where they import Data Sources from which they will generate ZK proofs. Each Data Vault has a secret only known by its owner.
 
@@ -284,7 +284,7 @@ contract Airdrop is ERC20, SismoConnect {
 }
 </code></pre>
 
-The `vaultId` enables protection against double spends in an anonymous way. Indeed, if a user generates a second proof from the same Vault, he would not be able to claim the airdrop again since each proof generated from a Vault has the same `vaultId` associated with it.&#x20;
+The `vaultId` enables protection against double spending in an anonymous way. Indeed, if a user generates a second proof from the same Vault, he would not be able to claim the airdrop again since each proof generated from a Vault has the same `vaultId` associated with it.&#x20;
 
 {% hint style="success" %}
 If you use Impersonation Mode, you will be able to claim the airdrop each time you try  since the `vaultId` is randomized in this mode.
