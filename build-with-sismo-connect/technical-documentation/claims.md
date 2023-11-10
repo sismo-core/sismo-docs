@@ -44,7 +44,7 @@ Requests are then verified either in a backend using the [`sismo-connect-server`
 ### Making a ClaimRequest - Front-end integration
 
 {% hint style="info" %}
-Making an `ClaimRequest` is only possible in the front end as the request redirects users to the Sismo Vault app, where users can generate a zero-knowledge proof.
+Making a `ClaimRequest` is only possible in the front end as the request redirects users to the Sismo Vault app, where users can generate a zero-knowledge proof.
 {% endhint %}
 
 {% tabs %}
@@ -135,7 +135,7 @@ function onClick(){
     });
 }
 
-// Proofs are available in two differents types depending on usage (offchain or onchaon verification)
+// Proofs are available in two different types depending on usage (offchain or onchain verification)
 const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
@@ -166,7 +166,7 @@ function onClick(){
     });
 }
 
-// Proofs are available in two differents types depending on usage (offchain or onchaon verification)
+// Proofs are available in two different types depending on usage (offchain or onchain verification)
 const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
