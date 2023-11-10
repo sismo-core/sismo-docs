@@ -131,7 +131,7 @@ function onClick(){
     });
 }
 
-// Proofs are available in two differents types depending on usage (offchain or onchaon verification)
+// Proofs are available in two different types depending on usage (offchain or onchain verification)
 const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 
@@ -162,7 +162,7 @@ function onClick(){
     });
 }
 
-// Proofs are available in two differents types depending on usage (offchain or onchaon verification)
+// Proofs are available in two different types depending on usage (offchain or onchain verification)
 const response: SismoConnectResponse | null = sismoConnect.getResponse();
 const responseBytes: string | null  = sismoConnect.getResponseBytes();
 

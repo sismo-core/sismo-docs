@@ -2,7 +2,7 @@
 
 ## Overview
 
-This tutorial aims at describing the process behind the deployment of Sismo Connect contracts. In this context, we will recap on what a Sismo Connect Client config is and how to impersonate accounts. Once understood, these notions will allow you to confidently deploy contracts with Sismo Connect's functionalities.
+This tutorial aims to describe the process behind the deployment of Sismo Connect contracts. In this context, we will recap on what a Sismo Connect Client config is and how to impersonate accounts. Once understood, these notions will allow you to confidently deploy contracts with Sismo Connect's functionalities.
 
 {% hint style="success" %}
 To better understand the different notions highlighted in this tutorial, we strongly advise you to go through [**the first tutorial**](tuto.md)**,** which will show you how to leverage data aggregation in your app by [**building a Gated Airdrop for Gitcoin Passport holders**](tuto.md).&#x20;

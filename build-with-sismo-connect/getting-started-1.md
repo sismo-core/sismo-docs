@@ -31,7 +31,7 @@ Before anything, go to the [Sismo Factory](https://factory.sismo.io) and create 
 
 ## Quick start - (1 min)
 
-Chose and install the starter of your choice in one unique command line.
+Choose and install the starter of your choice in one unique command line.
 
 <pre class="language-bash"><code class="lang-bash">npx create-sismo-connect-app@latest
 # or
